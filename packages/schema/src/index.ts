@@ -11,5 +11,6 @@ export * from './pack';
 export * from './plugin';
 export * from './runtime';
 export * from './utils';
+export * from './phrases';
 export * from './validate';
 export * from './json-schema';

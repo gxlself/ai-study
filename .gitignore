@@ -16,3 +16,5 @@ apps/player/ios/App/Pods/
 apps/player/ios/App/build/
 *.apk
 !release/*.apk
+apps/player/public/bundled/
+scripts/.cache/

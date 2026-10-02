@@ -1,0 +1,67 @@
+/*
+ * 芽芽成长 视觉设计令牌（播放端 + 内置活动 + 第三方插件 共用）
+ * 原则：柔和背景 + 高对比主体；大目标；慢动画；不闪烁；不用纯白大面积（电视眩光）。
+ */
+:root {
+  /* 背景（柔和、低饱和） */
+  --sp-bg: #fdf6ec;           /* 奶油色主背景 */
+  --sp-bg-2: #f3ead9;
+  --sp-bg-sky: #dff1fb;
+  --sp-bg-grass: #e6f4d7;
+  --sp-bg-night: #1f2a44;
+  --sp-surface: #fffaf2;      /* 卡片 */
+  --sp-ink: #3b3226;          /* 主文字（暖深棕，非纯黑） */
+  --sp-ink-2: #7a6a55;        /* 次文字 */
+  --sp-ink-invert: #fffaf2;
+
+  /* 强调色（与 DOMAIN_LABELS 一致） */
+  --sp-accent: #f08a5d;
+  --sp-accent-2: #5da9e9;
+  --sp-ok: #6c9a3b;
+  --sp-warn: #f2b134;
+
+  /* 焦点（遥控器选中态）：粗暖黄外发光 + 轻微放大 */
+  --sp-focus: #ffc93c;
+  --sp-focus-ring: 0 0 0 0.6vmin var(--sp-focus), 0 0 3vmin 0.6vmin rgba(255, 201, 60, 0.55);
+  --sp-focus-scale: 1.06;
+
+  /* 尺寸（以 vmin 为单位适配电视/平板） */
+  --sp-safe: 5vmin;           /* 电视过扫描安全边距 */
+  --sp-radius: 3vmin;
+  --sp-radius-sm: 1.6vmin;
+  --sp-gap: 3vmin;
+  --sp-font-xl: 9vmin;        /* 孩子看的主词 */
+  --sp-font-lg: 6vmin;
+  --sp-font-md: 4vmin;
+  --sp-font-sm: 2.8vmin;      /* 家长提示 */
+  --sp-touch-min: 14vmin;     /* 触控目标最小尺寸 */
+
+  /* 动画：慢、柔 */
+  --sp-ease: cubic-bezier(0.37, 0, 0.29, 1);
+  --sp-dur: 450ms;
+  --sp-dur-slow: 900ms;
+
+  --sp-shadow: 0 1.2vmin 3vmin rgba(80, 60, 30, 0.14);
+
+  --sp-font: "PingFang SC", "HarmonyOS Sans SC", "MiSans", "Noto Sans SC", "Hiragino Sans GB",
+    "Microsoft YaHei", system-ui, sans-serif;
+  --sp-font-en: "Nunito", "Avenir Next", "Segoe UI", system-ui, sans-serif;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  :root {
+    --sp-dur: 1ms;
+    --sp-dur-slow: 1ms;
+  }
+}
+
+/* 通用焦点样式：带 data-focusable 的元素被 host 标记 .sp-focused */
+[data-focusable] {
+  transition: transform var(--sp-dur) var(--sp-ease), box-shadow var(--sp-dur) var(--sp-ease);
+  outline: none;
+}
+.sp-focused {
+  box-shadow: var(--sp-focus-ring);
+  transform: scale(var(--sp-focus-scale));
+  z-index: 2;
+}

@@ -74,3 +74,17 @@ export interface PackInfo {
   credits: { name: string; url?: string; license: string; note?: string }[];
   errors?: string[];
 }
+
+/**
+ * 预编译内容包 bundle.json（scripts/bundle-pack.ts 生成）：
+ * 浏览器无法列目录，播放端离线模式（LocalSource）与远程快速加载都用它。
+ */
+export interface PackBundle {
+  schemaVersion: 1;
+  builtAt: string;
+  manifest: PackManifest;
+  lexicon: import('./lexicon').Lexicon | null;
+  routes: import('./route').Route[];
+  lessons: import('./lesson').Lesson[];
+  audio: AudioManifest | null;
+}
