@@ -1,0 +1,840 @@
+{
+  "version": "1.0.0",
+  "sources": [
+    {
+      "id": "cdc-2022",
+      "title": "CDC \"Learn the Signs. Act Early.\" Developmental Milestones (2022 revision; Zubler JM et al., Pediatrics 2022;149(3):e2021052138). Item text retrieved 2026-10-02 from per-age pages (last reviewed 2026-05-16), e.g. https://www.cdc.gov/act-early/milestones/6-months.html",
+      "url": "https://www.cdc.gov/act-early/milestones/index.html"
+    }
+  ],
+  "disclaimer": {
+    "zh": "里程碑用于日常观察与亲子互动参考，不是诊断工具；如有担心请咨询儿科/儿保医生。",
+    "en": "Milestones are for everyday observation and parent-child interaction reference only, not a diagnostic tool. CDC's 2022 milestones describe what most children (75% or more) can do by each age; if you have concerns, talk with your child's pediatrician or child health provider."
+  },
+  "items": [
+    {
+      "id": "cdc-06-social-01",
+      "ageMonths": 6,
+      "domain": "social-emotional",
+      "zh": "认识熟悉的人",
+      "en": "Knows familiar people",
+      "source": "cdc-2022"
+    },
+    {
+      "id": "cdc-06-social-02",
+      "ageMonths": 6,
+      "domain": "social-emotional",
+      "zh": "喜欢照镜子看自己",
+      "en": "Likes to look at self in a mirror",
+      "source": "cdc-2022"
+    },
+    {
+      "id": "cdc-06-social-03",
+      "ageMonths": 6,
+      "domain": "social-emotional",
+      "zh": "会笑出声",
+      "en": "Laughs",
+      "source": "cdc-2022"
+    },
+    {
+      "id": "cdc-06-lang-01",
+      "ageMonths": 6,
+      "domain": "language",
+      "zh": "会和你轮流发出声音",
+      "en": "Takes turns making sounds with you",
+      "source": "cdc-2022"
+    },
+    {
+      "id": "cdc-06-lang-02",
+      "ageMonths": 6,
+      "domain": "language",
+      "zh": "会“吹噗噗”（伸出舌头吹气发出噗噗声）",
+      "en": "Blows \"raspberries\" (sticks tongue out and blows)",
+      "source": "cdc-2022"
+    },
+    {
+      "id": "cdc-06-lang-03",
+      "ageMonths": 6,
+      "domain": "language",
+      "zh": "会发出尖声的叫声",
+      "en": "Makes squealing noises",
+      "source": "cdc-2022"
+    },
+    {
+      "id": "cdc-06-cog-01",
+      "ageMonths": 6,
+      "domain": "cognitive",
+      "zh": "把东西放进嘴里来探索",
+      "en": "Puts things in her mouth to explore them",
+      "source": "cdc-2022"
+    },
+    {
+      "id": "cdc-06-cog-02",
+      "ageMonths": 6,
+      "domain": "cognitive",
+      "zh": "伸手去抓自己想要的玩具",
+      "en": "Reaches to grab a toy she wants",
+      "source": "cdc-2022"
+    },
+    {
+      "id": "cdc-06-cog-03",
+      "ageMonths": 6,
+      "domain": "cognitive",
+      "zh": "闭上嘴唇表示不想再吃了",
+      "en": "Closes lips to show she doesn't want more food",
+      "source": "cdc-2022"
+    },
+    {
+      "id": "cdc-06-motor-01",
+      "ageMonths": 6,
+      "domain": "motor",
+      "zh": "能从趴着翻身成仰躺",
+      "en": "Rolls from tummy to back",
+      "source": "cdc-2022"
+    },
+    {
+      "id": "cdc-06-motor-02",
+      "ageMonths": 6,
+      "domain": "motor",
+      "zh": "趴着时能用伸直的手臂把上身撑起来",
+      "en": "Pushes up with straight arms when on tummy",
+      "source": "cdc-2022"
+    },
+    {
+      "id": "cdc-06-motor-03",
+      "ageMonths": 6,
+      "domain": "motor",
+      "zh": "坐着时会用手撑着支撑自己",
+      "en": "Leans on hands to support herself when sitting",
+      "source": "cdc-2022"
+    },
+    {
+      "id": "cdc-09-social-01",
+      "ageMonths": 9,
+      "domain": "social-emotional",
+      "zh": "在陌生人面前会害羞、黏人或害怕",
+      "en": "Is shy, clingy, or fearful around strangers",
+      "source": "cdc-2022"
+    },
+    {
+      "id": "cdc-09-social-02",
+      "ageMonths": 9,
+      "domain": "social-emotional",
+      "zh": "会做出多种面部表情，比如高兴、难过、生气和惊讶",
+      "en": "Shows several facial expressions, like happy, sad, angry, and surprised",
+      "source": "cdc-2022"
+    },
+    {
+      "id": "cdc-09-social-03",
+      "ageMonths": 9,
+      "domain": "social-emotional",
+      "zh": "你叫名字时会看过来",
+      "en": "Looks when you call her name",
+      "source": "cdc-2022"
+    },
+    {
+      "id": "cdc-09-social-04",
+      "ageMonths": 9,
+      "domain": "social-emotional",
+      "zh": "你离开时会有反应（看着你、向你伸手或哭）",
+      "en": "Reacts when you leave (looks, reaches for you, or cries)",
+      "source": "cdc-2022"
+    },
+    {
+      "id": "cdc-09-social-05",
+      "ageMonths": 9,
+      "domain": "social-emotional",
+      "zh": "和你玩躲猫猫时会微笑或大笑",
+      "en": "Smiles or laughs when you play peek-a-boo",
+      "source": "cdc-2022"
+    },
+    {
+      "id": "cdc-09-lang-01",
+      "ageMonths": 9,
+      "domain": "language",
+      "zh": "会发出很多不同的声音，比如“mamamama”和“bababababa”",
+      "en": "Makes a lot of different sounds like \"mamamama\" and \"bababababa\"",
+      "source": "cdc-2022"
+    },
+    {
+      "id": "cdc-09-lang-02",
+      "ageMonths": 9,
+      "domain": "language",
+      "zh": "举起双臂要人抱",
+      "en": "Lifts arms up to be picked up",
+      "source": "cdc-2022"
+    },
+    {
+      "id": "cdc-09-cog-01",
+      "ageMonths": 9,
+      "domain": "cognitive",
+      "zh": "东西掉到看不见的地方时会去找（比如自己的勺子或玩具）",
+      "en": "Looks for objects when dropped out of sight (like his spoon or toy)",
+      "source": "cdc-2022"
+    },
+    {
+      "id": "cdc-09-cog-02",
+      "ageMonths": 9,
+      "domain": "cognitive",
+      "zh": "会把两样东西互相敲打",
+      "en": "Bangs two things together",
+      "source": "cdc-2022"
+    },
+    {
+      "id": "cdc-09-motor-01",
+      "ageMonths": 9,
+      "domain": "motor",
+      "zh": "能自己坐起来",
+      "en": "Gets to a sitting position by herself",
+      "source": "cdc-2022"
+    },
+    {
+      "id": "cdc-09-motor-02",
+      "ageMonths": 9,
+      "domain": "motor",
+      "zh": "能把东西从一只手换到另一只手",
+      "en": "Moves things from one hand to her other hand",
+      "source": "cdc-2022"
+    },
+    {
+      "id": "cdc-09-motor-03",
+      "ageMonths": 9,
+      "domain": "motor",
+      "zh": "会用手指把食物“耙”到自己面前",
+      "en": "Uses fingers to \"rake\" food towards himself",
+      "source": "cdc-2022"
+    },
+    {
+      "id": "cdc-09-motor-04",
+      "ageMonths": 9,
+      "domain": "motor",
+      "zh": "不用支撑能独坐",
+      "en": "Sits without support",
+      "source": "cdc-2022"
+    },
+    {
+      "id": "cdc-12-social-01",
+      "ageMonths": 12,
+      "domain": "social-emotional",
+      "zh": "会和你玩游戏，比如拍手游戏（pat-a-cake）",
+      "en": "Plays games with you, like pat-a-cake",
+      "source": "cdc-2022"
+    },
+    {
+      "id": "cdc-12-lang-01",
+      "ageMonths": 12,
+      "domain": "language",
+      "zh": "会挥手“拜拜”",
+      "en": "Waves \"bye-bye\"",
+      "source": "cdc-2022"
+    },
+    {
+      "id": "cdc-12-lang-02",
+      "ageMonths": 12,
+      "domain": "language",
+      "zh": "会用“mama”“dada”或其他专门的称呼叫爸爸妈妈",
+      "en": "Calls a parent \"mama\" or \"dada\" or another special name",
+      "source": "cdc-2022"
+    },
+    {
+      "id": "cdc-12-lang-03",
+      "ageMonths": 12,
+      "domain": "language",
+      "zh": "听得懂“不”（你说“不”时会短暂停顿或停下来）",
+      "en": "Understands \"no\" (pauses briefly or stops when you say it)",
+      "source": "cdc-2022"
+    },
+    {
+      "id": "cdc-12-cog-01",
+      "ageMonths": 12,
+      "domain": "cognitive",
+      "zh": "会把东西放进容器里，比如把积木放进杯子",
+      "en": "Puts something in a container, like a block in a cup",
+      "source": "cdc-2022"
+    },
+    {
+      "id": "cdc-12-cog-02",
+      "ageMonths": 12,
+      "domain": "cognitive",
+      "zh": "会去找看到你藏起来的东西，比如藏在毯子下的玩具",
+      "en": "Looks for things he sees you hide, like a toy under a blanket",
+      "source": "cdc-2022"
+    },
+    {
+      "id": "cdc-12-motor-01",
+      "ageMonths": 12,
+      "domain": "motor",
+      "zh": "能扶着东西拉起身站起来",
+      "en": "Pulls up to stand",
+      "source": "cdc-2022"
+    },
+    {
+      "id": "cdc-12-motor-02",
+      "ageMonths": 12,
+      "domain": "motor",
+      "zh": "能扶着家具走",
+      "en": "Walks, holding on to furniture",
+      "source": "cdc-2022"
+    },
+    {
+      "id": "cdc-12-motor-03",
+      "ageMonths": 12,
+      "domain": "motor",
+      "zh": "在你扶着杯子时，能用无盖杯喝水",
+      "en": "Drinks from a cup without a lid, as you hold it",
+      "source": "cdc-2022"
+    },
+    {
+      "id": "cdc-12-motor-04",
+      "ageMonths": 12,
+      "domain": "motor",
+      "zh": "能用拇指和食指捏起东西，比如小块食物",
+      "en": "Picks things up between thumb and pointer finger, like small bits of food",
+      "source": "cdc-2022"
+    },
+    {
+      "id": "cdc-15-social-01",
+      "ageMonths": 15,
+      "domain": "social-emotional",
+      "zh": "玩耍时会模仿其他孩子，比如别的孩子从容器里往外拿玩具时也跟着拿",
+      "en": "Copies other children while playing, like taking toys out of a container when another child does",
+      "source": "cdc-2022"
+    },
+    {
+      "id": "cdc-15-social-02",
+      "ageMonths": 15,
+      "domain": "social-emotional",
+      "zh": "会把自己喜欢的东西拿给你看",
+      "en": "Shows you an object she likes",
+      "source": "cdc-2022"
+    },
+    {
+      "id": "cdc-15-social-03",
+      "ageMonths": 15,
+      "domain": "social-emotional",
+      "zh": "兴奋时会拍手",
+      "en": "Claps when excited",
+      "source": "cdc-2022"
+    },
+    {
+      "id": "cdc-15-social-04",
+      "ageMonths": 15,
+      "domain": "social-emotional",
+      "zh": "会抱毛绒娃娃或其他玩具",
+      "en": "Hugs stuffed doll or other toy",
+      "source": "cdc-2022"
+    },
+    {
+      "id": "cdc-15-social-05",
+      "ageMonths": 15,
+      "domain": "social-emotional",
+      "zh": "会向你表达亲昵（抱你、依偎你或亲你）",
+      "en": "Shows you affection (hugs, cuddles, or kisses you)",
+      "source": "cdc-2022"
+    },
+    {
+      "id": "cdc-15-lang-01",
+      "ageMonths": 15,
+      "domain": "language",
+      "zh": "除了“mama”“dada”之外，会尝试说一两个词，比如用“ba”表示球（ball）、用“da”表示狗（dog）",
+      "en": "Tries to say one or two words besides \"mama\" or \"dada,\" like \"ba\" for ball or \"da\" for dog",
+      "source": "cdc-2022"
+    },
+    {
+      "id": "cdc-15-lang-02",
+      "ageMonths": 15,
+      "domain": "language",
+      "zh": "你说出熟悉物品的名称时，会看向那个物品",
+      "en": "Looks at a familiar object when you name it",
+      "source": "cdc-2022"
+    },
+    {
+      "id": "cdc-15-lang-03",
+      "ageMonths": 15,
+      "domain": "language",
+      "zh": "能听从同时带手势和话语的指令。例如，你伸出手说“把玩具给我”时，会把玩具递给你",
+      "en": "Follows directions given with both a gesture and words. For example, he gives you a toy when you hold out your hand and say, \"Give me the toy.\"",
+      "source": "cdc-2022"
+    },
+    {
+      "id": "cdc-15-lang-04",
+      "ageMonths": 15,
+      "domain": "language",
+      "zh": "会用手指着来要东西或求助",
+      "en": "Points to ask for something or to get help",
+      "source": "cdc-2022"
+    },
+    {
+      "id": "cdc-15-cog-01",
+      "ageMonths": 15,
+      "domain": "cognitive",
+      "zh": "会尝试以正确的方式使用物品，比如电话、杯子或书",
+      "en": "Tries to use things the right way, like a phone, cup, or book",
+      "source": "cdc-2022"
+    },
+    {
+      "id": "cdc-15-cog-02",
+      "ageMonths": 15,
+      "domain": "cognitive",
+      "zh": "能把至少两个小物件叠起来，比如积木",
+      "en": "Stacks at least two small objects, like blocks",
+      "source": "cdc-2022"
+    },
+    {
+      "id": "cdc-15-motor-01",
+      "ageMonths": 15,
+      "domain": "motor",
+      "zh": "能自己走几步",
+      "en": "Takes a few steps on his own",
+      "source": "cdc-2022"
+    },
+    {
+      "id": "cdc-15-motor-02",
+      "ageMonths": 15,
+      "domain": "motor",
+      "zh": "能用手指自己吃一些食物",
+      "en": "Uses fingers to feed herself some food",
+      "source": "cdc-2022"
+    },
+    {
+      "id": "cdc-18-social-01",
+      "ageMonths": 18,
+      "domain": "social-emotional",
+      "zh": "会离开你走开，但会回头看，确认你就在附近",
+      "en": "Moves away from you, but looks to make sure you are close by",
+      "source": "cdc-2022"
+    },
+    {
+      "id": "cdc-18-social-02",
+      "ageMonths": 18,
+      "domain": "social-emotional",
+      "zh": "会用手指着给你看有趣的东西",
+      "en": "Points to show you something interesting",
+      "source": "cdc-2022"
+    },
+    {
+      "id": "cdc-18-social-03",
+      "ageMonths": 18,
+      "domain": "social-emotional",
+      "zh": "会伸出手让你给他/她洗手",
+      "en": "Puts hands out for you to wash them",
+      "source": "cdc-2022"
+    },
+    {
+      "id": "cdc-18-social-04",
+      "ageMonths": 18,
+      "domain": "social-emotional",
+      "zh": "会和你一起看几页书",
+      "en": "Looks at a few pages in a book with you",
+      "source": "cdc-2022"
+    },
+    {
+      "id": "cdc-18-social-05",
+      "ageMonths": 18,
+      "domain": "social-emotional",
+      "zh": "你给他/她穿衣时会配合，比如把胳膊伸进袖子或抬起脚",
+      "en": "Helps you dress him by pushing arm through sleeve or lifting up foot",
+      "source": "cdc-2022"
+    },
+    {
+      "id": "cdc-18-lang-01",
+      "ageMonths": 18,
+      "domain": "language",
+      "zh": "除了“mama”“dada”之外，会尝试说三个或更多的词",
+      "en": "Tries to say three or more words besides \"mama\" or \"dada\"",
+      "source": "cdc-2022"
+    },
+    {
+      "id": "cdc-18-lang-02",
+      "ageMonths": 18,
+      "domain": "language",
+      "zh": "能听从不带任何手势的一步指令，比如你说“给我”时会把玩具递给你",
+      "en": "Follows one-step directions without any gestures, like giving you the toy when you say, \"Give it to me.\"",
+      "source": "cdc-2022"
+    },
+    {
+      "id": "cdc-18-cog-01",
+      "ageMonths": 18,
+      "domain": "cognitive",
+      "zh": "会模仿你做家务，比如用扫帚扫地",
+      "en": "Copies you doing chores, like sweeping with a broom",
+      "source": "cdc-2022"
+    },
+    {
+      "id": "cdc-18-cog-02",
+      "ageMonths": 18,
+      "domain": "cognitive",
+      "zh": "会用简单的方式玩玩具，比如推玩具车",
+      "en": "Plays with toys in a simple way, like pushing a toy car",
+      "source": "cdc-2022"
+    },
+    {
+      "id": "cdc-18-motor-01",
+      "ageMonths": 18,
+      "domain": "motor",
+      "zh": "不扶任何人或东西能独立行走",
+      "en": "Walks without holding on to anyone or anything",
+      "source": "cdc-2022"
+    },
+    {
+      "id": "cdc-18-motor-02",
+      "ageMonths": 18,
+      "domain": "motor",
+      "zh": "会涂鸦",
+      "en": "Scribbles",
+      "source": "cdc-2022"
+    },
+    {
+      "id": "cdc-18-motor-03",
+      "ageMonths": 18,
+      "domain": "motor",
+      "zh": "能用无盖杯喝水，有时可能会洒出来",
+      "en": "Drinks from a cup without a lid and may spill sometimes",
+      "source": "cdc-2022"
+    },
+    {
+      "id": "cdc-18-motor-04",
+      "ageMonths": 18,
+      "domain": "motor",
+      "zh": "能用手指自己吃东西",
+      "en": "Feeds himself with his fingers",
+      "source": "cdc-2022"
+    },
+    {
+      "id": "cdc-18-motor-05",
+      "ageMonths": 18,
+      "domain": "motor",
+      "zh": "会尝试使用勺子",
+      "en": "Tries to use a spoon",
+      "source": "cdc-2022"
+    },
+    {
+      "id": "cdc-18-motor-06",
+      "ageMonths": 18,
+      "domain": "motor",
+      "zh": "不需要帮助就能爬上、爬下沙发或椅子",
+      "en": "Climbs on and off a couch or chair without help",
+      "source": "cdc-2022"
+    },
+    {
+      "id": "cdc-24-social-01",
+      "ageMonths": 24,
+      "domain": "social-emotional",
+      "zh": "能注意到别人受伤或难过，比如有人哭时会停下来或露出难过的样子",
+      "en": "Notices when others are hurt or upset, like pausing or looking sad when someone is crying",
+      "source": "cdc-2022"
+    },
+    {
+      "id": "cdc-24-social-02",
+      "ageMonths": 24,
+      "domain": "social-emotional",
+      "zh": "在新情境中会看你的表情来决定怎么反应",
+      "en": "Looks at your face to see how to react in a new situation",
+      "source": "cdc-2022"
+    },
+    {
+      "id": "cdc-24-lang-01",
+      "ageMonths": 24,
+      "domain": "language",
+      "zh": "你问的时候能指出书里的东西，比如“小熊在哪里？”",
+      "en": "Points to things in a book when you ask, like \"Where is the bear?\"",
+      "source": "cdc-2022"
+    },
+    {
+      "id": "cdc-24-lang-02",
+      "ageMonths": 24,
+      "domain": "language",
+      "zh": "能把至少两个词连在一起说，比如“还要奶”（More milk.）",
+      "en": "Says at least two words together, like \"More milk.\"",
+      "source": "cdc-2022"
+    },
+    {
+      "id": "cdc-24-lang-03",
+      "ageMonths": 24,
+      "domain": "language",
+      "zh": "你让他/她指给你看时，能指出至少两个身体部位",
+      "en": "Points to at least two body parts when you ask him to show you",
+      "source": "cdc-2022"
+    },
+    {
+      "id": "cdc-24-lang-04",
+      "ageMonths": 24,
+      "domain": "language",
+      "zh": "除了挥手和用手指，还会用更多手势，比如飞吻或点头表示“是”",
+      "en": "Uses more gestures than just waving and pointing, like blowing a kiss or nodding yes",
+      "source": "cdc-2022"
+    },
+    {
+      "id": "cdc-24-cog-01",
+      "ageMonths": 24,
+      "domain": "cognitive",
+      "zh": "能一只手拿着东西、同时用另一只手操作；例如一手拿着容器、另一手把盖子拿掉",
+      "en": "Holds something in one hand while using the other hand; for example, holding a container and taking the lid off",
+      "source": "cdc-2022"
+    },
+    {
+      "id": "cdc-24-cog-02",
+      "ageMonths": 24,
+      "domain": "cognitive",
+      "zh": "会尝试使用玩具上的开关、旋钮或按钮",
+      "en": "Tries to use switches, knobs, or buttons on a toy",
+      "source": "cdc-2022"
+    },
+    {
+      "id": "cdc-24-cog-03",
+      "ageMonths": 24,
+      "domain": "cognitive",
+      "zh": "能同时玩不止一个玩具，比如把玩具食物放到玩具盘子上",
+      "en": "Plays with more than one toy at the same time, like putting toy food on a toy plate",
+      "source": "cdc-2022"
+    },
+    {
+      "id": "cdc-24-motor-01",
+      "ageMonths": 24,
+      "domain": "motor",
+      "zh": "会踢球",
+      "en": "Kicks a ball",
+      "source": "cdc-2022"
+    },
+    {
+      "id": "cdc-24-motor-02",
+      "ageMonths": 24,
+      "domain": "motor",
+      "zh": "会跑",
+      "en": "Runs",
+      "source": "cdc-2022"
+    },
+    {
+      "id": "cdc-24-motor-03",
+      "ageMonths": 24,
+      "domain": "motor",
+      "zh": "在有或没有帮助的情况下，能走（不是爬）上几级台阶",
+      "en": "Walks (not climbs) up a few stairs with or without help",
+      "source": "cdc-2022"
+    },
+    {
+      "id": "cdc-24-motor-04",
+      "ageMonths": 24,
+      "domain": "motor",
+      "zh": "能用勺子吃饭",
+      "en": "Eats with a spoon",
+      "source": "cdc-2022"
+    },
+    {
+      "id": "cdc-30-social-01",
+      "ageMonths": 30,
+      "domain": "social-emotional",
+      "zh": "会在其他孩子旁边玩，有时会和他们一起玩",
+      "en": "Plays next to other children and sometimes plays with them",
+      "source": "cdc-2022"
+    },
+    {
+      "id": "cdc-30-social-02",
+      "ageMonths": 30,
+      "domain": "social-emotional",
+      "zh": "会说“看我！”来向你展示自己会做的事",
+      "en": "Shows you what she can do by saying, \"Look at me!\"",
+      "source": "cdc-2022"
+    },
+    {
+      "id": "cdc-30-social-03",
+      "ageMonths": 30,
+      "domain": "social-emotional",
+      "zh": "被提醒时能遵循简单的日常程序，比如你说“该收拾啦”时会帮忙捡玩具",
+      "en": "Follows simple routines when told, like helping to pick up toys when you say, \"It's clean-up time.\"",
+      "source": "cdc-2022"
+    },
+    {
+      "id": "cdc-30-lang-01",
+      "ageMonths": 30,
+      "domain": "language",
+      "zh": "大约会说50个词",
+      "en": "Says about 50 words",
+      "source": "cdc-2022"
+    },
+    {
+      "id": "cdc-30-lang-02",
+      "ageMonths": 30,
+      "domain": "language",
+      "zh": "能把两个或更多的词连在一起说，其中包含一个动作词，比如“狗狗跑”（Doggie run）",
+      "en": "Says two or more words together, with one action word, like \"Doggie run\"",
+      "source": "cdc-2022"
+    },
+    {
+      "id": "cdc-30-lang-03",
+      "ageMonths": 30,
+      "domain": "language",
+      "zh": "你指着书问“这是什么？”时，能说出书中东西的名称",
+      "en": "Names things in a book when you point and ask, \"What is this?\"",
+      "source": "cdc-2022"
+    },
+    {
+      "id": "cdc-30-lang-04",
+      "ageMonths": 30,
+      "domain": "language",
+      "zh": "会说“我”“我们”这类词（原文为 \"I\"、\"me\"、\"we\"）",
+      "en": "Says words like \"I,\" \"me,\" or \"we\"",
+      "source": "cdc-2022"
+    },
+    {
+      "id": "cdc-30-cog-01",
+      "ageMonths": 30,
+      "domain": "cognitive",
+      "zh": "会用物品做假装游戏，比如把积木当作食物喂给娃娃",
+      "en": "Uses things to pretend, like feeding a block to a doll as if it were food",
+      "source": "cdc-2022"
+    },
+    {
+      "id": "cdc-30-cog-02",
+      "ageMonths": 30,
+      "domain": "cognitive",
+      "zh": "表现出简单的解决问题能力，比如站到小凳子上去够东西",
+      "en": "Shows simple problem-solving skills, like standing on a small stool to reach something",
+      "source": "cdc-2022"
+    },
+    {
+      "id": "cdc-30-cog-03",
+      "ageMonths": 30,
+      "domain": "cognitive",
+      "zh": "能听从两步指令，比如“把玩具放下，然后把门关上。”",
+      "en": "Follows two-step instructions like \"Put the toy down and close the door.\"",
+      "source": "cdc-2022"
+    },
+    {
+      "id": "cdc-30-cog-04",
+      "ageMonths": 30,
+      "domain": "cognitive",
+      "zh": "表现出至少认识一种颜色，比如你问“哪个是红色的？”时能指出红色蜡笔",
+      "en": "Shows he knows at least one color, like pointing to a red crayon when you ask, \"Which one is red?\"",
+      "source": "cdc-2022"
+    },
+    {
+      "id": "cdc-30-motor-01",
+      "ageMonths": 30,
+      "domain": "motor",
+      "zh": "会用手拧东西，比如转动门把手或拧开盖子",
+      "en": "Uses hands to twist things, like turning doorknobs or unscrewing lids",
+      "source": "cdc-2022"
+    },
+    {
+      "id": "cdc-30-motor-02",
+      "ageMonths": 30,
+      "domain": "motor",
+      "zh": "能自己脱下一些衣服，比如宽松的裤子或敞开的外套",
+      "en": "Takes some clothes off by himself, like loose pants or an open jacket",
+      "source": "cdc-2022"
+    },
+    {
+      "id": "cdc-30-motor-03",
+      "ageMonths": 30,
+      "domain": "motor",
+      "zh": "能双脚同时离地跳起",
+      "en": "Jumps off the ground with both feet",
+      "source": "cdc-2022"
+    },
+    {
+      "id": "cdc-30-motor-04",
+      "ageMonths": 30,
+      "domain": "motor",
+      "zh": "你给他/她读书时，能一次翻一页",
+      "en": "Turns book pages, one at a time, when you read to her",
+      "source": "cdc-2022"
+    },
+    {
+      "id": "cdc-36-social-01",
+      "ageMonths": 36,
+      "domain": "social-emotional",
+      "zh": "你离开后能在10分钟内平静下来，比如送去托育机构时",
+      "en": "Calms down within 10 minutes after you leave her, like at a childcare drop off",
+      "source": "cdc-2022"
+    },
+    {
+      "id": "cdc-36-social-02",
+      "ageMonths": 36,
+      "domain": "social-emotional",
+      "zh": "会注意到其他孩子，并加入他们一起玩",
+      "en": "Notices other children and joins them to play",
+      "source": "cdc-2022"
+    },
+    {
+      "id": "cdc-36-lang-01",
+      "ageMonths": 36,
+      "domain": "language",
+      "zh": "能和你对话，至少有两轮来回交流",
+      "en": "Talks with you in conversation using at least two back-and-forth exchanges",
+      "source": "cdc-2022"
+    },
+    {
+      "id": "cdc-36-lang-02",
+      "ageMonths": 36,
+      "domain": "language",
+      "zh": "会问“谁”“什么”“哪里”或“为什么”的问题，比如“妈妈/爸爸在哪里？”",
+      "en": "Asks \"who,\" \"what,\" \"where,\" or \"why\" questions, like \"Where is mommy/daddy?\"",
+      "source": "cdc-2022"
+    },
+    {
+      "id": "cdc-36-lang-03",
+      "ageMonths": 36,
+      "domain": "language",
+      "zh": "被问到时，能说出图片或书里正在发生的动作，比如“跑”“吃”或“玩”",
+      "en": "Says what action is happening in a picture or book when asked, like \"running,\" \"eating,\" or \"playing\"",
+      "source": "cdc-2022"
+    },
+    {
+      "id": "cdc-36-lang-04",
+      "ageMonths": 36,
+      "domain": "language",
+      "zh": "被问到时能说出自己的名字（first name）",
+      "en": "Says first name, when asked",
+      "source": "cdc-2022"
+    },
+    {
+      "id": "cdc-36-lang-05",
+      "ageMonths": 36,
+      "domain": "language",
+      "zh": "大多数时候说话清楚到别人能听懂",
+      "en": "Talks well enough for others to understand, most of the time",
+      "source": "cdc-2022"
+    },
+    {
+      "id": "cdc-36-cog-01",
+      "ageMonths": 36,
+      "domain": "cognitive",
+      "zh": "你示范之后，能画一个圆",
+      "en": "Draws a circle, when you show him how",
+      "source": "cdc-2022"
+    },
+    {
+      "id": "cdc-36-cog-02",
+      "ageMonths": 36,
+      "domain": "cognitive",
+      "zh": "你提醒之后，会避免碰触烫的东西，比如炉子",
+      "en": "Avoids touching hot objects, like a stove, when you warn her",
+      "source": "cdc-2022"
+    },
+    {
+      "id": "cdc-36-motor-01",
+      "ageMonths": 36,
+      "domain": "motor",
+      "zh": "能把东西串起来，比如大珠子或通心粉",
+      "en": "Strings items together, like large beads or macaroni",
+      "source": "cdc-2022"
+    },
+    {
+      "id": "cdc-36-motor-02",
+      "ageMonths": 36,
+      "domain": "motor",
+      "zh": "能自己穿上一些衣服，比如宽松的裤子或外套",
+      "en": "Puts on some clothes by himself, like loose pants or a jacket",
+      "source": "cdc-2022"
+    },
+    {
+      "id": "cdc-36-motor-03",
+      "ageMonths": 36,
+      "domain": "motor",
+      "zh": "会用叉子",
+      "en": "Uses a fork",
+      "source": "cdc-2022"
+    }
+  ]
+}
