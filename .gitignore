@@ -1,0 +1,18 @@
+node_modules/
+dist/
+.DS_Store
+*.log
+.env
+.env.*
+/data/
+apps/server/data/
+coverage/
+.vite/
+# native build outputs
+apps/player/android/app/build/
+apps/player/android/.gradle/
+apps/player/android/local.properties
+apps/player/ios/App/Pods/
+apps/player/ios/App/build/
+*.apk
+!release/*.apk
