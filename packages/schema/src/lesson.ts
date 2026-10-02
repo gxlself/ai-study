@@ -1,5 +1,7 @@
 import { z } from 'zod';
 import { AgeRange, Domain, Id, LText, SCHEMA_VERSION } from './common';
+import { ContrastPattern } from './activities';
+import { ConceptRef } from './lexicon';
 
 /** 一个步骤 = 一个活动插件实例 */
 export const ActivityStep = z.object({
@@ -21,6 +23,10 @@ export const OfflineActivity = z.object({
   /** 安全提示（小物件窒息、水、热、高处等） */
   safety: z.string().optional(),
   domains: z.array(Domain).optional(),
+  /** 引导式游戏的开放式问题，如"你觉得哪个更重？" */
+  question: z.string().optional(),
+  /** 难度三档：easier 更简单的玩法 / harder 更有挑战的玩法（默认即中档） */
+  levels: z.object({ easier: z.string().optional(), harder: z.string().optional() }).optional(),
 });
 export type OfflineActivity = z.infer<typeof OfflineActivity>;
 
@@ -41,6 +47,34 @@ export type ParentGuide = z.infer<typeof ParentGuide>;
 export const CoView = z.enum(['required', 'recommended', 'optional']);
 export type CoView = z.infer<typeof CoView>;
 
+/**
+ * 课程面向谁：
+ * - parent：家长指引课。屏幕给家长看（活动卡 / 儿歌学唱），看完屏幕变暗、去陪玩；不计入孩子屏幕时间。
+ *           6–17 月龄只提供这种课（循证依据：docs/research/evidence-review.md 第 9 节）。
+ * - child：亲子共看课（缺省）。面向孩子的慢节奏互动，必须/建议家长陪同；ageRange 起点不得小于 18 月。
+ */
+export const Audience = z.enum(['parent', 'child']);
+export type Audience = z.infer<typeof Audience>;
+
+/** 可打印的实体材料（后台"打印"生成 A4 页）：让 6–17 月龄的"可视化学习"发生在屏幕外 */
+export const Printable = z.discriminatedUnion('kind', [
+  z.object({
+    kind: z.literal('cards'),
+    title: z.string().min(1),
+    items: z.array(ConceptRef).min(1).max(24),
+    size: z.enum(['large', 'medium', 'small']).default('large'),
+    showText: z.boolean().default(true),
+    showEnglish: z.boolean().default(true),
+  }),
+  z.object({
+    kind: z.literal('contrast'),
+    title: z.string().min(1),
+    patterns: z.array(ContrastPattern).min(1).max(12),
+    palette: z.enum(['bw', 'bwr']).default('bw'),
+  }),
+]);
+export type Printable = z.infer<typeof Printable>;
+
 export const Lesson = z.object({
   schemaVersion: z.literal(SCHEMA_VERSION),
   /** 全局唯一：<packId 简写>.<stage>.<slug>，如 "core.s1.contrast-shapes" */
@@ -55,6 +89,9 @@ export const Lesson = z.object({
   /** 建议屏幕时长（分钟） */
   durationMin: z.number().min(1).max(20),
   coView: CoView,
+  /** 缺省 child */
+  audience: Audience.optional(),
+  printables: z.array(Printable).max(4).optional(),
   objectives: z.array(LText).min(1).max(5),
   cover: z
     .object({ concept: z.string().optional(), image: z.string().optional(), bg: z.string().optional() })
@@ -76,6 +113,9 @@ export interface LessonSummary {
   themeId?: string;
   durationMin: number;
   coView: CoView;
+  /** 缺省视为 child */
+  audience?: Audience;
+  hasPrintables?: boolean;
   cover?: { concept?: string; image?: string; bg?: string; imageUrl?: string };
   stepTypes: string[];
   tags?: string[];

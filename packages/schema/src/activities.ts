@@ -44,16 +44,12 @@ export type Scene = z.infer<typeof Scene>;
 
 // ---------------------------------------------------------------------------
 // 1. contrast 高对比视觉卡（6-9 月）：黑白 / 黑白红几何图形，缓慢移动
+export const ContrastPattern = z.enum([
+  'bullseye', 'stripes', 'checker', 'dots', 'face', 'spiral', 'zigzag',
+  'circle', 'square', 'triangle', 'star', 'heart',
+]);
 export const ContrastProps = z.object({
-  patterns: z
-    .array(
-      z.enum([
-        'bullseye', 'stripes', 'checker', 'dots', 'face', 'spiral', 'zigzag',
-        'circle', 'square', 'triangle', 'star', 'heart',
-      ]),
-    )
-    .min(1)
-    .max(12),
+  patterns: z.array(ContrastPattern).min(1).max(12),
   palette: z.enum(['bw', 'bwr']).default('bw'),
   motion: z.enum(['none', 'drift', 'pulse', 'rotate']).default('drift'),
   secondsPerPattern: z.number().min(3).max(20).default(8),
@@ -294,6 +290,33 @@ export const WebProps = z.object({
   allowFullscreen: z.boolean().default(false),
 });
 
+// 17. guide 亲子活动指引（面向家长）：读完步骤 → 屏幕变暗成陪玩计时器 → 记录宝宝反应
+//     6–17 月龄的课程只用 guide / song（屏幕给家长看，不给宝宝看；见 docs/research/evidence-review.md 第 9 节）
+export const GuideProps = z.object({
+  /** 本次陪玩的目标（给家长，≤80 字） */
+  goal: z.string().min(1).max(80),
+  materials: z.array(z.string()).max(8).default([]),
+  steps: z
+    .array(
+      z.object({
+        /** 家长做什么（≤80 字） */
+        text: z.string().min(1).max(80),
+        /** 家长可以说的话（只显示，不朗读） */
+        say: z.object({ zh: z.string().optional(), en: z.string().optional() }).optional(),
+        /** 示意图（给家长看） */
+        concept: ConceptRef.optional(),
+        image: z.string().optional(),
+      }),
+    )
+    .min(1)
+    .max(8),
+  /** 屏幕变暗后的陪玩计时（分钟）；0 = 不计时直接结束 */
+  playMin: z.number().min(0).max(30).default(5),
+  /** 观察要点：家长留意宝宝的哪些反应 */
+  observe: z.array(z.string().max(60)).max(4).optional(),
+  safety: z.string().optional(),
+});
+
 /** 内置活动 type → props schema */
 export const BUILTIN_ACTIVITY_PROPS = {
   contrast: ContrastProps,
@@ -312,6 +335,7 @@ export const BUILTIN_ACTIVITY_PROPS = {
   calm: CalmProps,
   video: VideoProps,
   web: WebProps,
+  guide: GuideProps,
 } as const;
 export type BuiltinActivityType = keyof typeof BUILTIN_ACTIVITY_PROPS;
 export const BUILTIN_ACTIVITY_TYPES = Object.keys(BUILTIN_ACTIVITY_PROPS) as BuiltinActivityType[];
@@ -333,7 +357,11 @@ export const BUILTIN_ACTIVITY_META: Record<BuiltinActivityType, { zh: string; en
   calm: { zh: '安静时刻', en: 'Calm', ageRange: [12, 36] },
   video: { zh: '视频', en: 'Video', ageRange: [18, 36] },
   web: { zh: '网页互动', en: 'Web', ageRange: [24, 36] },
+  guide: { zh: '亲子活动指引', en: 'Parent Guide', ageRange: [6, 36] },
 };
+
+/** 面向家长的活动类型（可用于 audience=parent 的课程） */
+export const PARENT_ACTIVITY_TYPES: readonly string[] = ['guide', 'song'];
 
 export type ContrastProps = z.infer<typeof ContrastProps>;
 export type WordCardsProps = z.infer<typeof WordCardsProps>;
@@ -353,3 +381,4 @@ export type MovementProps = z.infer<typeof MovementProps>;
 export type CalmProps = z.infer<typeof CalmProps>;
 export type VideoProps = z.infer<typeof VideoProps>;
 export type WebProps = z.infer<typeof WebProps>;
+export type GuideProps = z.infer<typeof GuideProps>;

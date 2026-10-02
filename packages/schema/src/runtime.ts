@@ -19,7 +19,13 @@ export const ChildScreenSettings = z.object({
   /** null = 跟随阶段默认值 */
   sessionMaxMin: z.number().min(1).max(30).nullable().default(null),
   dailyMaxMin: z.number().min(1).max(60).nullable().default(null),
-  windows: z.array(TimeWindow).default([{ start: '08:00', end: '19:30' }]),
+  /** 默认 08:00–18:30：睡前 1 小时与晚间不使用屏幕 */
+  windows: z.array(TimeWindow).default([{ start: '08:00', end: '18:30' }]),
+  /**
+   * 孩子侧屏幕模式：auto（缺省）= 按阶段 childScreen；parent-only = 只出家长指引课；
+   * co-view = 开启亲子共看课（18 月龄以下无效，强制 parent-only）
+   */
+  mode: z.enum(['auto', 'parent-only', 'co-view']).optional(),
   /** 开始前提醒"离屏幕远一点" */
   distanceReminder: z.boolean().default(true),
 });
@@ -50,7 +56,7 @@ export const ChildInput = z.object({
   screen: ChildScreenSettings.default({
     sessionMaxMin: null,
     dailyMaxMin: null,
-    windows: [{ start: '08:00', end: '19:30' }],
+    windows: [{ start: '08:00', end: '18:30' }],
     distanceReminder: true,
   }),
   plan: PlanOverrides.default({
@@ -79,6 +85,8 @@ export const SessionInput = z.object({
   /** 实际屏幕时长（秒，暂停不计） */
   durationSec: z.number().int().min(0).max(7200),
   completed: z.boolean(),
+  /** 家长指引课不计入孩子屏幕时间；缺省 child */
+  audience: z.enum(['parent', 'child']).optional(),
   stepsCompleted: z.number().int().min(0),
   stepsTotal: z.number().int().min(0),
   /** 客户端生成的去重 id（离线补传时防重复） */
@@ -106,6 +114,8 @@ export interface ScreenStatus {
   /** 下一个允许时间（本地 HH:mm），用于"休息啦"页面 */
   nextWindow?: string;
   coView: 'required' | 'recommended' | 'optional';
+  /** 当前生效的孩子侧屏幕模式（播放端据此显示"家长指引首页"或"亲子共看首页"） */
+  mode?: 'parent-only' | 'co-view';
 }
 
 export interface TodayPlanItem {

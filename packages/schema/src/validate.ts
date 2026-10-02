@@ -1,5 +1,5 @@
 import { z } from 'zod';
-import { BUILTIN_ACTIVITY_PROPS, type BuiltinActivityType } from './activities';
+import { BUILTIN_ACTIVITY_PROPS, PARENT_ACTIVITY_TYPES, type BuiltinActivityType } from './activities';
 import { Lesson } from './lesson';
 import type { Concept } from './lexicon';
 
@@ -64,6 +64,9 @@ function collectConceptIds(type: string, props: any): string[] {
     case 'movement':
       props.moves?.forEach((m: any) => add(m.concept));
       break;
+    case 'guide':
+      props.steps?.forEach((st: any) => add(st.concept));
+      break;
   }
   return ids;
 }
@@ -85,6 +88,17 @@ export function validateLesson(
   const lesson = parsed.data;
   const issues: ValidationIssue[] = [];
 
+  const audience = lesson.audience ?? 'child';
+  if (audience === 'child' && lesson.ageRange[0] < 18) {
+    issues.push({ path: 'ageRange', message: '面向孩子的课程起始月龄不得小于 18（18 月龄以下只提供家长指引课 audience=parent）', level: 'error' });
+  }
+  if (audience === 'parent') {
+    lesson.steps.forEach((st, i) => {
+      if (!PARENT_ACTIVITY_TYPES.includes(st.type)) {
+        issues.push({ path: `steps.${i}.type`, message: `家长指引课只能使用 ${PARENT_ACTIVITY_TYPES.join('/')}`, level: 'error' });
+      }
+    });
+  }
   if (lesson.ageRange[1] - lesson.ageRange[0] > 18) {
     issues.push({ path: 'ageRange', message: '月龄跨度过大（>18 个月），请拆分', level: 'warning' });
   }
@@ -140,6 +154,17 @@ export function validateLesson(
       issues.push({ path: `${p}.type`, message: `未知的内置活动 "${step.type}"`, level: 'error' });
     }
   });
+
+  if (opts.knownConcepts) {
+    lesson.printables?.forEach((pr, pi) => {
+      if (pr.kind !== 'cards') return;
+      pr.items.forEach((it) => {
+        if (typeof it === 'string' && !opts.knownConcepts!.has(it)) {
+          issues.push({ path: `printables.${pi}.items`, message: `词库中不存在概念 "${it}"`, level: 'error' });
+        }
+      });
+    });
+  }
 
   return { lesson, issues };
 }

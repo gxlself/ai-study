@@ -14,6 +14,11 @@ export const ScreenPolicy = z.object({
   /** 每天建议的课程数 */
   lessonsPerDay: z.number().int().min(1).max(4),
   coView: CoView,
+  /**
+   * 面向孩子的屏幕内容：none = 本阶段不提供（只有家长指引课）；optional = 默认关闭、家长可在后台开启；
+   * default = 默认开启。缺省视为 default。
+   */
+  childScreen: z.enum(['none', 'optional', 'default']).optional(),
 });
 export type ScreenPolicy = z.infer<typeof ScreenPolicy>;
 
