@@ -1,0 +1,430 @@
+.family-page,
+.family-editor,
+.family-route-content {
+  min-width: 0;
+  letter-spacing: 0;
+}
+
+.family-page h2,
+.family-page h3,
+.family-editor h3 {
+  margin: 0 0 12px;
+  font-size: 18px;
+  line-height: 1.5;
+}
+
+.family-page h3,
+.family-editor h3 {
+  font-size: 16px;
+}
+
+.family-page p,
+.family-page li,
+.family-editor .ant-form-item-extra {
+  overflow-wrap: anywhere;
+}
+
+.family-page .toolbar,
+.family-editor .toolbar {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 12px;
+}
+
+.family-page .page-section + .page-section,
+.family-page .two-column + .page-section,
+.family-page .page-section + .two-column {
+  margin-top: 24px;
+}
+
+.family-page .stacked,
+.family-editor .stacked {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  min-width: 0;
+}
+
+.family-route-select {
+  width: 280px;
+  max-width: 100%;
+}
+
+.family-dashboard-metrics {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.family-page .metric strong {
+  overflow-wrap: anywhere;
+}
+
+.family-editor-actions {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  gap: 12px;
+  margin: 0;
+}
+
+.family-profile-heading,
+.family-section-heading,
+.family-lesson-heading {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.family-section-heading {
+  justify-content: space-between;
+  margin-bottom: 16px;
+}
+
+.family-section-heading h2,
+.family-section-heading h3,
+.family-profile-heading h2 {
+  margin: 0;
+}
+
+.family-profile-heading > .stacked {
+  flex: 1;
+  gap: 4px;
+}
+.family-age-text { display: inline-block; white-space: nowrap; }
+
+.family-profile-heading .ant-avatar {
+  flex-shrink: 0;
+}
+
+.family-page .ant-btn-link,
+.family-page .family-wrap-button {
+  height: auto;
+  min-height: 32px;
+  white-space: normal;
+  text-align: start;
+  overflow-wrap: anywhere;
+}
+
+.family-page .ant-btn-link > span {
+  white-space: normal;
+}
+
+.family-page .ant-btn-link {
+  padding-inline: 0;
+}
+
+.family-child-item,
+.family-lesson-item,
+.family-theme-item {
+  min-width: 0;
+  padding: 18px;
+  border: 1px solid #e4e7e5;
+  border-radius: 8px;
+  background: #fff;
+}
+
+.family-page .item-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 270px), 1fr));
+  gap: 16px;
+}
+
+.family-lesson-cover {
+  width: 56px;
+  height: 56px;
+  object-fit: contain;
+  flex-shrink: 0;
+}
+
+.family-lesson-icon {
+  display: grid;
+  place-items: center;
+  color: #417c70;
+  background: #edf5f2;
+  border-radius: 8px;
+  font-size: 26px;
+}
+
+.family-lesson-heading > div:last-child {
+  min-width: 0;
+  flex: 1;
+}
+
+.family-stat-caption,
+.family-editor-note {
+  margin-block: 8px;
+  color: #626c67;
+  font-size: 13px;
+}
+
+.family-screen-chart {
+  margin: 0;
+  min-width: 0;
+}
+
+.family-chart-columns {
+  display: flex;
+  gap: 8px;
+  min-height: 200px;
+  margin-top: 12px;
+  overflow-x: auto;
+}
+
+.family-chart-column {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex: 1 0 30px;
+  min-width: 30px;
+  gap: 6px;
+  font-size: 12px;
+}
+
+.family-chart-track {
+  display: flex;
+  align-items: end;
+  justify-content: center;
+  width: 100%;
+  height: 144px;
+  border-bottom: 1px solid #dde5e1;
+  background: repeating-linear-gradient(to top, transparent 0, transparent 35px, #eef2ef 35px, #eef2ef 36px);
+}
+
+.family-chart-bar {
+  width: 65%;
+  max-width: 42px;
+  background: #459982;
+  border-radius: 4px 4px 0 0;
+}
+
+.family-chart-value {
+  min-height: 18px;
+  font-variant-numeric: tabular-nums;
+}
+
+.family-chart-date {
+  color: #626c67;
+}
+
+.family-domain-strip {
+  display: flex;
+  overflow: hidden;
+  height: 16px;
+  margin-block: 8px 16px;
+  border-radius: 4px;
+}
+
+.family-domain-list {
+  display: grid;
+  gap: 10px;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.family-domain-list li {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.family-swatch {
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  margin-right: 8px;
+  border-radius: 2px;
+}
+
+.family-editor .ant-select,
+.family-editor .ant-picker,
+.family-editor .ant-input-number {
+  width: 100%;
+}
+
+.family-editor-section {
+  padding-block: 8px 20px;
+  margin-bottom: 16px;
+  border-bottom: 1px solid #e4e7e5;
+}
+
+.family-editor-section:last-child {
+  border-bottom: 0;
+}
+
+.family-form-grid,
+.family-policy-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0 16px;
+}
+
+.family-time-window {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr) 32px;
+  gap: 12px;
+  align-items: center;
+}
+
+.family-time-window .ant-form-item {
+  margin-bottom: 12px;
+}
+
+.family-avatar-option {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.family-policy-grid {
+  gap: 12px 24px;
+  margin: 0 0 20px;
+}
+
+.family-policy-grid > div {
+  min-width: 0;
+}
+
+.family-policy-grid dt {
+  color: #626c67;
+  font-size: 13px;
+}
+
+.family-policy-grid dd {
+  margin: 4px 0 0;
+}
+
+.family-theme-lessons {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+.family-theme-lessons li {
+  border-top: 1px solid #edf0ee;
+  padding-block: 6px;
+}
+
+.family-milestone-summary {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(115px, 1fr));
+  gap: 16px;
+}
+
+.family-milestone-summary .ant-btn {
+  width: 100%;
+  min-height: 44px;
+  height: auto;
+  white-space: normal;
+}
+
+.family-milestone-summary .ant-btn > span {
+  white-space: normal;
+}
+
+.family-observation {
+  padding-block: 20px;
+  border-bottom: 1px solid #e4e7e5;
+}
+
+.family-observation:first-child {
+  padding-top: 0;
+}
+
+.family-observation .ant-radio-group {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px 0;
+}
+
+.family-observation .ant-radio-button-wrapper {
+  padding-inline: 12px;
+}
+
+.family-observation-fields {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 160px;
+  gap: 12px;
+  align-items: start;
+  margin-top: 16px;
+}
+
+.family-field-label {
+  display: block;
+  margin-bottom: 6px;
+  font-size: 13px;
+  color: #626c67;
+}
+
+.family-observation-fields .ant-picker {
+  width: 100%;
+}
+
+.family-session-filter .ant-picker-range {
+  width: 310px;
+  max-width: 100%;
+}
+
+.family-session-limit {
+  width: 130px;
+}
+
+.family-session-progress {
+  width: 150px;
+}
+
+.family-page .safe-table {
+  min-width: 0;
+  max-width: 100%;
+  overflow-x: auto;
+}
+
+.family-page .ant-alert,
+.family-editor .ant-alert {
+  margin-block: 12px;
+}
+
+.family-offline-steps {
+  padding-left: 22px;
+  margin-block: 0;
+}
+
+.family-offline-steps li + li {
+  margin-top: 8px;
+}
+
+@media (max-width: 640px) {
+  .family-page .two-column,
+  .family-form-grid,
+  .family-observation-fields {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .family-page .metric-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .family-child-item,
+  .family-lesson-item,
+  .family-theme-item {
+    padding: 14px;
+  }
+
+  .family-section-heading {
+    align-items: start;
+  }
+
+  .family-observation-fields .ant-picker {
+    max-width: 200px;
+  }
+
+  .family-policy-grid {
+    gap: 12px;
+  }
+
+  .family-editor .ant-drawer-footer .toolbar {
+    justify-content: flex-end;
+  }
+}

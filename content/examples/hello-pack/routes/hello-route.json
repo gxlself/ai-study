@@ -1,0 +1,78 @@
+{
+  "schemaVersion": 1,
+  "id": "sprout.hello.route",
+  "title": {
+    "zh": "形状小旅程",
+    "en": "A Little Shape Journey"
+  },
+  "stages": [
+    {
+      "id": "hello.parent",
+      "title": {
+        "zh": "放下屏幕找形状",
+        "en": "Explore Real Shapes"
+      },
+      "ageRange": [18, 23],
+      "focus": [
+        {
+          "zh": "家长准备实体卡片，陪宝宝观察生活中的形状。",
+          "en": "Prepare real cards and notice shapes in everyday objects."
+        }
+      ],
+      "screen": {
+        "sessionMaxMin": 8,
+        "dailyMaxMin": 10,
+        "lessonsPerDay": 1,
+        "coView": "required",
+        "childScreen": "optional"
+      },
+      "themes": [
+        {
+          "id": "hello.parent.shapes",
+          "title": {
+            "zh": "生活里的圆圆方方",
+            "en": "Shapes Around Us"
+          },
+          "weeks": 1,
+          "domains": ["cognition", "math"],
+          "lessons": ["hello.parent.shape-hunt"],
+          "offlineFocus": ["宝宝看实体卡片和真实物品，不看家长的指引屏幕。"]
+        }
+      ]
+    },
+    {
+      "id": "hello.s1",
+      "title": {
+        "zh": "一起发现形状",
+        "en": "Discover Shapes Together"
+      },
+      "ageRange": [24, 26],
+      "focus": [
+        {
+          "zh": "观察简单形状，一起点数。",
+          "en": "Notice simple shapes and count together."
+        }
+      ],
+      "screen": {
+        "sessionMaxMin": 2,
+        "dailyMaxMin": 2,
+        "lessonsPerDay": 1,
+        "coView": "required",
+        "childScreen": "default"
+      },
+      "themes": [
+        {
+          "id": "hello.shapes",
+          "title": {
+            "zh": "圆圆方方",
+            "en": "Circles and Squares"
+          },
+          "weeks": 1,
+          "domains": ["cognition", "math"],
+          "lessons": ["hello.s1.shapes"],
+          "offlineFocus": ["到生活中观察圆形与方形，不要求宝宝记住名称。"]
+        }
+      ]
+    }
+  ]
+}

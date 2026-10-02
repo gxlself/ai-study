@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" role="img" aria-label="An ordinary comb">
+  <path d="M53 110V164M68 110V164M83 110V164M98 110V164M113 110V164M128 110V164M143 110V164M158 110V164M173 110V164M188 110V164M203 110V164" fill="none" stroke="#AD5088" stroke-width="10" stroke-linecap="round"/>
+  <path d="M53 110V161M68 110V161M83 110V161M98 110V161M113 110V161M128 110V161M143 110V161M158 110V161M173 110V161M188 110V161M203 110V161" fill="none" stroke="#D96BB0" stroke-width="6" stroke-linecap="round"/>
+  <rect x="43" y="88" width="170" height="29" rx="10" fill="#D96BB0" stroke="#AD5088" stroke-width="4"/>
+  <path d="M57 99H198" fill="none" stroke="#EDACD4" stroke-width="5" stroke-linecap="round"/>
+</svg>

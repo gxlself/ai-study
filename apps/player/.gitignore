@@ -1,0 +1,4 @@
+dist/
+test-artifacts/
+public/bundled/
+.vite/

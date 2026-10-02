@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" role="img" aria-label="A clump of grass">
+  <path d="M75 207Q85 154 62 108Q59 102 66 106Q102 130 113 177Q108 122 123 61Q125 55 128 62Q145 119 137 178Q158 110 199 83Q205 79 201 87Q174 141 180 207Z" fill="#98C968" stroke="#609448" stroke-width="4" stroke-linejoin="round"/>
+  <path d="M49 206Q61 170 44 127Q41 120 48 124Q87 144 101 194Q104 155 91 135Q87 129 95 132Q132 150 139 193Q165 147 208 133Q215 131 210 137Q181 167 187 207Z" fill="#6C9A3B" stroke="#548132" stroke-width="4" stroke-linejoin="round"/>
+  <path d="M76 189L65 161M125 180L126 106M166 190L184 162" fill="none" stroke="#B2D889" stroke-width="5" stroke-linecap="round"/>
+</svg>

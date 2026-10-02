@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 240" role="img" aria-label="拍拍手">
+  <g fill="#efba92" stroke="#ce956f" stroke-width="5" stroke-linejoin="round">
+    <path d="M100 206c-34-4-47-26-45-55l-8-37c-3-14 14-17 19-3l7 19V69c0-15 20-16 20 0V51c0-15 20-15 20 0v19c1-15 20-14 20 1v68c0 36-5 68-33 67z"/>
+    <path d="M153 207c31-6 47-30 43-57l5-36c2-14-15-17-20-3l-6 18V68c0-15-20-16-20 0V51c0-15-20-15-20 0v20c-2-15-20-14-20 1v69c0 34 8 64 38 66z"/>
+  </g>
+  <path d="m76 28-8-12m48 7V9m48 19 8-12" fill="none" stroke="#f2b134" stroke-width="7" stroke-linecap="round"/>
+</svg>

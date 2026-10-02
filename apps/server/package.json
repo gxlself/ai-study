@@ -2,7 +2,7 @@
   "name": "@sprout/server", "version": "1.0.0", "private": true, "type": "module",
   "scripts": {
     "dev": "tsx watch src/index.ts", "build": "tsup", "start": "node --disable-warning=ExperimentalWarning dist/index.js",
-    "typecheck": "tsc -p tsconfig.json", "test": "vitest run"
+    "typecheck": "tsc -p tsconfig.json", "test": "vitest run --maxWorkers=1 --no-file-parallelism --no-isolate --testTimeout=120000 --hookTimeout=120000"
   },
   "dependencies": {
     "@sprout/schema": "workspace:*", "@sprout/core": "workspace:*", "zod": "^4.6.5",

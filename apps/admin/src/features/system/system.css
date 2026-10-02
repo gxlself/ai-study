@@ -1,0 +1,262 @@
+.system-page {
+  min-width: 0;
+}
+
+.system-page .toolbar,
+.system-inline,
+.system-item-header,
+.system-actions,
+.system-section-heading {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.system-page .toolbar,
+.system-section-heading,
+.system-item-header {
+  justify-content: space-between;
+}
+
+.system-section-heading {
+  margin-bottom: 20px;
+}
+
+.system-section-heading h2,
+.system-item h3,
+.system-builtin h3 {
+  margin: 0;
+  font-size: 17px;
+  line-height: 1.5;
+  letter-spacing: 0;
+}
+
+.system-page .page-section + .page-section {
+  margin-top: 28px;
+}
+
+.system-page .stacked,
+.system-dialog .stacked {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.system-page .item-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 330px), 1fr));
+  gap: 16px;
+}
+
+.system-item {
+  min-width: 0;
+  border: 1px solid #dce3e7;
+  border-radius: 8px;
+  padding: 20px;
+  background: #fff;
+}
+
+.system-item-header {
+  align-items: flex-start;
+}
+
+.system-item-header > :first-child {
+  min-width: 0;
+  flex: 1;
+}
+
+.system-item p,
+.system-credit-list p {
+  margin: 8px 0;
+}
+
+.system-metadata {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px 20px;
+  margin: 20px 0;
+}
+
+.system-metadata dt {
+  font-size: 13px;
+  color: #65717a;
+}
+
+.system-metadata dd {
+  margin: 4px 0 0;
+  overflow-wrap: anywhere;
+}
+
+.system-actions {
+  gap: 8px;
+}
+
+.system-wrap,
+.system-page a,
+.system-page .ant-tag,
+.system-dialog .ant-tag,
+.system-dialog .ant-upload-list-item-name {
+  overflow-wrap: anywhere;
+  white-space: normal;
+  min-width: 0;
+}
+
+.system-permissions,
+.system-issue-list,
+.system-credit-list,
+.system-activity-list {
+  list-style: none;
+  margin: 12px 0 0;
+  padding: 0;
+}
+
+.system-credit-list li,
+.system-activity-list li {
+  padding: 12px 0;
+  border-bottom: 1px solid #e7ebee;
+}
+
+.system-credit-list li:last-child,
+.system-activity-list li:last-child {
+  border-bottom: 0;
+}
+
+.system-issue-list li,
+.system-permissions li {
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+  margin: 12px 0;
+}
+
+.system-issue-list .ant-tag {
+  flex-shrink: 0;
+}
+
+.system-permissions li > span:last-child,
+.system-issue-list li > div {
+  min-width: 0;
+}
+
+.system-confirm-copy {
+  max-width: 290px;
+  overflow-wrap: anywhere;
+}
+
+.system-builtin-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 180px), 1fr));
+  gap: 0 20px;
+}
+
+.system-builtin {
+  padding: 16px 0;
+  min-width: 0;
+  border-bottom: 1px solid #e7ebee;
+}
+
+.system-builtin h3 {
+  font-size: 15px;
+}
+
+.system-builtin p {
+  margin: 6px 0;
+}
+
+.system-page .safe-table {
+  overflow-x: auto;
+  max-width: 100%;
+}
+
+.system-page .system-mobile-devices {
+  display: none;
+}
+
+.system-form {
+  width: 100%;
+  max-width: 680px;
+}
+
+.system-page .two-column {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 20px;
+}
+
+.system-full-width {
+  width: 100%;
+}
+
+.system-lan-address {
+  display: block;
+  padding: 12px 0;
+  color: #24644e;
+  font-size: 16px;
+  line-height: 1.6;
+  overflow-wrap: anywhere;
+}
+
+.system-steps {
+  padding-left: 22px;
+  line-height: 1.9;
+}
+
+.system-audio {
+  width: 100%;
+  max-width: 440px;
+  height: 42px;
+}
+
+.system-dialog .ant-modal-footer {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  gap: 8px;
+}
+
+.system-dialog .ant-modal-footer > .ant-btn + .ant-btn {
+  margin-inline-start: 0;
+}
+
+.system-page details > summary {
+  cursor: pointer;
+  padding: 12px 0;
+  overflow-wrap: anywhere;
+}
+
+.system-page .ant-alert,
+.system-dialog .ant-alert {
+  text-align: left;
+}
+
+@media (max-width: 700px) {
+  .system-page .two-column {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 0;
+  }
+
+  .system-desktop-devices {
+    display: none;
+  }
+
+  .system-page .system-mobile-devices {
+    display: grid;
+  }
+
+  .system-item {
+    padding: 16px;
+  }
+
+  .system-metadata {
+    column-gap: 12px;
+  }
+
+  .system-actions .ant-btn {
+    min-height: 36px;
+  }
+
+  .system-section-heading {
+    align-items: flex-start;
+  }
+}

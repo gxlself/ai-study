@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" role="img" aria-label="A child holding a glass to their lips and drinking water">
+  <path d="M95 137H145Q163 147 165 170L170 212H76L81 168Q83 147 95 137Z" fill="#F08A5D" stroke="#BD674D" stroke-width="3" stroke-linejoin="round"/>
+  <path d="M87 161L89 188M150 157L180 177L184 140" fill="none" stroke="#D6A13C" stroke-width="19" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M87 161L89 188M150 157L180 177L184 140" fill="none" stroke="#FFD15C" stroke-width="14" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M108 124V141Q119 149 131 141V123" fill="#FFD15C" stroke="#D6A13C" stroke-width="3"/>
+  <path d="M81 82Q82 48 112 48Q145 46 150 78L152 89L162 97Q165 102 154 105L153 115Q148 132 122 132Q88 128 84 105Z" fill="#FFD15C" stroke="#D6A13C" stroke-width="3" stroke-linejoin="round"/>
+  <path d="M81 103C65 78 76 44 107 41Q138 36 153 65Q137 69 120 59Q111 84 88 85V103Z" fill="#725447"/>
+  <path d="M135 86V89" fill="none" stroke="#5D463B" stroke-width="4" stroke-linecap="round"/>
+  <path d="M147 110H154" fill="none" stroke="#9C5946" stroke-width="3" stroke-linecap="round"/>
+  <g transform="rotate(-28 152 109)" stroke-linejoin="round">
+    <path d="M152 109H190L187 156Q187 162 181 162H163Q157 162 157 156Z" fill="#DFF1FB" fill-opacity=".9" stroke="#75A9BD" stroke-width="3"/>
+    <path d="M155 133L157 155Q157 160 163 160H181Q185 160 185 155L187 133Z" fill="#9CD9F2"/>
+    <ellipse cx="171" cy="133" rx="16" ry="4" fill="#C8ECFA" stroke="#75BDDA" stroke-width="2"/>
+    <ellipse cx="171" cy="109" rx="19" ry="5" fill="#EFFAFF" stroke="#75A9BD" stroke-width="3"/>
+    <path d="M163 142V153" fill="none" stroke="#FFFDF8" stroke-width="4" stroke-linecap="round"/>
+  </g>
+  <path d="M184 150Q174 150 175 142Q176 137 182 137L191 136" fill="none" stroke="#D6A13C" stroke-width="12" stroke-linecap="round"/>
+  <path d="M184 150Q174 150 175 142Q176 137 182 137L191 136" fill="none" stroke="#FFD15C" stroke-width="8" stroke-linecap="round"/>
+</svg>

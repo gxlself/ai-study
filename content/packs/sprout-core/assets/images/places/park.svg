@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" role="img" aria-label="A park with a small tree and a bench">
+  <path d="M40 208H216" fill="none" stroke="#98C968" stroke-width="7" stroke-linecap="round"/>
+  <path d="M76 125H92V204H76Z" fill="#B77848" stroke="#925D3B" stroke-width="4" stroke-linejoin="round"/>
+  <path d="M83 144L101 126" fill="none" stroke="#925D3B" stroke-width="7" stroke-linecap="round"/>
+  <path d="M58 83C52 58 70 46 87 48C108 48 120 64 115 83C136 88 141 115 123 130C109 142 92 136 85 132C68 144 44 134 40 115C36 99 44 88 58 83Z" fill="#98C968" stroke="#609448" stroke-width="4" stroke-linejoin="round"/>
+  <path d="M53 114Q65 129 82 122Q100 135 118 116" fill="none" stroke="#77B77D" stroke-width="10" stroke-linecap="round"/>
+  <path d="M138 141V204M199 141V204" fill="none" stroke="#617B82" stroke-width="8" stroke-linecap="round"/>
+  <g fill="#E7B783" stroke="#B77848" stroke-width="3">
+    <rect x="126" y="139" width="86" height="12" rx="4"/>
+    <rect x="126" y="156" width="86" height="12" rx="4"/>
+    <rect x="120" y="176" width="98" height="12" rx="4"/>
+  </g>
+</svg>

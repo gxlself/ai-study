@@ -1,0 +1,71 @@
+{
+  "schemaVersion": 1,
+  "id": "hello.s1.shapes",
+  "title": {
+    "zh": "圆圆方方",
+    "en": "Circles and Squares"
+  },
+  "ageRange": [24, 26],
+  "audience": "child",
+  "domains": ["cognition", "math"],
+  "themeId": "hello.shapes",
+  "durationMin": 1,
+  "coView": "required",
+  "objectives": [
+    {
+      "zh": "和家长一起观察圆形与方形。",
+      "en": "Notice circles and squares together."
+    },
+    {
+      "zh": "一起点数两个圆形。",
+      "en": "Count two circles together."
+    }
+  ],
+  "cover": {
+    "concept": "hello.circle",
+    "image": "assets/images/shapes/circle.svg",
+    "bg": "paper"
+  },
+  "parentGuide": {
+    "intro": "陪宝宝看两种形状，说一说，再一起点数两个圆形。宝宝不想继续时随时结束，离开屏幕找真实的形状。",
+    "tips": [
+      "留出等待时间，接受指一指、看一看或说一说的回应。",
+      "不要求答对，也不要求重复跟读。"
+    ]
+  },
+  "offline": [
+    {
+      "title": "在身边找形状",
+      "minutes": 2,
+      "materials": [],
+      "steps": [
+        "关掉屏幕，和宝宝一起观察房间里固定摆放的物品。",
+        "家长指一指圆形与方形的轮廓，邀请宝宝用手势回应。"
+      ],
+      "safety": "成人全程陪伴。只观察或指认，不提供小零件，不攀爬或触碰插座、热物和易碎物。",
+      "domains": ["cognition", "math"]
+    }
+  ],
+  "steps": [
+    {
+      "type": "word-cards",
+      "parentTip": "慢慢看，等宝宝有回应后再翻页。",
+      "props": {
+        "items": ["hello.circle", "hello.square"],
+        "speak": "name+phrase"
+      }
+    },
+    {
+      "type": "count",
+      "parentTip": "一起指一个、数一个，数完就去找真实的形状。",
+      "props": {
+        "rounds": [
+          {
+            "item": "hello.circle",
+            "count": 2
+          }
+        ]
+      }
+    }
+  ]
+}

@@ -1,0 +1,35 @@
+{
+  "schemaVersion": 1,
+  "concepts": [
+    {
+      "id": "hello.circle",
+      "category": "shapes",
+      "zh": "圆形",
+      "en": "circle",
+      "measure": "个",
+      "plural": "circles",
+      "image": "assets/images/shapes/circle.svg",
+      "phrase": {
+        "zh": "圆圆的形状。",
+        "en": "A circle is round."
+      },
+      "color": "#3583B8",
+      "ageRange": [24, 26]
+    },
+    {
+      "id": "hello.square",
+      "category": "shapes",
+      "zh": "方形",
+      "en": "square",
+      "measure": "个",
+      "plural": "squares",
+      "image": "assets/images/shapes/square.svg",
+      "phrase": {
+        "zh": "方方的形状。",
+        "en": "This is a square."
+      },
+      "color": "#E06B65",
+      "ageRange": [24, 26]
+    }
+  ]
+}

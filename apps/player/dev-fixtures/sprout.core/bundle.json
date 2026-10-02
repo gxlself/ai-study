@@ -1,0 +1,462 @@
+{
+  "schemaVersion": 1,
+  "builtAt": "2026-10-02T00:00:00.000Z",
+  "manifest": {
+    "schemaVersion": 1,
+    "id": "sprout.core",
+    "version": "0.0.0-dev.fixture",
+    "name": {
+      "zh": "芽芽成长开发夹具（非生产内容）",
+      "en": "Sprout Development Fixture (Not Production Content)"
+    },
+    "description": {
+      "zh": "仅用于离线播放流程测试。全部文字与图形为本任务编写的开发夹具，非生产内容；月龄、目标和短时限制是测试配置，不是课程审定或健康建议。",
+      "en": "Development-only text and drawings for offline player tests. Not production lessons, developmental assessments, or screen-time advice."
+    },
+    "author": "Sprout 播放端开发任务",
+    "license": "开发测试用途；非第三方素材授权声明",
+    "ageRange": [6, 36],
+    "lexicon": "lexicon.json",
+    "routes": ["routes/dev-fixture.json"],
+    "lessonsDir": "lessons",
+    "requires": { "sdk": "^1.0.0", "plugins": {} },
+    "credits": [
+      {
+        "name": "播放端开发夹具文字与六幅自绘 SVG",
+        "license": "本任务内编写，仅标识开发测试用途",
+        "note": "非生产内容；无第三方素材、录音或研究引文，不宣称任何外部机构审定。builtAt 为固定测试时间。"
+      }
+    ],
+    "cover": "assets/apple.svg",
+    "tags": ["dev-fixture", "非生产内容"]
+  },
+  "lexicon": {
+    "schemaVersion": 1,
+    "concepts": [
+      {
+        "id": "apple",
+        "category": "fruits",
+        "zh": "苹果",
+        "en": "apple",
+        "measure": "个",
+        "plural": "apples",
+        "image": "assets/apple.svg",
+        "ageRange": [6, 36],
+        "tags": ["dev-fixture", "非生产内容"]
+      },
+      {
+        "id": "ball",
+        "category": "toys",
+        "zh": "球",
+        "en": "ball",
+        "measure": "个",
+        "plural": "balls",
+        "image": "assets/ball.svg",
+        "ageRange": [6, 36],
+        "tags": ["dev-fixture", "非生产内容"]
+      },
+      {
+        "id": "block",
+        "category": "toys",
+        "zh": "积木",
+        "en": "block",
+        "measure": "块",
+        "plural": "blocks",
+        "image": "assets/block.svg",
+        "ageRange": [6, 36],
+        "tags": ["dev-fixture", "非生产内容"]
+      },
+      {
+        "id": "sun",
+        "category": "nature",
+        "zh": "太阳",
+        "en": "sun",
+        "measure": "个",
+        "plural": "suns",
+        "image": "assets/sun.svg",
+        "ageRange": [6, 36],
+        "tags": ["dev-fixture", "非生产内容"]
+      },
+      {
+        "id": "moon",
+        "category": "nature",
+        "zh": "月亮",
+        "en": "moon",
+        "measure": "个",
+        "plural": "moons",
+        "image": "assets/moon.svg",
+        "ageRange": [6, 36],
+        "tags": ["dev-fixture", "非生产内容"]
+      },
+      {
+        "id": "flower",
+        "category": "nature",
+        "zh": "花",
+        "en": "flower",
+        "measure": "朵",
+        "plural": "flowers",
+        "image": "assets/flower.svg",
+        "ageRange": [6, 36],
+        "tags": ["dev-fixture", "非生产内容"]
+      }
+    ]
+  },
+  "routes": [
+    {
+      "schemaVersion": 1,
+      "id": "sprout.core.route",
+      "title": {
+        "zh": "一起看看玩玩",
+        "en": "Look and Play Together"
+      },
+      "description": {
+        "zh": "小月龄由家长读完指引后关屏陪玩；亲子共看需家长全程陪同，随时可以停下来玩真实的玩具。",
+        "en": "For younger babies, adults read then put the screen away to play. Co-viewing always needs an adult and can stop at any time."
+      },
+      "stages": [
+        {
+          "id": "core.fixture.s1",
+          "title": { "zh": "面对面玩", "en": "Face-to-Face Play" },
+          "ageRange": [6, 8],
+          "focus": [{ "zh": "屏幕只给家长看，读完后面对面陪玩", "en": "Adults read, put the screen away, and play face to face" }],
+          "screen": { "sessionMaxMin": 1, "dailyMaxMin": 1, "lessonsPerDay": 1, "coView": "required", "childScreen": "none" },
+          "themes": [
+            {
+              "id": "core.fixture.s1.things",
+              "title": { "zh": "身边的东西", "en": "Familiar Things" },
+              "weeks": 1,
+              "domains": ["language", "english"],
+              "lessons": ["core.fixture.parent-guide"],
+              "offlineFocus": ["宝宝不看屏幕；家长关屏后拿实体卡和大号软球陪玩。"]
+            }
+          ]
+        },
+        {
+          "id": "core.fixture.s2",
+          "title": { "zh": "一起回应", "en": "Respond Together" },
+          "ageRange": [9, 11],
+          "focus": [{ "zh": "家长读完指引后关屏，跟随宝宝的目光和手势", "en": "Adults read then put the screen away and follow the baby's gaze and gestures" }],
+          "screen": { "sessionMaxMin": 1, "dailyMaxMin": 1, "lessonsPerDay": 1, "coView": "required", "childScreen": "none" },
+          "themes": [
+            {
+              "id": "core.fixture.s2.respond",
+              "title": { "zh": "你来我往", "en": "Back and Forth" },
+              "weeks": 1,
+              "domains": ["language", "cognition"],
+              "lessons": ["core.fixture.parent-guide"],
+              "offlineFocus": ["家长用实体卡和真实玩具说话、等待，不让宝宝看屏幕。"]
+            }
+          ]
+        },
+        {
+          "id": "core.fixture.s3",
+          "title": { "zh": "说说真东西", "en": "Name Real Things" },
+          "ageRange": [12, 17],
+          "focus": [{ "zh": "家长读完后拿实体卡说名称，不要求宝宝看屏幕", "en": "Adults read then name things using printed cards, not a screen" }],
+          "screen": { "sessionMaxMin": 1, "dailyMaxMin": 1, "lessonsPerDay": 1, "coView": "required", "childScreen": "none" },
+          "themes": [
+            {
+              "id": "core.fixture.s3.play",
+              "title": { "zh": "卡片和玩具", "en": "Cards and Toys" },
+              "weeks": 1,
+              "domains": ["language", "english", "motor"],
+              "lessons": ["core.fixture.parent-guide"],
+              "offlineFocus": ["关屏后由家长手持实体卡陪玩，可以只看不答。"]
+            }
+          ]
+        },
+        {
+          "id": "core.fixture.s4",
+          "title": { "zh": "陪玩为主", "en": "Play Comes First" },
+          "ageRange": [18, 23],
+          "focus": [{ "zh": "默认给家长读指引；亲子共看需家长主动开启并陪同", "en": "Parent guides by default; co-viewing needs an adult's opt-in and presence" }],
+          "screen": { "sessionMaxMin": 1, "dailyMaxMin": 1, "lessonsPerDay": 2, "coView": "required", "childScreen": "optional" },
+          "themes": [
+            {
+              "id": "core.fixture.s4.play",
+              "title": { "zh": "一起玩玩", "en": "Play Together" },
+              "weeks": 1,
+              "domains": ["language", "english", "motor"],
+              "lessons": ["core.fixture.parent-guide", "core.fixture.word-cards"],
+              "offlineFocus": ["优先放下屏幕用大号软球陪玩，宝宝不需要作答。"]
+            }
+          ]
+        },
+        {
+          "id": "core.fixture.s5",
+          "title": { "zh": "看、数、找", "en": "Look, Count, Find" },
+          "ageRange": [24, 29],
+          "focus": [{ "zh": "家长全程陪同，短暂共看后去玩真东西", "en": "Brief co-viewing with an adult, followed by real-world play" }],
+          "screen": { "sessionMaxMin": 2, "dailyMaxMin": 3, "lessonsPerDay": 3, "coView": "required", "childScreen": "default" },
+          "themes": [
+            {
+              "id": "core.fixture.s5.play",
+              "title": { "zh": "看看数数", "en": "Look and Count" },
+              "weeks": 1,
+              "domains": ["language", "math", "cognition"],
+              "lessons": ["core.fixture.word-cards", "core.fixture.count", "core.fixture.choose"],
+              "offlineFocus": ["关屏后由家长陪同摸一摸、数一数大号积木。"]
+            }
+          ]
+        },
+        {
+          "id": "core.fixture.s6",
+          "title": { "zh": "慢慢看，慢慢数", "en": "Look and Count Slowly" },
+          "ageRange": [30, 36],
+          "focus": [{ "zh": "一起看图、数玩具，关屏后接着玩", "en": "Look at pictures and count toys, then play offline" }],
+          "screen": { "sessionMaxMin": 2, "dailyMaxMin": 3, "lessonsPerDay": 3, "coView": "required", "childScreen": "default" },
+          "themes": [
+            {
+              "id": "core.fixture.s6.count",
+              "title": { "zh": "看看玩具和花", "en": "Toys and Flowers" },
+              "weeks": 1,
+              "domains": ["language", "math", "cognition"],
+              "lessons": ["core.fixture.word-cards", "core.fixture.count", "core.fixture.choose"],
+              "offlineFocus": ["在地垫上数大号积木，玩完一起收好。"]
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "lessons": [
+    {
+      "schemaVersion": 1,
+      "id": "core.fixture.word-cards",
+      "title": { "zh": "看看苹果和球", "en": "Look Together" },
+      "summary": { "zh": "和家长慢慢看两张图，轻声说说名称。", "en": "Look at two pictures together and gently name them." },
+      "ageRange": [18, 36],
+      "domains": ["language", "english"],
+      "tags": ["dev-fixture", "非生产内容"],
+      "durationMin": 1,
+      "coView": "required",
+      "audience": "child",
+      "objectives": [{ "zh": "由家长陪同指图与命名，不要求记忆或跟读", "en": "Adult-led pointing and naming without recall or repetition requirements" }],
+      "cover": { "concept": "apple", "image": "assets/apple.svg", "bg": "#dff1fb" },
+      "parentGuide": {
+        "intro": "这是开发演示。请全程陪同，先看苹果，再看球；家长操作翻页，轻声说名称，留时间看孩子的反应。不要求跟读；孩子转头或不想看就结束，关屏后一起玩大号软球。",
+        "tips": ["一张图说一句即可，停下来等孩子回应。", "由家长陪同操作，不把注视时长当作能力评估。"],
+        "phrases": [{ "zh": "这是苹果。", "en": "This is an apple." }, { "zh": "我们一起看看球。", "en": "Let's look at the ball together." }],
+        "why": "让家长和孩子一起看图、说话，不要求识字、记忆或完成指定动作。",
+        "refs": []
+      },
+      "offline": [
+        {
+          "title": "摸摸大号软球",
+          "minutes": 2,
+          "materials": ["完整、适龄、无可拆小件的大号软球", "平整地垫"],
+          "steps": ["关闭屏幕，由家长拿出软球并说“球”。", "按孩子意愿，让孩子在家长近旁摸一摸，或在地垫上轻轻滚球。", "孩子不感兴趣时结束，不要求完成动作。"],
+          "question": "你想怎么和球玩？",
+          "levels": {
+            "easier": "家长拿着软球说一次名称，孩子可以只看或摸，不要求回应。",
+            "harder": "孩子愿意时，和家长在地垫上轮流轻轻滚球，随时可以停。"
+          },
+          "safety": "成人始终在旁；使用完整适龄玩具，不用小球、气球或可拆小件，不把球放进嘴里；不在楼梯、高处或湿滑地面玩。不需要给孩子拿或吃苹果。",
+          "domains": ["language", "motor"]
+        }
+      ],
+      "steps": [
+        {
+          "type": "word-cards",
+          "title": { "zh": "慢慢看两张图", "en": "Look Slowly" },
+          "parentTip": "家长操作，等一等；孩子转头就结束，不要求跟读。",
+          "props": {
+            "items": ["apple", "ball"],
+            "show": { "text": true, "english": true, "pinyin": false },
+            "speak": "name",
+            "autoAdvanceSec": null,
+            "intro": { "zh": "我们一起看看。", "en": "Let's look together." }
+          }
+        }
+      ]
+    },
+    {
+      "schemaVersion": 1,
+      "id": "core.fixture.count",
+      "title": { "zh": "两块积木", "en": "Two Blocks" },
+      "summary": { "zh": "和家长一起，一块一块慢慢数。", "en": "Count slowly together, one block at a time." },
+      "ageRange": [18, 36],
+      "domains": ["math", "motor"],
+      "tags": ["dev-fixture", "非生产内容"],
+      "durationMin": 1,
+      "coView": "required",
+      "audience": "child",
+      "objectives": [{ "zh": "家长示范一次只指一块积木，不考查数字记忆", "en": "Point to one block at a time without testing number recall" }],
+      "cover": { "concept": "block", "image": "assets/block.svg", "bg": "#e6f4d7" },
+      "parentGuide": {
+        "intro": "这是开发演示。家长陪同，每次操作只数一块积木；可以替孩子操作，最后轻声说“一共两块积木”。不反复提问或纠正，随时可停，结束后关屏去摸摸真实的大号积木。",
+        "tips": ["指一下、数一个，跟随孩子的节奏。", "不催促作答，不要求独立数数。"],
+        "phrases": [{ "zh": "一，二。", "en": "One, two." }, { "zh": "一共两块积木。", "en": "Two blocks." }],
+        "why": "家长示范一次指一个物体，再说一共有多少；不把活动当成数字记忆测验。",
+        "refs": []
+      },
+      "offline": [
+        {
+          "title": "积木放在一起",
+          "minutes": 2,
+          "materials": ["两块完整、适龄、无可拆小件的大号积木", "平整地垫"],
+          "steps": ["关屏后，家长将两块大积木平放在地垫上。", "陪孩子逐块摸一摸，家长慢慢数“一、二”。", "一起把积木放回敞口收纳篮，然后结束。"],
+          "question": "你想把两块积木放在哪里？",
+          "levels": {
+            "easier": "只拿一块大积木，让孩子摸一摸，家长说“一块积木”。",
+            "harder": "把两块积木分开放再并在一起，跟着孩子的手势重新数一数。"
+          },
+          "safety": "成人全程陪同；不用小积木、磁力小件或破损玩具；只在地垫上平放，不搭高塔，不投掷，不把玩具放进嘴里。",
+          "domains": ["math", "motor"]
+        }
+      ],
+      "steps": [
+        {
+          "type": "count",
+          "title": { "zh": "一块一块数", "en": "One at a Time" },
+          "parentTip": "一次指一块，最后说“一共两块”；不催答。",
+          "props": {
+            "rounds": [{ "item": "block", "count": 2, "layout": "row" }],
+            "showNumeral": true,
+            "cardinality": true,
+            "mode": "guided"
+          }
+        }
+      ]
+    },
+    {
+      "schemaVersion": 1,
+      "id": "core.fixture.choose",
+      "title": { "zh": "找找太阳和花", "en": "Find the Sun and Flower" },
+      "summary": { "zh": "和家长看看两张图，轻轻指一指。", "en": "Look at two pictures together and gently point." },
+      "ageRange": [18, 36],
+      "domains": ["cognition", "language"],
+      "tags": ["dev-fixture", "非生产内容"],
+      "durationMin": 1,
+      "coView": "required",
+      "audience": "child",
+      "objectives": [{ "zh": "家长陪同看两张图，可以示范指认，不计分", "en": "Adult-supported pointing between two pictures without scoring" }],
+      "cover": { "concept": "sun", "image": "assets/sun.svg", "bg": "#dff1fb" },
+      "parentGuide": {
+        "intro": "这是开发演示。请陪孩子看看两张图，轻声问太阳或花在哪里。孩子可以看、指或不回答；家长可直接示范，不反复考问。两轮后关屏，和孩子在地垫上画圆，不需要走到窗边或外出。",
+        "tips": ["先说名称，再给孩子一点等待时间。", "选到另一张图时也说说它，不贴对错标签。"],
+        "phrases": [{ "zh": "我们找找太阳。", "en": "Let's find the sun." }, { "zh": "这是花。", "en": "This is a flower." }],
+        "why": "家长可以示范，孩子也可以只看不答；不计分、不反复考问，不作为能力标准。",
+        "refs": []
+      },
+      "offline": [
+        {
+          "title": "用手指画圆",
+          "minutes": 2,
+          "materials": ["干净、平整的地垫"],
+          "steps": ["关屏后家长和孩子坐在地垫旁。", "家长用手指在地垫上慢慢画一个圆，说“圆圆的太阳”。", "愿意时让孩子试一试，也可以只是看，随后结束。"],
+          "question": "这个圆还像什么？",
+          "levels": {
+            "easier": "家长只画一次圆，孩子可以看着，不要求模仿。",
+            "harder": "孩子愿意时，和家长轮流用手指画大圆和小圆，说说像什么。"
+          },
+          "safety": "成人全程陪同；不直视真实太阳，不靠近或攀爬窗台；不采摘或入口不明植物；不需要笔、小装饰物或其他可吞咽材料。",
+          "domains": ["language", "motor"]
+        }
+      ],
+      "steps": [
+        {
+          "type": "choose",
+          "title": { "zh": "一起找一找", "en": "Find Together" },
+          "parentTip": "允许只看不答；家长可以示范，不反复考问。",
+          "props": {
+            "rounds": [
+              {
+                "prompt": { "zh": "太阳在哪里？", "en": "Where is the sun?" },
+                "options": ["sun", "moon"],
+                "answer": "sun",
+                "explain": { "zh": "这是太阳。", "en": "This is the sun." }
+              },
+              {
+                "prompt": { "zh": "花在哪里？", "en": "Where is the flower?" },
+                "options": ["flower", "apple"],
+                "answer": "flower",
+                "explain": { "zh": "这是花。", "en": "This is a flower." }
+              }
+            ],
+            "showLabels": false,
+            "hintAfter": 2
+          }
+        }
+      ]
+    },
+    {
+      "schemaVersion": 1,
+      "id": "core.fixture.parent-guide",
+      "title": { "zh": "卡片和软球", "en": "Cards and a Soft Ball" },
+      "summary": { "zh": "家长读一分钟后放下屏幕，用实体卡和软球陪玩。", "en": "Read for a minute, put the screen away, then play with printed cards and a soft ball." },
+      "ageRange": [6, 36],
+      "domains": ["language", "english", "motor"],
+      "tags": ["dev-fixture", "非生产内容"],
+      "durationMin": 1,
+      "coView": "required",
+      "audience": "parent",
+      "printables": [
+        {
+          "kind": "cards",
+          "title": "苹果和球",
+          "items": ["apple", "ball"],
+          "size": "large",
+          "showText": true,
+          "showEnglish": true
+        }
+      ],
+      "objectives": [{ "zh": "关屏后跟随宝宝的兴趣，用实体卡和真实玩具轮流回应", "en": "Follow the baby's interests and respond using printed cards and a real toy, away from the screen" }],
+      "cover": { "concept": "ball", "image": "assets/ball.svg", "bg": "#e6f4d7" },
+      "parentGuide": {
+        "intro": "这是开发演示。屏幕只给家长看，用约一分钟读完后放下屏幕；准备打印的苹果和球大卡，陪宝宝玩大号软球。可开五分钟陪玩计时，随时提前结束，不要求宝宝看屏幕、指认或作答。",
+        "tips": ["屏幕变暗后不用操作，把注意力放在宝宝身上。", "实体卡始终由成人持握，宝宝转头或不想玩就结束。"],
+        "phrases": [{ "zh": "这是苹果。", "en": "This is an apple." }, { "zh": "你想怎么和球玩？", "en": "How would you like to play with the ball?" }],
+        "why": "家长读完就放下屏幕，用实物回应宝宝的目光和动作，不要求跟读或完成任务。",
+        "refs": []
+      },
+      "offline": [
+        {
+          "title": "卡片和软球",
+          "minutes": 5,
+          "materials": ["后台打印的苹果和球大卡（由成人持握）", "完整、适龄、无可拆小件的大号软球", "平整地垫"],
+          "steps": ["家长放下屏幕，在地垫旁手持一张实体卡，轻声说名称。", "拿出软球，跟随宝宝的目光或手势说“球”，等一等他的回应。", "宝宝愿意时一起摸摸球或轻轻滚球；转头或不想玩就结束，不必等计时走完。"],
+          "question": "你想怎么和球玩？",
+          "levels": {
+            "easier": "只留下软球，由家长说一次“球”，宝宝可以只看或摸，不要求回应。",
+            "harder": "宝宝愿意时，家长出示两张实体卡，让他用目光或手势选一张；选球卡可一起找软球，选苹果卡只说名称，不要求答对。"
+          },
+          "safety": "成人全程陪同并持握卡片，避免纸边划伤或纸张入口；只用完整适龄大号软球，不用小球、气球或可拆小件；在平整地垫旁玩，不需要拿或吃真实苹果。",
+          "domains": ["language", "motor"]
+        }
+      ],
+      "steps": [
+        {
+          "type": "guide",
+          "title": { "zh": "读完去陪玩", "en": "Read Then Play" },
+          "parentTip": "屏幕只给家长看；读完放下，陪玩时无需操作屏幕。",
+          "props": {
+            "goal": "关屏后跟随宝宝的兴趣，用实体卡和软球轮流说一说、玩一玩。",
+            "materials": ["后台打印的苹果和球大卡（由成人持握）", "完整、适龄、无可拆小件的大号软球", "平整地垫"],
+            "steps": [
+              {
+                "text": "用约一分钟读完后放下屏幕，家长手持一张实体卡，轻声说名称。",
+                "say": { "zh": "这是苹果。", "en": "This is an apple." },
+                "concept": "apple"
+              },
+              {
+                "text": "拿出软球，跟随宝宝的目光或手势说“球”，等一等他的回应。",
+                "say": { "zh": "这是球。", "en": "This is a ball." },
+                "concept": "ball"
+              },
+              {
+                "text": "愿意时一起摸摸球或在地垫上轻轻滚球；转头或不想玩就结束，不必等计时走完。",
+                "say": { "zh": "你想怎么和球玩？", "en": "How would you like to play with the ball?" },
+                "concept": "ball"
+              }
+            ],
+            "playMin": 5,
+            "observe": ["留意宝宝看向哪里、是否伸手或发声，跟随他的兴趣。", "允许只看不答；宝宝转头或不想玩时就结束。"],
+            "safety": "成人全程陪同，卡片由成人持握，避免纸边划伤或入口；只用完整适龄大号软球，无可拆小件；在平整地垫旁玩，不提供真实苹果。"
+          }
+        }
+      ]
+    }
+  ],
+  "audio": { "schemaVersion": 1, "voices": {}, "entries": {} }
+}

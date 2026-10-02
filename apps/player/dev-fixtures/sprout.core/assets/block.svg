@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" width="256" height="256" role="img" aria-labelledby="title desc">
+  <title id="title">Block</title>
+  <desc id="desc">Hand-drawn development fixture. Not production content. No external assets.</desc>
+  <rect x="47" y="45" width="164" height="164" rx="24" fill="#8ebd64" stroke="#6c9a3b" stroke-width="8"/>
+  <rect x="47" y="61" width="147" height="148" rx="22" fill="#f2b134" stroke="#c48b26" stroke-width="8"/>
+  <rect x="65" y="79" width="111" height="112" rx="14" fill="#ffe2a1"/>
+  <circle cx="120" cy="135" r="31" fill="#5da9e9" stroke="#3d8fb8" stroke-width="7"/>
+</svg>

@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 240" role="img" aria-label="毛巾">
+  <rect x="34" y="40" width="172" height="164" rx="16" fill="#81bdb0"/>
+  <path d="M34 76h172M34 173h172" stroke="#e6f4d7" stroke-width="15"/>
+  <path d="M54 202v13m22-13v13m22-13v13m22-13v13m22-13v13m22-13v13m22-13v13" stroke="#81bdb0" stroke-width="7" stroke-linecap="round"/>
+</svg>

@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" role="img" aria-label="A cloth doll">
+  <g fill="#FFD15C" stroke="#D6A13C" stroke-width="4" stroke-linejoin="round">
+    <path d="M103 166H121V195Q121 205 111 205T101 195Z"/>
+    <path d="M135 166H153L155 195Q155 205 145 205T135 195Z"/>
+    <path d="M104 116L78 127Q64 133 71 145Q77 155 89 147L111 134Z"/>
+    <path d="M152 116L178 127Q192 133 185 145Q179 155 167 147L145 134Z"/>
+  </g>
+  <g fill="#B77848">
+    <circle cx="84" cy="71" r="18"/>
+    <circle cx="172" cy="71" r="18"/>
+  </g>
+  <path d="M108 111H148L172 171Q128 185 84 171Z" fill="#E5677D" stroke="#B94C62" stroke-width="4" stroke-linejoin="round"/>
+  <path d="M113 116Q128 134 143 116" fill="none" stroke="#F9D0D7" stroke-width="8" stroke-linecap="round"/>
+  <circle cx="128" cy="80" r="33" fill="#FFD15C" stroke="#D6A13C" stroke-width="4"/>
+  <path d="M95 77Q90 45 125 43Q161 41 163 78Q141 75 130 58Q117 77 95 77Z" fill="#B77848"/>
+  <g fill="#725447">
+    <circle cx="116" cy="82" r="5"/>
+    <circle cx="140" cy="82" r="5"/>
+  </g>
+  <path d="M114 82H118M138 82H142" fill="none" stroke="#FFF1CF" stroke-width="2"/>
+  <path d="M119 96Q128 104 137 96" fill="none" stroke="#9C5946" stroke-width="3" stroke-linecap="round" stroke-dasharray="2 4"/>
+  <path d="M96 165Q128 175 160 165" fill="none" stroke="#F9D0D7" stroke-width="3" stroke-linecap="round" stroke-dasharray="4 5"/>
+  <path d="M104 197H116Q123 197 123 208H96Q96 197 104 197ZM140 197H152Q160 197 160 208H133Q133 197 140 197Z" fill="#2BA88C"/>
+  <path d="M88 58L93 70M168 58L163 70" fill="none" stroke="#2BA88C" stroke-width="7" stroke-linecap="round"/>
+</svg>

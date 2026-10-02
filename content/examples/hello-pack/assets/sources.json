@@ -1,0 +1,11 @@
+{
+  "schemaVersion": 1,
+  "items": {
+    "assets/images/shapes/circle.svg": {
+      "source": "custom"
+    },
+    "assets/images/shapes/square.svg": {
+      "source": "custom"
+    }
+  }
+}

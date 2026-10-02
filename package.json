@@ -14,9 +14,14 @@
     "test": "pnpm -r test",
     "typecheck": "pnpm -r typecheck",
     "start": "pnpm --filter @sprout/server start",
-    "content:validate": "node scripts/validate-content.mjs",
-    "content:assets": "node scripts/fetch-assets.mjs",
-    "content:audio": "node scripts/gen-audio.mjs"
+    "content:validate": "tsx scripts/validate-content.ts",
+    "content:assets": "tsx scripts/fetch-assets.ts",
+    "content:audio": "tsx scripts/gen-audio.ts",
+    "content:bundle": "tsx scripts/bundle-pack.ts",
+    "content:zip": "tsx scripts/pack-zip.ts",
+    "content:all": "tsx scripts/content-all.ts",
+    "content:typecheck": "pnpm --dir scripts typecheck",
+    "content:test": "pnpm --dir scripts test"
   },
   "devDependencies": {
     "@sprout/schema": "workspace:*",

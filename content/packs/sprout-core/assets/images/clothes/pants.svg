@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" role="img" aria-label="One pair of plain long trousers">
+  <path d="M82 44H174Q180 44 181 52L190 198Q191 208 181 208H151Q145 208 144 201L128 123L112 201Q111 208 105 208H75Q65 208 66 198L75 52Q76 44 82 44Z" fill="#2BA88C" stroke="#21806E" stroke-width="4" stroke-linejoin="round"/>
+  <path d="M77 63H179" fill="none" stroke="#82D0B6" stroke-width="10"/>
+  <path d="M85 77Q86 95 76 105M171 77Q170 95 180 105" fill="none" stroke="#21806E" stroke-width="4" stroke-linecap="round"/>
+  <path d="M73 195H107M149 195H183" fill="none" stroke="#82D0B6" stroke-width="6"/>
+</svg>

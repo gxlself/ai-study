@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" role="img" aria-label="A wooden-bar xylophone with two mallets">
+  <path d="M46 149H212M46 176H212" fill="none" stroke="#8B5D3B" stroke-width="12" stroke-linecap="round"/>
+  <g stroke="#8B5D3B" stroke-width="3">
+    <rect x="42" y="82" width="23" height="119" rx="6" fill="#D8A36F"/>
+    <rect x="72" y="91" width="23" height="106" rx="6" fill="#E8BD8A"/>
+    <rect x="102" y="100" width="23" height="93" rx="6" fill="#D8A36F"/>
+    <rect x="132" y="109" width="23" height="80" rx="6" fill="#E8BD8A"/>
+    <rect x="162" y="118" width="23" height="67" rx="6" fill="#D8A36F"/>
+    <rect x="192" y="127" width="23" height="54" rx="6" fill="#E8BD8A"/>
+  </g>
+  <path d="M53 148H54M83 148H84M113 148H114M143 148H144M173 148H174M203 148H204M53 175H54M83 175H84M113 175H114M143 175H144M173 175H174M203 175H204" fill="none" stroke="#8B5D3B" stroke-width="4" stroke-linecap="round"/>
+  <path d="M70 52L148 94M178 53L123 91" fill="none" stroke="#B77848" stroke-width="7" stroke-linecap="round"/>
+  <circle cx="70" cy="52" r="11" fill="#F08A5D" stroke="#BD674D" stroke-width="3"/>
+  <circle cx="178" cy="53" r="11" fill="#2BA88C" stroke="#21806E" stroke-width="3"/>
+</svg>

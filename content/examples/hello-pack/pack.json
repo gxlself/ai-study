@@ -1,0 +1,32 @@
+{
+  "schemaVersion": 1,
+  "id": "sprout.hello",
+  "version": "1.0.0",
+  "name": {
+    "zh": "你好，形状",
+    "en": "Hello, Shapes"
+  },
+  "description": {
+    "zh": "家长先看指引并打印实体卡；适龄亲子共看后去身边找形状。",
+    "en": "Read a parent guide and print real cards, then explore shapes together."
+  },
+  "author": "芽芽成长",
+  "license": "CC0-1.0",
+  "ageRange": [18, 26],
+  "lexicon": "lexicon.json",
+  "routes": ["routes/hello-route.json"],
+  "lessonsDir": "lessons",
+  "requires": {
+    "sdk": "^1.0.0"
+  },
+  "credits": [
+    {
+      "name": "你好，形状原创示例",
+      "url": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "license": "CC0-1.0",
+      "note": "芽芽成长原创课程、词库、路线与简单 SVG 图形；不含 Fluent Emoji 或其他第三方素材。"
+    }
+  ],
+  "cover": "assets/images/shapes/circle.svg",
+  "tags": ["形状", "亲子共学", "示例"]
+}

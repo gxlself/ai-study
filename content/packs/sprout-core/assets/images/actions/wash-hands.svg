@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" role="img" aria-label="Two hands being washed under running tap water">
+  <path d="M190 104V83Q190 75 180 75H136Q126 75 126 87V97" fill="none" stroke="#7F9399" stroke-width="22" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M190 104V83Q190 75 180 75H136Q126 75 126 87V97" fill="none" stroke="#CED9DC" stroke-width="15" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M173 68V53M157 51H192" fill="none" stroke="#7F9399" stroke-width="10" stroke-linecap="round"/>
+  <path d="M158 49H189" fill="none" stroke="#A8C3CB" stroke-width="5" stroke-linecap="round"/>
+  <rect x="177" y="100" width="28" height="10" rx="4" fill="#A8C3CB" stroke="#7F9399" stroke-width="3"/>
+  <path d="M119 110L117 138M126 110V146M133 110L136 138" fill="none" stroke="#75BDDA" stroke-width="4" stroke-linecap="round"/>
+  <path d="M211 141L181 148L146 139Q137 137 135 144Q134 149 141 153L155 160L121 155Q111 154 111 161Q110 168 120 170L157 177Q168 180 180 172L216 166Z" fill="#FFD15C" stroke="#D6A13C" stroke-width="3" stroke-linejoin="round"/>
+  <path d="M40 151L68 155L85 145Q91 142 95 147Q98 152 91 158L102 163L135 159Q145 158 146 164Q147 170 138 172L103 185Q91 188 78 180L40 174Z" fill="#FFD15C" stroke="#D6A13C" stroke-width="3" stroke-linejoin="round"/>
+  <path d="M104 171L132 167M102 178L129 173M147 161L163 164" fill="none" stroke="#D6A13C" stroke-width="2.5" stroke-linecap="round"/>
+  <path d="M38 146L58 150L54 183L38 181Z" fill="#F08A5D" stroke="#BD674D" stroke-width="3" stroke-linejoin="round"/>
+  <path d="M203 143L219 138V170L211 173Z" fill="#F08A5D" stroke="#BD674D" stroke-width="3" stroke-linejoin="round"/>
+  <path d="M119 141L117 150M128 143L130 154M106 146L103 150M140 146L144 151" fill="none" stroke="#75BDDA" stroke-width="4" stroke-linecap="round"/>
+  <path d="M114 186L113 190M139 181L140 187" fill="none" stroke="#75BDDA" stroke-width="4" stroke-linecap="round"/>
+  <path d="M44 198H212Q198 216 184 216H72Q56 216 44 198Z" fill="#DFF1FB" stroke="#75A9BD" stroke-width="3" stroke-linejoin="round"/>
+</svg>

@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" role="img" aria-label="A front-facing child with a bare tummy and a visible belly button">
+  <path d="M105 123H151L161 155Q168 178 159 204H97Q88 178 95 155Z" fill="#FFD15C" stroke="#D6A13C" stroke-width="3" stroke-linejoin="round"/>
+  <path d="M150 146Q163 176 153 198" fill="none" stroke="#F2B134" stroke-width="6" stroke-linecap="round"/>
+  <path d="M93 125L78 154L99 172M163 125L178 154L157 172" fill="none" stroke="#D6A13C" stroke-width="18" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M93 125L78 154L99 172M163 125L178 154L157 172" fill="none" stroke="#FFD15C" stroke-width="13" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M108 108H148L169 123L158 138L149 132V143Q128 137 107 143V132L98 138L87 123Z" fill="#5DA9E9" stroke="#3F83BE" stroke-width="3" stroke-linejoin="round"/>
+  <path d="M116 98V111Q128 120 140 111V98" fill="#FFD15C" stroke="#D6A13C" stroke-width="3"/>
+  <g fill="#FFD15C" stroke="#D6A13C" stroke-width="3">
+    <ellipse cx="95" cy="76" rx="7" ry="10"/>
+    <ellipse cx="161" cy="76" rx="7" ry="10"/>
+    <circle cx="128" cy="75" r="33"/>
+  </g>
+  <path d="M95 72Q89 41 123 38Q158 32 163 72Q145 68 135 51Q119 70 95 72Z" fill="#725447"/>
+  <path d="M114 77V80M142 77V80" fill="none" stroke="#5D463B" stroke-width="4" stroke-linecap="round"/>
+  <path d="M128 81V87" fill="none" stroke="#D6A13C" stroke-width="3" stroke-linecap="round"/>
+  <path d="M120 95Q128 101 136 95" fill="none" stroke="#9C5946" stroke-width="3" stroke-linecap="round"/>
+  <path d="M132 172Q121 169 123 179Q125 185 132 179" fill="none" stroke="#B88430" stroke-width="4" stroke-linecap="round"/>
+  <path d="M103 191Q128 199 153 191" fill="none" stroke="#F2B134" stroke-width="3" stroke-linecap="round"/>
+  <path d="M96 202H160L163 217H93Z" fill="#2BA88C" stroke="#21806E" stroke-width="3" stroke-linejoin="round"/>
+  <path d="M97 207H159" fill="none" stroke="#82D0B6" stroke-width="4"/>
+</svg>

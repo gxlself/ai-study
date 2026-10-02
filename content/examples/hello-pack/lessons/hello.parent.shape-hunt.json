@@ -1,0 +1,85 @@
+{
+  "schemaVersion": 1,
+  "id": "hello.parent.shape-hunt",
+  "title": {
+    "zh": "放下屏幕找形状",
+    "en": "Explore Real Shapes"
+  },
+  "ageRange": [18, 23],
+  "audience": "parent",
+  "domains": ["cognition", "math"],
+  "themeId": "hello.parent.shapes",
+  "durationMin": 1,
+  "coView": "required",
+  "objectives": [
+    {
+      "zh": "家长准备实体卡片，陪宝宝观察身边的形状。",
+      "en": "Prepare real cards and explore shapes together."
+    }
+  ],
+  "parentGuide": {
+    "intro": "这节屏幕只给家长看。先读指引并准备打印卡，再放下设备陪宝宝找形状，不要求宝宝记住名称。",
+    "tips": ["跟随宝宝的目光，指一指、说一说，停下来等回应。"]
+  },
+  "printables": [
+    {
+      "kind": "cards",
+      "title": "圆形与方形实体卡",
+      "items": ["hello.circle", "hello.square"],
+      "size": "large",
+      "showText": true,
+      "showEnglish": true
+    },
+    {
+      "kind": "contrast",
+      "title": "简单黑白形状",
+      "patterns": ["circle", "square"],
+      "palette": "bw"
+    }
+  ],
+  "offline": [
+    {
+      "title": "找一找圆圆方方",
+      "minutes": 3,
+      "materials": ["大张打印卡片"],
+      "steps": ["放下设备，在固定摆放的物品中观察形状。", "家长拿起一张卡，指认一个形状，等待宝宝回应。"],
+      "question": "你还发现了什么？",
+      "levels": {
+        "easier": "只用一张卡，家长指认一个圆形。",
+        "harder": "放两张卡，让宝宝用手势选择与眼前物品相似的形状。"
+      },
+      "safety": "成人全程陪伴；卡片由成人拿持，边缘光滑，不用小零件，不攀爬，不触碰热物、插座和易碎物。",
+      "domains": ["cognition", "math"]
+    }
+  ],
+  "steps": [
+    {
+      "type": "guide",
+      "props": {
+        "goal": "屏幕给家长看，宝宝观察打印卡和真实物品。",
+        "materials": ["打印的大张形状卡片"],
+        "steps": [
+          {
+            "text": "先准备好实体卡片，再放下屏幕。",
+            "concept": "hello.circle",
+            "say": {
+              "zh": "圆圆的，像这个。",
+              "en": "Round, like this."
+            }
+          },
+          {
+            "text": "指一指身边安全的物品，留出等待宝宝回应的时间。",
+            "concept": "hello.square",
+            "say": {
+              "zh": "这个方方的。你还看到了什么？",
+              "en": "This one is square. What else do you notice?"
+            }
+          }
+        ],
+        "playMin": 3,
+        "observe": ["宝宝是否看向卡片或眼前物品。", "接受看一看、指一指或发声，不要求答对。"],
+        "safety": "成人陪伴，保持卡片完整，避免入口；宝宝不想继续就停止。"
+      }
+    }
+  ]
+}

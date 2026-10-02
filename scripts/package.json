@@ -1,0 +1,16 @@
+{
+  "name": "@sprout/pipeline",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "typecheck": "tsc -p tsconfig.json",
+    "test": "vitest run --root .. --config scripts/vitest.config.ts scripts"
+  },
+  "dependencies": {
+    "@xmldom/xmldom": "0.9.12"
+  },
+  "devDependencies": {
+    "vitest": "5.0.3"
+  }
+}

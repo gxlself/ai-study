@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" role="img" aria-label="One five-finger glove">
+  <path d="M100 196L58 153C48 142 52 130 63 128Q70 126 77 135L88 146V81C88 67 108 67 108 81V115Q108 120 112 116V56C112 41 134 41 134 56V108Q134 113 138 109V65C138 51 158 51 158 65V119Q158 124 162 120V88C162 74 182 74 182 88V151Q182 177 165 195V201H100Z" fill="#5DA9E9" stroke="#3F83BE" stroke-width="4" stroke-linejoin="round"/>
+  <rect x="97" y="192" width="71" height="23" rx="7" fill="#E5677D" stroke="#B94C62" stroke-width="4"/>
+  <path d="M110 203H155" fill="none" stroke="#F3A9B5" stroke-width="5" stroke-linecap="round"/>
+  <path d="M107 145Q123 136 141 145" fill="none" stroke="#91C5F0" stroke-width="6" stroke-linecap="round"/>
+</svg>

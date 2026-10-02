@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" width="256" height="256" role="img" aria-labelledby="title desc">
+  <title id="title">Ball</title>
+  <desc id="desc">Hand-drawn development fixture. Not production content. No external assets.</desc>
+  <circle cx="128" cy="128" r="88" fill="#5da9e9" stroke="#3d8fb8" stroke-width="8"/>
+  <path d="M54 174c33-15 48-55 49-128M153 46c-1 71 16 112 49 128" fill="none" stroke="#fffaf2" stroke-width="17" stroke-linecap="round"/>
+  <path d="M41 130c43 28 131 28 174 0" fill="none" stroke="#f2b134" stroke-width="19"/>
+  <circle cx="128" cy="128" r="88" fill="none" stroke="#3d8fb8" stroke-width="8"/>
+</svg>

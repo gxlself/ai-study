@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" width="256" height="256" role="img" aria-labelledby="title desc">
+  <title id="title">Sun</title>
+  <desc id="desc">Hand-drawn development fixture. Not production content. No external assets.</desc>
+  <g stroke="#f2b134" stroke-width="14" stroke-linecap="round">
+    <path d="M128 23v23M128 210v23M23 128h23M210 128h23"/>
+    <path d="m54 54 16 16m116 116 16 16M54 202l16-16M186 70l16-16"/>
+  </g>
+  <circle cx="128" cy="128" r="62" fill="#ffd775" stroke="#e2a42f" stroke-width="8"/>
+  <path d="M96 98c7-8 16-13 26-14" fill="none" stroke="#fffaf2" stroke-width="10" stroke-linecap="round"/>
+</svg>

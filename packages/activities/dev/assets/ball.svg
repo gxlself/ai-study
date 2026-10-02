@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 240" role="img" aria-label="皮球">
+  <circle cx="120" cy="120" r="91" fill="#5da9e9"/>
+  <path d="M33 95c63 12 96 47 111 113M67 46c8 67 57 117 133 124" fill="none" stroke="#fffaf2" stroke-width="16"/>
+  <path d="M65 82c9-16 21-25 36-30" fill="none" stroke="#b9e3fa" stroke-width="12" stroke-linecap="round"/>
+</svg>

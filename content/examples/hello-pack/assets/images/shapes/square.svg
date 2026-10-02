@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" width="100%" height="100%" role="img" aria-labelledby="title desc">
+  <title id="title">方形</title>
+  <desc id="desc">一个珊瑚红色方形，边角柔和，深色轮廓，透明背景。</desc>
+  <rect x="34" y="34" width="188" height="188" rx="10" fill="#E06B65" stroke="#8F3F43" stroke-width="6" />
+</svg>

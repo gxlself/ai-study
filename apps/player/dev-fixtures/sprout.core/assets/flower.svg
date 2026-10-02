@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" width="256" height="256" role="img" aria-labelledby="title desc">
+  <title id="title">Flower</title>
+  <desc id="desc">Hand-drawn development fixture. Not production content. No external assets.</desc>
+  <path d="M128 117v112" fill="none" stroke="#6c9a3b" stroke-width="13" stroke-linecap="round"/>
+  <path d="M127 195c-32 0-47-17-47-40 28 0 47 13 47 40ZM131 213c32 0 47-17 47-40-28 0-47 13-47 40Z" fill="#8ebd64"/>
+  <g fill="#e99abe" stroke="#d96bb0" stroke-width="6">
+    <ellipse cx="128" cy="59" rx="25" ry="32"/>
+    <ellipse cx="91" cy="85" rx="32" ry="25" transform="rotate(24 91 85)"/>
+    <ellipse cx="106" cy="125" rx="25" ry="32" transform="rotate(35 106 125)"/>
+    <ellipse cx="150" cy="125" rx="25" ry="32" transform="rotate(-35 150 125)"/>
+    <ellipse cx="165" cy="85" rx="32" ry="25" transform="rotate(-24 165 85)"/>
+  </g>
+  <circle cx="128" cy="98" r="25" fill="#ffd775" stroke="#e2a42f" stroke-width="6"/>
+</svg>

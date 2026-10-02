@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" width="256" height="256" role="img" aria-labelledby="title desc">
+  <title id="title">Apple</title>
+  <desc id="desc">Hand-drawn development fixture. Not production content. No external assets.</desc>
+  <path d="M126 69c-3-16 1-26 10-35" fill="none" stroke="#7a6a55" stroke-width="12" stroke-linecap="round"/>
+  <path d="M133 57c5-25 25-28 43-23-5 19-19 31-43 23Z" fill="#6c9a3b"/>
+  <path d="M128 77c-38-28-82-10-83 42-1 51 33 96 61 97 10 0 15-5 22-5s12 5 22 5c28-1 62-46 61-97-1-52-45-70-83-42Z" fill="#e5677d" stroke="#b54562" stroke-width="8" stroke-linejoin="round"/>
+  <path d="M76 115c1-14 9-22 21-25" fill="none" stroke="#fffaf2" stroke-width="10" stroke-linecap="round"/>
+</svg>

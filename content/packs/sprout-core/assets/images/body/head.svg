@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" role="img" aria-label="A child's whole head with hair, ears, eyes, nose and mouth">
+  <g fill="#FFD15C" stroke="#D6A13C" stroke-width="4">
+    <ellipse cx="65" cy="129" rx="15" ry="21"/>
+    <ellipse cx="191" cy="129" rx="15" ry="21"/>
+    <path d="M65 120C65 73 89 48 128 48S191 73 191 120V139C191 181 166 209 128 209S65 181 65 139Z"/>
+  </g>
+  <path d="M62 122Q54 112 59 105M194 122Q202 112 197 105" fill="none" stroke="#D6A13C" stroke-width="3" stroke-linecap="round"/>
+  <path d="M64 120C48 83 74 40 116 40C161 31 196 61 194 101L190 121L177 89Q152 86 138 64Q116 95 77 96L73 120Z" fill="#725447"/>
+  <path d="M95 117Q103 111 111 116M145 116Q153 111 161 117" fill="none" stroke="#725447" stroke-width="4" stroke-linecap="round"/>
+  <g fill="#5D463B">
+    <ellipse cx="104" cy="132" rx="5" ry="7"/>
+    <ellipse cx="152" cy="132" rx="5" ry="7"/>
+  </g>
+  <path d="M128 139L123 150Q128 155 133 151" fill="none" stroke="#D6A13C" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M111 167Q128 184 145 167" fill="none" stroke="#9C5946" stroke-width="5" stroke-linecap="round"/>
+  <ellipse cx="91" cy="153" rx="9" ry="5" fill="#F2B134" opacity=".55"/>
+  <ellipse cx="165" cy="153" rx="9" ry="5" fill="#F2B134" opacity=".55"/>
+</svg>

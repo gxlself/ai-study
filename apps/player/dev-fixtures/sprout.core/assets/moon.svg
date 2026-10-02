@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" width="256" height="256" role="img" aria-labelledby="title desc">
+  <title id="title">Moon</title>
+  <desc id="desc">Hand-drawn development fixture. Not production content. No external assets.</desc>
+  <path d="M151 39c-51-12-101 27-105 80-4 53 35 97 86 99 38 1 65-17 83-44-32 13-73 0-89-31-20-36-8-79 25-104Z" fill="#a3bfde" stroke="#668fb8" stroke-width="8" stroke-linejoin="round"/>
+  <circle cx="80" cy="136" r="11" fill="#dff1fb"/>
+  <circle cx="105" cy="180" r="8" fill="#dff1fb"/>
+</svg>

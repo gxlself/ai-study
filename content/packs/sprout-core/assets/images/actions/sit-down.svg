@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" role="img" aria-label="A child sitting on a chair with feet on the floor">
+  <path d="M58 219H202" fill="none" stroke="#BBD5B0" stroke-width="4" stroke-linecap="round"/>
+  <path d="M69 111V213M148 165V213" fill="none" stroke="#925D3B" stroke-width="10" stroke-linecap="round"/>
+  <rect x="58" y="104" width="22" height="57" rx="6" fill="#E7B783" stroke="#B77848" stroke-width="3"/>
+  <rect x="62" y="155" width="101" height="14" rx="5" fill="#E7B783" stroke="#B77848" stroke-width="3"/>
+  <path d="M101 147L143 151Q152 151 152 163V200" fill="none" stroke="#36759E" stroke-width="19" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M105 149L156 155Q168 155 168 167V204" fill="none" stroke="#5DA9E9" stroke-width="19" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M144 198H154L166 205Q169 208 166 212H141V202Q141 198 144 198Z" fill="#B94C62"/>
+  <path d="M160 202H170L185 209Q189 211 186 216H157V207Q157 202 160 202Z" fill="#E5677D" stroke="#B94C62" stroke-width="3" stroke-linejoin="round"/>
+  <path d="M91 105H116Q126 108 129 124L132 145Q132 154 122 154H97Q85 154 85 143V121Q85 110 91 105Z" fill="#F08A5D" stroke="#BD674D" stroke-width="3" stroke-linejoin="round"/>
+  <path d="M114 119L128 142L145 147" fill="none" stroke="#D6A13C" stroke-width="16" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M114 119L128 142L145 147" fill="none" stroke="#FFD15C" stroke-width="11" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M96 94V108Q105 114 114 108V93" fill="#FFD15C" stroke="#D6A13C" stroke-width="3"/>
+  <path d="M78 69Q79 42 107 42Q134 44 135 70L142 79Q144 83 136 86Q133 106 112 106Q82 104 78 82Z" fill="#FFD15C" stroke="#D6A13C" stroke-width="3" stroke-linejoin="round"/>
+  <path d="M80 88Q67 75 74 55Q82 35 105 36Q127 35 137 58Q121 63 111 53Q101 71 83 72V86Z" fill="#725447"/>
+  <path d="M124 72V75" fill="none" stroke="#5D463B" stroke-width="4" stroke-linecap="round"/>
+  <path d="M122 90Q127 94 132 90" fill="none" stroke="#9C5946" stroke-width="3" stroke-linecap="round"/>
+</svg>

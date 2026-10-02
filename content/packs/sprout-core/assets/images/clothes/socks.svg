@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" role="img" aria-label="One sock">
+  <path d="M102 49H165V141Q165 163 148 178L98 205Q73 220 55 201Q39 184 51 166Q56 156 70 150L102 132Z" fill="#5DA9E9" stroke="#3F83BE" stroke-width="4" stroke-linejoin="round"/>
+  <path d="M102 132L102 153Q125 166 146 177Q165 162 165 141V132Z" fill="#91C5F0"/>
+  <path d="M65 153Q85 168 83 211Q66 211 55 199Q41 184 53 166Q58 157 65 153Z" fill="#91C5F0"/>
+  <rect x="99" y="46" width="69" height="35" rx="7" fill="#F08A5D" stroke="#BD674D" stroke-width="4"/>
+  <path d="M113 55V71M128 55V71M143 55V71M156 55V71" fill="none" stroke="#F8C19F" stroke-width="4" stroke-linecap="round"/>
+</svg>

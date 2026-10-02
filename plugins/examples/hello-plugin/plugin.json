@@ -1,0 +1,41 @@
+{
+  "schemaVersion": 1,
+  "id": "example.hello",
+  "version": "1.0.0",
+  "name": { "zh": "你好，星星", "en": "Hello, Stars" },
+  "description": { "zh": "与家长一起逐颗数星星的原生 DOM 示例", "en": "Count a few stars together." },
+  "author": "Sprout contributors",
+  "license": "MIT",
+  "sdk": "^1.0.0",
+  "entry": "index.js",
+  "permissions": [],
+  "activities": [
+    {
+      "type": "example.hello-stars",
+      "name": { "zh": "一起数星星", "en": "Count the Stars" },
+      "ageRange": [18, 36],
+      "propsSchema": {
+        "$schema": "https://json-schema.org/draft/2020-12/schema",
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "count": { "type": "integer", "minimum": 1, "maximum": 5, "default": 3 },
+          "title": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": ["zh"],
+            "properties": {
+              "zh": { "type": "string", "minLength": 1, "maxLength": 80 },
+              "en": { "type": "string", "minLength": 1, "maxLength": 80 }
+            },
+            "default": { "zh": "一起数星星", "en": "Count the stars" }
+          }
+        }
+      },
+      "defaultProps": {
+        "count": 3,
+        "title": { "zh": "一起数星星", "en": "Count the stars" }
+      }
+    }
+  ]
+}

@@ -1,0 +1,31 @@
+{
+  "schemaVersion": 1,
+  "id": "sprout.core",
+  "version": "1.0.0",
+  "name": {
+    "zh": "芽芽核心课程",
+    "en": "Sprout Core"
+  },
+  "author": "芽芽成长",
+  "ageRange": [6, 36],
+  "lexicon": "lexicon.json",
+  "routes": ["routes/sprout-core-route.json"],
+  "lessonsDir": "lessons",
+  "requires": {
+    "sdk": "^1.0.0"
+  },
+  "credits": [
+    {
+      "name": "Fluent Emoji",
+      "url": "https://github.com/microsoft/fluentui-emoji",
+      "license": "MIT",
+      "note": "Microsoft Corporation. 原始版权声明与许可全文见 LICENSES.md。"
+    },
+    {
+      "name": "自绘图形",
+      "url": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "license": "CC0-1.0",
+      "note": "芽芽成长原创图形，以 CC0 1.0 公共领域贡献方式提供。"
+    }
+  ]
+}

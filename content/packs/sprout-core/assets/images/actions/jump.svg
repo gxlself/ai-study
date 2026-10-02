@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" role="img" aria-label="A child making a small jump with both feet off the ground">
+  <ellipse cx="128" cy="215" rx="44" ry="6" fill="#BBD5B0"/>
+  <path d="M110 145L99 165L106 182M145 145L159 165L151 182" fill="none" stroke="#3F83BE" stroke-width="19" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M108 181H96Q86 181 86 190H114V186Q114 181 108 181ZM149 181H160Q170 181 170 190H143V186Q143 181 149 181Z" fill="#E5677D" stroke="#B94C62" stroke-width="3" stroke-linejoin="round"/>
+  <path d="M107 108L87 99L76 80M149 108L169 99L180 80" fill="none" stroke="#D6A13C" stroke-width="18" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M107 108L87 99L76 80M149 108L169 99L180 80" fill="none" stroke="#FFD15C" stroke-width="13" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M112 99H144L159 111L148 123V147H108V123L97 111Z" fill="#F08A5D" stroke="#BD674D" stroke-width="3" stroke-linejoin="round"/>
+  <path d="M118 96V103Q128 111 138 103V96" fill="#FFD15C" stroke="#D6A13C" stroke-width="3"/>
+  <circle cx="128" cy="71" r="29" fill="#FFD15C" stroke="#D6A13C" stroke-width="3"/>
+  <path d="M99 69C96 47 110 37 128 37S160 49 157 67Q144 66 135 53Q123 67 99 69Z" fill="#725447"/>
+  <path d="M116 71V74M139 71V74" fill="none" stroke="#5D463B" stroke-width="4" stroke-linecap="round"/>
+  <path d="M119 84Q128 92 137 84" fill="none" stroke="#9C5946" stroke-width="3" stroke-linecap="round"/>
+</svg>

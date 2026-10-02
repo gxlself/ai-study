@@ -1,0 +1,13 @@
+{
+  "extends": "../../../tsconfig.base.json",
+  "compilerOptions": {
+    "types": ["node"],
+    "baseUrl": ".",
+    "paths": {
+      "@sprout/plugin-sdk": ["../../../packages/plugin-sdk/src/types.ts"],
+      "@sprout/schema": ["../../../packages/schema/src/index.ts"],
+      "vite": ["../../../packages/activities/node_modules/vite/dist/node/index.d.ts"]
+    }
+  },
+  "include": ["src/**/*.ts", "vite.config.ts"]
+}
