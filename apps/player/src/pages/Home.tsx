@@ -53,15 +53,15 @@ export function Home() {
       <div className="home-greeting"><h1>{parentOnly ? `${child.nickname || child.name}的家长，${greeting}` : `${greeting}，${child.nickname || child.name}`}</h1><p>{plan.stage?.title.zh ?? '一起探索'}{plan.theme && <> · {plan.theme.title.zh}</>}</p>
         {parentOnly && <p className="parent-mode-notice">这个月龄屏幕只给家长看：读 1–3 分钟就放下，去和宝宝玩真东西</p>}
       </div>
-      {parentOnly ? <section className="parent-journey"><h2>今天陪宝宝玩什么</h2><div className="parent-guide-grid">{parents.map(({ lesson, offlineOnly }) => <LessonCard key={lesson.id} lesson={lesson} offlineOnly={offlineOnly} adult />)}</div>
+      {parentOnly ? <section className="parent-journey"><h2>今天陪宝宝玩什么</h2><div className="parent-guide-grid today-grid" style={{ '--lesson-count': Math.max(1, parents.length) } as React.CSSProperties}>{parents.map(({ lesson, offlineOnly }) => <LessonCard key={lesson.id} lesson={lesson} offlineOnly={offlineOnly} adult />)}</div>
         {!parents.length && <p className="empty">这个阶段的家长指引正在准备，请先和宝宝面对面玩一玩。</p>}
       </section> : <><section className="journey"><div className="section-heading"><h2>今天的小旅程</h2><span><Leaf />家长全程陪同</span></div>
-        <div className="journey-grid" style={{ '--lesson-count': Math.max(1, Math.min(4, journeys.length)) } as React.CSSProperties}>
+        <div className="journey-grid today-grid" style={{ '--lesson-count': Math.max(1, Math.min(4, journeys.length)) } as React.CSSProperties}>
           {journeys.slice(0, 4).map(({ lesson }) => <LessonCard key={lesson.id} lesson={lesson} />)}
         </div>
         {!journeys.length && <p className="empty">今天先和家人玩一玩，课程准备好后再相见。</p>}
       </section>
-      <section className="parent-guide-section"><h2>家长指引</h2><div className="parent-guide-grid">{parents.map(({ lesson, offlineOnly }) => <LessonCard key={lesson.id} lesson={lesson} offlineOnly={offlineOnly} adult />)}</div>{!parents.length && <p className="muted">当前内容包暂无适龄的家长指引课。</p>}</section>
+      {parents.length > 0 && <section className="parent-guide-section"><h2>家长指引</h2><div className="parent-guide-grid">{parents.map(({ lesson, offlineOnly }) => <LessonCard key={lesson.id} lesson={lesson} offlineOnly={offlineOnly} adult />)}</div></section>}
       {completed.length > 0 && <section className="again"><h2>再玩一次</h2><div className="recent-grid">{completed.map((lesson) => <LessonCard key={lesson.id} lesson={lesson} compact />)}</div></section>}</>}
       {app.error && <p className="connection-note" role="status">连接暂时中断，正在保留本机记录。</p>}
     </main>

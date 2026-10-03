@@ -18,6 +18,7 @@ const sdk = process.env.ANDROID_HOME || join(process.env.HOME, 'Library/Android/
 const adb = join(sdk, 'platform-tools/adb');
 const adbPort = process.env.SPROUT_ADB_PORT || '5049';
 const emulatorPort = process.env.SPROUT_EMULATOR_PORT || '5582';
+const timezone = process.env.SPROUT_T26_TIMEZONE || 'Asia/Seoul';
 const serial = `emulator-${emulatorPort}`;
 const app = 'com.sprout.growth';
 const delay = (ms) => new Promise((done) => setTimeout(done, ms));
@@ -204,7 +205,9 @@ try {
   await command('shell', 'settings', 'put', 'secure', 'user_setup_complete', '1');
   await delay(8000);
   await command('shell', 'settings', 'put', 'global', 'auto_time_zone', '0');
-  report.timezoneSetup = await command('shell', 'cmd', 'alarm', 'set-timezone', 'Asia/Seoul').catch((error) => error.message);
+  report.requestedTimezone = timezone;
+  report.timezoneSetup = await command('shell', 'cmd', 'alarm', 'set-timezone', timezone).catch((error) => error.message);
+  report.deviceTimezone = await command('shell', 'getprop', 'persist.sys.timezone');
   report.deviceTime = await command('shell', 'date', '+%Y-%m-%dT%H:%M:%S%z');
   const { version } = JSON.parse(await readFile(join(root, 'apps/player/package.json'), 'utf8'));
   const apk = join(root, 'release', `sprout-player-${version}-release.apk`);
