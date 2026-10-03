@@ -122,6 +122,11 @@ export interface TodayPlanItem {
   lessonId: string;
   reason: 'theme' | 'review' | 'pinned' | 'balance';
   lesson: LessonSummary;
+  /**
+   * 仅线下版：家长关闭了共看（或阶段不提供孩子屏幕内容）时，child 课以"家长导语 + 线下活动"形式出现，
+   * 播放端不播放任何屏幕步骤。保证 24–36 月龄选择不看屏幕的家庭仍有完整的每日活动。
+   */
+  offlineOnly?: boolean;
 }
 
 /** GET /api/children/:id/today 与 scheduler 输出 */

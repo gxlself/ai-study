@@ -19,6 +19,8 @@ export const ScreenPolicy = z.object({
    * default = 默认开启。缺省视为 default。
    */
   childScreen: z.enum(['none', 'optional', 'default']).optional(),
+  /** 每天最多几节 child 共看课（缺省不限，仍受 dailyMaxMin 约束）。s4 为 1 */
+  childLessonsPerDay: z.number().int().min(0).max(4).optional(),
 });
 export type ScreenPolicy = z.infer<typeof ScreenPolicy>;
 

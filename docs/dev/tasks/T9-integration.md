@@ -26,3 +26,9 @@
 - 修复过程中发现的 bug（任何模块，最小改动，补测试）。
 - `docs/dev/qa-report.md`：验收清单与结果表、逐课巡检汇总（96 行：课程 id、步骤数、是否通过、问题）、截图目录说明、已知问题。
 - 回报中单列"需要 Claude 决策"的内容问题清单。
+
+## 5. Claude 决策的修正项（必须实现，附测试）
+契约已更新（`packages/schema`：`TodayPlanItem.offlineOnly?`、`ScreenPolicy.childLessonsPerDay?`）：
+1. **每日共看课数上限**：`@sprout/core` planToday 遵守 `stage.screen.childLessonsPerDay`（缺省不限）；在 `routes/_stages/s4.json` 的 screen 中加 `"childLessonsPerDay": 1`（这是唯一允许你改的课程数据字段）。
+2. **仅线下版**：生效模式为 parent-only 且本阶段可用的 audience=parent 课程不足 `lessonsPerDay` 时，用本阶段（当前主题优先）的 child 课补足，并标记 `offlineOnly: true`。播放端对 offlineOnly 项：卡片显示"线下版"徽标，点开后只显示家长导语 + phrases + 线下活动（含 question / levels），不挂载任何活动步骤、不计入孩子屏幕时间（session audience 记为 parent）。后台今日计划同样显示"线下版"。
+3. **共看知情提示**：孩子首次处于 co-view 模式时（24 月龄自动开启或家长手动开启），后台孩子页与播放端首页各显示一次可关闭的说明："中国卫健委/教育部对 0–3 岁的建议更严格（不接触/禁用视屏类产品）；本 App 的共看课是可选的、短时的、必须陪同的；您可以随时在后台切换为『仅家长指引』，课程会以线下版继续。"（播放端用 localStorage 记已读；后台用孩子设置里的一个本地已读标记即可。）
