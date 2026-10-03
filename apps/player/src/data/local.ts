@@ -23,7 +23,7 @@ import {
   type SessionInput,
   type TodayPlan,
 } from '@sprout/schema';
-import { directoryUrl, httpAsset, joinAsset, packSegment } from './assets';
+import { directoryUrl, joinAsset, packSegment } from './assets';
 import { parseBundle } from './bundle';
 import { DataSourceError, StorageError } from './errors';
 import { JsonClient } from './http';
@@ -320,8 +320,6 @@ export class LocalSource implements DataSource {
       const concept = this.bundleData?.lexicon?.concepts.find((entry) => entry.id === path.slice(8));
       return concept ? this.resolveAsset(this.bundleData!.manifest.id, concept.image) : '';
     }
-    const absolute = httpAsset(path);
-    if (absolute) return absolute;
     const baseUrl = packId === (this.bundleData?.manifest.id ?? 'sprout.core')
       ? this.baseUrl
       : `./bundled/packs/${packSegment(packId)}/`;

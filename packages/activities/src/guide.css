@@ -14,7 +14,8 @@
 .spa-guide-columns { display: grid; grid-template-columns: minmax(0, 1fr); grid-gap: 2vmin; }
 .spa-guide-section { min-width: 0; }
 .spa-guide-notes { min-width: 0; }
-.spa-guide-notes > * + * { margin-top: 2vmin; }
+.spa-guide-notes > * + * { margin-top: 1.6vmin; }
+.spa-guide-notes h3 { margin-bottom: 0.6vmin; }
 .spa-guide-section > ul { padding-left: 1.3em; }
 .spa-guide-materials > * + *, .spa-guide-notes li + li { margin-top: 0.6vmin; }
 .spa-guide-steps { list-style: none; display: flex; flex-direction: column; padding: 0; grid-gap: 0; }

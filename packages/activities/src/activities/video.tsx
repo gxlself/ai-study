@@ -1,8 +1,9 @@
-import { useCallback, useEffect, useRef, useState } from 'react';
+import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
 import { PHRASES } from '@sprout/schema';
 import type { VideoProps } from '@sprout/schema';
 import type { ActivityContext } from '@sprout/plugin-sdk';
 import { Action, InputHint, Stage, Text, defineBuiltin, useNav, useSession, useTask } from '../shared';
+import { mediaAsset } from '../security';
 
 function VideoActivity({ ctx }: { ctx: ActivityContext<VideoProps> }) {
   const s = useSession(ctx);
@@ -15,6 +16,9 @@ function VideoActivity({ ctx }: { ctx: ActivityContext<VideoProps> }) {
   const [error, setError] = useState(false);
   const [stopped, setStopped] = useState(false);
   const { src, poster, title, captions, maxSec } = ctx.props;
+  const sources = useMemo(() => ({
+    src: mediaAsset(src, ctx), poster: mediaAsset(poster, ctx), captions: mediaAsset(captions, ctx),
+  }), [ctx, src, poster, captions]);
 
   const finish = useCallback((reason: string) => {
     if (!s.active() || s.paused) return;
@@ -135,8 +139,8 @@ function VideoActivity({ ctx }: { ctx: ActivityContext<VideoProps> }) {
     <Stage ctx={ctx} className="spa-media spa-video">
       {title && <Text ctx={ctx} text={title} className="spa-media-heading" />}
       <div className="spa-video-screen">
-        {!stopped && (
-          <video ref={media} src={ctx.resolveAsset(src)} poster={poster ? ctx.resolveAsset(poster) : undefined}
+        {!stopped && sources.src && (
+          <video ref={media} src={sources.src} poster={sources.poster}
             playsInline preload="metadata" controls={false}
             aria-label={title ? ctx.locale.pick(title).primary : ctx.locale.pick({ zh: '视频', en: 'Video' }).primary}
             onPlay={() => {
@@ -155,12 +159,12 @@ function VideoActivity({ ctx }: { ctx: ActivityContext<VideoProps> }) {
               setPlaying(false);
               ctx.log('video:error', { code: media.current?.error?.code });
             }}>
-            {captions && <track kind="captions" src={ctx.resolveAsset(captions)} default
+            {sources.captions && <track kind="captions" src={sources.captions} default
               srcLang={ctx.locale.mode.startsWith('en') ? 'en' : 'zh'}
               label={ctx.locale.pick({ zh: '字幕', en: 'Captions' }).primary} />}
           </video>
         )}
-        {!playing && !stopped && (
+        {!playing && !stopped && sources.src && (
           <div className="spa-video-overlay">
             <Action ctx={ctx} onClick={toggle} label={ctx.locale.pick(control).primary}
               disabled={s.paused} className="spa-video-play">
@@ -174,7 +178,7 @@ function VideoActivity({ ctx }: { ctx: ActivityContext<VideoProps> }) {
           <span aria-hidden="true">Ⅱ</span>
         </Action>}
         <InputHint ctx={ctx} />
-        {error && (
+        {(error || !sources.src) && (
           <>
             <Text ctx={ctx} text={{ zh: '视频暂时无法播放', en: 'Video is unavailable' }} />
             <Action ctx={ctx} onClick={() => finish('unavailable')} className="spa-video-finish">

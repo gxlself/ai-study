@@ -42,12 +42,12 @@
     {
       "type": "guide",
       "title": { "zh": "搭了，倒了，再搭", "en": "Build, Tumble, and Rebuild" },
-      "parentTip": "只数真实的单块积木。词库积木图是示意，不用于点数。",
+      "parentTip": "起步图是一块积木。后续搭塔和点数用真实大积木，不要求宝宝达到示范块数。",
       "props": {
         "goal": "用低塔体验上面、高低和推倒再搭。",
         "materials": ["三四块轻质大积木", "稳固地垫"],
         "steps": [
-          { "text": "把一块宽底积木放在地垫上。", "say": { "zh": "先放这一块。", "en": "This one goes first." }, "concept": "blocks" },
+          { "text": "把一块宽底积木放在地垫上。", "say": { "zh": "先放这一块。", "en": "This one goes first." }, "concept": "single-block" },
           { "text": "慢慢把第二块放在上面。", "say": { "zh": "放上面，高了一点。", "en": "On top. A little higher." } },
           { "text": "递给宝宝一块，请他试着叠。", "say": { "zh": "你想放在哪里？", "en": "Where would you like to put it?" } },
           { "text": "宝宝愿意时，再示范加第四块。", "say": { "zh": "我们慢慢放。", "en": "Let's put it down slowly." } },

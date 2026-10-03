@@ -12,6 +12,7 @@ import {
   defineReactActivity, useActivityKeys, useActivityPaused,
   type ActivityContext, type ActivityPlugin, type ActivityResult, type NavKey, type SfxName,
 } from '@sprout/plugin-sdk';
+import { mediaAsset } from './security';
 
 export const countSpeech = (n: number): Speech => ({ zh: numberToZh(n), en: numberToEn(n) });
 export const speechForConcept = (ref?: ConceptRef): Speech | undefined =>
@@ -27,7 +28,13 @@ export function collectAssets(props: unknown, helpers: Parameters<NonNullable<Ac
   function visit(value: unknown, key = '') {
     if (value === null || value === undefined) return;
     if (typeof value === 'string') {
-      if (['image', 'poster', 'src', 'captions'].includes(key)) assets.add(helpers.resolveAsset(value));
+      if (['poster', 'src', 'captions'].includes(key)) {
+        const url = mediaAsset(value, helpers);
+        if (url) assets.add(url);
+      }
+      if (key === 'image') {
+        try { const url = helpers.resolveAsset(value); if (url) assets.add(url); } catch { /* 跳过不可信素材。 */ }
+      }
       if (['concept', 'item', 'items', 'sequence', 'options'].includes(key)) concept(value);
     } else if (Array.isArray(value)) {
       value.forEach((v) => visit(v, key));

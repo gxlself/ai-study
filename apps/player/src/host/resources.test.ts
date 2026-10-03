@@ -1,7 +1,8 @@
 import { afterEach, describe, expect, it, vi } from 'vitest';
 import type { Lesson, ResolvedConcept } from '@sprout/schema';
 import type { ActivityPlugin } from '../../../../packages/plugin-sdk/src/types';
-import { createResources, preloadLesson, PRELOAD_TIMEOUT_MS } from './resources';
+import { createResources, preloadLesson, PRELOAD_TIMEOUT_MS, PRELOAD_MAX_BYTES } from './resources';
+import { joinAsset } from '../data/assets';
 
 function concept(packId: string, id = 'apple', patch: Partial<ResolvedConcept> = {}): ResolvedConcept {
   return {
@@ -21,7 +22,10 @@ function lesson(types: string[]): Lesson {
 }
 
 const helpers = createResources({
-  packId: 'local', concepts: [concept('local')], resolveAsset: (packId, path) => `/packs/${packId}/${path}`,
+  packId: 'local', concepts: [concept('local')], resolveAsset: (packId, path) => {
+    if (path.startsWith('/packs/')) return path;
+    return joinAsset(`/packs/${packId}/`, path);
+  },
 });
 
 function registry(preloads: Record<string, ActivityPlugin['preload']>) {
@@ -69,8 +73,11 @@ describe('resources', () => {
     expect(resources.concept('apple')?.zh).toBe('第一个包');
   });
 
-  it('preserves resolved absolute image URLs and sends root-relative URLs to the source resolver', () => {
-    const resolveAsset = vi.fn((_packId: string, path: string) => `https://home.test${path}`);
+  it('routes absolute and root-relative URLs through the source security resolver', () => {
+    const resolveAsset = vi.fn((_packId: string, path: string) => {
+      if (path.startsWith('https://media.test')) throw new Error('untrusted source');
+      return `https://home.test${path}`;
+    });
     const resources = createResources({
       packId: 'local',
       concepts: [
@@ -79,8 +86,8 @@ describe('resources', () => {
       ],
       resolveAsset,
     });
-    expect(resources.concept('apple')?.imageUrl).toBe('https://media.test/apple.svg');
-    expect(resolveAsset).not.toHaveBeenCalled();
+    expect(resources.concept('apple')?.imageUrl).toBe('');
+    expect(resolveAsset).toHaveBeenCalledWith('local', 'https://media.test/apple.svg');
     expect(resources.concept('ball')?.imageUrl).toBe('https://home.test/packs/sprout.core/assets/ball.svg');
     expect(resolveAsset).toHaveBeenCalledWith('sprout.core', '/packs/sprout.core/assets/ball.svg');
   });
@@ -106,18 +113,22 @@ describe('resources', () => {
     expect(helpers.concept('toString')).toBeUndefined();
   });
 
-  it('does not prefix absolute, data, or blob URLs with the current pack', () => {
-    for (const url of ['https://media.test/image.svg', 'http://home.test/a.png', 'data:image/png;base64,AA==', 'blob:https://home.test/one']) {
-      expect(helpers.resolveAsset(url)).toBe(url);
+  it('only permits safe local data/blob images; external and script resources are rejected', () => {
+    expect(helpers.resolveAsset('data:image/png;base64,AA==')).toBe('data:image/png;base64,AA==');
+    const blob = `blob:${location.origin}/one`;
+    expect(helpers.resolveAsset(blob)).toBe(blob);
+    for (const url of ['https://media.test/image.svg', 'http://home.test/a.png', 'data:text/html,<script>', 'javascript:alert(1)', 'blob:https://other.test/one']) {
+      expect(helpers.resolveAsset(url)).toBe('');
     }
   });
 });
 
 describe('lesson preloading', () => {
-  it('calls every known step and deduplicates URLs while waiting for response bodies', async () => {
+  it('calls every known step and deduplicates URLs with bounded streaming bodies', async () => {
     const preload = vi.fn((_props, resources) => [resources.resolveAsset('assets/apple.svg'), resources.concept('apple')!.imageUrl]);
-    const body = vi.fn().mockResolvedValue(new ArrayBuffer(1));
-    const fetcher = vi.fn().mockResolvedValue({ ok: true, arrayBuffer: body });
+    const response = new Response(new Uint8Array([1]));
+    const body = vi.spyOn(response, 'arrayBuffer');
+    const fetcher = vi.fn().mockResolvedValue(response);
     vi.stubGlobal('fetch', fetcher);
     const controller = new AbortController();
     await preloadLesson(lesson(['cards', 'cards', 'absent']), registry({ cards: preload }), helpers, controller.signal);
@@ -126,7 +137,8 @@ describe('lesson preloading', () => {
     expect(fetcher).toHaveBeenCalledTimes(1);
     expect(fetcher.mock.calls[0][0]).toBe('/packs/local/assets/apple.svg');
     expect(fetcher.mock.calls[0][1].cache).toBe('force-cache');
-    expect(body).toHaveBeenCalledOnce();
+    expect(body).not.toHaveBeenCalled();
+    expect(fetcher.mock.calls[0][1]).toMatchObject({ redirect: 'error', credentials: 'omit', referrerPolicy: 'no-referrer' });
     expect(controller.signal.aborted).toBe(false);
   });
 
@@ -136,7 +148,7 @@ describe('lesson preloading', () => {
       .mockResolvedValueOnce({ ok: false, arrayBuffer: vi.fn() }));
     const plugins = registry({
       broken: () => { throw new Error('plugin failure'); },
-      available: () => ['https://media.test/a.png', 'https://media.test/b.m4a'],
+      available: () => ['a.png', 'b.m4a'],
     });
     await expect(preloadLesson(lesson(['broken', 'absent', 'available']), plugins, helpers, new AbortController().signal))
       .resolves.toBeUndefined();
@@ -160,7 +172,7 @@ describe('lesson preloading', () => {
 
   it('also bounds stalled response bodies', async () => {
     vi.useFakeTimers();
-    vi.stubGlobal('fetch', vi.fn().mockResolvedValue({ ok: true, arrayBuffer: () => new Promise(() => {}) }));
+    vi.stubGlobal('fetch', vi.fn().mockResolvedValue(new Response(new ReadableStream({ start() {} }))));
     const pending = preloadLesson(lesson(['cards']), registry({ cards: () => ['audio.m4a'] }), helpers, new AbortController().signal);
     await vi.advanceTimersByTimeAsync(8_000);
     await pending;
@@ -186,5 +198,26 @@ describe('lesson preloading', () => {
     expect(preload).not.toHaveBeenCalled();
     vi.stubGlobal('fetch', undefined);
     await expect(preloadLesson(lesson(['cards']), registry({ cards: preload }), helpers, new AbortController().signal)).resolves.toBeUndefined();
+  });
+  it('does not fetch unregistered external assets, data/blob, or traversal returned by plugins', async () => {
+    vi.stubGlobal('fetch', vi.fn().mockResolvedValue(new Response(new Uint8Array([1]))));
+    await preloadLesson(lesson(['cards']), registry({
+      cards: () => ['https://tracking.test/a.png', '//tracking.test/a.png', 'data:image/png;base64,AA==', 'blob:https://tracking.test/a', '../bad', '%252e%252e/bad', 'assets/good.png'],
+    }), helpers, new AbortController().signal);
+    expect(fetch).toHaveBeenCalledExactlyOnceWith('/packs/local/assets/good.png', expect.any(Object));
+  });
+  it('cancels oversized streams and does not follow changed final response URLs', async () => {
+    const cancel = vi.fn();
+    const oversize = new Response(new ReadableStream({
+      start(controller) { controller.enqueue(new Uint8Array(PRELOAD_MAX_BYTES + 1)); },
+      cancel,
+    }));
+    const redirected = new Response(new Uint8Array([1]));
+    Object.defineProperty(redirected, 'url', { value: 'https://tracking.test/a.png' });
+    const body = vi.spyOn(redirected, 'arrayBuffer');
+    vi.stubGlobal('fetch', vi.fn().mockResolvedValueOnce(oversize).mockResolvedValueOnce(redirected));
+    await preloadLesson(lesson(['cards']), registry({ cards: () => ['a.png', 'b.png'] }), helpers, new AbortController().signal);
+    expect(cancel).toHaveBeenCalledOnce();
+    expect(body).not.toHaveBeenCalled();
   });
 });

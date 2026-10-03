@@ -207,8 +207,8 @@ describe('LocalSource', () => {
     await source.bootstrap();
     expect(source.resolveAsset('sprout.core', 'assets/apple.svg')).toBe('https://content.example/core/assets/apple.svg');
     expect(source.resolveAsset('sprout.core', 'concept:apple')).toBe('https://content.example/core/assets/apple.svg');
-    expect(source.resolveAsset('sprout.core', 'https://images.example/apple.svg')).toBe('https://images.example/apple.svg');
-    for (const path of ['../bad', '%2e%2e/bad', 'assets/%2f..', 'assets\\bad', 'javascript:alert(1)', '//other.example/a']) {
+    expect(source.resolveAsset('sprout.core', 'https://content.example/apple.svg')).toBe('https://content.example/apple.svg');
+    for (const path of ['../bad', '%2e%2e/bad', '%252e%252e/bad', 'assets/%2f..', 'assets\\bad', 'javascript:alert(1)', '//other.example/a', 'https://images.example/apple.svg']) {
       expect(() => source.resolveAsset('sprout.core', path)).toThrow();
     }
   });

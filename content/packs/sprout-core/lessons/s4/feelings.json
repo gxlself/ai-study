@@ -51,7 +51,7 @@
         "materials": ["开心、难过、生气、害怕大卡", "稳固防碎镜"],
         "steps": [
           { "text": "平静时把开心卡放在镜子旁。", "say": { "zh": "这是开心的脸。", "en": "This face looks happy." }, "concept": "happy" },
-          { "text": "面对镜子微笑，等宝宝回应。", "say": { "zh": "和你一起玩，我很开心。", "en": "I'm happy playing with you." } },
+          { "text": "面对镜子微笑，等宝宝回应。", "say": { "zh": "和你一起玩，我很开心。", "en": "I'm happy playing with you." }, "concept": "mirror" },
           { "text": "换难过卡，轻轻皱一皱眉。", "say": { "zh": "有时我们也会难过。", "en": "Sometimes we feel sad too." }, "concept": "sad" },
           { "text": "放下卡片，听宝宝的声音。", "say": { "zh": "你想告诉我什么？", "en": "What would you like to tell me?" } },
           { "text": "日常遇到情绪时，坐近陪伴。", "say": { "zh": "你有点难过吗？我在。", "en": "Are you feeling sad? I'm here." }, "concept": "hug" }

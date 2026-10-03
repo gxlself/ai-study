@@ -12,8 +12,10 @@ export interface ActivityResources {
   concept(ref: ConceptRef): ConceptView | undefined;
 }
 
-function isAbsoluteAsset(path: string): boolean {
-  return /^(https?:|data:|blob:|\/\/)/i.test(path);
+function localMedia(path: string): boolean {
+  if (/^data:(?:image\/(?:png|jpeg|gif|webp|svg\+xml)|audio\/[\w.+-]+)[;,]/i.test(path)) return true;
+  if (!path.startsWith('blob:')) return false;
+  try { return new URL(path).origin === globalThis.location?.origin; } catch { return false; }
 }
 
 export function createResources(options: ResourceOptions): ActivityResources {
@@ -30,7 +32,8 @@ export function createResources(options: ResourceOptions): ActivityResources {
       const item = concepts.get(path.slice('concept:'.length));
       return item ? asset(item.packId, item.imageUrl || item.image) : '';
     }
-    return isAbsoluteAsset(path) ? path : options.resolveAsset(packId, path);
+    if (localMedia(path)) return path;
+    try { return options.resolveAsset(packId, path); } catch { return ''; }
   }
 
   return {
@@ -68,6 +71,8 @@ export function createResources(options: ResourceOptions): ActivityResources {
 }
 
 export const PRELOAD_TIMEOUT_MS = 8_000;
+export const PRELOAD_MAX_BYTES = 2 * 1024 * 1024;
+export const PRELOAD_MAX_TOTAL_BYTES = 8 * 1024 * 1024;
 
 export async function preloadLesson(
   lesson: Lesson,
@@ -94,7 +99,9 @@ export async function preloadLesson(
       if (signal.aborted) break;
       try {
         for (const url of registry.get(step.type)?.preload?.(step.props, helpers) ?? []) {
-          if (typeof url === 'string' && url.trim()) urls.add(url);
+          if (typeof url !== 'string' || !url.trim() || /^(data:|blob:)/i.test(url)) continue;
+          const resolved = helpers.resolveAsset(url);
+          if (resolved && urls.size < 64) urls.add(resolved);
         }
       } catch {
         // 单个插件预加载失败不阻塞其它步骤。
@@ -104,10 +111,41 @@ export async function preloadLesson(
       finish();
       return;
     }
-    const jobs = [...urls].map(async (url) => {
-      const response = await fetch(url, { signal: controller.signal, cache: 'force-cache' });
-      if (response.ok) await response.arrayBuffer();
-    });
-    void Promise.allSettled(jobs).then(finish);
+    const queue = [...urls];
+    let total = 0;
+    const worker = async () => {
+      while (queue.length && !controller.signal.aborted) {
+        const url = queue.shift()!;
+        try {
+          const response = await fetch(url, {
+            signal: controller.signal, cache: 'force-cache', redirect: 'error',
+            credentials: 'omit', referrerPolicy: 'no-referrer',
+          });
+          const expected = new URL(url, globalThis.location?.href ?? 'http://localhost/').href;
+          const length = Number(response.headers?.get('content-length'));
+          if (!response.ok || response.redirected || (response.url && response.url !== expected) ||
+            (Number.isFinite(length) && length > PRELOAD_MAX_BYTES)) {
+            await response.body?.cancel();
+            continue;
+          }
+          // 不使用无界 arrayBuffer；旧浏览器没有流接口时放弃预加载。
+          const reader = response.body?.getReader();
+          if (!reader) continue;
+          let bytes = 0;
+          try {
+            while (!controller.signal.aborted) {
+              const chunk = await reader.read();
+              if (chunk.done) break;
+              bytes += chunk.value.byteLength;
+              total += chunk.value.byteLength;
+              if (bytes > PRELOAD_MAX_BYTES || total > PRELOAD_MAX_TOTAL_BYTES) break;
+            }
+          } finally { await reader.cancel().catch(() => {}); }
+        } catch {
+          // 网络与素材错误不阻止开始活动。
+        }
+      }
+    };
+    void Promise.allSettled(Array.from({ length: Math.min(4, queue.length) }, worker)).then(finish);
   });
 }

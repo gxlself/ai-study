@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { Alert, App, Button, DatePicker, Form, Input, Select, Steps } from 'antd';
+import { Alert, App, Button, Checkbox, DatePicker, Form, Input, Select, Steps } from 'antd';
 import { ArrowLeftOutlined, ArrowRightOutlined, HeartFilled, LockOutlined, ReloadOutlined } from '@ant-design/icons';
 import dayjs, { type Dayjs } from 'dayjs';
 import { ChildInput, type LanguageMode } from '@sprout/schema';
@@ -16,6 +16,7 @@ const languages = [
 interface SetupValues {
   familyName: string; password: string; confirm: string;
   name: string; birthday: Dayjs; languageMode: LanguageMode;
+  remember: boolean;
 }
 
 export default function Auth({ onAuthenticated }: { onAuthenticated: () => void }) {
@@ -40,7 +41,7 @@ export default function Auth({ onAuthenticated }: { onAuthenticated: () => void 
             name: values.name, birthday: values.birthday.format('YYYY-MM-DD'), languageMode: values.languageMode,
           }),
         });
-      setToken(result.token);
+      setToken(result.token, values.remember === true);
       void message.success(initialized ? '欢迎回来' : '家庭已创建');
       onAuthenticated();
     } catch (err) { setError(err instanceof Error ? err.message : '暂时无法登录，请稍后重试'); }
@@ -56,7 +57,7 @@ export default function Auth({ onAuthenticated }: { onAuthenticated: () => void 
       {status.loading ? <p role="status">正在连接家庭服务器…</p> : status.error ?
         <Alert type="error" title={status.error.message} action={<Button icon={<ReloadOutlined />} onClick={status.reload}>重试</Button>} /> :
         <Form<SetupValues> form={form} layout="vertical" onFinish={(values) => void submit(values)}
-          initialValues={{ familyName: '我的家', languageMode: 'zh-en' }}
+          initialValues={{ familyName: '我的家', languageMode: 'zh-en', remember: false }}
           validateMessages={{ required: '请填写${label}' }} requiredMark="optional">
           {!initialized && <Steps size="small" current={step} items={[{ title: '家庭设置' }, { title: '孩子档案' }]} />}
           {error && <Alert type="error" showIcon title={error} />}
@@ -78,6 +79,9 @@ export default function Auth({ onAuthenticated }: { onAuthenticated: () => void 
               <Select options={languages.map((item) => ({ value: item.value, label: `${item.label} · ${item.description}` }))} />
             </Form.Item>
           </>}
+          <Form.Item name="remember" valuePropName="checked" hidden={!initialized && step !== 1}>
+            <Checkbox>在此设备保持登录</Checkbox>
+          </Form.Item>
           <div className="auth-actions">
             {!initialized && step === 1 && <Button icon={<ArrowLeftOutlined />} onClick={() => setStep(0)}>上一步</Button>}
             {!initialized && step === 0

@@ -2,6 +2,7 @@ import { useRef, useState, type CSSProperties } from 'react';
 import { PHRASES, type SortProps } from '@sprout/schema';
 import type { ActivityContext } from '@sprout/plugin-sdk';
 import { ConceptImage, conceptSpeech, defineBuiltin, InputHint, Stage, Text, speechForConcept, useBusy, useNav, useSession, useTask } from '../shared';
+import { sortColor } from '../security';
 
 function SortActivity({ ctx }: { ctx: ActivityContext<SortProps> }) {
   const props = ctx.props;
@@ -76,7 +77,7 @@ function SortActivity({ ctx }: { ctx: ActivityContext<SortProps> }) {
       {props.bins.map((bin, index) => <button type="button" data-focusable key={bin.id}
         ref={(el) => { buttons.current[index] = el; }} disabled={busy.busy || done}
         className={`spa-sort-bin ${selectedBin === index ? 'is-selected' : ''}`}
-        style={{ '--spa-bin-color': bin.color ?? 'var(--sp-accent-2)' } as CSSProperties}
+        style={{ '--spa-bin-color': sortColor(bin.color) ?? 'var(--sp-accent-2)' } as CSSProperties}
         onClick={() => place(index)} aria-label={ctx.locale.pick(bin.label).primary}>
         {(bin.concept || bin.image) && <ConceptImage ctx={ctx} concept={bin.concept} image={bin.image} />}
         <Text ctx={ctx} text={bin.label} />

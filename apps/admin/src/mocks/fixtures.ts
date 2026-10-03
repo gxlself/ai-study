@@ -111,7 +111,10 @@ export function initialData() {
     source: 'builtin', enabled: true, permissions: [],
     activities: [{ type, name: { zh: BUILTIN_ACTIVITY_META[type].zh }, ageRange: BUILTIN_ACTIVITY_META[type].ageRange }],
   }));
-  const devices: DeviceInfo[] = [{ id: 'device-tv', name: '客厅电视', kind: 'tv', childId: children[0].id, createdAt: now, lastSeenAt: now }];
+  const devices: DeviceInfo[] = [{
+    id: 'device-tv', name: '客厅电视', kind: 'tv', childId: children[0].id,
+    allowedChildIds: [children[0].id], createdAt: now, lastSeenAt: now,
+  }];
   const sessions: SessionRecord[] = Array.from({ length: 7 }, (_, index) => ({
     id: `session-${index}`, childId: children[0].id, lessonId: lessons[index % 2].id,
     startedAt: dayjs().subtract(index, 'day').hour(10).minute(0).toISOString(),

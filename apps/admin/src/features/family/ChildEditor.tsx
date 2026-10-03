@@ -18,6 +18,7 @@ import { useState } from 'react';
 import { api } from '../../lib/api';
 import { useResource } from '../../lib/hooks';
 import { formatAge } from '../../lib/format';
+import { pinAgeWarning } from '../../lib/lesson-age';
 import { effectiveScreenMode, sessionHardLimit } from '../../lib/screen-policy';
 import { FetchWarning, MutationError } from './components';
 import {
@@ -66,6 +67,10 @@ export default function ChildEditor({ child, onClose, onSaved }: {
   const validBirthday = birthday?.isValid() && !birthday.isAfter(dayjs(), 'day');
   const stage = validBirthday && birthday ? stageForAge(route.data, ageOf(birthday.format('YYYY-MM-DD')).months) : undefined;
   const ageMonths = validBirthday && birthday ? ageOf(birthday.format('YYYY-MM-DD')).months : undefined;
+  const pinnedWarnings = ageMonths === undefined ? [] : (lessons.data ?? []).flatMap((lesson) => {
+    const warning = pinned.includes(lesson.id) ? pinAgeWarning(ageMonths, lesson.ageRange) : undefined;
+    return warning ? [`${lesson.title.zh}：${warning}`] : [];
+  });
   const coViewUnavailable = ageMonths !== undefined && ageMonths < 18;
   const youngCoView = ageMonths !== undefined && ageMonths >= 18 && ageMonths < 24 && screenMode === 'co-view';
   const resolvedMode = effectiveScreenMode(ageMonths ?? 0, screenMode, stage?.screen.childScreen);
@@ -317,6 +322,8 @@ export default function ChildEditor({ child, onClose, onSaved }: {
               placeholder="选择每天优先安排的课程" loading={lessons.loading}
               options={lessonOptions.map((item) => ({ ...item, disabled: skipped.includes(item.value) }))} />
           </Form.Item>
+          {!!pinnedWarnings.length && <Alert type="warning" showIcon title="置顶课程月龄提醒"
+            description={<ul>{pinnedWarnings.map((warning) => <li key={warning}>{warning}</li>)}</ul>} />}
           <Form.Item name={['plan', 'skipped']} label="跳过课程" dependencies={[['plan', 'pinned']]} rules={[{
             validator: (_, value: string[]) => (value ?? []).some((id) => (form.getFieldValue(['plan', 'pinned']) as string[] ?? []).includes(id))
               ? Promise.reject(new Error('同一课程不能同时置顶和跳过')) : Promise.resolve(),

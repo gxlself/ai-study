@@ -1,6 +1,6 @@
 import { useId, useState } from 'react';
-import { Alert, Button, Checkbox, Form, Input, Modal, Popconfirm, Tabs, Tag } from 'antd';
-import { AppstoreOutlined, DeleteOutlined, PlusOutlined, ReloadOutlined } from '@ant-design/icons';
+import { Alert, Button, Form, Input, Modal, Popconfirm, Switch, Tabs, Tag } from 'antd';
+import { AppstoreOutlined, DeleteOutlined, EyeOutlined, PlusOutlined, ReloadOutlined } from '@ant-design/icons';
 import type { PluginInfo } from '@sprout/schema';
 import { api } from '../lib/api';
 import { useResource } from '../lib/hooks';
@@ -10,31 +10,60 @@ import {
   ActionError, ConfirmedSwitch, FilePicker, Permissions, useSystemAction,
 } from '../features/system/shared';
 import { groupPlugins, normalizeHttpUrl } from '../features/system/helpers';
+import PluginTrustDialog from '../features/system/PluginTrustDialog';
+import {
+  inspectPluginZip, inspectRemotePlugin, matchesPluginReview, pluginEntryUrl, pluginSourceUrl,
+  PLUGIN_TRUST_WARNING, samePluginDeclaration, type PluginReview,
+} from '../features/system/plugin-review';
 import '../features/system/system.css';
 
-const TRUST_WARNING = '第三方插件会在播放端执行代码，可能访问网络、麦克风、摄像头或本地存储。权限声明不等于安全审核或隔离保护，仅安装可信来源。';
+const TRUST_WARNING = `${PLUGIN_TRUST_WARNING}。权限声明不等于安全审核或隔离保护。`;
 
 function InstallPlugin({ onClose, onInstalled }: { onClose: () => void; onInstalled: () => void }) {
   const [source, setSource] = useState<'zip' | 'remote'>('zip');
   const [file, setFile] = useState<File | null>(null);
   const [fileError, setFileError] = useState<string>();
-  const [candidate, setCandidate] = useState<{ source: 'zip' | 'remote'; file: File | null; manifestUrl?: string } | null>(null);
-  const [form] = Form.useForm<{ manifestUrl?: string; trusted: boolean }>();
+  const [candidate, setCandidate] = useState<{
+    source: 'zip' | 'remote'; file: File | null; manifestUrl?: string; review: PluginReview;
+  } | null>(null);
+  const [form] = Form.useForm<{ manifestUrl?: string }>();
   const formId = useId();
   const action = useSystemAction();
 
   async function install() {
     if (!candidate) return;
     const selected = candidate;
-    const success = await action.run('install', () => selected.source === 'zip' && selected.file
-      ? api.upload<PluginInfo>('/api/plugins/install', selected.file)
-      : api.post<PluginInfo>('/api/plugins/remote', { manifestUrl: selected.manifestUrl }),
-    '插件已安装，请核对其权限声明。');
-    setCandidate(null);
+    const success = await action.run('install', async () => {
+      const plugin = selected.source === 'zip' && selected.file
+        ? await api.upload<PluginInfo>('/api/plugins/install', selected.file)
+        : await api.post<PluginInfo>('/api/plugins/remote', { manifestUrl: selected.manifestUrl });
+      onInstalled();
+      if (!matchesPluginReview(plugin, selected.review, location.origin)) {
+        try { await api.put(`/api/plugins/${encodeURIComponent(plugin.id)}`, { enabled: false }); }
+        catch {
+          throw new Error('服务端清单与确认内容不同，而且自动停用失败。请立即停用此插件并检查播放设备。');
+        }
+        onInstalled();
+        throw new Error('服务端返回的权限或入口与刚才确认的清单不同，插件已停用，请刷新后重新核对。');
+      }
+    }, '插件已安装。');
     if (success) { onInstalled(); onClose(); }
   }
 
+  async function inspect(values: { manifestUrl?: string }) {
+    if (source === 'zip' && !file) { setFileError('请选择插件 ZIP 压缩包。'); return; }
+    await action.run('inspect', async () => {
+      if (source === 'zip' && file && file.size > 50 * 1024 * 1024) throw new Error('插件 ZIP 不能超过 50 MB。');
+      const manifestUrl = values.manifestUrl ? normalizeHttpUrl(values.manifestUrl) : undefined;
+      const review = source === 'zip' && file
+        ? inspectPluginZip(new Uint8Array(await file.arrayBuffer()), file.name, location.origin)
+        : await inspectRemotePlugin(manifestUrl ?? '');
+      setCandidate({ source, file, manifestUrl, review });
+    });
+  }
+
   return (
+    <>
     <Modal
       open
       title="添加第三方插件"
@@ -45,24 +74,8 @@ function InstallPlugin({ onClose, onInstalled }: { onClose: () => void; onInstal
       maskClosable={!action.busy}
       footer={[
         <Button key="cancel" disabled={action.busy} onClick={onClose}>取消</Button>,
-        <Popconfirm
-          key="install"
-          title="信任此来源并安装？"
-          description={<div className="system-confirm-copy">安装后插件可能立即启用。同 ID 插件可能被替换，远程代码也可能随来源更新。</div>}
-          open={!!candidate}
-          trigger={[]}
-          onOpenChange={(open) => { if (!open && !action.busy) setCandidate(null); }}
-          onCancel={() => setCandidate(null)}
-          onConfirm={install}
-          okText="信任并安装"
-          cancelText="取消"
-          okButtonProps={{ loading: action.busy }}
-          cancelButtonProps={{ disabled: action.busy }}
-        >
-          <Button type="primary" icon={<PlusOutlined />} form={formId} htmlType="submit" loading={action.busy}>
-            安装插件
-          </Button>
-        </Popconfirm>,
+        <Button key="inspect" type="primary" icon={<EyeOutlined />} form={formId} htmlType="submit"
+          loading={action.pending === 'inspect'} disabled={action.busy || !!candidate}>查看权限</Button>,
       ]}
     >
       {action.feedback}
@@ -73,19 +86,14 @@ function InstallPlugin({ onClose, onInstalled }: { onClose: () => void; onInstal
           form={form}
           layout="vertical"
           noValidate
-          disabled={action.busy}
-          initialValues={{ trusted: false }}
+          disabled={action.busy || !!candidate}
           onValuesChange={() => setCandidate(null)}
-          onFinish={(values) => {
-            if (source === 'zip' && !file) { setFileError('请选择插件 ZIP 压缩包。'); return; }
-            setCandidate({ source, file, manifestUrl: values.manifestUrl ? normalizeHttpUrl(values.manifestUrl) : undefined });
-          }}
+          onFinish={(values) => void inspect(values)}
         >
           <Tabs
             activeKey={source}
             onChange={(key) => {
               setSource(key as typeof source);
-              form.setFieldValue('trusted', false);
               setCandidate(null);
               action.clearError();
             }}
@@ -93,13 +101,13 @@ function InstallPlugin({ onClose, onInstalled }: { onClose: () => void; onInstal
               {
                 key: 'zip',
                 label: '上传 ZIP',
-                disabled: action.busy,
+                disabled: action.busy || !!candidate,
                 children: source === 'zip' && (
                   <Form.Item label="插件文件" required validateStatus={fileError ? 'error' : undefined} help={fileError}>
                     <FilePicker
                       file={file}
                       extension="zip"
-                      disabled={action.busy}
+                      disabled={action.busy || !!candidate}
                       onChange={(next) => { setFile(next); setFileError(undefined); setCandidate(null); }}
                     />
                   </Form.Item>
@@ -108,7 +116,7 @@ function InstallPlugin({ onClose, onInstalled }: { onClose: () => void; onInstal
               {
                 key: 'remote',
                 label: '远程地址',
-                disabled: action.busy,
+                disabled: action.busy || !!candidate,
                 children: source === 'remote' && (
                   <Form.Item
                     name="manifestUrl"
@@ -129,21 +137,15 @@ function InstallPlugin({ onClose, onInstalled }: { onClose: () => void; onInstal
               },
             ]}
           />
-          <Form.Item
-            name="trusted"
-            valuePropName="checked"
-            rules={[{
-              validator: (_, value: boolean) => value
-                ? Promise.resolve()
-                : Promise.reject(new Error('请先确认您了解第三方代码及权限风险。')),
-            }]}
-          >
-            <Checkbox>我信任此来源，理解第三方代码及权限风险</Checkbox>
-          </Form.Item>
           <ActionError error={action.error} />
         </Form>
       </div>
     </Modal>
+    {candidate && <PluginTrustDialog
+      plugin={candidate.review.manifest} sourceUrl={candidate.review.sourceUrl} entryUrl={candidate.review.entryUrl}
+      operation="安装" busy={action.busy} error={action.error}
+      onCancel={() => { setCandidate(null); action.clearError(); }} onConfirm={() => void install()} />}
+    </>
   );
 }
 
@@ -151,6 +153,7 @@ export default function Plugins() {
   const resource = useResource<PluginInfo[]>('/api/plugins');
   const action = useSystemAction();
   const [installOpen, setInstallOpen] = useState(false);
+  const [enablePlugin, setEnablePlugin] = useState<PluginInfo | null>(null);
   const { builtin, external } = groupPlugins(resource.data ?? []);
   const activities = builtin.flatMap((plugin) => plugin.activities.map((activity) => ({ plugin, activity })));
   const disabled = action.busy || resource.loading;
@@ -218,21 +221,20 @@ export default function Plugins() {
                           <h3 className="system-wrap">{plugin.name.zh}</h3>
                           <p className="muted system-wrap">{plugin.id} · v{plugin.version}</p>
                         </div>
-                        <ConfirmedSwitch
+                        {plugin.enabled ? <ConfirmedSwitch
                           label={`${plugin.enabled ? '停用' : '启用'}插件 ${plugin.name.zh}`}
                           checked={plugin.enabled}
                           disabled={disabled}
                           loading={action.pending === `toggle:${plugin.id}`}
-                          confirmEnable
-                          title={`${plugin.enabled ? '停用' : '启用'}「${plugin.name.zh}」？`}
-                          description={plugin.enabled
-                            ? '依赖此插件的课程步骤将无法使用，已有学习记录不会因此删除。'
-                            : <><p>请确认来源可信，并核对权限：</p><Permissions permissions={plugin.permissions} details /></>}
+                          title={`停用「${plugin.name.zh}」？`}
+                          description="依赖此插件的课程步骤将无法使用，已有学习记录不会因此删除。"
                           onChange={(enabled) => action.run(`toggle:${plugin.id}`, async () => {
                             await api.put(`/api/plugins/${encodeURIComponent(plugin.id)}`, { enabled });
                             resource.reload();
                           }, enabled ? '插件已启用。' : '插件已停用。')}
-                        />
+                        /> : <Switch checked={false} disabled={disabled}
+                          aria-label={`启用插件 ${plugin.name.zh}`} checkedChildren="启用" unCheckedChildren="停用"
+                          onChange={() => { action.clearError(); setEnablePlugin(plugin); }} />}
                       </div>
                       <Tag color={plugin.source === 'remote' ? 'orange' : 'default'}>
                         {plugin.source === 'remote' ? '远程插件' : '本地安装'}
@@ -295,6 +297,23 @@ export default function Plugins() {
         </ResourceState>
       </div>
       {installOpen && <InstallPlugin onClose={() => setInstallOpen(false)} onInstalled={() => resource.reload()} />}
+      {enablePlugin && <PluginTrustDialog plugin={enablePlugin}
+        sourceUrl={pluginSourceUrl(enablePlugin, location.origin)}
+        entryUrl={pluginEntryUrl(enablePlugin.entryUrl, location.origin)}
+        operation="启用" busy={action.busy} error={action.error}
+        onCancel={() => { setEnablePlugin(null); action.clearError(); }}
+        onConfirm={() => void action.run(`toggle:${enablePlugin.id}`, async () => {
+          const latest = (await api.get<PluginInfo[]>('/api/plugins')).find((plugin) => plugin.id === enablePlugin.id);
+          if (!latest) throw new Error('插件已不存在，请关闭确认框并刷新。');
+          if (!samePluginDeclaration(enablePlugin, latest, location.origin)) {
+            setEnablePlugin(latest);
+            resource.reload();
+            throw new Error('插件来源或权限已变化，请重新核对并勾选确认。');
+          }
+          await api.put(`/api/plugins/${encodeURIComponent(enablePlugin.id)}`, { enabled: true });
+          resource.reload();
+          setEnablePlugin(null);
+        }, '插件已启用。')} />}
     </div>
   );
 }

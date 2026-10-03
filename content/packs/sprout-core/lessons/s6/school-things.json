@@ -16,7 +16,7 @@
   ],
   "cover": { "concept": "school", "bg": "sky" },
   "parentGuide": {
-    "intro": "一张一张手动翻，指图、说名字，再听孩子说。幼儿园的物品与规定会不同；书包是否携带以园所为准。老师没有词条，课后用真实介绍，不把家人图片当老师。",
+    "intro": "一张一张手动翻，指图、说名字，再听孩子说。幼儿园的物品与规定会不同；书包是否携带以园所为准。老师用角色词条图呈现，课后仍可结合真实园所介绍。",
     "tips": [
       "看到熟悉的东西，问在哪儿用过。",
       "孩子说一个词，成人扩展成短句。",
@@ -27,7 +27,7 @@
       { "zh": "我们一起看书。", "en": "Let's read a book together." },
       { "zh": "你想搭什么？", "en": "What would you like to build?" },
       { "zh": "这是你的书包。", "en": "This is your backpack." },
-      { "zh": "幼儿园也可能有小球。", "en": "Your preschool may have balls too." }
+      { "zh": "幼儿园也可能有滑梯。", "en": "Your preschool may have slides too." }
     ],
     "why": "指认后等待、回应和扩展，可增加来回对话。英语名称只是互动素材，不替代中文交流，也不承诺看图卡能学会英语。",
     "refs": ["[44]", "[48]", "[50]", "[53]", "[82]"]
@@ -57,9 +57,9 @@
     {
       "type": "word-cards",
       "title": { "zh": "慢慢认识它们", "en": "Meet the Familiar Things" },
-      "parentTip": "用球替代尚无词条的滑梯，不借家人词条当老师。指图后等孩子回应，再手动翻页。",
+      "parentTip": "用滑梯和老师词条图准确提示场景，单块积木让一个物品更清楚。指图后等孩子回应，再手动翻页。",
       "props": {
-        "items": ["school", "book", "blocks", "crayon", "ball", "backpack"],
+        "items": ["teacher", "book", "single-block", "crayon", "slide", "backpack"],
         "show": { "text": true, "english": true, "pinyin": false },
         "speak": "name+phrase",
         "autoAdvanceSec": null,

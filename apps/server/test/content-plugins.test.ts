@@ -13,7 +13,9 @@ import {
 } from './fixtures/content';
 
 let root: string, db: DatabaseSync;
-const create = (fetch?: typeof globalThis.fetch) => new PluginRegistry({ dataDir: root, db, fetch });
+const create = (fetch?: typeof globalThis.fetch) => new PluginRegistry({
+  dataDir: root, db, fetch, resolver: async () => [{ address: '93.184.216.34', family: 4 }],
+});
 beforeEach(() => { root = mkdtempSync(join(tmpdir(), 'sprout-plugins-')); db = pluginDatabase(); });
 afterEach(() => {
   vi.useRealTimers(); vi.restoreAllMocks(); db.close();
@@ -21,7 +23,7 @@ afterEach(() => {
 });
 
 describe('PluginRegistry builtin and ZIP plugins', () => {
-  it('exposes all sixteen builtins as one PluginInfo with props schemas and no URL', () => {
+  it('exposes all seventeen builtins as one PluginInfo with props schemas and no URL', () => {
     const registry = create(), list = registry.list();
     expect(list).toHaveLength(1);
     expect(list[0]).toMatchObject({ id: 'sprout.builtin', source: 'builtin', enabled: true });
@@ -36,9 +38,13 @@ describe('PluginRegistry builtin and ZIP plugins', () => {
     expect(registry.setEnabled('sprout.builtin', true).enabled).toBe(true);
   });
 
-  it('installs a wrapper ZIP, persists metadata, toggles and deletes', () => {
-    const registry = create(), info = registry.installZip(pluginZip(plugin(), {}, 'demo/'));
-    expect(info).toMatchObject({ id: 'acme.demo', source: 'installed', enabled: true, entryUrl: '/plugins/acme.demo/dist/index.js' });
+  it('installs a wrapper ZIP, persists metadata, toggles and deletes', async () => {
+    const registry = create(), info = await registry.installZip(pluginZip(plugin({ permissions: ['storage', 'network'] }), {}, 'demo/'));
+    expect(info).toMatchObject({
+      id: 'acme.demo', source: 'installed', enabled: true, entryUrl: '/plugins/acme.demo/dist/index.js',
+      permissions: ['storage', 'network'],
+    });
+    expect(info.manifestUrl).toBeUndefined();
     expect(registry.directory(info.id)).toBe(realpathSync(join(root, 'plugins/acme.demo')));
     expect(create().list()[1]).toEqual(info);
     registry.setEnabled(info.id, false);
@@ -51,13 +57,13 @@ describe('PluginRegistry builtin and ZIP plugins', () => {
     expect(existsSync(join(root, 'plugins/acme.demo'))).toBe(false);
   });
 
-  it('supports the manifest contract for an absolute HTTP(S) entry without fetching code', () => {
+  it('supports a validated absolute HTTPS entry without fetching code', async () => {
     const registry = create();
-    expect(registry.installZip(pluginZip(plugin({ entry: 'https://example.test/module.js' }))).entryUrl).toBe('https://example.test/module.js');
+    expect((await registry.installZip(pluginZip(plugin({ entry: 'https://example.test/module.js' })))).entryUrl).toBe('https://example.test/module.js');
   });
 
-  it('validates type, required and nested array/object schemas with own-property checks', () => {
-    const registry = create(); registry.installZip(pluginZip());
+  it('validates type, required and nested array/object schemas with own-property checks', async () => {
+    const registry = create(); await registry.installZip(pluginZip());
     expect(registry.validateExternal('acme.touch', { title: 'hi', rounds: [{ count: 1 }], hint: null, flags: { enabled: false } })).toEqual([]);
     const issues = registry.validateExternal('acme.touch', { title: 2, rounds: [{ count: 1.2 }, {}], hint: false, flags: {} })!;
     expect(issues.map((issue) => issue.path)).toEqual(['title', 'rounds.0.count', 'rounds.1.count', 'hint', 'flags.enabled']);
@@ -67,72 +73,72 @@ describe('PluginRegistry builtin and ZIP plugins', () => {
     expect(registry.validateExternal('word-cards', {})).toBeNull();
   });
 
-  it('returns [] for an enabled activity without a props schema', () => {
+  it('returns [] for an enabled activity without a props schema', async () => {
     const registry = create();
-    registry.installZip(pluginZip(plugin({ activities: [{ type: 'acme.simple', name: { zh: '简单活动' } }] })));
+    await registry.installZip(pluginZip(plugin({ activities: [{ type: 'acme.simple', name: { zh: '简单活动' } }] })));
     expect(registry.validateExternal('acme.simple', { arbitrary: true })).toEqual([]);
   });
 
-  it('upgrades monotonically while preserving enablement and rolls back invalid versions', () => {
+  it('upgrades monotonically while preserving enablement and rolls back invalid versions', async () => {
     const registry = create();
-    registry.installZip(pluginZip());
+    await registry.installZip(pluginZip());
     registry.setEnabled('acme.demo', false);
     const before = readFileSync(join(root, 'plugins/acme.demo/plugin.json'), 'utf8');
-    expect(() => registry.installZip(pluginZip(plugin({ version: '2.0.0', entry: 'missing.js' })))).toThrow(RegistryError);
+    await expect(registry.installZip(pluginZip(plugin({ version: '2.0.0', entry: 'missing.js' })))).rejects.toThrow(RegistryError);
     expect(readFileSync(join(root, 'plugins/acme.demo/plugin.json'), 'utf8')).toBe(before);
-    expect(() => registry.installZip(pluginZip())).toThrow(expect.objectContaining({ statusCode: 409 }));
-    expect(registry.installZip(pluginZip(plugin({ version: '2.0.0' }))).enabled).toBe(false);
+    await expect(registry.installZip(pluginZip())).rejects.toThrow(expect.objectContaining({ statusCode: 409 }));
+    expect((await registry.installZip(pluginZip(plugin({ version: '2.0.0' })))).enabled).toBe(false);
     expect(registry.list()[1].version).toBe('2.0.0');
   });
 
-  it('rolls filesystem replacement back if the database rejects the upsert', () => {
-    const registry = create(); registry.installZip(pluginZip());
+  it('rolls filesystem replacement back if the database rejects the upsert', async () => {
+    const registry = create(); await registry.installZip(pluginZip());
     db.exec("CREATE TRIGGER reject_update BEFORE UPDATE ON plugins BEGIN SELECT RAISE(ABORT, 'reject'); END");
-    expect(() => registry.installZip(pluginZip(plugin({ version: '2.0.0' })))).toThrow(expect.objectContaining({ statusCode: 500 }));
+    await expect(registry.installZip(pluginZip(plugin({ version: '2.0.0' })))).rejects.toThrow(expect.objectContaining({ statusCode: 500 }));
     expect(JSON.parse(readFileSync(join(root, 'plugins/acme.demo/plugin.json'), 'utf8')).version).toBe('1.0.0');
     expect(registry.list()[1].version).toBe('1.0.0');
   });
 
-  it('rejects builtin replacement, invalid schemas, duplicate and conflicting activity types', () => {
+  it('rejects builtin replacement, invalid schemas, duplicate and conflicting activity types', async () => {
     const registry = create();
-    expect(() => registry.installZip(pluginZip(plugin({ id: 'sprout.builtin' })))).toThrow(expect.objectContaining({ statusCode: 403 }));
-    expect(() => registry.installZip(pluginZip(plugin({ activities: [plugin().activities[0], plugin().activities[0]] })))).toThrow(RegistryError);
-    expect(() => registry.installZip(pluginZip(plugin({ activities: [{
+    await expect(registry.installZip(pluginZip(plugin({ id: 'sprout.builtin' })))).rejects.toThrow(expect.objectContaining({ statusCode: 403 }));
+    await expect(registry.installZip(pluginZip(plugin({ activities: [plugin().activities[0], plugin().activities[0]] })))).rejects.toThrow(RegistryError);
+    await expect(registry.installZip(pluginZip(plugin({ activities: [{
       type: 'acme.touch', name: { zh: '轻触' }, propsSchema: { type: 'bogus' },
-    }] })))).toThrow(RegistryError);
-    registry.installZip(pluginZip());
-    expect(() => registry.installZip(pluginZip(plugin({ id: 'other.vendor' })))).toThrow(expect.objectContaining({ statusCode: 409 }));
+    }] })))).rejects.toThrow(RegistryError);
+    await registry.installZip(pluginZip());
+    await expect(registry.installZip(pluginZip(plugin({ id: 'other.vendor' })))).rejects.toThrow(expect.objectContaining({ statusCode: 409 }));
     expect(registry.list()).toHaveLength(2);
   });
 
-  it.each(['../module.js', '/module.js', 'file:///tmp/module.js', 'javascript:alert(1)', 'dist\\index.js'])('rejects unsafe entry %s', (entry) => {
-    expect(() => create().installZip(pluginZip(plugin({ entry })))).toThrow(expect.objectContaining({ statusCode: 400 }));
+  it.each(['../module.js', '/module.js', 'file:///tmp/module.js', 'javascript:alert(1)', 'dist\\index.js'])('rejects unsafe entry %s', async (entry) => {
+    await expect(create().installZip(pluginZip(plugin({ entry })))).rejects.toThrow(expect.objectContaining({ statusCode: 400 }));
     expect(db.prepare('SELECT * FROM plugins').all()).toEqual([]);
   });
 
-  it('rejects malicious ZIP paths, duplicates, symbolic links and forged sizes', () => {
+  it('rejects malicious ZIP paths, duplicates, symbolic links and forged sizes', async () => {
     const registry = create();
-    expect(() => registry.installZip(pluginZip(plugin(), { '../escape': strToU8('x') }))).toThrow(RegistryError);
-    expect(() => registry.installZip(renameZipEntry(pluginZip(plugin(), {
+    await expect(registry.installZip(pluginZip(plugin(), { '../escape': strToU8('x') }))).rejects.toThrow(RegistryError);
+    await expect(registry.installZip(renameZipEntry(pluginZip(plugin(), {
       'dup-a': strToU8('a'), 'dup-b': strToU8('b'),
-    }), 'dup-b', 'dup-a'))).toThrow(RegistryError);
-    expect(() => registry.installZip(pluginZip(plugin(), {
+    }), 'dup-b', 'dup-a'))).rejects.toThrow(RegistryError);
+    await expect(registry.installZip(pluginZip(plugin(), {
       link: [strToU8('/tmp/outside'), { os: 3, attrs: 0o120777 << 16 }],
-    }))).toThrow(RegistryError);
-    expect(() => registry.installZip(patchFirstZipSize(pluginZip(), 1))).toThrow(RegistryError);
-    expect(() => registry.installZip(zipSync({ 'not-plugin.json': json(plugin()) }))).toThrow(RegistryError);
+    }))).rejects.toThrow(RegistryError);
+    await expect(registry.installZip(patchFirstZipSize(pluginZip(), 1))).rejects.toThrow(RegistryError);
+    await expect(registry.installZip(zipSync({ 'not-plugin.json': json(plugin()) }))).rejects.toThrow(RegistryError);
     expect(db.prepare('SELECT * FROM plugins').all()).toEqual([]);
   });
 
-  it('rejects a symlink destination or tampered stored directory', () => {
+  it('rejects a symlink destination or tampered stored directory', async () => {
     const registry = create();
     const outside = join(root, 'outside');
     writeFiles(outside, { 'keep.txt': strToU8('keep') });
     symlinkSync(outside, join(root, 'plugins/acme.demo'));
-    expect(() => registry.installZip(pluginZip())).toThrow(expect.objectContaining({ code: 'UNSAFE_PATH' }));
+    await expect(registry.installZip(pluginZip())).rejects.toThrow(expect.objectContaining({ code: 'UNSAFE_PATH' }));
     expect(readFileSync(join(outside, 'keep.txt'), 'utf8')).toBe('keep');
     rmSync(join(root, 'plugins/acme.demo'));
-    registry.installZip(pluginZip());
+    await registry.installZip(pluginZip());
     db.prepare('UPDATE plugins SET directory = ? WHERE id = ?').run(outside, 'acme.demo');
     expect(() => registry.directory('acme.demo')).toThrow(expect.objectContaining({ code: 'UNSAFE_PATH' }));
     expect(() => registry.deletePlugin('acme.demo')).toThrow(RegistryError);
@@ -150,23 +156,28 @@ describe('remote plugin registration', () => {
   it('resolves entry against the final redirect URL and retains enablement during replacement', async () => {
     const fetcher = vi.fn<typeof fetch>()
       .mockResolvedValueOnce(new Response(null, { status: 302, headers: { location: 'https://cdn.example.test/v1/plugin.json' } }))
-      .mockResolvedValueOnce(Response.json(plugin({ entry: '../module.js' })))
-      .mockResolvedValueOnce(Response.json(plugin({ version: '2.0.0', entry: 'https://example.test/absolute.js' })));
+      .mockResolvedValueOnce(Response.json(plugin({ entry: '../module.js', permissions: ['camera', 'microphone'] })))
+      .mockResolvedValueOnce(Response.json(plugin({ version: '2.0.0', entry: 'https://example.test/absolute.js', permissions: ['network'] })));
     const registry = create(fetcher);
     const info = await registry.registerRemote('https://example.test/plugin.json');
-    expect(info).toMatchObject({ source: 'remote', entryUrl: 'https://cdn.example.test/module.js', enabled: true });
+    expect(info).toMatchObject({
+      source: 'remote', entryUrl: 'https://cdn.example.test/module.js', enabled: true,
+      manifestUrl: 'https://cdn.example.test/v1/plugin.json', permissions: ['camera', 'microphone'],
+    });
     expect(fetcher).toHaveBeenCalledTimes(2);
     expect(registry.directory(info.id)).toBeUndefined();
     registry.setEnabled(info.id, false);
     expect((await registry.registerRemote('https://example.test/plugin.json')).enabled).toBe(false);
-    expect(create().list()[1].entryUrl).toBe('https://example.test/absolute.js');
+    expect(create().list()[1]).toMatchObject({
+      entryUrl: 'https://example.test/absolute.js', manifestUrl: 'https://example.test/plugin.json', permissions: ['network'],
+    });
     registry.deletePlugin(info.id);
     expect(registry.list()).toHaveLength(1);
   });
 
   it('can replace an installed plugin with a newer remote manifest', async () => {
     const registry = create(vi.fn<typeof fetch>().mockResolvedValue(Response.json(plugin({ version: '2.0.0' }))));
-    registry.installZip(pluginZip());
+    await registry.installZip(pluginZip());
     await registry.registerRemote('https://example.test/plugin.json');
     expect(existsSync(join(root, 'plugins/acme.demo'))).toBe(false);
     expect(registry.list()[1].entryUrl).toBe('https://example.test/dist/index.js');
@@ -238,7 +249,7 @@ describe('remote plugin registration', () => {
 });
 
 describe('plugin and pack integration', () => {
-  it('revalidates external props after install/enable/delete despite an unchanged content signature', () => {
+  it('revalidates external props after install/enable/delete despite an unchanged content signature', async () => {
     const plugins = create();
     writeFiles(join(root, 'content/core'), packFiles({
       lessons: [lesson('mini.external', { steps: [{ type: 'acme.touch', props: {} }] })],
@@ -247,7 +258,7 @@ describe('plugin and pack integration', () => {
       dataDir: root, contentDirs: [join(root, 'content')], validateExternal: (type, props) => plugins.validateExternal(type, props),
     });
     expect(packs.getLesson('mini.external')?.issues[0].level).toBe('warning');
-    plugins.installZip(pluginZip()); packs.reload();
+    await plugins.installZip(pluginZip()); packs.reload();
     expect(packs.getLesson('mini.external')).toBeUndefined();
     expect(packs.validate('sprout.core').some((issue) => issue.path.includes('steps.0.props.title'))).toBe(true);
     plugins.setEnabled('acme.demo', false); packs.reload();

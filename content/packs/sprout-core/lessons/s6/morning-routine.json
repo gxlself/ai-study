@@ -14,12 +14,12 @@
     { "zh": "和家长回顾熟悉的早晨。", "en": "Recall a familiar morning with your grown-up." },
     { "zh": "用先和再说一个小计划。", "en": "Make a small plan using first and then." }
   ],
-  "cover": { "concept": "bed", "bg": "room" },
+  "cover": { "concept": "wake-up", "bg": "room" },
   "parentGuide": {
     "intro": "这是一个家庭的早晨例子，不是统一作息。先回顾孩子今天做过什么。需要尿布照护时，替换上厕所这步，随后清洁和洗手；不要求如厕成功。五步困难时，只看相邻两步。",
     "tips": [
       "上厕所后洗手，不漏卫生步骤。",
-      "洗脸图暂借毛巾，刷牙由成人帮助。",
+      "洗脸和刷牙使用不同动作图，刷牙由成人帮助。",
       "需要穿衣时，在出门前补好。",
       "用餐不开屏，线下计划在饭前说。"
     ],
@@ -57,14 +57,14 @@
     {
       "type": "sequence",
       "title": { "zh": "一个早晨的顺序", "en": "One Family's Morning" },
-      "parentTip": "这是示例顺序，可按家庭调整。如厕未准备好就替换为尿布照护；出门前穿好衣物。",
+      "parentTip": "这是示例顺序，可按家庭调整。起床和洗脸使用对应动作图；如厕未准备好就替换为尿布照护，出门前穿好衣物。",
       "props": {
         "mode": "order",
         "intro": { "zh": "看看这家的早晨。", "en": "Let's look at this family's morning." },
         "steps": [
-          { "concept": "bed", "caption": { "zh": "起床", "en": "Wake up." }, "say": { "zh": "醒来，慢慢起床。", "en": "Wake up and get out of bed slowly." } },
+          { "concept": "wake-up", "caption": { "zh": "起床", "en": "Wake up." }, "say": { "zh": "醒来，慢慢起床。", "en": "Wake up and get out of bed slowly." } },
           { "concept": "toilet", "caption": { "zh": "上厕所，再洗手", "en": "Use the toilet, then wash hands." }, "say": { "zh": "需要时上厕所，随后洗手。", "en": "Use the toilet if you need to, then wash your hands." } },
-          { "concept": "brush-teeth", "caption": { "zh": "洗脸刷牙", "en": "Wash your face and brush your teeth." }, "say": { "zh": "和大人洗脸刷牙。", "en": "Wash your face and brush your teeth with a grown-up." } },
+          { "concept": "wash-face", "caption": { "zh": "洗脸，再刷牙", "en": "Wash your face, then brush your teeth." }, "say": { "zh": "和大人洗脸，再刷牙。", "en": "Wash your face, then brush your teeth with a grown-up." } },
           { "concept": "eat", "caption": { "zh": "吃早饭", "en": "Eat breakfast." }, "say": { "zh": "坐好，吃早饭。", "en": "Sit safely and eat breakfast." } },
           { "concept": "door", "caption": { "zh": "准备好，出门", "en": "Get ready and go out." }, "say": { "zh": "穿戴好，和大人出门。", "en": "Get dressed and go out with a grown-up." } }
         ]

@@ -4,6 +4,8 @@ import { builtinActivities } from '@sprout/activities';
 import type { PluginInfo } from '@sprout/schema';
 import { SDK_VERSION } from '../../../../packages/plugin-sdk/src/types';
 import type { ActivityPlugin, SproutHostGlobal } from '../../../../packages/plugin-sdk/src/types';
+import { installRuntimePolicy, pluginEntry } from '../security/csp';
+import { requestDeadline } from '../compat';
 
 function isActivity(value: unknown): value is ActivityPlugin {
   if (!value || typeof value !== 'object') return false;
@@ -28,7 +30,20 @@ export const SproutHost: SproutHostGlobal = {
 const modules = new Map<string, Promise<ActivityPlugin[]>>();
 let importQueue: Promise<void> = Promise.resolve();
 
-function importActivities(url: string): Promise<ActivityPlugin[]> {
+async function loadModule(url: string): Promise<{ default?: unknown }> {
+  const deadline = requestDeadline(new AbortController().signal, 8_000);
+  try {
+    // import() 自身不能拒绝重定向；先校验入口，CSP 再限制实际求值来源。
+    const response = await fetch(url, {
+      signal: deadline.signal, redirect: 'error', credentials: 'omit', referrerPolicy: 'no-referrer',
+    });
+    void response.body?.cancel().catch(() => {});
+    if (!response.ok || response.redirected || (response.url && response.url !== url)) throw new Error('插件入口校验失败');
+  } finally { deadline.dispose(); }
+  return import(/* @vite-ignore */ url);
+}
+
+function importActivities(url: string, importer: typeof loadModule): Promise<ActivityPlugin[]> {
   const cached = modules.get(url);
   if (cached) return cached;
   // 注册式模块共享全局入口，串行求值避免异步 import 串错注册目标。
@@ -38,7 +53,7 @@ function importActivities(url: string): Promise<ActivityPlugin[]> {
     register = (plugin) => { registrations.push(plugin); };
     globalThis.SproutHost = SproutHost;
     try {
-      const imported: { default?: unknown } = await import(/* @vite-ignore */ url);
+      const imported = await importer(url);
       const exported = Array.isArray(imported.default) ? imported.default : [imported.default];
       return [...registrations, ...exported.filter(isActivity)];
     } finally {
@@ -65,7 +80,7 @@ export class ActivityRegistry {
   private generation = 0;
   private failures: PluginLoadError[] = [];
 
-  constructor() {
+  constructor(private readonly importer = loadModule) {
     for (const activity of builtinActivities) this.builtin.set(activity.type, activity);
     this.activities = new Map(this.builtin);
     globalThis.SproutHost = SproutHost;
@@ -84,17 +99,25 @@ export class ActivityRegistry {
     return this.activities.get(type);
   }
 
-  async load(plugins: PluginInfo[], resolveUrl: (url: string) => string): Promise<void> {
+  async load(plugins: PluginInfo[], resolveUrl: (url: string) => string, server = ''): Promise<void> {
     const generation = ++this.generation;
     const activities = new Map(this.builtin);
     const allowed = new Set<string>();
     const errors: PluginLoadError[] = [];
+    const entries = new Map<PluginInfo, string>();
     for (const info of plugins) {
       if (!info.enabled || !info.entryUrl || info.source === 'builtin') continue;
+      try { entries.set(info, pluginEntry(info, resolveUrl, server)); }
+      catch (error) { errors.push({ pluginId: info.id, message: error instanceof Error ? error.message : String(error) }); }
+    }
+    installRuntimePolicy(server, [...entries.values()]);
+    for (const info of plugins) {
+      const entry = entries.get(info);
+      if (!entry) continue;
       const declared = new Set(info.activities.map(({ type }) => type));
       try {
         globalThis.SproutHost = SproutHost;
-        const loaded = await importActivities(resolveUrl(info.entryUrl));
+        const loaded = await importActivities(entry, this.importer);
         if (generation !== this.generation) return;
         let accepted = 0;
         for (const activity of loaded) {

@@ -38,3 +38,7 @@
   pointer-events: none;
 }
 .spa-reading-more[hidden] { display: none; }
+@media (max-width: 600px) {
+  .spa-reading-viewport { padding-bottom: 22px; }
+  .spa-stage .spa-reading-more, .spa-reading-more { font-size: 14px; }
+}

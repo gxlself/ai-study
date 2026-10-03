@@ -4,6 +4,7 @@ import type { SessionInput } from '@sprout/schema';
 import { afterEach, describe, expect, it, vi } from 'vitest';
 import { HttpError, RemoteSource, RequestTimeoutError, StorageError } from '../index';
 import { bootstrap, bundleFixture, json, MemoryStorage, NOW, pack, plan, remoteState, screen, session } from './fixtures';
+import { legacyRemoteStateKey, remoteStateKey } from '../identity';
 
 afterEach(() => { vi.useRealTimers(); vi.restoreAllMocks(); });
 
@@ -334,7 +335,8 @@ describe('RemoteSource API / 资源', () => {
     fetch.mockResolvedValueOnce(json(bundle.lessons.map((lesson) => summarizeLesson(lesson, 'sprout.core'))));
     expect((await source.lessons())[0].cover?.imageUrl).toBe(`${SERVER}/packs/sprout.core/assets/apple.svg`);
     expect(source.resolveAsset('sprout.core', 'assets/apple.svg')).toBe(`${SERVER}/packs/sprout.core/assets/apple.svg`);
-    expect(source.resolveAsset('sprout.core', 'https://media.example/a.svg')).toBe('https://media.example/a.svg');
+    expect(() => source.resolveAsset('sprout.core', 'https://media.example/a.svg')).toThrow();
+    expect(source.resolveAsset('sprout.core', `${SERVER}/video.mp4`)).toBe(`${SERVER}/video.mp4`);
     expect(() => source.resolveAsset('sprout.core', '/packs/../private')).toThrow();
   });
 
@@ -346,7 +348,7 @@ describe('RemoteSource API / 资源', () => {
       pack({ id: 'disabled', enabled: false, baseUrl: '/packs/disabled/' }),
       pack({ id: 'missing', baseUrl: '/packs/missing/' }),
       pack({ id: 'broken', baseUrl: '/packs/broken/' }),
-      pack({ id: 'offline', baseUrl: 'https://media.example/offline/' }),
+      pack({ id: 'offline', baseUrl: '/packs/offline/' }),
     ];
     fetch.mockImplementation(async (url, init) => {
       if (String(url).endsWith('/api/packs')) return json(packs);
@@ -376,6 +378,60 @@ describe('RemoteSource API / 资源', () => {
     expect(await source.audioManifests()).toHaveLength(1);
   });
 });
+
+describe('远程身份与只读预览', () => {
+  it('迁移旧键的历史和去重队列，新键不包含可反解 token', async () => {
+    const storage = new MemoryStorage();
+    const old = legacyRemoteStateKey(SERVER, TOKEN);
+    storage.setItem(old, JSON.stringify({ version: 1, sessions: [session()], pending: [session(), session()] }));
+    const fetch = vi.fn<typeof globalThis.fetch>(async () => json({ id: 'saved' }));
+    const { source } = create(fetch, storage);
+    expect(await source.recent('child-1')).toHaveLength(1);
+    expect(storage.getItem(old)).toBeNull();
+    const keys = [...storage.items.keys()];
+    expect(keys).toEqual([remoteStateKey(SERVER, TOKEN)]);
+    expect(decodeURIComponent(keys[0])).not.toContain(TOKEN);
+    await source.flush();
+    expect(fetch).toHaveBeenCalledOnce();
+  });
+
+  it('迁移写入失败不删除旧队列', async () => {
+    const storage = new MemoryStorage();
+    const old = legacyRemoteStateKey(SERVER, TOKEN);
+    const value = JSON.stringify({ version: 1, sessions: [session()], pending: [session()] });
+    storage.setItem(old, value);
+    vi.spyOn(storage, 'setItem').mockImplementationOnce(() => { throw new Error('quota'); });
+    await expect(create(undefined, storage).source.recent('child-1')).rejects.toBeInstanceOf(StorageError);
+    expect(storage.getItem(old)).toBe(value);
+  });
+
+  it('预览拒绝设备/记录接口并且不读写传入或浏览器存储', async () => {
+    const storage = new MemoryStorage();
+    const reads = vi.spyOn(storage, 'getItem');
+    const writes = vi.spyOn(storage, 'setItem');
+    const fetch = vi.fn<typeof globalThis.fetch>(async () => json([]));
+    const source = new RemoteSource(SERVER, 'preview-only', { preview: true, storage, fetch });
+    await source.lexicon();
+    await source.flush();
+    await expect(source.bootstrap()).rejects.toMatchObject({ code: 'preview-read-only' });
+    await expect(source.selectChild('child-1')).rejects.toMatchObject({ code: 'preview-read-only' });
+    await expect(source.saveSession(session())).rejects.toMatchObject({ code: 'preview-read-only' });
+    expect(reads).not.toHaveBeenCalled();
+    expect(writes).not.toHaveBeenCalled();
+    expect(fetch).toHaveBeenCalledOnce();
+  });
+
+  it('不从外部 baseUrl 加载媒体或音频', async () => {
+    const { source, fetch } = create();
+    fetch.mockResolvedValueOnce(json(bootstrapWithExternalPack()));
+    await expect(source.bootstrap()).rejects.toMatchObject({ code: 'invalid-asset' });
+    expect(fetch).toHaveBeenCalledOnce();
+  });
+});
+
+function bootstrapWithExternalPack() {
+  return { ...bootstrap(), packs: [pack({ baseUrl: 'https://external.test/packs/core/' })] };
+}
 
 describe('RemoteSource 待传时长保护', () => {
   it('today/screen 增加本日、本孩子的 pending 时长，到达上限禁止继续', async () => {

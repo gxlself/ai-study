@@ -63,9 +63,9 @@
         "moves": [
           { "concept": "run", "name": { "zh": "原地轻跑", "en": "Gentle Jog in Place" }, "say": { "zh": "原地轻跑，也可以踏步。", "en": "Jog gently in place, or march instead." }, "seconds": 8 },
           { "concept": "jump", "name": { "zh": "轻轻跳", "en": "A Gentle Jump" }, "say": { "zh": "轻跳一下，稳稳落地。", "en": "Try one small jump and land steadily." }, "seconds": 6 },
-          { "concept": "foot", "name": { "zh": "扶稳抬一脚", "en": "Lift One Foot with Support" }, "say": { "zh": "扶稳，抬一只脚。放下休息。", "en": "Hold steady support, lift one foot briefly, then put it down." }, "seconds": 6 },
-          { "concept": "foot", "name": { "zh": "轻弯腰摸脚尖", "en": "A Gentle Reach toward Your Toes" }, "say": { "zh": "轻弯腰，试摸脚尖。够不到也没关系。", "en": "Bend gently toward your toes. It is okay if you cannot reach." }, "seconds": 6 },
-          { "concept": "dance", "name": { "zh": "慢慢转一圈", "en": "One Slow Turn" }, "say": { "zh": "慢慢转一圈，再站稳。", "en": "Turn slowly once, then stand still." }, "seconds": 6 }
+          { "concept": "balance-with-support", "name": { "zh": "扶稳抬一脚", "en": "Lift One Foot with Support" }, "say": { "zh": "扶稳，抬一只脚。放下休息。", "en": "Hold steady support, lift one foot briefly, then put it down." }, "seconds": 6 },
+          { "concept": "bend-gently", "name": { "zh": "轻弯腰摸脚尖", "en": "A Gentle Reach toward Your Toes" }, "say": { "zh": "轻弯腰，试摸脚尖。够不到也没关系。", "en": "Bend gently toward your toes. It is okay if you cannot reach." }, "seconds": 6 },
+          { "concept": "turn-slowly", "name": { "zh": "慢慢转一圈", "en": "One Slow Turn" }, "say": { "zh": "慢慢转一圈，再站稳。", "en": "Turn slowly once, then stand still." }, "seconds": 6 }
         ]
       }
     },

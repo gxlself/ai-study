@@ -1,8 +1,28 @@
 import { DataSourceError, StorageError } from './errors';
 import { browserStorage } from './storage';
 import type { Connection } from './types';
+import { legacyRemoteStateKey, remoteStateKey } from './identity';
 
 const KEYS = { kind: 'sprout.source', server: 'sprout.server', token: 'sprout.deviceToken' } as const;
+
+function clearRemoteIdentity(storage: Storage): void {
+  const token = storage.getItem(KEYS.token)?.trim();
+  if (token) {
+    let server: string | undefined;
+    try { server = normalizeServer(storage.getItem(KEYS.server) ?? ''); } catch { /* 损坏地址不能阻止退出配对。 */ }
+    if (server) {
+      storage.removeItem(remoteStateKey(server, token));
+      storage.removeItem(legacyRemoteStateKey(server, token));
+    }
+  }
+  // 旧身份键可反解凭据；清除所有遗留键，不删除其它 v2 身份或离线档案。
+  const legacy: string[] = [];
+  for (let i = 0; i < storage.length; i += 1) {
+    const key = storage.key(i);
+    if (key?.startsWith('sprout.remote:') && !key.startsWith('sprout.remote:v2:')) legacy.push(key);
+  }
+  legacy.forEach((key) => storage.removeItem(key));
+}
 
 export function normalizeServer(input: string): string {
   let value = input.trim();
@@ -58,6 +78,9 @@ export function saveConnection(connection: Connection): void {
     throw new DataSourceError('invalid-token', '请先完成设备配对。');
   }
   try {
+    if (storage.getItem(KEYS.token)?.trim() !== token || storage.getItem(KEYS.server) !== server) {
+      clearRemoteIdentity(storage as Storage);
+    }
     if (server !== null && token) {
       storage.setItem(KEYS.server, server);
       storage.setItem(KEYS.token, token);
@@ -74,6 +97,7 @@ export function saveConnection(connection: Connection): void {
 export function clearConnection(): void {
   const storage = browserStorage();
   try {
+    clearRemoteIdentity(storage as Storage);
     for (const key of Object.values(KEYS)) storage.removeItem(key);
   } catch (cause) {
     throw new StorageError('无法清除连接设置。', cause);

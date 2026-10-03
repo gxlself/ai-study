@@ -1,6 +1,7 @@
 import type { ValidationIssue } from '@sprout/schema';
 
 const TOKEN_KEY = 'sprout.adminToken';
+const REMEMBER_KEY = `${TOKEN_KEY}.remember`;
 export const UNAUTHORIZED_EVENT = 'sprout:unauthorized';
 export const isMockMode = () =>
   import.meta.env.DEV && typeof window !== 'undefined' &&
@@ -12,17 +13,33 @@ declare global {
 
 export function getToken(): string | null {
   if (typeof window === 'undefined') return null;
-  return isMockMode()
-    ? window.sessionStorage.getItem(`${TOKEN_KEY}.mock`)
-    : window.localStorage.getItem(TOKEN_KEY);
+  if (isMockMode()) return window.sessionStorage.getItem(`${TOKEN_KEY}.mock`);
+  const session = window.sessionStorage.getItem(TOKEN_KEY);
+  if (session) return session;
+  const stored = window.localStorage.getItem(TOKEN_KEY);
+  if (!stored || window.localStorage.getItem(REMEMBER_KEY) === '1') return stored;
+  // 旧版持久凭据迁入本次会话，不视为用户同意保持登录。
+  window.sessionStorage.setItem(TOKEN_KEY, stored);
+  window.localStorage.removeItem(TOKEN_KEY);
+  return stored;
 }
 
-export function setToken(token: string | null): void {
+export function setToken(token: string | null, remember = false): void {
   if (typeof window === 'undefined') return;
-  const storage = isMockMode() ? window.sessionStorage : window.localStorage;
-  const key = isMockMode() ? `${TOKEN_KEY}.mock` : TOKEN_KEY;
-  if (token) storage.setItem(key, token);
-  else storage.removeItem(key);
+  if (isMockMode()) {
+    const key = `${TOKEN_KEY}.mock`;
+    if (token) window.sessionStorage.setItem(key, token);
+    else window.sessionStorage.removeItem(key);
+    return;
+  }
+  window.sessionStorage.removeItem(TOKEN_KEY);
+  window.localStorage.removeItem(TOKEN_KEY);
+  window.localStorage.removeItem(REMEMBER_KEY);
+  if (!token) return;
+  if (remember) {
+    window.localStorage.setItem(TOKEN_KEY, token);
+    window.localStorage.setItem(REMEMBER_KEY, '1');
+  } else window.sessionStorage.setItem(TOKEN_KEY, token);
 }
 
 export class ApiError extends Error {
@@ -105,8 +122,8 @@ export function createApi(options: ApiOptions = {}) {
 
   return {
     get: <T>(path: string, init?: RequestInit) => request<T>(path, init),
-    post: <T>(path: string, body?: unknown) =>
-      request<T>(path, { method: 'POST', body: body === undefined ? undefined : JSON.stringify(body) }),
+    post: <T>(path: string, body?: unknown, init?: RequestInit) =>
+      request<T>(path, { ...init, method: 'POST', body: body === undefined ? undefined : JSON.stringify(body) }),
     put: <T>(path: string, body: unknown) => request<T>(path, { method: 'PUT', body: JSON.stringify(body) }),
     delete: <T = void>(path: string) => request<T>(path, { method: 'DELETE' }),
     upload: <T>(path: string, file: File) => {

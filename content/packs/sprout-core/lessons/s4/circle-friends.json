@@ -15,7 +15,7 @@
   ],
   "cover": { "concept": "circle", "bg": "sky" },
   "printables": [
-    { "kind": "cards", "title": "圆圆的朋友卡", "items": ["circle", "sun", "ball", "cookie", "bicycle"], "size": "large", "showText": true, "showEnglish": true }
+    { "kind": "cards", "title": "圆圆的朋友卡", "items": ["circle", "sun", "ball", "cookie", "wheel"], "size": "large", "showText": true, "showEnglish": true }
   ],
   "parentGuide": {
     "intro": "共看默认关闭，可只拿打印卡讲。若开启，读一页就停一下。圆圆是故事里的圆形卡。只比较图中轮廓，不说球就是圆形。讲完关屏，找家里的圆边。",
@@ -74,9 +74,9 @@
           {
             "scene": { "bg": "sky", "ground": "grass", "sprites": [
               { "concept": "circle", "x": 23, "y": 74, "size": 32, "anim": "none" },
-              { "concept": "bicycle", "x": 66, "y": 74, "size": 43, "anim": "none" }
+              { "concept": "wheel", "x": 66, "y": 74, "size": 43, "anim": "none" }
             ] },
-            "text": { "zh": "圆圆看到自行车。轮子的外边圆圆的。", "en": "Circle sees a bicycle. The outside of each wheel is round." },
+            "text": { "zh": "圆圆看到一个轮子。轮子的外边圆圆的。", "en": "Circle sees a wheel. The outside of the wheel is round." },
             "prompts": [{ "kind": "point", "zh": "指指圆圆的轮子。", "en": "Point to a round wheel." }]
           },
           {
@@ -84,10 +84,10 @@
               { "concept": "circle", "x": 13, "y": 74, "size": 30, "anim": "none" },
               { "concept": "ball", "x": 35, "y": 78, "size": 20, "anim": "none" },
               { "concept": "cookie", "x": 54, "y": 78, "size": 20, "anim": "none" },
-              { "concept": "bicycle", "x": 80, "y": 75, "size": 25, "anim": "none" },
+              { "concept": "wheel", "x": 80, "y": 75, "size": 25, "anim": "none" },
               { "concept": "sun", "x": 70, "y": 22, "size": 20, "anim": "none" }
             ] },
-            "text": { "zh": "圆圆找到朋友啦。它们看起来都圆圆的。", "en": "Circle has found friends. The sun, ball, cookie, and wheels look round." },
+            "text": { "zh": "圆圆找到朋友啦。它们看起来都圆圆的。", "en": "Circle has found friends. The sun, ball, cookie, and wheel look round." },
             "prompts": [{ "kind": "point", "zh": "你想指哪个朋友？", "en": "Which friend would you like to point to?" }]
           }
         ]

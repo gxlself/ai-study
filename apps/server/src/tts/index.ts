@@ -33,7 +33,7 @@ interface Request {
   onlyMissing: boolean;
 }
 
-const MAX_PENDING = 256;
+export const MAX_PENDING_TTS_TASKS = 32;
 
 export class TtsService {
   private readonly dataDir: string;
@@ -127,7 +127,7 @@ export class TtsService {
       const key = JSON.stringify([settings, lang, text, onlyMissing]);
       const existing = this.pending.get(key);
       if (existing) return existing;
-      if (this.pending.size >= MAX_PENDING) throw new TtsError(429, 'TTS_BUSY', '朗读任务较多，请稍后再试');
+      if (this.pending.size >= MAX_PENDING_TTS_TASKS) throw new TtsError(429, 'TTS_BUSY', '朗读任务较多，请稍后再试');
       const task = this.tail.then(() => this.perform({ lang, text, settings, onlyMissing })).catch((cause: unknown) => {
         if (cause instanceof TtsError) throw cause;
         throw new TtsError(500, 'TTS_STORAGE_ERROR', '朗读音频或清单写入失败', { cause });

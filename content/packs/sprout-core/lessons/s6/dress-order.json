@@ -14,11 +14,11 @@
     { "zh": "一起说说先做什么、再做什么。", "en": "Talk about what comes first and next." },
     { "zh": "尝试穿衣中的一小步。", "en": "Try one small part of getting dressed." }
   ],
-  "cover": { "concept": "shirt", "bg": "room" },
+  "cover": { "concept": "underwear", "bg": "room" },
   "parentGuide": {
-    "intro": "先说清这次出门的约定：贴身上衣、裤子、袜子、鞋。上衣图只示意贴身上衣。衣物与顺序可按家庭需要调整；不要求全程独立，更不要求按一种顺序穿所有衣服。",
+    "intro": "先说清这次出门的约定：贴身上衣、裤子、袜子、鞋。封面的内裤和第一步的贴身上衣是不同衣物，不混教名称。衣物与顺序可按家庭需要调整；不要求全程独立，更不要求按一种顺序穿所有衣服。",
     "tips": [
-      "上衣图不是内裤图，不混教名称。",
+      "内裤和贴身上衣分别看图、分别命名。",
       "先穿袜子再穿鞋，方便操作。",
       "穿裤子和鞋时让孩子坐稳。",
       "遇到困难，问需要哪一点帮助。"
@@ -57,12 +57,12 @@
     {
       "type": "sequence",
       "title": { "zh": "这次怎样穿", "en": "Our Plan for Today" },
-      "parentTip": "上衣图示意贴身上衣。说明这是本次约定，裤子与上衣可换序；袜子在鞋子前。",
+      "parentTip": "第一步使用贴身上衣图，不把内裤叫作上衣。说明这是本次约定，裤子与上衣可换序；袜子在鞋子前。",
       "props": {
         "mode": "order",
         "intro": { "zh": "这次按这个顺序穿。", "en": "Here is our plan for getting dressed today." },
         "steps": [
-          { "concept": "shirt", "caption": { "zh": "穿贴身上衣", "en": "Put on your undershirt." }, "say": { "zh": "先穿贴身上衣。", "en": "Put on your undershirt first." } },
+          { "concept": "undershirt", "caption": { "zh": "穿贴身上衣", "en": "Put on your undershirt." }, "say": { "zh": "先穿贴身上衣。", "en": "Put on your undershirt first." } },
           { "concept": "pants", "caption": { "zh": "穿裤子", "en": "Put on your pants." }, "say": { "zh": "坐稳，穿好裤子。", "en": "Sit safely and put on your pants." } },
           { "concept": "socks", "caption": { "zh": "穿袜子", "en": "Put on your socks." }, "say": { "zh": "接着穿袜子。", "en": "Next, put on your socks." } },
           { "concept": "shoes", "caption": { "zh": "穿鞋子", "en": "Put on your shoes." }, "say": { "zh": "最后穿鞋子。", "en": "Put on your shoes last." } }

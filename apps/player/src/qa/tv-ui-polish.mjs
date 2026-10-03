@@ -55,11 +55,11 @@ const report = {
 let browser;
 const reportFile = join(artifacts, `${phase}-results.json`);
 
-async function installLocal(context, lesson, offline) {
+async function installLocal(context, lesson, offline, content = bundleText, reducedMotion = true) {
   const now = new Date();
   const born = new Date(now.getFullYear(), now.getMonth() - lesson.ageRange[0], 1);
   const birthday = `${born.getFullYear()}-${String(born.getMonth() + 1).padStart(2, '0')}-01`;
-  await context.addInitScript(({ birthday, offline }) => {
+  await context.addInitScript(({ birthday, offline, reducedMotion }) => {
     const timestamp = new Date().toISOString();
     const child = {
       id: 'polish-child', name: '芽芽', birthday, languageMode: 'zh-en', showPinyin: false,
@@ -75,7 +75,7 @@ async function installLocal(context, lesson, offline) {
       version: 1, deviceId: 'polish-device', createdAt: timestamp,
       children: [child], selectedChildId: child.id, sessions: [],
     }));
-    localStorage.setItem('sprout.preferences', JSON.stringify({ volume: 0, parentHints: true, reducedMotion: true }));
+    localStorage.setItem('sprout.preferences', JSON.stringify({ volume: 0, parentHints: true, reducedMotion }));
     localStorage.setItem('sprout.co-view-notice.polish-child', '1');
     Element.prototype.requestFullscreen = () => Promise.reject(new DOMException('固定验收尺寸', 'NotAllowedError'));
     Object.defineProperty(window, 'speechSynthesis', { configurable: true, value: undefined });
@@ -83,9 +83,9 @@ async function installLocal(context, lesson, offline) {
       queueMicrotask(() => this.dispatchEvent(new Event('ended')));
       return Promise.resolve();
     };
-  }, { birthday, offline });
+  }, { birthday, offline, reducedMotion });
   await context.route('**/bundled/packs/sprout.core/bundle.json', (route) =>
-    route.fulfill({ body: bundleText, contentType: 'application/json' }));
+    route.fulfill({ body: content, contentType: 'application/json' }));
 }
 
 async function geometry(page) {
@@ -101,6 +101,8 @@ async function geometry(page) {
     const toolbar = document.querySelector('.lesson-topbar,.offline-lesson > header,.lesson-end-heading');
     const focus = document.querySelector('.sp-focused');
     const columns = document.querySelector('.spa-guide-columns,.offline-columns');
+    const body = document.querySelector('.spa-guide-step-body > p,.offline-playbook li');
+    const english = document.querySelector('.spa-guide-say [lang="en"],.offline-playbook [lang="en"]');
     const brokenImages = [...document.images].filter((image) => image.getBoundingClientRect().width && !image.naturalWidth)
       .map((image) => image.getAttribute('src'));
     const textOverflow = [...document.querySelectorAll('h1,h2,h3,p,button,dt,dd,figcaption')].filter((element) =>
@@ -120,6 +122,8 @@ async function geometry(page) {
       } : null,
       brokenImages, textOverflow,
       hasMoreHint: !!document.querySelector('.spa-reading-more:not([hidden])'),
+      bodyFont: body ? parseFloat(getComputedStyle(body).fontSize) : null,
+      englishFont: english ? parseFloat(getComputedStyle(english).fontSize) : null,
     };
   });
 }
@@ -135,7 +139,7 @@ async function screenshot(page, name) {
 function verifyLayout(metrics, scenario, viewport) {
   assert.equal(metrics.horizontalOverflow, false, `${scenario.id}: 横向溢出`);
   assert.ok(metrics.documentHeight <= viewport.height + 2, `${scenario.id}: 页面滚动`);
-  assert.ok(metrics.button && metrics.button.top >= 0 && metrics.button.bottom <= viewport.height - viewport.height * .025,
+  assert.ok(metrics.button && metrics.button.top >= 0 && metrics.button.bottom <= viewport.height - Math.min(viewport.width, viewport.height) * .025,
     `${scenario.id}: 主按钮不在底部安全区`);
   assert.ok(metrics.reading.bottom <= metrics.button.top + 2, `${scenario.id}: 内容与主按钮重叠`);
   if (scenario.kind === 'guide') {
@@ -145,7 +149,78 @@ function verifyLayout(metrics, scenario, viewport) {
   assert.deepEqual(metrics.textOverflow, [], `${scenario.id}: 文字截断`);
   assert.equal(metrics.columns, viewport.width >= 1280 ? 2 : 1, `${scenario.id}: 栏数`);
   if (viewport.width >= 1280) {
+    assert.ok(metrics.bodyFont >= viewport.height * .026 - .1, `${scenario.id}: 家长正文过小`);
+    assert.ok(metrics.englishFont < metrics.bodyFont, `${scenario.id}: 英文短句字号`);
     assert.ok(metrics.contentHeight <= metrics.availableHeight + 2, `${scenario.id}: 常见课程未在一屏放下`);
+  }
+}
+
+async function verifyLongGuide(base, viewport) {
+  const lesson = structuredClone(bundle.lessons.find((entry) => entry.id === 'core.s1.contrast-shapes'));
+  lesson.id = 'polish.long-guide';
+  const props = lesson.steps[0].props;
+  props.steps = Array.from({ length: 8 }, (_, index) => {
+    const step = props.steps[index % props.steps.length];
+    return { ...step, text: `${step.text} ${step.text}`.slice(0, 80) };
+  });
+  props.safety = `${props.safety} `.repeat(5);
+  const content = JSON.stringify({ ...bundle, lessons: [...bundle.lessons, lesson] });
+  const context = await browser.newContext({ viewport, reducedMotion: 'no-preference', serviceWorkers: 'block' });
+  try {
+    await context.addInitScript(() => {
+      for (const [object, names] of [
+        [window, ['globalThis', 'structuredClone', 'queueMicrotask', 'ResizeObserver']],
+        [Object, ['fromEntries', 'hasOwn']],
+        [Array.prototype, ['at']],
+        [String.prototype, ['replaceAll']],
+        [Promise, ['allSettled']],
+        [AbortSignal, ['any', 'timeout']],
+        [crypto, ['randomUUID']],
+      ]) for (const name of names) Object.defineProperty(object, name, { configurable: true, writable: true, value: undefined });
+    });
+    await installLocal(context, lesson, false, content, false);
+    const page = await context.newPage();
+    await page.goto(`${base}/#/lesson/${lesson.id}`);
+    await page.locator('.start-lesson').click();
+    const area = page.locator('.spa-reading-area');
+    await expect(area).toBeVisible();
+    await expect(page.locator('.spa-reading-more')).toBeVisible();
+    await area.focus();
+    const focus = await area.evaluate((element) => ({
+      transform: getComputedStyle(element).transform, shadow: getComputedStyle(element).boxShadow,
+    }));
+    assert.equal(focus.transform, 'none');
+    assert.ok(focus.shadow.includes('inset'), '阅读区焦点必须是内描边');
+    const transitions = [];
+    await page.exposeFunction('polishScroll', (top) => transitions.push(top));
+    await area.evaluate((element) => element.addEventListener('scroll', () => window.polishScroll(element.scrollTop)));
+    await page.keyboard.press('ArrowDown');
+    await expect.poll(() => area.evaluate((element) => element.scrollTop)).toBeGreaterThan(0);
+    await page.waitForTimeout(700);
+    assert.ok(new Set(transitions).size > 2, '未减少动画时，方向键须平滑滚动');
+    for (let turn = 0; turn < 10 && await page.locator('.spa-reading-more:visible').count(); turn++) {
+      await page.keyboard.press('ArrowDown');
+      await page.waitForTimeout(500);
+    }
+    await expect(page.locator('.spa-reading-more')).toBeHidden();
+    const metrics = await screenshot(page, `${viewport.width}x${viewport.height}-long-guide-scrolled`);
+    assert.ok(metrics.button.bottom <= viewport.height, '超长指引的按钮不可移出屏幕');
+    await page.keyboard.press('ArrowUp');
+    await expect(page.locator('.spa-reading-more')).toBeVisible();
+    await page.locator('.spa-guide-start').click();
+    await expect(page.locator('.spa-guide--play')).toBeVisible();
+    await expect(page.locator('.lesson-topbar')).toBeHidden();
+    await page.keyboard.press('Enter');
+    await page.keyboard.press('Enter');
+    await expect(page.locator('.spa-guide--reaction')).toBeVisible();
+    assert.equal(await page.locator('.spa-guide-reactions button').count(), 3);
+    return {
+      viewport, fixture: '8 步超长指引（仅测试上下文）',
+      legacyApiFallback: true, resizeObserverFallback: true,
+      smoothScrollEvents: transitions.length, focus, metrics,
+    };
+  } finally {
+    await context.close();
   }
 }
 
@@ -168,7 +243,8 @@ try {
     headless: true, args: ['--renderer-process-limit=1'],
   });
   const base = `http://127.0.0.1:${port}`;
-  for (const viewport of viewports) {
+  const captureViewports = phase === 'after' ? [...viewports, { width: 390, height: 844 }] : viewports;
+  for (const viewport of captureViewports) {
     for (const scenario of scenarios) {
       const context = await browser.newContext({ viewport, hasTouch: viewport.width === 1024, reducedMotion: 'reduce', serviceWorkers: 'block' });
       try {
@@ -219,6 +295,10 @@ try {
         await context.close();
       }
     }
+  }
+  if (phase === 'after') {
+    report.longGuides = [];
+    for (const viewport of viewports) report.longGuides.push(await verifyLongGuide(base, viewport));
   }
   assert.deepEqual(report.checks.filter((row) => row.failure).map((row) => `${row.viewport.width} ${row.failure}`), [], '布局验收');
 } finally {

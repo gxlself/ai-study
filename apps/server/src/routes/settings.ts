@@ -23,8 +23,8 @@ export function registerSettings(app: FastifyInstance, context: AppContext): voi
     store.setSetting('public', settings);
     return settings;
   });
-  app.get('/api/tts/status', route('本机朗读能力与声音列表'), async () => tts.status());
-  app.post('/api/tts', route('生成朗读音频'), async (request) => {
+  app.get('/api/tts/status', options(context, 'admin', '设置与朗读', '本机朗读能力与声音列表', 'tts'), async () => tts.status());
+  app.post('/api/tts', options(context, 'admin', '设置与朗读', '生成朗读音频', 'tts'), async (request) => {
     const { lang, text } = parse(z.object({ lang: z.enum(['zh', 'en']), text: z.string().trim().min(1).max(2000) }).strict(), request.body);
     return tts.generate(lang, text);
   });

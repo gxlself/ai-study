@@ -66,9 +66,9 @@ export function OfflineLesson({ data }: { data: LessonData }) {
     <header><div className="parent-reading-title"><BackButton onClick={() => void finish(false)} /><h1>{lesson.title.zh}</h1></div><span className="offline-badge"><Leaf />线下版</span></header>
     <main className="parent-reading-main">
       <ReadingArea areaRef={readArea} label="线下活动指引">
-      <p className="parent-reading-intro">{lesson.parentGuide.intro}</p>
-      <OfflineCards items={lesson.offline} phrases={lesson.parentGuide.phrases} />
-      {error && <Problem message={error} retry={() => void finish(record.current?.completed ?? false)} />}
+        <p className="parent-reading-intro">{lesson.parentGuide.intro}</p>
+        <OfflineCards items={lesson.offline} phrases={lesson.parentGuide.phrases} />
+        {error && <Problem message={error} retry={() => void finish(record.current?.completed ?? false)} />}
       </ReadingArea>
     </main>
     <footer className="parent-reading-footer">

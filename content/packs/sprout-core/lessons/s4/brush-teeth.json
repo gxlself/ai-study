@@ -48,7 +48,7 @@
         "materials": ["适龄小头软毛牙刷", "含氟牙膏", "干净毛巾"],
         "steps": [
           { "text": "每天安排两次刷牙，一次在睡前。", "say": { "zh": "刷牙时间到啦。", "en": "It's time to brush." }, "concept": "brush-teeth" },
-          { "text": "成人挤米粒大小的含氟牙膏。", "say": { "zh": "只用这么一点点。", "en": "Just a tiny smear." }, "concept": "toothbrush" },
+          { "text": "成人挤米粒大小的含氟牙膏。", "say": { "zh": "只用这么一点点。", "en": "Just a tiny smear." }, "concept": "toothpaste" },
           { "text": "让宝宝坐稳，先告知再开始。", "say": { "zh": "我来帮你轻轻刷。", "en": "I'll brush gently for you." } },
           { "text": "轻柔刷牙齿的里、外和咬合面。", "say": { "zh": "里面，外面，再刷上面。", "en": "Inside, outside, and the chewing surfaces." }, "concept": "tooth" },
           { "text": "能吐就吐，再把刷牙用品收好。", "say": { "zh": "刷好啦，谢谢你一起做。", "en": "All done. Thank you for joining in." }, "concept": "towel" }

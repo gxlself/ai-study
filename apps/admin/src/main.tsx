@@ -32,7 +32,7 @@ async function main() {
           Button: { primaryColor: '#342118' },
         },
       }}>
-        <AntApp><ErrorBoundary><BrowserRouter basename="/admin"><App /></BrowserRouter></ErrorBoundary></AntApp>
+        <AntApp><ErrorBoundary><BrowserRouter basename="/admin/"><App /></BrowserRouter></ErrorBoundary></AntApp>
       </ConfigProvider>
     </React.StrictMode>,
   );

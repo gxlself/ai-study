@@ -86,7 +86,7 @@
 | | | core.s3.duck-mom | 小鸭子找妈妈 | guide：用卡片当道具讲故事（脚本写在步骤里），问"是妈妈吗？" | cards: duck, chicken, cow, dog | language, social |
 | s3-t2 我的身体 My Body | 4 | core.s3.body-parts | 我的身体 | guide：洗澡/穿衣时"鼻子在哪里？"，宝宝指自己再指家长 | cards: eye, ear, nose, mouth, hand, foot | language, science |
 | | | core.s3.touch-nose | 摸摸小鼻子 | guide：动作游戏（摸鼻子、拍肚子、跺跺脚、举手） | — | motor, language |
-| | | core.s3.head-shoulders | 头发肩膀膝盖脚 | song（中 + 英）+ guide：慢速带动作唱 | — | music, english, motor |
+| | | core.s3.head-shoulders | 头、肩膀、膝盖、脚 | song（中 + 英）+ guide：慢速带动作唱 | — | music, english, motor |
 | s3-t3 车车出发 Let's Go | 4 | core.s3.vehicles | 嘀嘀叭叭 | guide：窗边/散步时看车、命名、学声音 | cards: car, bus, train, airplane, boat | language |
 | | | core.s3.roll-car | 小车滑下去 | guide：用书/纸板搭斜坡滑小车："下去了！快/慢"（因果、物理初体验） | — | science, math |
 | | | core.s3.car-song | 汽车开呀开 | song（原创词，Mulberry Bush 旋律，中 + 英）+ guide | — | music, english |

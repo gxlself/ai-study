@@ -51,7 +51,7 @@
         "materials": ["圆方三角打印卡", "圆形不易碎盘", "圆钟或其打印图片", "大皮球", "适龄大块配形玩具"],
         "steps": [
           { "text": "把圆形卡放下，沿边指一圈。", "say": { "zh": "圆圆的，没有角。", "en": "Round, with no corners." }, "concept": "circle" },
-          { "text": "把圆盘放旁边，指盘子的边。", "say": { "zh": "盘子的边也圆圆的。", "en": "The plate has a round edge too." } },
+          { "text": "把圆盘放旁边，指盘子的边。", "say": { "zh": "盘子的边也圆圆的。", "en": "The plate has a round edge too." }, "concept": "plate" },
           { "text": "在安全处指圆钟的钟面。", "say": { "zh": "钟的面圆圆的。", "en": "The clock face is round." }, "concept": "clock" },
           { "text": "把大皮球放下，让宝宝摸摸。", "say": { "zh": "球看起来圆圆的。", "en": "The ball looks round." }, "concept": "ball" },
           { "text": "示范把大圆块放进配形孔。", "say": { "zh": "一样的形状，放进去。", "en": "The same shape. In it goes." }, "concept": "puzzle" },

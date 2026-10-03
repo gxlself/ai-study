@@ -3,6 +3,7 @@ import { PHRASES } from '@sprout/schema';
 import type { WebProps } from '@sprout/schema';
 import type { ActivityContext } from '@sprout/plugin-sdk';
 import { Action, InputHint, Stage, Text, defineBuiltin, useNav, useSession, useTask } from '../shared';
+import { checkWebTarget, webNonce, webTarget } from '../security';
 
 function WebActivity({ ctx }: { ctx: ActivityContext<WebProps> }) {
   const s = useSession(ctx);
@@ -10,16 +11,30 @@ function WebActivity({ ctx }: { ctx: ActivityContext<WebProps> }) {
   const [status, setStatus] = useState<'loading' | 'loaded' | 'error'>('loading');
   const [attempt, setAttempt] = useState(0);
   const [stopped, setStopped] = useState(ctx.signal.aborted);
+  const [validated, setValidated] = useState<{ href: string; nonce: string } | null>(null);
   const { title, allowFullscreen, maxSec } = ctx.props;
-  const target = useMemo(() => {
-    try {
-      const url = new URL(ctx.props.url);
-      if (!['https:', 'http:'].includes(url.protocol) || url.username || url.password || url.origin === 'null') return null;
-      // 双 sandbox 权限下，同源页面可移除 sandbox，必须使用独立来源。
-      if (url.origin === window.location.origin) return null;
-      return url;
-    } catch { return null; }
-  }, [ctx.props.url]);
+  const target = useMemo(() => webTarget(ctx.props.url), [ctx.props.url]);
+  useEffect(() => {
+    setValidated(null);
+    if (!target || s.paused || !s.active()) return;
+    let active = true;
+    const controller = new AbortController();
+    const abort = () => controller.abort();
+    s.signal.addEventListener('abort', abort, { once: true });
+    const timeout = setTimeout(abort, 10_000);
+    setStatus('loading');
+    void checkWebTarget(target, controller.signal).then(() => {
+      if (!active || controller.signal.aborted || !s.active()) return;
+      const nonce = webNonce();
+      const url = new URL(target);
+      url.searchParams.set('sproutNonce', nonce);
+      url.searchParams.set('sproutParentOrigin', window.location.origin);
+      setValidated({ href: url.href, nonce });
+    }).catch(() => {
+      if (active && s.active() && !s.paused) { setStatus('error'); ctx.log('web:origin-rejected'); }
+    }).finally(() => clearTimeout(timeout));
+    return () => { active = false; controller.abort(); clearTimeout(timeout); s.signal.removeEventListener('abort', abort); };
+  }, [ctx, s, target, attempt, s.paused]);
 
   const finish = (reason: string) => {
     if (!s.active() || s.paused) return;
@@ -28,12 +43,14 @@ function WebActivity({ ctx }: { ctx: ActivityContext<WebProps> }) {
   };
   useEffect(() => {
     const receive = (event: MessageEvent<unknown>) => {
-      if (!s.active() || s.paused || !target || status === 'error' || !frame.current) return;
-      if (event.source !== frame.current.contentWindow || event.origin !== target.origin) return;
+      if (!s.active() || s.paused || !target || status !== 'loaded' || !validated || !frame.current) return;
+      // 不给网页 allow-same-origin：最终文档始终是 opaque origin，随机值绑定本次 iframe。
+      if (event.source !== frame.current.contentWindow || event.origin !== 'null') return;
       const data = event.data;
       if (!data || typeof data !== 'object' || Array.isArray(data)
         || !Object.prototype.hasOwnProperty.call(data, 'type')
-        || (data as Record<string, unknown>).type !== 'sprout:complete') return;
+        || (data as Record<string, unknown>).type !== 'sprout:complete'
+        || (data as Record<string, unknown>).nonce !== validated.nonce) return;
       ctx.log('web:complete-message', { origin: target.origin });
       finish('message');
     };
@@ -45,11 +62,7 @@ function WebActivity({ ctx }: { ctx: ActivityContext<WebProps> }) {
       window.removeEventListener('message', receive);
       s.signal.removeEventListener('abort', abort);
     };
-  }, [ctx, s, target, status]);
-
-  useEffect(() => {
-    if (!s.paused && s.active()) setStatus('loading');
-  }, [s, s.paused]);
+  }, [ctx, s, target, status, validated]);
 
   useTask(s, async (signal) => {
     if (maxSec === undefined) return;
@@ -84,11 +97,12 @@ function WebActivity({ ctx }: { ctx: ActivityContext<WebProps> }) {
     <Stage ctx={ctx} className="spa-media spa-web">
       {title && <Text ctx={ctx} text={title} className="spa-media-heading" />}
       <div className="spa-web-screen" aria-busy={status === 'loading' && !failed && !s.paused}>
-        {target && !failed && !stopped && !s.paused && (
-          <iframe key={attempt} ref={frame} src={target.href}
+        {target && validated && !failed && !stopped && !s.paused && (
+          <iframe key={attempt} ref={frame} src={validated.href}
             title={title ? ctx.locale.pick(title).primary : ctx.locale.pick({ zh: '网页互动', en: 'Web activity' }).primary}
-            sandbox="allow-scripts allow-same-origin" allowFullScreen={allowFullscreen}
-            allow={allowFullscreen ? 'fullscreen' : undefined} referrerPolicy="no-referrer" data-focusable
+            sandbox="allow-scripts" allowFullScreen={allowFullscreen}
+            allow={`camera 'none'; microphone 'none'; geolocation 'none';${allowFullscreen ? ' fullscreen' : ''}`}
+            referrerPolicy="no-referrer" data-focusable
             onLoad={() => {
               if (!s.active()) return;
               setStatus('loaded');

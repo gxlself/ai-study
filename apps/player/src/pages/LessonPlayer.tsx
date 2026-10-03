@@ -292,7 +292,7 @@ export function LessonExperience({ data, initialScreen, preview }: { data: Lesso
   }
 
   const readingEnd = phase === 'ended' || phase === 'rest';
-  return <Page className={`lesson-page phase-${phase} ${parentLesson ? 'audience-parent' : ''} ${companionPlaying ? 'guide-dim' : ''} ${phase === 'playing' && lesson.steps[stepIndex].type === 'guide' ? 'guide-page' : ''} ${readingEnd ? 'parent-reading-page' : ''}`} onBack={() => void exit()}
+  return <Page className={`lesson-page phase-${phase} ${parentLesson ? 'audience-parent' : ''} ${companionPlaying ? 'guide-dim' : ''} ${phase === 'playing' && parentLesson && lesson.steps[stepIndex].type === 'guide' ? 'guide-page' : ''} ${readingEnd ? 'parent-reading-page' : ''}`} onBack={() => void exit()}
     onKey={(key) => readingEnd && (key === 'up' || key === 'down') && scrollReadingArea(readArea.current, key, app.reducedMotion)}>
     {phase === 'intro' && <>
       <header><BackButton onClick={() => void exit()} /><span className="co-view"><Users />{parentLesson ? '只给家长看' : '需要家长全程陪同'}</span></header>
@@ -323,10 +323,10 @@ export function LessonExperience({ data, initialScreen, preview }: { data: Lesso
     {readingEnd && <>
       <main className="lesson-end">
         <header className="lesson-end-heading">
-        <div className={`end-art ${!parentLesson && celebrate && !app.reducedMotion ? 'celebrate' : ''}`} aria-hidden="true">{parentLesson ? <NotebookPen /> : phase === 'ended' ? <Sparkles /> : <Leaf />}</div>
-        <div>
-        <h1>{parentLesson ? '放下屏幕，去陪宝宝玩吧' : phase === 'ended' ? '你今天看得真认真！' : '休息一下'}</h1><p className="end-subtitle">{parentLesson ? '跟随宝宝的兴趣，随时调整玩法' : '接下来，和家人一起玩'}</p>
-        </div>
+          <div className={`end-art ${!parentLesson && celebrate && !app.reducedMotion ? 'celebrate' : ''}`} aria-hidden="true">{parentLesson ? <NotebookPen /> : phase === 'ended' ? <Sparkles /> : <Leaf />}</div>
+          <div>
+            <h1>{parentLesson ? '放下屏幕，去陪宝宝玩吧' : phase === 'ended' ? '你今天看得真认真！' : '休息一下'}</h1><p className="end-subtitle">{parentLesson ? '跟随宝宝的兴趣，随时调整玩法' : '接下来，和家人一起玩'}</p>
+          </div>
         </header>
         <ReadingArea areaRef={readArea} label="课后线下活动">
           <OfflineCards items={lesson.offline} phrases={lesson.parentGuide.phrases} />

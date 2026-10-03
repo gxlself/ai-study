@@ -15,7 +15,7 @@
   ],
   "cover": { "concept": "bear", "bg": "room" },
   "printables": [
-    { "kind": "cards", "title": "小熊与心情故事卡", "items": ["bear", "blocks", "angry", "hug", "calm"], "size": "large", "showText": true, "showEnglish": true }
+    { "kind": "cards", "title": "小熊与心情故事卡", "items": ["bear", "single-block", "angry", "hug", "calm"], "size": "large", "showText": true, "showEnglish": true }
   ],
   "parentGuide": {
     "intro": "共看默认关闭，也能用卡讲故事。只在平静时共读，不为止哭开屏。较大的熊是熊妈妈。可换成家中照护者的称呼。呼吸只由大人示范，宝宝不必跟拍。",
@@ -55,25 +55,25 @@
     {
       "type": "story",
       "title": { "zh": "妈妈陪着小熊", "en": "Mama Bear Stays Close" },
-      "parentTip": "较大的熊代表熊妈妈，小脸卡代表心情；积木画面为示意。",
+      "parentTip": "较大的熊代表熊妈妈，小脸卡代表心情；每个积木图是一块，叠起或散开放。",
       "props": {
         "title": { "zh": "小熊生气了", "en": "Bear Feels Angry" },
         "pages": [
           {
             "scene": { "bg": "room", "ground": "floor", "sprites": [
               { "concept": "bear", "x": 25, "y": 74, "size": 35, "anim": "none" },
-              { "concept": "square", "x": 67, "y": 50, "size": 15, "anim": "none" },
-              { "concept": "square", "x": 67, "y": 65, "size": 15, "anim": "none" },
-              { "concept": "square", "x": 67, "y": 80, "size": 15, "anim": "none" }
+              { "concept": "single-block", "x": 67, "y": 59, "size": 21, "anim": "none" },
+              { "concept": "single-block", "x": 67, "y": 69.5, "size": 21, "anim": "none" },
+              { "concept": "single-block", "x": 67, "y": 80, "size": 21, "anim": "none" }
             ] },
             "text": { "zh": "小熊搭了一座小塔。", "en": "Bear builds a little tower." }
           },
           {
             "scene": { "bg": "room", "ground": "floor", "sprites": [
               { "concept": "bear", "x": 25, "y": 74, "size": 35, "anim": "none" },
-              { "concept": "square", "x": 53, "y": 80, "size": 15, "anim": "none" },
-              { "concept": "square", "x": 70, "y": 80, "size": 15, "anim": "none" },
-              { "concept": "square", "x": 87, "y": 80, "size": 15, "anim": "none" },
+              { "concept": "single-block", "x": 53, "y": 80, "size": 21, "anim": "none" },
+              { "concept": "single-block", "x": 70, "y": 80, "size": 21, "anim": "none" },
+              { "concept": "single-block", "x": 87, "y": 80, "size": 21, "anim": "none" },
               { "concept": "angry", "x": 25, "y": 25, "size": 18, "anim": "none" }
             ] },
             "text": { "zh": "积木倒了。小熊生气了。", "en": "The blocks fall. Bear feels angry." },
@@ -107,8 +107,8 @@
             "scene": { "bg": "room", "ground": "floor", "sprites": [
               { "concept": "bear", "x": 21, "y": 74, "size": 32, "anim": "none" },
               { "concept": "bear", "x": 80, "y": 72, "size": 42, "flip": true, "anim": "none" },
-              { "concept": "square", "x": 50, "y": 65, "size": 15, "anim": "none" },
-              { "concept": "square", "x": 50, "y": 80, "size": 15, "anim": "none" },
+              { "concept": "single-block", "x": 50, "y": 69.5, "size": 21, "anim": "none" },
+              { "concept": "single-block", "x": 50, "y": 80, "size": 21, "anim": "none" },
               { "concept": "calm", "x": 21, "y": 25, "size": 18, "anim": "none" }
             ] },
             "text": { "zh": "歇了一会儿，小熊想再搭。妈妈陪它。", "en": "After a rest, Bear wants to build again. Mama Bear helps." },

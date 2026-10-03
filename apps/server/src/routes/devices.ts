@@ -3,21 +3,25 @@ import type { FastifyInstance } from 'fastify';
 import { z } from 'zod';
 import type { DeviceBootstrap, DeviceInfo } from '@sprout/schema';
 import { ApiError, parse } from '../errors';
-import { newToken, tokenHash } from '../auth';
+import { assertDeviceChildAllowed, deviceAllowsChild, newToken, tokenHash } from '../auth';
 import { options, parameter, type AppContext } from '../context';
+import type { ResourceKind } from '../security/limits';
 
 const deviceName = z.string().trim().min(1).max(80);
 const childIdSchema = z.string().min(1).max(128).nullable();
+export const allowedChildIdsSchema = z.array(z.string().min(1).max(128)).max(1000)
+  .refine((ids) => new Set(ids).size === ids.length, '允许的孩子不能重复').nullable();
 
 export function registerDevices(app: FastifyInstance, context: AppContext): void {
   const { store, packs, plugins } = context;
-  const route = (scope: 'admin' | 'device' | 'public', summary: string) => options(context, scope, '设备与配对', summary);
-  app.post('/api/pair/start', route('public', '开始十分钟设备配对'), async (request) => {
+  const route = (scope: 'admin' | 'device' | 'public', summary: string, resource?: ResourceKind) =>
+    options(context, scope, '设备与配对', summary, resource);
+  app.post('/api/pair/start', route('public', '开始十分钟设备配对', 'pair-start'), async (request) => {
     const input = parse(z.object({
       name: deviceName.optional(), kind: z.enum(['tv', 'tablet', 'browser']).default('browser'),
     }).strict(), request.body ?? {});
     const now = new Date();
-    store.db.prepare('DELETE FROM pairings WHERE expires_at < ?').run(new Date(now.getTime() - 24 * 3600 * 1000).toISOString());
+    store.db.prepare('DELETE FROM pairings WHERE expires_at <= ?').run(now.toISOString());
     const pending = store.db.prepare("SELECT COUNT(*) AS count FROM pairings WHERE expires_at > ? AND status = 'pending'")
       .get(now.toISOString())!;
     if (Number(pending.count) >= 1000) throw new ApiError(429, 'TOO_MANY_PAIRINGS', '配对请求过多，请稍后重试');
@@ -30,7 +34,7 @@ export function registerDevices(app: FastifyInstance, context: AppContext): void
       .run(pairingId, code, input.name ?? '播放设备', input.kind, expiresAt);
     return { pairingId, code, expiresAt };
   });
-  app.get('/api/pair/:pairingId', route('public', '轮询配对结果（令牌仅返回一次）'), async (request, reply) => {
+  app.get('/api/pair/:pairingId', route('public', '轮询配对结果（令牌仅返回一次）', 'pair-poll'), async (request, reply) => {
     reply.header('Cache-Control', 'no-store');
     return store.transaction(() => {
       const row = store.db.prepare('SELECT * FROM pairings WHERE id = ?').get(parameter(request, 'pairingId'));
@@ -44,11 +48,13 @@ export function registerDevices(app: FastifyInstance, context: AppContext): void
       return { status: 'approved', deviceId: row.device_id, deviceToken };
     });
   });
-  app.post('/api/pair/approve', route('admin', '确认配对并绑定孩子'), async (request) => {
+  app.post('/api/pair/approve', route('admin', '确认配对并绑定孩子', 'pair-approve'), async (request) => {
     const input = parse(z.object({
       code: z.string().regex(/^\d{6}$/), name: deviceName.optional(), childId: childIdSchema.optional(),
+      allowedChildIds: allowedChildIdsSchema.optional(),
     }).strict(), request.body);
     if (input.childId) store.child(input.childId);
+    for (const id of input.allowedChildIds ?? []) store.child(id);
     return store.transaction(() => {
       const row = store.db.prepare('SELECT * FROM pairings WHERE code = ?').get(input.code);
       if (!row || (row.expires_at as string) <= new Date().toISOString()) {
@@ -57,8 +63,10 @@ export function registerDevices(app: FastifyInstance, context: AppContext): void
       if (row.status !== 'pending') throw new ApiError(409, 'PAIRING_APPROVED', '此配对码已使用');
       const device: DeviceInfo = {
         id: randomUUID(), name: input.name ?? row.name as string, kind: row.kind as string,
-        childId: input.childId ?? null, createdAt: new Date().toISOString(), lastSeenAt: null,
+        childId: input.childId ?? null, allowedChildIds: input.allowedChildIds ?? null,
+        createdAt: new Date().toISOString(), lastSeenAt: null,
       };
+      if (device.childId) assertDeviceChildAllowed(device, device.childId);
       store.putDevice(device);
       store.db.prepare("UPDATE pairings SET status = 'approved', device_id = ? WHERE id = ?")
         .run(device.id, row.id as string);
@@ -68,10 +76,19 @@ export function registerDevices(app: FastifyInstance, context: AppContext): void
   app.get('/api/devices', route('admin', '设备列表'), async () => store.devices());
   app.put('/api/devices/:id', route('admin', '更新设备名称或绑定孩子'), async (request) => {
     const previous = store.device(parameter(request));
-    const input = parse(z.object({ name: deviceName.optional(), childId: childIdSchema.optional() }).strict(), request.body);
+    const input = parse(z.object({
+      name: deviceName.optional(), childId: childIdSchema.optional(), allowedChildIds: allowedChildIdsSchema.optional(),
+    }).strict(), request.body);
     if (input.childId) store.child(input.childId);
-    store.db.prepare('UPDATE devices SET name = ?, child_id = ? WHERE id = ?')
-      .run(input.name ?? previous.name, input.childId === undefined ? previous.childId : input.childId, previous.id);
+    for (const id of input.allowedChildIds ?? []) store.child(id);
+    const allowedChildIds = input.allowedChildIds === undefined ? previous.allowedChildIds ?? null : input.allowedChildIds;
+    let childId = input.childId === undefined ? previous.childId : input.childId;
+    if (childId && !deviceAllowsChild({ ...previous, allowedChildIds }, childId)) {
+      if (input.childId !== undefined) assertDeviceChildAllowed({ ...previous, allowedChildIds }, childId);
+      childId = null;
+    }
+    store.db.prepare('UPDATE devices SET name = ?, child_id = ?, allowed_child_ids_json = ? WHERE id = ?')
+      .run(input.name ?? previous.name, childId, allowedChildIds === null ? null : JSON.stringify(allowedChildIds), previous.id);
     return store.device(previous.id);
   });
   app.delete('/api/devices/:id', route('admin', '移除设备并吊销令牌'), async (request) => {
@@ -87,15 +104,17 @@ export function registerDevices(app: FastifyInstance, context: AppContext): void
     const settings = store.settings();
     return {
       serverTime, device, child: device.childId ? store.child(device.childId) : null,
-      children: store.children().map(({ id, name, nickname, avatar, birthday }) => ({ id, name, nickname, avatar, birthday })),
+      children: store.children().filter((child) => deviceAllowsChild(device, child.id))
+        .map(({ id, name, nickname, avatar, birthday }) => ({ id, name, nickname, avatar, birthday })),
       packs: packs.list().filter((pack) => pack.enabled), plugins: plugins.list().filter((plugin) => plugin.enabled),
       settings: { familyName: settings.familyName, ttsVoices: settings.ttsVoices },
     };
   });
   app.put('/api/device/child', route('device', '播放端切换孩子'), async (request) => {
     const input = parse(z.object({ childId: z.string().min(1).max(128) }).strict(), request.body);
-    const child = store.child(input.childId);
     const id = request.principal!.role === 'device' ? request.principal!.deviceId : '';
+    assertDeviceChildAllowed(store.device(id), input.childId);
+    const child = store.child(input.childId);
     store.db.prepare('UPDATE devices SET child_id = ? WHERE id = ?').run(child.id, id);
     return store.device(id);
   });

@@ -49,7 +49,7 @@ const Context = createContext<AppState | null>(null);
 
 export function AppProvider({ children }: { children: ReactNode }) {
   const previewMode = useLocation().pathname.startsWith('/preview');
-  const [source, setSource] = useState<DataSource | null>(initialSource);
+  const [source, setSource] = useState<DataSource | null>(() => previewMode ? null : initialSource());
   const sourceRef = useRef(source);
   const [bootstrap, setBootstrap] = useState<DeviceBootstrap | null>(null);
   const [plan, setPlan] = useState<TodayPlan | null>(null);
@@ -79,7 +79,9 @@ export function AppProvider({ children }: { children: ReactNode }) {
         next.lessons(), next.lexicon(), next.audioManifests(),
         boot.child ? next.today(boot.child.id) : Promise.resolve(null),
       ]);
-      await registry.load(boot.plugins, (url) => next.resolveAsset('sprout.core', url));
+      await registry.load(boot.plugins, (url) => next instanceof RemoteSource
+        ? new URL(url, `${next.server}/`).href : next.resolveAsset('sprout.core', url),
+      next instanceof RemoteSource ? next.server : '');
       if (version !== generation.current) return;
       speech.setManifests(manifests);
       setBootstrap(boot);
@@ -153,6 +155,10 @@ export function AppProvider({ children }: { children: ReactNode }) {
   const useRemote = useCallback(async (server: string, token: string) => {
     const next = new RemoteSource(server, token);
     saveConnection({ kind: 'remote', server, token });
+    if (document.querySelector('meta[data-sprout-csp]')) {
+      window.location.reload();
+      return;
+    }
     generation.current += 1;
     setLoading(true); setBootstrap(null); setPlan(null);
     sourceRef.current = next;
@@ -165,6 +171,10 @@ export function AppProvider({ children }: { children: ReactNode }) {
       await next.selectChild(child.id);
     }
     saveConnection({ kind: 'local' });
+    if (document.querySelector('meta[data-sprout-csp][data-server]:not([data-server=""])')) {
+      window.location.reload();
+      return;
+    }
     generation.current += 1;
     setLoading(true); setBootstrap(null); setPlan(null);
     sourceRef.current = next;

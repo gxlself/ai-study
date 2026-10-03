@@ -20,7 +20,7 @@
     "tips": [
       "保持相近顺序，不机械卡时间。",
       "睡前需要帮助时先回应。",
-      "刷牙由成人帮助，不边走边刷。",
+      "牙膏由成人管理、只用适量；刷牙由成人帮助，不边走边刷。",
       "摇篮曲唱一小段即可，不循环播放。"
     ],
     "phrases": [
@@ -36,7 +36,7 @@
     {
       "title": "无屏晚安小仪式",
       "minutes": 10,
-      "materials": ["当天需要的清洁用品", "儿童牙刷", "一本纸质图画书"],
+      "materials": ["当天需要的清洁用品", "儿童牙刷和适量牙膏", "一本纸质图画书"],
       "steps": [
         "白天关屏，约定晚上看哪本书。",
         "晚上按需要清洁，成人帮助刷牙。",
@@ -72,8 +72,9 @@
           {
             "scene": { "bg": "room", "ground": "floor", "sprites": [
               { "concept": "bear", "x": 27, "y": 72, "size": 36, "anim": "none" },
-              { "concept": "toothbrush", "x": 59, "y": 76, "size": 22, "anim": "none" },
-              { "concept": "dad", "x": 82, "y": 75, "size": 24, "anim": "none" }
+              { "concept": "toothbrush", "x": 55, "y": 76, "size": 22, "anim": "none" },
+              { "concept": "toothpaste", "x": 70, "y": 76, "size": 16, "anim": "none" },
+              { "concept": "dad", "x": 87, "y": 75, "size": 24, "anim": "none" }
             ] },
             "text": { "zh": "小熊站稳了。爸爸帮它刷牙。", "en": "Bear stands safely. Dad helps Bear brush teeth." },
             "prompts": [{ "kind": "point", "zh": "指一指刷牙要用什么。", "en": "Point to what we use to brush teeth." }]

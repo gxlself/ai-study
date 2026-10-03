@@ -45,7 +45,7 @@
         {
           "scene": {"bg": "grass", "ground": "grass", "sprites": [
             {"concept": "rabbit", "x": 24, "y": 75, "size": 32, "anim": "none"},
-            {"concept": "playground", "x": 52, "y": 68, "size": 44, "anim": "none"},
+            {"concept": "slide", "x": 52, "y": 68, "size": 44, "anim": "none"},
             {"concept": "bear", "x": 81, "y": 75, "size": 32, "anim": "none"}
           ]},
           "text": {"zh": "小兔和小熊来到滑梯边。", "en": "Rabbit and Bear come to the slide."}
@@ -53,7 +53,7 @@
         {
           "scene": {"bg": "grass", "ground": "grass", "sprites": [
             {"concept": "rabbit", "x": 26, "y": 74, "size": 34, "anim": "none"},
-            {"concept": "playground", "x": 52, "y": 68, "size": 42, "anim": "none"},
+            {"concept": "slide", "x": 52, "y": 68, "size": 42, "anim": "none"},
             {"concept": "bear", "x": 78, "y": 74, "size": 34, "anim": "none"}
           ]},
           "text": {"zh": "小兔说：“我先！”小熊也想先。", "en": "Rabbit says, \"Me first!\" Bear wants to go first too."},
@@ -64,7 +64,7 @@
             {"concept": "rabbit", "x": 20, "y": 75, "size": 31, "anim": "none"},
             {"concept": "bear", "x": 49, "y": 75, "size": 31, "anim": "none"},
             {"concept": "dad", "x": 77, "y": 73, "size": 24, "anim": "none"},
-            {"concept": "playground", "x": 90, "y": 75, "size": 20, "anim": "none"}
+            {"concept": "slide", "x": 90, "y": 75, "size": 20, "anim": "none"}
           ]},
           "text": {"zh": "大人说：“都想玩呀。我们轮流。”", "en": "A grown-up says, \"You both want to play. Let's take turns.\""}
         },
@@ -72,7 +72,7 @@
           "scene": {"bg": "grass", "ground": "grass", "sprites": [
             {"concept": "bear", "x": 23, "y": 76, "size": 32, "anim": "none"},
             {"concept": "dad", "x": 45, "y": 76, "size": 23, "anim": "none"},
-            {"concept": "playground", "x": 68, "y": 72, "size": 43, "anim": "none"},
+            {"concept": "slide", "x": 68, "y": 72, "size": 43, "anim": "none"},
             {"concept": "rabbit", "x": 88, "y": 76, "size": 30, "anim": "none"}
           ]},
           "text": {"zh": "小兔先玩。大人陪小熊在旁边等。", "en": "Rabbit goes first. The grown-up waits beside the slide with Bear."},
@@ -80,7 +80,7 @@
         },
         {
           "scene": {"bg": "grass", "ground": "grass", "sprites": [
-            {"concept": "playground", "x": 23, "y": 72, "size": 43, "anim": "none"},
+            {"concept": "slide", "x": 23, "y": 72, "size": 43, "anim": "none"},
             {"concept": "bear", "x": 43, "y": 76, "size": 30, "anim": "none"},
             {"concept": "rabbit", "x": 69, "y": 77, "size": 32, "anim": "none"},
             {"concept": "dad", "x": 88, "y": 76, "size": 23, "anim": "none"}
@@ -91,7 +91,7 @@
           "scene": {"bg": "grass", "ground": "grass", "sprites": [
             {"concept": "rabbit", "x": 25, "y": 76, "size": 34, "anim": "none"},
             {"concept": "bear", "x": 66, "y": 76, "size": 34, "anim": "none"},
-            {"concept": "playground", "x": 87, "y": 75, "size": 22, "anim": "none"}
+            {"concept": "slide", "x": 87, "y": 75, "size": 22, "anim": "none"}
           ]},
           "text": {"zh": "两位朋友都玩到了，开心地笑。", "en": "Both friends have had a turn. They smile happily."},
           "prompts": [{"kind": "distancing", "zh": "等的时候，你想做什么？", "en": "What would you like to do while waiting?"}]

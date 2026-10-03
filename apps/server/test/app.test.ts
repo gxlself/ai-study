@@ -96,6 +96,7 @@ describe('Sprout API 集成', () => {
     expect((await request('GET', `/api/pair/${start.pairingId}`, undefined, '')).json()).toEqual({ status: 'pending' });
     const device = await request('POST', '/api/pair/approve', { code: start.code, childId, name: '客厅' });
     expect(device.statusCode).toBe(200);
+    expect(device.json().allowedChildIds).toBeNull();
     const poll = (await request('GET', `/api/pair/${start.pairingId}`, undefined, '')).json();
     expect(poll.deviceToken).toBeTypeOf('string');
     expect((await request('GET', `/api/pair/${start.pairingId}`, undefined, '')).json().deviceToken).toBeUndefined();
@@ -125,7 +126,7 @@ describe('Sprout API 集成', () => {
     const paired = await pairing();
     const now = new Date().toISOString();
     const input = {
-      childId, lessonId: 'core.sample', startedAt: now, endedAt: now,
+      childId, lessonId: 'core.sample', startedAt: new Date(Date.parse(now) - 600_000).toISOString(), endedAt: now,
       durationSec: 600, completed: true, stepsCompleted: 1, stepsTotal: 1, clientId: 'offline-session-1',
     };
     const first = await request('POST', '/api/sessions', input, paired.deviceToken);
@@ -171,7 +172,8 @@ describe('Sprout API 集成', () => {
   it('家长课不计孩子屏幕秒数，旧记录回退课程 audience，停用包不改变历史计时', async () => {
     const parent = (await request('POST', '/api/lessons', { ...parentLesson, id: 'counter' })).json();
     const now = new Date().toISOString();
-    const input = { childId, startedAt: now, endedAt: now, completed: true, stepsCompleted: 1, stepsTotal: 1 };
+    const input = { childId, startedAt: new Date(Date.parse(now) - 900_000).toISOString(), endedAt: now,
+      completed: true, stepsCompleted: 1, stepsTotal: 1 };
     const inferred = await request('POST', '/api/sessions', { ...input, lessonId: parent.id, durationSec: 600, clientId: 'parent-inferred' });
     expect(inferred.json().audience).toBe('parent');
     await request('POST', '/api/sessions', { ...input, lessonId: 'old-removed-parent', durationSec: 900, audience: 'parent' });
@@ -222,7 +224,9 @@ describe('Sprout API 集成', () => {
     await request('PUT', `/api/children/${childId}`, { birthday: birthday(24) });
     expect((await request('GET', `/api/children/${childId}/screen`)).json().sessionMaxSec).toBe(1200);
     const now = new Date().toISOString();
-    await request('POST', '/api/sessions', { childId, lessonId: 'core.sample', startedAt: now, endedAt: now, durationSec: 600, completed: true, stepsCompleted: 1, stepsTotal: 1 });
+    await request('POST', '/api/sessions', { childId, lessonId: 'core.sample',
+      startedAt: new Date(Date.parse(now) - 600_000).toISOString(), endedAt: now,
+      durationSec: 600, completed: true, stepsCompleted: 1, stepsTotal: 1 });
     const full = (await request('GET', `/api/children/${childId}/today`)).json();
     expect(full.screen).toMatchObject({ allowedNow: false, reason: 'daily-limit' });
     expect(full.items.some((item: { lessonId: string }) => item.lessonId === parent.id)).toBe(true);
@@ -311,7 +315,7 @@ describe('Sprout API 集成', () => {
     expect(cached.statusCode).toBe(304);
     const cors = await app.inject({ method: 'OPTIONS', url: '/api/children', headers: { origin: 'capacitor://localhost', 'access-control-request-method': 'GET' } });
     expect(cors.statusCode).toBe(204);
-    expect(cors.headers['access-control-allow-origin']).toBe('*');
+    expect(cors.headers['access-control-allow-origin']).toBe('capacitor://localhost');
     expect((await request('GET', '/', undefined, '')).body).toContain('播放端尚未构建');
     expect((await request('GET', '/admin/', undefined, '')).body).toContain('管理端尚未构建');
     expect((await request('GET', '/api/not-real', undefined, '')).statusCode).toBe(404);
@@ -387,7 +391,8 @@ describe('Sprout API 集成', () => {
     const dist = join(paths.directory, 'player');
     mkdirSync(dist);
     writeFileSync(join(dist, 'index.html'), '<!doctype html><title>SPROUT_APP</title>');
-    writeFileSync(join(dist, 'favicon.png'), readFileSync(new URL('../../player/public/favicon.png', import.meta.url)));
+    writeFileSync(join(dist, 'favicon.png'), Buffer.from(
+      'iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mP8/x8AAusB9Y9Zl1sAAAAASUVORK5CYII=', 'base64'));
     app = await buildApp({ ...paths, playerDist: dist, adminDist: dist, reloadIntervalMs: 0 });
     expect((await request('GET', '/api/children')).json()[0].id).toBe(childId);
     expect((await request('GET', '/api/packs')).json().find((p: { id: string }) => p.id === 'sprout.core').enabled).toBe(false);

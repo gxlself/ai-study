@@ -88,7 +88,7 @@
         "steps": [
           {
             "text": "成人先试好水温。托稳宝宝并打湿小手。",
-            "concept": "wash-hands",
+            "concept": "wet-hands",
             "say": {
               "zh": "小手打湿。",
               "en": "Wet your hands."
@@ -104,7 +104,7 @@
           },
           {
             "text": "用清洁流水冲净泡沫。",
-            "concept": "water",
+            "concept": "rinse-hands",
             "say": {
               "zh": "冲一冲。",
               "en": "Rinse your hands."

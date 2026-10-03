@@ -86,9 +86,10 @@
           { "lang": "en", "text": "Comb with me, nice and smooth", "notes": "D4/1 D4/0.5 G3/1 G3/0.5 C4/1.5 C4/1.5" }
         ],
         "scene": { "bg": "room", "ground": "floor", "sprites": [
-          { "concept": "wash-hands", "x": 28, "y": 73, "size": 40, "anim": "none" },
-          { "concept": "toothbrush", "x": 65, "y": 75, "size": 23, "anim": "none" },
-          { "concept": "comb", "x": 85, "y": 75, "size": 20, "anim": "none" }
+          { "concept": "wash-hands", "x": 18, "y": 73, "size": 35, "anim": "none" },
+          { "concept": "toothbrush", "x": 43, "y": 75, "size": 22, "anim": "none" },
+          { "concept": "hair", "x": 66, "y": 75, "size": 23, "anim": "none" },
+          { "concept": "comb", "x": 85, "y": 75, "size": 18, "anim": "none" }
         ] },
         "actions": [
           { "zh": "空手轻轻搓手。", "en": "Pretend to rub your hands." },
@@ -105,9 +106,9 @@
         "mode": "show",
         "intro": { "zh": "看看四步，再去一起洗手。", "en": "Look at four steps, then wash together." },
         "steps": [
-          { "concept": "droplet", "caption": { "zh": "先用清水湿手。", "en": "Wet hands with clean running water." }, "say": { "zh": "先把小手弄湿。", "en": "First, wet your hands." } },
+          { "concept": "wet-hands", "caption": { "zh": "先用清水湿手。", "en": "Wet hands with clean running water." }, "say": { "zh": "先把小手弄湿。", "en": "First, wet your hands." } },
           { "concept": "soap", "caption": { "zh": "涂皂搓手至少20秒。", "en": "Use soap and rub for at least 20 seconds." }, "say": { "zh": "手心手背指间都搓搓。", "en": "Rub palms, backs, and between fingers." } },
-          { "concept": "droplet", "caption": { "zh": "用清水冲干净。", "en": "Rinse with clean running water." }, "say": { "zh": "把泡沫冲干净。", "en": "Rinse the soap away." } },
+          { "concept": "rinse-hands", "caption": { "zh": "用清水冲干净。", "en": "Rinse with clean running water." }, "say": { "zh": "把泡沫冲干净。", "en": "Rinse the soap away." } },
           { "concept": "towel", "caption": { "zh": "用干净毛巾擦干。", "en": "Dry with a clean towel." }, "say": { "zh": "擦干啦，关屏去洗手。", "en": "Dry hands. Now let's turn the screen off and wash." } }
         ]
       }

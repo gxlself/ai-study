@@ -88,6 +88,22 @@
   overflow-wrap: anywhere;
 }
 
+.system-metadata-wide {
+  grid-column: 1 / -1;
+}
+
+.system-child-permissions {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 12px;
+}
+
+.system-child-permissions .ant-checkbox-wrapper {
+  margin-inline-start: 0;
+  overflow-wrap: anywhere;
+}
+
 .system-actions {
   gap: 8px;
 }

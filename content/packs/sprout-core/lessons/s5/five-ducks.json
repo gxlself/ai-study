@@ -13,8 +13,8 @@
     {"zh": "听五到一，看看数量变化。", "en": "Hear five down to one and notice the changing group."},
     {"zh": "一起点数回到家的五只鸭。", "en": "Count the five ducks that are home together."}
   ],
-  "cover": {"concept": "duck", "bg": "grass"},
-  "printables": [{"kind": "cards", "title": "五只小鸭大卡", "items": ["duck", "duck", "duck", "duck", "duck"], "size": "large", "showText": false, "showEnglish": false}],
+  "cover": {"concept": "duckling", "bg": "grass"},
+  "printables": [{"kind": "cards", "title": "五只小鸭大卡", "items": ["duckling", "duckling", "duckling", "duckling", "duckling"], "size": "large", "showText": false, "showEnglish": false}],
   "parentGuide": {
     "intro": "这是原创手指歌，不是算术题。五只鸭去游泳，每段一只回家，最后都在家。屏幕画面不演数量变化；家长可用五张大卡演一遍。唱完再一起点数五只鸭，关屏继续玩。",
     "tips": ["先唱一种语言即可，不用同次唱完两遍。", "每唱“一只回家”，把一张卡移到家的位置。", "允许宝宝只移动一张，不要求倒数或做减法。"],
@@ -87,7 +87,7 @@
       "type": "count",
       "parentTip": "五只都回家了。一起点数并说总数，不要求宝宝独立数五个。",
       "props": {
-        "rounds": [{"item": "duck", "count": 5, "layout": "row"}],
+        "rounds": [{"item": "duckling", "count": 5, "layout": "row"}],
         "showNumeral": false,
         "cardinality": true,
         "mode": "guided"

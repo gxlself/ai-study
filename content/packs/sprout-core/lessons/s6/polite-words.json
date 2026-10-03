@@ -124,8 +124,9 @@
           { "lang": "en", "text": "Bye for now", "notes": "C4/1 G3/1 C4/2" }
         ],
         "scene": { "bg": "room", "ground": "floor", "sprites": [
-          { "concept": "bear", "x": 32, "y": 72, "size": 36, "anim": "none" },
-          { "concept": "rabbit", "x": 72, "y": 76, "size": 24, "anim": "none" }
+          { "concept": "bear", "x": 27, "y": 72, "size": 36, "anim": "none" },
+          { "concept": "teacher", "x": 58, "y": 72, "size": 26, "anim": "none" },
+          { "concept": "rabbit", "x": 84, "y": 76, "size": 24, "anim": "none" }
         ] },
         "actions": [
           { "zh": "舒服地挥挥手。", "en": "Wave comfortably." },

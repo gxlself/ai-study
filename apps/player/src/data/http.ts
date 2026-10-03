@@ -27,7 +27,9 @@ export class JsonClient {
     const operation = async (): Promise<T> => {
       let response: Response;
       try {
-        response = await this.fetcher(url, { ...init, signal: controller.signal, credentials: 'omit' });
+        response = await this.fetcher(url, {
+          ...init, signal: controller.signal, credentials: 'omit', redirect: 'error', referrerPolicy: 'no-referrer',
+        });
       } catch (cause) {
         throw new RequestError('network', '无法连接家庭服务器，请检查网络。', cause);
       }

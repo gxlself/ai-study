@@ -44,8 +44,8 @@
       "moves": [
         {"concept": "raise-hands", "name": {"zh": "小手向上", "en": "Hands up"}, "say": {"zh": "把小手慢慢举上去。", "en": "Raise your hands slowly."}, "seconds": 8},
         {"concept": "hand", "name": {"zh": "小手向下", "en": "Hands down"}, "say": {"zh": "把小手慢慢放下来。", "en": "Bring your hands down slowly."}, "seconds": 8},
-        {"concept": "dance", "name": {"zh": "慢转一圈", "en": "One slow turn"}, "say": {"zh": "慢慢转一圈，停稳。", "en": "Turn slowly once, then stop steadily."}, "seconds": 12},
-        {"concept": "head", "name": {"zh": "钻过手臂下面", "en": "Duck under an arm"}, "say": {"zh": "大人举好手臂，低头慢慢钻过。", "en": "Duck slowly under your grown-up's raised arm."}, "seconds": 12}
+        {"concept": "turn-slowly", "name": {"zh": "慢转一圈", "en": "One slow turn"}, "say": {"zh": "慢慢转一圈，停稳。", "en": "Turn slowly once, then stop steadily."}, "seconds": 12},
+        {"concept": "duck-under", "name": {"zh": "钻过手臂下面", "en": "Duck under an arm"}, "say": {"zh": "大人举好手臂，低头慢慢钻过。", "en": "Duck slowly under your grown-up's raised arm."}, "seconds": 12}
       ]
     }
   }]

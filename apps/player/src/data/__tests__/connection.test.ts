@@ -2,6 +2,7 @@
 import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest';
 import { clearConnection, normalizeServer, readConnection, saveConnection, StorageError } from '../index';
 import { MemoryStorage } from './fixtures';
+import { legacyRemoteStateKey, remoteStateKey } from '../identity';
 
 let storage: MemoryStorage;
 beforeEach(() => {
@@ -24,22 +25,30 @@ describe('连接设置', () => {
     expect(() => normalizeServer(server)).toThrow();
   });
 
-  it('只使用约定的三个 key，清除连接不删除历史或队列', () => {
+  it('切换和清除连接移除旧身份队列与凭据键，保留离线档案和其它 v2 身份', () => {
     expect(readConnection()).toBeNull();
     storage.setItem('sprout.local.state', 'saved history');
-    storage.setItem('sprout.remote:history', 'pending');
+    storage.setItem(remoteStateKey('https://other.test', 'other-token'), 'other history');
+    storage.setItem('sprout.remote:history', 'legacy');
     saveConnection({ kind: 'remote', server: '192.168.1.2:4310/', token: ' token-a ' });
     expect(readConnection()).toEqual({ kind: 'remote', server: 'http://192.168.1.2:4310', token: 'token-a' });
     expect(storage.getItem('sprout.source')).toBe('remote');
     expect(storage.getItem('sprout.server')).toBe('http://192.168.1.2:4310');
     expect(storage.getItem('sprout.deviceToken')).toBe('token-a');
+    const key = remoteStateKey('http://192.168.1.2:4310', 'token-a');
+    storage.setItem(key, 'pending');
+    storage.setItem(legacyRemoteStateKey('http://192.168.1.2:4310', 'token-a'), 'old pending');
+    saveConnection({ kind: 'remote', server: '192.168.1.2:4310/', token: 'token-a' });
+    expect(storage.getItem(key)).toBe('pending');
     saveConnection({ kind: 'local' });
     expect(readConnection()).toEqual({ kind: 'local' });
     expect(storage.getItem('sprout.deviceToken')).toBeNull();
     clearConnection();
     expect(readConnection()).toBeNull();
     expect(storage.getItem('sprout.local.state')).toBe('saved history');
-    expect(storage.getItem('sprout.remote:history')).toBe('pending');
+    expect(storage.getItem(key)).toBeNull();
+    expect(storage.getItem('sprout.remote:history')).toBeNull();
+    expect(storage.getItem(remoteStateKey('https://other.test', 'other-token'))).toBe('other history');
   });
 
   it('已配对且未保存地址时使用 http(s) 页面 origin，Capacitor 不会误连 localhost', () => {

@@ -7,6 +7,7 @@ import { Audience, Domain, allJsonSchemas } from '@sprout/schema';
 import { ApiError, parse } from '../errors';
 import { options, parameter, type AppContext } from '../context';
 import { safePath } from '../content/files';
+import type { ResourceKind } from '../security/limits';
 
 export async function upload(request: FastifyRequest, maxBytes: number): Promise<{ bytes: Buffer; filename: string; mimetype: string }> {
   if (!request.isMultipart()) throw new ApiError(400, 'FILE_REQUIRED', '请使用 multipart/form-data 上传 file 文件');
@@ -25,16 +26,17 @@ export async function upload(request: FastifyRequest, maxBytes: number): Promise
 
 export function registerContent(app: FastifyInstance, context: AppContext): void {
   const { packs, tts } = context;
-  const route = (scope: 'admin' | 'either' | 'public', summary: string) => options(context, scope, '内容', summary);
+  const route = (scope: 'admin' | 'either' | 'public', summary: string, resource?: ResourceKind) =>
+    options(context, scope, '内容', summary, resource);
   app.get('/api/schemas', route('public', '全部内容与活动 JSON Schema'), async () => allJsonSchemas());
   app.get('/api/packs', route('either', '内容包列表'), async () => packs.list());
-  app.post('/api/packs/import', route('admin', '导入内容包 ZIP'), async (request, reply) => {
+  app.post('/api/packs/import', route('admin', '导入内容包 ZIP', 'import'), async (request, reply) => {
     const { bytes } = await upload(request, 50 * 1024 * 1024);
     const pack = packs.importZip(bytes);
     reply.code(201);
     return { ...pack, issues: packs.validate(pack.id) };
   });
-  app.post('/api/packs/reload', route('admin', '重新扫描磁盘内容'), async () => packs.reload());
+  app.post('/api/packs/reload', route('admin', '重新扫描磁盘内容', 'import'), async () => packs.reload());
   app.put('/api/packs/:id', route('admin', '启用或停用内容包'), async (request) => {
     const { enabled } = parse(z.object({ enabled: z.boolean() }).strict(), request.body);
     return packs.setEnabled(parameter(request), enabled);
@@ -43,7 +45,7 @@ export function registerContent(app: FastifyInstance, context: AppContext): void
     packs.deletePack(parameter(request));
     return { ok: true };
   });
-  app.get('/api/packs/:id/export', route('admin', '导出内容包 ZIP'), async (request, reply) => {
+  app.get('/api/packs/:id/export', route('admin', '导出内容包 ZIP', 'import'), async (request, reply) => {
     const bytes = packs.exportZip(parameter(request));
     return reply.type('application/zip')
       .header('Content-Disposition', `attachment; filename="${encodeURIComponent(parameter(request))}.zip"`)
@@ -103,7 +105,7 @@ export function registerContent(app: FastifyInstance, context: AppContext): void
     if (!result) throw new ApiError(404, 'ROUTE_NOT_FOUND', '成长路线不存在或已停用');
     return result;
   });
-  app.post('/api/media', route('admin', '上传图片或音频（最多 10 MB）'), async (request, reply) => {
+  app.post('/api/media', route('admin', '上传图片或音频（最多 10 MB）', 'upload'), async (request, reply) => {
     const file = await upload(request, 10 * 1024 * 1024);
     const extension = extname(file.filename).toLowerCase();
     validateMedia(file.bytes, extension);

@@ -18,8 +18,17 @@ const upload: FastifySchema = {
   body: { type: 'object', required: ['file'], properties: { file: { type: 'string', format: 'binary' } } },
 };
 const enable = body(z.object({ enabled: z.boolean() }));
-const deviceUpdate = body(z.object({ name: z.string().optional(), childId: z.string().nullable().optional() }));
+const deviceUpdate = body(z.object({
+  name: z.string().optional(), childId: z.string().nullable().optional(),
+  allowedChildIds: z.array(z.string()).nullable().optional(),
+}));
 const requests: Record<string, FastifySchema> = {
+  'POST /api/preview/token': {
+    response: { 200: { type: 'object', required: ['token', 'expiresAt'], properties: {
+      token: { type: 'string' }, expiresAt: { type: 'string', format: 'date-time' },
+    } } },
+    description: '签发十分钟 scope=preview 的只读令牌；仅允许课程、词库、包/插件列表、路线、schemas 与包/插件静态文件的 GET 请求。',
+  },
   'POST /api/setup': body(z.object({ password: z.string().min(6), familyName: z.string().optional(), child: ChildInput.optional() })),
   'POST /api/auth/login': body(z.object({ password: z.string() })),
   'POST /api/auth/password': body(z.object({ oldPassword: z.string(), newPassword: z.string().min(6) })),
@@ -37,7 +46,10 @@ const requests: Record<string, FastifySchema> = {
   'POST /api/plugins/remote': body(z.object({ manifestUrl: z.url() })),
   'PUT /api/plugins/:id': enable,
   'POST /api/pair/start': body(z.object({ name: z.string().optional(), kind: z.enum(['tv', 'tablet', 'browser']).optional() })),
-  'POST /api/pair/approve': body(z.object({ code: z.string().regex(/^\d{6}$/), name: z.string().optional(), childId: z.string().nullable().optional() })),
+  'POST /api/pair/approve': body(z.object({
+    code: z.string().regex(/^\d{6}$/), name: z.string().optional(), childId: z.string().nullable().optional(),
+    allowedChildIds: z.array(z.string()).nullable().optional().describe('默认 null=家庭全部孩子；管理员可显式传入列表收紧'),
+  })),
   'PUT /api/devices/:id': deviceUpdate,
   'PUT /api/device/child': body(z.object({ childId: z.string() })),
   'POST /api/sessions': body(SessionInput),

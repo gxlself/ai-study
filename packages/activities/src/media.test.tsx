@@ -177,6 +177,11 @@ async function message(root: HTMLElement, origin: string, data: unknown, source?
 
 beforeEach(() => {
   vi.useFakeTimers();
+  vi.stubGlobal('fetch', vi.fn(async (url: string) => {
+    const response = new Response(null, { status: 200 });
+    Object.defineProperty(response, 'url', { value: String(url) });
+    return response;
+  }));
   vi.spyOn(HTMLMediaElement.prototype, 'play').mockImplementation(async function (this: HTMLMediaElement) {
     Object.defineProperty(this, 'paused', { value: false, configurable: true });
     this.dispatchEvent(new Event('play'));
@@ -197,6 +202,7 @@ afterEach(async () => {
   vi.clearAllTimers();
   vi.useRealTimers();
   vi.restoreAllMocks();
+  vi.unstubAllGlobals();
 });
 
 describe('parseNotes', () => {
@@ -478,10 +484,14 @@ describe('视频边界', () => {
 });
 
 describe('网页消息安全和超时', () => {
-  it('同时检查准确 source、origin 和消息类型，不信任字符串或伪造数据', async () => {
+  it('opaque sandbox 同时检查准确 source、null origin 和本次 nonce', async () => {
     const value = await mount(webActivity, webProps);
     const frame = value.root.querySelector('iframe')!;
-    expect(frame.getAttribute('sandbox')).toBe('allow-scripts allow-same-origin');
+    expect(frame.getAttribute('sandbox')).toBe('allow-scripts');
+    expect(frame.getAttribute('referrerpolicy')).toBe('no-referrer');
+    const nonce = new URL(frame.src).searchParams.get('sproutNonce');
+    expect(nonce).toMatch(/^[a-f0-9]{32}$/);
+    await act(async () => { frame.dispatchEvent(new Event('load')); });
     expect(frame.allowFullscreen).toBe(false);
     await message(value.root, 'https://other.example.test', { type: 'sprout:complete' });
     await message(value.root, 'https://child.example.test', { type: 'sprout:complete' }, window);
@@ -489,7 +499,12 @@ describe('网页消息安全和超时', () => {
     await message(value.root, 'https://child.example.test', '{"type":"sprout:complete"}');
     await message(value.root, 'https://child.example.test', { type: 'complete' });
     expect(value.ctx.complete).not.toHaveBeenCalled();
-    await message(value.root, 'https://child.example.test', { type: 'sprout:complete', accuracy: 999 });
+    await message(value.root, 'null', { type: 'sprout:complete' });
+    await message(value.root, 'null', { type: 'sprout:complete', nonce: 'wrong' });
+    await message(value.root, 'null', { type: 'sprout:complete', nonce }, window);
+    await message(value.root, 'https://child.example.test', { type: 'sprout:complete', nonce });
+    expect(value.ctx.complete).not.toHaveBeenCalled();
+    await message(value.root, 'null', { type: 'sprout:complete', nonce, accuracy: 999 });
     expect(value.ctx.complete).toHaveBeenCalledWith({ data: { reason: 'message' } });
     expect(value.root.querySelector('iframe')).toBeNull();
   });
@@ -518,5 +533,55 @@ describe('网页消息安全和超时', () => {
     expect(unsafe.root.querySelector('iframe')).toBeNull();
     const sameOrigin = await mount(webActivity, { ...webProps, url: `${window.location.origin}/lesson` });
     expect(sameOrigin.root.querySelector('iframe')).toBeNull();
+  });
+  it('拒绝最终来源改变和重定向；取消的旧请求不能创建 iframe', async () => {
+    const response = new Response(null, { status: 200 });
+    Object.defineProperty(response, 'url', { value: `${window.location.origin}/redirected` });
+    vi.mocked(fetch).mockResolvedValueOnce(response);
+    const changed = await mount(webActivity, webProps);
+    expect(changed.root.querySelector('iframe')).toBeNull();
+    expect(changed.root.textContent).toContain('页面暂时无法打开');
+    expect(fetch).toHaveBeenCalledWith(webProps.url, expect.objectContaining({
+      method: 'HEAD', redirect: 'error', mode: 'cors', credentials: 'omit', referrerPolicy: 'no-referrer',
+    }));
+    let settle!: (value: Response) => void;
+    vi.mocked(fetch).mockImplementationOnce(() => new Promise<Response>((resolve) => { settle = resolve; }));
+    const old = await mount(webActivity, webProps);
+    await act(async () => { old.controller.abort(); });
+    const valid = new Response(null, { status: 200 });
+    Object.defineProperty(valid, 'url', { value: webProps.url });
+    await act(async () => { settle(valid); });
+    expect(old.root.querySelector('iframe')).toBeNull();
+  });
+  it('暂停再恢复后轮换 nonce，旧窗口和旧 nonce 无法完成新活动', async () => {
+    const value = await mount(webActivity, webProps);
+    const oldFrame = value.root.querySelector('iframe')!;
+    const oldNonce = new URL(oldFrame.src).searchParams.get('sproutNonce');
+    const oldWindow = oldFrame.contentWindow;
+    await act(async () => { value.instance.pause?.(); });
+    await act(async () => { value.instance.resume?.(); });
+    const frame = value.root.querySelector('iframe')!;
+    const nonce = new URL(frame.src).searchParams.get('sproutNonce');
+    expect(nonce).not.toBe(oldNonce);
+    await act(async () => { frame.dispatchEvent(new Event('load')); });
+    await message(value.root, 'null', { type: 'sprout:complete', nonce: oldNonce });
+    await message(value.root, 'null', { type: 'sprout:complete', nonce }, oldWindow);
+    expect(value.ctx.complete).not.toHaveBeenCalled();
+    await message(value.root, 'null', { type: 'sprout:complete', nonce });
+    expect(value.ctx.complete).toHaveBeenCalledOnce();
+  });
+});
+
+describe('视频资源安全', () => {
+  it('外部 src 不创建 video；外部海报和字幕不会进入 DOM 或预加载', async () => {
+    const external = await mount(videoActivity, { ...videoProps, src: 'https://tracking.test/video.mp4' });
+    expect(external.root.querySelector('video')).toBeNull();
+    expect(external.root.textContent).toContain('视频暂时无法播放');
+    const props = { ...videoProps, poster: 'https://tracking.test/poster.png', captions: '//tracking.test/a.vtt' };
+    const safe = await mount(videoActivity, props);
+    expect(safe.root.querySelector('video')?.getAttribute('src')).toBe('/packs/test/video.mp4');
+    expect(safe.root.querySelector('video')?.hasAttribute('poster')).toBe(false);
+    expect(safe.root.querySelector('track')).toBeNull();
+    expect(videoActivity.preload?.(props, safe.ctx)).toEqual(['/packs/test/video.mp4']);
   });
 });

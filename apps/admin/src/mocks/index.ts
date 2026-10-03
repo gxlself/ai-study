@@ -50,6 +50,9 @@ export function installMock() {
     }
     if (path === '/api/auth/me') return reply({ role: 'admin' });
     if (path === '/api/auth/logout' || path === '/api/auth/password') return reply({ ok: true });
+    if (path === '/api/preview/token' && method === 'POST') {
+      return reply({ token: 'development-preview-only-token', expiresAt: dayjs().add(10, 'minute').toISOString() });
+    }
     if (path === '/api/schemas') return reply(allJsonSchemas());
     if (path === '/api/settings') {
       if (method === 'PUT') settings = { ...settings, ...body } as typeof settings;
@@ -233,13 +236,25 @@ export function installMock() {
     }
     if (path === '/api/pair/approve') {
       if (!/^\d{6}$/.test(String(body.code ?? ''))) return failed('请输入 6 位配对码');
-      const device = { id: crypto.randomUUID(), name: String(body.name || '新的播放设备'), kind: 'tv', childId: typeof body.childId === 'string' ? body.childId : null, createdAt: now(), lastSeenAt: null };
+      const childId = typeof body.childId === 'string' ? body.childId : null;
+      const device = {
+        id: crypto.randomUUID(), name: String(body.name || '新的播放设备'), kind: 'tv', childId,
+        allowedChildIds: childId ? [childId] : [], createdAt: now(), lastSeenAt: null,
+      };
       db.devices.push(device);
       return reply(device);
     }
     if (parts[1] === 'devices') {
       const device = db.devices.find((item) => item.id === parts[2]);
-      if (device && method === 'PUT') Object.assign(device, body);
+      if (device && method === 'PUT') {
+        const allowed = Object.hasOwn(body, 'allowedChildIds') ? body.allowedChildIds : device.allowedChildIds;
+        const childId = Object.hasOwn(body, 'childId') ? body.childId : device.childId;
+        if (allowed !== null && (!Array.isArray(allowed) || allowed.some((id) => !db.children.some((child) => child.id === id)))) {
+          return failed('允许范围中包含无效的孩子档案');
+        }
+        if (childId && Array.isArray(allowed) && !allowed.includes(childId)) return failed('绑定孩子不在允许范围内');
+        Object.assign(device, body);
+      }
       if (device && method === 'DELETE') db.devices.splice(db.devices.indexOf(device), 1);
       return reply(device ?? db.devices);
     }

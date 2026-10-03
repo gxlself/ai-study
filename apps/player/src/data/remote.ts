@@ -12,7 +12,7 @@ import {
   type SessionInput,
   type TodayPlan,
 } from '@sprout/schema';
-import { joinAsset, packSegment, remoteUrl } from './assets';
+import { joinAsset, packSegment, remoteUrl, serverAsset } from './assets';
 import { normalizeServer } from './connection';
 import { DataSourceError, HttpError, RequestError, StorageError } from './errors';
 import { JsonClient } from './http';
@@ -26,6 +26,7 @@ import {
   writeJson,
 } from './storage';
 import type { DataSource, DataStorage, LessonData, PackAudioManifest, RemoteSourceOptions } from './types';
+import { legacyRemoteStateKey, remoteStateKey } from './identity';
 
 interface RemoteState {
   version: 1;
@@ -51,6 +52,8 @@ export class RemoteSource implements DataSource {
   private readonly client: JsonClient;
   private readonly now: () => Date;
   private readonly stateKey: string;
+  private readonly legacyKey: string;
+  private readonly preview: boolean;
   private readonly sessionIds = new SessionIds();
   private readonly bases = new Map<string, string>();
   private packs?: PackInfo[];
@@ -64,14 +67,38 @@ export class RemoteSource implements DataSource {
     this.server = normalizeServer(server);
     this.token = token.trim();
     if (!this.token) throw new DataSourceError('invalid-token', '请先完成设备配对。');
-    this.storage = options.storage ?? browserStorage();
+    this.preview = options.preview === true;
+    const memory = new Map<string, string>();
+    this.storage = this.preview ? {
+      getItem: (key) => memory.get(key) ?? null,
+      setItem: (key, value) => { memory.set(key, value); },
+      removeItem: (key) => { memory.delete(key); },
+    } : options.storage ?? browserStorage();
     this.client = new JsonClient(options);
     this.now = options.now ?? (() => new Date());
-    this.stateKey = `sprout.remote:${encodeURIComponent(JSON.stringify([this.server, this.token]))}`;
+    this.stateKey = remoteStateKey(this.server, this.token);
+    this.legacyKey = legacyRemoteStateKey(this.server, this.token);
   }
 
   private state(): RemoteState {
-    const value = readJson(this.storage, this.stateKey);
+    let value = readJson(this.storage, this.stateKey);
+    const legacy = readJson(this.storage, this.legacyKey);
+    if (legacy !== null) {
+      if (!isRecord(legacy) || legacy.version !== 1) throw new StorageError('旧待上传记录格式无效，未覆盖原记录。');
+      const oldSessions = parseStoredSessions(legacy.sessions);
+      const oldPending = parseStoredSessions(legacy.pending);
+      if (oldPending.some((session) => !session.clientId)) throw new StorageError('旧待上传记录缺少去重标识。');
+      if (value !== null && (!isRecord(value) || value.version !== 1)) throw new StorageError('本机待上传记录格式无效。');
+      const current = value as RemoteState | null;
+      value = {
+        version: 1,
+        sessions: recentSessions([...parseStoredSessions(current?.sessions ?? []), ...oldSessions]),
+        pending: [...parseStoredSessions(current?.pending ?? []), ...oldPending],
+      };
+      // 先写新身份，成功后再删旧键；失败时不得丢失未补传记录。
+      writeJson(this.storage, this.stateKey, value);
+      this.storage.removeItem(this.legacyKey);
+    }
     if (value === null) return { version: 1, sessions: [], pending: [] };
     if (!isRecord(value) || value.version !== 1) {
       throw new StorageError('本机待上传记录格式无效，原有记录未被覆盖。');
@@ -97,6 +124,9 @@ export class RemoteSource implements DataSource {
   }
 
   private request<T>(path: string, body?: unknown, method = body === undefined ? 'GET' : 'POST'): Promise<T> {
+    if (this.preview && (method !== 'GET' || !/^\/api\/(?:lessons(?:\/[^/]+)?|lexicon|packs|plugins|routes(?:\/[^/]+)?|schemas)(?:\?|$)/.test(path))) {
+      return Promise.reject(new DataSourceError('preview-read-only', '预览只能读取课程内容。'));
+    }
     return this.client.request<T>(`${this.server}${path}`, {
       method,
       headers: {
@@ -109,7 +139,7 @@ export class RemoteSource implements DataSource {
   }
 
   private rememberPack(pack: PackInfo): PackInfo {
-    const baseUrl = `${remoteUrl(this.server, pack.baseUrl).replace(/\/+$/, '')}/`;
+    const baseUrl = `${serverAsset(this.server, pack.baseUrl).replace(/\/+$/, '')}/`;
     this.bases.set(pack.id, baseUrl);
     return { ...pack, baseUrl };
   }
@@ -276,7 +306,7 @@ export class RemoteSource implements DataSource {
     if (!validated.lesson || validated.issues.some((issue) => issue.level === 'error')) {
       throw new DataSourceError('invalid-lesson', '服务器返回的课程未通过校验。');
     }
-    const baseUrl = `${remoteUrl(this.server, result.baseUrl).replace(/\/+$/, '')}/`;
+    const baseUrl = `${serverAsset(this.server, result.baseUrl).replace(/\/+$/, '')}/`;
     this.bases.set(result.packId, baseUrl);
     return { lesson: validated.lesson, packId: result.packId, baseUrl };
   }
@@ -298,6 +328,7 @@ export class RemoteSource implements DataSource {
   }
 
   async saveSession(input: SessionInput): Promise<void> {
+    if (this.preview) throw new DataSourceError('preview-read-only', '预览不保存学习记录。');
     const session = this.sessionIds.prepare(input, this.now());
     const state = this.state();
     if (
@@ -326,7 +357,7 @@ export class RemoteSource implements DataSource {
         candidates[0]
       )?.imageUrl ?? '';
     }
-    if (path.startsWith('/') || /^https?:\/\//i.test(path)) return remoteUrl(this.server, path);
+    if (path.startsWith('/') || /^https?:\/\//i.test(path)) return serverAsset(this.server, path);
     return joinAsset(this.base(packId), path);
   }
 
@@ -359,6 +390,7 @@ export class RemoteSource implements DataSource {
   }
 
   flush(): Promise<void> {
+    if (this.preview) return Promise.resolve();
     let active = uploads.get(this.storage);
     if (!active) {
       active = new Map();

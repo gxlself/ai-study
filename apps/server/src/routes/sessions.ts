@@ -1,7 +1,7 @@
 import type { FastifyInstance } from 'fastify';
 import { z } from 'zod';
-import { SessionInput } from '@sprout/schema';
-import { resolveSessionAudience } from '@sprout/core';
+import { SessionInput, ageOf } from '@sprout/schema';
+import { findStage, resolveScreenPolicy, resolveSessionAudience } from '@sprout/core';
 import { authorizeChild } from '../auth';
 import { ApiError, dateString, isoString, localDate, parse } from '../errors';
 import { options, sessionLessonIndex, type AppContext } from '../context';
@@ -32,10 +32,24 @@ export function registerSessions(app: FastifyInstance, context: AppContext): voi
   app.post('/api/sessions', options(context, 'either', '学习记录', '上报记录（clientId 幂等）'), async (request, reply) => {
     const parsed = parse(sessionInputSchema, request.body);
     authorizeChild(store, request, parsed.childId);
+    const child = store.child(parsed.childId);
+    const startedAt = new Date(parsed.startedAt);
+    const selectedRoute = context.packs.getRoute(child.plan.routeId);
+    const ageMonths = ageOf(child.birthday, startedAt).months;
+    const stage = selectedRoute ? findStage(selectedRoute, ageMonths) : null;
+    const elapsedLimitSec = Math.floor((Date.parse(parsed.endedAt) - startedAt.getTime()) / 1000 + 5);
+    const sessionLimitSec = Math.floor(resolveScreenPolicy(stage, child.screen, ageMonths).sessionMaxMin * 60 * 2);
+    const durationSec = Math.min(parsed.durationSec, elapsedLimitSec, sessionLimitSec);
     const input = {
-      ...parsed,
+      ...parsed, durationSec,
       audience: resolveSessionAudience(parsed, sessionLessonIndex(context)),
-      startedAt: new Date(parsed.startedAt).toISOString(), endedAt: new Date(parsed.endedAt).toISOString(),
+      startedAt: startedAt.toISOString(), endedAt: new Date(parsed.endedAt).toISOString(),
+      ...(durationSec === parsed.durationSec ? {} : {
+        events: [...(parsed.events ?? []).slice(0, 499), {
+          t: durationSec, type: 'server:duration-clamped',
+          data: { reportedDurationSec: parsed.durationSec, acceptedDurationSec: durationSec, elapsedLimitSec, sessionLimitSec },
+        }],
+      }),
     };
     const record = store.saveSession(input, request.principal?.role === 'device' ? request.principal.deviceId : undefined);
     reply.code(201);

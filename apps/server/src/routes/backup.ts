@@ -7,6 +7,7 @@ import { childInputSchema } from './children';
 import { sessionInputSchema } from './sessions';
 import { settingsSchema } from './settings';
 import { upload } from './content';
+import { allowedChildIdsSchema } from './devices';
 
 const id = z.string().min(1).max(256);
 const backupSchema = z.object({
@@ -21,7 +22,7 @@ const backupSchema = z.object({
   })).max(100000),
   devices: z.array(z.object({
     id, name: z.string().min(1).max(80), kind: z.string().min(1).max(32), childId: id.nullable(),
-    createdAt: isoString, lastSeenAt: isoString.nullable(),
+    allowedChildIds: allowedChildIdsSchema.optional(), createdAt: isoString, lastSeenAt: isoString.nullable(),
   })).max(1000),
   settings: settingsSchema,
   custom: z.object({ lessons: z.array(Lesson).max(10000), lexicon: Lexicon }),
@@ -39,7 +40,7 @@ export function registerBackup(app: FastifyInstance, context: AppContext): void 
       .header('Content-Disposition', 'attachment; filename="sprout-backup.json"')
       .send(JSON.stringify(backup, null, 2));
   });
-  app.post('/api/backup/restore', options(context, 'admin', '备份', '覆盖恢复家庭数据（设备需重新配对）'), async (request) => {
+  app.post('/api/backup/restore', options(context, 'admin', '备份', '覆盖恢复家庭数据（设备需重新配对）', 'import'), async (request) => {
     let input = request.body;
     if (request.isMultipart()) {
       const { bytes } = await upload(request, 25 * 1024 * 1024);
@@ -57,7 +58,11 @@ export function registerBackup(app: FastifyInstance, context: AppContext): void 
     unique(backup.observations.map((observation) => JSON.stringify([observation.childId, observation.itemId])), '观察记录');
     const children = new Set(backup.children.map((child) => child.id));
     const devices = new Set(backup.devices.map((device) => device.id));
-    if (backup.devices.some((device) => device.childId !== null && !children.has(device.childId)) ||
+    if (backup.devices.some((device) =>
+      (device.childId !== null && !children.has(device.childId)) ||
+      (device.allowedChildIds?.some((childId) => !children.has(childId))) ||
+      (device.childId !== null && device.allowedChildIds !== undefined && device.allowedChildIds !== null &&
+        !device.allowedChildIds.includes(device.childId))) ||
       backup.sessions.some((session) => !children.has(session.childId) || (session.deviceId && !devices.has(session.deviceId))) ||
       backup.observations.some((observation) => !children.has(observation.childId))) {
       throw new ApiError(400, 'INVALID_BACKUP', '备份包含不存在的孩子或设备引用');

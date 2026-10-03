@@ -1,6 +1,7 @@
 import { existsSync } from 'node:fs';
 import { dirname, isAbsolute, join, resolve } from 'node:path';
 import { fileURLToPath } from 'node:url';
+import { parseCorsOrigins } from './security/cors';
 
 export interface ServerConfig {
   rootDir: string;
@@ -13,6 +14,7 @@ export interface ServerConfig {
   milestonesPath: string;
   reloadIntervalMs: number;
   logger: boolean;
+  corsOrigins: string[] | null;
 }
 
 export function findWorkspaceRoot(start = dirname(fileURLToPath(import.meta.url))): string {
@@ -45,5 +47,8 @@ export function loadConfig(
     milestonesPath: absolute(overrides.milestonesPath ?? env.SPROUT_MILESTONES ?? 'content/milestones/milestones.json'),
     reloadIntervalMs: overrides.reloadIntervalMs ?? 2000,
     logger: overrides.logger ?? false,
+    corsOrigins: overrides.corsOrigins === undefined
+      ? (env.SPROUT_CORS_ORIGINS === undefined ? null : parseCorsOrigins(env.SPROUT_CORS_ORIGINS))
+      : overrides.corsOrigins === null ? null : parseCorsOrigins(overrides.corsOrigins.join(',')),
   };
 }

@@ -57,7 +57,7 @@
     {
       "type": "sort",
       "title": { "zh": "按这一天的安排分", "en": "Sort This Day's Plans" },
-      "parentTip": "先读出完整时段名称。卡片借用现有动作图，不表示读书、散步或睡觉只能在某一时段。",
+      "parentTip": "先读出完整时段名称。早饭、散步和睡前读书使用明确时段词条；这些活动并非只能在这一时段。",
       "props": {
         "prompt": { "zh": "按卡片说出的时段分一分。", "en": "Sort the cards by the times they name." },
         "bins": [
@@ -65,10 +65,10 @@
           { "id": "night", "label": { "zh": "晚上", "en": "Nighttime" }, "concept": "moon", "color": "#e9e3f3" }
         ],
         "items": [
-          { "item": { "zh": "早上吃早饭", "en": "Breakfast in the Morning", "image": "assets/images/actions/eat.svg" }, "bin": "day" },
+          { "item": "morning-breakfast", "bin": "day" },
           { "item": { "zh": "晚上说晚安", "en": "Goodnight at Night", "image": "assets/images/actions/sleep.svg" }, "bin": "night" },
-          { "item": { "zh": "白天散步", "en": "A Daytime Walk", "image": "assets/images/actions/walk.svg" }, "bin": "day" },
-          { "item": { "zh": "晚上睡前读书", "en": "Reading before Bed at Night", "image": "assets/images/home/book.svg" }, "bin": "night" }
+          { "item": "daytime-walk", "bin": "day" },
+          { "item": "bedtime-reading", "bin": "night" }
         ]
       }
     },

@@ -41,14 +41,21 @@ export function guardRawPath(url: string): void {
   }
 }
 
-function send(reply: FastifyReply, root: string, path: string, mutable = false): FastifyReply {
+function send(reply: FastifyReply, root: string, path: string, mutable = false, packFile = false): FastifyReply {
   if (!safeFile(root, path)) throw new ApiError(404, 'FILE_NOT_FOUND', '文件不存在');
   reply.header('X-Content-Type-Options', 'nosniff');
   if (extname(path).toLowerCase() === '.svg') {
     reply.type('image/svg+xml');
     reply.header('Content-Security-Policy', "default-src 'none'; style-src 'unsafe-inline'; sandbox");
   }
+  const downloadText = packFile && ['.html', '.htm', '.xhtml', '.js', '.mjs', '.cjs'].includes(extname(path).toLowerCase());
+  if (downloadText) {
+    reply.type('text/plain; charset=utf-8');
+    reply.header('Content-Disposition', 'attachment');
+    reply.header('Content-Security-Policy', "default-src 'none'; sandbox");
+  }
   return reply.sendFile(path, root, {
+    contentType: !downloadText,
     maxAge: mutable || path.endsWith('.json') ? 0 : '1d',
     immutable: false, etag: true, lastModified: true, dotfiles: 'deny',
   });
@@ -60,11 +67,14 @@ export async function registerStatic(app: FastifyInstance, context: AppContext):
   app.get('/packs/:id/*', hidden, async (request, reply) => {
     const { id, '*': path } = request.params as { id: string; '*': string };
     const pack = context.packs.getPack(id);
-    if (!pack) throw new ApiError(404, 'PACK_NOT_FOUND', '内容包不存在');
-    return send(reply, pack.dir, path, pack.info.source === 'custom');
+    if (!pack?.info.enabled) throw new ApiError(404, 'PACK_NOT_FOUND', '内容包不存在或已停用');
+    return send(reply, pack.dir, path, pack.info.source === 'custom', true);
   });
   app.get('/plugins/:id/*', hidden, async (request, reply) => {
     const { id, '*': path } = request.params as { id: string; '*': string };
+    if (!context.plugins.list().some((plugin) => plugin.id === id && plugin.enabled)) {
+      throw new ApiError(404, 'PLUGIN_NOT_FOUND', '插件不存在或已停用');
+    }
     const root = context.plugins.directory(id);
     if (!root) throw new ApiError(404, 'PLUGIN_NOT_FOUND', '插件不存在或不是本地插件');
     return send(reply, root, path);

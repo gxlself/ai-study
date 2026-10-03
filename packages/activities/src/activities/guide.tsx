@@ -127,38 +127,40 @@ function GuideActivity({ ctx }: { ctx: ActivityContext<GuideProps> }) {
       <header className="spa-guide-goal"><span>给家长的陪玩指引</span><h2>{props.goal}</h2></header>
       <ReadingArea areaRef={readArea} className="spa-guide-reading" label="家长陪玩指引">
         <div className="spa-guide-columns">
-        <section className="spa-guide-section spa-guide-playbook">
-          <h3>一起这样玩</h3>
-          <ol className="spa-guide-steps">{props.steps.map((step, index) => <li key={index}>
-            <span className="spa-guide-step-number" aria-hidden="true">{index + 1}</span>
-            <div className="spa-guide-step-body">
-              <p>{step.text}</p>
-              {(step.say?.zh || step.say?.en) && <div className="spa-guide-say">
-                <strong>可以这样说</strong>
-                {step.say.zh && <p lang="zh">{step.say.zh}</p>}
-                {step.say.en && <p lang="en">{step.say.en}</p>}
-              </div>}
-            </div>
-            {(step.concept || step.image) && <figure className="spa-guide-figure">
-              <ConceptImage ctx={ctx} concept={step.concept} image={step.image}
-                alt={step.concept ? ctx.concept(step.concept)?.zh ?? '陪玩示意' : '陪玩示意'} />
-              <figcaption>{step.concept ? ctx.concept(step.concept)?.zh ?? '陪玩示意' : '陪玩示意'}</figcaption>
-            </figure>}
-          </li>)}</ol>
-        </section>
-        <aside className="spa-guide-notes">
-        {!!props.materials.length && <section className="spa-guide-section">
-          <h3>准备材料</h3>
-          <ul className="spa-guide-materials">{props.materials.map((item, index) => <li key={index}>{item}</li>)}</ul>
-        </section>}
-        {!!props.observe?.length && <section className="spa-guide-section">
-          <h3>留意宝宝的反应</h3>
-          <ul>{props.observe.map((item, index) => <li key={index}>{item}</li>)}</ul>
-        </section>}
-        {props.safety && <section className="spa-guide-section spa-guide-safety">
-          <h3>安全提醒</h3><p>{props.safety}</p>
-        </section>}
-        </aside>
+          <section className="spa-guide-section spa-guide-playbook">
+            <h3>一起这样玩</h3>
+            <ol className="spa-guide-steps">{props.steps.map((step, index) => {
+              const illustrationLabel = (step.concept && ctx.concept(step.concept)?.zh) || '陪玩示意';
+              return <li key={index}>
+                <span className="spa-guide-step-number" aria-hidden="true">{index + 1}</span>
+                <div className="spa-guide-step-body">
+                  <p>{step.text}</p>
+                  {(step.say?.zh || step.say?.en) && <div className="spa-guide-say">
+                    <strong>可以这样说</strong>
+                    {step.say.zh && <p lang="zh">{step.say.zh}</p>}
+                    {step.say.en && <p lang="en">{step.say.en}</p>}
+                  </div>}
+                </div>
+                {(step.concept || step.image) && <figure className="spa-guide-figure">
+                  <ConceptImage ctx={ctx} concept={step.concept} image={step.image} alt={illustrationLabel} />
+                  <figcaption>{illustrationLabel}</figcaption>
+                </figure>}
+              </li>;
+            })}</ol>
+          </section>
+          <aside className="spa-guide-notes">
+            {!!props.materials.length && <section className="spa-guide-section">
+              <h3>准备材料</h3>
+              <ul className="spa-guide-materials">{props.materials.map((item, index) => <li key={index}>{item}</li>)}</ul>
+            </section>}
+            {!!props.observe?.length && <section className="spa-guide-section">
+              <h3>留意宝宝的反应</h3>
+              <ul>{props.observe.map((item, index) => <li key={index}>{item}</li>)}</ul>
+            </section>}
+            {props.safety && <section className="spa-guide-section spa-guide-safety">
+              <h3>安全提醒</h3><p>{props.safety}</p>
+            </section>}
+          </aside>
         </div>
       </ReadingArea>
       <footer className="spa-guide-footer" ref={readFooter}>

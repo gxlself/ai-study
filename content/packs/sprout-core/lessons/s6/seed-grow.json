@@ -16,7 +16,7 @@
   ],
   "cover": { "concept": "seed", "bg": "grass" },
   "parentGuide": {
-    "intro": "这次看会开花的植物，不代表所有植物。种子在合适条件下才能发芽，成长要等待，不承诺几天开花。小芽和叶子图只是阶段示意，不是同株连续照片。真种子只由成人处理。",
+    "intro": "这次看会开花的植物，不代表所有植物。种子在合适条件下才能发芽，成长要等待，不承诺几天开花。幼苗和长叶的小苗图只是阶段示意，不是同株连续照片。真种子只由成人处理。",
     "tips": [
       "每次只问今天有什么不同。",
       "不用“多浇水就长得快”的说法。",
@@ -57,14 +57,14 @@
     {
       "type": "sequence",
       "title": { "zh": "这种植物慢慢长", "en": "How This Plant Grows" },
-      "parentTip": "限定为会开花的植物。小芽、叶子都是示意；不同种类速度不同，不承诺固定天数。",
+      "parentTip": "限定为会开花的植物。幼苗和长叶的小苗都是阶段示意；不同种类速度不同，不承诺固定天数。",
       "props": {
         "mode": "order",
         "intro": { "zh": "看看一颗花种子怎样长大。", "en": "Look at how a flowering plant grows from a seed." },
         "steps": [
           { "concept": "seed", "caption": { "zh": "种子", "en": "Seed" }, "say": { "zh": "先是一颗花种子。", "en": "First, a seed of a flowering plant." } },
-          { "concept": "sprout", "caption": { "zh": "发芽", "en": "Sprouting" }, "say": { "zh": "条件合适，种子发芽了。", "en": "With the right conditions, the seed sprouts." } },
-          { "concept": "leaf", "caption": { "zh": "长出叶子", "en": "Growing Leaves" }, "say": { "zh": "小苗慢慢长出叶子。", "en": "The seedling grows leaves." } },
+          { "concept": "seedling", "caption": { "zh": "发芽的幼苗", "en": "A New Seedling" }, "say": { "zh": "条件合适，种子发芽，长成幼苗。", "en": "With the right conditions, the seed sprouts into a seedling." } },
+          { "concept": "sapling", "caption": { "zh": "长叶的小苗", "en": "A Leafy Young Plant" }, "say": { "zh": "小苗慢慢长出叶子。", "en": "The young plant slowly grows leaves." } },
           { "concept": "flower", "caption": { "zh": "长大开花", "en": "Growing and Flowering" }, "say": { "zh": "再等一等，这株植物开花了。", "en": "After more time, this plant flowers." } }
         ]
       }
@@ -85,7 +85,7 @@
           },
           {
             "scene": { "bg": "sky", "ground": "grass", "sprites": [
-              { "concept": "sprout", "x": 40, "y": 72, "size": 36, "anim": "none" },
+              { "concept": "seedling", "x": 40, "y": 72, "size": 36, "anim": "none" },
               { "concept": "cloud", "x": 77, "y": 22, "size": 22, "anim": "none" }
             ] },
             "text": { "zh": "条件合适，种子发芽了。我们慢慢等。", "en": "With the right conditions, the seed sprouts. We wait patiently." },
@@ -93,11 +93,10 @@
           },
           {
             "scene": { "bg": "sky", "ground": "grass", "sprites": [
-              { "concept": "sprout", "x": 38, "y": 72, "size": 38, "anim": "none" },
-              { "concept": "leaf", "x": 75, "y": 65, "size": 22, "anim": "none" },
+              { "concept": "sapling", "x": 47, "y": 72, "size": 40, "anim": "none" },
               { "concept": "sun", "x": 76, "y": 20, "size": 20, "anim": "none" }
             ] },
-            "text": { "zh": "小苗长出叶子。大人按它的需要照顾它。", "en": "The seedling grows leaves. A grown-up cares for it according to its needs." }
+            "text": { "zh": "小苗长出叶子。大人按它的需要照顾它。", "en": "The young plant grows leaves. A grown-up cares for it according to its needs." }
           },
           {
             "scene": { "bg": "sky", "ground": "grass", "sprites": [

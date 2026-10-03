@@ -32,7 +32,7 @@ export class Store {
     this.db = new DatabaseSync(join(dataDir, 'sprout.db'));
     this.db.exec('PRAGMA foreign_keys = ON; PRAGMA journal_mode = WAL; PRAGMA busy_timeout = 5000;');
     const version = this.db.prepare('PRAGMA user_version').get()?.user_version as number;
-    if (version > 1) {
+    if (version > 3) {
       this.db.close();
       throw new Error('数据版本比当前服务端新，请升级服务端后重试');
     }
@@ -72,6 +72,17 @@ export class Store {
         );
         PRAGMA user_version = 1;
       `);
+    });
+    if (version < 2) this.transaction(() => {
+      this.db.exec(`
+        ALTER TABLE devices ADD COLUMN allowed_child_ids_json TEXT;
+        CREATE TABLE preview_tokens (hash TEXT PRIMARY KEY, expires_at TEXT NOT NULL);
+      `);
+      this.db.exec('PRAGMA user_version = 2');
+    });
+    if (version < 3) this.transaction(() => {
+      // v2 未记录列表来源，按契约统一恢复默认全部孩子；此迁移仅执行一次。
+      this.db.exec('UPDATE devices SET allowed_child_ids_json = NULL; PRAGMA user_version = 3;');
     });
   }
 
@@ -135,7 +146,15 @@ export class Store {
 
   deleteChild(id: string): void {
     this.child(id);
-    this.db.prepare('DELETE FROM children WHERE id = ?').run(id);
+    this.transaction(() => {
+      this.db.prepare('DELETE FROM children WHERE id = ?').run(id);
+      for (const device of this.devices()) {
+        if (Array.isArray(device.allowedChildIds) && device.allowedChildIds.includes(id)) {
+          this.db.prepare('UPDATE devices SET allowed_child_ids_json = ? WHERE id = ?')
+            .run(JSON.stringify(device.allowedChildIds.filter((childId) => childId !== id)), device.id);
+        }
+      }
+    });
   }
 
   device(id: string): DeviceInfo {
@@ -149,8 +168,11 @@ export class Store {
   }
 
   putDevice(device: DeviceInfo): void {
-    this.db.prepare('INSERT INTO devices(id, name, kind, child_id, created_at, last_seen_at) VALUES (?, ?, ?, ?, ?, ?)')
-      .run(device.id, device.name, device.kind, device.childId, device.createdAt, device.lastSeenAt);
+    const allowed = device.allowedChildIds ?? null;
+    this.db.prepare(`INSERT INTO devices(id, name, kind, child_id, created_at, last_seen_at, allowed_child_ids_json)
+      VALUES (?, ?, ?, ?, ?, ?, ?)`)
+      .run(device.id, device.name, device.kind, device.childId, device.createdAt, device.lastSeenAt,
+        allowed === null ? null : JSON.stringify(allowed));
   }
 
   sessions(filters: { childId?: string; from?: string; to?: string; limit?: number } = {}): SessionRecord[] {
@@ -216,6 +238,7 @@ export function deviceRow(row: Row): DeviceInfo {
     id: row.id as string, name: row.name as string, kind: row.kind as string,
     childId: row.child_id as string | null, createdAt: row.created_at as string,
     lastSeenAt: row.last_seen_at as string | null,
+    allowedChildIds: row.allowed_child_ids_json === null ? null : JSON.parse(row.allowed_child_ids_json as string) as string[],
   };
 }
 

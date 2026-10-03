@@ -76,12 +76,12 @@
 .parent-reading-intro { font-size: 2.6vmin; line-height: 1.4; margin-bottom: 2vmin; }
 .parent-reading-page .offline-list { grid-template-columns: minmax(0, 1fr); grid-gap: 2vmin; margin: 0; }
 .parent-reading-page .offline-card {
-  padding: 1.6vmin 0 0;
+  padding: 1vmin 0 0;
   border-top: 1px solid var(--sp-bg-2);
   border-radius: 0;
   background: transparent;
 }
-.parent-reading-page .offline-heading { flex-wrap: nowrap; margin-bottom: 1.6vmin; }
+.parent-reading-page .offline-heading { flex-wrap: nowrap; margin-bottom: 1.2vmin; }
 .parent-reading-page .offline-heading > * { margin: 0; }
 .parent-reading-page .offline-heading > * + * { margin-left: 1vmin; }
 .parent-reading-page .offline-heading svg { flex: 0 0 3vmin; width: 3vmin; height: 3vmin; }
@@ -89,11 +89,11 @@
 .parent-reading-page .offline-heading small { flex: 0 0 auto; font-size: 2.4vmin; }
 .offline-columns { display: grid; grid-template-columns: minmax(0, 1fr); grid-gap: 2vmin; }
 .offline-playbook, .offline-notes { min-width: 0; }
-.parent-reading-page .offline-card h4 { font-size: 2.8vmin; line-height: 1.4; margin-bottom: 0.8vmin; }
+.parent-reading-page .offline-card h4 { font-size: 2.8vmin; line-height: 1.25; margin-bottom: 0.4vmin; }
 .parent-reading-page .offline-card ol { padding-left: 1.5em; margin: 0; font-size: 2.6vmin; line-height: 1.4; }
 .parent-reading-page .offline-card li + li { margin-top: 0.8vmin; }
 .parent-reading-page .offline-card p { font-size: 2.6vmin; line-height: 1.4; overflow-wrap: break-word; }
-.offline-notes > section + section { margin-top: 1.6vmin; }
+.parent-reading-page .offline-notes > section + section { margin-top: 1vmin; }
 .parent-reading-page .materials { margin: 0; color: var(--sp-ink); }
 .parent-reading-page .offline-question { display: block; margin: 0; }
 .parent-reading-page .offline-levels { margin: 0; padding: 0; border: 0; }
@@ -121,7 +121,7 @@
 .parent-reading-footer > p { flex: 1; font-size: 2.2vmin; color: var(--sp-ink-2); }
 .parent-reading-page .parent-reading-footer .primary { min-width: 45%; min-height: 8vmin; max-width: 100%; font-size: 2.8vmin; }
 @media (min-width: 1280px) and (min-aspect-ratio: 3 / 2) {
-  .offline-columns { grid-template-columns: minmax(0, 1.25fr) minmax(0, 1fr); grid-gap: 4vmin; }
+  .offline-columns { grid-template-columns: repeat(2, minmax(0, 1fr)); grid-gap: 4vmin; }
   .offline-notes { border-left: 1px solid var(--sp-bg-2); padding-left: 3vmin; }
 }
 @media (max-width: 700px) {
@@ -138,4 +138,5 @@
   .parent-reading-page .offline-badge, .parent-reading-footer > p, .spa-reading-more { font-size: 14px; }
   .parent-reading-page .parent-reading-footer .primary { min-height: 56px; width: 100%; font-size: 17px; }
   .spa-reading-viewport { padding-bottom: 22px; }
+  .spa-stage .spa-reading-more { font-size: 14px; }
 }

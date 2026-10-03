@@ -10,15 +10,15 @@
   "coView": "required",
   "audience": "child",
   "objectives": [
-    {"zh": "把雨伞、外套和帽子连到用途。", "en": "Connect an umbrella, a coat, and a hat with their uses."},
+    {"zh": "把雨靴、外套和帽子连到用途。", "en": "Connect rain boots, a coat, and a hat with their uses."},
     {"zh": "和大人商量出门要带什么。", "en": "Talk with an adult about what to take outside."}
   ],
-  "cover": {"concept": "umbrella", "bg": "sky"},
+  "cover": {"concept": "rain-boots", "bg": "sky"},
   "parentGuide": {
-    "intro": "先看三个出门情境，再找遮雨的伞、保暖的外套、戴头上遮阳的帽子。题目说清用途，不暗示晴天一定热。真实穿戴还要看温度、风和活动量，由成人判断；不是只靠一件物品就足够。",
-    "tips": ["说物品的用途，不只背天气和物品配对。", "宝宝只指伞时接一句“伞能遮雨”。", "晴天的帽子是遮阳例子，不表示冬天不用帽子。"],
+    "intro": "先看三个出门情境，再找能帮脚挡雨的雨靴、保暖的外套、戴头上遮阳的帽子。题目说清用途，不暗示晴天一定热。真实穿戴还要看温度、风和活动量，由成人判断；不是只靠一件物品就足够。",
+    "tips": ["说物品的用途，不只背天气和物品配对。", "宝宝只指雨靴时接一句“雨靴能帮脚保持干燥”。", "晴天的帽子是遮阳例子，不表示冬天不用帽子。"],
     "phrases": [
-      {"zh": "雨伞能遮雨。", "en": "An umbrella keeps rain off us."},
+      {"zh": "雨靴能帮脚保持干燥。", "en": "Rain boots help keep feet dry."},
       {"zh": "天冷了，穿保暖的外套。", "en": "It's cold. Put on a warm coat."},
       {"zh": "帽子戴头上，可以遮阳。", "en": "A hat can shade your head."},
       {"zh": "还需要带什么？", "en": "What else do we need?"}
@@ -29,7 +29,7 @@
   "offline": [{
     "title": "一起准备出门篮",
     "minutes": 7,
-    "materials": ["帽子", "适合当天天气的外套", "成人管理的雨伞", "浅篮子"],
+    "materials": ["雨靴", "帽子", "适合当天天气的外套", "成人管理的雨伞", "浅篮子"],
     "steps": ["大人先看实际天气，选好安全、合适的衣物。", "把帽子和外套放在宝宝够得着的地面。", "问“今天出门要用什么”，让宝宝拿或指。", "成人解释用途，帮忙穿戴，再检查舒服不舒服。", "若要用伞，由成人拿、开合和撑着。"],
     "safety": "成人看护。伞尖、伞骨和开合关节由成人管理，不让宝宝独自开合或挥伞。衣物无长绳、松动纽扣，不用围巾绕头颈做游戏。直径小于3.5厘米的小物件有窒息风险。雷电、强风、积水时不为了试衣外出；帽子和伞不能代替全部防晒或保暖措施。",
     "domains": ["science", "life"],
@@ -77,10 +77,10 @@
         "hintAfter": 1,
         "rounds": [
           {
-            "prompt": {"zh": "下雨出门，哪样能遮雨？", "en": "It's raining. Which one keeps rain off us?"},
-            "options": ["ball", "umbrella", "spoon"],
-            "answer": "umbrella",
-            "explain": {"zh": "雨伞能遮雨，大人来撑。", "en": "An umbrella keeps rain off us. A grown-up holds it."}
+            "prompt": {"zh": "下雨出门，哪样能帮脚保持干燥？", "en": "It's raining. Which one helps keep our feet dry?"},
+            "options": ["rain-boots", "ball", "spoon"],
+            "answer": "rain-boots",
+            "explain": {"zh": "雨靴能帮脚保持干燥，大人帮忙穿好。", "en": "Rain boots help keep feet dry. A grown-up helps put them on."}
           },
           {
             "prompt": {"zh": "下雪天冷，哪件衣物能保暖？", "en": "It's snowy and cold. Which item of clothing keeps us warm?"},

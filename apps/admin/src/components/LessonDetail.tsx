@@ -2,11 +2,12 @@ import { useEffect, useState } from 'react';
 import { CopyOutlined, DeleteOutlined, EditOutlined, EyeOutlined, PrinterOutlined, PushpinOutlined, StopOutlined } from '@ant-design/icons';
 import { Alert, App, Button, Descriptions, Drawer, Modal, Popconfirm, Space, Tag } from 'antd';
 import { useNavigate } from 'react-router';
-import { BUILTIN_ACTIVITY_META, type ChildProfile, type PluginInfo, type ResolvedConcept } from '@sprout/schema';
+import { ageOf, BUILTIN_ACTIVITY_META, type ChildProfile, type PluginInfo, type ResolvedConcept } from '@sprout/schema';
 import { useFamily } from '../context';
 import { api } from '../lib/api';
 import { useResource } from '../lib/hooks';
 import { formatAge, formatDuration } from '../lib/format';
+import { pinAgeWarning } from '../lib/lesson-age';
 import { DomainTags, LessonTypeTags, ResourceState } from './ui';
 import Preview from './Preview';
 import IssueList from '../features/content/IssueList';
@@ -28,6 +29,7 @@ export default function LessonDetail({ lessonId, onClose }: { lessonId: string |
   const custom = document?.packId === CUSTOM_PACK;
   const pinned = lesson ? child?.plan.pinned.includes(lesson.id) : false;
   const skipped = lesson ? child?.plan.skipped.includes(lesson.id) : false;
+  const ageWarning = child && lesson ? pinAgeWarning(ageOf(child.birthday).months, lesson.ageRange) : undefined;
   const cover = lesson ? assetUrl(lesson.cover?.image ?? (lesson.cover?.concept ? `concept:${lesson.cover.concept}` : undefined), document?.packId, concepts.data) : undefined;
   const activityNames = new Map(plugins.data?.flatMap((plugin) => plugin.activities.map((activity) => [activity.type, activity.name.zh] as const)));
   function close() { setPreview(false); onClose(); }
@@ -48,6 +50,10 @@ export default function LessonDetail({ lessonId, onClose }: { lessonId: string |
     setBusy(action);
     try {
       const latest = await api.get<ChildProfile>(`/api/children/${encodeURIComponent(child.id)}`);
+      if (action === 'pinned' && !latest.plan.pinned.includes(lesson.id)) {
+        const warning = pinAgeWarning(ageOf(latest.birthday).months, lesson.ageRange);
+        if (warning) void message.warning(warning);
+      }
       await api.put(`/api/children/${encodeURIComponent(child.id)}`, { plan: toggleLessonPlan(latest.plan, lesson.id, action) });
       await refreshChildren();
       void message.success(`${child.name}的课程安排已更新`);
@@ -112,6 +118,7 @@ export default function LessonDetail({ lessonId, onClose }: { lessonId: string |
                 </Popconfirm>
               </Space>
             </div>
+            {ageWarning && <Alert type="warning" showIcon title="置顶课程月龄提醒" description={ageWarning} />}
             <IssueList issues={document?.issues ?? []} />
             <section className="page-section">
               <h2>学习目标</h2>

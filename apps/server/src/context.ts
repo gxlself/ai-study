@@ -7,6 +7,7 @@ import type { PackRegistry } from './content/registry';
 import type { PluginRegistry } from './plugins/registry';
 import type { TtsService } from './tts';
 import { authGuard } from './auth';
+import type { ResourceKind, ResourceLimiter } from './security/limits';
 
 export interface AppContext {
   config: ServerConfig;
@@ -15,6 +16,7 @@ export interface AppContext {
   plugins: PluginRegistry;
   tts: TtsService;
   milestones: MilestonesFile;
+  limits: ResourceLimiter;
 }
 
 export function options(
@@ -22,9 +24,15 @@ export function options(
   scope: 'admin' | 'device' | 'either' | 'public',
   tag: string,
   summary: string,
+  resource?: ResourceKind,
 ): RouteShorthandOptions {
   return {
-    ...(scope === 'public' ? {} : { preHandler: authGuard(context.store, scope) }),
+    onRequest: [
+      ...(scope === 'public' ? [] : [authGuard(context.store, scope)]),
+      ...(resource ? [context.limits.guard(resource)] : []),
+    ],
+    ...(resource ? { config: { sproutResource: resource } } : {}),
+    ...(resource && resource !== 'upload' && resource !== 'import' ? { bodyLimit: 16 * 1024 } : {}),
     schema: {
       tags: [tag], summary,
       security: scope === 'public' ? [] : [{ bearerAuth: [] }],

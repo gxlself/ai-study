@@ -3,19 +3,21 @@ import { z } from 'zod';
 import { options, parameter, type AppContext } from '../context';
 import { parse } from '../errors';
 import { upload } from './content';
+import type { ResourceKind } from '../security/limits';
 
 export function registerPlugins(app: FastifyInstance, context: AppContext): void {
   const { plugins, packs } = context;
-  const route = (scope: 'admin' | 'either', summary: string) => options(context, scope, '活动插件', summary);
+  const route = (scope: 'admin' | 'either', summary: string, resource?: ResourceKind) =>
+    options(context, scope, '活动插件', summary, resource);
   app.get('/api/plugins', route('either', '活动插件列表'), async () => plugins.list());
-  app.post('/api/plugins/install', route('admin', '安装活动插件 ZIP'), async (request, reply) => {
+  app.post('/api/plugins/install', route('admin', '安装活动插件 ZIP', 'import'), async (request, reply) => {
     const file = await upload(request, 50 * 1024 * 1024);
-    const result = plugins.installZip(file.bytes);
+    const result = await plugins.installZip(file.bytes);
     packs.reload();
     reply.code(201);
     return result;
   });
-  app.post('/api/plugins/remote', route('admin', '登记远程活动插件'), async (request, reply) => {
+  app.post('/api/plugins/remote', route('admin', '登记远程活动插件', 'remote-plugin'), async (request, reply) => {
     const { manifestUrl } = parse(z.object({ manifestUrl: z.url().max(2048) }).strict(), request.body);
     const result = await plugins.registerRemote(manifestUrl);
     packs.reload();

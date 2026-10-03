@@ -6,6 +6,7 @@ import type { Root } from 'react-dom/client';
 import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest';
 import { App, ConfigProvider } from 'antd';
 import { ConfirmedSwitch, FilePicker } from './shared';
+import PluginTrustDialog from './PluginTrustDialog';
 
 vi.setConfig({ testTimeout: 30_000, hookTimeout: 30_000 });
 
@@ -138,5 +139,52 @@ describe('备份文件选择', () => {
     await choose(new File(['not a backup'], 'wrong.txt', { type: 'text/plain' }));
     expect(container.querySelector('output')?.textContent).toBe('未选择');
     expect(container.textContent).toContain('请选择 JSON 备份文件');
+  });
+});
+
+describe('第三方插件知情确认', () => {
+  const plugin = { id: 'example.puzzle', version: '1.0.0', name: { zh: '拼图' }, permissions: ['network', 'storage'] };
+  const sourceUrl = 'https://plugins.example/plugin.json';
+  const entryUrl = 'https://plugins.example/index.js';
+  it.each(['安装', '启用'] as const)('%s 前展示权限和来源，只有勾选后才可提交', async (operation) => {
+    const confirm = vi.fn();
+    await render(<PluginTrustDialog plugin={plugin} sourceUrl={sourceUrl} entryUrl={entryUrl}
+      operation={operation} busy={false} onCancel={vi.fn()} onConfirm={confirm} />);
+    expect(document.body.textContent).toContain('插件与播放端同源运行，只安装你信任的来源');
+    expect(document.body.textContent).toContain(sourceUrl);
+    expect(document.body.textContent).toContain(entryUrl);
+    expect(document.body.textContent).toContain('网络访问');
+    expect(document.body.textContent).toContain('本地存储');
+    expect((button(`信任并${operation}`) as HTMLButtonElement).disabled).toBe(true);
+    await click(button(`信任并${operation}`));
+    expect(confirm).not.toHaveBeenCalled();
+    await click(document.querySelector('input[type="checkbox"]'));
+    await click(button(`信任并${operation}`));
+    expect(confirm).toHaveBeenCalledOnce();
+  });
+  it('权限或来源变化后必须重新勾选', async () => {
+    const confirm = vi.fn();
+    const props = { sourceUrl, entryUrl, operation: '启用' as const, busy: false, onCancel: vi.fn(), onConfirm: confirm };
+    await render(<PluginTrustDialog {...props} plugin={plugin} />);
+    await click(document.querySelector('input[type="checkbox"]'));
+    expect((button('信任并启用') as HTMLButtonElement).disabled).toBe(false);
+    await render(<PluginTrustDialog {...props} plugin={{ ...plugin, permissions: ['camera'] }} />);
+    expect((document.querySelector('input[type="checkbox"]') as HTMLInputElement).checked).toBe(false);
+    expect((button('信任并启用') as HTMLButtonElement).disabled).toBe(true);
+    await click(document.querySelector('input[type="checkbox"]'));
+    await render(<PluginTrustDialog {...props} plugin={{ ...plugin, permissions: ['camera'] }} sourceUrl="https://another.example/plugin.json" />);
+    expect((button('信任并启用') as HTMLButtonElement).disabled).toBe(true);
+    expect(confirm).not.toHaveBeenCalled();
+  });
+  it('取消不提交；服务端缺失来源入口时不能确认', async () => {
+    const confirm = vi.fn();
+    const cancel = vi.fn();
+    await render(<PluginTrustDialog plugin={plugin} sourceUrl="未知来源" operation="启用" busy={false}
+      onCancel={cancel} onConfirm={confirm} />);
+    await click(document.querySelector('input[type="checkbox"]'));
+    expect((button('信任并启用') as HTMLButtonElement).disabled).toBe(true);
+    await click(button('取消'));
+    expect(cancel).toHaveBeenCalledOnce();
+    expect(confirm).not.toHaveBeenCalled();
   });
 });

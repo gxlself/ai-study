@@ -17,7 +17,7 @@
   ],
   "cover": { "concept": "school", "bg": "sky" },
   "parentGuide": {
-    "intro": "这是小熊的入园故事，不是催孩子入园。故事由妈妈接送，讲时可换成真实照护者。按园所安排说明具体来接环节，并守约；不承诺孩子不哭。老师暂用文字呈现，不借家人图片冒充。",
+    "intro": "这是小熊的入园故事，不是催孩子入园。故事由妈妈接送，讲时可换成真实照护者。按园所安排说明具体来接环节，并守约；不承诺孩子不哭。画面用老师词条图呈现角色，不把它当成某位真实老师。",
     "tips": [
       "先认可想家，再谈求助。",
       "接送约定按真实安排说，不说马上。",
@@ -59,7 +59,7 @@
     {
       "type": "story",
       "title": { "zh": "小熊的第一天", "en": "Bear's First Day" },
-      "parentTip": "真实接送人和来接环节可替换。想家、哭泣都允许；故事不保证孩子立刻适应。",
+      "parentTip": "真实接送人和来接环节可替换。老师用角色词条图呈现；想家、哭泣都允许，故事不保证孩子立刻适应。",
       "props": {
         "title": { "zh": "小熊的第一天", "en": "Bear's First Day" },
         "pages": [
@@ -75,7 +75,8 @@
             "scene": { "bg": "room", "ground": "floor", "sprites": [
               { "concept": "bear", "x": 30, "y": 73, "size": 36, "anim": "none" },
               { "concept": "sad", "x": 70, "y": 48, "size": 22, "anim": "none" },
-              { "concept": "book", "x": 72, "y": 78, "size": 20, "anim": "none" }
+              { "concept": "book", "x": 72, "y": 78, "size": 20, "anim": "none" },
+              { "concept": "teacher", "x": 88, "y": 74, "size": 24, "anim": "none" }
             ] },
             "text": { "zh": "小熊想妈妈，哭了。老师说：“想妈妈也没关系。”", "en": "Bear cries and misses Mom. The teacher says, \"It is okay to miss Mom.\"" },
             "prompts": [{ "kind": "distancing", "zh": "想家时，你希望谁陪你？", "en": "Who would you like beside you when you miss home?" }]
@@ -84,14 +85,15 @@
             "scene": { "bg": "room", "ground": "floor", "sprites": [
               { "concept": "bear", "x": 28, "y": 73, "size": 36, "anim": "none" },
               { "concept": "book", "x": 56, "y": 78, "size": 20, "anim": "none" },
-              { "concept": "rabbit", "x": 79, "y": 76, "size": 24, "anim": "none" }
+              { "concept": "rabbit", "x": 79, "y": 76, "size": 24, "anim": "none" },
+              { "concept": "teacher", "x": 91, "y": 72, "size": 22, "anim": "none" }
             ] },
             "text": { "zh": "老师陪它看看书。小兔在旁边翻书。", "en": "The teacher reads with Bear. Rabbit turns pages nearby." }
           },
           {
             "scene": { "bg": "room", "ground": "floor", "sprites": [
               { "concept": "bear", "x": 28, "y": 73, "size": 36, "anim": "none" },
-              { "concept": "blocks", "x": 57, "y": 78, "size": 22, "anim": "none" },
+              { "concept": "single-block", "x": 57, "y": 78, "size": 22, "anim": "none" },
               { "concept": "rabbit", "x": 81, "y": 76, "size": 24, "anim": "none" }
             ] },
             "text": { "zh": "小熊和小兔一起搭积木。", "en": "Bear and Rabbit build with blocks together." },
@@ -101,7 +103,8 @@
             "scene": { "bg": "room", "ground": "floor", "sprites": [
               { "concept": "bear", "x": 30, "y": 73, "size": 36, "anim": "none" },
               { "concept": "bed", "x": 70, "y": 78, "size": 25, "anim": "none" },
-              { "concept": "sleepy", "x": 72, "y": 46, "size": 18, "anim": "none" }
+              { "concept": "sleepy", "x": 72, "y": 46, "size": 18, "anim": "none" },
+              { "concept": "teacher", "x": 89, "y": 74, "size": 22, "anim": "none" }
             ] },
             "text": { "zh": "午睡时间到了。老师陪小熊休息。", "en": "It is nap time. The teacher stays nearby while Bear rests." }
           },
@@ -109,7 +112,8 @@
             "scene": { "bg": "room", "ground": "floor", "sprites": [
               { "concept": "bear", "x": 30, "y": 73, "size": 36, "anim": "none" },
               { "concept": "ball", "x": 63, "y": 79, "size": 22, "anim": "none" },
-              { "concept": "book", "x": 84, "y": 78, "size": 18, "anim": "none" }
+              { "concept": "book", "x": 84, "y": 78, "size": 18, "anim": "none" },
+              { "concept": "teacher", "x": 14, "y": 74, "size": 20, "anim": "none" }
             ] },
             "text": { "zh": "睡醒后，小熊又玩了一会儿。它想妈妈，就告诉老师。", "en": "After the nap, Bear plays a little more. Bear tells the teacher when Bear misses Mom." }
           },

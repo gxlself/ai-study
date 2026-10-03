@@ -11,24 +11,25 @@ import {
   makeStage, parse, readJson, replaceDirectory, safePath, safeRelativePath, validationError,
 } from '../content/files';
 import { extractFiles, readZip } from '../content/zip';
+import {
+  assertRemoteActive, downloadRemoteManifest, httpUrl, resolvePluginHost, validateRemoteUrl,
+  withRemoteTimeout, type PluginResolver,
+} from './remote';
 
-export interface PluginRegistryOptions { dataDir: string; db: DatabaseSync; fetch?: typeof fetch }
+export interface PluginRegistryOptions {
+  dataDir: string;
+  db: DatabaseSync;
+  resolver?: PluginResolver;
+  /** 仅供离线测试；生产默认使用固定已校验 IP 的 http/https 连接。 */
+  fetch?: typeof fetch;
+}
+export interface PluginSourceInfo extends PluginInfo { manifestUrl?: string }
 interface PluginRow {
   id: string; manifest: string; source: 'installed' | 'remote';
   enabled: number; manifest_url: string | null; directory: string | null;
 }
 
-export const REMOTE_MANIFEST_MAX_BYTES = 1024 * 1024;
-export const REMOTE_MANIFEST_TIMEOUT_MS = 10_000;
-
-function httpUrl(value: string, base?: string): URL {
-  let url: URL;
-  try { url = new URL(value, base); } catch { throw new RegistryError(400, 'INVALID_URL', '插件地址无效'); }
-  if (!['http:', 'https:'].includes(url.protocol) || url.username || url.password) {
-    throw new RegistryError(400, 'INVALID_URL', '插件地址只允许不含账号密码的 HTTP(S) URL');
-  }
-  return url;
-}
+export { REMOTE_MANIFEST_MAX_BYTES, REMOTE_MANIFEST_TIMEOUT_MS } from './remote';
 
 function object(value: unknown): value is Record<string, unknown> {
   return value !== null && typeof value === 'object' && !Array.isArray(value);
@@ -77,11 +78,16 @@ function validateProps(schema: unknown, value: unknown): ValidationIssue[] {
 export class PluginRegistry {
   private readonly root: string;
   private readonly db: DatabaseSync;
-  private readonly fetcher: typeof fetch;
+  private readonly fetcher: typeof fetch | undefined;
+  private readonly resolver: PluginResolver;
 
   constructor(options: PluginRegistryOptions) {
+    if (options.fetch && !options.resolver) {
+      throw new TypeError('离线 fetch 注入必须同时提供 resolver；生产下载使用固定 IP 的 http/https 连接');
+    }
     this.db = options.db;
-    this.fetcher = options.fetch ?? globalThis.fetch;
+    this.fetcher = options.fetch;
+    this.resolver = options.resolver ?? resolvePluginHost;
     this.root = guard(() => ensureDirectory(ensureRoot(options.dataDir), 'plugins'));
   }
 
@@ -95,13 +101,14 @@ export class PluginRegistry {
     return row;
   }
 
-  private info(row: PluginRow): PluginInfo {
+  private info(row: PluginRow): PluginSourceInfo {
     const manifest = parse(PluginManifest, JSON.parse(row.manifest));
     return {
       id: manifest.id, version: manifest.version, name: manifest.name, description: manifest.description,
       source: row.source, enabled: Boolean(row.enabled), activities: manifest.activities, permissions: manifest.permissions,
       entryUrl: row.source === 'remote' ? httpUrl(manifest.entry, row.manifest_url!).href :
         assetUrl(`/plugins/${manifest.id}/`, manifest.entry),
+      ...(row.source === 'remote' ? { manifestUrl: row.manifest_url! } : {}),
     };
   }
 
@@ -117,7 +124,7 @@ export class PluginRegistry {
     };
   }
 
-  list(): PluginInfo[] { return guard(() => [this.builtin(), ...this.rows().map((row) => this.info(row))]); }
+  list(): PluginSourceInfo[] { return guard(() => [this.builtin(), ...this.rows().map((row) => this.info(row))]); }
 
   private checkManifest(input: unknown): PluginManifest {
     const manifest = parse(PluginManifest, input, 'plugin.json');
@@ -159,7 +166,7 @@ export class PluginRegistry {
     return manifest;
   }
 
-  private save(manifest: PluginManifest, source: PluginRow['source'], directory: string | null, manifestUrl: string | null): PluginInfo {
+  private save(manifest: PluginManifest, source: PluginRow['source'], directory: string | null, manifestUrl: string | null): PluginSourceInfo {
     this.db.prepare(`INSERT INTO plugins(id, manifest, source, enabled, manifest_url, directory) VALUES (?, ?, ?, 1, ?, ?)
       ON CONFLICT(id) DO UPDATE SET manifest=excluded.manifest, source=excluded.source,
       manifest_url=excluded.manifest_url, directory=excluded.directory`)
@@ -167,101 +174,59 @@ export class PluginRegistry {
     return this.info(this.row(manifest.id));
   }
 
-  installZip(bytes: Uint8Array): PluginInfo {
-    return guard(() => {
-      const files = readZip(bytes, 'plugin.json');
-      const stage = makeStage(this.root);
-      try {
+  async installZip(bytes: Uint8Array): Promise<PluginSourceInfo> {
+    const files = guard(() => readZip(bytes, 'plugin.json'));
+    const stage = guard(() => makeStage(this.root));
+    try {
+      const manifest = guard(() => {
         extractFiles(files, stage);
-        const manifest = this.checkManifest(readJson(stage, 'plugin.json'));
-        if (/^https?:\/\//i.test(manifest.entry)) httpUrl(manifest.entry);
-        else {
-          const entry = safePath(stage, manifest.entry);
+        const candidate = this.checkManifest(readJson(stage, 'plugin.json'));
+        if (!/^https?:\/\//i.test(candidate.entry)) {
+          const entry = safePath(stage, candidate.entry);
           if (!existsSync(entry) || !lstatSync(entry).isFile()) validationError([{ path: 'entry', level: 'error', message: '插件入口文件不存在' }]);
         }
+        return candidate;
+      });
+      if (/^https?:\/\//i.test(manifest.entry)) {
+        await withRemoteTimeout((signal) => validateRemoteUrl(httpUrl(manifest.entry), this.resolver, signal));
+      }
+      return guard(() => {
+        this.checkManifest(manifest);
         const target = safePath(this.root, manifest.id);
-        let info!: PluginInfo;
+        let info!: PluginSourceInfo;
         replaceDirectory(stage, target, () => { info = this.save(manifest, 'installed', target, null); });
         return info;
-      } finally { rmSync(stage, { recursive: true, force: true }); }
-    });
-  }
-
-  async registerRemote(manifestUrl: string): Promise<PluginInfo> {
-    let url = httpUrl(manifestUrl);
-    const controller = new AbortController();
-    let timer: ReturnType<typeof setTimeout> | undefined;
-    const timeout = new Promise<never>((_, reject) => {
-      timer = setTimeout(() => {
-        controller.abort();
-        reject(new RegistryError(504, 'REMOTE_TIMEOUT', '远程插件清单请求超时'));
-      }, REMOTE_MANIFEST_TIMEOUT_MS);
-    });
-    try {
-      const operation = async () => {
-        for (let redirects = 0; redirects <= 5; redirects++) {
-          const response = await this.fetcher(url.href, { signal: controller.signal, redirect: 'manual', headers: { accept: 'application/json' } });
-          if ([301, 302, 303, 307, 308].includes(response.status)) {
-            void response.body?.cancel();
-            const location = response.headers.get('location');
-            if (!location || redirects === 5) throw new RegistryError(502, 'REMOTE_REDIRECT', '远程清单重定向异常');
-            url = httpUrl(location, url.href); continue;
-          }
-          if (!response.ok) { void response.body?.cancel(); throw new RegistryError(502, 'REMOTE_FETCH_FAILED', '无法获取远程插件清单'); }
-          if (Number(response.headers.get('content-length')) > REMOTE_MANIFEST_MAX_BYTES) {
-            void response.body?.cancel();
-            throw new RegistryError(413, 'REMOTE_TOO_LARGE', '远程插件清单超过 1 MiB');
-          }
-          if (!response.body) throw new RegistryError(400, 'INVALID_MANIFEST', '远程插件清单为空');
-          const reader = response.body.getReader();
-          const cancel = () => { void reader.cancel().catch(() => {}); };
-          controller.signal.addEventListener('abort', cancel, { once: true });
-          const chunks: Uint8Array[] = [];
-          let length = 0;
-          try {
-            while (true) {
-              const next = await reader.read();
-              if (next.done) break;
-              length += next.value.length;
-              if (length > REMOTE_MANIFEST_MAX_BYTES) throw new RegistryError(413, 'REMOTE_TOO_LARGE', '远程插件清单超过 1 MiB');
-              chunks.push(next.value);
-            }
-          } finally {
-            controller.signal.removeEventListener('abort', cancel);
-            cancel(); reader.releaseLock();
-          }
-          let input: unknown;
-          try { input = JSON.parse(Buffer.concat(chunks, length).toString('utf8')); } catch {
-            throw new RegistryError(400, 'INVALID_MANIFEST', '远程插件清单不是有效 JSON');
-          }
-          if (controller.signal.aborted) throw new RegistryError(504, 'REMOTE_TIMEOUT', '远程插件清单请求超时');
-          return { input, url: url.href };
-        }
-        throw new RegistryError(502, 'REMOTE_REDIRECT', '远程清单重定向异常');
-      };
-      const downloaded = await Promise.race([operation(), timeout]);
-      return guard(() => {
-        const manifest = this.checkManifest(downloaded.input);
-        httpUrl(manifest.entry, downloaded.url);
-        const old = this.rows().find((row) => row.id === manifest.id);
-        const oldDirectory = old?.source === 'installed' ? this.directory(manifest.id) : undefined;
-        const backup = join(this.root, `.backup-${randomUUID()}`);
-        if (oldDirectory) renameSync(oldDirectory, backup);
-        let info: PluginInfo;
-        try { info = this.save(manifest, 'remote', null, downloaded.url); } catch (error) {
-          if (oldDirectory) renameSync(backup, oldDirectory);
-          throw error;
-        }
-        if (oldDirectory) rmSync(backup, { recursive: true, force: true });
-        return info;
       });
-    } catch (error) {
-      if (error instanceof RegistryError) throw error;
-      throw new RegistryError(502, 'REMOTE_FETCH_FAILED', '无法获取远程插件清单');
-    } finally { clearTimeout(timer); controller.abort(); }
+    } finally { rmSync(stage, { recursive: true, force: true }); }
   }
 
-  setEnabled(id: string, enabled: boolean): PluginInfo {
+  async registerRemote(manifestUrl: string): Promise<PluginSourceInfo> {
+    const downloaded = await withRemoteTimeout(async (signal) => {
+      const result = await downloadRemoteManifest(manifestUrl, this.resolver, signal, this.fetcher);
+      assertRemoteActive(signal);
+      const manifest = guard(() => parse(PluginManifest, result.input, 'plugin.json'));
+      await validateRemoteUrl(httpUrl(manifest.entry, result.url), this.resolver, signal);
+      assertRemoteActive(signal);
+      return result;
+    });
+    // 超时竞态只产出候选数据；数据库及文件替换必须在竞态成功后才执行。
+    return guard(() => {
+      const manifest = this.checkManifest(downloaded.input);
+      const old = this.rows().find((row) => row.id === manifest.id);
+      const oldDirectory = old?.source === 'installed' ? this.directory(manifest.id) : undefined;
+      const backup = join(this.root, `.backup-${randomUUID()}`);
+      if (oldDirectory) renameSync(oldDirectory, backup);
+      let info: PluginSourceInfo;
+      try { info = this.save(manifest, 'remote', null, downloaded.url); } catch (error) {
+        if (oldDirectory) renameSync(backup, oldDirectory);
+        throw error;
+      }
+      if (oldDirectory) rmSync(backup, { recursive: true, force: true });
+      return info;
+    });
+  }
+
+  setEnabled(id: string, enabled: boolean): PluginSourceInfo {
     return guard(() => {
       if (typeof enabled !== 'boolean') throw new RegistryError(400, 'VALIDATION_ERROR', 'enabled 必须是布尔值');
       if (id === 'sprout.builtin') {

@@ -57,16 +57,16 @@
     {
       "type": "movement",
       "title": { "zh": "两个动作轮流来", "en": "Two Moves Take Turns" },
-      "parentTip": "小脚图只提示跺脚。每步一次，剩余时间等待；可暂停、跳过或坐着拍腿。",
+      "parentTip": "轻跺脚动作图只作提示。每步一次，剩余时间等待；可暂停、跳过或坐着拍腿。",
       "props": {
         "intro": { "zh": "拍手、跺脚，轻轻轮流来。", "en": "Clap and stamp gently, taking turns." },
         "moves": [
           { "concept": "clap", "name": { "zh": "拍一下", "en": "One Clap" }, "say": { "zh": "轻轻拍一下手。", "en": "Clap your hands once, gently." }, "seconds": 6 },
-          { "concept": "foot", "name": { "zh": "跺一下", "en": "One Gentle Stamp" }, "say": { "zh": "轻轻跺一下脚。", "en": "Stamp one foot once, gently." }, "seconds": 6 },
+          { "concept": "stamp-feet", "name": { "zh": "跺一下", "en": "One Gentle Stamp" }, "say": { "zh": "轻轻跺一下脚。", "en": "Stamp one foot once, gently." }, "seconds": 6 },
           { "concept": "clap", "name": { "zh": "再拍一下", "en": "Clap Again" }, "say": { "zh": "又轮到拍手啦。", "en": "Time for one clap again." }, "seconds": 6 },
-          { "concept": "foot", "name": { "zh": "再跺一下", "en": "Stamp Again" }, "say": { "zh": "又轮到跺脚啦。", "en": "Time for one gentle stamp again." }, "seconds": 6 },
+          { "concept": "stamp-feet", "name": { "zh": "再跺一下", "en": "Stamp Again" }, "say": { "zh": "又轮到跺脚啦。", "en": "Time for one gentle stamp again." }, "seconds": 6 },
           { "concept": "clap", "name": { "zh": "拍一下", "en": "One Clap" }, "say": { "zh": "轻轻拍一下手。", "en": "Clap your hands once, gently." }, "seconds": 6 },
-          { "concept": "foot", "name": { "zh": "跺一下", "en": "One Gentle Stamp" }, "say": { "zh": "轻轻跺一下脚。", "en": "Stamp one foot once, gently." }, "seconds": 6 }
+          { "concept": "stamp-feet", "name": { "zh": "跺一下", "en": "One Gentle Stamp" }, "say": { "zh": "轻轻跺一下脚。", "en": "Stamp one foot once, gently." }, "seconds": 6 }
         ]
       }
     }

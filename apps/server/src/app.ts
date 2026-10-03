@@ -22,6 +22,9 @@ import { registerSettings } from './routes/settings';
 import { registerBackup } from './routes/backup';
 import { guardRawPath, registerStatic } from './static';
 import { documentSchema } from './openapi';
+import { optionalAuthGuard } from './auth';
+import { corsOriginAllowed } from './security/cors';
+import { ResourceLimiter } from './security/limits';
 
 export async function buildApp(overrides: Partial<ServerConfig> = {}): Promise<FastifyInstance> {
   const config = loadConfig(overrides);
@@ -32,6 +35,8 @@ export async function buildApp(overrides: Partial<ServerConfig> = {}): Promise<F
     trustProxy: false,
   });
   const store = new Store(config.dataDir);
+  const limits = new ResourceLimiter();
+  limits.register(app);
   let tts: TtsService | undefined;
   let reloadTimer: ReturnType<typeof setInterval> | undefined;
   app.decorateRequest('principal', null);
@@ -45,6 +50,7 @@ export async function buildApp(overrides: Partial<ServerConfig> = {}): Promise<F
     let status = typeof failure.statusCode === 'number' && failure.statusCode >= 400 && failure.statusCode <= 599
       ? failure.statusCode : 500;
     if (failure.code?.startsWith('FST_FILES_LIMIT') || failure.code === 'FST_REQ_FILE_TOO_LARGE') status = 413;
+    if (status === 429 && !reply.hasHeader('Retry-After')) reply.header('Retry-After', 5);
     if (status === 500) request.log.error({ err: error }, '请求处理失败');
     const message = failure instanceof ApiError || (status < 500 && failure.issues)
       ? failure.message
@@ -67,7 +73,17 @@ export async function buildApp(overrides: Partial<ServerConfig> = {}): Promise<F
     reply.header('X-Content-Type-Options', 'nosniff');
   });
   try {
-    await app.register(cors, { origin: '*', methods: ['GET', 'HEAD', 'POST', 'PUT', 'DELETE', 'OPTIONS'] });
+    await app.register(cors, {
+      origin: (origin, callback) => callback(null, corsOriginAllowed(origin, config.corsOrigins)),
+      methods: ['GET', 'HEAD', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
+      preflightContinue: true,
+    });
+    app.addHook('onRequest', optionalAuthGuard(store));
+    app.addHook('onRequest', async (request, reply) => {
+      if (request.method === 'OPTIONS' && reply.hasHeader('Access-Control-Allow-Origin')) {
+        reply.code(204).header('Content-Length', '0').send();
+      }
+    });
     await app.register(multipart, { limits: { files: 1, fileSize: 50 * 1024 * 1024 } });
     await app.register(swagger, {
       transform: ({ schema, url, route }) => ({ schema: documentSchema(schema, route.method, url), url }),
@@ -97,7 +113,7 @@ export async function buildApp(overrides: Partial<ServerConfig> = {}): Promise<F
       try { milestones = MilestonesFile.parse(JSON.parse(readFileSync(config.milestonesPath, 'utf8'))); }
       catch (error) { app.log.warn({ err: error }, '里程碑文件校验失败，保留空状态'); }
     }
-    const context: AppContext = { config, store, packs, plugins, tts, milestones };
+    const context: AppContext = { config, store, packs, plugins, tts, milestones, limits };
     registerAuth(app, context);
     registerChildren(app, context);
     registerDevices(app, context);

@@ -30,7 +30,10 @@ export interface LocalSourceOptions extends DataSourceOptions {
   bundleUrl?: string;
 }
 
-export type RemoteSourceOptions = DataSourceOptions;
+export interface RemoteSourceOptions extends DataSourceOptions {
+  /** 预览凭据与临时状态只在内存中，禁止设备和记录写接口。 */
+  preview?: boolean;
+}
 
 export interface LessonData {
   lesson: Lesson;

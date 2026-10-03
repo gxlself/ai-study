@@ -15,7 +15,7 @@
   ],
   "cover": {"concept": "panda", "bg": "forest"},
   "parentGuide": {
-    "intro": "每页停一停，宝宝说“吃”，你接“熊猫吃竹子”。熊猫会吃竹子、爬树，也会休息。竹子暂无专用词条，只在文字中说；图里的树和草是环境，不指成竹子。宝宝不模仿爬高。",
+    "intro": "每页停一停，宝宝说“吃”，你接“熊猫吃竹子”。熊猫会吃竹子、爬树，也会休息。吃竹子的画面使用竹子词条，树只用于环境和爬树。宝宝不模仿爬高。",
     "tips": ["优先问“熊猫在哪里”“在做什么”。", "只问一题，回应后扩成短句，不逼复述。", "读完关屏，用玩偶在地面演吃和休息。"],
     "phrases": [
       {"zh": "熊猫在吃竹子。", "en": "The panda is eating bamboo."},
@@ -34,11 +34,11 @@
     "safety": "成人陪同。玩偶无松动眼睛、纽扣或小配件；直径小于3.5厘米的小物件有窒息风险。不拿真竹枝、筷子或食物塞进玩偶或宝宝嘴里。不爬树、椅子、桌子或柜子，只在地面假装。",
     "domains": ["science", "language"],
     "question": "你想让玩偶接下来做什么？",
-    "levels": {"easier": "宝宝指书，大人说“吃”或“睡”。", "harder": "宝宝摆玩偶并说一两个词，大人扩成“熊猫在休息”。"}
+    "levels": {"easier": "宝宝指书，大人说“吃”或“休息”。", "harder": "宝宝摆玩偶并说一两个词，大人扩成“熊猫在休息”。"}
   }],
   "steps": [{
     "type": "story",
-    "parentTip": "原创故事；竹子只出现在文字里，树、草不替代竹子。爬树是动物行为。",
+    "parentTip": "原创故事；吃竹子的页面使用竹子词条，树只用于环境和爬树。爬树是动物行为。",
     "props": {
       "title": {"zh": "熊猫的一天", "en": "A Panda's Day"},
       "pages": [
@@ -53,7 +53,7 @@
         {
           "scene": {"bg": "forest", "ground": "grass", "sprites": [
             {"concept": "panda", "x": 43, "y": 72, "size": 40, "anim": "none"},
-            {"concept": "tree", "x": 80, "y": 68, "size": 24, "anim": "none"}
+            {"concept": "bamboo", "x": 80, "y": 68, "size": 30, "anim": "none"}
           ]},
           "text": {"zh": "它正在吃竹子。", "en": "It is eating bamboo."},
           "prompts": [{"kind": "wh", "zh": "熊猫在做什么？", "en": "What is the panda doing?"}]
@@ -83,7 +83,7 @@
         {
           "scene": {"bg": "forest", "ground": "grass", "sprites": [
             {"concept": "panda", "x": 40, "y": 76, "size": 36, "anim": "none"},
-            {"concept": "tree", "x": 76, "y": 68, "size": 24, "anim": "none"}
+            {"concept": "bamboo", "x": 76, "y": 68, "size": 30, "anim": "none"}
           ]},
           "text": {"zh": "它睡一会儿。醒来再去找竹子。", "en": "It sleeps for a while. Then it wakes and looks for bamboo again."},
           "prompts": [{"kind": "recall", "zh": "熊猫刚才吃了什么？", "en": "What did the panda eat earlier?"}]

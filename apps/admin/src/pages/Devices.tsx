@@ -1,5 +1,5 @@
 import { useId, useState } from 'react';
-import { Alert, Button, Form, Input, Modal, Popconfirm, Select, Table, Tag, Typography } from 'antd';
+import { Alert, Button, Checkbox, Form, Input, Modal, Popconfirm, Select, Table, Tag, Typography } from 'antd';
 import { DeleteOutlined, EditOutlined, LinkOutlined, PlusOutlined, ReloadOutlined } from '@ant-design/icons';
 import type { DeviceInfo } from '@sprout/schema';
 import { useFamily } from '../context';
@@ -9,15 +9,10 @@ import { EmptyState, PageTitle, ResourceState } from '../components/ui';
 import { ActionError, useSystemAction } from '../features/system/shared';
 import { formatLastSeen, isLoopbackAddress, playerAddress } from '../features/system/helpers';
 import type { SystemSettings } from '../features/system/types';
+import { deviceAccessBody, deviceDraft, type DeviceDraft } from '../features/system/device-access';
 import '../features/system/system.css';
 
 const KIND_LABELS: Record<string, string> = { tv: '电视', tablet: '平板', browser: '浏览器' };
-
-interface DeviceDraft {
-  code?: string;
-  name: string;
-  childId: string;
-}
 
 function DeviceEditor({ device, onClose, onSaved }: {
   device?: DeviceInfo; onClose: () => void; onSaved: () => void;
@@ -25,22 +20,52 @@ function DeviceEditor({ device, onClose, onSaved }: {
   const family = useFamily();
   const [form] = Form.useForm<DeviceDraft>();
   const [candidate, setCandidate] = useState<DeviceDraft | null>(null);
+  const [paired, setPaired] = useState<DeviceInfo | null>(null);
   const formId = useId();
   const action = useSystemAction();
+  const defaults = deviceDraft(device, family.childId);
+  const allChildren = Form.useWatch('allChildren', form) ?? defaults.allChildren;
+  const allowedChildIds: string[] = Form.useWatch('allowedChildIds', form) ?? defaults.allowedChildIds;
+  const boundChildId: string = Form.useWatch('childId', form) ?? defaults.childId;
   const childOptions = [
     { value: '', label: '暂不绑定孩子' },
-    ...family.children.map((child) => ({ value: child.id, label: child.nickname || child.name })),
+    ...family.children.map((child) => ({
+      value: child.id, label: child.nickname || child.name,
+      disabled: !allChildren && !allowedChildIds.includes(child.id),
+    })),
   ];
   if (device?.childId && !family.children.some((child) => child.id === device.childId)) {
     childOptions.push({ value: device.childId, label: '当前绑定档案暂不可用' });
   }
+  const permissionOptions = family.children.map((child) => ({
+    value: child.id, label: child.nickname || child.name,
+  }));
+  for (const id of allowedChildIds) {
+    if (!permissionOptions.some((option) => option.value === id)) {
+      permissionOptions.push({ value: id, label: `档案暂不可用：${id}` });
+    }
+  }
+
+  function close() {
+    if (paired) onSaved();
+    onClose();
+  }
 
   async function save() {
     if (!candidate) return;
-    const body = { name: candidate.name.trim(), childId: candidate.childId || null };
-    const success = await action.run('save', () => device
-      ? api.put<DeviceInfo>(`/api/devices/${encodeURIComponent(device.id)}`, body)
-      : api.post<DeviceInfo>('/api/pair/approve', { ...body, code: candidate.code?.trim() }),
+    const selected = candidate;
+    const success = await action.run('save', async () => {
+      const body = deviceAccessBody(selected);
+      let target = device ?? paired;
+      if (!target) {
+        target = await api.post<DeviceInfo>('/api/pair/approve', {
+          name: body.name, childId: body.childId, code: selected.code?.trim(),
+        });
+        // 配对成功后保存范围失败时，重试只更新该设备，不消耗第二次配对码。
+        setPaired(target);
+      }
+      await api.put<DeviceInfo>(`/api/devices/${encodeURIComponent(target.id)}`, body);
+    },
     device ? '设备信息已更新。' : '配对已确认，请保持播放端打开。');
     setCandidate(null);
     if (success) { onSaved(); onClose(); }
@@ -49,14 +74,14 @@ function DeviceEditor({ device, onClose, onSaved }: {
   return (
     <Modal
       open
-      title={device ? '编辑设备' : '添加播放设备'}
+      title={device ? '编辑设备' : paired ? '设置已配对设备' : '添加播放设备'}
       className="system-dialog"
-      onCancel={() => { if (!action.busy) onClose(); }}
+      onCancel={() => { if (!action.busy) close(); }}
       keyboard={!action.busy}
       closable={!action.busy}
       maskClosable={!action.busy}
       footer={[
-        <Button key="cancel" disabled={action.busy} onClick={onClose}>取消</Button>,
+        <Button key="cancel" disabled={action.busy} onClick={close}>取消</Button>,
         <Popconfirm
           key="save"
           open={!!candidate}
@@ -68,6 +93,8 @@ function DeviceEditor({ device, onClose, onSaved }: {
               {device
                 ? '改绑后，设备将使用新孩子的课程计划和屏幕设置；解除绑定后需要重新选择孩子。'
                 : '请核对配对码来自您自己的电视或平板，配对后设备将可以访问家庭课程与绑定孩子的信息。'}
+              <p>允许范围：{candidate?.allChildren ? '全部孩子（含以后添加的档案）' :
+                candidate?.allowedChildIds.map((id) => family.children.find((child) => child.id === id)?.name ?? id).join('、') || '不允许任何孩子'}。</p>
             </div>
           }
           okText={device ? '确认保存' : '确认配对'}
@@ -77,8 +104,9 @@ function DeviceEditor({ device, onClose, onSaved }: {
           onCancel={() => setCandidate(null)}
           onConfirm={save}
         >
-          <Button type="primary" icon={device ? <EditOutlined /> : <LinkOutlined />} form={formId} htmlType="submit" loading={action.busy}>
-            {device ? '保存' : '配对设备'}
+          <Button type="primary" icon={device || paired ? <EditOutlined /> : <LinkOutlined />} form={formId} htmlType="submit"
+            loading={action.busy} disabled={family.loading}>
+            {device || paired ? '保存' : '配对设备'}
           </Button>
         </Popconfirm>,
       ]}
@@ -90,11 +118,11 @@ function DeviceEditor({ device, onClose, onSaved }: {
         layout="vertical"
         noValidate
         disabled={action.busy}
-        initialValues={{ name: device?.name ?? '', childId: device ? device.childId ?? '' : family.childId ?? '' }}
+        initialValues={defaults}
         onValuesChange={() => setCandidate(null)}
         onFinish={setCandidate}
       >
-        {!device && (
+        {!device && !paired && (
           <>
             <Alert type="info" showIcon title="配对码有效期为 10 分钟" description="请在播放端打开配对页，并在这里输入它显示的 6 位数字。" />
             <Form.Item
@@ -119,7 +147,22 @@ function DeviceEditor({ device, onClose, onSaved }: {
         >
           <Input maxLength={80} placeholder="例如：客厅电视" autoFocus={!!device} autoComplete="off" />
         </Form.Item>
-        <Form.Item name="childId" label="绑定孩子">
+        {paired && <Alert type="info" showIcon title="设备已经配对"
+          description="孩子访问范围尚未保存，请重试保存；不会再次提交配对码。" />}
+        <Form.Item name="allChildren" valuePropName="checked" label="允许的孩子">
+          <Checkbox disabled={family.loading}>允许全部孩子（含以后添加的档案）</Checkbox>
+        </Form.Item>
+        <Form.Item name="allowedChildIds" hidden={allChildren}>
+          <Checkbox.Group className="system-child-permissions" options={permissionOptions}
+            disabled={action.busy || family.loading} />
+        </Form.Item>
+        {!allChildren && !allowedChildIds.length && <Alert type="warning" showIcon title="尚未允许任何孩子"
+          description="此设备将不能切换到孩子或上报学习记录。" />}
+        <Form.Item name="childId" label="绑定孩子" dependencies={['allChildren', 'allowedChildIds']} rules={[{
+          validator: (_, value: string) => !value || form.getFieldValue('allChildren') ||
+            (form.getFieldValue('allowedChildIds') as string[] ?? []).includes(value)
+            ? Promise.resolve() : Promise.reject(new Error('绑定孩子必须在允许范围内，请勾选该孩子或解除绑定。')),
+        }]}>
           <Select
             options={childOptions}
             loading={family.loading}
@@ -128,6 +171,8 @@ function DeviceEditor({ device, onClose, onSaved }: {
             notFoundContent="没有匹配的孩子档案"
           />
         </Form.Item>
+        {!allChildren && boundChildId && !allowedChildIds.includes(boundChildId) &&
+          <Alert type="warning" showIcon title="绑定孩子不在允许范围内" description="请重新勾选该孩子，或选择暂不绑定孩子后保存。" />}
         {!family.loading && !family.children.length && (
           <Alert type="info" showIcon title="尚未添加孩子档案" description="可以先完成配对，添加孩子档案后再绑定。" />
         )}
@@ -151,12 +196,20 @@ export default function Devices() {
     const child = family.children.find((item) => item.id === device.childId);
     return child ? child.nickname || child.name : family.loading ? '正在读取档案…' : '绑定档案暂不可用';
   }
+  function allowedNames(device: DeviceInfo) {
+    if (device.allowedChildIds === null) return '全部孩子';
+    if (device.allowedChildIds === undefined) return '尚未设置';
+    return device.allowedChildIds.map((id) => {
+      const child = family.children.find((item) => item.id === id);
+      return child ? child.nickname || child.name : '档案暂不可用';
+    }).join('、') || '不允许任何孩子';
+  }
 
   function controls(device: DeviceInfo) {
     return (
       <div className="system-actions">
         <Button icon={<EditOutlined />} disabled={disabled} onClick={() => setEditor(device)} aria-label={`编辑设备 ${device.name}`}>
-          改名 / 改绑
+          编辑设备
         </Button>
         <Popconfirm
           title={`吊销「${device.name}」？`}
@@ -207,6 +260,7 @@ export default function Devices() {
                       render: (_, device) => <div><strong className="system-wrap">{device.name}</strong><div className="muted">{Object.hasOwn(KIND_LABELS, device.kind) ? KIND_LABELS[device.kind] : device.kind}</div></div>,
                     },
                     { title: '绑定孩子', key: 'child', render: (_, device) => <Tag color={device.childId ? 'green' : 'default'}>{childName(device)}</Tag> },
+                    { title: '允许的孩子', key: 'allowed', render: (_, device) => <span className="system-wrap">{allowedNames(device)}</span> },
                     { title: '最后在线', dataIndex: 'lastSeenAt', render: (value: string | null) => formatLastSeen(value) },
                     { title: '操作', key: 'actions', width: 260, render: (_, device) => controls(device) },
                   ]}
@@ -221,6 +275,7 @@ export default function Devices() {
                     </div>
                     <dl className="system-metadata">
                       <div><dt>绑定孩子</dt><dd>{childName(device)}</dd></div>
+                      <div><dt>允许的孩子</dt><dd>{allowedNames(device)}</dd></div>
                       <div><dt>最后在线</dt><dd>{formatLastSeen(device.lastSeenAt)}</dd></div>
                     </dl>
                     {controls(device)}
