@@ -97,9 +97,10 @@ describe('planToday priority and rotation', () => {
   it('keeps pinned order, lets skipped win, and deduplicates across every source', () => {
     const input = args({
       route: configuredRoute(4, [makeTheme('current', ['a', 'blocked', 'b', 'b', 'c'])]),
-      lessons: makeIndex('a', 'b', 'c', 'blocked', makeSummary('external', { ageRange: [48, 60] })),
+      lessons: makeIndex('a', 'b', 'c', 'blocked', makeSummary('future', { ageRange: [48, 60] }),
+        makeSummary('external', { ageRange: [24, 36] })),
       child: makeChild({
-        plan: makePlan({ pinned: ['missing', 'a', 'a', 'blocked', 'external'], skipped: ['blocked'] }),
+        plan: makePlan({ pinned: ['missing', 'future', 'a', 'a', 'blocked', 'external'], skipped: ['blocked'] }),
       }),
     });
     const result = choices(input);

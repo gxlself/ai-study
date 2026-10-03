@@ -116,17 +116,22 @@ describe('planToday child lesson count policy', () => {
 });
 
 describe('planToday parent-only offline fill', () => {
-  it('fills from eligible stage parents before admitting any pinned child fallback', () => {
-    const result = planToday(input({
+  it('retains pinned child offline priority and prefers stage parents for unpinned slots', () => {
+    const request = input({
       route: policyRoute({ lessonsPerDay: 2 }, [
         makeTheme('current', ['a']),
         makeTheme('later', ['parent1', 'parent2']),
       ]),
       lessons: makeIndex('a', makeSummary('parent1', { audience: 'parent' }), makeSummary('parent2', { audience: 'parent' })),
       child: parentOnlyChild(makePlan({ themeId: 'current', pinned: ['a'] })),
-    }));
-    expect(result.items.map((item) => item.lessonId)).toEqual(['parent1', 'parent2']);
-    expect(result.items.every((item) => item.offlineOnly === undefined)).toBe(true);
+    });
+    const result = planToday(request);
+    expect(result.items.map((item) => item.lessonId)).toEqual(['a', 'parent1']);
+    expect(result.items[0]).toMatchObject({ reason: 'pinned', offlineOnly: true });
+    expect(result.items[1]).not.toHaveProperty('offlineOnly');
+    const unpinned = planToday({ ...request, child: parentOnlyChild(makePlan({ themeId: 'current' })) });
+    expect(unpinned.items.map((item) => item.lessonId)).toEqual(['parent1', 'parent2']);
+    expect(unpinned.items.every((item) => item.offlineOnly === undefined)).toBe(true);
   });
 
   it('fills only the missing slots, without consuming child count or duration budgets', () => {
@@ -144,8 +149,8 @@ describe('planToday parent-only offline fill', () => {
     const before = structuredClone(request);
     const result = planToday(request);
     expect(result.items.map(({ lessonId, reason, offlineOnly }) => ({ lessonId, reason, offlineOnly }))).toEqual([
-      { lessonId: 'parent', reason: 'theme', offlineOnly: undefined },
       { lessonId: 'legacy', reason: 'pinned', offlineOnly: true },
+      { lessonId: 'parent', reason: 'theme', offlineOnly: undefined },
       { lessonId: 'a', reason: 'theme', offlineOnly: true },
       { lessonId: 'b', reason: 'balance', offlineOnly: true },
     ]);
@@ -153,7 +158,7 @@ describe('planToday parent-only offline fill', () => {
     for (const item of result.items) {
       expect(item.lesson).toBe(request.lessons[item.lessonId]);
     }
-    expect(result.items[1].lesson.audience).toBeUndefined();
+    expect(result.items[0].lesson.audience).toBeUndefined();
     expect(result.items[2].lesson.audience).toBe('child');
     expect(planToday(request)).toEqual(result);
     expect(request).toEqual(before);
@@ -192,16 +197,16 @@ describe('planToday parent-only offline fill', () => {
     expect(result.items.every((item) => item.offlineOnly === true)).toBe(true);
   });
 
-  it('keeps age, stage, availability, skipped and deduplication restrictions for pinned fallbacks', () => {
+  it('keeps age, availability, skipped and deduplication restrictions for pinned fallbacks', () => {
     const lessons = Object.setPrototypeOf(makeIndex(
       makeSummary('parent', { audience: 'parent', ageRange: [30, 30] }),
       makeSummary('young-parent', { audience: 'parent', ageRange: [31, 36] }),
-      makeSummary('old-parent', { audience: 'parent', ageRange: [18, 29] }),
+      makeSummary('old-parent', { audience: 'parent', ageRange: [18, 26] }),
       makeSummary('too-young', { audience: 'child', ageRange: [31, 36] }),
-      makeSummary('too-old', { ageRange: [18, 29] }),
+      makeSummary('too-old', { ageRange: [18, 26] }),
       makeSummary('at-min', { audience: 'child', ageRange: [30, 36] }),
       makeSummary('at-max', { ageRange: [18, 30] }),
-      'skipped', 'outside', 'unlisted',
+      'skipped', makeSummary('outside', { ageRange: [36, 48] }), makeSummary('unlisted', { ageRange: [36, 48] }),
     ), { inherited: makeSummary('inherited') });
     const result = planToday(input({
       route: makeRoute([
@@ -219,14 +224,14 @@ describe('planToday parent-only offline fill', () => {
       })),
     }));
     expect(result.items.map(({ lessonId, reason, offlineOnly }) => ({ lessonId, reason, offlineOnly }))).toEqual([
-      { lessonId: 'parent', reason: 'theme', offlineOnly: undefined },
       { lessonId: 'at-min', reason: 'pinned', offlineOnly: true },
       { lessonId: 'at-max', reason: 'pinned', offlineOnly: true },
+      { lessonId: 'parent', reason: 'theme', offlineOnly: undefined },
     ]);
   });
 
-  it('does not draw offline child lessons from a manual theme in another stage', () => {
-    const result = planToday(input({
+  it('only admits an eligible child from another manual-theme stage when explicitly pinned', () => {
+    const request = input({
       route: makeRoute([
         policyRoute({ lessonsPerDay: 3 }, [makeTheme('age-theme', ['parent', 'a'])]).stages[0],
         makeStage({
@@ -236,24 +241,34 @@ describe('planToday parent-only offline fill', () => {
         }),
       ]),
       lessons: makeIndex('a', 'outside', makeSummary('parent', { audience: 'parent' })),
-      child: parentOnlyChild(makePlan({ themeId: 'manual', pinned: ['outside'] })),
-    }));
+      child: parentOnlyChild(makePlan({ themeId: 'manual' })),
+    });
+    const result = planToday(request);
     expect(result.stage?.ageRange).toEqual([24, 35]);
     expect(result.theme?.id).toBe('manual');
     expect(result.items.map((item) => item.lessonId)).toEqual(['parent', 'a']);
     expect(result.items[0]).not.toHaveProperty('offlineOnly');
     expect(result.items[1].offlineOnly).toBe(true);
+    const pinned = planToday({
+      ...request,
+      child: parentOnlyChild(makePlan({ themeId: 'manual', pinned: ['outside'] })),
+    });
+    expect(pinned.items.map((item) => item.lessonId)).toEqual(['outside', 'parent', 'a']);
+    expect(pinned.items[0]).toMatchObject({ reason: 'pinned', offlineOnly: true });
+    expect(pinned.items[1]).not.toHaveProperty('offlineOnly');
+    expect(pinned.items[2].offlineOnly).toBe(true);
   });
 
-  it('keeps available pinned parents but does not invent a fallback stage for a route without stages', () => {
+  it('keeps available pinned parents and offline children without inventing a fallback stage', () => {
     const result = planToday(input({
       route: makeRoute([]),
-      lessons: makeIndex('a', makeSummary('parent', { audience: 'parent' })),
+      lessons: makeIndex('a', 'b', makeSummary('parent', { audience: 'parent' })),
       child: parentOnlyChild(makePlan({ pinned: ['a', 'parent'] })),
     }));
     expect(result.stage).toBeNull();
-    expect(result.items.map((item) => item.lessonId)).toEqual(['parent']);
-    expect(result.items[0]).not.toHaveProperty('offlineOnly');
+    expect(result.items.map((item) => item.lessonId)).toEqual(['a', 'parent']);
+    expect(result.items[0]).toMatchObject({ reason: 'pinned', offlineOnly: true });
+    expect(result.items[1]).not.toHaveProperty('offlineOnly');
   });
 
   it.each([

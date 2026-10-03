@@ -99,16 +99,16 @@ export function planToday(args: {
       !lessons[lessonId]
     ) return false;
     const lesson = lessons[lessonId];
+    if (age.months < lesson.ageRange[0] || age.months > lesson.ageRange[1] + 3) return false;
     const isChild = lesson.audience !== 'parent';
-    if (
-      mode === 'parent-only' &&
-      (age.months < lesson.ageRange[0] || age.months > lesson.ageRange[1] || (isChild && !offlineOnly))
-    ) return false;
-    if (offlineOnly && (mode !== 'parent-only' || !isChild || !stageLessonIds.has(lessonId))) return false;
-    if (isChild && !offlineOnly && childLessonCount >= (policy.childLessonsPerDay ?? Infinity)) return false;
+    // 适龄置顶优先保留；路线外的扩展课也可转为线下版。
+    const isOffline = offlineOnly || (mode === 'parent-only' && isChild && reason === 'pinned');
+    if (mode === 'parent-only' && isChild && !isOffline) return false;
+    if (isOffline && (mode !== 'parent-only' || !isChild || (reason !== 'pinned' && !stageLessonIds.has(lessonId)))) return false;
+    if (isChild && !isOffline && childLessonCount >= (policy.childLessonsPerDay ?? Infinity)) return false;
     selected.add(lessonId);
-    items.push({ lessonId, reason, lesson, ...(offlineOnly ? { offlineOnly: true } : {}) });
-    if (isChild && !offlineOnly) childLessonCount += 1;
+    items.push({ lessonId, reason, lesson, ...(isOffline ? { offlineOnly: true } : {}) });
+    if (isChild && !isOffline) childLessonCount += 1;
     return true;
   };
 
@@ -146,11 +146,10 @@ export function planToday(args: {
   for (const lessonId of themeLessons) add(lessonId, 'theme');
 
   if (mode === 'parent-only' && stage && items.length < policy.lessonsPerDay) {
-    // 先选完本阶段适龄家长课，置顶 child 也只能在剩余名额中以线下版补位。
+    // 非置顶候选先选本阶段适龄家长课，再以本阶段 child 的线下版补位。
     for (const theme of stage.themes) {
       for (const lessonId of theme.lessons) add(lessonId, 'balance');
     }
-    for (const lessonId of child.plan.pinned) add(lessonId, 'pinned', true);
     for (const { lessonId } of ranked) add(lessonId, 'theme', true);
     for (const theme of stage.themes) {
       for (const lessonId of theme.lessons) add(lessonId, 'balance', true);

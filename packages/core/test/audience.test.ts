@@ -77,7 +77,7 @@ describe('不同 audience 的候选与预算', () => {
   });
 
   it('只尾删超预算的共看课，保留前后家长课且不例外保留超额单课', () => {
-    const child = makeChild({ plan: makePlan({ pinned: ['parent', 'child', 'legacy', 'parent2'] }) });
+    const child = makeChild({ birthday: '2024-04-02', plan: makePlan({ pinned: ['parent', 'child', 'legacy', 'parent2'] }) });
     child.screen.mode = 'co-view';
     const input = { route, lessons, child, history: [], date, usedSec: 300 };
     expect(planToday(input).items.map((item) => item.lessonId)).toEqual(['parent', 'child', 'parent2']);

@@ -95,3 +95,4 @@ Base：`http://<host>:4310`。JSON 请求/响应；错误统一 `{"error": {"cod
 |---|---|---|---|
 | POST | `/api/preview/token` | 👤 | → `PreviewToken`。令牌 scope=preview：10 分钟过期，只允许 GET `/api/lessons*`、`/api/lexicon`、`/api/packs`、`/api/plugins`、`/api/routes*`、`/api/schemas` 与 `/packs/*`、`/plugins/*` 静态文件；不能调用任何写接口或管理接口。播放端预览 URL 使用 `#/preview/<id>?previewToken=<token>`（不再携带 admin token）。 |
 | PUT | `/api/devices/:id` | 👤 | 新增可选字段 `allowedChildIds: string[] \| null`（null=全部孩子）。`PUT /api/device/child` 与 `POST /api/sessions` 只接受其中的孩子。 |
+| GET | `/api/children/:id/today` | 👤📺 | （v1.1 规则补充）所有候选（含置顶/复习/均衡）须满足月龄：孩子月龄 ∈ [lesson.ageRange[0], lesson.ageRange[1]+3]；生效模式为 parent-only 时，适龄的置顶 child 课以 `offlineOnly` 线下版保留；`stage.screen.childLessonsPerDay` 与每日时长上限同时生效。 |
