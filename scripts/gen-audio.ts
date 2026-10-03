@@ -56,7 +56,7 @@ export async function generateAudio(
 ): Promise<AudioResult> {
   const result: AudioResult = { generated: 0, skipped: 0, failed: 0, pruned: 0, planned: 0, issues: [] };
   if ((runtime.platform ?? process.platform) !== 'darwin') {
-    console.log('音频生成仅支持 macOS 的 say / afconvert；当前平台跳过并成功退出。可在 Mac 上生成后随内容包分发。');
+    console.log('音频生成仅支持 macOS 的 say / afconvert；当前平台跳过并成功退出。系统合成音频仅限个人非商业使用，不可公开再分发。');
     return result;
   }
   const voices: Record<Lang, string> = { zh: options.voiceZh ?? 'Tingting', en: options.voiceEn ?? 'Samantha' };
@@ -182,6 +182,7 @@ export async function main(args = process.argv.slice(2)): Promise<void> {
     await generateAudio('', {}, { platform: process.platform });
     return;
   }
+  console.log('使用提示：macOS 系统合成音频仅限个人非商业使用，不可公开再分发；公开发布须用获授权的 TTS 或真人录音重建 audio/，见 docs/dev/content-pipeline.md。');
   for (const directory of await packDirectories(values.pack)) {
     const result = await generateAudio(directory, {
       voiceZh: values['voice-zh'], voiceEn: values['voice-en'], rate: Number(values.rate),

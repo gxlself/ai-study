@@ -119,6 +119,7 @@ export async function resourceIssues(
 export function routeIssues(
   routes: PackInspection['routes'], lessons: readonly LessonFile[],
   onLessonIssue?: (id: string, entry: ValidationIssue) => void,
+  requireThemeMembership = routes.length > 0,
 ): ValidationIssue[] {
   const found: ValidationIssue[] = [];
   const byId = new Map(lessons.map((item) => [item.lesson.id, item.lesson]));
@@ -178,7 +179,9 @@ export function routeIssues(
       found.push(issue(`${file}.coView`, '亲子共看课的 coView 应为 required，必须家长陪同', 'warning'));
     }
     const count = membership.get(lesson.id) ?? 0;
-    if (count !== 1) found.push(issue(file, `课程 "${lesson.id}" 在主题中出现 ${count} 次，应且仅应出现 1 次`, 'warning'));
+    if (requireThemeMembership && count !== 1) {
+      found.push(issue(file, `课程 "${lesson.id}" 在主题中出现 ${count} 次，应且仅应出现 1 次`, 'warning'));
+    }
   }
   return found;
 }
@@ -283,9 +286,10 @@ export async function inspectPack(
       issues.push(duplicate);
     }
   }
+  // 声明了路线却读取失败时仍检查归属，不能误当成无路线扩展包。
   issues.push(...routeIssues(result.routes, result.lessonFiles, (id, entry) => {
     for (const item of lessonIds.get(id) ?? []) item.issues.push(entry);
-  }));
+  }, manifest.routes.length > 0));
   result.validLessons = result.lessonFiles.filter((item) => !item.issues.some((entry) => entry.level === 'error')).map((item) => item.lesson);
   result.audio = await parseFile(dir, 'audio/manifest.json', AudioManifest, issues, 'ignore');
   result.speech = collectSpeech({ lexicon: result.lexicon, lessons: result.validLessons, fallbackConcepts: result.fallbackConcepts });

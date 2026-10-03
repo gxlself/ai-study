@@ -73,6 +73,7 @@ describe('TTS 流水线', () => {
     expect(dry.planned).toBeGreaterThan(0);
     expect(await fileExists(root, 'audio/manifest.json')).toBe(false);
     expect(await generateAudio('/does-not-exist', {}, { platform: 'linux', render })).toMatchObject({ planned: 0 });
+    expect(console.log).toHaveBeenCalledWith(expect.stringContaining('仅限个人非商业使用，不可公开再分发'));
   });
 
   it('声音和语速变化会重新生成对应音频，声音信息不冒充旧文件来源', async () => {

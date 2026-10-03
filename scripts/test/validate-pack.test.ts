@@ -117,6 +117,57 @@ describe('内容包检查', () => {
 });
 
 describe('路线一致性', () => {
+  it.each(['empty', 'omitted'])('routes=%s 的扩展包不要求主题归属', async (kind) => {
+    const manifest = JSON.parse(await readFile(path.join(root, 'pack.json'), 'utf8'));
+    if (kind === 'empty') manifest.routes = [];
+    else delete manifest.routes;
+    await writeJson(root, 'pack.json', manifest);
+    await writeJson(root, 'lessons/hello.json', { ...lesson(), themeId: undefined });
+    const result = await inspectPack(root, { checkAudio: false });
+    expect(result.manifest?.routes).toEqual([]);
+    expect(result.routes).toEqual([]);
+    expect(result.issues).toEqual([]);
+    expect(result.validLessons).toHaveLength(1);
+    expect(failure(result.issues, true)).toBe(false);
+  });
+
+  it('无路线只豁免主题归属，仍检查共看、概念、资源、标点与缺音', async () => {
+    const manifest = JSON.parse(await readFile(path.join(root, 'pack.json'), 'utf8'));
+    await writeJson(root, 'pack.json', { ...manifest, routes: [] });
+    await writeJson(root, 'lessons/hello.json', {
+      ...lesson('hello.lesson', { items: ['missing'] }),
+      title: { zh: '你好,' }, coView: 'optional', cover: { image: 'assets/missing.svg' },
+    });
+    const result = await inspectPack(root);
+    for (const text of ['coView', '不存在概念', '资源缺失', '半角标点', '缺少']) {
+      expect(result.issues.some((entry) => entry.message.includes(text)), text).toBe(true);
+    }
+    expect(result.issues.some((entry) => entry.message.includes('在主题中出现'))).toBe(false);
+    expect(result.validLessons).toEqual([]);
+    expect(failure(result.issues, true)).toBe(true);
+  });
+
+  it.each(['missing', 'invalid'])('声明的路线 %s 时仍报错误与未归主题警告', async (kind) => {
+    if (kind === 'missing') await rm(path.join(root, 'routes/hello.json'));
+    else await writeJson(root, 'routes/hello.json', { ...route(), stages: [] });
+    const result = await inspectPack(root, { checkAudio: false });
+    expect(result.routes).toEqual([]);
+    expect(result.issues.some((entry) => entry.path.startsWith('routes/hello.json') && entry.level === 'error')).toBe(true);
+    expect(result.issues.some((entry) => entry.message.includes('在主题中出现 0 次'))).toBe(true);
+    expect(failure(result.issues, true)).toBe(true);
+  });
+
+  it('有路线包的额外课程仍必须归入主题', async () => {
+    await writeJson(root, 'lessons/outside.json', { ...lesson('outside.lesson'), themeId: undefined });
+    const result = await inspectPack(root, { checkAudio: false });
+    expect(result.issues).toEqual([{
+      path: 'lessons/outside.json',
+      message: '课程 "outside.lesson" 在主题中出现 0 次，应且仅应出现 1 次',
+      level: 'warning',
+    }]);
+    expect(failure(result.issues, true)).toBe(true);
+  });
+
   it.each([
     { next: [24, 30], message: '重叠' },
     { next: [26, 30], message: '不连续' },

@@ -202,9 +202,12 @@ pnpm --filter @sprout/player build
 - Fluent Emoji：Microsoft，MIT；适用范围和完整许可见 [`content/packs/sprout-core/LICENSES.md`](content/packs/sprout-core/LICENSES.md)。
 - 芽芽成长自绘图形：CC0-1.0；对应来源见 `content/packs/sprout-core/assets/sources.json`。
 - 内置内容包、旋律、歌词和音频：以课程与内容包中的真实署名为准；传统旋律、公有领域和原创歌词不能互相替代。
+- macOS 系统合成音频（Tingting、Samantha 等）：**仅限个人非商业使用，不可公开再分发**，不属于课程或图片的 CC0/MIT 授权。公开仓库、下载 ZIP、CDN、应用安装包及商业产品不得附带这些录音，免费或非营利发布也不例外；须改用明确允许相应用途与再分发的可商用 TTS 或获授权真人录音，重新生成整个目标包的 `audio/`、bundle 与 ZIP。
 - 播放端界面图标使用 Lucide，播放端关于页和对应包信息会显示署名。
 
 新增图片、录音、视频、旋律或插件时，请同时更新内容包的 `credits`、`LICENSES.md` 或插件清单，不要把 `custom` 当作自动获得许可。
+
+音频条款依据 Apple macOS Tahoe 26 许可第 2.F 节（2026-10-03 核对，以实际安装版本为准）。服务端可通过现有 `TtsProvider` 接口接入获授权声音，`audio/manifest.json` 的结构与文本 key 不变；详细接入、全量重配音及发布检查见[内容流水线](docs/dev/content-pipeline.md#音频授权与公开发布)。后台切换设置不会自动替换内置或扩展包音频。
 
 ## 免责声明
 

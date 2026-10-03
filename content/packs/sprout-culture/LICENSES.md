@@ -27,7 +27,16 @@ https://creativecommons.org/publicdomain/zero/1.0/legalcode
 
 本包未引入第三方真人录音、第三方歌曲、歌词或旋律。家长指引只显示给成人阅读，不把guide内容朗读给宝宝。
 
-**原创文字和SVG的CC0声明不自动授权Apple系统声音或合成录音的所有分发用途。** 本交付用于项目既定家庭自用场景；对外公开或商业分发前，发布者须核对所用系统声音的适用条件，或使用有明确分发许可的TTS重新生成。本文件不声称已取得第三方声音的商业分发授权。
+**系统合成音频仅限个人非商业使用，不可公开再分发。** 原创文字和SVG的CC0不覆盖Apple系统声音及其录音；不得随公开仓库、下载ZIP、网站、CDN、应用安装包或商业产品发布，免费和非营利分享也不例外，“内部验收”不是额外授权。
+
+依据：Apple《macOS Tahoe 26软件许可协议》第2.F节（Voices; Live Captions），2026-10-03核对；实际使用以安装版本及具体声音条款为准：
+
+```text
+https://www.apple.com/legal/sla/
+https://www.apple.com/legal/sla/docs/macOSTahoe.pdf
+```
+
+公开分发前必须用明确允许相应用途及音频再分发的可商用TTS，或已获录音与分发授权的真人录音，重建整个`audio/`并清除旧系统录音与缓存，再重建bundle和ZIP。新声音来源与许可须同步本文件、README许可段及`pack.json.credits`。接入现有服务端`TtsProvider`的步骤见`docs/dev/content-pipeline.md`；`audio/manifest.json`仍保持原结构和文本key，后台设置不会自动替换本扩展包音频。
 
 ## 研究与安全说明
 

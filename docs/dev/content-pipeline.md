@@ -205,7 +205,62 @@ pnpm content:audio --pack content/examples/hello-pack --prune
 - `audio/manifest.json.voices` 记录声音，`audio/.tts-settings.json` 记录语速。虽然文件名不含声音与语速，脚本会根据已有记录检测变化并重新生成受影响的文件；隐藏的 settings 是生成缓存，不进入 zip。
 - 对未保留声音或语速记录的旧文件，脚本不能可靠推断其参数，会自动重新生成当前引用的音频，不冒充已知来源。整批合成先写隐藏暂存目录，全部成功才替换正式文件；部分合成失败不会混用新旧声音，暂存目录在退出时删除。
 - 查看可用声音可运行 `say -v '?'`。缺声音时在 macOS 系统设置中下载对应声音，或显式选择已安装的声音。
-- 非 macOS 会打印环境说明并退出 0，不会凭空生成音频。要发布完整离线包，应在 macOS 上生成并交付真实文件；否则严格校验仍会因为缺音失败。
+- 非 macOS 会打印环境说明并退出 0，不会凭空生成音频。个人非商业家庭自用的完整离线包可在 macOS 上生成真实文件；公开发布须按下一节换用有分发授权的音频。严格校验仍会因缺音失败，命令退出 0 不等于已有音频或获得分发授权。
+
+### 音频授权与公开发布
+
+**macOS 系统声音（包括 Tingting、Samantha）生成的音频仅限个人非商业使用，不可公开再分发。** 不得随公开仓库、下载 ZIP、网站、CDN、应用安装包或商业产品发布；免费、非营利和标注作者均不构成例外。原创课程或 SVG 的 CC0、Fluent Emoji 的 MIT 不覆盖系统声音或其合成录音，也不能把“内部验收”当作额外授权。
+
+核对日期：2026-10-03。本机为 macOS 26.3.2，参考 Apple《macOS Tahoe 26 软件许可协议》第 2.F 节（Voices; Live Captions）；实际使用须遵守所安装版本及声音的条款：
+
+```text
+https://www.apple.com/legal/sla/
+https://www.apple.com/legal/sla/docs/macOSTahoe.pdf
+```
+
+公开分发前，必须用明确允许相应用途及音频再分发的可商用 TTS，或已取得录音与分发授权的真人录音，**重新生成整个目标包的 `audio/`**，而不是只补缺音。真人录音不采集孩子声音；保留录音者授权、TTS 服务及具体 voice 的许可、核对日期与署名要求，写入 `LICENSES.md`、包 README 许可段和 `pack.json.credits`。当前系统音频不能因换了许可证文字或 TTS 设置就成为可公开发布的素材。
+
+替换前先保存个人自用副本，在独立发布目录清除旧 `audio/tts/`、`audio/manifest.json` 与 `audio/.tts-settings.json`，避免增量缓存沿用旧声音；清理所有未引用的旧系统录音，再重建 bundle 与 ZIP。`content:validate --strict` 只核对结构、文件与覆盖率，不审查声音授权。
+
+### 服务端 TTS provider 接入
+
+现有扩展接口位于 `apps/server/src/tts/provider.ts`，由 `apps/server/src/tts/index.ts` 导出：
+
+```ts
+interface TtsProvider {
+  readonly id: string;
+  status(): Promise<{ available: boolean; voices: { zh: string[]; en: string[] } }>;
+  synthesize(input: {
+    lang: 'zh' | 'en';
+    text: string;
+    voice: string;
+    outputPath: string;
+  }): Promise<void>;
+  close?(): Promise<void>;
+}
+```
+
+provider 的 `id` 应稳定，`status()` 只报告确实可用且已获授权的 voice ID；`synthesize()` 将真实、非空的 M4A 写入服务端分配的绝对 `outputPath`，不播放声音。若供应商输出其它编码，适配器须转换为 M4A，并落实超时、响应大小限制、失败清理和凭据保护；不得上传家庭档案或儿童个人资料。`close()` 用于释放客户端与任务资源。
+
+服务端负责人在 `apps/server/src/app.ts` 创建 `TtsService` 处注入已经实现的 provider：
+
+```ts
+tts = new TtsService({
+  dataDir: config.dataDir,
+  getSettings: () => store.settings(),
+  provider: licensedProvider,
+});
+```
+
+这里的 `licensedProvider` 指实际实现，不是仓库已经提供的商业服务。随后由管理员 `PUT /api/settings` 设置 `ttsProvider: "auto"` 与 `ttsVoices` 的真实 ID；`macos-say` 只允许同名系统 provider，`none` 禁用生成。通过 `GET /api/tts/status` 确认声音，再用 `POST /api/tts`（`{lang,text}`）验证生成。API 没有任意 provider 名称枚举或现成商业 TTS 环境变量；接入需要服务端代码配合，本内容任务不改服务端。
+
+服务端只为 `sprout.custom` 写入音频与清单，**不会替换 `sprout.core` 或扩展包的既有文件**。离线包可复用 `collectSpeech()`、`audioRelativePath()`，并在 `generateAudio()` 的第三参数中注入 `runtime.render`，将每条语料交给获授权的 provider 或录音映射；声音参数使用真实新 voice ID 以避免跳过旧音频。现有 CLI 仍固定使用 `say`、且保留 macOS 平台检查，没有 `--provider` 开关；跨平台与商业 CLI 需要另行实现，不能仅修改后台设置后继续运行默认 `content:audio` 当作重新授权。
+
+### 保持音频契约
+
+更换音频来源时不修改 schema、课程 JSON、语言顺序或 `speechKey(lang, text)`。`AudioManifest` 始终为 `schemaVersion: 1`、`voices`、`entries` 三项；`voices` 记录实际 voice ID（真人录音可用稳定的录音者标识），`entries` 仍把同一个文本 key 映射到真实包内 M4A 相对路径。离线流水线仍可沿用 `audio/tts/<lang>/<sha1(key) 前 16 位>.m4a` 命名，服务端使用自己的缓存文件名，消费端均按清单解析，不增加 provider 字段或提升 schemaVersion。
+
+重建后串行运行目标包 `content:validate --strict`、`content:bundle`、`content:zip`，逐一确认录音覆盖、真实可解码、中英文试听、许可齐全、ZIP 无旧系统音频，再发布。源码和自绘素材可以按其原许可另行发布，不随附系统生成录音。
 
 ## 7. 校验范围、警告与缺失内容
 
@@ -214,7 +269,7 @@ validate 是只读检查，不补造词库、课程或声音。它检查：
 1. `PackManifest`、`Lexicon`、`validateConcepts`、每个词条图片。
 2. `Route` 及阶段连续性、主题唯一性、主题引用课程存在性。
 3. `validateLesson` 的结构、活动 props、默认值与词库引用。可用词条集合为本包加 `sprout.core`；独立包不应把核心词库当成隐含依赖。
-4. 每课只属于一个主题；课程 `themeId` 与主题相同；课程和阶段月龄有交集。
+4. manifest 声明路线时，每课只属于一个主题、`themeId` 与主题相同、课程和阶段月龄有交集；`routes: []`（含缺省）扩展包免除主题归属次数检查，不要求虚构路线。已声明但缺失或损坏的路线仍报 error，并保留归属检查。
 5. `sprite.image`、课程封面等引用的包内资源真实存在。
 6. 朗读音频覆盖率与缺失前 20 条文本。
 7. 中文句子误用英文半角标点的 warning；英文文本正常使用英文标点。
@@ -233,7 +288,7 @@ validate 是只读检查，不补造词库、课程或声音。它检查：
 | manifest 已声明的路线文件缺失、路线引用不存在课程 | error，不因“还没写完”而假装通过 |
 | 词库暂未提供，且没有使用其中的词条 | warning，报告缺失；词库本身允许可选，不制造空词条 |
 | 课程引用了不存在的词条，或资源文件缺失 | error；即使缺的是核心词库，也要显示实际引用问题 |
-| 没有课程、课程未归主题或重复归主题 | 清晰报告；课程归属问题为 warning，不能省略 |
+| 没有课程、课程未归主题或重复归主题 | 无课程始终 warning；已声明路线的包归属问题为 warning；无路线扩展包只免除归属次数检查，其余规则不变 |
 | 课程月龄与阶段无交集 | warning；修正月龄或主题归属 |
 | 课程 `themeId` 与归属主题不一致 | error |
 | 音频未生成或覆盖不全 | warning，显示真实覆盖率与缺失文本 |

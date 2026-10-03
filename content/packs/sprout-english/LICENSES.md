@@ -32,7 +32,16 @@ CC0 法律文本：`https://creativecommons.org/publicdomain/zero/1.0/legalcode`
 
 `audio/manifest.json` 与 `audio/tts/**` 由 macOS `say` 和 `afconvert` 生成，实际声音由 manifest 记录；当前采用中文 Tingting 与英文 Samantha，语速每分钟 125 词。没有录制、上传或使用孩子的声音。
 
-系统声音及其生成音频**不宣称为 CC0**。本次包用于家庭自用和内部验收，适用的 Apple 系统软件及声音条款须由使用者遵守；对外发布、商业分发或更换声音前，应独立确认相应授权，必要时用明确允许分发的声音重建。原创图片和文字的许可不会自动覆盖合成声音。
+系统声音及其生成音频**不属于 CC0，仅限个人非商业使用，不可公开再分发**。不得随公开仓库、下载 ZIP、网站、CDN、应用安装包或商业产品发布；免费、非营利或加署名也不获得分发许可，“内部验收”不是额外授权。原创图片和文字的许可不覆盖合成声音。
+
+依据：Apple《macOS Tahoe 26 软件许可协议》第 2.F 节（Voices; Live Captions），2026-10-03 核对；实际使用以安装版本及具体声音条款为准：
+
+```text
+https://www.apple.com/legal/sla/
+https://www.apple.com/legal/sla/docs/macOSTahoe.pdf
+```
+
+公开分发必须用明确允许相应用途及音频再分发的可商用 TTS，或已获录音与分发授权的真人录音，重新生成整个 `audio/`、清除旧系统录音与缓存，再重建 bundle 与 ZIP。新声音来源与许可须同步本文件、README 许可段和 `pack.json.credits`。接入现有服务端 `TtsProvider` 的步骤见 `docs/dev/content-pipeline.md`；`audio/manifest.json` 的结构与文本 key 保持不变，切换后台设置不会替换本扩展包音频。
 
 ## 不包含
 

@@ -47,3 +47,18 @@
 - 适用范围：`assets/sources.json` 中由芽芽成长原创且标记 `source: "custom"` 的形状、数字、颜色等图形。
 
 芽芽成长将上述原创图形以 CC0 1.0 公共领域贡献方式提供。此声明不覆盖 Fluent Emoji，也不为未来新增的第三方素材重新授予许可；新增素材必须按真实来源补充本文件与 `pack.json` 的 `credits`。
+
+## macOS 系统合成音频
+
+`audio/tts/` 由内容流水线调用 macOS `say` 与 `afconvert` 生成，实际声音见 `audio/manifest.json.voices`。这些系统声音及合成录音不属于上述 MIT 或 CC0 素材。
+
+**系统合成音频仅限个人非商业使用，不可公开再分发。** 不得附带在公开仓库、下载 ZIP、网站、CDN、应用安装包或商业产品中；免费、非营利或加署名也不获得分发许可。不能把家庭自用的录音作为公开发布产物。
+
+依据：Apple《macOS Tahoe 26 软件许可协议》第 2.F 节（Voices; Live Captions），2026-10-03 核对；实际使用以安装版本和具体声音条款为准：
+
+```text
+https://www.apple.com/legal/sla/
+https://www.apple.com/legal/sla/docs/macOSTahoe.pdf
+```
+
+公开分发须改用明确允许相应用途及音频再分发的可商用 TTS，或已获录音与分发授权的真人录音，重新生成整个 `audio/`，清除旧系统录音与生成缓存，再重建 bundle 和 ZIP；不得只换许可文字。新声音的来源、许可与署名须同步 `pack.json.credits` 和本文件。接入现有服务端 `TtsProvider` 的步骤见 `docs/dev/content-pipeline.md`；`AudioManifest` 的结构与 `speechKey` 保持不变，切换后台 TTS 设置不会重建本核心包。
