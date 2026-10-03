@@ -8,6 +8,15 @@ export function isRecord(value: unknown): value is Record<string, unknown> {
   return typeof value === 'object' && value !== null && !Array.isArray(value);
 }
 
+export function memoryStorage(): DataStorage {
+  const items = new Map<string, string>();
+  return {
+    getItem: (key) => items.get(key) ?? null,
+    setItem: (key, value) => { items.set(key, value); },
+    removeItem: (key) => { items.delete(key); },
+  };
+}
+
 export function browserStorage(): DataStorage {
   try {
     if (!globalThis.localStorage) throw new Error('localStorage unavailable');

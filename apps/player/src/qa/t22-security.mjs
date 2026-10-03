@@ -127,10 +127,10 @@ async function context(viewport) {
   return ctx;
 }
 
-async function openPreview(ctx, kind) {
+async function openPreview(ctx, kind, prefix = 'preview') {
   const page = await ctx.newPage();
   page.on('pageerror', (error) => report.errors.push(error.message));
-  await page.goto(`${home}/#/preview/security.${kind}?previewToken=${credentials.preview}&server=${encodeURIComponent(home)}`);
+  await page.goto(`${home}/#/${prefix}/security.${kind}?previewToken=${credentials.preview}&server=${encodeURIComponent(home)}`);
   await expect(page.getByRole('heading', { name: `安全验收 ${kind}`, exact: true })).toBeVisible();
   assert.equal(await page.evaluate(() => location.hash.includes('Token')), false);
   assert.equal(await page.evaluate(() => localStorage.getItem('sprout.deviceToken')), credentials.device);
@@ -158,6 +158,19 @@ try {
     assert.equal(denied, true);
     assert.equal(requests.some((entry) => entry.path === '/unregistered.js'), false);
     report.checks.push({ name: '登记插件可加载，未登记跨源脚本被 CSP 拦截', passed: true });
+    for (const prefix of ['Preview', '%70review']) {
+      const alias = await openPreview(ctx, 'remote', prefix);
+      await alias.close();
+    }
+    report.checks.push({ name: '大小写与编码预览别名不读取设备凭据或调用设备接口', passed: true });
+    const before = requests.length;
+    const hostile = await ctx.newPage();
+    await hostile.goto(`${home}/#/preview/security.remote?previewToken=untrusted-token&server=${encodeURIComponent(remote)}`);
+    await expect(hostile.getByText('预览服务器未在此播放端配置，请从可信后台重新打开。', { exact: true })).toBeVisible();
+    assert.equal(requests.length, before);
+    assert.equal(await hostile.evaluate(() => window.__t22Trusted), undefined);
+    await hostile.close();
+    report.checks.push({ name: 'URL 不得授予外部服务器信任，伪造插件登记在请求前被拒绝', passed: true });
     await page.goto(`${home}/#/preview/security.remote?token=old-admin-token`);
     await expect(page.getByText('不再接受管理员预览凭据，请从后台重新打开预览。')).toBeVisible();
     assert.equal(await page.evaluate(() => location.hash.includes('old-admin-token')), false);

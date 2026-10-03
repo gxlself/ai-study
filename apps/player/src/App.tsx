@@ -8,12 +8,13 @@ import { LessonPlayer } from './pages/LessonPlayer';
 import { Parent } from './pages/Parent';
 import { Rest } from './pages/Rest';
 import { Preview } from './pages/Preview';
+import { isPreviewPath } from './security/preview';
 
 function MainRoutes() {
   const app = useApp();
   const location = useLocation();
   const navigate = useNavigate();
-  const preview = location.pathname.startsWith('/preview');
+  const preview = isPreviewPath(location.pathname);
   useEffect(() => { if (location.pathname !== '/parent') app.setParentAccess(false); }, [location.pathname, app.setParentAccess]);
   if (!preview && location.pathname !== '/setup') {
     if (app.loading) return <Page><Loading /></Page>;

@@ -60,7 +60,7 @@
 
 状态：已缓解（后台先 POST /api/preview/token，再仅通过 previewToken 打开预览，不回退到管理员凭据；过期卸载 iframe，草稿消息只发给确定的播放端 origin；预览仍使用短期 URL 凭据和同源 iframe）——T21
 
-状态：已缓解（播放端仅消费 previewToken，拒绝旧 token 参数并从当前 URL 移除凭据；预览数据源只读且仅用内存，不读取设备连接或保存记录。短期凭据首次仍经 iframe URL 传入，父页 iframe.src 与同源预览风险未完全消除）——T22
+状态：已缓解（播放端仅消费 previewToken，拒绝旧 token 参数并从当前 URL 移除凭据；预览数据源只读且仅用内存，不读取设备凭据或保存记录。短期凭据首次仍经 iframe URL 传入，父页 iframe.src 与同源预览风险未完全消除）——T22
 
 ### H-04：网页活动重定向后未校验最终 origin
 
@@ -175,7 +175,7 @@
 - 问题：除预期 server/player origin 外，还把任意 `document.referrer` origin 加入允许集合。恶意网页嵌入预览 URL 后，可从自身 origin 发送合法格式的 `sprout:preview` 消息，注入任意合法课程草稿。
 - 建议修复：只接受显式配置的后台 origin，并增加一次性 nonce；不要把 referrer 当作信任来源。
 
-状态：已修复（预览消息仅接收实际父窗口和明确后台 origin；独立部署可用 VITE_SPROUT_ADMIN_ORIGIN 配置，不再根据 referrer 扩大来源。保留现有后台草稿消息契约，未额外引入双方未约定的预览 nonce）——T22
+状态：已修复（预览消息仅接收实际父窗口和明确后台 origin；server 参数只接受当前来源、已配对完整基址、明确后台或约定开发端口，不能自行授予信任或指向同源包内伪造 API；独立部署可用 VITE_SPROUT_ADMIN_ORIGIN 配置，不再根据 referrer 扩大来源。保留现有后台草稿消息契约，未额外引入双方未约定的预览 nonce）——T22
 
 ## 已验证的现有防护
 

@@ -3,6 +3,37 @@ export interface PreviewCredential {
   error: string;
 }
 
+export function isPreviewPath(path: string): boolean {
+  try { return /^\/preview(?:\/|$)/i.test(decodeURIComponent(path)); } catch { return false; }
+}
+
+function serverBase(value: string): string {
+  const url = new URL(value);
+  if (!['http:', 'https:'].includes(url.protocol) || url.username || url.password || url.search || url.hash) {
+    throw new Error('预览服务器配置无效');
+  }
+  return `${url.origin}${url.pathname.replace(/\/+$/, '')}`;
+}
+
+export function configuredServer(): string | undefined {
+  try { return localStorage.getItem('sprout.server') ?? undefined; } catch { return undefined; }
+}
+
+export function trustedPreviewServer(
+  server: string, playerOrigin: string, configuredAdmin?: string, savedServer?: string, dev = false,
+): boolean {
+  if (!server) return true;
+  const allowed = new Set<string>();
+  for (const value of [playerOrigin, savedServer]) {
+    if (value) { try { allowed.add(serverBase(value)); } catch { /* 忽略无效旧配置。 */ } }
+  }
+  if (configuredAdmin) allowed.add(adminOrigin('', playerOrigin, configuredAdmin));
+  if (dev) {
+    try { allowed.add(adminOrigin('', playerOrigin, undefined, true)); } catch { /* 原生端没有开发后台默认值。 */ }
+  }
+  return allowed.has(serverBase(server));
+}
+
 export function consumePreviewCredential(params: URLSearchParams, location: Location = window.location): PreviewCredential {
   const legacy = params.has('token') || new URL(location.href).searchParams.has('token');
   const token = params.get('previewToken')?.trim() ?? '';

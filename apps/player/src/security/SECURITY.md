@@ -4,12 +4,15 @@
 
 使用 `#/preview/<id>?previewToken=<十分钟只读凭据>`，拒绝旧的 `token` 参数。
 凭据消费后使用 `history.replaceState` 移除 URL 中的凭据，仅在当前实例内存中保存。
-预览不读取设备连接、不访问设备或记录接口、不将临时状态写入 localStorage/sessionStorage。
+预览不读取设备凭据、不访问设备或记录接口、不将临时状态写入 localStorage/sessionStorage。
 服务端仍须校验 scope 与有效期；后台负责凭据签发和到期卸载预览。
 
 草稿只接收父窗口且 origin 等于明确的后台 origin：
 默认是配置的家庭服务器；本地开发 5310/5410 分别对应后台 5311/5411。
 后台独立部署时设置构建变量 `VITE_SPROUT_ADMIN_ORIGIN`。不以 referrer 推导信任。
+URL 的 server 参数只能选择当前来源、已配对服务器的完整基址、明确后台来源或
+约定的开发后台端口，不能自行授予信任，也不能指向同源内容包内伪造的 API 前缀。
+仅读取 `sprout.server` 配置，不读取设备凭据；无 token 的本地预览也只使用内存状态。
 
 ## 设备凭据与队列
 

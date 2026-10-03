@@ -7,7 +7,8 @@ import { useApp } from '../state/AppContext';
 import { Loading, Page, Problem } from '../ui/common';
 import { LessonExperience } from './LessonPlayer';
 import { requestDeadline } from '../compat';
-import { adminOrigin, consumePreviewCredential, trustedPreviewMessage } from '../security/preview';
+import { adminOrigin, configuredServer, consumePreviewCredential, trustedPreviewMessage, trustedPreviewServer } from '../security/preview';
+import { memoryStorage } from '../data/storage';
 
 export function Preview() {
   const { lessonId } = useParams();
@@ -28,15 +29,19 @@ export function Preview() {
   const age = Number.isFinite(inputAge) ? Math.max(0, Math.min(72, Math.floor(inputAge))) : 24;
   const registry = useMemo(() => new ActivityRegistry(), []);
   const connection = useMemo(() => {
+    const local = () => new LocalSource({ storage: memoryStorage() });
     try {
       const server = serverValue ? normalizeServer(serverValue) : '';
+      if (!trustedPreviewServer(server, location.origin, import.meta.env.VITE_SPROUT_ADMIN_ORIGIN, configuredServer(), import.meta.env.DEV)) {
+        throw new Error('预览服务器未在此播放端配置，请从可信后台重新打开。');
+      }
       return {
-        server, source: server && token ? new RemoteSource(server, token, { preview: true }) : new LocalSource(),
+        server, source: server && token ? new RemoteSource(server, token, { preview: true }) : local(),
         origin: adminOrigin(server, location.origin, import.meta.env.VITE_SPROUT_ADMIN_ORIGIN, import.meta.env.DEV),
         error: credential.error,
       };
     } catch (e) {
-      return { server: '', origin: '', source: new LocalSource(), error: e instanceof Error ? e.message : '预览地址不正确' };
+      return { server: '', origin: '', source: local(), error: e instanceof Error ? e.message : '预览地址不正确' };
     }
   }, [serverValue, token, credential.error]);
   const child = useMemo<ChildProfile>(() => {

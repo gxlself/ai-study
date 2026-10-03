@@ -19,6 +19,7 @@ import { JsonClient } from './http';
 import {
   browserStorage,
   isRecord,
+  memoryStorage,
   parseStoredSessions,
   readJson,
   recentSessions,
@@ -68,12 +69,7 @@ export class RemoteSource implements DataSource {
     this.token = token.trim();
     if (!this.token) throw new DataSourceError('invalid-token', '请先完成设备配对。');
     this.preview = options.preview === true;
-    const memory = new Map<string, string>();
-    this.storage = this.preview ? {
-      getItem: (key) => memory.get(key) ?? null,
-      setItem: (key, value) => { memory.set(key, value); },
-      removeItem: (key) => { memory.delete(key); },
-    } : options.storage ?? browserStorage();
+    this.storage = this.preview ? memoryStorage() : options.storage ?? browserStorage();
     this.client = new JsonClient(options);
     this.now = options.now ?? (() => new Date());
     this.stateKey = remoteStateKey(this.server, this.token);

@@ -7,6 +7,7 @@ import { LocalSource, RemoteSource, readConnection, saveConnection, type DataSou
 import { ActivityRegistry, NavigationManager, SpeechEngine } from '../host';
 import { ParentGate } from '../ui/ParentGate';
 import { observeMediaQuery } from '../compat';
+import { isPreviewPath } from '../security/preview';
 
 export interface Preferences { parentHints: boolean; reducedMotion: boolean; volume: number }
 function loadPreferences(): Preferences {
@@ -48,7 +49,7 @@ interface AppState {
 const Context = createContext<AppState | null>(null);
 
 export function AppProvider({ children }: { children: ReactNode }) {
-  const previewMode = useLocation().pathname.startsWith('/preview');
+  const previewMode = isPreviewPath(useLocation().pathname);
   const [source, setSource] = useState<DataSource | null>(() => previewMode ? null : initialSource());
   const sourceRef = useRef(source);
   const [bootstrap, setBootstrap] = useState<DeviceBootstrap | null>(null);

@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "builtAt": "2026-10-03T01:33:54.639Z",
+  "builtAt": "2026-10-03T07:00:43.502Z",
   "manifest": {
     "schemaVersion": 1,
     "id": "sprout.core",
@@ -3339,6 +3339,540 @@
         "tags": [
           "mascot"
         ]
+      },
+      {
+        "id": "duckling",
+        "category": "animals",
+        "zh": "小鸭",
+        "en": "duckling",
+        "pinyin": "xiǎo yā",
+        "measure": "只",
+        "image": "assets/images/animals/duckling.svg",
+        "sound": {
+          "zh": "嘎嘎",
+          "en": "quack quack"
+        },
+        "phrase": {
+          "zh": "小鸭跟着妈妈",
+          "en": "The duckling follows its mother."
+        },
+        "tags": [
+          "farm"
+        ]
+      },
+      {
+        "id": "wheel",
+        "category": "vehicles",
+        "zh": "轮子",
+        "en": "wheel",
+        "pinyin": "lún zi",
+        "measure": "个",
+        "image": "assets/images/vehicles/wheel.svg",
+        "phrase": {
+          "zh": "轮子可以滚动",
+          "en": "The wheel can roll."
+        },
+        "tags": [
+          "vehicle-part"
+        ]
+      },
+      {
+        "id": "shoulder",
+        "category": "body",
+        "zh": "肩膀",
+        "en": "shoulder",
+        "pinyin": "jiān bǎng",
+        "measure": "个",
+        "image": "assets/images/body/shoulder.svg",
+        "phrase": {
+          "zh": "肩膀可以动一动",
+          "en": "Shoulders can move."
+        }
+      },
+      {
+        "id": "knee",
+        "category": "body",
+        "zh": "膝盖",
+        "en": "knee",
+        "pinyin": "xī gài",
+        "measure": "个",
+        "image": "assets/images/body/knee.svg",
+        "phrase": {
+          "zh": "膝盖可以弯一弯",
+          "en": "Knees can bend."
+        }
+      },
+      {
+        "id": "hair",
+        "category": "body",
+        "zh": "头发",
+        "en": "hair",
+        "pinyin": "tóu fa",
+        "measure": "缕",
+        "image": "assets/images/body/hair.svg",
+        "phrase": {
+          "zh": "头发可以梳一梳",
+          "en": "Hair can be combed."
+        },
+        "tags": [
+          "mass-noun",
+          "non-count"
+        ]
+      },
+      {
+        "id": "mirror",
+        "category": "home",
+        "zh": "镜子",
+        "en": "mirror",
+        "pinyin": "jìng zi",
+        "measure": "面",
+        "image": "assets/images/home/mirror.svg",
+        "phrase": {
+          "zh": "照镜子看看自己",
+          "en": "Look at yourself in the mirror."
+        }
+      },
+      {
+        "id": "plate",
+        "category": "home",
+        "zh": "盘子",
+        "en": "plate",
+        "pinyin": "pán zi",
+        "measure": "个",
+        "image": "assets/images/home/plate.svg",
+        "phrase": {
+          "zh": "盘子可以装食物",
+          "en": "A plate can hold food."
+        }
+      },
+      {
+        "id": "toothpaste",
+        "category": "home",
+        "zh": "牙膏",
+        "en": "toothpaste",
+        "pinyin": "yá gāo",
+        "measure": "管",
+        "image": "assets/images/home/toothpaste.svg",
+        "phrase": {
+          "zh": "牙膏挤一点就好",
+          "en": "Use just a little toothpaste."
+        },
+        "tags": [
+          "mass-noun",
+          "non-count",
+          "safety"
+        ]
+      },
+      {
+        "id": "rain-boots",
+        "category": "clothes",
+        "zh": "雨靴",
+        "en": "rain boot",
+        "pinyin": "yǔ xuē",
+        "measure": "双",
+        "image": "assets/images/clothes/rain-boots.svg",
+        "phrase": {
+          "zh": "下雨天穿雨靴",
+          "en": "Wear rain boots on a rainy day."
+        },
+        "tags": [
+          "pair-image",
+          "weather"
+        ]
+      },
+      {
+        "id": "underwear",
+        "category": "clothes",
+        "zh": "内裤",
+        "en": "underwear",
+        "pinyin": "nèi kù",
+        "measure": "条",
+        "image": "assets/images/clothes/underwear.svg",
+        "phrase": {
+          "zh": "内裤穿在衣服里面",
+          "en": "Underwear goes under clothes."
+        },
+        "tags": [
+          "non-count"
+        ]
+      },
+      {
+        "id": "undershirt",
+        "category": "clothes",
+        "zh": "贴身上衣",
+        "en": "undershirt",
+        "pinyin": "tiē shēn shàng yī",
+        "measure": "件",
+        "image": "assets/images/clothes/undershirt.svg",
+        "phrase": {
+          "zh": "贴身上衣穿在里面",
+          "en": "An undershirt goes underneath."
+        }
+      },
+      {
+        "id": "seedling",
+        "category": "nature",
+        "zh": "幼苗",
+        "en": "seedling",
+        "pinyin": "yòu miáo",
+        "measure": "棵",
+        "image": "assets/images/nature/seedling.svg",
+        "phrase": {
+          "zh": "幼苗长出嫩叶",
+          "en": "The seedling grows new leaves."
+        },
+        "tags": [
+          "plant"
+        ]
+      },
+      {
+        "id": "sapling",
+        "category": "nature",
+        "zh": "小苗",
+        "en": "sapling",
+        "pinyin": "xiǎo miáo",
+        "measure": "棵",
+        "image": "assets/images/nature/sapling.svg",
+        "phrase": {
+          "zh": "小苗长出长叶",
+          "en": "The sapling grows long leaves."
+        },
+        "tags": [
+          "plant"
+        ]
+      },
+      {
+        "id": "bamboo",
+        "category": "nature",
+        "zh": "竹子",
+        "en": "bamboo",
+        "pinyin": "zhú zi",
+        "measure": "根",
+        "image": "assets/images/nature/bamboo.svg",
+        "phrase": {
+          "zh": "熊猫喜欢吃竹子",
+          "en": "Pandas like to eat bamboo."
+        },
+        "tags": [
+          "mass-noun",
+          "non-count",
+          "plant"
+        ]
+      },
+      {
+        "id": "wake-up",
+        "category": "actions",
+        "zh": "起床",
+        "en": "wake up",
+        "pinyin": "qǐ chuáng",
+        "measure": "次",
+        "image": "assets/images/actions/wake-up.svg",
+        "phrase": {
+          "zh": "早上醒来啦",
+          "en": "Wake up in the morning."
+        },
+        "tags": [
+          "action",
+          "non-count",
+          "routine"
+        ]
+      },
+      {
+        "id": "wash-face",
+        "category": "actions",
+        "zh": "洗脸",
+        "en": "wash your face",
+        "pinyin": "xǐ liǎn",
+        "measure": "次",
+        "image": "assets/images/actions/wash-face.svg",
+        "phrase": {
+          "zh": "早上洗洗脸",
+          "en": "Wash your face in the morning."
+        },
+        "tags": [
+          "action",
+          "non-count",
+          "routine"
+        ]
+      },
+      {
+        "id": "wet-hands",
+        "category": "actions",
+        "zh": "湿手",
+        "en": "wet hands",
+        "pinyin": "shī shǒu",
+        "measure": "次",
+        "image": "assets/images/actions/wet-hands.svg",
+        "phrase": {
+          "zh": "先把手打湿",
+          "en": "Wet your hands first."
+        },
+        "tags": [
+          "action",
+          "non-count",
+          "routine"
+        ]
+      },
+      {
+        "id": "rinse-hands",
+        "category": "actions",
+        "zh": "冲洗双手",
+        "en": "rinse your hands",
+        "pinyin": "chōng xǐ shuāng shǒu",
+        "measure": "次",
+        "image": "assets/images/actions/rinse-hands.svg",
+        "phrase": {
+          "zh": "用水冲一冲手",
+          "en": "Rinse your hands with water."
+        },
+        "tags": [
+          "action",
+          "non-count",
+          "routine"
+        ]
+      },
+      {
+        "id": "crawl",
+        "category": "actions",
+        "zh": "爬",
+        "en": "crawl",
+        "pinyin": "pá",
+        "measure": "次",
+        "image": "assets/images/actions/crawl.svg",
+        "phrase": {
+          "zh": "在安全地面慢慢爬",
+          "en": "Crawl slowly on a safe floor."
+        },
+        "tags": [
+          "action",
+          "non-count",
+          "safety"
+        ]
+      },
+      {
+        "id": "duck-under",
+        "category": "actions",
+        "zh": "钻过",
+        "en": "duck under",
+        "pinyin": "zuān guò",
+        "measure": "次",
+        "image": "assets/images/actions/duck-under.svg",
+        "phrase": {
+          "zh": "低头从下面钻过",
+          "en": "Duck under with a grown-up."
+        },
+        "tags": [
+          "action",
+          "non-count",
+          "safety"
+        ]
+      },
+      {
+        "id": "stamp-feet",
+        "category": "actions",
+        "zh": "轻跺脚",
+        "en": "stamp your feet",
+        "pinyin": "qīng duò jiǎo",
+        "measure": "次",
+        "image": "assets/images/actions/stamp-feet.svg",
+        "phrase": {
+          "zh": "轻轻跺跺脚",
+          "en": "Stamp your feet gently."
+        },
+        "tags": [
+          "action",
+          "non-count"
+        ]
+      },
+      {
+        "id": "balance-with-support",
+        "category": "actions",
+        "zh": "扶稳抬脚",
+        "en": "balance with support",
+        "pinyin": "fú wěn tái jiǎo",
+        "measure": "次",
+        "image": "assets/images/actions/balance-with-support.svg",
+        "phrase": {
+          "zh": "扶稳再抬一只脚",
+          "en": "Hold on and lift one foot."
+        },
+        "tags": [
+          "action",
+          "non-count",
+          "safety"
+        ]
+      },
+      {
+        "id": "bend-gently",
+        "category": "actions",
+        "zh": "轻轻弯腰",
+        "en": "bend gently",
+        "pinyin": "qīng qīng wān yāo",
+        "measure": "次",
+        "image": "assets/images/actions/bend-gently.svg",
+        "phrase": {
+          "zh": "慢慢弯下腰",
+          "en": "Bend down slowly."
+        },
+        "tags": [
+          "action",
+          "non-count",
+          "safety"
+        ]
+      },
+      {
+        "id": "turn-slowly",
+        "category": "actions",
+        "zh": "慢慢转身",
+        "en": "turn slowly",
+        "pinyin": "màn màn zhuǎn shēn",
+        "measure": "次",
+        "image": "assets/images/actions/turn-slowly.svg",
+        "phrase": {
+          "zh": "慢慢转一圈",
+          "en": "Turn around slowly."
+        },
+        "tags": [
+          "action",
+          "non-count",
+          "safety"
+        ]
+      },
+      {
+        "id": "morning-breakfast",
+        "category": "actions",
+        "zh": "早上吃早饭",
+        "en": "have breakfast",
+        "pinyin": "zǎo shàng chī zǎo fàn",
+        "measure": "次",
+        "image": "assets/images/actions/morning-breakfast.svg",
+        "phrase": {
+          "zh": "早上一起吃早饭",
+          "en": "Have breakfast together."
+        },
+        "tags": [
+          "action",
+          "non-count",
+          "routine"
+        ]
+      },
+      {
+        "id": "daytime-walk",
+        "category": "actions",
+        "zh": "白天散步",
+        "en": "take a daytime walk",
+        "pinyin": "bái tiān sàn bù",
+        "measure": "次",
+        "image": "assets/images/actions/daytime-walk.svg",
+        "phrase": {
+          "zh": "白天和大人散步",
+          "en": "Take a daytime walk with a grown-up."
+        },
+        "tags": [
+          "action",
+          "non-count",
+          "routine"
+        ]
+      },
+      {
+        "id": "bedtime-reading",
+        "category": "actions",
+        "zh": "睡前读书",
+        "en": "read at bedtime",
+        "pinyin": "shuì qián dú shū",
+        "measure": "次",
+        "image": "assets/images/actions/bedtime-reading.svg",
+        "phrase": {
+          "zh": "睡前一起读本书",
+          "en": "Read a book together before bed."
+        },
+        "tags": [
+          "action",
+          "non-count",
+          "routine"
+        ]
+      },
+      {
+        "id": "ramp",
+        "category": "toys",
+        "zh": "斜坡",
+        "en": "ramp",
+        "pinyin": "xié pō",
+        "measure": "个",
+        "image": "assets/images/toys/ramp.svg",
+        "phrase": {
+          "zh": "小车可以从斜坡滑下",
+          "en": "A toy car can roll down the ramp."
+        },
+        "tags": [
+          "toy"
+        ]
+      },
+      {
+        "id": "single-block",
+        "category": "toys",
+        "zh": "单块积木",
+        "en": "single block",
+        "pinyin": "dān kuài jī mù",
+        "measure": "块",
+        "image": "assets/images/toys/single-block.svg",
+        "phrase": {
+          "zh": "一块积木可以搭起来",
+          "en": "One block can be stacked."
+        },
+        "tags": [
+          "piece-image"
+        ]
+      },
+      {
+        "id": "slide",
+        "category": "places",
+        "zh": "滑梯",
+        "en": "slide",
+        "pinyin": "huá tī",
+        "measure": "架",
+        "image": "assets/images/places/slide.svg",
+        "phrase": {
+          "zh": "滑梯要和大人一起玩",
+          "en": "Use the slide with a grown-up."
+        },
+        "tags": [
+          "playground",
+          "safety"
+        ]
+      },
+      {
+        "id": "teacher",
+        "category": "other",
+        "zh": "老师",
+        "en": "teacher",
+        "pinyin": "lǎo shī",
+        "measure": "位",
+        "image": "assets/images/other/teacher.svg",
+        "phrase": {
+          "zh": "老师会帮助我们",
+          "en": "A teacher can help us."
+        },
+        "tags": [
+          "role"
+        ]
+      },
+      {
+        "id": "caregiver",
+        "category": "other",
+        "zh": "照护者",
+        "en": "caregiver",
+        "pinyin": "zhào hù zhě",
+        "measure": "位",
+        "image": "assets/images/other/caregiver.svg",
+        "phrase": {
+          "zh": "照护者会陪你玩",
+          "en": "A caregiver plays with you."
+        },
+        "tags": [
+          "role",
+          "family"
+        ]
       }
     ]
   },
@@ -5013,13 +5547,14 @@
       "printables": [
         {
           "kind": "cards",
-          "title": "家人陪看卡",
+          "title": "家人与照护者陪看卡",
           "items": [
             "mom",
             "dad",
             "baby",
             "grandma-paternal",
-            "grandpa-paternal"
+            "grandpa-paternal",
+            "caregiver"
           ],
           "size": "large",
           "showText": false,
@@ -5043,7 +5578,7 @@
       "parentGuide": {
         "intro": "先读完，再关屏。优先用家里已有的真实照片。也可由家长在后台上传后打印，不给宝宝看手机。只选熟悉的一两位，按家中实际称呼来说。课程标题不代表每个家庭都要有这些成员。",
         "tips": [
-          "插画卡不是真人照片。家人照片或真人优先。",
+          "插画只示意家人或照护角色。真实照片或真人优先。",
           "宝宝的目光停在哪儿，就说那位家人的称呼。",
           "平时叫名字，留几秒空白。不反复大声叫。",
           "六到八个月不要求稳定叫名反应，也不要求叫爸爸妈妈。"
@@ -5128,18 +5663,18 @@
                 }
               },
               {
-                "text": "拿出一张熟悉家人的照片。用手指着脸。",
+                "text": "拿出一张熟悉照护者的照片。用手指着脸。",
                 "say": {
-                  "zh": "这是妈妈。",
-                  "en": "This is Mom."
+                  "zh": "这是陪你的人。",
+                  "en": "This is your caregiver."
                 },
-                "concept": "mom"
+                "concept": "caregiver"
               },
               {
                 "text": "宝宝看照片时，用家中实际称呼再说一次。",
                 "say": {
-                  "zh": "妈妈在这里。",
-                  "en": "Here is Mom."
+                  "zh": "陪你的人在这里。",
+                  "en": "Your caregiver is here."
                 }
               },
               {
@@ -5903,7 +6438,7 @@
         }
       ],
       "cover": {
-        "concept": "baby",
+        "concept": "mirror",
         "bg": "room"
       },
       "parentGuide": {
@@ -5985,14 +6520,16 @@
                 "say": {
                   "zh": "一起看看呀。",
                   "en": "Let's look together."
-                }
+                },
+                "concept": "mirror"
               },
               {
                 "text": "抱稳宝宝，让家长和宝宝的脸都出现在镜子里。",
                 "say": {
                   "zh": "我也在这里。",
                   "en": "I am here too."
-                }
+                },
+                "concept": "mirror"
               },
               {
                 "text": "指着镜中的宝宝，轻声说宝宝的名字。",
@@ -6015,7 +6552,8 @@
                 "say": {
                   "zh": "我听见啦。",
                   "en": "I hear you."
-                }
+                },
+                "concept": "caregiver"
               },
               {
                 "text": "转开目光或烦躁时，把镜子收好。",
@@ -6177,7 +6715,8 @@
                 "say": {
                   "zh": "看看我们的脸。",
                   "en": "Look at our faces."
-                }
+                },
+                "concept": "mirror"
               },
               {
                 "text": "指自己眼睛旁边，别碰眼球。",
@@ -7051,7 +7590,8 @@
                 "say": {
                   "zh": "轻轻唱呀。",
                   "en": "Let's sing softly."
-                }
+                },
+                "concept": "caregiver"
               },
               {
                 "text": "保持抱稳，用自己的空闲手缓慢张开、合上。",
@@ -7857,7 +8397,7 @@
                   "zh": "你好，宝宝。",
                   "en": "Hello, baby."
                 },
-                "concept": "wave"
+                "concept": "caregiver"
               },
               {
                 "text": "家长挥手说你好，停下来等宝宝看或发声。",
@@ -8402,10 +8942,10 @@
               {
                 "text": "先关屏，把低矮宽口盒放在地垫上，让宝宝摸一个完整的大块积木。",
                 "say": {
-                  "zh": "这是积木。",
+                  "zh": "这是一块积木。",
                   "en": "Here is a block."
                 },
-                "concept": "blocks"
+                "concept": "single-block"
               },
               {
                 "text": "家长慢慢把玩具放进盒子，停一下再说空间词。",
@@ -8421,7 +8961,7 @@
                   "zh": "出来啦。",
                   "en": "Out it comes."
                 },
-                "concept": "blocks"
+                "concept": "single-block"
               },
               {
                 "text": "宝宝想继续时再重复，宝宝转开就先收好玩具。",
@@ -8749,7 +9289,8 @@
                 "say": {
                   "zh": "没有了。还要吗？",
                   "en": "All gone. More?"
-                }
+                },
+                "concept": "plate"
               },
               {
                 "text": "宝宝闭嘴、转头或推开时，尊重信号并停下。",
@@ -10195,7 +10736,7 @@
       "id": "core.s3.duck-mom",
       "title": {
         "zh": "小鸭子找妈妈",
-        "en": "The Duck Looks for Mama"
+        "en": "The Duckling Looks for Mama"
       },
       "summary": {
         "zh": "动物卡讲短故事。等宝宝看和回应。",
@@ -10222,7 +10763,7 @@
           "kind": "cards",
           "title": "小鸭和鸭妈妈故事卡",
           "items": [
-            "duck",
+            "duckling",
             "duck",
             "chicken",
             "cow",
@@ -10244,11 +10785,11 @@
         }
       ],
       "cover": {
-        "concept": "duck",
+        "concept": "duckling",
         "bg": "grass"
       },
       "parentGuide": {
-        "intro": "先读完，再关屏。一张鸭卡当小鸭。另一张当鸭妈妈。其他动物来问好。这是假装故事。家长和鸭妈妈一直在旁。不演走失，不让宝宝害怕。",
+        "intro": "先读完，再关屏。小鸭卡当小鸭。鸭子卡当鸭妈妈。其他动物来问好。这是假装故事。家长和鸭妈妈一直在旁。不演走失，不让宝宝害怕。",
         "tips": [
           "声音可以有变化，但节奏要慢。",
           "跟着宝宝的目光拿卡。保持舒服距离。",
@@ -10257,7 +10798,7 @@
         "phrases": [
           {
             "zh": "小鸭子找妈妈。",
-            "en": "The duck looks for mama."
+            "en": "The duckling looks for mama."
           },
           {
             "zh": "是妈妈吗？",
@@ -10283,14 +10824,14 @@
           "title": "小鸭子找一找",
           "minutes": 5,
           "materials": [
-            "两张鸭卡",
+            "小鸭和鸭妈妈各一张卡",
             "母鸡、奶牛和小狗卡"
           ],
           "steps": [
-            "把一张鸭卡当妈妈。另一张当小鸭。成人拿持。",
+            "把鸭子卡当妈妈。小鸭卡当小鸭。成人拿持。",
             "拿母鸡、奶牛和小狗卡。依次和小鸭问好。",
             "问一次“是妈妈吗？”随后说动物名字。",
-            "让两张鸭卡靠近。说“鸭妈妈在这里”。"
+            "让小鸭卡和鸭妈妈卡靠近。说“鸭妈妈在这里”。"
           ],
           "safety": "这是温和的假装游戏。成人始终在宝宝身边。鸭妈妈也一直在旁。大卡完整，边缘平整。防止咬碎入口。不制造分离或害怕。",
           "domains": [
@@ -10299,7 +10840,7 @@
           ],
           "question": "你想怎样和小鸭打招呼？",
           "levels": {
-            "easier": "只用两张鸭卡。演妈妈和小鸭相遇。",
+            "easier": "只用小鸭和鸭妈妈两张卡。演妈妈和小鸭相遇。",
             "harder": "加入一张动物卡。停下来等宝宝挥手或发声。"
           }
         }
@@ -10311,12 +10852,12 @@
           "props": {
             "goal": "用动物卡讲短故事。等宝宝参与。",
             "materials": [
-              "两张鸭卡",
+              "小鸭和鸭妈妈各一张卡",
               "母鸡、奶牛和小狗卡"
             ],
             "steps": [
               {
-                "text": "把一张鸭卡放在旁边。它扮鸭妈妈。",
+                "text": "把鸭子卡放在旁边。它扮鸭妈妈。",
                 "say": {
                   "zh": "鸭妈妈在这里。",
                   "en": "Duck mama is here."
@@ -10324,12 +10865,12 @@
                 "concept": "duck"
               },
               {
-                "text": "拿另一张鸭卡当小鸭。慢慢走向母鸡卡。",
+                "text": "拿小鸭卡。慢慢走向母鸡卡。",
                 "say": {
                   "zh": "小鸭子找妈妈。",
-                  "en": "The duck looks for mama."
+                  "en": "The duckling looks for mama."
                 },
-                "concept": "duck"
+                "concept": "duckling"
               },
               {
                 "text": "举起母鸡卡。问一次再命名。",
@@ -10356,7 +10897,7 @@
                 "concept": "dog"
               },
               {
-                "text": "把两张鸭卡靠近。讲完故事。",
+                "text": "把小鸭卡和鸭妈妈卡靠近。讲完故事。",
                 "say": {
                   "zh": "鸭妈妈在这里。",
                   "en": "Duck mama is here."
@@ -10724,7 +11265,7 @@
       "schemaVersion": 1,
       "id": "core.s3.head-shoulders",
       "title": {
-        "zh": "头发肩膀膝盖脚",
+        "zh": "头、肩膀、膝盖、脚",
         "en": "Head, Shoulders, Knees and Toes"
       },
       "summary": {
@@ -10841,7 +11382,8 @@
                 "say": {
                   "zh": "肩膀，膝盖。",
                   "en": "Shoulders, knees."
-                }
+                },
+                "concept": "shoulder"
               },
               {
                 "text": "坐着指一指小脚。再停下来等宝宝。",
@@ -10866,7 +11408,7 @@
           "parentTip": "家长学唱后关屏。面对面唱给宝宝听。",
           "props": {
             "title": {
-              "zh": "头发肩膀膝盖脚",
+              "zh": "头、肩膀、膝盖、脚",
               "en": "Head, Shoulders, Knees and Toes"
             },
             "credit": "旋律：传统（公有领域）；中文词：芽芽成长原创；English lyrics: traditional, public domain",
@@ -10894,6 +11436,40 @@
                 "notes": "E4/0.5 E4/0.5 E4/2"
               }
             ],
+            "scene": {
+              "bg": "paper",
+              "ground": "none",
+              "sprites": [
+                {
+                  "concept": "head",
+                  "x": 18,
+                  "y": 55,
+                  "size": 24,
+                  "anim": "none"
+                },
+                {
+                  "concept": "shoulder",
+                  "x": 40,
+                  "y": 55,
+                  "size": 24,
+                  "anim": "none"
+                },
+                {
+                  "concept": "knee",
+                  "x": 62,
+                  "y": 55,
+                  "size": 24,
+                  "anim": "none"
+                },
+                {
+                  "concept": "foot",
+                  "x": 84,
+                  "y": 55,
+                  "size": 24,
+                  "anim": "none"
+                }
+              ]
+            },
             "repeat": 2,
             "actions": [
               {
@@ -11173,7 +11749,7 @@
                   "zh": "给你一个。",
                   "en": "Here is one."
                 },
-                "concept": "blocks"
+                "concept": "single-block"
               },
               {
                 "text": "另一边放三块大积木。说很多，不要求宝宝数。",
@@ -11529,7 +12105,7 @@
                   "zh": "我们慢慢来。",
                   "en": "Let's go slowly."
                 },
-                "concept": "walk"
+                "concept": "rain-boots"
               },
               {
                 "text": "仅在自家平地洒薄清水迹。成人近旁守护。让能独走的宝宝轻踏一下。",
@@ -11537,7 +12113,7 @@
                   "zh": "雨靴轻轻踩。",
                   "en": "Step gently in your rain boots."
                 },
-                "concept": "shoes"
+                "concept": "rain-boots"
               },
               {
                 "text": "回家后用毛巾擦干。再说湿和干。",
@@ -11685,7 +12261,7 @@
                   "zh": "小车在上面。",
                   "en": "The car is up."
                 },
-                "concept": "book"
+                "concept": "ramp"
               },
               {
                 "text": "从固定起点松手。不推小车。",
@@ -12402,7 +12978,7 @@
                   "zh": "小手打湿。",
                   "en": "Wet your hands."
                 },
-                "concept": "wash-hands"
+                "concept": "wet-hands"
               },
               {
                 "text": "抹肥皂并轻轻揉搓。至少二十秒。含手心、手背和指缝。",
@@ -12418,7 +12994,7 @@
                   "zh": "冲一冲。",
                   "en": "Rinse your hands."
                 },
-                "concept": "water"
+                "concept": "rinse-hands"
               },
               {
                 "text": "用干净毛巾擦干。离开水池。",
@@ -12745,7 +13321,7 @@
           "title": "小熊与心情故事卡",
           "items": [
             "bear",
-            "blocks",
+            "single-block",
             "angry",
             "hug",
             "calm"
@@ -12859,7 +13435,7 @@
             "zh": "妈妈陪着小熊",
             "en": "Mama Bear Stays Close"
           },
-          "parentTip": "较大的熊代表熊妈妈，小脸卡代表心情；积木画面为示意。",
+          "parentTip": "较大的熊代表熊妈妈，小脸卡代表心情；每个积木图是一块，叠起或散开放。",
           "props": {
             "title": {
               "zh": "小熊生气了",
@@ -12879,24 +13455,24 @@
                       "anim": "none"
                     },
                     {
-                      "concept": "square",
+                      "concept": "single-block",
                       "x": 67,
-                      "y": 50,
-                      "size": 15,
+                      "y": 59,
+                      "size": 21,
                       "anim": "none"
                     },
                     {
-                      "concept": "square",
+                      "concept": "single-block",
                       "x": 67,
-                      "y": 65,
-                      "size": 15,
+                      "y": 69.5,
+                      "size": 21,
                       "anim": "none"
                     },
                     {
-                      "concept": "square",
+                      "concept": "single-block",
                       "x": 67,
                       "y": 80,
-                      "size": 15,
+                      "size": 21,
                       "anim": "none"
                     }
                   ]
@@ -12920,24 +13496,24 @@
                       "anim": "none"
                     },
                     {
-                      "concept": "square",
+                      "concept": "single-block",
                       "x": 53,
                       "y": 80,
-                      "size": 15,
+                      "size": 21,
                       "anim": "none"
                     },
                     {
-                      "concept": "square",
+                      "concept": "single-block",
                       "x": 70,
                       "y": 80,
-                      "size": 15,
+                      "size": 21,
                       "anim": "none"
                     },
                     {
-                      "concept": "square",
+                      "concept": "single-block",
                       "x": 87,
                       "y": 80,
-                      "size": 15,
+                      "size": 21,
                       "anim": "none"
                     },
                     {
@@ -13088,17 +13664,17 @@
                       "anim": "none"
                     },
                     {
-                      "concept": "square",
+                      "concept": "single-block",
                       "x": 50,
-                      "y": 65,
-                      "size": 15,
+                      "y": 69.5,
+                      "size": 21,
                       "anim": "none"
                     },
                     {
-                      "concept": "square",
+                      "concept": "single-block",
                       "x": 50,
                       "y": 80,
-                      "size": 15,
+                      "size": 21,
                       "anim": "none"
                     },
                     {
@@ -13689,7 +14265,7 @@
             "zh": "搭了，倒了，再搭",
             "en": "Build, Tumble, and Rebuild"
           },
-          "parentTip": "只数真实的单块积木。词库积木图是示意，不用于点数。",
+          "parentTip": "起步图是一块积木。后续搭塔和点数用真实大积木，不要求宝宝达到示范块数。",
           "props": {
             "goal": "用低塔体验上面、高低和推倒再搭。",
             "materials": [
@@ -13703,7 +14279,7 @@
                   "zh": "先放这一块。",
                   "en": "This one goes first."
                 },
-                "concept": "blocks"
+                "concept": "single-block"
               },
               {
                 "text": "慢慢把第二块放在上面。",
@@ -13877,7 +14453,7 @@
                   "zh": "只用这么一点点。",
                   "en": "Just a tiny smear."
                 },
-                "concept": "toothbrush"
+                "concept": "toothpaste"
               },
               {
                 "text": "让宝宝坐稳，先告知再开始。",
@@ -14113,7 +14689,7 @@
             "sun",
             "ball",
             "cookie",
-            "bicycle"
+            "wheel"
           ],
           "size": "large",
           "showText": true,
@@ -14312,7 +14888,7 @@
                       "anim": "none"
                     },
                     {
-                      "concept": "bicycle",
+                      "concept": "wheel",
                       "x": 66,
                       "y": 74,
                       "size": 43,
@@ -14321,8 +14897,8 @@
                   ]
                 },
                 "text": {
-                  "zh": "圆圆看到自行车。轮子的外边圆圆的。",
-                  "en": "Circle sees a bicycle. The outside of each wheel is round."
+                  "zh": "圆圆看到一个轮子。轮子的外边圆圆的。",
+                  "en": "Circle sees a wheel. The outside of the wheel is round."
                 },
                 "narrate": true,
                 "prompts": [
@@ -14360,7 +14936,7 @@
                       "anim": "none"
                     },
                     {
-                      "concept": "bicycle",
+                      "concept": "wheel",
                       "x": 80,
                       "y": 75,
                       "size": 25,
@@ -14377,7 +14953,7 @@
                 },
                 "text": {
                   "zh": "圆圆找到朋友啦。它们看起来都圆圆的。",
-                  "en": "Circle has found friends. The sun, ball, cookie, and wheels look round."
+                  "en": "Circle has found friends. The sun, ball, cookie, and wheel look round."
                 },
                 "narrate": true,
                 "prompts": [
@@ -15080,7 +15656,8 @@
                 "say": {
                   "zh": "和你一起玩，我很开心。",
                   "en": "I'm happy playing with you."
-                }
+                },
+                "concept": "mirror"
               },
               {
                 "text": "换难过卡，轻轻皱一皱眉。",
@@ -16108,7 +16685,8 @@
                 "say": {
                   "zh": "盘子的边也圆圆的。",
                   "en": "The plate has a round edge too."
-                }
+                },
+                "concept": "plate"
               },
               {
                 "text": "在安全处指圆钟的钟面。",
@@ -16419,14 +16997,21 @@
               "sprites": [
                 {
                   "concept": "wash-hands",
-                  "x": 28,
+                  "x": 18,
                   "y": 73,
-                  "size": 40,
+                  "size": 35,
                   "anim": "none"
                 },
                 {
                   "concept": "toothbrush",
-                  "x": 65,
+                  "x": 43,
+                  "y": 75,
+                  "size": 22,
+                  "anim": "none"
+                },
+                {
+                  "concept": "hair",
+                  "x": 66,
                   "y": 75,
                   "size": 23,
                   "anim": "none"
@@ -16435,7 +17020,7 @@
                   "concept": "comb",
                   "x": 85,
                   "y": 75,
-                  "size": 20,
+                  "size": 18,
                   "anim": "none"
                 }
               ]
@@ -16472,7 +17057,7 @@
             },
             "steps": [
               {
-                "concept": "droplet",
+                "concept": "wet-hands",
                 "caption": {
                   "zh": "先用清水湿手。",
                   "en": "Wet hands with clean running water."
@@ -16494,7 +17079,7 @@
                 }
               },
               {
-                "concept": "droplet",
+                "concept": "rinse-hands",
                 "caption": {
                   "zh": "用清水冲干净。",
                   "en": "Rinse with clean running water."
@@ -16819,11 +17404,11 @@
           "kind": "cards",
           "title": "五只小鸭大卡",
           "items": [
-            "duck",
-            "duck",
-            "duck",
-            "duck",
-            "duck"
+            "duckling",
+            "duckling",
+            "duckling",
+            "duckling",
+            "duckling"
           ],
           "size": "large",
           "showText": false,
@@ -16841,7 +17426,7 @@
         }
       ],
       "cover": {
-        "concept": "duck",
+        "concept": "duckling",
         "bg": "grass"
       },
       "parentGuide": {
@@ -17056,7 +17641,7 @@
           "props": {
             "rounds": [
               {
-                "item": "duck",
+                "item": "duckling",
                 "count": 5,
                 "layout": "row"
               }
@@ -17757,7 +18342,7 @@
         "bg": "forest"
       },
       "parentGuide": {
-        "intro": "每页停一停，宝宝说“吃”，你接“熊猫吃竹子”。熊猫会吃竹子、爬树，也会休息。竹子暂无专用词条，只在文字中说；图里的树和草是环境，不指成竹子。宝宝不模仿爬高。",
+        "intro": "每页停一停，宝宝说“吃”，你接“熊猫吃竹子”。熊猫会吃竹子、爬树，也会休息。吃竹子的画面使用竹子词条，树只用于环境和爬树。宝宝不模仿爬高。",
         "tips": [
           "优先问“熊猫在哪里”“在做什么”。",
           "只问一题，回应后扩成短句，不逼复述。",
@@ -17811,7 +18396,7 @@
           ],
           "question": "你想让玩偶接下来做什么？",
           "levels": {
-            "easier": "宝宝指书，大人说“吃”或“睡”。",
+            "easier": "宝宝指书，大人说“吃”或“休息”。",
             "harder": "宝宝摆玩偶并说一两个词，大人扩成“熊猫在休息”。"
           }
         }
@@ -17819,7 +18404,7 @@
       "steps": [
         {
           "type": "story",
-          "parentTip": "原创故事；竹子只出现在文字里，树、草不替代竹子。爬树是动物行为。",
+          "parentTip": "原创故事；吃竹子的页面使用竹子词条，树只用于环境和爬树。爬树是动物行为。",
           "props": {
             "title": {
               "zh": "熊猫的一天",
@@ -17873,10 +18458,10 @@
                       "anim": "none"
                     },
                     {
-                      "concept": "tree",
+                      "concept": "bamboo",
                       "x": 80,
                       "y": 68,
-                      "size": 24,
+                      "size": 30,
                       "anim": "none"
                     }
                   ]
@@ -17997,10 +18582,10 @@
                       "anim": "none"
                     },
                     {
-                      "concept": "tree",
+                      "concept": "bamboo",
                       "x": 76,
                       "y": 68,
-                      "size": 24,
+                      "size": 30,
                       "anim": "none"
                     }
                   ]
@@ -18764,7 +19349,7 @@
                       "anim": "none"
                     },
                     {
-                      "concept": "playground",
+                      "concept": "slide",
                       "x": 52,
                       "y": 68,
                       "size": 44,
@@ -18798,7 +19383,7 @@
                       "anim": "none"
                     },
                     {
-                      "concept": "playground",
+                      "concept": "slide",
                       "x": 52,
                       "y": 68,
                       "size": 42,
@@ -18853,7 +19438,7 @@
                       "anim": "none"
                     },
                     {
-                      "concept": "playground",
+                      "concept": "slide",
                       "x": 90,
                       "y": 75,
                       "size": 20,
@@ -18887,7 +19472,7 @@
                       "anim": "none"
                     },
                     {
-                      "concept": "playground",
+                      "concept": "slide",
                       "x": 68,
                       "y": 72,
                       "size": 43,
@@ -18921,7 +19506,7 @@
                   "ground": "grass",
                   "sprites": [
                     {
-                      "concept": "playground",
+                      "concept": "slide",
                       "x": 23,
                       "y": 72,
                       "size": 43,
@@ -18976,7 +19561,7 @@
                       "anim": "none"
                     },
                     {
-                      "concept": "playground",
+                      "concept": "slide",
                       "x": 87,
                       "y": 75,
                       "size": 22,
@@ -19405,7 +19990,7 @@
                 "seconds": 8
               },
               {
-                "concept": "dance",
+                "concept": "turn-slowly",
                 "name": {
                   "zh": "慢转一圈",
                   "en": "One slow turn"
@@ -19417,7 +20002,7 @@
                 "seconds": 12
               },
               {
-                "concept": "head",
+                "concept": "duck-under",
                 "name": {
                   "zh": "钻过手臂下面",
                   "en": "Duck under an arm"
@@ -19582,8 +20167,8 @@
       "audience": "child",
       "objectives": [
         {
-          "zh": "把雨伞、外套和帽子连到用途。",
-          "en": "Connect an umbrella, a coat, and a hat with their uses."
+          "zh": "把雨靴、外套和帽子连到用途。",
+          "en": "Connect rain boots, a coat, and a hat with their uses."
         },
         {
           "zh": "和大人商量出门要带什么。",
@@ -19591,20 +20176,20 @@
         }
       ],
       "cover": {
-        "concept": "umbrella",
+        "concept": "rain-boots",
         "bg": "sky"
       },
       "parentGuide": {
-        "intro": "先看三个出门情境，再找遮雨的伞、保暖的外套、戴头上遮阳的帽子。题目说清用途，不暗示晴天一定热。真实穿戴还要看温度、风和活动量，由成人判断；不是只靠一件物品就足够。",
+        "intro": "先看三个出门情境，再找能帮脚挡雨的雨靴、保暖的外套、戴头上遮阳的帽子。题目说清用途，不暗示晴天一定热。真实穿戴还要看温度、风和活动量，由成人判断；不是只靠一件物品就足够。",
         "tips": [
           "说物品的用途，不只背天气和物品配对。",
-          "宝宝只指伞时接一句“伞能遮雨”。",
+          "宝宝只指雨靴时接一句“雨靴能帮脚保持干燥”。",
           "晴天的帽子是遮阳例子，不表示冬天不用帽子。"
         ],
         "phrases": [
           {
-            "zh": "雨伞能遮雨。",
-            "en": "An umbrella keeps rain off us."
+            "zh": "雨靴能帮脚保持干燥。",
+            "en": "Rain boots help keep feet dry."
           },
           {
             "zh": "天冷了，穿保暖的外套。",
@@ -19632,6 +20217,7 @@
           "title": "一起准备出门篮",
           "minutes": 7,
           "materials": [
+            "雨靴",
             "帽子",
             "适合当天天气的外套",
             "成人管理的雨伞",
@@ -19771,18 +20357,18 @@
             "rounds": [
               {
                 "prompt": {
-                  "zh": "下雨出门，哪样能遮雨？",
-                  "en": "It's raining. Which one keeps rain off us?"
+                  "zh": "下雨出门，哪样能帮脚保持干燥？",
+                  "en": "It's raining. Which one helps keep our feet dry?"
                 },
                 "options": [
+                  "rain-boots",
                   "ball",
-                  "umbrella",
                   "spoon"
                 ],
-                "answer": "umbrella",
+                "answer": "rain-boots",
                 "explain": {
-                  "zh": "雨伞能遮雨，大人来撑。",
-                  "en": "An umbrella keeps rain off us. A grown-up holds it."
+                  "zh": "雨靴能帮脚保持干燥，大人帮忙穿好。",
+                  "en": "Rain boots help keep feet dry. A grown-up helps put them on."
                 }
               },
               {
@@ -20589,7 +21175,7 @@
                 "seconds": 6
               },
               {
-                "concept": "foot",
+                "concept": "balance-with-support",
                 "name": {
                   "zh": "扶稳抬一脚",
                   "en": "Lift One Foot with Support"
@@ -20601,7 +21187,7 @@
                 "seconds": 6
               },
               {
-                "concept": "foot",
+                "concept": "bend-gently",
                 "name": {
                   "zh": "轻弯腰摸脚尖",
                   "en": "A Gentle Reach toward Your Toes"
@@ -20613,7 +21199,7 @@
                 "seconds": 6
               },
               {
-                "concept": "dance",
+                "concept": "turn-slowly",
                 "name": {
                   "zh": "慢慢转一圈",
                   "en": "One Slow Turn"
@@ -20756,7 +21342,7 @@
             "zh": "两个动作轮流来",
             "en": "Two Moves Take Turns"
           },
-          "parentTip": "小脚图只提示跺脚。每步一次，剩余时间等待；可暂停、跳过或坐着拍腿。",
+          "parentTip": "轻跺脚动作图只作提示。每步一次，剩余时间等待；可暂停、跳过或坐着拍腿。",
           "props": {
             "intro": {
               "zh": "拍手、跺脚，轻轻轮流来。",
@@ -20776,7 +21362,7 @@
                 "seconds": 6
               },
               {
-                "concept": "foot",
+                "concept": "stamp-feet",
                 "name": {
                   "zh": "跺一下",
                   "en": "One Gentle Stamp"
@@ -20800,7 +21386,7 @@
                 "seconds": 6
               },
               {
-                "concept": "foot",
+                "concept": "stamp-feet",
                 "name": {
                   "zh": "再跺一下",
                   "en": "Stamp Again"
@@ -20824,7 +21410,7 @@
                 "seconds": 6
               },
               {
-                "concept": "foot",
+                "concept": "stamp-feet",
                 "name": {
                   "zh": "跺一下",
                   "en": "One Gentle Stamp"
@@ -21084,7 +21670,7 @@
             "zh": "按这一天的安排分",
             "en": "Sort This Day's Plans"
           },
-          "parentTip": "先读出完整时段名称。卡片借用现有动作图，不表示读书、散步或睡觉只能在某一时段。",
+          "parentTip": "先读出完整时段名称。早饭、散步和睡前读书使用明确时段词条；这些活动并非只能在这一时段。",
           "props": {
             "prompt": {
               "zh": "按卡片说出的时段分一分。",
@@ -21112,11 +21698,7 @@
             ],
             "items": [
               {
-                "item": {
-                  "zh": "早上吃早饭",
-                  "en": "Breakfast in the Morning",
-                  "image": "assets/images/actions/eat.svg"
-                },
+                "item": "morning-breakfast",
                 "bin": "day"
               },
               {
@@ -21128,19 +21710,11 @@
                 "bin": "night"
               },
               {
-                "item": {
-                  "zh": "白天散步",
-                  "en": "A Daytime Walk",
-                  "image": "assets/images/actions/walk.svg"
-                },
+                "item": "daytime-walk",
                 "bin": "day"
               },
               {
-                "item": {
-                  "zh": "晚上睡前读书",
-                  "en": "Reading before Bed at Night",
-                  "image": "assets/images/home/book.svg"
-                },
+                "item": "bedtime-reading",
                 "bin": "night"
               }
             ]
@@ -21213,13 +21787,13 @@
         }
       ],
       "cover": {
-        "concept": "shirt",
+        "concept": "underwear",
         "bg": "room"
       },
       "parentGuide": {
-        "intro": "先说清这次出门的约定：贴身上衣、裤子、袜子、鞋。上衣图只示意贴身上衣。衣物与顺序可按家庭需要调整；不要求全程独立，更不要求按一种顺序穿所有衣服。",
+        "intro": "先说清这次出门的约定：贴身上衣、裤子、袜子、鞋。封面的内裤和第一步的贴身上衣是不同衣物，不混教名称。衣物与顺序可按家庭需要调整；不要求全程独立，更不要求按一种顺序穿所有衣服。",
         "tips": [
-          "上衣图不是内裤图，不混教名称。",
+          "内裤和贴身上衣分别看图、分别命名。",
           "先穿袜子再穿鞋，方便操作。",
           "穿裤子和鞋时让孩子坐稳。",
           "遇到困难，问需要哪一点帮助。"
@@ -21284,7 +21858,7 @@
             "zh": "这次怎样穿",
             "en": "Our Plan for Today"
           },
-          "parentTip": "上衣图示意贴身上衣。说明这是本次约定，裤子与上衣可换序；袜子在鞋子前。",
+          "parentTip": "第一步使用贴身上衣图，不把内裤叫作上衣。说明这是本次约定，裤子与上衣可换序；袜子在鞋子前。",
           "props": {
             "mode": "order",
             "intro": {
@@ -21293,7 +21867,7 @@
             },
             "steps": [
               {
-                "concept": "shirt",
+                "concept": "undershirt",
                 "caption": {
                   "zh": "穿贴身上衣",
                   "en": "Put on your undershirt."
@@ -21388,7 +21962,7 @@
         "bg": "sky"
       },
       "parentGuide": {
-        "intro": "这是小熊的入园故事，不是催孩子入园。故事由妈妈接送，讲时可换成真实照护者。按园所安排说明具体来接环节，并守约；不承诺孩子不哭。老师暂用文字呈现，不借家人图片冒充。",
+        "intro": "这是小熊的入园故事，不是催孩子入园。故事由妈妈接送，讲时可换成真实照护者。按园所安排说明具体来接环节，并守约；不承诺孩子不哭。画面用老师词条图呈现角色，不把它当成某位真实老师。",
         "tips": [
           "先认可想家，再谈求助。",
           "接送约定按真实安排说，不说马上。",
@@ -21458,7 +22032,7 @@
             "zh": "小熊的第一天",
             "en": "Bear's First Day"
           },
-          "parentTip": "真实接送人和来接环节可替换。想家、哭泣都允许；故事不保证孩子立刻适应。",
+          "parentTip": "真实接送人和来接环节可替换。老师用角色词条图呈现；想家、哭泣都允许，故事不保证孩子立刻适应。",
           "props": {
             "title": {
               "zh": "小熊的第一天",
@@ -21524,6 +22098,13 @@
                       "y": 78,
                       "size": 20,
                       "anim": "none"
+                    },
+                    {
+                      "concept": "teacher",
+                      "x": 88,
+                      "y": 74,
+                      "size": 24,
+                      "anim": "none"
                     }
                   ]
                 },
@@ -21565,6 +22146,13 @@
                       "y": 76,
                       "size": 24,
                       "anim": "none"
+                    },
+                    {
+                      "concept": "teacher",
+                      "x": 91,
+                      "y": 72,
+                      "size": 22,
+                      "anim": "none"
                     }
                   ]
                 },
@@ -21587,7 +22175,7 @@
                       "anim": "none"
                     },
                     {
-                      "concept": "blocks",
+                      "concept": "single-block",
                       "x": 57,
                       "y": 78,
                       "size": 22,
@@ -21640,6 +22228,13 @@
                       "y": 46,
                       "size": 18,
                       "anim": "none"
+                    },
+                    {
+                      "concept": "teacher",
+                      "x": 89,
+                      "y": 74,
+                      "size": 22,
+                      "anim": "none"
                     }
                   ]
                 },
@@ -21673,6 +22268,13 @@
                       "x": 84,
                       "y": 78,
                       "size": 18,
+                      "anim": "none"
+                    },
+                    {
+                      "concept": "teacher",
+                      "x": 14,
+                      "y": 74,
+                      "size": 20,
                       "anim": "none"
                     }
                   ]
@@ -22598,14 +23200,14 @@
         }
       ],
       "cover": {
-        "concept": "bed",
+        "concept": "wake-up",
         "bg": "room"
       },
       "parentGuide": {
         "intro": "这是一个家庭的早晨例子，不是统一作息。先回顾孩子今天做过什么。需要尿布照护时，替换上厕所这步，随后清洁和洗手；不要求如厕成功。五步困难时，只看相邻两步。",
         "tips": [
           "上厕所后洗手，不漏卫生步骤。",
-          "洗脸图暂借毛巾，刷牙由成人帮助。",
+          "洗脸和刷牙使用不同动作图，刷牙由成人帮助。",
           "需要穿衣时，在出门前补好。",
           "用餐不开屏，线下计划在饭前说。"
         ],
@@ -22669,7 +23271,7 @@
             "zh": "一个早晨的顺序",
             "en": "One Family's Morning"
           },
-          "parentTip": "这是示例顺序，可按家庭调整。如厕未准备好就替换为尿布照护；出门前穿好衣物。",
+          "parentTip": "这是示例顺序，可按家庭调整。起床和洗脸使用对应动作图；如厕未准备好就替换为尿布照护，出门前穿好衣物。",
           "props": {
             "mode": "order",
             "intro": {
@@ -22678,7 +23280,7 @@
             },
             "steps": [
               {
-                "concept": "bed",
+                "concept": "wake-up",
                 "caption": {
                   "zh": "起床",
                   "en": "Wake up."
@@ -22700,14 +23302,14 @@
                 }
               },
               {
-                "concept": "brush-teeth",
+                "concept": "wash-face",
                 "caption": {
-                  "zh": "洗脸刷牙",
-                  "en": "Wash your face and brush your teeth."
+                  "zh": "洗脸，再刷牙",
+                  "en": "Wash your face, then brush your teeth."
                 },
                 "say": {
-                  "zh": "和大人洗脸刷牙。",
-                  "en": "Wash your face and brush your teeth with a grown-up."
+                  "zh": "和大人洗脸，再刷牙。",
+                  "en": "Wash your face, then brush your teeth with a grown-up."
                 }
               },
               {
@@ -23384,14 +23986,21 @@
               "sprites": [
                 {
                   "concept": "bear",
-                  "x": 32,
+                  "x": 27,
                   "y": 72,
                   "size": 36,
                   "anim": "none"
                 },
                 {
+                  "concept": "teacher",
+                  "x": 58,
+                  "y": 72,
+                  "size": 26,
+                  "anim": "none"
+                },
+                {
                   "concept": "rabbit",
-                  "x": 72,
+                  "x": 84,
                   "y": 76,
                   "size": 24,
                   "anim": "none"
@@ -23599,7 +24208,7 @@
         "bg": "sky"
       },
       "parentGuide": {
-        "intro": "一张一张手动翻，指图、说名字，再听孩子说。幼儿园的物品与规定会不同；书包是否携带以园所为准。老师没有词条，课后用真实介绍，不把家人图片当老师。",
+        "intro": "一张一张手动翻，指图、说名字，再听孩子说。幼儿园的物品与规定会不同；书包是否携带以园所为准。老师用角色词条图呈现，课后仍可结合真实园所介绍。",
         "tips": [
           "看到熟悉的东西，问在哪儿用过。",
           "孩子说一个词，成人扩展成短句。",
@@ -23620,8 +24229,8 @@
             "en": "This is your backpack."
           },
           {
-            "zh": "幼儿园也可能有小球。",
-            "en": "Your preschool may have balls too."
+            "zh": "幼儿园也可能有滑梯。",
+            "en": "Your preschool may have slides too."
           }
         ],
         "why": "指认后等待、回应和扩展，可增加来回对话。英语名称只是互动素材，不替代中文交流，也不承诺看图卡能学会英语。",
@@ -23669,14 +24278,14 @@
             "zh": "慢慢认识它们",
             "en": "Meet the Familiar Things"
           },
-          "parentTip": "用球替代尚无词条的滑梯，不借家人词条当老师。指图后等孩子回应，再手动翻页。",
+          "parentTip": "用滑梯和老师词条图准确提示场景，单块积木让一个物品更清楚。指图后等孩子回应，再手动翻页。",
           "props": {
             "items": [
-              "school",
+              "teacher",
               "book",
-              "blocks",
+              "single-block",
               "crayon",
-              "ball",
+              "slide",
               "backpack"
             ],
             "show": {
@@ -23736,7 +24345,7 @@
         "bg": "grass"
       },
       "parentGuide": {
-        "intro": "这次看会开花的植物，不代表所有植物。种子在合适条件下才能发芽，成长要等待，不承诺几天开花。小芽和叶子图只是阶段示意，不是同株连续照片。真种子只由成人处理。",
+        "intro": "这次看会开花的植物，不代表所有植物。种子在合适条件下才能发芽，成长要等待，不承诺几天开花。幼苗和长叶的小苗图只是阶段示意，不是同株连续照片。真种子只由成人处理。",
         "tips": [
           "每次只问今天有什么不同。",
           "不用“多浇水就长得快”的说法。",
@@ -23803,7 +24412,7 @@
             "zh": "这种植物慢慢长",
             "en": "How This Plant Grows"
           },
-          "parentTip": "限定为会开花的植物。小芽、叶子都是示意；不同种类速度不同，不承诺固定天数。",
+          "parentTip": "限定为会开花的植物。幼苗和长叶的小苗都是阶段示意；不同种类速度不同，不承诺固定天数。",
           "props": {
             "mode": "order",
             "intro": {
@@ -23823,25 +24432,25 @@
                 }
               },
               {
-                "concept": "sprout",
+                "concept": "seedling",
                 "caption": {
-                  "zh": "发芽",
-                  "en": "Sprouting"
+                  "zh": "发芽的幼苗",
+                  "en": "A New Seedling"
                 },
                 "say": {
-                  "zh": "条件合适，种子发芽了。",
-                  "en": "With the right conditions, the seed sprouts."
+                  "zh": "条件合适，种子发芽，长成幼苗。",
+                  "en": "With the right conditions, the seed sprouts into a seedling."
                 }
               },
               {
-                "concept": "leaf",
+                "concept": "sapling",
                 "caption": {
-                  "zh": "长出叶子",
-                  "en": "Growing Leaves"
+                  "zh": "长叶的小苗",
+                  "en": "A Leafy Young Plant"
                 },
                 "say": {
                   "zh": "小苗慢慢长出叶子。",
-                  "en": "The seedling grows leaves."
+                  "en": "The young plant slowly grows leaves."
                 }
               },
               {
@@ -23904,7 +24513,7 @@
                   "ground": "grass",
                   "sprites": [
                     {
-                      "concept": "sprout",
+                      "concept": "seedling",
                       "x": 40,
                       "y": 72,
                       "size": 36,
@@ -23938,17 +24547,10 @@
                   "ground": "grass",
                   "sprites": [
                     {
-                      "concept": "sprout",
-                      "x": 38,
+                      "concept": "sapling",
+                      "x": 47,
                       "y": 72,
-                      "size": 38,
-                      "anim": "none"
-                    },
-                    {
-                      "concept": "leaf",
-                      "x": 75,
-                      "y": 65,
-                      "size": 22,
+                      "size": 40,
                       "anim": "none"
                     },
                     {
@@ -23962,7 +24564,7 @@
                 },
                 "text": {
                   "zh": "小苗长出叶子。大人按它的需要照顾它。",
-                  "en": "The seedling grows leaves. A grown-up cares for it according to its needs."
+                  "en": "The young plant grows leaves. A grown-up cares for it according to its needs."
                 },
                 "narrate": true
               },
@@ -24052,7 +24654,7 @@
         "tips": [
           "保持相近顺序，不机械卡时间。",
           "睡前需要帮助时先回应。",
-          "刷牙由成人帮助，不边走边刷。",
+          "牙膏由成人管理、只用适量；刷牙由成人帮助，不边走边刷。",
           "摇篮曲唱一小段即可，不循环播放。"
         ],
         "phrases": [
@@ -24087,7 +24689,7 @@
           "minutes": 10,
           "materials": [
             "当天需要的清洁用品",
-            "儿童牙刷",
+            "儿童牙刷和适量牙膏",
             "一本纸质图画书"
           ],
           "steps": [
@@ -24170,14 +24772,21 @@
                     },
                     {
                       "concept": "toothbrush",
-                      "x": 59,
+                      "x": 55,
                       "y": 76,
                       "size": 22,
                       "anim": "none"
                     },
                     {
+                      "concept": "toothpaste",
+                      "x": 70,
+                      "y": 76,
+                      "size": 16,
+                      "anim": "none"
+                    },
+                    {
                       "concept": "dad",
-                      "x": 82,
+                      "x": 87,
                       "y": 75,
                       "size": 24,
                       "anim": "none"
@@ -24418,7 +25027,6 @@
     "entries": {
       "en:A Gentle Reach toward Your Toes": "audio/tts/en/6af78ccb72c86bfc.m4a",
       "en:A Flowering Plant's Seed": "audio/tts/en/2f84d86a6d188a20.m4a",
-      "en:A Daytime Walk": "audio/tts/en/cf868492fd7b3a83.m4a",
       "en:A Gentle Jump": "audio/tts/en/66a450f0f9c073e3.m4a",
       "en:A Panda's Day": "audio/tts/en/bfb97b908831abce.m4a",
       "en:A circle has no corners.": "audio/tts/en/d1faabe24f1d5a99.m4a",
@@ -24439,7 +25047,6 @@
       "en:After the nap, Bear plays a little more. Bear tells the teacher when Bear misses Mom.": "audio/tts/en/3a53ef97972abb27.m4a",
       "en:Animals": "audio/tts/en/7cbb065dd6c60e3c.m4a",
       "en:An oval has no corners.": "audio/tts/en/4ad98578bfb453d8.m4a",
-      "en:An umbrella keeps rain off us. A grown-up holds it.": "audio/tts/en/038018014dcfa642.m4a",
       "en:All done. They tidy up together, putting away both big and small toys.": "audio/tts/en/5d748b3c46e4326c.m4a",
       "en:Arms can bend.": "audio/tts/en/a1301f9e1e6fdffa.m4a",
       "en:Bear Feels Angry": "audio/tts/en/87763e49f5c7c131.m4a",
@@ -24463,7 +25070,6 @@
       "en:Bend gently toward your toes. It is okay if you cannot reach.": "audio/tts/en/fe43c33ef096475b.m4a",
       "en:Blue": "audio/tts/en/0490511c9e0be7e3.m4a",
       "en:Breathe in": "audio/tts/en/a3ca6f68b2ce7595.m4a",
-      "en:Breakfast in the Morning": "audio/tts/en/3b26dcb6d6e78067.m4a",
       "en:Both friends have had a turn. They smile happily.": "audio/tts/en/98dd10bc59583634.m4a",
       "en:Breathe out": "audio/tts/en/7b3e58813112f42a.m4a",
       "en:Broccoli looks like a little tree.": "audio/tts/en/20393ea31f5860e2.m4a",
@@ -24475,12 +25081,10 @@
       "en:Brush your teeth with a grown-up.": "audio/tts/en/2871a0ca8809c178.m4a",
       "en:Circle Finds Friends": "audio/tts/en/cd38137f868bf333.m4a",
       "en:Circle sees a ball. The ball looks round.": "audio/tts/en/a8d9a2bf18da5999.m4a",
-      "en:Circle has found friends. The sun, ball, cookie, and wheels look round.": "audio/tts/en/6340f6dec56ac26e.m4a",
       "en:Cat says, \"I feel angry.\" How does he feel?": "audio/tts/en/f19072243677dbce.m4a",
       "en:Clap Again": "audio/tts/en/de6dc075769446a5.m4a",
       "en:Circle sees a cookie. This cookie looks round.": "audio/tts/en/e331fca0337b5e86.m4a",
       "en:Circle sees the sun. The sun in the picture looks round.": "audio/tts/en/04543684502dbb05.m4a",
-      "en:Circle sees a bicycle. The outside of each wheel is round.": "audio/tts/en/3d492b0b1811ddc0.m4a",
       "en:Clap your hands gently.": "audio/tts/en/b6406631e8b6f4cf.m4a",
       "en:Close the door gently.": "audio/tts/en/fb21a36062c46f9b.m4a",
       "en:Clap your hands once, gently.": "audio/tts/en/d750349d34b1a878.m4a",
@@ -24514,7 +25118,6 @@
       "en:Five balls!": "audio/tts/en/c381937b6dcd5757.m4a",
       "en:Five Little Ducks": "audio/tts/en/67563e5948e0629d.m4a",
       "en:First, a seed of a flowering plant.": "audio/tts/en/1f2f58117cb695db.m4a",
-      "en:Five ducks!": "audio/tts/en/3ce81a0e9493fe87.m4a",
       "en:Five stars!": "audio/tts/en/ac68e8ac7598dba4.m4a",
       "en:Flying in the air": "audio/tts/en/e60110799f62b649.m4a",
       "en:Five is more than three.": "audio/tts/en/b90ac94d536a818e.m4a",
@@ -24569,7 +25172,6 @@
       "en:It snows here in winter. Some places have no winter snow.": "audio/tts/en/f5147e2363a4e03b.m4a",
       "en:Itsy Bitsy Spider": "audio/tts/en/1a99be7d5de0fc90.m4a",
       "en:It's sunny. Which one do we wear on our heads for shade?": "audio/tts/en/8ff66cc9a4e6370b.m4a",
-      "en:It's raining. Which one keeps rain off us?": "audio/tts/en/2ef16b847408c5b6.m4a",
       "en:It's snowy and cold. Which item of clothing keeps us warm?": "audio/tts/en/5b3b9f68d16ec986.m4a",
       "en:Jump gently.": "audio/tts/en/acf40f44682f21b3.m4a",
       "en:Let's find red together.": "audio/tts/en/ff37c9a802dec21c.m4a",
@@ -24655,7 +25257,6 @@
       "en:Red": "audio/tts/en/7a3f1c639e5f086d.m4a",
       "en:Red, right here.": "audio/tts/en/3cf51a513ca2c973.m4a",
       "en:Raise your little hands.": "audio/tts/en/2afffcd9a04eb7b8.m4a",
-      "en:Reading before Bed at Night": "audio/tts/en/9dfede1310da0d50.m4a",
       "en:Row Row Row Your Boat": "audio/tts/en/bc12a26ec70cefc5.m4a",
       "en:Rinse the soap away.": "audio/tts/en/5e9558cba240c4b2.m4a",
       "en:Rest for a while when you feel sleepy.": "audio/tts/en/8f9d77aa77536a31.m4a",
@@ -24774,9 +25375,7 @@
       "en:The pineapple has leaves on top.": "audio/tts/en/97495f109a5446de.m4a",
       "en:The rainbow has many colors.": "audio/tts/en/90f7fdb9ab03f6b0.m4a",
       "en:The rice is in the bowl.": "audio/tts/en/56384a39317eadbf.m4a",
-      "en:The seedling grows leaves.": "audio/tts/en/56ef50d126291419.m4a",
       "en:The scarf goes around your neck.": "audio/tts/en/91b9066d8540ba8c.m4a",
-      "en:The seedling grows leaves. A grown-up cares for it according to its needs.": "audio/tts/en/afcdbdf7964c4911.m4a",
       "en:The sheep has wool.": "audio/tts/en/6f1934ee0fe9a99f.m4a",
       "en:The snowflake falls gently.": "audio/tts/en/17b5fbd245448841.m4a",
       "en:The snail crawls slowly.": "audio/tts/en/b21d49b259ee403a.m4a",
@@ -24858,7 +25457,6 @@
       "en:Use the toilet if you need to, then wash your hands.": "audio/tts/en/1f238a08c90af44c.m4a",
       "en:Vary everyday foods. Sweet treats are occasional and small.": "audio/tts/en/75bf2be400bf5f07.m4a",
       "en:Wash your hands after using the toilet.": "audio/tts/en/c614f7855da68f31.m4a",
-      "en:Wash your face and brush your teeth with a grown-up.": "audio/tts/en/925fa121e19991c5.m4a",
       "en:Wake up and get out of bed slowly.": "audio/tts/en/274cddaa76de5c70.m4a",
       "en:Wash your hands with soap.": "audio/tts/en/106d29854bf0813d.m4a",
       "en:Wave and say hello.": "audio/tts/en/924a80aa6b3ba9d5.m4a",
@@ -24882,7 +25480,6 @@
       "en:Which set has more balls?": "audio/tts/en/4d33eefbbbeb6c46.m4a",
       "en:Which side has more apples?": "audio/tts/en/5a8722e293650367.m4a",
       "en:Would you like a hug?": "audio/tts/en/db4772c0e30ad1f8.m4a",
-      "en:With the right conditions, the seed sprouts.": "audio/tts/en/c3ea91ebd3a97c1d.m4a",
       "en:With the right conditions, the seed sprouts. We wait patiently.": "audio/tts/en/d8513ab75a91e20d.m4a",
       "en:Wow, I feel surprised.": "audio/tts/en/e51c5f59dcb717e2.m4a",
       "en:You can find a grown-up when you feel scared.": "audio/tts/en/d48fa653ed89e05f.m4a",
@@ -25139,7 +25736,6 @@
       "zh:一共三只小鸭子": "audio/tts/zh/11b3622e1326b010.m4a",
       "zh:一共两条小鱼": "audio/tts/zh/ae32981ce5de09a7.m4a",
       "zh:一共五个球": "audio/tts/zh/482d0def5f10a806.m4a",
-      "zh:一共五只小鸭子": "audio/tts/zh/abe5699a331eafb3.m4a",
       "zh:一共两个苹果": "audio/tts/zh/c933593c212e9838.m4a",
       "zh:一共八个球": "audio/tts/zh/4586098ea651f7f4.m4a",
       "zh:一共十只小鸭子": "audio/tts/zh/5c781cd49ef62360.m4a",
@@ -25169,7 +25765,6 @@
       "zh:上完厕所要洗手": "audio/tts/zh/421e456f0e7d4295.m4a",
       "zh:下雨了，撑起伞": "audio/tts/zh/7238a13f8b2d289f.m4a",
       "zh:下雨了。出门想带能遮雨的东西。": "audio/tts/zh/aecf341ce7058746.m4a",
-      "zh:下雨出门，哪样能遮雨？": "audio/tts/zh/4646341e32627afb.m4a",
       "zh:下雪了，外面冷。准备保暖的衣服。": "audio/tts/zh/ce54774f9e5b31d4.m4a",
       "zh:两位朋友都玩到了，开心地笑。": "audio/tts/zh/4a310f0f118fe83d.m4a",
       "zh:下雪天冷，哪件衣物能保暖？": "audio/tts/zh/d26dadb8933e7397.m4a",
@@ -25259,7 +25854,6 @@
       "zh:和大人一起刷牙": "audio/tts/zh/57dadac61baa2f63.m4a",
       "zh:咩咩": "audio/tts/zh/7608ab83efb0443b.m4a",
       "zh:咚咚": "audio/tts/zh/47ca19191d8e2e10.m4a",
-      "zh:和大人洗脸刷牙。": "audio/tts/zh/6d0ead8110642d60.m4a",
       "zh:和宝宝一起唱": "audio/tts/zh/a3e20e2095afa522.m4a",
       "zh:哞哞": "audio/tts/zh/859b535093ca9370.m4a",
       "zh:咯咯": "audio/tts/zh/e59ee793f7725737.m4a",
@@ -25300,7 +25894,6 @@
       "zh:圆形": "audio/tts/zh/7aaa545f270b9a67.m4a",
       "zh:圆形没有角": "audio/tts/zh/43c79c19edc9667b.m4a",
       "zh:圆形在哪里？": "audio/tts/zh/28820808ac99c086.m4a",
-      "zh:圆圆看到自行车。轮子的外边圆圆的。": "audio/tts/zh/2736f63606aa47c8.m4a",
       "zh:在幼儿园和朋友玩": "audio/tts/zh/a0dafca422cf2acb.m4a",
       "zh:土豆": "audio/tts/zh/4690af430ae16ef9.m4a",
       "zh:圆形没有角。": "audio/tts/zh/f7e124d290fd1b40.m4a",
@@ -25339,7 +25932,6 @@
       "zh:大鹅有长脖子": "audio/tts/zh/eca42e86789802d3.m4a",
       "zh:头": "audio/tts/zh/971f873950b27de0.m4a",
       "zh:太阳": "audio/tts/zh/be076472ba1f03b9.m4a",
-      "zh:头发肩膀膝盖脚": "audio/tts/zh/aae068e307b71eee.m4a",
       "zh:太阳照亮大地": "audio/tts/zh/82119d457174ede2.m4a",
       "zh:奶牛": "audio/tts/zh/6d7b65332a841301.m4a",
       "zh:奶": "audio/tts/zh/eb0dbf9c6c58143b.m4a",
@@ -25523,13 +26115,11 @@
       "zh:晚上": "audio/tts/zh/754a4c5c6fb8c9fa.m4a",
       "zh:晚上说晚安": "audio/tts/zh/3db1188cd955d9a0.m4a",
       "zh:晚安，我在这里": "audio/tts/zh/5d91bf178649a3fe.m4a",
-      "zh:晚上睡前读书": "audio/tts/zh/4bc05e7e46fdd019.m4a",
       "zh:晴天出门，哪样戴头上遮阳？": "audio/tts/zh/d8028d4cddb580be.m4a",
       "zh:最后穿鞋子。": "audio/tts/zh/c93204c5fb6b5ad2.m4a",
       "zh:有几个？": "audio/tts/zh/7f9217d861d93bae.m4a",
       "zh:月亮": "audio/tts/zh/6de2420005e6f1fd.m4a",
       "zh:月亮挂在天上": "audio/tts/zh/c52e36de40c814c2.m4a",
-      "zh:条件合适，种子发芽了。": "audio/tts/zh/1c7812bf757ed18b.m4a",
       "zh:木琴": "audio/tts/zh/7d7f029047023e5b.m4a",
       "zh:朋友说感受": "audio/tts/zh/63667f1d68adb5db.m4a",
       "zh:木琴有长短不同的条": "audio/tts/zh/c9d4a8c3f51bd0e1.m4a",
@@ -25802,7 +26392,6 @@
       "zh:雨伞": "audio/tts/zh/d1d701fd133a7c64.m4a",
       "zh:雨": "audio/tts/zh/1ff1fff6b76dc870.m4a",
       "zh:难过也没关系": "audio/tts/zh/e4d092c7f5b7d3b9.m4a",
-      "zh:雨伞能遮雨，大人来撑。": "audio/tts/zh/7694ff7c81237d4b.m4a",
       "zh:雪花轻轻落下来": "audio/tts/zh/5ee104d6e7ac8263.m4a",
       "zh:零": "audio/tts/zh/1cd1e9d54dce95f2.m4a",
       "zh:雪花": "audio/tts/zh/2c91a5d709f1bf42.m4a",
@@ -25842,7 +26431,148 @@
       "zh:鼻子": "audio/tts/zh/9a1eb36ba355c5a3.m4a",
       "zh:鼻子可以闻": "audio/tts/zh/a93de0afe6e1ff95.m4a",
       "zh:鼓": "audio/tts/zh/ba9332d36636bdcf.m4a",
-      "zh:黑色": "audio/tts/zh/e03df4c6bea682a2.m4a"
+      "zh:黑色": "audio/tts/zh/e03df4c6bea682a2.m4a",
+      "en:A caregiver plays with you.": "audio/tts/en/640194b4f45b74be.m4a",
+      "en:A toy car can roll down the ramp.": "audio/tts/en/9898ba9a9aa81062.m4a",
+      "en:A plate can hold food.": "audio/tts/en/6d405f1ebb9709c6.m4a",
+      "en:A teacher can help us.": "audio/tts/en/7e166146f6ec98b5.m4a",
+      "en:Bend down slowly.": "audio/tts/en/0e27a6f73c5a9e24.m4a",
+      "en:Duck under with a grown-up.": "audio/tts/en/eb662fec6439b55d.m4a",
+      "en:Crawl slowly on a safe floor.": "audio/tts/en/99a9a8c9bdd39290.m4a",
+      "en:An undershirt goes underneath.": "audio/tts/en/3dd8efe1d5d19200.m4a",
+      "en:Hold on and lift one foot.": "audio/tts/en/f7795ed42e8da383.m4a",
+      "en:Knees can bend.": "audio/tts/en/fbecb1341031a784.m4a",
+      "en:Hair can be combed.": "audio/tts/en/a9f14ecdd56cd089.m4a",
+      "en:Have breakfast together.": "audio/tts/en/fee71fac3f9e6dac.m4a",
+      "en:Pandas like to eat bamboo.": "audio/tts/en/ec97066f3925f15d.m4a",
+      "en:One block can be stacked.": "audio/tts/en/8cdb85682246c720.m4a",
+      "en:Read a book together before bed.": "audio/tts/en/b9c3ac5f8841303c.m4a",
+      "en:Look at yourself in the mirror.": "audio/tts/en/55f8c11a15535790.m4a",
+      "en:Take a daytime walk with a grown-up.": "audio/tts/en/db114d01481c69ac.m4a",
+      "en:Rinse your hands with water.": "audio/tts/en/2c91567ba27471c6.m4a",
+      "en:Stamp your feet gently.": "audio/tts/en/d140abd1cc9f5279.m4a",
+      "en:Shoulders can move.": "audio/tts/en/4abd445ee7cabb5d.m4a",
+      "en:The seedling grows new leaves.": "audio/tts/en/b4e180abf4f06790.m4a",
+      "en:The wheel can roll.": "audio/tts/en/4403c08250482b0e.m4a",
+      "en:The sapling grows long leaves.": "audio/tts/en/1feb288e02a8bf88.m4a",
+      "en:The duckling follows its mother.": "audio/tts/en/a6927f4d8c9941ba.m4a",
+      "en:Underwear goes under clothes.": "audio/tts/en/7c7ac62237025ed6.m4a",
+      "en:Turn around slowly.": "audio/tts/en/7e003ffd450f87ad.m4a",
+      "en:Use the slide with a grown-up.": "audio/tts/en/ce3b9b556549816e.m4a",
+      "en:Use just a little toothpaste.": "audio/tts/en/38ed2779d3a6ce48.m4a",
+      "en:Wake up in the morning.": "audio/tts/en/3665201586c45da2.m4a",
+      "en:Wet your hands first.": "audio/tts/en/036bb20d69781c08.m4a",
+      "en:Wear rain boots on a rainy day.": "audio/tts/en/3d5f9a5dd86dacda.m4a",
+      "en:Wash your face in the morning.": "audio/tts/en/03c09f9c4e7ecb16.m4a",
+      "en:caregiver": "audio/tts/en/0f32b8de5ac90f65.m4a",
+      "en:bamboo": "audio/tts/en/6793f706928f4d5e.m4a",
+      "en:bend gently": "audio/tts/en/4844f7854b57acbd.m4a",
+      "en:balance with support": "audio/tts/en/4e0cfdf99048a097.m4a",
+      "en:hair": "audio/tts/en/54b6cc31055f56c3.m4a",
+      "en:crawl": "audio/tts/en/10f092636134423f.m4a",
+      "en:duckling": "audio/tts/en/89b227def759ed42.m4a",
+      "en:duck under": "audio/tts/en/273824ca30eea347.m4a",
+      "en:have breakfast": "audio/tts/en/985c103376ab6428.m4a",
+      "en:plate": "audio/tts/en/6502bf60960c87a2.m4a",
+      "en:mirror": "audio/tts/en/b421b742ef581396.m4a",
+      "en:knee": "audio/tts/en/296d672387998337.m4a",
+      "en:rain boot": "audio/tts/en/53f2bb4754688523.m4a",
+      "en:ramp": "audio/tts/en/220eb0db1737379d.m4a",
+      "en:rinse your hands": "audio/tts/en/8b51006133d9cd3c.m4a",
+      "en:read at bedtime": "audio/tts/en/71c1ae873d6cbe61.m4a",
+      "en:sapling": "audio/tts/en/e33097efc2de9708.m4a",
+      "en:single block": "audio/tts/en/26f0faac7f0e0f54.m4a",
+      "en:shoulder": "audio/tts/en/ab7a6815d308fbcb.m4a",
+      "en:seedling": "audio/tts/en/9bc2c297fd7d0962.m4a",
+      "en:slide": "audio/tts/en/8decce7de666da23.m4a",
+      "en:teacher": "audio/tts/en/10389f674cc4e485.m4a",
+      "en:stamp your feet": "audio/tts/en/dc26c51849ba0ac6.m4a",
+      "en:toothpaste": "audio/tts/en/34bd77b487e32435.m4a",
+      "en:take a daytime walk": "audio/tts/en/41c378ffcf9c7e18.m4a",
+      "en:underwear": "audio/tts/en/5c8cf1b540d8299a.m4a",
+      "en:turn slowly": "audio/tts/en/1bb72f7705b58c40.m4a",
+      "en:undershirt": "audio/tts/en/d77ec1bf142251f2.m4a",
+      "en:wake up": "audio/tts/en/735e25ca9d5e8515.m4a",
+      "en:wet hands": "audio/tts/en/5f0d88068d808125.m4a",
+      "en:wheel": "audio/tts/en/22ea67ea9fbe78f7.m4a",
+      "en:wash your face": "audio/tts/en/536250779f56049f.m4a",
+      "zh:一块积木可以搭起来": "audio/tts/zh/ea75f2896aaa799e.m4a",
+      "zh:低头从下面钻过": "audio/tts/zh/402ffb7038bb9ddc.m4a",
+      "zh:先把手打湿": "audio/tts/zh/e465a0806c8ecf05.m4a",
+      "zh:下雨天穿雨靴": "audio/tts/zh/7cd579ba23a94c3e.m4a",
+      "zh:内裤": "audio/tts/zh/40cb0e0e1e8cb042.m4a",
+      "zh:内裤穿在衣服里面": "audio/tts/zh/0631934e2e14b9c2.m4a",
+      "zh:冲洗双手": "audio/tts/zh/c80abcc7c451c79e.m4a",
+      "zh:单块积木": "audio/tts/zh/c751739e4ec43485.m4a",
+      "zh:在安全地面慢慢爬": "audio/tts/zh/a1c364657d4597de.m4a",
+      "zh:小苗": "audio/tts/zh/dac727b425edbff6.m4a",
+      "zh:小苗长出长叶": "audio/tts/zh/ef42ebe97c2942b2.m4a",
+      "zh:头发": "audio/tts/zh/bfefcfce9c5201fb.m4a",
+      "zh:头发可以梳一梳": "audio/tts/zh/3dd0c217e8cd53ea.m4a",
+      "zh:小鸭": "audio/tts/zh/54ae416d1b66ea85.m4a",
+      "zh:小鸭跟着妈妈": "audio/tts/zh/30208e0172529f29.m4a",
+      "zh:小车可以从斜坡滑下": "audio/tts/zh/0b47ac8f489860bc.m4a",
+      "zh:幼苗": "audio/tts/zh/b87a4f0ee32cf6d1.m4a",
+      "zh:慢慢转身": "audio/tts/zh/c141282c917b1834.m4a",
+      "zh:扶稳再抬一只脚": "audio/tts/zh/fe4c8e88e3caa973.m4a",
+      "zh:幼苗长出嫩叶": "audio/tts/zh/6b5e5dc30ff3d675.m4a",
+      "zh:慢慢弯下腰": "audio/tts/zh/d807b46dcbe9eb79.m4a",
+      "zh:早上洗洗脸": "audio/tts/zh/55ece075e0f25351.m4a",
+      "zh:斜坡": "audio/tts/zh/2581200bcb64f760.m4a",
+      "zh:扶稳抬脚": "audio/tts/zh/6e2371a061fa073e.m4a",
+      "zh:早上一起吃早饭": "audio/tts/zh/49f2578878d39442.m4a",
+      "zh:早上醒来啦": "audio/tts/zh/52f7f6d448d03f37.m4a",
+      "zh:洗脸": "audio/tts/zh/afaa21968f236e38.m4a",
+      "zh:湿手": "audio/tts/zh/40c2e851778cf87e.m4a",
+      "zh:滑梯": "audio/tts/zh/1dd717db4c1c6684.m4a",
+      "zh:照镜子看看自己": "audio/tts/zh/f9c7f97f4fa361d3.m4a",
+      "zh:照护者会陪你玩": "audio/tts/zh/4b1073bfa1ed7f0c.m4a",
+      "zh:照护者": "audio/tts/zh/aaaf3f9d595f8239.m4a",
+      "zh:滑梯要和大人一起玩": "audio/tts/zh/0e77d5dee2c34ac0.m4a",
+      "zh:牙膏": "audio/tts/zh/878cc33da448d670.m4a",
+      "zh:爬": "audio/tts/zh/92b00649dd7b55a6.m4a",
+      "zh:熊猫喜欢吃竹子": "audio/tts/zh/62df0b991a0b251a.m4a",
+      "zh:牙膏挤一点就好": "audio/tts/zh/f4befb83dec6e6a2.m4a",
+      "zh:盘子": "audio/tts/zh/353375bbdcfc34c2.m4a",
+      "zh:用水冲一冲手": "audio/tts/zh/17ae5a9957e4e19a.m4a",
+      "zh:白天和大人散步": "audio/tts/zh/289032fcd1b76020.m4a",
+      "zh:盘子可以装食物": "audio/tts/zh/bb458661b6c22290.m4a",
+      "zh:竹子": "audio/tts/zh/89575efa5f7b6440.m4a",
+      "zh:老师": "audio/tts/zh/3ac633f369be5837.m4a",
+      "zh:睡前一起读本书": "audio/tts/zh/ab21fbef3af6063d.m4a",
+      "zh:睡前读书": "audio/tts/zh/5e6ae3550bfbd09e.m4a",
+      "zh:肩膀": "audio/tts/zh/35afff3e46c72eb2.m4a",
+      "zh:肩膀可以动一动": "audio/tts/zh/48c5b2dffe817c9c.m4a",
+      "zh:老师会帮助我们": "audio/tts/zh/a762ca528f53fdbb.m4a",
+      "zh:膝盖": "audio/tts/zh/506420e1bfbcb6f7.m4a",
+      "zh:贴身上衣": "audio/tts/zh/f29e6ac254233a74.m4a",
+      "zh:贴身上衣穿在里面": "audio/tts/zh/ceaeaa531434cb7d.m4a",
+      "zh:膝盖可以弯一弯": "audio/tts/zh/e4a3e3feb67c7360.m4a",
+      "zh:起床": "audio/tts/zh/8663376976876b75.m4a",
+      "zh:轮子": "audio/tts/zh/dcb904ddd4682480.m4a",
+      "zh:轻跺脚": "audio/tts/zh/cacfa782a2782d1b.m4a",
+      "zh:轮子可以滚动": "audio/tts/zh/58ee87134cda6750.m4a",
+      "zh:轻轻弯腰": "audio/tts/zh/63f9e91a18d6037c.m4a",
+      "zh:雨靴": "audio/tts/zh/c9d88cfeaac7be0f.m4a",
+      "zh:轻轻跺跺脚": "audio/tts/zh/b44e3139954aea78.m4a",
+      "zh:镜子": "audio/tts/zh/22a50bc48a9b5ddf.m4a",
+      "zh:钻过": "audio/tts/zh/57535077c1243aec.m4a",
+      "en:Five ducklings!": "audio/tts/en/faf03fd22781f01c.m4a",
+      "en:Circle sees a wheel. The outside of the wheel is round.": "audio/tts/en/0d04d23e322ffe14.m4a",
+      "en:Circle has found friends. The sun, ball, cookie, and wheel look round.": "audio/tts/en/60ba9892bb11cadd.m4a",
+      "en:It's raining. Which one helps keep our feet dry?": "audio/tts/en/f4529fbaff9f8fff.m4a",
+      "en:The young plant grows leaves. A grown-up cares for it according to its needs.": "audio/tts/en/85f2ad6c8e01f01c.m4a",
+      "en:The young plant slowly grows leaves.": "audio/tts/en/50bc8956a26961cf.m4a",
+      "en:Wash your face, then brush your teeth with a grown-up.": "audio/tts/en/bf34900e09ff5525.m4a",
+      "en:Rain boots help keep feet dry. A grown-up helps put them on.": "audio/tts/en/246f6adc19603667.m4a",
+      "en:With the right conditions, the seed sprouts into a seedling.": "audio/tts/en/47abb928f1297ff8.m4a",
+      "zh:一共五只小鸭": "audio/tts/zh/b518d971c767c826.m4a",
+      "zh:和大人洗脸，再刷牙。": "audio/tts/zh/ff9103eef0f72c36.m4a",
+      "zh:下雨出门，哪样能帮脚保持干燥？": "audio/tts/zh/9883f8c300b4f8e0.m4a",
+      "zh:圆圆看到一个轮子。轮子的外边圆圆的。": "audio/tts/zh/c83fa3a94c37db60.m4a",
+      "zh:头、肩膀、膝盖、脚": "audio/tts/zh/f4d1340beabae01d.m4a",
+      "zh:条件合适，种子发芽，长成幼苗。": "audio/tts/zh/72449a270dcc82b0.m4a",
+      "zh:雨靴能帮脚保持干燥，大人帮忙穿好。": "audio/tts/zh/d6c01230c37f39f3.m4a"
     }
   }
 }
