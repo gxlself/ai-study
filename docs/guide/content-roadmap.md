@@ -16,7 +16,7 @@
 | s1 感知世界 | 6–8 | 12 | 12 | 0 | `childScreen: none`；宝宝使用实体材料 |
 | s2 互动探索 | 9–11 | 12 | 12 | 0 | `childScreen: none`；宝宝使用真实物品 |
 | s3 词语萌芽 | 12–17 | 18 | 18 | 0 | `childScreen: none`；家长读完放下屏幕 |
-| s4 语言爆发 | 18–23 | 18 | 12 | 6 | `childScreen: optional`；共看默认关闭 |
+| s4 语言爆发 | 18–23 | 18 | 12 | 6 | `childScreen: optional`；共看默认关闭；每日最多 1 节共看课 |
 | s5 小小思考者 | 24–29 | 18 | 0 | 18 | `childScreen: default`；必须家长陪同 |
 | s6 准备入园 | 30–36 | 18 | 0 | 18 | `childScreen: default`；必须家长陪同 |
 
@@ -65,7 +65,7 @@
 | 动物朋友 | [`core.s3.duck-mom`](../../content/packs/sprout-core/lessons/s3/duck-mom.json) | 小鸭子找妈妈 | 家长指引 · guide | 语言阅读、社会情绪 |
 | 我的身体 | [`core.s3.body-parts`](../../content/packs/sprout-core/lessons/s3/body-parts.json) | 我的身体 | 家长指引 · guide | 语言阅读、自然科学 |
 | 我的身体 | [`core.s3.touch-nose`](../../content/packs/sprout-core/lessons/s3/touch-nose.json) | 摸摸小鼻子 | 家长指引 · guide | 运动发展、语言阅读 |
-| 我的身体 | [`core.s3.head-shoulders`](../../content/packs/sprout-core/lessons/s3/head-shoulders.json) | 头发肩膀膝盖脚 | 家长指引 · guide + song | 音乐律动、英语启蒙、运动发展 |
+| 我的身体 | [`core.s3.head-shoulders`](../../content/packs/sprout-core/lessons/s3/head-shoulders.json) | 头、肩膀、膝盖、脚 | 家长指引 · guide + song | 音乐律动、英语启蒙、运动发展 |
 | 车车出发 | [`core.s3.vehicles`](../../content/packs/sprout-core/lessons/s3/vehicles.json) | 嘀嘀叭叭 | 家长指引 · guide | 语言阅读 |
 | 车车出发 | [`core.s3.roll-car`](../../content/packs/sprout-core/lessons/s3/roll-car.json) | 小车滑下去 | 家长指引 · guide | 自然科学、数学思维 |
 | 车车出发 | [`core.s3.car-song`](../../content/packs/sprout-core/lessons/s3/car-song.json) | 汽车开呀开 | 家长指引 · guide + song | 音乐律动、英语启蒙 |

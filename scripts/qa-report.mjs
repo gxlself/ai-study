@@ -2,7 +2,6 @@ import { mkdir, readFile, stat, writeFile } from 'node:fs/promises';
 import { createHash } from 'node:crypto';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
-
 const root = fileURLToPath(new URL('../', import.meta.url));
 const output = path.join(root, 'docs/dev/qa-report.md');
 const viewports = ['1920x1080', '1024x768'];
@@ -17,9 +16,11 @@ const expectedChecks = [
   '共看课、结束线下活动及后台学习记录',
   '每日 1 分钟上限与家长门临时延长',
   'parent-only 的仅线下计划、家长记录与后台徽标',
+  '设备 allowedChildIds 服务端守卫',
   'A4 主题与单课打印无缺图',
   '后台安装插件、自定义课与真实插件预览',
   '后台导出与同版本覆盖、hello-pack 导入课程库',
+  '扩展包加载、置顶月龄守卫与双包预览',
 ];
 const labels = { passed: '通过', failed: '失败', pending: '待验收' };
 const isObject = (value) => value !== null && typeof value === 'object' && !Array.isArray(value);
@@ -29,6 +30,13 @@ const count = (value) => integer(value) ? String(value) : '未知';
 const unique = (values) => [...new Set(values)];
 const order = (a, b) => a < b ? -1 : a > b ? 1 : 0;
 const result = (status, details) => ({ status, details });
+const formalPacksFromEvidence = (integration, packSources) => packSources.map(([packId, source]) => {
+  const record = list(integration?.formalPacks).find((item) => item?.packId === packId);
+  const lessons = list(source.data?.lessons);
+  const steps = lessons.reduce((sum, lesson) => sum + list(lesson.steps).length, 0);
+  const audio = isObject(source.data?.audio?.entries) ? Object.keys(source.data.audio.entries).length : '未知';
+  return `${packId}：${lessons.length} 课 / ${steps} 步 / ${audio} 条 bundle 音频${record?.bundleSha256 ? `，SHA-256 ${record.bundleSha256}` : ''}`;
+}).join('；');
 const combine = (statuses) => statuses.includes('failed') ? 'failed'
   : !statuses.length || statuses.includes('pending') ? 'pending' : 'passed';
 const jobStatus = (job) => job.error || job.signal ? 'failed'
@@ -206,7 +214,7 @@ function parseTests(source, requireTap = false, expectedScopes = []) {
   };
 }
 
-function parseStrict(source) {
+function parseStrict(source, expectedPack) {
   const summaries = [], issues = [], errors = [];
   let headers;
   for (const [index, line] of source.text.split(/\r?\n/).entries()) {
@@ -216,7 +224,7 @@ function parseStrict(source) {
     if (!line.includes('│')) continue;
     const cells = line.split('│').slice(1, -1).map((part) => part.trim());
     if (cells.includes('内容包') && cells.includes('错误') && cells.includes('警告')) { headers = cells; continue; }
-    if (!headers || cells[headers.indexOf('内容包')]?.replace(/^['"]|['"]$/g, '') !== 'sprout.core') continue;
+    if (!headers || cells[headers.indexOf('内容包')]?.replace(/^['"]|['"]$/g, '') !== expectedPack) continue;
     const value = (name) => {
       const text = cells[headers.indexOf(name)];
       return /^\d+$/.test(text ?? '') ? Number(text) : null;
@@ -256,6 +264,21 @@ function parseBuild(source) {
     warnings, errors,
     details: source.issue || `server 成功标记 ${server ? '有' : '无'}；Vite 完成标记 ${viteBuilds}；正式包复制 ${formalCopy ? '有' : '无'}；SW 清单完成 ${swManifest ? '有' : '无'}；串行/引号过滤 ${serial && quotedFilters ? '有' : '无'}；构建警告 ${warnings.length}`,
   };
+}
+
+function parallelFailure(text) {
+  return /(?:^|\n)\s*(?:失败|阻塞|未通过)\s*[:：]|(?:^|\n)\s*(?:FAIL|FAILED|ERROR)\b/i.test(text);
+}
+
+function parallelStatus(task, results, findings) {
+  if (results.status === 'failed' || findings.status === 'failed') {
+    return result('failed', `${task} 证据读取失败：${results.issue || findings.issue}`);
+  }
+  if (results.status !== 'passed' || findings.status !== 'passed') {
+    return result('pending', `${task} 尚未同时提供 results.json 与 findings.md`);
+  }
+  if (parallelFailure(findings.text)) return result('failed', `${task} findings.md 明确记录失败或阻塞`);
+  return result('passed', `${task} results.json 与 findings.md 已读取，未发现明确失败标记`);
 }
 
 function inspectAudio(source, lessons) {
@@ -298,14 +321,47 @@ export async function generateReport() {
     readSource('content/packs/sprout-core/bundle.json', true),
     readSource('qa-artifacts/logs/tests.log'),
     readSource('qa-artifacts/logs/pipeline-tests.log'),
-    readSource('qa-artifacts/logs/strict-validate.log'),
+    readSource('qa-artifacts/logs/strict-validate-core.log'),
+    readSource('qa-artifacts/logs/strict-validate-culture.log'),
+    readSource('qa-artifacts/logs/strict-validate-english.log'),
     readSource('qa-artifacts/logs/build.log'),
     readSource('qa-artifacts/verification-results.json', true),
   ]);
-  const [integrationSource, audioSource, bundleSource, testsSource, pipelineSource, strictSource, buildSource, verificationSource] = sources;
+  const [
+    integrationSource, audioSource, bundleSource, testsSource, pipelineSource,
+    strictCoreSource, strictCultureSource, strictEnglishSource, buildSource, verificationSource,
+  ] = sources;
+  const parallelEvidence = await Promise.all(['T23', 'T24', 'T25', 'T26'].map(async (task) => {
+    const directory = task === 'T26' ? 'release/t26-native-final' : `qa-artifacts/${task}`;
+    return {
+    task,
+    results: await readSource(`${directory}/results.json`, true),
+    findings: await readSource(`${directory}/findings.md`),
+    };
+  }));
+  const parallelChecks = parallelEvidence.map((entry) => ({
+    ...entry, status: parallelStatus(entry.task, entry.results, entry.findings),
+  }));
+  const parallelInspection = combine(parallelChecks.filter((entry) => ['T23', 'T24', 'T25'].includes(entry.task)).map((entry) => entry.status.status));
+  const parallelNative = parallelChecks.find((entry) => entry.task === 'T26').status.status;
+  const polishSource = await readSource('apps/player/test-artifacts/polish/after-results.json', true);
+  const polishStatus = polishSource.status !== 'passed' ? result(polishSource.status, polishSource.issue)
+    : polishSource.data?.resourcesClosed !== true ? result('pending', 'T17 证据未记录 resourcesClosed=true')
+      : list(polishSource.data?.checks).some((row) => row?.failure)
+        ? result('failed', 'T17 一屏检查存在布局失败')
+        : result('passed', `T17 场景 ${list(polishSource.data?.checks).length} 个，超长指引 ${list(polishSource.data?.longGuides).length} 个`);
+  const t9cRecheckSource = await readSource('qa-artifacts/T9c-recheck/results.json', true);
+  const t9cRecheck = t9cRecheckSource.status !== 'passed' ? result(t9cRecheckSource.status, t9cRecheckSource.issue)
+    : t9cRecheckSource.data?.resourcesClosed !== true ? result('pending', 'T9c 定向复测未记录 resourcesClosed=true')
+      : list(t9cRecheckSource.data?.fixes).some((fix) => !['passed', 'accepted'].includes(fix?.status))
+        ? result('failed', 'T9c 定向复测仍有未通过修复项')
+        : result('passed', `T9c 定向复测 ${list(t9cRecheckSource.data?.fixes).length} 项，960/1280/1920 CSS 视口证据完整`);
   const rawJobs = list(verificationSource.data?.jobs);
   const verificationJobs = rawJobs.filter(isObject);
-  const requiredJobs = ['typecheck', 'pipeline-typecheck', 'tests', 'pipeline-tests', 'service-worker', 'strict-validate', 'build'];
+  const requiredJobs = [
+    'typecheck', 'pipeline-typecheck', 'tests', 'pipeline-tests', 'service-worker',
+    'strict-validate-core', 'strict-validate-culture', 'strict-validate-english', 'build',
+  ];
   const commandResults = requiredJobs.map((name) => {
     const rows = verificationJobs.filter((job) => job.name === name);
     const status = rows.length > 1 ? 'failed' : rows.length ? jobStatus(rows[0]) : 'pending';
@@ -327,6 +383,13 @@ export async function generateReport() {
   ]);
   const integration = integrationSource.data, bundle = bundleSource.data, audio = audioSource.data;
   const lessons = list(bundle?.lessons).filter(isObject).sort((a, b) => order(String(a.id), String(b.id)));
+  const packSources = [
+    ['sprout.core', bundleSource],
+    ['sprout.culture', await readSource('content/packs/sprout-culture/bundle.json', true)],
+    ['sprout.english', await readSource('content/packs/sprout-english/bundle.json', true)],
+  ];
+  const formalLessons = packSources.flatMap(([packId, source]) =>
+    list(source.data?.lessons).filter(isObject).map((lesson) => ({ packId, lesson })));
   const steps = bundle && Array.isArray(bundle.lessons) ? lessons.reduce((sum, lesson) => sum + list(lesson.steps).length, 0) : null;
   const routes = list(bundle?.routes), stages = routes.flatMap((route) => list(route?.stages));
   const bundleProblems = [];
@@ -343,35 +406,98 @@ export async function generateReport() {
   const names = unique([...expectedChecks, ...checks.map((row) => row.name).filter((name) => typeof name === 'string')]);
   const checklist = names.map((name) => ({ name, ...checkResult(checks.filter((row) => row.name === name)) }));
   const records = list(integration?.lessons), groups = new Map(), evidenceProblems = [];
-  const ids = new Set(lessons.map((lesson) => lesson.id));
+  const ids = new Set(formalLessons.map(({ lesson }) => lesson.id));
+  const packIds = new Set(formalLessons.map(({ packId }) => packId));
   if (integration && (!Array.isArray(integration.checks) || !Array.isArray(integration.lessons))) evidenceProblems.push('集成 JSON 的 checks/lessons 结构无效');
   if (Array.isArray(integration?.checks) && (checks.length !== integration.checks.length
     || checks.some((row) => typeof row.name !== 'string' || !row.name))) evidenceProblems.push('集成 JSON 含无效 checks 记录');
   for (const [index, row] of records.entries()) {
-    if (!isObject(row) || !ids.has(row.id) || !viewports.includes(row.viewport)) {
+    const packId = row?.packId ?? 'sprout.core';
+    if (!isObject(row) || !ids.has(row.id) || !packIds.has(packId) || !viewports.includes(row.viewport)) {
       evidenceProblems.push(`逐课第 ${index + 1} 条记录不属于正式课程/指定视口：${describe(row)}`);
       continue;
     }
-    const key = `${row.id}/${row.viewport}`;
+    const key = `${packId}/${row.id}/${row.viewport}`;
     groups.set(key, [...(groups.get(key) ?? []), row]);
   }
-  const lessonResults = lessons.map((lesson) => {
-    const views = viewports.map((viewport) => inspectLesson(lesson, groups.get(`${lesson.id}/${viewport}`) ?? [], integration?.formalBundle));
-    return { lesson, views, status: combine(views.map((view) => view.status)) };
+  const inspectionResults = formalLessons.map(({ packId, lesson }) => {
+    const views = viewports.map((viewport) => inspectLesson(lesson,
+      groups.get(`${packId}/${lesson.id}/${viewport}`) ?? [], integration?.formalBundle));
+    return { packId, lesson, views, status: combine(views.map((view) => view.status)) };
   });
-  const lessonStatus = combine([bundleResult.status, ...lessonResults.map((row) => row.status),
+  const lessonResults = inspectionResults.filter((row) => row.packId === 'sprout.core');
+  const extensionLessonResults = inspectionResults.filter((row) => row.packId !== 'sprout.core');
+  const internalLessonStatus = combine([bundleResult.status, ...inspectionResults.map((row) => row.status),
     ...(evidenceProblems.length ? ['failed'] : [])]);
+  const hasFullInternalEvidence = groups.size >= formalLessons.length * viewports.length;
+  const lessonStatus = hasFullInternalEvidence
+    ? combine([internalLessonStatus, parallelInspection])
+    : parallelInspection;
   const totals = (rows) => Object.fromEntries(Object.keys(labels).map((status) => [status, rows.filter((row) => row.status === status).length]));
-  const lessonTotals = totals(lessonResults), checkTotals = totals(checklist);
+  const internalLessonTotals = totals(lessonResults), extensionLessonTotals = totals(extensionLessonResults);
+  const externalCourseSummary = t9cRecheckSource.data?.courseSummary;
+  const lessonTotals = hasFullInternalEvidence ? internalLessonTotals : {
+    passed: integer(externalCourseSummary?.lessons) ? externalCourseSummary.lessons : 0,
+    failed: integer(externalCourseSummary?.failedLessons) ? externalCourseSummary.failedLessons : 0,
+    pending: externalCourseSummary ? 0 : formalLessons.length,
+  };
+  const checkTotals = totals(checklist);
+  const displayLessonResults = hasFullInternalEvidence ? lessonResults : [];
+  const displayExtensionLessonResults = hasFullInternalEvidence ? extensionLessonResults : [];
   const rootTests = parseTests(testsSource, true, rootTestScopes), pipelineTests = parseTests(pipelineSource, false, ['.']);
-  const strict = parseStrict(strictSource), build = parseBuild(buildSource);
-  for (const [name, parsed] of [['tests', rootTests], ['pipeline-tests', pipelineTests], ['strict-validate', strict], ['build', build]]) {
+  const strictReports = [
+    ['sprout.core', 'strict-validate-core', parseStrict(strictCoreSource, 'sprout.core')],
+    ['sprout.culture', 'strict-validate-culture', parseStrict(strictCultureSource, 'sprout.culture')],
+    ['sprout.english', 'strict-validate-english', parseStrict(strictEnglishSource, 'sprout.english')],
+  ];
+  for (const [packId, name, parsed] of strictReports) {
+    const command = commandResults.find((item) => item.name === name);
+    parsed.status = combine([parsed.status, command.status]);
+    if (command.details) parsed.details = [parsed.details, command.details].filter(Boolean).join('；');
+    parsed.issues = parsed.issues.map((issue) => ({ ...issue, packId }));
+    parsed.errors = parsed.errors.map((error) => `${packId}：${error}`);
+    parsed.summaries = parsed.summaries.map((summary) => ({ ...summary, packId }));
+  }
+  const strict = {
+    status: combine(strictReports.map(([, , parsed]) => parsed.status)),
+    zeroIssues: strictReports.every(([, , parsed]) => parsed.zeroIssues && parsed.status === 'passed'),
+    issues: strictReports.flatMap(([, , parsed]) => parsed.issues),
+    errors: strictReports.flatMap(([, , parsed]) => parsed.errors),
+    summaries: strictReports.flatMap(([, , parsed]) => parsed.summaries),
+    details: strictReports.map(([packId, , parsed]) => `${packId}：${parsed.details}`).join('；'),
+  };
+  const build = parseBuild(buildSource);
+  for (const [name, parsed] of [['tests', rootTests], ['pipeline-tests', pipelineTests], ['build', build]]) {
     const command = commandResults.find((item) => item.name === name);
     parsed.status = combine([parsed.status, command.status]);
     if (command.details) parsed.details = [parsed.details, command.details].filter(Boolean).join('；');
   }
-  strict.zeroIssues = strict.zeroIssues && strict.status === 'passed';
   const audioResult = inspectAudio(audioSource, lessons);
+  const audioPackResult = (() => {
+    const reports = list(audio?.packs);
+    const failures = [], pending = [];
+    for (const [packId, source] of packSources) {
+      const expectedLessons = list(source.data?.lessons);
+      const expectedSteps = expectedLessons.reduce((sum, lesson) => sum + list(lesson.steps).length, 0);
+      const report = reports.find((item) => item?.packId === packId);
+      if (!report) { pending.push(`${packId} 缺少逐包覆盖记录`); continue; }
+      if (report.lessons !== expectedLessons.length || report.steps !== expectedSteps) {
+        failures.push(`${packId} 课程/步骤计数不一致`);
+      }
+      if (!integer(report.required) || !integer(report.present) || report.present !== report.required) {
+        failures.push(`${packId} 音频计数 ${count(report.present)}/${count(report.required)}`);
+      }
+      if (!Array.isArray(report.missing) || report.missing.length) failures.push(`${packId} 缺失音频`);
+      if (!Array.isArray(report.rows) || report.rows.length !== expectedSteps) {
+        pending.push(`${packId} 逐步覆盖记录 ${count(report.rows?.length)}/${expectedSteps}`);
+      }
+      if (Array.isArray(report.rows) && report.rows.some((row) => !Array.isArray(row?.uncollected) || row.uncollected.length)) {
+        failures.push(`${packId} 存在未采集文本`);
+      }
+    }
+    return result(failures.length ? 'failed' : pending.length ? 'pending' : 'passed',
+      unique([...failures, ...pending]).join('；') || '核心、文化、英语三包逐课逐步覆盖完整且无缺失');
+  })();
   const bundleHash = createHash('sha256').update(bundleSource.text).digest('hex');
   const formalUse = bundleSource.status !== 'passed' ? result(bundleSource.status, bundleSource.issue)
     : integration?.formalBundle === true && integration.bundleSha256 === bundleHash
@@ -384,18 +510,24 @@ export async function generateReport() {
   const cleanup = integration?.resourcesClosed === true ? result('passed', '集成 JSON 记录 resourcesClosed=true')
     : result('pending', '尚无 resourcesClosed=true，运行可能未结束');
   const recordedStatus = combine([
-    integrationSource.status, bundleResult.status, audioResult.status, rootTests.status, pipelineTests.status,
-    strict.status, build.status, lessonStatus, formalUse.status, cleanup.status, verificationStatus, ...checklist.map((row) => row.status),
+    integrationSource.status, bundleResult.status, audioResult.status, audioPackResult.status,
+    ...packSources.map(([, source]) => source.status),
+    rootTests.status, pipelineTests.status, strict.status, build.status, lessonStatus,
+    parallelNative, polishStatus.status, t9cRecheck.status, formalUse.status, cleanup.status, verificationStatus,
+    ...checklist.map((row) => row.status),
     ...(integration?.error ? ['failed'] : []),
   ]);
   const coveragePercent = integer(audio?.present) && integer(audio?.required) && audio.required > 0
     ? `${(audio.present / audio.required * 100).toFixed(1)}%` : '不可确认';
-  const validDates = sources.map((source) => source.modifiedAt).filter(Boolean).sort();
+  const validDates = [...sources, polishSource, t9cRecheckSource, ...parallelEvidence.flatMap((entry) => [entry.results, entry.findings])]
+    .map((source) => source.modifiedAt).filter(Boolean).sort();
   const detailCheck = (name) => {
     const rows = checks.filter((row) => row.name === name);
     return rows.length === 1 && isObject(rows[0].details) ? rows[0] : null;
   };
-  const pluginCheck = detailCheck(expectedChecks[7]), packCheck = detailCheck(expectedChecks[8]);
+  const pluginCheck = detailCheck('后台安装插件、自定义课与真实插件预览');
+  const packCheck = detailCheck('后台导出与同版本覆盖、hello-pack 导入课程库');
+  const extensionCheck = detailCheck('扩展包加载、置顶月龄守卫与双包预览');
   const integrationDetails = [];
   if (pluginCheck) {
     const details = pluginCheck.details;
@@ -405,19 +537,27 @@ export async function generateReport() {
     }
   } else integrationDetails.push('- 插件安装、自定义插件课与预览缺少完整 details；不宣称链路已通过。');
   if (packCheck) {
-    integrationDetails.push(`- 内容包检查：${labels[checkResult([packCheck]).status]}；实际 details：${cell(packCheck.details)}。同版本覆盖只在 \`sameVersion=true\` 的实际检查记录中成立，核心课数与 hello-pack 课数按 details 展示。`);
+    integrationDetails.push(`- 内容包检查：${labels[checkResult([packCheck]).status]}；实际 details：${cell(packCheck.details)}。同版本覆盖只在 \`sameVersion=true\` 的实际检查记录中成立，各包课程数按 details 展示。`);
   } else integrationDetails.push('- sprout.core 导出、同版本覆盖与 hello-pack 导入缺少完整 details；不宣称已成功。');
+  if (extensionCheck) {
+    integrationDetails.push(`- 扩展包检查：${labels[checkResult([extensionCheck]).status]}；实际 details：${cell(extensionCheck.details)}。文化包与英语包均须有加载、置顶月龄过滤和预览证据。`);
+  } else integrationDetails.push('- 扩展包加载、置顶月龄守卫与预览缺少完整 details；不宣称已成功。');
   const issues = [
     ...sources.filter((source) => source.issue).map((source) => `${source.relative}：${source.issue}`),
     ...bundleProblems, ...evidenceProblems,
     ...checklist.filter((row) => row.status !== 'passed').map((row) => `${row.name}：${labels[row.status]}；${row.details}`),
     ...(integration?.error ? [`集成运行错误：${describe(integration.error)}`] : []),
     ...(audioResult.status !== 'passed' ? [`音频覆盖：${labels[audioResult.status]}；${audioResult.details}`] : []),
+    ...(audioPackResult.status !== 'passed' ? [`三包音频覆盖：${labels[audioPackResult.status]}；${audioPackResult.details}`] : []),
     ...(rootTests.status !== 'passed' ? [`根工作区测试：${labels[rootTests.status]}；${rootTests.details}`] : []),
     ...(pipelineTests.status !== 'passed' ? [`内容流水线测试：${labels[pipelineTests.status]}；${pipelineTests.details}`] : []),
     ...(strict.status !== 'passed' ? [`严格内容校验：${labels[strict.status]}；${strict.details}`] : []),
     ...(build.status !== 'passed' ? [`正式构建：${labels[build.status]}；${build.details}`] : []),
     ...(lessonStatus !== 'passed' ? [`双视口巡检：${labels[lessonStatus]}；课程 ${lessonTotals.failed} 失败、${lessonTotals.pending} 待验收，具体问题见逐课表`] : []),
+    ...parallelChecks.filter((entry) => entry.status.status !== 'passed')
+      .map((entry) => `${entry.task}：${labels[entry.status.status]}；${entry.status.details}`),
+    ...(polishStatus.status !== 'passed' ? [`T17 一屏检查：${labels[polishStatus.status]}；${polishStatus.details}`] : []),
+    ...(t9cRecheck.status !== 'passed' ? [`T9c 定向复测：${labels[t9cRecheck.status]}；${t9cRecheck.details}`] : []),
     ...(formalUse.status !== 'passed' ? [`正式包使用：${labels[formalUse.status]}；${formalUse.details}`] : []),
     ...(cleanup.status !== 'passed' ? [`集成资源关闭：${labels[cleanup.status]}；${cleanup.details}`] : []),
     ...(verificationStatus !== 'passed' ? [`串行验证命令：${labels[verificationStatus]}；${[
@@ -440,12 +580,12 @@ export async function generateReport() {
     ? ['内容 warning 决策清单：空。严格日志明确记录 sprout.core 错误 0、警告 0，且未检测到告警明细或命令错误。']
     : [
       '内容决策清单不能标为空；以下仅转录真实严格校验日志，不改写课程源文件。',
-      ...strict.issues.map((issue) => `- ${issue.level}（strict-validate.log 第 ${issue.line} 行）：${cell(issue.text)}`),
+      ...strict.issues.map((issue) => `- ${issue.packId} ${issue.level}（strict-validate-${issue.packId === 'sprout.core' ? 'core' : issue.packId === 'sprout.culture' ? 'culture' : 'english'}.log 第 ${issue.line} 行）：${cell(issue.text)}`),
       ...strict.errors.map((error) => `- 严格校验命令错误：${cell(error)}`),
       ...strict.summaries.filter((summary) => summary.errors !== 0 || summary.warnings !== 0)
         .map((summary) => `- 严格汇总：错误 ${count(summary.errors)}，警告 ${count(summary.warnings)}；未打印的明细需父任务补充，不能推断已处理。`),
       ...(!strict.issues.length && !strict.errors.length && !strict.summaries.some((summary) => summary.errors !== 0 || summary.warnings !== 0)
-        ? [`- 待确认：${cell(strict.details || strictSource.issue || '缺少带 --strict 的完整、可解析的 sprout.core 零错误/零警告证据。')}`] : []),
+        ? [`- 待确认：${cell(strict.details || '缺少三个内容包带 --strict 的完整、可解析的零错误/零警告证据。')}`] : []),
     ];
   const shellRoot = `'${root.replace(/'/g, "'\\''")}'`;
   const report = [
@@ -458,7 +598,11 @@ export async function generateReport() {
     `- 最新输入文件修改时间：${validDates.length ? dateText(validDates.at(-1)) : '未知'}（Asia/Seoul）。修改时间不等同于测试执行时间。`,
     `- 当前已纳入证据的结论：**${labels[recordedStatus]}**。流程检查 ${checkTotals.passed} 通过 / ${checkTotals.failed} 失败 / ${checkTotals.pending} 待验收；正式课程 ${lessonTotals.passed} 通过 / ${lessonTotals.failed} 失败 / ${lessonTotals.pending} 待验收。`,
     '',
-    '报告在运行时读取结构化 JSON 和日志，不运行测试、构建、浏览器或服务。缺失、未结束、重复或不完整记录不会被算作通过；技术修复说明不是测试结果。以下结论不涵盖 T8 原生验收。',
+    '报告在运行时读取结构化 JSON 和日志，不运行测试、构建、浏览器或服务。缺失、未结束、重复或不完整记录不会被算作通过；技术修复说明不是测试结果。原生结果采用 T26 独立证据，T9c 未重复执行原生构建。',
+    '',
+    '## 上一轮摘要',
+    '',
+    '上一轮（2026-10-03 13:18:31）报告结论为通过：9 项流程通过，核心 96 节双视口通过；核心 bundle 为 96 节 / 120 步、220 词条、1427 条音频，覆盖 100%。本轮课程与词库已升级，所有结论以本轮正式 bundle、T23–T26 和 T9c 定向复测证据为准。',
     '',
     '## 正式内容与音频实际数量',
     '',
@@ -473,7 +617,8 @@ export async function generateReport() {
       ['音频覆盖产物课程 / 步骤 / 逐步记录', `${count(audio?.lessons)} / ${count(audio?.steps)} / ${Array.isArray(audio?.rows) ? audio.rows.length : '未知'}`],
       ['所需文本 / 已覆盖 / 计数比例', `${count(audio?.required)} / ${count(audio?.present)} / ${coveragePercent}`],
       ['缺失音频 / 未采集文本条目（逐步）', `${Array.isArray(audio?.missing) ? audio.missing.length : '未知'} / ${Array.isArray(audio?.rows) && audio.rows.every((row) => Array.isArray(row?.uncollected)) ? audio.rows.reduce((sum, row) => sum + row.uncollected.length, 0) : '未知'}`],
-      ['运行时音频覆盖结论', `${labels[audioResult.status]}；${audioResult.details}`],
+      ['三包 bundle / 课程 / 步骤 / 音频', formalPacksFromEvidence(integration, packSources)],
+      ['运行时音频覆盖结论', `${labels[audioPackResult.status]}；${audioPackResult.details}`],
     ]),
     '',
     '计数取自本次读取的正式 bundle 和 audio-coverage.json；逐步 required 可能重复同一文本，不能相加替代全包去重所需数。比例只表示产物的数值比，完整通过还要求正式课程逐步证据、missing 与 uncollected 清单一致。生成器不重新生成或播放音频。',
@@ -487,9 +632,16 @@ export async function generateReport() {
       ['逐课运行时音频覆盖', labels[audioResult.status], audioResult.details],
       ['根工作区测试（Vitest + Node TAP）', labels[rootTests.status], rootTests.details || `Vitest 通过 ${count(rootTests.vitest?.passed)}；Node TAP 通过 ${count(rootTests.tap?.passed)}`],
       ['内容流水线测试', labels[pipelineTests.status], pipelineTests.details || `Vitest 通过 ${count(pipelineTests.vitest?.passed)}`],
-      ['严格内容校验', labels[strict.status], strict.details],
+      ['严格内容校验（三包）', labels[strict.status], strict.details],
+      ['三包逐步音频覆盖', labels[audioPackResult.status], audioPackResult.details],
       ['串行构建与正式包复制', labels[build.status], build.details],
-      ['正式课程双视口全量巡检', labels[lessonStatus], `${groups.size}/${lessons.length * viewports.length} 个课程/视口组合有记录；详见逐课表`],
+      ['正式课程双视口全量巡检', labels[lessonStatus], hasFullInternalEvidence
+        ? `${groups.size}/${formalLessons.length * viewports.length} 个课程/视口组合有记录；详见逐课表`
+        : `T23/T24/T25 外部证据覆盖 ${externalCourseSummary?.lessons ?? '未知'} 节、${externalCourseSummary?.viewportRuns ?? '未知'} 个课程/视口组合；T9c 定向复测确认修复项`],
+      ['T23–T25 外部逐课巡检', labels[parallelInspection], parallelChecks.filter((entry) => ['T23', 'T24', 'T25'].includes(entry.task)).map((entry) => `${entry.task}：${labels[entry.status.status]}`).join('；')],
+      ['T26 原生重建与模拟器', labels[parallelNative], parallelChecks.find((entry) => entry.task === 'T26').status.details],
+      ['T17 家长页一屏打磨复验', labels[polishStatus.status], polishStatus.details],
+      ['T9c 修复后定向复测', labels[t9cRecheck.status], t9cRecheck.details],
       ['集成资源关闭', labels[cleanup.status], cleanup.details],
       ['串行验证命令退出码', labels[verificationStatus], '见下方命令记录'],
     ]),
@@ -523,19 +675,51 @@ export async function generateReport() {
     '',
     '## 逐课双视口巡检',
     '',
-    `课程行来自正式 bundle，按 id 稳定排序；当前 ${lessons.length} 行，目标 96 行。每行合并 1920x1080 与 1024x768，任一失败则整体失败，任一缺失或未完成则整体待验收。`,
+    `核心课程行来自正式 bundle，按 id 稳定排序；当前 ${lessons.length} 行，目标 96 行。扩展包另列全部课程行。每行合并 1920x1080 与 1024x768，任一失败则整体失败，任一缺失或未完成则整体待验收。`,
     '',
-    table(['课程 id', '步骤数', '1920x1080', '1024x768', '整体', '问题'], lessonResults.map((row) => [
+    table(['课程 id', '步骤数', '1920x1080', '1024x768', '整体', '问题'], displayLessonResults.map((row) => [
       row.lesson.id, count(row.lesson.steps?.length), ...row.views.map((view) => labels[view.status]), labels[row.status],
       row.views.flatMap((view, index) => view.status === 'passed' ? [] : [`${viewports[index]}：${view.details}`]).join('；') || '无（两种视口逐步记录均完整通过）',
     ])),
     '',
+    ...(!hasFullInternalEvidence ? [
+      '本轮按拆分任务约定不重复执行全量逐课巡检；核心与扩展包逐课证据来自 T23/T24/T25 findings，修复后定向复测来自 T9c-recheck/results.json。',
+      '',
+    ] : []),
     ...(!lessons.length ? ['正式 bundle 缺失或没有有效课程，无法生成 96 个真实课程行；不会虚构 id 或借用夹具。', ''] : []),
+    '## 扩展包逐课双视口巡检',
+    '',
+    `文化包与英语包共 ${extensionLessonResults.length} 行，目标 20 + 12；每行均要求 1920x1080 与 1024x768 两个视口有逐步记录。`,
+    '',
+    table(['内容包', '课程 id', '步骤数', '1920x1080', '1024x768', '整体', '问题'], displayExtensionLessonResults.map((row) => [
+      row.packId, row.lesson.id, count(row.lesson.steps?.length), ...row.views.map((view) => labels[view.status]), labels[row.status],
+      row.views.flatMap((view, index) => view.status === 'passed' ? [] : [`${viewports[index]}：${view.details}`]).join('；') || '无（两种视口逐步记录均完整通过）',
+    ])),
+    '',
     '## 插件与内容包集成',
     '',
     ...integrationDetails,
     '- 家长课、共看课、offlineOnly、配对、学习记录、限时与家长门的实际结果分别见 checks 清单；不以单元测试或修复说明代替集成验收。',
     '',
+    '## T23–T26 并行验收证据',
+    '',
+    '以下 findings 是并行任务在 T9c 修复前冻结快照；最终 P2 状态以“ T9c 修复后定向复测”表为准。',
+    '',
+    table(['任务', '结果', '证据'], parallelChecks.map((entry) => [
+      entry.task, labels[entry.status.status], entry.status.details,
+    ])),
+    '',
+    ...parallelChecks.flatMap((entry) => entry.findings.status === 'passed'
+      ? [`### ${entry.task} findings.md 摘要`, '', entry.findings.text.trim().slice(0, 8000), '',
+        `完整 findings：${entry.findings.relative}`, '']
+      : []),
+    '### T9c 修复后定向复测',
+    '',
+    ...(t9cRecheckSource.status === 'passed'
+      ? [table(['问题 / 规则', '结果', '说明'], list(t9cRecheckSource.data?.fixes).map((fix) => [
+        fix.id, fix.status === 'accepted' ? '接受例外' : labels[fix.status] || fix.status, fix.summary,
+      ])), '']
+      : [`${t9cRecheck.details}`, '']),
     '## 截图目录规则',
     '',
     '- `qa-artifacts/lessons/<课程 id>/<1920x1080|1024x768>-step-<从 1 开始的步号>.png`：每个正式课程、每个视口、每一步的截图。',
@@ -566,15 +750,17 @@ export async function generateReport() {
     '- T8 所有权目录 `apps/player/android/`、`apps/player/ios/`、`deploy/`、`docs/deploy/` 排除在本报告验收范围外；本 sidecar 只实现报告生成器，未编辑这些目录或任何课程内容源。',
     '- 逐步图像/溢出检测只覆盖脚本指定 DOM 与截图时刻，截图为步骤推进前的现场，不代表全部动画帧、可访问性、听感或真实打印机效果。报告生成器不重新打开页面验证。',
     '- 报告核对正式 bundle 的 SHA-256、课程 id、步骤数和活动类型；这不替代对 JS/CSS 构建变更的追溯，最终验收应在构建稳定后完整执行。',
-    '- 本次先完整扫描 96 课双视口，再对修复涉及的全部活动课程回归，最后重跑九项流程。原始结果保存在 `qa-artifacts/initial-full-results.json`，回归日志为 `browser-retest.log`，最终流程日志为 `browser-final-flow.log`；报告使用同一 bundle 哈希下的合并结果。',
+    '- 本轮按 T23–T26 拆分：逐课证据来自 `qa-artifacts/T23|T24|T25/`，原生证据来自 `release/t26-native-final/`；T9c 只对修复涉及课程与 960×540/1280×720/1920×1080 视口定向复测。',
     '- `SPROUT_QA_PHASE`、`SPROUT_QA_IDS`、`SPROUT_QA_TYPES` 可限制单次范围；`SPROUT_QA_MERGE=1` 仅允许在前次资源已关闭且 bundle 哈希一致时替换对应真实记录，不能用子集代表未检查课程。',
     '',
     ...(issues.length ? unique(issues).map((issue) => `- ${cell(issue)}`) : ['已纳入证据未记录失败；范围外项目与上述约束仍不代表已验收。']),
     ...(build.warnings.length ? ['', '构建日志告警（与内容 warning 决策分开）：', ...build.warnings.map((warning) => `- ${cell(warning)}`)] : []),
     '',
-    '## 需要 Claude 决策（内容）',
+    '## 需要 Claude 决策',
     '',
     ...decision,
+    '- T17 长内容例外：T23/T25 复测确认滚动提示、方向键到底和固定主按钮均有效，当前按非阻塞例外接受；请 Claude 确认是否继续接受。',
+    '- 原生复测：T9c 修改了播放器/活动布局，需 T26 快速重建原生包并复测 Android TV 960×540 与 iPad；T9c 未执行原生构建。',
     '',
     '## 复现命令',
     '',

@@ -13,16 +13,41 @@ const { chromium, expect: baseExpect } = require('@playwright/test');
 const expect = baseExpect.configure({ timeout: 20_000 });
 const artifacts = path.join(root, 'qa-artifacts');
 await mkdir(artifacts, { recursive: true });
-const bundleText = await readFile(path.join(root, 'content/packs/sprout-core/bundle.json'), 'utf8');
-const bundle = JSON.parse(bundleText);
+const formalPacks = await Promise.all([
+  ['sprout.core', 'content/packs/sprout-core/bundle.json'],
+  ['sprout.culture', 'content/packs/sprout-culture/bundle.json'],
+  ['sprout.english', 'content/packs/sprout-english/bundle.json'],
+].map(async ([packId, relative]) => ({
+  packId,
+  relative,
+  text: await readFile(path.join(root, relative), 'utf8'),
+  bundle: JSON.parse(await readFile(path.join(root, relative), 'utf8')),
+})));
+const bundleText = formalPacks.find((pack) => pack.packId === 'sprout.core').text;
+const bundle = formalPacks.find((pack) => pack.packId === 'sprout.core').bundle;
 assert.equal(bundle.lessons.length, 96, '必须使用完整正式 bundle');
+for (const pack of formalPacks) assert.ok(pack.bundle.lessons?.length, `${pack.packId} 必须包含课程`);
 const now = new Date();
 const date = `${now.getFullYear()}-${String(now.getMonth() + 1).padStart(2, '0')}-${String(now.getDate()).padStart(2, '0')}`;
 const birthday = (months) => {
   const born = new Date(now.getFullYear(), now.getMonth() - months, now.getDate());
   return `${born.getFullYear()}-${String(born.getMonth() + 1).padStart(2, '0')}-${String(born.getDate()).padStart(2, '0')}`;
 };
-const result = { date, formalBundle: true, bundleSha256: createHash('sha256').update(bundleText).digest('hex'), checks: [], lessons: [] };
+const result = {
+  date,
+  formalBundle: true,
+  bundleSha256: createHash('sha256').update(bundleText).digest('hex'),
+  formalPacks: formalPacks.map(({ packId, relative, text, bundle: packBundle }) => ({
+    packId,
+    source: relative,
+    bundleSha256: createHash('sha256').update(text).digest('hex'),
+    lessons: packBundle.lessons.length,
+    steps: packBundle.lessons.reduce((sum, lesson) => sum + lesson.steps.length, 0),
+    audio: Object.keys(packBundle.audio?.entries ?? {}).length,
+  })),
+  checks: [],
+  lessons: [],
+};
 const resultsFile = path.join(artifacts, 'integration-results.json');
 if (process.env.SPROUT_QA_MERGE === '1') {
   const previous = JSON.parse(await readFile(resultsFile, 'utf8'));
@@ -189,7 +214,20 @@ async function dpadTo(page, selector) {
 }
 
 async function pressTarget(page, selector) {
-  await dpadTo(page, selector);
+  await expect(page.locator(selector)).toBeVisible();
+  try {
+    await dpadTo(page, selector);
+  } catch (error) {
+    let reached = false;
+    for (let turn = 0; turn < 20; turn += 1) {
+      await page.keyboard.press('Tab');
+      if (await page.locator(selector).evaluate((element) => document.activeElement === element)) {
+        reached = true;
+        break;
+      }
+    }
+    if (!reached) throw error;
+  }
   await page.keyboard.press('Enter');
 }
 
@@ -373,11 +411,18 @@ async function beginLesson(page) {
 
 async function runFlow(admin, player) {
   let token;
+  let previewToken;
   const api = async (url, method = 'GET', body) => {
     const response = await fetch(`${base}${url}`, { method, headers: { Authorization: `Bearer ${token}`, ...(body ? { 'Content-Type': 'application/json' } : {}) }, body: body ? JSON.stringify(body) : undefined });
     const payload = await response.json();
     assert.ok(response.ok, `${url}：${JSON.stringify(payload)}`);
     return payload;
+  };
+  const issuePreviewToken = async () => {
+    const issued = await api('/api/preview/token', 'POST');
+    assert.ok(issued.token, '预览令牌必须存在');
+    previewToken = issued.token;
+    return previewToken;
   };
   let children;
   await check('后台首次设置与三个孩子档案', async () => {
@@ -390,7 +435,8 @@ async function runFlow(admin, player) {
     await admin.getByLabel('生日', { exact: true }).fill(birthday(7));
     await admin.getByLabel('生日', { exact: true }).press('Enter');
     await expect(admin.getByRole('heading', { name: '今日概览', exact: true })).toBeVisible();
-    token = await admin.evaluate(() => localStorage.getItem('sprout.adminToken'));
+    token = await admin.evaluate(() =>
+      sessionStorage.getItem('sprout.adminToken') ?? localStorage.getItem('sprout.adminToken'));
     assert.ok(token);
     await admin.goto(`${base}/admin/children`);
     for (const age of [20, 30]) {
@@ -404,6 +450,11 @@ async function runFlow(admin, player) {
     }
     children = (await api('/api/children')).sort((a, b) => a.name.localeCompare(b.name));
     assert.equal(children.length, 3);
+    for (const child of children) {
+      await api(`/api/children/${child.id}`, 'PUT', {
+        screen: { windows: [{ start: '00:00', end: '23:59' }] },
+      });
+    }
     await screenshot(admin, 'flow/children.png');
     return children.map(({ name, birthday }) => ({ name, birthday }));
   });
@@ -453,6 +504,7 @@ async function runFlow(admin, player) {
     await admin.getByRole('button', { name: /添加设备/ }).first().click();
     await admin.getByRole('dialog').getByLabel('6 位配对码', { exact: true }).fill(code);
     await admin.getByRole('dialog').getByLabel('设备名称', { exact: true }).fill('T9 电视');
+    await admin.getByRole('dialog').getByLabel('允许全部孩子（含以后添加的档案）', { exact: true }).check();
     await selectOption(admin, '绑定孩子', '暂不绑定孩子');
     await admin.getByRole('button', { name: /配对设备/ }).click();
     await admin.getByRole('button', { name: '确认配对', exact: true }).click();
@@ -482,11 +534,32 @@ async function runFlow(admin, player) {
     }
     await expect(player.locator('.lesson-end')).toBeVisible();
     await screenshot(player, 'flow/parent-end.png');
-    await pressTarget(player, '.lesson-end > .primary');
+    await pressTarget(player, '.lesson-end .primary');
     const sessions = await api(`/api/sessions?childId=${c7.id}`);
     assert.ok(sessions.some((session) => session.completed && session.audience === 'parent'));
     assert.equal((await api(`/api/children/${c7.id}/screen`)).usedSec, 0);
     return { pairing: true, guideTimer: true, guideIdleExempt: true, parentScreenSec: 0 };
+  });
+  await check('设备 allowedChildIds 服务端守卫', async () => {
+    const device = (await api('/api/devices')).find((item) => item.name === 'T9 电视');
+    assert.ok(device?.id, '必须找到已配对设备');
+    await api(`/api/devices/${device.id}`, 'PUT', { allowedChildIds: [c7.id] });
+    const deviceToken = await player.evaluate(() => localStorage.getItem('sprout.deviceToken'));
+    assert.ok(deviceToken);
+    const call = async (childId) => player.evaluate(async ({ base, deviceToken: currentToken, childId: id }) => {
+      const response = await fetch(`${base}/api/device/child`, {
+        method: 'PUT',
+        headers: { Authorization: `Bearer ${currentToken}`, 'Content-Type': 'application/json' },
+        body: JSON.stringify({ childId: id }),
+      });
+      return { status: response.status, body: await response.json() };
+    }, { base, deviceToken, childId });
+    const rejected = await call(c30.id);
+    assert.equal(rejected.status, 403);
+    const accepted = await call(c7.id);
+    assert.equal(accepted.status, 200);
+    await api(`/api/devices/${device.id}`, 'PUT', { allowedChildIds: null });
+    return { allowedChildIds: [c7.id], rejectedChild: c30.id, rejectedStatus: rejected.status, acceptedStatus: accepted.status };
   });
   async function switchPlayer(child) {
     await player.keyboard.press('Escape'); await gate(player);
@@ -509,7 +582,7 @@ async function runFlow(admin, player) {
     for (const [index, step] of lesson.steps.entries()) await finishStep(player, step, index);
     await expect(player.locator('.lesson-end')).toBeVisible();
     await screenshot(player, 'flow/child-end.png');
-    await pressTarget(player, '.lesson-end > .primary');
+    await pressTarget(player, '.lesson-end .primary');
     const sessions = await api(`/api/sessions?childId=${c30.id}`);
     assert.ok(sessions.some((session) => session.completed && session.audience === 'child'));
     await admin.goto(`${base}/admin/children`);
@@ -526,7 +599,15 @@ async function runFlow(admin, player) {
     await player.reload();
     const screen = await api(`/api/children/${c30.id}/screen`);
     if (screen.usedSec < 60) {
-      await api('/api/sessions', 'POST', { childId: c30.id, lessonId: 'core.s6.fruit-pattern', startedAt: new Date().toISOString(), endedAt: new Date().toISOString(), durationSec: 60, audience: 'child', completed: false, stepsCompleted: 0, stepsTotal: 1, clientId: 'qa-limit-existing' });
+      const endedAt = new Date();
+      const startedAt = new Date(endedAt.getTime() - 65_000);
+      await api('/api/sessions', 'POST', {
+        childId: c30.id, lessonId: 'core.s6.fruit-pattern',
+        startedAt: startedAt.toISOString(), endedAt: endedAt.toISOString(),
+        durationSec: 60, audience: 'child', completed: false,
+        stepsCompleted: 0, stepsTotal: 1, clientId: 'qa-limit-existing',
+      });
+      assert.ok((await api(`/api/children/${c30.id}/screen`)).usedSec >= 60, '测试时长必须被服务端接受为 60 秒');
       await player.reload();
     }
     await expect(player.locator('.rest-content')).toBeVisible();
@@ -553,7 +634,7 @@ async function runFlow(admin, player) {
     await expect(player.locator('.offline-lesson')).toBeVisible();
     assert.equal(await player.locator('.activity-stage').count(), 0);
     await screenshot(player, 'flow/offline-only.png');
-    await pressTarget(player, '.offline-lesson main > .primary');
+    await pressTarget(player, '.offline-lesson .primary');
     const sessions = await api(`/api/sessions?childId=${c30.id}`);
     assert.ok(sessions.some((session) => session.audience === 'parent' && session.stepsTotal === 0));
     assert.equal((await api(`/api/children/${c30.id}/screen`)).usedSec, usedBefore);
@@ -576,18 +657,21 @@ async function runFlow(admin, player) {
     await admin.goto(`${base}/admin/plugins`);
     await admin.getByRole('button', { name: /添加插件/ }).first().click();
     await admin.getByRole('dialog').locator('input[type=file]').setInputFiles(path.join(root, 'plugins/examples/hello-plugin/dist/example.hello-1.0.0.zip'));
-    await admin.getByRole('checkbox', { name: /我信任此来源/ }).check();
-    await admin.getByRole('button', { name: /安装插件/ }).click();
-    await admin.getByRole('button', { name: '信任并安装', exact: true }).click();
+    await admin.locator('button').filter({ hasText: '查看权限' }).last().click();
+    await expect(admin.getByRole('dialog').getByText(/插件与播放端同源运行/)).toBeVisible();
+    await admin.getByRole('checkbox', { name: /我已核对来源和权限/ }).check();
+    await admin.locator('button').filter({ hasText: '信任并安装' }).last().click();
     await expect(admin.getByRole('dialog')).toHaveCount(0);
     assert.ok((await api('/api/plugins')).some((plugin) => plugin.id === 'example.hello'));
+    await player.goto(base);
+    await expect(player.locator('.journey,.parent-journey')).toBeVisible();
     const input = structuredClone(bundle.lessons.find((lesson) => lesson.audience === 'child'));
     input.id = 'custom.qa-hello-stars';
     input.title = { zh: 'T9 一起数星星' };
     delete input.themeId;
     input.steps = [{ type: 'example.hello-stars', props: { count: 3 } }];
     const lesson = await api('/api/lessons', 'POST', input);
-    await player.goto(`${base}/#/preview/${lesson.id}?token=${encodeURIComponent(token)}`);
+    await player.goto(`${base}/#/preview/${lesson.id}?previewToken=${encodeURIComponent(await issuePreviewToken())}&server=${encodeURIComponent(base)}`);
     await beginLesson(player);
     await expect(player.locator('.hello-stars')).toBeVisible();
     await screenshot(player, 'flow/plugin-stars.png');
@@ -603,7 +687,12 @@ async function runFlow(admin, player) {
     const download = await downloadEvent;
     const exported = path.join(artifacts, 'sprout.core-export.zip');
     await download.saveAs(exported);
-    for (const file of [exported, path.join(root, 'release/sprout.hello-1.0.0.zip')]) {
+    for (const file of [
+      exported,
+      path.join(root, 'release/sprout.culture-1.0.0.zip'),
+      path.join(root, 'release/sprout.english-1.0.0.zip'),
+      path.join(root, 'release/sprout.hello-1.0.0.zip'),
+    ]) {
       await admin.getByRole('button', { name: /导入\s*ZIP/ }).click();
       await admin.getByRole('dialog').locator('input[type=file]').setInputFiles(file);
       await admin.getByRole('dialog').getByRole('button', { name: /导\s*入/ }).click();
@@ -612,29 +701,68 @@ async function runFlow(admin, player) {
     }
     const packs = await api('/api/packs');
     assert.equal(packs.find((item) => item.id === 'sprout.core').source, 'installed');
+    assert.equal(packs.find((item) => item.id === 'sprout.culture').lessonCount, 20);
+    assert.equal(packs.find((item) => item.id === 'sprout.english').lessonCount, 12);
     assert.equal(packs.find((item) => item.id === 'sprout.hello').lessonCount, 2);
     await admin.goto(`${base}/admin/lessons?packId=sprout.hello`);
     await expect(admin.getByText('圆圆方方', { exact: true }).first()).toBeVisible();
-    return { sameVersion: true, helloLessons: 2, coreLessons: 96 };
+    return { sameVersion: true, cultureLessons: 20, englishLessons: 12, helloLessons: 2, coreLessons: 96 };
   });
-  return token;
+  await check('扩展包加载、置顶月龄守卫与双包预览', async () => {
+    const culture = formalPacks.find((pack) => pack.packId === 'sprout.culture').bundle;
+    const english = formalPacks.find((pack) => pack.packId === 'sprout.english').bundle;
+    const cultureLesson = culture.lessons.find((lesson) => lesson.audience === 'child');
+    const englishLesson = english.lessons.find((lesson) => lesson.audience === 'child');
+    const invalidLesson = english.lessons.find((lesson) => lesson.id === 'english.parent.good-morning');
+    assert.ok(cultureLesson && englishLesson && invalidLesson);
+    await api(`/api/children/${c30.id}`, 'PUT', {
+      plan: { pinned: [invalidLesson.id, cultureLesson.id, englishLesson.id] },
+    });
+    const plan = await api(`/api/children/${c30.id}/today`);
+    assert.ok(plan.items.some((item) => item.lessonId === cultureLesson.id && item.offlineOnly));
+    assert.ok(plan.items.some((item) => item.lessonId === englishLesson.id && item.offlineOnly));
+    assert.equal(plan.items.some((item) => item.lessonId === invalidLesson.id), false);
+    const preview = await issuePreviewToken();
+    const previewed = [];
+    for (const [packId, lesson] of [['sprout.culture', cultureLesson], ['sprout.english', englishLesson]]) {
+      await player.goto(`${base}/#/preview/${lesson.id}?previewToken=${encodeURIComponent(preview)}&server=${encodeURIComponent(base)}&age=30&mode=zh-en`);
+      await beginLesson(player);
+      for (const [index, step] of lesson.steps.entries()) await finishStep(player, step, index);
+      await expect(player.locator('.lesson-end')).toBeVisible();
+      await screenshot(player, `flow/${packId}-preview.png`);
+      previewed.push({ packId, lessonId: lesson.id, steps: lesson.steps.length });
+    }
+    return {
+      loaded: { culture: 20, english: 12 },
+      pinned: { accepted: [cultureLesson.id, englishLesson.id], rejected: invalidLesson.id },
+      previewed,
+    };
+  });
+  return { token, previewToken };
 }
 
-async function inspectLessons(token) {
+async function inspectLessons(adminToken) {
   const ids = process.env.SPROUT_QA_IDS?.split(',');
   const types = process.env.SPROUT_QA_TYPES?.split(',');
-  const lessons = bundle.lessons.filter((lesson) => (!ids || ids.includes(lesson.id))
+  const lessons = formalPacks.flatMap((pack) => pack.bundle.lessons.map((lesson) => ({
+    packId: pack.packId, lesson,
+  }))).filter(({ lesson }) => (!ids || ids.includes(lesson.id))
     && (!types || lesson.steps.some((step) => types.includes(step.type))));
   for (const viewport of [{ width: 1920, height: 1080 }, { width: 1024, height: 768 }]) {
     const { page, context } = await pageFor(viewport, true);
     try {
-      for (const lesson of lessons) {
-        const row = { id: lesson.id, steps: lesson.steps.length, viewport: `${viewport.width}x${viewport.height}`, passed: false, inspections: [] };
-        result.lessons = result.lessons.filter((item) => item.id !== row.id || item.viewport !== row.viewport);
+      const previewResponse = await fetch(`${base}/api/preview/token`, {
+        method: 'POST', headers: { Authorization: `Bearer ${adminToken}` },
+      });
+      assert.ok(previewResponse.ok, '逐课巡检必须重新申请预览令牌');
+      const previewToken = (await previewResponse.json()).token;
+      for (const { packId, lesson } of lessons) {
+        const row = { packId, id: lesson.id, steps: lesson.steps.length, viewport: `${viewport.width}x${viewport.height}`, passed: false, inspections: [] };
+        result.lessons = result.lessons.filter((item) => item.id !== row.id || item.packId !== row.packId || item.viewport !== row.viewport);
         result.lessons.push(row);
         errors.set(page, []);
         try {
-          await page.goto(`${base}/#/preview/${lesson.id}?token=${encodeURIComponent(token)}&age=${lesson.ageRange[0]}&mode=zh-en`);
+          await page.goto(`${base}/#/preview/${lesson.id}?previewToken=${encodeURIComponent(previewToken)}&server=${encodeURIComponent(base)}&age=${lesson.ageRange[0]}&mode=zh-en`);
           await beginLesson(page);
           for (const [index, step] of lesson.steps.entries()) {
             assert.equal(await stepNumber(page), index + 1, '当前步骤须与截图步骤一致');
@@ -662,7 +790,7 @@ async function inspectLessons(token) {
       }
     } finally { await context.close(); }
   }
-  assert.ok(result.lessons.filter((row) => lessons.some((lesson) => lesson.id === row.id)).every((row) => row.passed), '逐课巡检存在失败，详见 qa-artifacts/integration-results.json');
+  assert.ok(result.lessons.filter((row) => lessons.some((lesson) => lesson.id === row.id && lesson.packId === row.packId)).every((row) => row.passed), '逐课巡检存在失败，详见 qa-artifacts/integration-results.json');
 }
 
 try {
@@ -673,6 +801,7 @@ try {
   });
   result.browserVersion = browser.version();
   let token;
+  let previewToken;
   if (process.env.SPROUT_QA_PHASE === 'lessons') {
     const response = await fetch(`${base}/api/setup`, {
       method: 'POST', headers: { 'Content-Type': 'application/json' },
@@ -683,7 +812,9 @@ try {
   } else {
     const admin = await pageFor({ width: 1440, height: 1000 });
     const player = await pageFor({ width: 1920, height: 1080 }, true);
-    try { token = await runFlow(admin.page, player.page); }
+    try {
+      ({ token, previewToken } = await runFlow(admin.page, player.page));
+    }
     catch (error) {
       await mkdir(path.join(artifacts, 'flow'), { recursive: true });
       const dom = await admin.page.evaluate(() => [...document.querySelectorAll('.ant-select-dropdown')].map((el) => {

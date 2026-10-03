@@ -222,6 +222,11 @@
   grid-gap: 0;
 }
 
+.spa-sequence > .spa-media-heading {
+  flex: 0 0 auto;
+  margin: 1vmin 0 3vmin;
+}
+
 .spa-sequence-main {
   position: relative;
   display: flex;
@@ -319,7 +324,7 @@
   max-width: 70rem;
   flex: 1;
   min-height: 0;
-  margin-top: var(--sp-gap);
+  margin-top: 0;
   margin-bottom: 1vmin;
 }
 
@@ -629,11 +634,12 @@
   overflow-wrap: break-word;
 }
 
-.spa-movement {
+.spa-stage.spa-movement {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: space-between;
+  padding-top: 14vmin;
   --sp-layout-spa-movement: 1vmin;
   grid-gap: 0;
 }
@@ -789,6 +795,10 @@
     margin-right: var(--sp-layout-spa-song-actions);
     margin-bottom: var(--sp-layout-spa-song-actions-y, var(--sp-layout-spa-song-actions));
   }
+}
+
+@media (min-width: 1500px) {
+  .spa-stage.spa-movement { padding-top: 8vmin; }
 }
 
 @media (prefers-reduced-motion: reduce) {

@@ -93,6 +93,7 @@ export function LessonExperience({ data, initialScreen, preview }: { data: Lesso
   const starting = useRef(false);
   const watch = useRef(new InteractionWatch());
   const readArea = useRef<HTMLDivElement>(null);
+  const introReading = useRef<HTMLDivElement>(null);
   const paused = hidden || manualPause || idlePaused || (!preview && app.gateOpen);
   const runtime = useRef({ paused, idlePaused, gateOpen: app.gateOpen });
   runtime.current = { paused, idlePaused, gateOpen: app.gateOpen };
@@ -293,17 +294,23 @@ export function LessonExperience({ data, initialScreen, preview }: { data: Lesso
 
   const readingEnd = phase === 'ended' || phase === 'rest';
   return <Page className={`lesson-page phase-${phase} ${parentLesson ? 'audience-parent' : ''} ${companionPlaying ? 'guide-dim' : ''} ${phase === 'playing' && parentLesson && lesson.steps[stepIndex].type === 'guide' ? 'guide-page' : ''} ${readingEnd ? 'parent-reading-page' : ''}`} onBack={() => void exit()}
-    onKey={(key) => readingEnd && (key === 'up' || key === 'down') && scrollReadingArea(readArea.current, key, app.reducedMotion)}>
+    onKey={(key) => (phase === 'intro' && (key === 'up' || key === 'down')
+      ? scrollReadingArea(introReading.current, key, app.reducedMotion)
+      : readingEnd && (key === 'up' || key === 'down')
+        ? scrollReadingArea(readArea.current, key, app.reducedMotion)
+        : false)}>
     {phase === 'intro' && <>
       <header><BackButton onClick={() => void exit()} /><span className="co-view"><Users />{parentLesson ? '只给家长看' : '需要家长全程陪同'}</span></header>
       <main className="lesson-intro">
         <div className="intro-cover">{cover ? <img src={cover} alt="" /> : <Leaf />}</div>
-        <div className="intro-copy"><span className="eyebrow">{preview ? '课程预览' : parentLesson ? '家长指引' : '家长导语'} · {lesson.durationMin} 分钟</span><h1>{lesson.title.zh}</h1>{lesson.title.en && <p className="english-title" lang="en">{lesson.title.en}</p>}
+        <div className="intro-copy"><div className="intro-reading" ref={introReading} tabIndex={-1}>
+          <span className="eyebrow">{preview ? '课程预览' : parentLesson ? '家长指引' : '家长导语'} · {lesson.durationMin} 分钟</span><h1>{lesson.title.zh}</h1>{lesson.title.en && <p className="english-title" lang="en">{lesson.title.en}</p>}
           {parentLesson && <p className="parent-reading-note">读完放下屏幕，去和宝宝玩真东西。</p>}
           {!!lesson.printables?.length && <p className="printable-note"><Printer />可在后台打印卡片</p>}
           <p className="intro-text">{lesson.parentGuide.intro}</p>
           {lesson.parentGuide.phrases?.length ? <div className="parent-phrases">{lesson.parentGuide.phrases.map((phrase, i) => <p key={i}><strong>{phrase.zh}</strong>{phrase.en && <span lang="en">{phrase.en}</span>}</p>)}</div> : null}
           {startError && <p role="alert" className="form-error">{startError}</p>}
+        </div>
           <button data-focusable className="primary start-lesson" onClick={() => void begin()}><Play fill="currentColor" />开始</button>
         </div>
       </main>

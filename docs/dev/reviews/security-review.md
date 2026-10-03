@@ -135,6 +135,12 @@
 
 状态：已缓解（配对、密码、上传、导入/恢复、远程插件、TTS 在读请求体前按真实 IP/家庭管理员配额限流并限制并发；过期配对码及时清理，限流索引有界，TTS 单 worker/最多 32 个待处理任务；429 附 Retry-After，断连不提前释放运行中的任务）——T18
 
+### T9c sidecar 核查：T18/T19
+
+- **T18 服务端：已复核。** 预览令牌为十分钟 scope=preview，只允许白名单 GET；设备 `allowedChildIds` 在存储、配对、切换、资料读取和 session 上报路径统一校验；session 时长按真实起止时间与生效单次上限两倍截断并记录服务端事件；停用包/插件静态资源、内容包主动文件 MIME、CORS、启动风险提示、SSRF DNS/重定向/固定 IP/大小与超时、配对/登录/上传/导入/远程插件/TTS 限流均已落地。H-02 的同源插件执行、H-03 的同源预览 iframe、H-05 的设备 token 仍属于已记录的残余风险，不是 T18 漏实现。
+- **T19 排课器：已复核。** pinned/review/balance/theme 所有候选统一执行 `[ageRange[0], ageRange[1] + 3]` 月龄守卫；parent-only 下适龄 child 置顶课保留为 `offlineOnly`，路线外扩展包和无阶段路线同样生效；`childLessonsPerDay`、总课数和 `dailyMaxMin` 尾删规则共同生效。核心测试已覆盖 `sprout-culture/.qa/age-guard.ts` 的六个月龄场景及路线外、无路线、各候选来源边界。
+- **核查结论：通过。** 本次未发现需要修改 `apps/server/**` 或 `packages/core/**` 的遗漏；未关闭的高/中危仍为评审中已明确的残余风险（H-02、H-03、H-05、H-06、M-02，以及浏览器端 token/同源执行相关 M-04），不在本 sidecar 的 T18/T19 最小修复范围内。
+
 ### M-04：管理员和设备 token 明文保存在 Web Storage，远程 session key 还残留 token
 
 - 严重度：中

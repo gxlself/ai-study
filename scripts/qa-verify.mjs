@@ -13,7 +13,9 @@ const jobs = [
   ['tests', 'pnpm', ['-r', '--workspace-concurrency=1', 'test']],
   ['pipeline-tests', 'pnpm', ['content:test']],
   ['service-worker', process.execPath, ['--test', '--test-concurrency=1', 'apps/player/scripts/tests/service-worker.node.mjs']],
-  ['strict-validate', 'pnpm', ['content:validate', '--pack', 'content/packs/sprout-core', '--strict']],
+  ['strict-validate-core', 'pnpm', ['content:validate', '--pack', 'content/packs/sprout-core', '--strict']],
+  ['strict-validate-culture', 'pnpm', ['content:validate', '--pack', 'content/packs/sprout-culture', '--strict']],
+  ['strict-validate-english', 'pnpm', ['content:validate', '--pack', 'content/packs/sprout-english', '--strict']],
   ['build', 'pnpm', ['build']],
 ];
 const result = { startedAt: new Date().toISOString(), jobs: [], completed: false };
