@@ -26,6 +26,7 @@ export {
 export { contrastSvg } from './contrast-svg';
 export type { ContrastPattern } from './contrast-svg';
 export { Scene } from './Scene';
+export { ReadingArea, scrollReadingArea } from './ReadingArea';
 export { parseNotes } from './music';
 export type { ParsedNote } from './music';
 

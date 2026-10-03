@@ -2,6 +2,7 @@
 @import './early.css';
 @import './media.css';
 @import './guide.css';
+@import './reading.css';
 
 .spa-stage {
   --sp-font-xl: 3.5rem;

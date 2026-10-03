@@ -3,6 +3,7 @@ import { useLocation, useNavigate, useParams } from 'react-router';
 import { Armchair, ArrowRight, Eye, Leaf, NotebookPen, Pause, Play, Printer, Sparkles, Users, X } from 'lucide-react';
 import { ageOf, type ChildProfile, type ResolvedConcept, type ScreenStatus, type SessionInput } from '@sprout/schema';
 import { screenStatus } from '@sprout/core';
+import { ReadingArea, scrollReadingArea } from '@sprout/activities';
 import type { ActivityResult } from '../../../../packages/plugin-sdk/src/types';
 import { useApp } from '../state/AppContext';
 import { ActivityRegistry, createResources, preloadLesson } from '../host';
@@ -91,6 +92,7 @@ export function LessonExperience({ data, initialScreen, preview }: { data: Lesso
   const preloadController = useRef<AbortController | null>(null);
   const starting = useRef(false);
   const watch = useRef(new InteractionWatch());
+  const readArea = useRef<HTMLDivElement>(null);
   const paused = hidden || manualPause || idlePaused || (!preview && app.gateOpen);
   const runtime = useRef({ paused, idlePaused, gateOpen: app.gateOpen });
   runtime.current = { paused, idlePaused, gateOpen: app.gateOpen };
@@ -289,7 +291,9 @@ export function LessonExperience({ data, initialScreen, preview }: { data: Lesso
     void app.refresh().catch(() => undefined); navigate('/');
   }
 
-  return <Page className={`lesson-page phase-${phase} ${parentLesson ? 'audience-parent' : ''} ${companionPlaying ? 'guide-dim' : ''}`} onBack={() => void exit()}>
+  const readingEnd = phase === 'ended' || phase === 'rest';
+  return <Page className={`lesson-page phase-${phase} ${parentLesson ? 'audience-parent' : ''} ${companionPlaying ? 'guide-dim' : ''} ${phase === 'playing' && lesson.steps[stepIndex].type === 'guide' ? 'guide-page' : ''} ${readingEnd ? 'parent-reading-page' : ''}`} onBack={() => void exit()}
+    onKey={(key) => readingEnd && (key === 'up' || key === 'down') && scrollReadingArea(readArea.current, key, app.reducedMotion)}>
     {phase === 'intro' && <>
       <header><BackButton onClick={() => void exit()} /><span className="co-view"><Users />{parentLesson ? '只给家长看' : '需要家长全程陪同'}</span></header>
       <main className="lesson-intro">
@@ -316,13 +320,22 @@ export function LessonExperience({ data, initialScreen, preview }: { data: Lesso
       {manualPause && <PauseOverlay onResume={() => setManualPause(false)} onExit={() => void exit()} />}
       {idlePaused && <PauseOverlay idle onResume={() => { watch.current.touch(); setIdlePaused(false); }} onExit={() => void exit()} />}
     </>}
-    {(phase === 'ended' || phase === 'rest') && <>
+    {readingEnd && <>
       <main className="lesson-end">
+        <header className="lesson-end-heading">
         <div className={`end-art ${!parentLesson && celebrate && !app.reducedMotion ? 'celebrate' : ''}`} aria-hidden="true">{parentLesson ? <NotebookPen /> : phase === 'ended' ? <Sparkles /> : <Leaf />}</div>
+        <div>
         <h1>{parentLesson ? '放下屏幕，去陪宝宝玩吧' : phase === 'ended' ? '你今天看得真认真！' : '休息一下'}</h1><p className="end-subtitle">{parentLesson ? '跟随宝宝的兴趣，随时调整玩法' : '接下来，和家人一起玩'}</p>
-        <OfflineCards items={lesson.offline} />
-        {saveError ? <Problem message={saveError} retry={() => void save(phase === 'ended').catch(() => undefined)} /> : !saved && <p role="status">正在保存这次小旅程</p>}
-        <button className="primary" data-focusable disabled={!saved && Boolean(startedAt.current)} onClick={() => void home()}>{preview ? '重新预览' : '回到首页'}<ArrowRight /></button>
+        </div>
+        </header>
+        <ReadingArea areaRef={readArea} label="课后线下活动">
+          <OfflineCards items={lesson.offline} phrases={lesson.parentGuide.phrases} />
+          {saveError && <Problem message={saveError} retry={() => void save(phase === 'ended').catch(() => undefined)} />}
+        </ReadingArea>
+        <footer className="parent-reading-footer">
+          {!saveError && !saved && <p role="status">正在保存这次小旅程</p>}
+          <button className="primary" data-focusable disabled={!saved && Boolean(startedAt.current)} onClick={() => void home()}>{preview ? '重新预览' : '完成线下活动，回到首页'}<ArrowRight /></button>
+        </footer>
       </main>
     </>}
     {saveError && phase !== 'ended' && phase !== 'rest' && <div className="save-warning" role="alert">{saveError}<button data-focusable onClick={() => void save(false).catch(() => undefined)}>重试保存</button></div>}

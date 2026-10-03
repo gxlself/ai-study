@@ -3,7 +3,7 @@ import { ArrowLeft, Home, Leaf, LoaderCircle, Printer, Settings } from 'lucide-r
 import { useNavigate } from 'react-router';
 import { useApp } from '../state/AppContext';
 import type { NavKey } from '../../../../packages/plugin-sdk/src/types';
-import type { LessonSummary, OfflineActivity } from '@sprout/schema';
+import type { LessonSummary, OfflineActivity, ParentGuide } from '@sprout/schema';
 import { DOMAIN_LABELS } from '@sprout/schema';
 import { createResources } from '../host';
 
@@ -77,18 +77,31 @@ export function LessonCard({ lesson, compact = false, offlineOnly = false, adult
   </button>;
 }
 
-export function OfflineCards({ items }: { items: OfflineActivity[] }) {
+export function OfflineCards({ items, phrases }: { items: OfflineActivity[]; phrases?: ParentGuide['phrases'] }) {
   return <div className="offline-list">{items.map((item, index) => <article className="offline-card" key={`${item.title}-${index}`}>
     <div className="offline-heading"><Leaf aria-hidden="true" /><h3>{item.title}</h3>{item.minutes && <small>{item.minutes} 分钟</small>}</div>
-    {item.materials?.length ? <p className="materials">准备：{item.materials.join('、')}</p> : null}
-    <ol>{item.steps.map((step, i) => <li key={i}>{step}</li>)}</ol>
-    {item.question && <p className="offline-question"><strong>一起想一想</strong>{item.question}</p>}
-    {item.levels && <dl className="offline-levels">
-      {item.levels.easier && <div><dt>简单一点</dt><dd>{item.levels.easier}</dd></div>}
-      <div><dt>一起试试</dt><dd>按上面的步骤，跟随宝宝的节奏。</dd></div>
-      {item.levels.harder && <div><dt>挑战一下</dt><dd>{item.levels.harder}</dd></div>}
-    </dl>}
-    {item.safety && <p className="safety">安全提醒：{item.safety}</p>}
+    <div className="offline-columns">
+      <section className="offline-playbook">
+        <h4>一起这样玩</h4>
+        <ol>{item.steps.map((step, i) => <li key={i}>{step}</li>)}</ol>
+        {index === 0 && !!phrases?.length && <section className="offline-phrases">
+          <h4>可以这样说</h4>
+          <div className="parent-phrases">{phrases.map((phrase, i) => <p key={i}>
+            <strong lang="zh">{phrase.zh}</strong>{phrase.en && <span lang="en">{phrase.en}</span>}
+          </p>)}</div>
+        </section>}
+      </section>
+      <aside className="offline-notes">
+        {!!item.materials?.length && <section><h4>准备材料</h4><p className="materials">{item.materials.join('、')}</p></section>}
+        {item.question && <section className="offline-question"><h4>一起想一想</h4><p>{item.question}</p></section>}
+        {item.levels && <section><h4>三档玩法</h4><dl className="offline-levels">
+          {item.levels.easier && <div><dt>简单一点</dt><dd>{item.levels.easier}</dd></div>}
+          <div><dt>一起试试</dt><dd>按上面的步骤，跟随宝宝的节奏。</dd></div>
+          {item.levels.harder && <div><dt>挑战一下</dt><dd>{item.levels.harder}</dd></div>}
+        </dl></section>}
+        {item.safety && <section className="safety"><h4>安全提醒</h4><p>{item.safety}</p></section>}
+      </aside>
+    </div>
   </article>)}</div>;
 }
 

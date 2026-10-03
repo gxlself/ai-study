@@ -50,9 +50,31 @@ describe('家长活动指引', () => {
       expect(root.textContent).toContain(text);
     }
     expect(root.querySelector('img')?.getAttribute('src')).toBe('ball.svg');
+    expect(root.querySelector('.spa-guide-figure figcaption')?.textContent).toBe('皮球');
+    expect(root.querySelector('.spa-guide-columns > .spa-guide-playbook')).not.toBeNull();
+    expect(root.querySelector('.spa-guide-columns > .spa-guide-notes')).not.toBeNull();
+    expect(ctx.focus.current()).toBe(root.querySelector('.spa-guide-start'));
     expect(guideActivity.preload!(sample, ctx)).toEqual(['ball.svg']);
     expect(guideActivity.speeches(sample)).toEqual([]);
     expect(ctx.mock.speeches).toEqual([]);
+  });
+  it('阅读阶段上下键只滚动内容，底部按钮保持独立，不提前开始陪玩', async () => {
+    const { root, instance, ctx } = await mount();
+    const area = root.querySelector<HTMLElement>('.spa-guide-reading')!;
+    Object.defineProperties(area, {
+      clientHeight: { configurable: true, value: 100 },
+      scrollHeight: { configurable: true, value: 500 },
+    });
+    const scrollTo = vi.fn();
+    Object.defineProperty(area, 'scrollTo', { configurable: true, value: scrollTo });
+    await press(instance, 'down');
+    expect(scrollTo).toHaveBeenCalledWith({ top: 80, behavior: 'smooth' });
+    expect(root.querySelector('.spa-guide-footer')?.contains(area)).toBe(false);
+    expect(root.querySelector('.spa-guide--read')).not.toBeNull();
+    expect(ctx.mock.logs.some((event) => event.type === 'guide:start')).toBe(false);
+    await act(async () => instance.pause?.());
+    await press(instance, 'down');
+    expect(scrollTo).toHaveBeenCalledTimes(1);
   });
   it('playMin=0 直接完成，不进入计时或记录反应', async () => {
     const value = await mount(0);

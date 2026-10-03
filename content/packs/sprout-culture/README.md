@@ -64,6 +64,7 @@ pnpm content:zip content/packs/sprout-culture --out release/
 pnpm exec tsx --test --test-concurrency=1 content/packs/sprout-culture/.qa/culture.test.ts
 pnpm content:test
 pnpm exec tsx content/packs/sprout-culture/.qa/import-smoke.ts
+pnpm exec tsx content/packs/sprout-culture/.qa/age-guard.ts
 node content/packs/sprout-culture/.qa/check-assets.mjs
 ```
 
@@ -85,6 +86,7 @@ node content/packs/sprout-culture/.qa/check-assets.mjs
 | `content:bundle`与`content:zip` | 均退出0；20节有效课，zip共198个文件，含真实音频，不含`.qa/`和生成缓存 |
 | `.qa/import-smoke.ts` | 隔离HTTP导入20课、7词条、0路线、0 issues；分龄筛选、家长置顶、开启共看通过 |
 | `parent-only`置顶共看 | 不播放孩子屏幕步骤；无路线的共看置顶课未进入今日计划，限制如后文说明 |
+| `.qa/age-guard.ts` | 失败：18、23月的co-view档案可排入本包起始24月的置顶课；6、17月被全局门槛拦截，24、36月可正常置顶 |
 | `.qa/check-assets.mjs` | 1280×800与390×844全部8图非空、无横向溢出、无页面错误；已人工查看截图 |
 | 中英文音频样本 | 新年好与灯笼各取中英，均为有有效帧的单声道22050Hz AAC；未用空文件代替 |
 | 全局`content:test` | 296项中295项通过；唯一失败是核心包正式播放音频测试缺125条新增词库语料，不是本包缺音 |
@@ -92,6 +94,8 @@ node content/packs/sprout-culture/.qa/check-assets.mjs
 首轮TTS失败没有写入残缺清单，随后真实重生成成功。全局核心音频缺失来自并行维护的`sprout.core`，本任务没有补写核心包或改测试。跨模块问题需负责人处理后重新验收，不能把本包37项测试通过解释为全仓库或严格发布检查通过。
 
 **已知共享流水线阻塞：** 当前`scripts/lib/validate-pack.ts`的`routeIssues()`对`routes: []`也逐课要求主题归属，导致20条“在主题中出现0次”的warning；严格校验因这些warning退出1。每课的`validateLesson`为0 error、0 warning，资源和音频可完整交付；不能据bundle或zip已生成就声称严格发布通过。本任务不拥有scripts，不修该共享代码、不造假路线。需流水线负责人对无路线包豁免归属次数检查，同时保留共看及有路线包的全部校验，再重跑严格命令。
+
+**已知置顶月龄限制：** 当前`packages/core/src/scheduler.ts`只在`parent-only`分支检查课程月龄；`co-view`下置顶项未按`lesson.ageRange`过滤。因此主动开启共看的18或23月龄档案也能排入`culture.child.spring-festival`。本包共看仍声明24–36月，不放宽月龄，不越界修改排课器。核心负责人应给共看置顶补课程月龄检查并保留全局18月门槛；修复前，24月以前保持parent-only，不置顶本包共看课。专用负向检查`.qa/age-guard.ts`会如实退出1，修复后应通过。
 
 ## 后台导入与使用
 

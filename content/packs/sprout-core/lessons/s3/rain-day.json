@@ -105,7 +105,7 @@
           },
           {
             "text": "能独走时穿雨靴慢走。不会走或站不稳就抱稳看。",
-            "concept": "walk",
+            "concept": "rain-boots",
             "say": {
               "zh": "我们慢慢来。",
               "en": "Let's go slowly."
@@ -113,7 +113,7 @@
           },
           {
             "text": "仅在自家平地洒薄清水迹。成人近旁守护。让能独走的宝宝轻踏一下。",
-            "concept": "shoes",
+            "concept": "rain-boots",
             "say": {
               "zh": "雨靴轻轻踩。",
               "en": "Step gently in your rain boots."

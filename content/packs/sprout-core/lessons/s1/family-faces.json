@@ -18,8 +18,8 @@
   "printables": [
     {
       "kind": "cards",
-      "title": "家人陪看卡",
-      "items": ["mom", "dad", "baby", "grandma-paternal", "grandpa-paternal"],
+      "title": "家人与照护者陪看卡",
+      "items": ["mom", "dad", "baby", "grandma-paternal", "grandpa-paternal", "caregiver"],
       "size": "large",
       "showText": false,
       "showEnglish": false
@@ -28,7 +28,7 @@
   "parentGuide": {
     "intro": "先读完，再关屏。优先用家里已有的真实照片。也可由家长在后台上传后打印，不给宝宝看手机。只选熟悉的一两位，按家中实际称呼来说。课程标题不代表每个家庭都要有这些成员。",
     "tips": [
-      "插画卡不是真人照片。家人照片或真人优先。",
+      "插画只示意家人或照护角色。真实照片或真人优先。",
       "宝宝的目光停在哪儿，就说那位家人的称呼。",
       "平时叫名字，留几秒空白。不反复大声叫。",
       "六到八个月不要求稳定叫名反应，也不要求叫爸爸妈妈。"
@@ -78,13 +78,13 @@
             "say": { "zh": "一起看看呀。", "en": "Let's look together." }
           },
           {
-            "text": "拿出一张熟悉家人的照片。用手指着脸。",
-            "say": { "zh": "这是妈妈。", "en": "This is Mom." },
-            "concept": "mom"
+            "text": "拿出一张熟悉照护者的照片。用手指着脸。",
+            "say": { "zh": "这是陪你的人。", "en": "This is your caregiver." },
+            "concept": "caregiver"
           },
           {
             "text": "宝宝看照片时，用家中实际称呼再说一次。",
-            "say": { "zh": "妈妈在这里。", "en": "Here is Mom." }
+            "say": { "zh": "陪你的人在这里。", "en": "Your caregiver is here." }
           },
           {
             "text": "指着宝宝的照片，换成宝宝的名字问好。",

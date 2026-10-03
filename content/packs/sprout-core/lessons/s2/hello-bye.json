@@ -87,7 +87,7 @@
         "steps": [
           {
             "text": "家人走到宝宝看得见的位置，先停下来微笑。",
-            "concept": "wave",
+            "concept": "caregiver",
             "say": {
               "zh": "你好，宝宝。",
               "en": "Hello, baby."

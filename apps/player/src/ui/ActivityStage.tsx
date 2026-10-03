@@ -102,7 +102,7 @@ export function ActivityStage(props: Props) {
     }
   }, [props.paused, app.speech]);
 
-  return <div className="activity-stage" ref={element} aria-label={step.title?.zh ?? props.lesson.title.zh} aria-busy={props.paused}>
+  return <div className={`activity-stage${step.type === 'guide' ? ' activity-stage--guide' : ''}`} ref={element} aria-label={step.title?.zh ?? props.lesson.title.zh} aria-busy={props.paused}>
     {(!plugin || failure) && <div className="missing-activity"><Puzzle /><h2>{failure || `需要安装插件 ${step.type}`}</h2><button data-focusable className="primary" disabled={props.paused} onClick={() => props.onComplete({ data: { skipped: true, type: step.type } })}>跳过</button></div>}
   </div>;
 }

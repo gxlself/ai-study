@@ -74,7 +74,8 @@
         "steps": [
           {
             "text": "宝宝清醒时，面对面相处，或一起看固定好的安全镜子。",
-            "say": { "zh": "看看我们的脸。", "en": "Look at our faces." }
+            "say": { "zh": "看看我们的脸。", "en": "Look at our faces." },
+            "concept": "mirror"
           },
           {
             "text": "指自己眼睛旁边，别碰眼球。",

@@ -14,7 +14,7 @@
     { "zh": "看看镜子中的脸。", "en": "Look at faces in a mirror." },
     { "zh": "和家长一起笑笑。", "en": "Share a smile with a caregiver." }
   ],
-  "cover": { "concept": "baby", "bg": "room" },
+  "cover": { "concept": "mirror", "bg": "room" },
   "parentGuide": {
     "intro": "先读完，再关屏。用防碎、圆角的婴儿镜，和宝宝一起看看。指着镜中的脸，说家中称呼。宝宝看、笑、发声，都温柔接住。不需要知道镜中是自己。",
     "tips": [
@@ -64,11 +64,13 @@
         "steps": [
           {
             "text": "检查镜面无破损。由大人拿稳，或稳固放在地面。",
-            "say": { "zh": "一起看看呀。", "en": "Let's look together." }
+            "say": { "zh": "一起看看呀。", "en": "Let's look together." },
+            "concept": "mirror"
           },
           {
             "text": "抱稳宝宝，让家长和宝宝的脸都出现在镜子里。",
-            "say": { "zh": "我也在这里。", "en": "I am here too." }
+            "say": { "zh": "我也在这里。", "en": "I am here too." },
+            "concept": "mirror"
           },
           {
             "text": "指着镜中的宝宝，轻声说宝宝的名字。",
@@ -82,7 +84,8 @@
           },
           {
             "text": "宝宝发声或看你时，温柔回应。",
-            "say": { "zh": "我听见啦。", "en": "I hear you." }
+            "say": { "zh": "我听见啦。", "en": "I hear you." },
+            "concept": "caregiver"
           },
           {
             "text": "转开目光或烦躁时，把镜子收好。",

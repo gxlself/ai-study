@@ -88,9 +88,9 @@
         "steps": [
           {
             "text": "先关屏，把低矮宽口盒放在地垫上，让宝宝摸一个完整的大块积木。",
-            "concept": "blocks",
+            "concept": "single-block",
             "say": {
-              "zh": "这是积木。",
+              "zh": "这是一块积木。",
               "en": "Here is a block."
             }
           },
@@ -104,7 +104,7 @@
           },
           {
             "text": "成人把盒子轻轻倾向空地垫，让积木倒出，再交给宝宝自由拿放。",
-            "concept": "blocks",
+            "concept": "single-block",
             "say": {
               "zh": "出来啦。",
               "en": "Out it comes."

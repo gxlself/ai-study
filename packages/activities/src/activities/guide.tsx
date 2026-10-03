@@ -2,6 +2,7 @@ import { useLayoutEffect, useRef, useState } from 'react';
 import type { GuideProps } from '@sprout/schema';
 import { useActivityKeys, type ActivityContext } from '@sprout/plugin-sdk';
 import { Action, ConceptImage, InputHint, Stage, defineBuiltin, useSession, useTask } from '../shared';
+import { ReadingArea, scrollReadingArea } from '../ReadingArea';
 
 const reactions = [
   { value: 'liked', label: '很喜欢' },
@@ -27,6 +28,7 @@ function GuideActivity({ ctx }: { ctx: ActivityContext<GuideProps> }) {
   const controlsRef = useRef(false);
   const [selected, setSelected] = useState(0);
   const readArea = useRef<HTMLDivElement>(null);
+  const readFooter = useRef<HTMLElement>(null);
   const wakeButton = useRef<HTMLButtonElement>(null);
   const endButton = useRef<HTMLButtonElement>(null);
   const reactionButtons = useRef<(HTMLButtonElement | null)[]>([]);
@@ -88,6 +90,7 @@ function GuideActivity({ ctx }: { ctx: ActivityContext<GuideProps> }) {
 
   useLayoutEffect(() => {
     ctx.focus.refresh();
+    if (phase === 'read') ctx.focus.focus(readFooter.current?.querySelector('.spa-guide-start') ?? null);
     if (phase === 'play') ctx.focus.focus(controls ? endButton.current : wakeButton.current);
     if (phase === 'reaction') ctx.focus.focus(reactionButtons.current[0]);
   }, [ctx, phase, controls]);
@@ -106,10 +109,9 @@ function GuideActivity({ ctx }: { ctx: ActivityContext<GuideProps> }) {
     if (phaseRef.current === 'read') {
       if (key === 'ok') start();
       else if (key === 'up' || key === 'down') {
-        const el = readArea.current;
-        if (el) el.scrollTop += (key === 'down' ? 1 : -1) * Math.max(80, el.clientHeight * 0.7);
+        scrollReadingArea(readArea.current, key, ctx.reducedMotion);
       }
-      return true;
+      return key !== 'left' && key !== 'right';
     }
     if (key === 'ok') react(reactions[selected].value);
     else {
@@ -122,13 +124,10 @@ function GuideActivity({ ctx }: { ctx: ActivityContext<GuideProps> }) {
 
   return <Stage ctx={ctx} className={`spa-guide spa-guide--${phase}`}>
     {phase === 'read' && <>
-      <div className="spa-guide-reading" ref={readArea} tabIndex={0} data-focusable aria-label="家长陪玩指引">
-        <header className="spa-guide-goal"><span>给家长的陪玩指引</span><h2>{props.goal}</h2></header>
-        {!!props.materials.length && <section className="spa-guide-section">
-          <h3>准备材料</h3>
-          <ul className="spa-guide-materials">{props.materials.map((item, index) => <li key={index}>{item}</li>)}</ul>
-        </section>}
-        <section className="spa-guide-section">
+      <header className="spa-guide-goal"><span>给家长的陪玩指引</span><h2>{props.goal}</h2></header>
+      <ReadingArea areaRef={readArea} className="spa-guide-reading" label="家长陪玩指引">
+        <div className="spa-guide-columns">
+        <section className="spa-guide-section spa-guide-playbook">
           <h3>一起这样玩</h3>
           <ol className="spa-guide-steps">{props.steps.map((step, index) => <li key={index}>
             <span className="spa-guide-step-number" aria-hidden="true">{index + 1}</span>
@@ -140,9 +139,18 @@ function GuideActivity({ ctx }: { ctx: ActivityContext<GuideProps> }) {
                 {step.say.en && <p lang="en">{step.say.en}</p>}
               </div>}
             </div>
-            {(step.concept || step.image) && <ConceptImage ctx={ctx} concept={step.concept} image={step.image} />}
+            {(step.concept || step.image) && <figure className="spa-guide-figure">
+              <ConceptImage ctx={ctx} concept={step.concept} image={step.image}
+                alt={step.concept ? ctx.concept(step.concept)?.zh ?? '陪玩示意' : '陪玩示意'} />
+              <figcaption>{step.concept ? ctx.concept(step.concept)?.zh ?? '陪玩示意' : '陪玩示意'}</figcaption>
+            </figure>}
           </li>)}</ol>
         </section>
+        <aside className="spa-guide-notes">
+        {!!props.materials.length && <section className="spa-guide-section">
+          <h3>准备材料</h3>
+          <ul className="spa-guide-materials">{props.materials.map((item, index) => <li key={index}>{item}</li>)}</ul>
+        </section>}
         {!!props.observe?.length && <section className="spa-guide-section">
           <h3>留意宝宝的反应</h3>
           <ul>{props.observe.map((item, index) => <li key={index}>{item}</li>)}</ul>
@@ -150,8 +158,10 @@ function GuideActivity({ ctx }: { ctx: ActivityContext<GuideProps> }) {
         {props.safety && <section className="spa-guide-section spa-guide-safety">
           <h3>安全提醒</h3><p>{props.safety}</p>
         </section>}
-      </div>
-      <footer className="spa-guide-footer">
+        </aside>
+        </div>
+      </ReadingArea>
+      <footer className="spa-guide-footer" ref={readFooter}>
         <InputHint ctx={ctx} />
         <Action ctx={ctx} className="spa-guide-start" onClick={start}>
           {props.playMin > 0 ? `开始陪玩 ${props.playMin} 分钟` : '完成'}

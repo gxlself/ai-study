@@ -7,6 +7,7 @@ import { OfflineLesson } from './OfflineLesson';
 import { CoViewNotice, coViewNoticeRead } from '../ui/CoViewNotice';
 import { LessonCard } from '../ui/common';
 import { LessonPlayer } from './LessonPlayer';
+import type { ScopeOptions } from '../host/navigation';
 
 const app = vi.hoisted(() => ({
   source: { saveSession: vi.fn(async () => undefined), lesson: vi.fn(), screen: vi.fn() },
@@ -14,7 +15,7 @@ const app = vi.hoisted(() => ({
   speech: { stopSpeaking: vi.fn() },
   gateOpen: false,
   refresh: vi.fn(async () => undefined),
-  navigation: { pushScope: vi.fn(() => vi.fn()) },
+  navigation: { pushScope: vi.fn((_element: HTMLElement, _options: ScopeOptions) => vi.fn()) },
   concepts: [],
 }));
 vi.mock('../state/AppContext', () => ({ useApp: () => app }));
@@ -48,10 +49,29 @@ describe('仅线下版与共看知情提示', () => {
     expect(container.textContent).toContain('还有什么是圆的？');
     expect(container.textContent).toContain('找两个。');
     expect(container.querySelector('.activity-stage')).toBeNull();
+    expect(container.querySelector('.parent-reading-footer > .primary')).not.toBeNull();
+    expect(container.querySelector('main .primary')).toBeNull();
+    expect(container.querySelector('.offline-playbook [lang="en"]')?.textContent).toBe('It is round.');
     await act(async () => container.querySelector<HTMLButtonElement>('.primary')!.click());
     expect(app.source.saveSession).toHaveBeenCalledExactlyOnceWith(expect.objectContaining({
       childId: 'child-qa', lessonId: 'test.offline', audience: 'parent', completed: true, stepsCompleted: 0, stepsTotal: 0,
     }));
+  });
+  it('方向键滚动阅读内容时不提交记录，内容适配后恢复普通导航', async () => {
+    await act(async () => root.render(<MemoryRouter><OfflineLesson data={{ lesson, packId: 'sprout.core', baseUrl: '/' }} /></MemoryRouter>));
+    const onKey = app.navigation.pushScope.mock.calls[0][1].onKey!;
+    const area = container.querySelector<HTMLElement>('.spa-reading-area')!;
+    Object.defineProperties(area, {
+      clientHeight: { configurable: true, value: 100 },
+      scrollHeight: { configurable: true, value: 400 },
+      scrollTo: { configurable: true, value: vi.fn() },
+    });
+    expect(onKey('down')).toBe(true);
+    expect(area.scrollTo).toHaveBeenCalledWith({ top: 80, behavior: 'smooth' });
+    expect(app.source.saveSession).not.toHaveBeenCalled();
+    Object.defineProperty(area, 'scrollHeight', { configurable: true, value: 100 });
+    expect(onKey('down')).toBe(false);
+    expect(onKey('left')).toBe(false);
   });
   it('关闭说明后同一个孩子不再显示，换孩子仍显示', async () => {
     await act(async () => root.render(<CoViewNotice childId="child-qa" />));

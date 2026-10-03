@@ -17,4 +17,17 @@ describe('线下玩法卡', () => {
     expect(old).toContain('面对面等宝宝回应。');
     expect(old).not.toContain('挑战一下');
   });
+  it('将步骤与中英短句放在左栏，材料和提醒放在右栏，多项活动不重复短句', () => {
+    const container = document.createElement('div');
+    container.innerHTML = renderToStaticMarkup(<OfflineCards items={[
+      { title: '找形状', steps: ['找一个圆形。'], materials: ['大积木'], safety: '成人陪同。' },
+      { title: '一起摸', steps: ['摸一摸。'] },
+    ]} phrases={[{ zh: '圆圆的。', en: 'It is round.' }]} />);
+    const first = container.querySelector('.offline-columns')!;
+    expect(first.querySelector('.offline-playbook')?.textContent).toContain('找一个圆形。');
+    expect(first.querySelector('.offline-playbook [lang="en"]')?.textContent).toBe('It is round.');
+    expect(first.querySelector('.offline-notes')?.textContent).toContain('准备材料');
+    expect(first.querySelector('.offline-notes')?.textContent).toContain('成人陪同。');
+    expect(container.querySelectorAll('.offline-phrases')).toHaveLength(1);
+  });
 });

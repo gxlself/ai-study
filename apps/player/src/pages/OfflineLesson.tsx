@@ -2,6 +2,7 @@ import { useCallback, useEffect, useRef, useState } from 'react';
 import { Check, Leaf } from 'lucide-react';
 import { useNavigate } from 'react-router';
 import type { SessionInput } from '@sprout/schema';
+import { ReadingArea, scrollReadingArea } from '@sprout/activities';
 import type { LessonData } from '../data';
 import { newId } from '../data/storage';
 import { useApp } from '../state/AppContext';
@@ -21,6 +22,7 @@ export function OfflineLesson({ data }: { data: LessonData }) {
   const saving = useRef<Promise<void> | null>(null);
   const [error, setError] = useState('');
   const [busy, setBusy] = useState(false);
+  const readArea = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     app.speech.stopSpeaking();
@@ -59,16 +61,18 @@ export function OfflineLesson({ data }: { data: LessonData }) {
       setBusy(false);
     }
   }
-  return <Page className="offline-lesson audience-parent" onBack={() => void finish(false)}>
-    <header><BackButton onClick={() => void finish(false)} /><span className="offline-badge"><Leaf />线下版</span></header>
-    <main>
-      <h1>{lesson.title.zh}</h1>
-      <p className="intro-text">{lesson.parentGuide.intro}</p>
-      {!!lesson.parentGuide.phrases?.length && <div className="parent-phrases">{lesson.parentGuide.phrases.map((phrase, index) =>
-        <p key={index}><strong>{phrase.zh}</strong>{phrase.en && <span lang="en">{phrase.en}</span>}</p>)}</div>}
-      <OfflineCards items={lesson.offline} />
+  return <Page className="offline-lesson audience-parent parent-reading-page" onBack={() => void finish(false)}
+    onKey={(key) => (key === 'up' || key === 'down') && scrollReadingArea(readArea.current, key, app.reducedMotion)}>
+    <header><div className="parent-reading-title"><BackButton onClick={() => void finish(false)} /><h1>{lesson.title.zh}</h1></div><span className="offline-badge"><Leaf />线下版</span></header>
+    <main className="parent-reading-main">
+      <ReadingArea areaRef={readArea} label="线下活动指引">
+      <p className="parent-reading-intro">{lesson.parentGuide.intro}</p>
+      <OfflineCards items={lesson.offline} phrases={lesson.parentGuide.phrases} />
       {error && <Problem message={error} retry={() => void finish(record.current?.completed ?? false)} />}
-      <button data-focusable className="primary" disabled={busy} onClick={() => void finish(true)}><Check />完成线下活动，回到首页</button>
+      </ReadingArea>
     </main>
+    <footer className="parent-reading-footer">
+      <button data-focusable className="primary" disabled={busy} onClick={() => void finish(true)}><Check />完成线下活动，回到首页</button>
+    </footer>
   </Page>;
 }

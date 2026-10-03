@@ -317,7 +317,6 @@ small { font-size: 18px; }
 .audience-parent .end-art { color: var(--sp-ok); }
 .guide-dim { background: var(--sp-bg-night); }
 .guide-dim .lesson-topbar { visibility: hidden; }
-.audience-parent .spa-guide--read, .audience-parent .spa-guide--reaction { padding-top: 86px; }
 @media (max-width: 1100px) {
   .parent-guide-grid { grid-template-columns: 1fr; }
   .adult-card .lesson-picture { width: 110px; flex-basis: 110px; min-height: 116px; height: 116px; margin: 16px; }

@@ -96,7 +96,7 @@
           },
           {
             "text": "薄书垫住纸板一端。成人压稳低斜坡。",
-            "concept": "book",
+            "concept": "ramp",
             "say": {
               "zh": "小车在上面。",
               "en": "The car is up."

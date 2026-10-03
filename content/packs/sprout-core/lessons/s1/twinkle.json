@@ -69,7 +69,8 @@
           },
           {
             "text": "轻声唱中文的一句。不熟悉时，先用熟悉的旋律轻哼。",
-            "say": { "zh": "轻轻唱呀。", "en": "Let's sing softly." }
+            "say": { "zh": "轻轻唱呀。", "en": "Let's sing softly." },
+            "concept": "caregiver"
           },
           {
             "text": "保持抱稳，用自己的空闲手缓慢张开、合上。",

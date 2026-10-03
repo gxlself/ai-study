@@ -2,7 +2,7 @@
   "schemaVersion": 1,
   "id": "core.s3.head-shoulders",
   "title": {
-    "zh": "头发肩膀膝盖脚",
+    "zh": "头、肩膀、膝盖、脚",
     "en": "Head, Shoulders, Knees and Toes"
   },
   "summary": {
@@ -95,6 +95,7 @@
           },
           {
             "text": "唱开头一小句。指自己的肩膀和膝盖。",
+            "concept": "shoulder",
             "say": {
               "zh": "肩膀，膝盖。",
               "en": "Shoulders, knees."
@@ -123,7 +124,7 @@
       "parentTip": "家长学唱后关屏。面对面唱给宝宝听。",
       "props": {
         "title": {
-          "zh": "头发肩膀膝盖脚",
+          "zh": "头、肩膀、膝盖、脚",
           "en": "Head, Shoulders, Knees and Toes"
         },
         "credit": "旋律：传统（公有领域）；中文词：芽芽成长原创；English lyrics: traditional, public domain",
@@ -151,6 +152,16 @@
             "notes": "E4/0.5 E4/0.5 E4/2"
           }
         ],
+        "scene": {
+          "bg": "paper",
+          "ground": "none",
+          "sprites": [
+            { "concept": "head", "x": 18, "y": 55, "size": 24, "anim": "none" },
+            { "concept": "shoulder", "x": 40, "y": 55, "size": 24, "anim": "none" },
+            { "concept": "knee", "x": 62, "y": 55, "size": 24, "anim": "none" },
+            { "concept": "foot", "x": 84, "y": 55, "size": 24, "anim": "none" }
+          ]
+        },
         "repeat": 2,
         "actions": [
           {

@@ -1,0 +1,40 @@
+.spa-reading-viewport {
+  position: relative;
+  flex: 1 1 0;
+  min-height: 0;
+  min-width: 0;
+  padding-bottom: 2.8vmin;
+}
+.spa-reading-area {
+  width: 100%;
+  height: 100%;
+  min-height: 0;
+  min-width: 0;
+  overflow-y: auto;
+  overflow-x: hidden;
+  overscroll-behavior: contain;
+  -webkit-overflow-scrolling: touch;
+  padding: 0.5vmin 1vmin;
+  outline: none;
+}
+.spa-reading-area.sp-focused,
+.spa-reading-area:focus,
+.spa-stage .spa-reading-area.sp-focused,
+.spa-stage .spa-reading-area:focus {
+  transform: none;
+  box-shadow: inset 0.3vmin 0 0 var(--sp-focus);
+  outline: none;
+  z-index: auto;
+}
+.spa-reading-more,
+.spa-stage .spa-reading-more {
+  position: absolute;
+  right: 1vmin;
+  bottom: 0;
+  margin: 0;
+  font-size: 2.2vmin;
+  line-height: 1.2;
+  color: var(--sp-ink-2);
+  pointer-events: none;
+}
+.spa-reading-more[hidden] { display: none; }

@@ -88,7 +88,7 @@
         "steps": [
           {
             "text": "在地面一边放一块大积木。",
-            "concept": "blocks",
+            "concept": "single-block",
             "say": {
               "zh": "给你一个。",
               "en": "Here is one."

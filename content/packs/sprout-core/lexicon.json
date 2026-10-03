@@ -224,7 +224,7 @@
     {"id":"duckling","category":"animals","zh":"小鸭","en":"duckling","pinyin":"xiǎo yā","measure":"只","image":"assets/images/animals/duckling.svg","sound":{"zh":"嘎嘎","en":"quack quack"},"phrase":{"zh":"小鸭跟着妈妈","en":"The duckling follows its mother."},"tags":["farm"]},
     {"id":"wheel","category":"vehicles","zh":"轮子","en":"wheel","pinyin":"lún zi","measure":"个","image":"assets/images/vehicles/wheel.svg","phrase":{"zh":"轮子可以滚动","en":"The wheel can roll."},"tags":["vehicle-part"]},
     {"id":"shoulder","category":"body","zh":"肩膀","en":"shoulder","pinyin":"jiān bǎng","measure":"个","image":"assets/images/body/shoulder.svg","phrase":{"zh":"肩膀可以动一动","en":"Shoulders can move."}},
-    {"id":"knee","category":"body","zh":"膝盖","en":"knee","pinyin":"xī gài","measure":"个","plural":"knees","image":"assets/images/body/knee.svg","phrase":{"zh":"膝盖可以弯一弯","en":"Knees can bend."}},
+    {"id":"knee","category":"body","zh":"膝盖","en":"knee","pinyin":"xī gài","measure":"个","image":"assets/images/body/knee.svg","phrase":{"zh":"膝盖可以弯一弯","en":"Knees can bend."}},
     {"id":"hair","category":"body","zh":"头发","en":"hair","pinyin":"tóu fa","measure":"缕","image":"assets/images/body/hair.svg","phrase":{"zh":"头发可以梳一梳","en":"Hair can be combed."},"tags":["mass-noun","non-count"]},
     {"id":"mirror","category":"home","zh":"镜子","en":"mirror","pinyin":"jìng zi","measure":"面","image":"assets/images/home/mirror.svg","phrase":{"zh":"照镜子看看自己","en":"Look at yourself in the mirror."}},
     {"id":"plate","category":"home","zh":"盘子","en":"plate","pinyin":"pán zi","measure":"个","image":"assets/images/home/plate.svg","phrase":{"zh":"盘子可以装食物","en":"A plate can hold food."}},

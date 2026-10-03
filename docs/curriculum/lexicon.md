@@ -464,14 +464,24 @@ ID 注意：`orange` 是橙子，`orange-color` 是橙色；`star` 是星星，`
 
 预览及像素检查证据：`/tmp/sprout-t6-qHgDnM/a4-two-large-cards.png`、`print-custom-1.png`、`print-custom-2.png`、`print-fluent-emoji-1.png` 至 `print-fluent-emoji-5.png`、`print-render-check.json`。浏览器已关闭，没有留下开发服务器。
 
+### 2026-10-03 T10 第二批复核结果
+
+- 新增 **32 条**，总词条 **252 条**；新增类别分布为 animals 1、vehicles 1、body 3、home 3、clothes 3、nature 3、actions 13、toys 2、places 1、other 2。
+- 新增 Fluent 映射 6 条：`Wheel`、`Mirror`、`Briefs`、`Seedling`、`Playground slide`、`Teacher/Default`；沿用已取得的官方完整树快照（tree SHA `1ffb34c752ecf5d402f04cfb4b392c77f57c54bc`，`truncated=false`），T5 的 `resolveFluentPath` 对全包 **165 / 165** 条 Fluent 映射解析通过。
+- 新增 custom 自绘 26 条；全包 custom 87 条。所有新增 SVG 均为 `viewBox="0 0 256 256"`，无脚本、外链或位图引用；26 / 26 文件存在并通过 XML 解析。
+- `pnpm content:assets --pack content/packs/sprout-core`：下载 6、跳过 159、自绘已检查 87、错误 0、警告 0。
+- `Lexicon.parse` 通过，`validateConcepts` 为 0 error / 0 warning；整包 `content:validate` 为 0 error、1 warning，252 词条、96 节有效课程。
+- 本批新增文字尚未由 T5 生成离线音频：整包音频覆盖为 1427 / 1552（91.9%），缺失 125 条。播放端仍可按契约回退系统朗读；音频生成不在 T10 所有权内。
+- 本批新增量词均按单个可见对象或日常动作填写；`hair` 的“缕”仅适用于发丝，`bamboo` 的“根”仅适用于单根竹秆，两者均标记 `non-count`，不进入数量活动。新增词条没有增加拟声不确定项。
+
 ### 复核命令
 
 在仓库根运行，词库验收本身不需要服务器：
 
-本次结果：`Lexicon.parse` 通过、`validateConcepts` 0 error / 0 warning、下方内容回归测试 8 / 8 通过、本地 schema `tsc` 通过。schema 包的 vitest 脚本退出 0，但该包暂时没有测试文件；不能把 `--passWithNoTests` 当作内容测试覆盖。实际词库、素材和词表覆盖由下方 8 项测试提供。
+T6 基线结果：`Lexicon.parse` 通过、`validateConcepts` 0 error / 0 warning、下方内容回归测试 8 / 8 通过、本地 schema `tsc` 通过。schema 包的 vitest 脚本退出 0，但该包暂时没有测试文件；不能把 `--passWithNoTests` 当作内容测试覆盖。T10 第二批的复核结果见下方。
 
 ```bash
-npx tsx -e 'import fs from "node:fs"; import assert from "node:assert/strict"; import {Lexicon,validateConcepts} from "@sprout/schema"; const x=Lexicon.parse(JSON.parse(fs.readFileSync("content/packs/sprout-core/lexicon.json","utf8"))); assert.equal(x.concepts.length,220); assert.deepEqual(validateConcepts(x.concepts),[]); console.log("220 concepts, 0 issues");'
+npx tsx -e 'import fs from "node:fs"; import assert from "node:assert/strict"; import {Lexicon,validateConcepts} from "@sprout/schema"; const x=Lexicon.parse(JSON.parse(fs.readFileSync("content/packs/sprout-core/lexicon.json","utf8"))); assert.equal(x.concepts.length,252); assert.deepEqual(validateConcepts(x.concepts),[]); console.log("252 concepts, 0 issues");'
 pnpm --filter @sprout/schema typecheck
 pnpm --filter @sprout/schema test --maxWorkers=1
 ```
@@ -501,10 +511,10 @@ const get=(id:string)=>concepts.find(c=>c.id===id)!;
 const custom=Object.entries(sources.items).filter(([,s]:any)=>s.source==="custom").map(([p])=>p);
 test("契约、总数、类别与唯一 ID",()=>{
   assert.equal(raw.schemaVersion,1);
-  assert.equal(concepts.length,220);
-  assert.equal(new Set(concepts.map(c=>c.id)).size,220);
+  assert.equal(concepts.length,252);
+  assert.equal(new Set(concepts.map(c=>c.id)).size,252);
   assert.deepEqual(validateConcepts(concepts),[]);
-  const expected={animals:30,fruits:12,vegetables:8,food:12,vehicles:12,body:12,family:11,home:21,clothes:10,nature:16,colors:10,shapes:8,numbers:11,emotions:8,actions:14,toys:10,music:8,places:6,other:1};
+  const expected={animals:31,fruits:12,vegetables:8,food:12,vehicles:13,body:15,family:11,home:24,clothes:13,nature:19,colors:10,shapes:8,numbers:11,emotions:8,actions:27,toys:12,music:8,places:7,other:3};
   for(const [category,n] of Object.entries(expected))assert.equal(concepts.filter(c=>c.category===category).length,n,category);
 });
 test("每条词的名称、拼音、量词与短句",()=>{
@@ -519,15 +529,15 @@ test("每条词的名称、拼音、量词与短句",()=>{
 });
 test("映射完整、一词一路径",()=>{
   assert.equal(sources.schemaVersion,1);
-  assert.equal(Object.keys(sources.items).length,220);
-  assert.equal(new Set(concepts.map(c=>c.image)).size,220);
+  assert.equal(Object.keys(sources.items).length,252);
+  assert.equal(new Set(concepts.map(c=>c.image)).size,252);
   for(const c of concepts){
     assert.equal(c.image,`assets/images/${c.category}/${c.id}.svg`,c.id);
     const s=sources.items[c.image];assert.ok(s,c.id);
     assert.ok(s.source==="custom"||s.source==="fluent-emoji",c.id);
     if(s.source==="fluent-emoji"){assert.equal(s.style,"Color",c.id);assert.ok(s.name,c.id);if(s.skinTone)assert.equal(s.skinTone,"Default",c.id);}
   }
-  assert.equal(custom.length,61);
+  assert.equal(custom.length,87);
 });
 test("自绘 SVG 合法、纯矢量、打印轮廓",()=>{
   const files=custom.map(p=>path.join(root,p));
