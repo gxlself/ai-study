@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="320" height="180" viewBox="0 0 320 180">
+  <rect width="320" height="180" fill="#fdf6ec"/>
+  <g transform="translate(18 31) scale(.47)">
+    <path d="M128 210C125 173 128 148 139 119" fill="none" stroke="#609448" stroke-width="12" stroke-linecap="round"/>
+    <path d="M128 145C86 149 51 97 55 69C96 59 137 98 128 145Z" fill="#98C968" stroke="#609448" stroke-width="5" stroke-linejoin="round"/>
+    <path d="M131 132C128 85 158 49 204 51C211 92 179 135 131 132Z" fill="#77B77D" stroke="#548E5B" stroke-width="5" stroke-linejoin="round"/>
+    <path d="M117 132Q94 103 70 85" fill="none" stroke="#709E49" stroke-width="5" stroke-linecap="round"/>
+    <path d="M143 120Q162 90 189 69" fill="none" stroke="#5B985F" stroke-width="5" stroke-linecap="round"/>
+  </g>
+  <text x="145" y="89" font-family="PingFang SC, Noto Sans CJK SC, sans-serif" font-size="30" font-weight="600" fill="#3b3226">芽芽成长</text>
+  <text x="148" y="117" font-family="Avenir Next, sans-serif" font-size="17" fill="#609448">SPROUT</text>
+</svg>

@@ -1,0 +1,29 @@
+services:
+  sprout:
+    build:
+      context: ..
+      dockerfile: deploy/Dockerfile
+    image: sprout-household:local
+    init: true
+    restart: unless-stopped
+    ports:
+      - "${SPROUT_BIND_IP:-0.0.0.0}:4310:4310"
+    environment:
+      TZ: "${TZ:-Asia/Shanghai}"
+      SPROUT_DATA_DIR: /data
+      HOST: 0.0.0.0
+      PORT: "4310"
+    volumes:
+      - sprout-data:/data
+    read_only: true
+    tmpfs:
+      - /tmp:size=64m,mode=1777
+    stop_grace_period: 30s
+    logging:
+      driver: json-file
+      options:
+        max-size: "5m"
+        max-file: "3"
+
+volumes:
+  sprout-data:

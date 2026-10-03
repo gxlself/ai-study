@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+  <key>Label</key><string>com.sprout.server</string>
+  <key>ProgramArguments</key>
+  <array>
+    <string>__NODE__</string>
+    <string>--disable-warning=ExperimentalWarning</string>
+    <string>__REPO__/apps/server/dist/index.js</string>
+  </array>
+  <key>WorkingDirectory</key><string>__REPO__</string>
+  <key>EnvironmentVariables</key>
+  <dict>
+    <key>HOME</key><string>__HOME__</string>
+    <key>NODE_ENV</key><string>production</string>
+    <key>HOST</key><string>0.0.0.0</string>
+    <key>PORT</key><string>__PORT__</string>
+    <key>SPROUT_DATA_DIR</key><string>__DATA__</string>
+    <key>TZ</key><string>__TZ__</string>
+  </dict>
+  <key>RunAtLoad</key><true/>
+  <key>KeepAlive</key><true/>
+  <key>ThrottleInterval</key><integer>30</integer>
+  <key>ProcessType</key><string>Background</string>
+  <key>StandardOutPath</key><string>__DATA__/logs/server.stdout.log</string>
+  <key>StandardErrorPath</key><string>__DATA__/logs/server.stderr.log</string>
+</dict>
+</plist>

@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="24161" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="sprout-launch">
+    <device id="ipad11_0" orientation="landscape" layout="fullscreen" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="24160"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <scene sceneID="sprout-launch-scene">
+            <objects>
+                <viewController id="sprout-launch" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="sprout-launch-view">
+                        <rect key="frame" x="0" y="0" width="1194" height="834"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" image="SproutMark" translatesAutoresizingMaskIntoConstraints="NO" id="sprout-launch-mark">
+                                <rect key="frame" x="507" y="327" width="180" height="180"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="180" id="sprout-mark-width"/>
+                                    <constraint firstAttribute="height" constant="180" id="sprout-mark-height"/>
+                                </constraints>
+                            </imageView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="sprout-launch-safe"/>
+                        <color key="backgroundColor" red="0.9921568627" green="0.9647058824" blue="0.9254901961" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="sprout-launch-mark" firstAttribute="centerX" secondItem="sprout-launch-view" secondAttribute="centerX" id="sprout-mark-center-x"/>
+                            <constraint firstItem="sprout-launch-mark" firstAttribute="centerY" secondItem="sprout-launch-view" secondAttribute="centerY" id="sprout-mark-center-y"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="sprout-launch-responder" sceneMemberID="firstResponder"/>
+            </objects>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="SproutMark" width="256" height="256"/>
+    </resources>
+</document>
