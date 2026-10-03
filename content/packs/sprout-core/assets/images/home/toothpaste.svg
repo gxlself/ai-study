@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" role="img" aria-label="A small tube of toothpaste">
+  <path d="M83 61H178L192 190Q190 210 170 214H89Q69 210 67 190Z" fill="#DFF1FB" stroke="#5D9FBE" stroke-width="5" stroke-linejoin="round"/>
+  <path d="M83 61H178V91H83Z" fill="#5DA9E9" stroke="#3F83BE" stroke-width="5"/>
+  <path d="M90 105H174M94 126H178M97 147H181" stroke="#F08A5D" stroke-width="9" stroke-linecap="round" opacity=".85"/>
+  <path d="M93 45H169V63H93Z" fill="#F08A5D" stroke="#BD674D" stroke-width="5" stroke-linejoin="round"/>
+  <path d="M109 39H153" stroke="#FFF4D8" stroke-width="7" stroke-linecap="round"/>
+  <path d="M111 174Q128 163 145 174" fill="none" stroke="#5D9FBE" stroke-width="4" stroke-linecap="round"/>
+</svg>

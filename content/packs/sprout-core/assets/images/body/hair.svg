@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" role="img" aria-label="Soft hair">
+  <path d="M58 159Q43 125 61 89Q78 47 126 42Q180 37 199 84Q216 124 195 161L177 143Q169 115 153 99Q124 119 91 104Q88 135 78 157Z" fill="#725447" stroke="#503B34" stroke-width="5" stroke-linejoin="round"/>
+  <path d="M80 91Q86 55 122 51Q162 47 183 79M73 111Q86 84 102 73M103 91Q122 70 143 63M137 94Q158 72 177 73" fill="none" stroke="#9C7058" stroke-width="8" stroke-linecap="round"/>
+  <path d="M91 154Q128 183 165 154" fill="none" stroke="#FFD15C" stroke-width="20" stroke-linecap="round" opacity=".86"/>
+  <path d="M91 154Q128 183 165 154" fill="none" stroke="#D6A13C" stroke-width="3" stroke-linecap="round"/>
+</svg>

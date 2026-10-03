@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" role="img" aria-label="A shoulder on a simple upper body">
+  <circle cx="128" cy="62" r="27" fill="#FFD15C" stroke="#D6A13C" stroke-width="4"/>
+  <path d="M101 91Q76 95 52 117L34 203H222L204 117Q180 95 155 91Z" fill="#5DA9E9" stroke="#3F83BE" stroke-width="5" stroke-linejoin="round"/>
+  <path d="M101 91Q76 96 61 116L45 203M155 91Q180 96 195 116L211 203" fill="none" stroke="#D6A13C" stroke-width="5" stroke-linecap="round"/>
+  <circle cx="79" cy="111" r="17" fill="#F08A5D" stroke="#BD674D" stroke-width="4"/>
+  <path d="M79 99V123M67 111H91" stroke="#FFF4D8" stroke-width="4" stroke-linecap="round"/>
+</svg>

@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" role="img" aria-label="A child balancing with a support rail">
+  <path d="M45 61H211" stroke="#7A6A55" stroke-width="12" stroke-linecap="round"/>
+  <path d="M63 61V213M193 61V213" stroke="#A67C63" stroke-width="10" stroke-linecap="round"/>
+  <circle cx="117" cy="86" r="24" fill="#FFD15C" stroke="#D6A13C" stroke-width="4"/>
+  <path d="M117 112L117 164M117 126L84 101M117 126L153 104" fill="none" stroke="#5DA9E9" stroke-width="13" stroke-linecap="round"/>
+  <path d="M117 164L88 209M117 164L155 179L176 146" fill="none" stroke="#F08A5D" stroke-width="13" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M151 104L188 72" stroke="#FFD15C" stroke-width="10" stroke-linecap="round"/>
+  <path d="M77 214H102M151 214H178" stroke="#BD674D" stroke-width="5" stroke-linecap="round"/>
+</svg>

@@ -1,0 +1,103 @@
+{
+  "results": [
+    {
+      "viewport": {
+        "width": 1280,
+        "height": 800
+      },
+      "pixels": [
+        {
+          "file": "assets/images/festivals/fu.svg",
+          "loaded": true,
+          "opaque": 6576
+        },
+        {
+          "file": "assets/images/festivals/lantern.svg",
+          "loaded": true,
+          "opaque": 6091
+        },
+        {
+          "file": "assets/images/festivals/tangyuan.svg",
+          "loaded": true,
+          "opaque": 5226
+        },
+        {
+          "file": "assets/images/festivals/zongzi.svg",
+          "loaded": true,
+          "opaque": 5568
+        },
+        {
+          "file": "assets/images/festivals/sachet.svg",
+          "loaded": true,
+          "opaque": 4871
+        },
+        {
+          "file": "assets/images/festivals/dragon-boat.svg",
+          "loaded": true,
+          "opaque": 3416
+        },
+        {
+          "file": "assets/images/festivals/mooncake.svg",
+          "loaded": true,
+          "opaque": 8492
+        },
+        {
+          "file": "assets/images/festivals/festival-cover.svg",
+          "loaded": true,
+          "opaque": 5670
+        }
+      ],
+      "pageErrors": []
+    },
+    {
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "pixels": [
+        {
+          "file": "assets/images/festivals/fu.svg",
+          "loaded": true,
+          "opaque": 6576
+        },
+        {
+          "file": "assets/images/festivals/lantern.svg",
+          "loaded": true,
+          "opaque": 6091
+        },
+        {
+          "file": "assets/images/festivals/tangyuan.svg",
+          "loaded": true,
+          "opaque": 5226
+        },
+        {
+          "file": "assets/images/festivals/zongzi.svg",
+          "loaded": true,
+          "opaque": 5568
+        },
+        {
+          "file": "assets/images/festivals/sachet.svg",
+          "loaded": true,
+          "opaque": 4871
+        },
+        {
+          "file": "assets/images/festivals/dragon-boat.svg",
+          "loaded": true,
+          "opaque": 3416
+        },
+        {
+          "file": "assets/images/festivals/mooncake.svg",
+          "loaded": true,
+          "opaque": 8492
+        },
+        {
+          "file": "assets/images/festivals/festival-cover.svg",
+          "loaded": true,
+          "opaque": 5670
+        }
+      ],
+      "pageErrors": []
+    }
+  ],
+  "browserClosed": true
+}

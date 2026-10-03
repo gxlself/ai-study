@@ -71,7 +71,7 @@
               { "concept": "dad", "x": 65, "y": 70, "size": 40, "anim": "none" },
               { "concept": "fest-fu", "x": 17, "y": 28, "size": 20, "anim": "none" }
             ] },
-            "text": { "zh": "宝宝挥挥手：新年好！", "en": "Baby waves. Happy New Year!" },
+            "text": { "zh": "新年好！", "en": "Happy New Year!" },
             "prompts": [{ "kind": "distancing", "zh": "你想向谁问好？说或挥手都可以。", "en": "Who would you like to greet? You can speak or wave." }]
           },
           {

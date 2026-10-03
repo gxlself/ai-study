@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" role="img" aria-label="One toy building block">
+  <path d="M58 88L128 51L198 88V178L128 215L58 178Z" fill="#F08A5D" stroke="#BD674D" stroke-width="5" stroke-linejoin="round"/>
+  <path d="M58 88L128 126L198 88M128 126V215" fill="none" stroke="#BD674D" stroke-width="5" stroke-linejoin="round"/>
+  <ellipse cx="102" cy="78" rx="11" ry="7" fill="#FFF4D8" stroke="#BD674D" stroke-width="3"/>
+  <ellipse cx="137" cy="61" rx="11" ry="7" fill="#FFF4D8" stroke="#BD674D" stroke-width="3"/>
+  <ellipse cx="164" cy="96" rx="11" ry="7" fill="#FFF4D8" stroke="#BD674D" stroke-width="3"/>
+</svg>

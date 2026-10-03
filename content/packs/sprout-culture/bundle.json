@@ -1,0 +1,4265 @@
+{
+  "schemaVersion": 1,
+  "builtAt": "2026-10-03T04:52:22.460Z",
+  "manifest": {
+    "schemaVersion": 1,
+    "id": "sprout.culture",
+    "version": "1.0.0",
+    "name": {
+      "zh": "中国传统节日",
+      "en": "Chinese Festivals"
+    },
+    "description": {
+      "zh": "八个节日主题，分龄家长指引与可选短共看；把节日变成屏幕外的亲子相伴。",
+      "en": "Eight festival themes with age-specific parent guides and optional short co-viewing lessons, followed by real-world family play."
+    },
+    "author": "芽芽成长",
+    "license": "CC0-1.0",
+    "ageRange": [
+      6,
+      36
+    ],
+    "lexicon": "lexicon.json",
+    "routes": [],
+    "lessonsDir": "lessons",
+    "requires": {
+      "sdk": "^1.0.0"
+    },
+    "credits": [
+      {
+        "name": "芽芽成长原创节日课程与插画",
+        "url": "https://creativecommons.org/publicdomain/zero/1.0/",
+        "license": "CC0-1.0",
+        "note": "原创文字、七个节日词条与八幅静态 SVG。核心词条仅引用，不复制素材；系统合成音频的使用条件另见 LICENSES.md。"
+      }
+    ],
+    "cover": "assets/images/festivals/festival-cover.svg",
+    "tags": [
+      "中国传统节日",
+      "家长指引",
+      "亲子共看",
+      "线下游戏"
+    ]
+  },
+  "lexicon": {
+    "schemaVersion": 1,
+    "concepts": [
+      {
+        "id": "fest-fu",
+        "category": "other",
+        "zh": "福字",
+        "en": "fu decoration",
+        "measure": "张",
+        "plural": "fu decorations",
+        "image": "assets/images/festivals/fu.svg",
+        "phrase": {
+          "zh": "福字送祝福。",
+          "en": "A fu decoration carries good wishes."
+        },
+        "tags": [
+          "春节",
+          "祝福"
+        ]
+      },
+      {
+        "id": "fest-lantern",
+        "category": "home",
+        "zh": "灯笼",
+        "en": "lantern",
+        "measure": "盏",
+        "plural": "lanterns",
+        "image": "assets/images/festivals/lantern.svg",
+        "phrase": {
+          "zh": "这是一个灯笼。",
+          "en": "This is a lantern."
+        },
+        "tags": [
+          "春节",
+          "元宵"
+        ]
+      },
+      {
+        "id": "fest-tangyuan",
+        "category": "food",
+        "zh": "汤圆",
+        "en": "tangyuan",
+        "measure": "个",
+        "plural": "tangyuan",
+        "image": "assets/images/festivals/tangyuan.svg",
+        "phrase": {
+          "zh": "汤圆是糯米团子。",
+          "en": "Tangyuan are glutinous rice balls."
+        },
+        "tags": [
+          "元宵",
+          "冬至",
+          "只看图不试吃"
+        ]
+      },
+      {
+        "id": "fest-zongzi",
+        "category": "food",
+        "zh": "粽子",
+        "en": "zongzi",
+        "measure": "个",
+        "plural": "zongzi",
+        "image": "assets/images/festivals/zongzi.svg",
+        "phrase": {
+          "zh": "叶子包着粽子。",
+          "en": "Zongzi are wrapped in leaves."
+        },
+        "tags": [
+          "端午",
+          "只看图不试吃"
+        ]
+      },
+      {
+        "id": "fest-sachet",
+        "category": "other",
+        "zh": "香囊",
+        "en": "scented sachet",
+        "measure": "个",
+        "plural": "scented sachets",
+        "image": "assets/images/festivals/sachet.svg",
+        "phrase": {
+          "zh": "香囊是小布袋。",
+          "en": "A scented sachet is a little cloth bag."
+        },
+        "tags": [
+          "端午",
+          "只看图不佩戴"
+        ]
+      },
+      {
+        "id": "fest-dragon-boat",
+        "category": "vehicles",
+        "zh": "龙舟",
+        "en": "dragon boat",
+        "measure": "条",
+        "plural": "dragon boats",
+        "image": "assets/images/festivals/dragon-boat.svg",
+        "phrase": {
+          "zh": "大家一起划龙舟。",
+          "en": "People paddle a dragon boat together."
+        },
+        "tags": [
+          "端午",
+          "合作"
+        ]
+      },
+      {
+        "id": "fest-mooncake",
+        "category": "food",
+        "zh": "月饼",
+        "en": "mooncake",
+        "measure": "个",
+        "plural": "mooncakes",
+        "image": "assets/images/festivals/mooncake.svg",
+        "phrase": {
+          "zh": "这是一个月饼。",
+          "en": "This is a mooncake."
+        },
+        "tags": [
+          "中秋",
+          "只看图不试吃"
+        ]
+      }
+    ]
+  },
+  "routes": [],
+  "lessons": [
+    {
+      "schemaVersion": 1,
+      "id": "culture.child.dragon-boat-festival",
+      "title": {
+        "zh": "端午：一起慢慢划",
+        "en": "Dragon Boat Festival: Paddle Together"
+      },
+      "summary": {
+        "zh": "看龙舟、粽子和香囊图片，坐稳空手慢慢划。",
+        "en": "See dragon boat, zongzi, and sachet pictures, then paddle slowly with empty hands while seated."
+      },
+      "ageRange": [
+        24,
+        36
+      ],
+      "domains": [
+        "motor",
+        "social",
+        "language"
+      ],
+      "themeId": "culture.dragon-boat-festival",
+      "tags": [
+        "端午",
+        "亲子共看",
+        "陆地龙舟",
+        "只看图不试吃"
+      ],
+      "durationMin": 5,
+      "coView": "required",
+      "audience": "child",
+      "printables": [
+        {
+          "kind": "cards",
+          "title": "端午大卡",
+          "items": [
+            "fest-dragon-boat",
+            "fest-zongzi",
+            "fest-sachet"
+          ],
+          "size": "large",
+          "showText": true,
+          "showEnglish": true
+        }
+      ],
+      "objectives": [
+        {
+          "zh": "认一认龙舟、粽子和香囊。",
+          "en": "Notice a dragon boat, zongzi, and a scented sachet."
+        },
+        {
+          "zh": "与家长慢慢划、一起停。",
+          "en": "Paddle slowly and pause with a grown-up."
+        }
+      ],
+      "cover": {
+        "concept": "fest-dragon-boat",
+        "bg": "sky"
+      },
+      "parentGuide": {
+        "intro": "可选五分钟共看，仅供24–36月龄并须成人陪同。慢看端午图片，指认后在干燥防滑地面坐稳，空手做小幅划桨。粽子不试吃，香囊只看图不佩戴。家长随时暂停或跳过动作，结束关屏继续地面游戏。",
+        "tips": [
+          "家长先示范空手伸、收，不使用真桨或棍子。",
+          "动作慢而小，不拉手、不摇晃、不比赛。",
+          "不想共看就只用打印卡；进餐、卧室和睡前一小时不用屏。"
+        ],
+        "phrases": [
+          {
+            "zh": "这是龙舟。",
+            "en": "This is a dragon boat."
+          },
+          {
+            "zh": "我们慢慢划。",
+            "en": "Let's paddle slowly."
+          },
+          {
+            "zh": "一起停一停。",
+            "en": "Let's pause together."
+          },
+          {
+            "zh": "想歇就歇。",
+            "en": "Rest whenever you want."
+          }
+        ],
+        "why": "共看与成人回应只是动作游戏的引子。用简单、安全的共同动作表达相伴，不要求节拍准确或完成固定次数。",
+        "refs": [
+          "[3]",
+          "[6]",
+          "[25]",
+          "[80]",
+          "[83]",
+          "[93]"
+        ]
+      },
+      "offline": [
+        {
+          "title": "关屏陆地小龙舟",
+          "minutes": 8,
+          "materials": [
+            "干燥防滑地垫"
+          ],
+          "steps": [
+            "关屏，成人与宝宝并排坐稳在地垫上。",
+            "空手小幅向前伸、向回收，慢慢划两下。",
+            "轻声说停一停，等宝宝选择继续或结束。",
+            "轮流发出停的信号，最后一起休息。"
+          ],
+          "safety": "成人全程陪伴，在干燥防滑地面坐稳，远离水边；不用真船、棍、桨、水盆或可倾倒纸箱，不拉拽手臂、不摇晃。粽子黏，有窒息风险，切小压扁也不是安全保证，本课只看图不试吃。香囊只看图不佩戴，不提供草药、绳子和小挂件。",
+          "domains": [
+            "motor",
+            "social"
+          ],
+          "question": "你想继续划，还是停一会儿？",
+          "levels": {
+            "easier": "只看成人做一次小幅动作，不要求模仿。",
+            "harder": "宝宝自愿发出停一停的信号，成人跟随宝宝的节奏。"
+          }
+        }
+      ],
+      "steps": [
+        {
+          "type": "word-cards",
+          "parentTip": "粽子不试吃，香囊不佩戴；一次一张、手动翻页。",
+          "props": {
+            "items": [
+              "fest-dragon-boat",
+              "fest-zongzi",
+              "fest-sachet"
+            ],
+            "show": {
+              "text": true,
+              "english": true,
+              "pinyin": false
+            },
+            "speak": "name+phrase",
+            "autoAdvanceSec": null,
+            "intro": {
+              "zh": "看看端午的图片。",
+              "en": "Let's look at pictures for the Dragon Boat Festival."
+            }
+          }
+        },
+        {
+          "type": "choose",
+          "parentTip": "选项分别是龙舟、灯笼、粽子与布袋，不用颜色猜答案。",
+          "props": {
+            "rounds": [
+              {
+                "prompt": {
+                  "zh": "龙舟在哪里？",
+                  "en": "Where is the dragon boat?"
+                },
+                "options": [
+                  "fest-lantern",
+                  "fest-dragon-boat"
+                ],
+                "answer": "fest-dragon-boat",
+                "explain": {
+                  "zh": "大家一起划龙舟。",
+                  "en": "People paddle a dragon boat together."
+                }
+              },
+              {
+                "prompt": {
+                  "zh": "找找香囊小布袋。",
+                  "en": "Find the little scented sachet."
+                },
+                "options": [
+                  "fest-sachet",
+                  "fest-zongzi"
+                ],
+                "answer": "fest-sachet",
+                "explain": {
+                  "zh": "香囊是小布袋。",
+                  "en": "A scented sachet is a little cloth bag."
+                }
+              }
+            ],
+            "showLabels": false,
+            "hintAfter": 2
+          }
+        },
+        {
+          "type": "movement",
+          "parentTip": "先坐稳再空手小幅动；需要时暂停或跳过。",
+          "props": {
+            "intro": {
+              "zh": "和家长坐稳，空手慢慢划。",
+              "en": "Sit safely with your grown-up and paddle slowly with empty hands."
+            },
+            "moves": [
+              {
+                "concept": "fest-dragon-boat",
+                "name": {
+                  "zh": "轻轻伸手",
+                  "en": "Reach Gently"
+                },
+                "say": {
+                  "zh": "坐稳，空手轻轻向前伸。",
+                  "en": "Stay seated and gently reach forward with empty hands."
+                },
+                "seconds": 8
+              },
+              {
+                "concept": "fest-dragon-boat",
+                "name": {
+                  "zh": "慢慢收手",
+                  "en": "Draw Your Hands Back"
+                },
+                "say": {
+                  "zh": "坐稳，慢慢把手收回来。",
+                  "en": "Stay seated and slowly draw your hands back."
+                },
+                "seconds": 8
+              },
+              {
+                "concept": "sit-down",
+                "name": {
+                  "zh": "停一停",
+                  "en": "Pause"
+                },
+                "say": {
+                  "zh": "手放腿上，轻轻停一停。",
+                  "en": "Rest your hands on your lap and pause."
+                },
+                "seconds": 6
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "schemaVersion": 1,
+      "id": "culture.child.lantern-festival",
+      "title": {
+        "zh": "元宵：灯笼在哪里",
+        "en": "Lantern Festival: Find the Lantern"
+      },
+      "summary": {
+        "zh": "慢慢看灯笼、汤圆和圆形图片，关屏后画纸灯笼。",
+        "en": "Look slowly at lantern, tangyuan, and circle pictures, then draw a paper lantern off-screen."
+      },
+      "ageRange": [
+        24,
+        36
+      ],
+      "domains": [
+        "language",
+        "math",
+        "art"
+      ],
+      "themeId": "culture.lantern-festival",
+      "tags": [
+        "元宵",
+        "亲子共看",
+        "只看图不试吃"
+      ],
+      "durationMin": 4,
+      "coView": "required",
+      "audience": "child",
+      "printables": [
+        {
+          "kind": "cards",
+          "title": "元宵与形状大卡",
+          "items": [
+            "fest-lantern",
+            "fest-tangyuan",
+            "circle",
+            "square"
+          ],
+          "size": "large",
+          "showText": true,
+          "showEnglish": true
+        }
+      ],
+      "objectives": [
+        {
+          "zh": "指认灯笼和圆形大卡。",
+          "en": "Point to a lantern and a circle card."
+        },
+        {
+          "zh": "听一盏、两盏灯笼的数量。",
+          "en": "Hear one lantern and two lanterns."
+        }
+      ],
+      "cover": {
+        "concept": "fest-lantern",
+        "bg": "paper"
+      },
+      "parentGuide": {
+        "intro": "可选四分钟共看，仅供24–36月龄且须成人陪同。手动翻词卡，一起说名称、指图，再数一到两盏灯笼。汤圆只是图片，不试吃；圆形问题只比较圆形卡与方形卡，不说所有灯笼都圆。结束关屏去画纸灯笼。",
+        "tips": [
+          "不自动翻卡，宝宝说或指后再由家长推进。",
+          "数一个指一个，数完说总数，不要求宝宝会数。",
+          "不想看屏幕可直接用打印卡做线下版，进餐和睡前一小时不用屏。"
+        ],
+        "phrases": [
+          {
+            "zh": "这是灯笼。",
+            "en": "This is a lantern."
+          },
+          {
+            "zh": "汤圆只看图。",
+            "en": "We'll only look at pictures of tangyuan."
+          },
+          {
+            "zh": "一共两盏灯笼。",
+            "en": "Two lanterns."
+          },
+          {
+            "zh": "我们去画灯笼吧。",
+            "en": "Let's go draw a lantern."
+          }
+        ],
+        "why": "成人共看并回应，把图画连接到离屏涂画。对眼前小数量逐个指认并说总数，不做认词或数数测验。",
+        "refs": [
+          "[3]",
+          "[6]",
+          "[25]",
+          "[64]",
+          "[69]",
+          "[80]"
+        ]
+      },
+      "offline": [
+        {
+          "title": "关屏画灯笼",
+          "minutes": 10,
+          "materials": [
+            "完整大纸",
+            "无毒粗蜡笔",
+            "灯笼大卡"
+          ],
+          "steps": [
+            "关屏，成人在完整大纸画一个灯笼轮廓。",
+            "宝宝添线条、选颜色，成人描述而不纠正。",
+            "愿意时摆一到两张灯笼大卡，成人逐张点数并说总数。",
+            "收好纸、卡和蜡笔，不继续播放课程。"
+          ],
+          "safety": "成人全程陪伴，纸和蜡笔不入口；不用火、剪刀、订书钉、长绳、闪灯或纽扣电池。汤圆圆形且黏，有窒息风险，3岁以下不建议整颗吃；切小或压扁仍不能消除黏性风险，本课只看图不试吃。",
+          "domains": [
+            "art",
+            "math",
+            "language"
+          ],
+          "question": "你的灯笼还想添什么？",
+          "levels": {
+            "easier": "只涂一张大纸，成人描述线条。",
+            "harder": "宝宝在两张完整灯笼卡中选择放一张或两张，成人点数说总数。"
+          }
+        }
+      ],
+      "steps": [
+        {
+          "type": "word-cards",
+          "parentTip": "汤圆只看图不试吃；手动翻页，留出说话时间。",
+          "props": {
+            "items": [
+              "fest-lantern",
+              "fest-tangyuan",
+              "circle"
+            ],
+            "show": {
+              "text": true,
+              "english": true,
+              "pinyin": false
+            },
+            "speak": "name+phrase",
+            "autoAdvanceSec": null,
+            "intro": {
+              "zh": "一起慢慢看图片。",
+              "en": "Let's look at the pictures together."
+            }
+          }
+        },
+        {
+          "type": "choose",
+          "parentTip": "两轮各只找一个明确对象，不要求独立操作。",
+          "props": {
+            "rounds": [
+              {
+                "prompt": {
+                  "zh": "灯笼在哪里？",
+                  "en": "Where is the lantern?"
+                },
+                "options": [
+                  "fest-lantern",
+                  "dumpling"
+                ],
+                "answer": "fest-lantern",
+                "explain": {
+                  "zh": "这是灯笼。",
+                  "en": "This is a lantern."
+                }
+              },
+              {
+                "prompt": {
+                  "zh": "找找圆形卡。",
+                  "en": "Find the circle card."
+                },
+                "options": [
+                  "square",
+                  "circle"
+                ],
+                "answer": "circle",
+                "explain": {
+                  "zh": "圆圆的，没有角。",
+                  "en": "It's round, with no corners."
+                }
+              }
+            ],
+            "showLabels": false,
+            "hintAfter": 2
+          }
+        },
+        {
+          "type": "count",
+          "parentTip": "数一盏、两盏，数完说总数，再关屏。",
+          "props": {
+            "rounds": [
+              {
+                "item": "fest-lantern",
+                "count": 1,
+                "layout": "row"
+              },
+              {
+                "item": "fest-lantern",
+                "count": 2,
+                "layout": "row"
+              }
+            ],
+            "showNumeral": true,
+            "cardinality": true,
+            "mode": "guided"
+          }
+        }
+      ]
+    },
+    {
+      "schemaVersion": 1,
+      "id": "culture.child.mid-autumn",
+      "title": {
+        "zh": "中秋：月亮陪着我们",
+        "en": "Mid-Autumn: The Moon and Us"
+      },
+      "summary": {
+        "zh": "看一个团圆小故事，关屏画月亮、向家人送问候。",
+        "en": "Share a short story about togetherness, then draw a moon and greet family off-screen."
+      },
+      "ageRange": [
+        24,
+        36
+      ],
+      "domains": [
+        "social",
+        "language",
+        "science"
+      ],
+      "themeId": "culture.mid-autumn",
+      "tags": [
+        "中秋",
+        "亲子共看",
+        "月亮",
+        "团圆",
+        "只看图不试吃"
+      ],
+      "durationMin": 5,
+      "coView": "required",
+      "audience": "child",
+      "printables": [
+        {
+          "kind": "cards",
+          "title": "中秋团圆大卡",
+          "items": [
+            "moon",
+            "fest-mooncake",
+            "home"
+          ],
+          "size": "large",
+          "showText": true,
+          "showEnglish": true
+        }
+      ],
+      "objectives": [
+        {
+          "zh": "指认月亮与月饼图片。",
+          "en": "Point to pictures of the moon and a mooncake."
+        },
+        {
+          "zh": "说说想和谁一起过节。",
+          "en": "Talk about someone you would like to celebrate with."
+        }
+      ],
+      "cover": {
+        "concept": "moon",
+        "bg": "sky"
+      },
+      "parentGuide": {
+        "intro": "可选五分钟共看，仅供24–36月龄且须成人陪同。白天看三页故事，逐页停下来回应。月亮不总是圆的，也不保证中秋能看见；团圆可以是身边相伴和问候远方亲人。月饼只看图不试吃，结束关屏画月亮，不熬夜赏月。",
+        "tips": [
+          "问宝宝想和谁一起，接受任何熟悉照护者。",
+          "宝宝说一个词时扩展一句，不要求复述。",
+          "进餐、卧室和睡前一小时不用屏，不想共看就直接用大卡画画。"
+        ],
+        "phrases": [
+          {
+            "zh": "你看，月亮。",
+            "en": "Look, the moon."
+          },
+          {
+            "zh": "这是月饼。",
+            "en": "This is a mooncake."
+          },
+          {
+            "zh": "我们在一起。",
+            "en": "We're together."
+          },
+          {
+            "zh": "你想和谁一起？",
+            "en": "Who would you like to be with?"
+          }
+        ],
+        "why": "成人回应和联系家庭生活帮助理解图画。故事只是相伴的引子，不要求食物、家人齐全或看到真实月亮。",
+        "refs": [
+          "[3]",
+          "[6]",
+          "[25]",
+          "[26]",
+          "[48]",
+          "[92]",
+          "[93]"
+        ]
+      },
+      "offline": [
+        {
+          "title": "关屏画月亮送问候",
+          "minutes": 10,
+          "materials": [
+            "完整大纸",
+            "无毒粗蜡笔",
+            "月亮大卡"
+          ],
+          "steps": [
+            "白天关屏，看一张月亮实体卡。",
+            "宝宝用自己的线条画月亮，圆、弯或随意涂画都可以。",
+            "问想向谁送问候，成人把宝宝的一句话写在大纸上。",
+            "向身边家人分享画，远方问候由成人另行转达，不必视频通话。",
+            "收好材料，按日常作息休息，不为赏月熬夜。"
+          ],
+          "safety": "成人全程陪伴，纸和蜡笔不入口；月饼只看图不试吃，不提供硬块、整粒坚果或未知过敏原。若另行赏月须在安全地面由成人牵护，不攀窗、不靠阳台边沿、不熬夜，纱窗不能防坠。",
+          "domains": [
+            "art",
+            "social",
+            "language"
+          ],
+          "question": "你想和谁一起看你的月亮？",
+          "levels": {
+            "easier": "成人画月亮，宝宝添一条线或挥手。",
+            "harder": "宝宝说说圆月和弯月的不同，再口述自己的祝福。"
+          }
+        }
+      ],
+      "steps": [
+        {
+          "type": "story",
+          "parentTip": "每页停下来，问问宝宝想和谁相伴；不要求全家到场。",
+          "props": {
+            "title": {
+              "zh": "月亮和我们",
+              "en": "The Moon and Us"
+            },
+            "pages": [
+              {
+                "scene": {
+                  "bg": "sky",
+                  "ground": "grass",
+                  "sprites": [
+                    {
+                      "concept": "moon",
+                      "x": 48,
+                      "y": 24,
+                      "size": 36,
+                      "anim": "none"
+                    },
+                    {
+                      "concept": "home",
+                      "x": 74,
+                      "y": 75,
+                      "size": 24,
+                      "anim": "none"
+                    }
+                  ]
+                },
+                "text": {
+                  "zh": "月亮有时圆，有时弯。",
+                  "en": "Sometimes the moon looks round, and sometimes it looks curved."
+                },
+                "narrate": true,
+                "prompts": [
+                  {
+                    "kind": "point",
+                    "zh": "月亮在哪里？慢慢指一指。",
+                    "en": "Where is the moon? Point to it slowly."
+                  }
+                ]
+              },
+              {
+                "scene": {
+                  "bg": "room",
+                  "ground": "floor",
+                  "sprites": [
+                    {
+                      "concept": "baby",
+                      "x": 28,
+                      "y": 75,
+                      "size": 32,
+                      "anim": "none"
+                    },
+                    {
+                      "concept": "grandma-maternal",
+                      "x": 53,
+                      "y": 70,
+                      "size": 40,
+                      "anim": "none"
+                    },
+                    {
+                      "concept": "fest-mooncake",
+                      "x": 80,
+                      "y": 75,
+                      "size": 22,
+                      "anim": "none"
+                    }
+                  ]
+                },
+                "text": {
+                  "zh": "这是月饼。家人一起说话。",
+                  "en": "This is a mooncake. Family members talk together."
+                },
+                "narrate": true,
+                "prompts": [
+                  {
+                    "kind": "distancing",
+                    "zh": "你想和谁一起说话？任何熟悉的人都可以。",
+                    "en": "Who would you like to talk with? It can be anyone you know well."
+                  }
+                ]
+              },
+              {
+                "scene": {
+                  "bg": "room",
+                  "ground": "floor",
+                  "sprites": [
+                    {
+                      "concept": "baby",
+                      "x": 38,
+                      "y": 75,
+                      "size": 32,
+                      "anim": "none"
+                    },
+                    {
+                      "concept": "crayon",
+                      "x": 66,
+                      "y": 74,
+                      "size": 22,
+                      "anim": "none"
+                    }
+                  ]
+                },
+                "text": {
+                  "zh": "看完啦，我们去画月亮。",
+                  "en": "All done. Let's go draw a moon."
+                },
+                "narrate": true,
+                "prompts": [
+                  {
+                    "kind": "open",
+                    "zh": "你想画什么样的月亮？",
+                    "en": "What kind of moon would you like to draw?"
+                  }
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "type": "choose",
+          "parentTip": "按名称找图，不把月亮和月饼说成一直同形。",
+          "props": {
+            "rounds": [
+              {
+                "prompt": {
+                  "zh": "月亮在哪里？",
+                  "en": "Where is the moon?"
+                },
+                "options": [
+                  "fest-mooncake",
+                  "moon"
+                ],
+                "answer": "moon",
+                "explain": {
+                  "zh": "这是天上的月亮。",
+                  "en": "This is the moon in the sky."
+                }
+              },
+              {
+                "prompt": {
+                  "zh": "找找月饼图片。",
+                  "en": "Find the mooncake picture."
+                },
+                "options": [
+                  "fest-mooncake",
+                  "fest-lantern"
+                ],
+                "answer": "fest-mooncake",
+                "explain": {
+                  "zh": "这是月饼图片。",
+                  "en": "This is a picture of a mooncake."
+                }
+              }
+            ],
+            "showLabels": false,
+            "hintAfter": 2
+          }
+        }
+      ]
+    },
+    {
+      "schemaVersion": 1,
+      "id": "culture.child.spring-festival",
+      "title": {
+        "zh": "春节：新年好",
+        "en": "Spring Festival: Happy New Year"
+      },
+      "summary": {
+        "zh": "和家长共看一个祝福小故事，再关屏贴福字、玩软布饺子。",
+        "en": "Share a short story about good wishes, then place a fu card and fold cloth dumplings off-screen."
+      },
+      "ageRange": [
+        24,
+        36
+      ],
+      "domains": [
+        "social",
+        "language",
+        "english"
+      ],
+      "themeId": "culture.spring-festival",
+      "tags": [
+        "春节",
+        "亲子共看",
+        "新年好"
+      ],
+      "durationMin": 4,
+      "coView": "required",
+      "audience": "child",
+      "printables": [
+        {
+          "kind": "cards",
+          "title": "春节祝福大卡",
+          "items": [
+            "fest-fu",
+            "fest-lantern",
+            "dumpling"
+          ],
+          "size": "large",
+          "showText": true,
+          "showEnglish": true
+        }
+      ],
+      "objectives": [
+        {
+          "zh": "和家人分享新年问候。",
+          "en": "Share a New Year greeting with family."
+        },
+        {
+          "zh": "指认福字装饰与灯笼。",
+          "en": "Point to a fu decoration and a lantern."
+        }
+      ],
+      "cover": {
+        "concept": "fest-fu",
+        "bg": "paper"
+      },
+      "parentGuide": {
+        "intro": "这是一节可选的四分钟共看课，仅供24–36月龄并须成人陪同。逐页慢慢看，停下来回应宝宝，不考读福字。看完关屏贴大卡、玩软布饺子。家人称呼按自家习惯，宝宝不想问好或看屏幕就直接做线下活动。",
+        "tips": [
+          "每页停五秒，让宝宝指图或说话，再回应并扩展一句。",
+          "选择题先由家长示范指整张装饰，不考识字。",
+          "进餐、卧室和睡前一小时不用屏，共看结束不继续播其他课。"
+        ],
+        "phrases": [
+          {
+            "zh": "新年好！",
+            "en": "Happy New Year!"
+          },
+          {
+            "zh": "你想问候谁？",
+            "en": "Who would you like to say hello to?"
+          },
+          {
+            "zh": "你在看福字呀。",
+            "en": "You're looking at the fu decoration."
+          },
+          {
+            "zh": "我们去玩软布吧。",
+            "en": "Let's go play with the cloth."
+          }
+        ],
+        "why": "共看只是线下相伴的引子。成人等待并回应，帮助把图画联系到家庭生活，不期待视频单独带来学习。",
+        "refs": [
+          "[3]",
+          "[6]",
+          "[25]",
+          "[26]",
+          "[48]",
+          "[93]"
+        ]
+      },
+      "offline": [
+        {
+          "title": "福字送祝福",
+          "minutes": 5,
+          "materials": [
+            "完整福字大卡",
+            "成人管理的纸胶带"
+          ],
+          "steps": [
+            "关屏，让宝宝指一个安全平视位置。",
+            "成人管理胶带，陪宝宝贴完整福字大卡。",
+            "选择向身边或牵挂的家人说新年好、挥手或点头。"
+          ],
+          "safety": "成人全程陪伴，胶带与卡片不入口，不登高；不提供硬币、红包内钱币和小挂件，直径小于3.5厘米的物件有窒息风险。本活动不燃放鞭炮烟花，遇到燃放声远离并必要时轻护耳朵。",
+          "domains": [
+            "social",
+            "language"
+          ],
+          "question": "你想把祝福送给谁？",
+          "levels": {
+            "easier": "成人贴卡，宝宝只看或挥手。",
+            "harder": "宝宝自己选位置并口述一句祝福，不要求读字。"
+          }
+        },
+        {
+          "title": "软布包饺子",
+          "minutes": 8,
+          "materials": [
+            "两块边长至少15厘米的清洁软布"
+          ],
+          "steps": [
+            "摊开一块大软布当饺子皮。",
+            "把另一块大软布放中间假装是馅。",
+            "轮流对折一次、按一下边，完成后收好两块布。"
+          ],
+          "safety": "成人全程陪伴，软布不入口、不盖口鼻；不用小填充物、绳子、生面粉、生馅、生面团和刀具，远离灶具与开水。食物只看图，不用真饺子作游戏材料。",
+          "domains": [
+            "motor",
+            "language"
+          ],
+          "question": "你想怎么折？",
+          "levels": {
+            "easier": "成人折，宝宝自愿按一下边。",
+            "harder": "宝宝先放中间再折，成人描述动作顺序。"
+          }
+        }
+      ],
+      "steps": [
+        {
+          "type": "story",
+          "parentTip": "每页停一下，接住宝宝的话；家人可以是任何照护者。",
+          "props": {
+            "title": {
+              "zh": "把祝福送给你",
+              "en": "Good Wishes for You"
+            },
+            "pages": [
+              {
+                "scene": {
+                  "bg": "paper",
+                  "ground": "none",
+                  "sprites": [
+                    {
+                      "concept": "fest-fu",
+                      "x": 45,
+                      "y": 45,
+                      "size": 42,
+                      "anim": "none"
+                    },
+                    {
+                      "concept": "fest-lantern",
+                      "x": 78,
+                      "y": 32,
+                      "size": 22,
+                      "anim": "none"
+                    }
+                  ]
+                },
+                "text": {
+                  "zh": "春节到了，家人送祝福。",
+                  "en": "It's Spring Festival. Family members share good wishes."
+                },
+                "narrate": true,
+                "prompts": [
+                  {
+                    "kind": "point",
+                    "zh": "你想指哪张装饰？",
+                    "en": "Which decoration would you like to point to?"
+                  }
+                ]
+              },
+              {
+                "scene": {
+                  "bg": "room",
+                  "ground": "floor",
+                  "sprites": [
+                    {
+                      "concept": "baby",
+                      "x": 38,
+                      "y": 75,
+                      "size": 32,
+                      "anim": "none"
+                    },
+                    {
+                      "concept": "dad",
+                      "x": 65,
+                      "y": 70,
+                      "size": 40,
+                      "anim": "none"
+                    },
+                    {
+                      "concept": "fest-fu",
+                      "x": 17,
+                      "y": 28,
+                      "size": 20,
+                      "anim": "none"
+                    }
+                  ]
+                },
+                "text": {
+                  "zh": "新年好！",
+                  "en": "Happy New Year!"
+                },
+                "narrate": true,
+                "prompts": [
+                  {
+                    "kind": "distancing",
+                    "zh": "你想向谁问好？说或挥手都可以。",
+                    "en": "Who would you like to greet? You can speak or wave."
+                  }
+                ]
+              },
+              {
+                "scene": {
+                  "bg": "room",
+                  "ground": "floor",
+                  "sprites": [
+                    {
+                      "concept": "baby",
+                      "x": 40,
+                      "y": 75,
+                      "size": 32,
+                      "anim": "none"
+                    },
+                    {
+                      "concept": "dad",
+                      "x": 68,
+                      "y": 70,
+                      "size": 40,
+                      "anim": "none"
+                    }
+                  ]
+                },
+                "text": {
+                  "zh": "问候说完啦，我们去玩吧。",
+                  "en": "We've shared our greetings. Let's go play."
+                },
+                "narrate": true
+              }
+            ]
+          }
+        },
+        {
+          "type": "choose",
+          "parentTip": "只指认整体装饰，不考读字；不想选择就由成人示范。",
+          "props": {
+            "rounds": [
+              {
+                "prompt": {
+                  "zh": "找找福字装饰。",
+                  "en": "Find the fu decoration."
+                },
+                "options": [
+                  "fest-fu",
+                  "moon"
+                ],
+                "answer": "fest-fu",
+                "explain": {
+                  "zh": "福字送祝福。",
+                  "en": "A fu decoration carries good wishes."
+                }
+              },
+              {
+                "prompt": {
+                  "zh": "灯笼在哪里？",
+                  "en": "Where is the lantern?"
+                },
+                "options": [
+                  "dumpling",
+                  "fest-lantern"
+                ],
+                "answer": "fest-lantern",
+                "explain": {
+                  "zh": "这是灯笼。",
+                  "en": "This is a lantern."
+                }
+              }
+            ],
+            "showLabels": false,
+            "hintAfter": 2
+          }
+        }
+      ]
+    },
+    {
+      "schemaVersion": 1,
+      "id": "culture.parent-toddler.double-ninth",
+      "title": {
+        "zh": "重阳：把问候送给你",
+        "en": "Double Ninth: A Greeting for You"
+      },
+      "summary": {
+        "zh": "看望或问候熟悉长辈，画一张完整的大问候卡。",
+        "en": "Visit or greet a familiar elder and draw a large greeting card."
+      },
+      "ageRange": [
+        18,
+        36
+      ],
+      "domains": [
+        "social",
+        "art",
+        "language"
+      ],
+      "themeId": "culture.double-ninth",
+      "tags": [
+        "重阳",
+        "敬老",
+        "家长指引",
+        "家庭包容"
+      ],
+      "durationMin": 3,
+      "coView": "required",
+      "audience": "parent",
+      "printables": [
+        {
+          "kind": "cards",
+          "title": "长辈称呼参考大卡",
+          "items": [
+            "grandma-paternal",
+            "grandpa-paternal",
+            "grandma-maternal",
+            "grandpa-maternal"
+          ],
+          "size": "large",
+          "showText": true,
+          "showEnglish": true
+        }
+      ],
+      "objectives": [
+        {
+          "zh": "用自愿的方式关心长辈。",
+          "en": "Show care for an elder in a way you choose."
+        },
+        {
+          "zh": "轮流说、听一句问候。",
+          "en": "Take turns giving and hearing a greeting."
+        }
+      ],
+      "cover": {
+        "concept": "grandpa-paternal",
+        "bg": "room"
+      },
+      "parentGuide": {
+        "intro": "先读完关屏。重阳常有敬老、登高等习俗；本课只做平地问候，不登高。爷爷奶奶、外公外婆或任何熟悉长辈都可以。画卡、挥手、说一句话都是关心，不强迫亲吻或拥抱，也不要求家里必须有某位成员。",
+        "tips": [
+          "使用真实称呼，英文里的爷爷外公都可叫Grandpa，奶奶外婆都可叫Grandma。",
+          "见面前问长辈是否方便，身体不适就改期。",
+          "宝宝说一句后等长辈回应，不连续考礼貌用语。"
+        ],
+        "phrases": [
+          {
+            "zh": "你好呀！",
+            "en": "Hello!"
+          },
+          {
+            "zh": "这是送给你的画。",
+            "en": "This drawing is for you."
+          },
+          {
+            "zh": "我们坐一起。",
+            "en": "Let's sit together."
+          },
+          {
+            "zh": "下次再来看你。",
+            "en": "We'll visit again another time."
+          }
+        ],
+        "why": "温暖的家庭仪式与相互回应让关心具体可见。让宝宝选择表达方式，不把社交或身体接触变成任务。",
+        "refs": [
+          "[8]",
+          "[44]",
+          "[80]",
+          "[82]",
+          "[93]"
+        ]
+      },
+      "offline": [
+        {
+          "title": "一张问候卡",
+          "minutes": 10,
+          "materials": [
+            "完整大纸",
+            "无毒粗蜡笔"
+          ],
+          "steps": [
+            "关屏，让宝宝选一位想问候的熟悉长辈。",
+            "宝宝在大纸画线条，成人代写宝宝的一句问候。",
+            "方便见面时成人陪同送画，宝宝选择说话、挥手或只看。",
+            "停下来听长辈回应，疲倦时温和告别。",
+            "不便见面时先收好画，由成人另行转达，不必视频通话。"
+          ],
+          "safety": "成人全程陪伴，纸和蜡笔不入口；不登高，不让宝宝拿热茶、药物、重物、坚果或小礼物。直径小于3.5厘米的小物件有窒息风险；尊重双方是否愿意见面与身体接触。",
+          "domains": [
+            "social",
+            "art",
+            "language"
+          ],
+          "question": "你想用什么方式问候？",
+          "levels": {
+            "easier": "成人画，宝宝添线条或挥手。",
+            "harder": "宝宝说一句自己的问候，再问长辈一个日常问题。"
+          }
+        }
+      ],
+      "steps": [
+        {
+          "type": "guide",
+          "parentTip": "敬老可以是画卡、挥手或聊天，不强求亲吻拥抱。",
+          "props": {
+            "goal": "用宝宝选择的方式问候一位熟悉长辈。",
+            "materials": [
+              "完整大纸",
+              "无毒粗蜡笔"
+            ],
+            "steps": [
+              {
+                "text": "关屏，让宝宝选一位熟悉长辈，称呼按自家习惯。",
+                "say": {
+                  "zh": "你想问候谁？",
+                  "en": "Who would you like to say hello to?"
+                },
+                "concept": "grandpa-paternal"
+              },
+              {
+                "text": "宝宝画线条，成人把宝宝的问候写在完整大纸上。",
+                "say": {
+                  "zh": "这是送给你的画。",
+                  "en": "This drawing is for you."
+                },
+                "concept": "crayon"
+              },
+              {
+                "text": "长辈方便时成人陪同送画；宝宝可说话、挥手或只看，不强迫。",
+                "say": {
+                  "zh": "你好呀！",
+                  "en": "Hello!"
+                },
+                "concept": "wave"
+              },
+              {
+                "text": "停下来听长辈回应，累了就告别；不便见面由成人另行转达。",
+                "say": {
+                  "zh": "下次再来看你。",
+                  "en": "We'll visit again another time."
+                }
+              }
+            ],
+            "playMin": 10,
+            "observe": [
+              "是否愿意选择想问候的人。",
+              "是否用自己的方式表达关心。",
+              "是否注意对方回应或需要休息。"
+            ],
+            "safety": "成人全程陪伴，纸与蜡笔不入口，不登高；远离热茶、药品、重物和小礼物，不强迫身体接触，身体不适时改期。"
+          }
+        }
+      ]
+    },
+    {
+      "schemaVersion": 1,
+      "id": "culture.parent-toddler.dragon-boat-festival",
+      "title": {
+        "zh": "端午：陆地小龙舟",
+        "en": "Dragon Boat Festival: Paddle on Dry Land"
+      },
+      "summary": {
+        "zh": "看粽子和香囊大卡，在干燥地面空手划桨、停一停。",
+        "en": "See zongzi and sachet cards, then paddle with empty hands and pause on dry land."
+      },
+      "ageRange": [
+        18,
+        36
+      ],
+      "domains": [
+        "motor",
+        "social",
+        "language",
+        "art"
+      ],
+      "themeId": "culture.dragon-boat-festival",
+      "tags": [
+        "端午",
+        "家长指引",
+        "龙舟",
+        "香囊",
+        "只看图不试吃"
+      ],
+      "durationMin": 3,
+      "coView": "required",
+      "audience": "parent",
+      "printables": [
+        {
+          "kind": "cards",
+          "title": "端午习俗大卡",
+          "items": [
+            "fest-dragon-boat",
+            "fest-zongzi",
+            "fest-sachet"
+          ],
+          "size": "large",
+          "showText": true,
+          "showEnglish": true
+        }
+      ],
+      "objectives": [
+        {
+          "zh": "和家人慢慢划、一起停。",
+          "en": "Paddle slowly and pause together."
+        },
+        {
+          "zh": "认识粽子和香囊的图片。",
+          "en": "Notice pictures of zongzi and a scented sachet."
+        }
+      ],
+      "cover": {
+        "concept": "fest-dragon-boat",
+        "bg": "sky"
+      },
+      "parentGuide": {
+        "intro": "先读完关屏。端午有吃粽子、划龙舟、佩戴香囊等习俗；各地做法不同。本课粽子不试吃、香囊只看图，随后在干燥地面空手划桨。坐稳慢慢伸手收手，不用棍子、真船或水盆，不比赛谁快。",
+        "tips": [
+          "成人先示范一次，宝宝可以只看或自愿模仿。",
+          "划两下停一下，等待宝宝决定是否继续。",
+          "香囊不提供驱病、驱虫等功效承诺，不给宝宝佩戴。"
+        ],
+        "phrases": [
+          {
+            "zh": "这是龙舟。",
+            "en": "This is a dragon boat."
+          },
+          {
+            "zh": "我们慢慢划。",
+            "en": "Let's paddle slowly."
+          },
+          {
+            "zh": "一起停一停。",
+            "en": "Let's pause together."
+          },
+          {
+            "zh": "香囊是小布袋。",
+            "en": "A scented sachet is a little cloth bag."
+          }
+        ],
+        "why": "共同动作和轮流交流让节日贴近真实相伴。给宝宝继续或停止的选择，不把动作完成量当成绩。",
+        "refs": [
+          "[8]",
+          "[80]",
+          "[82]",
+          "[83]",
+          "[93]"
+        ]
+      },
+      "offline": [
+        {
+          "title": "干地划龙舟",
+          "minutes": 8,
+          "materials": [
+            "防滑地垫",
+            "龙舟大卡"
+          ],
+          "steps": [
+            "关屏，在干燥防滑地面并排坐稳。",
+            "看一眼龙舟卡，成人收好后空手示范伸手、收手。",
+            "一起慢慢划两下，再说停一停。",
+            "让宝宝选择继续或结束，不加速、不竞争。"
+          ],
+          "safety": "成人全程陪伴，在干燥防滑地面坐稳；不用棍、桨、真船、水盆或可倾倒的纸箱，不拉拽手臂、不大幅摇晃。远离水边，不把龙舟比赛场地当幼儿活动场所。",
+          "domains": [
+            "motor",
+            "social"
+          ],
+          "question": "你想再划一下，还是停下来？",
+          "levels": {
+            "easier": "只做一次空手伸和收，成人描述。",
+            "harder": "轮流由成人或宝宝发出轻声的停一停信号。"
+          }
+        },
+        {
+          "title": "纸上香囊",
+          "minutes": 5,
+          "materials": [
+            "完整大纸",
+            "无毒粗蜡笔",
+            "香囊大卡"
+          ],
+          "steps": [
+            "成人展示香囊大卡，说明是小布袋。",
+            "成人在大纸画布袋轮廓，让宝宝添颜色或线条。",
+            "说说宝宝的图案，收好纸和蜡笔。"
+          ],
+          "safety": "成人全程陪伴，纸和蜡笔不入口；香囊只看图，不提供草药、香料、精油、绳子或小挂件，不佩戴、不塞入口鼻。粽子黏，有窒息风险，切小压扁也不是安全保证，本课不试吃。",
+          "domains": [
+            "art",
+            "language"
+          ],
+          "question": "你的香囊画上想放什么颜色？",
+          "levels": {
+            "easier": "只看大卡，成人描述颜色。",
+            "harder": "宝宝说说想画的线条，成人按口述添画。"
+          }
+        }
+      ],
+      "steps": [
+        {
+          "type": "guide",
+          "parentTip": "全程空手坐稳划，香囊只看图，不佩戴。",
+          "props": {
+            "goal": "认识端午图片，在干燥地面一起慢划和暂停。",
+            "materials": [
+              "端午大卡",
+              "防滑地垫",
+              "完整大纸",
+              "无毒粗蜡笔"
+            ],
+            "steps": [
+              {
+                "text": "关屏，看龙舟和粽子大卡各一次，不拿真食物试吃。",
+                "say": {
+                  "zh": "这是粽子。",
+                  "en": "This is zongzi."
+                },
+                "concept": "fest-zongzi"
+              },
+              {
+                "text": "看香囊卡，说明是小布袋；有兴趣时画轮廓添线条，不制作佩戴物。",
+                "say": {
+                  "zh": "香囊是小布袋。",
+                  "en": "A scented sachet is a little cloth bag."
+                },
+                "concept": "fest-sachet"
+              },
+              {
+                "text": "收好蜡笔，和宝宝并排坐稳，成人空手慢慢伸手、收手。",
+                "say": {
+                  "zh": "我们慢慢划。",
+                  "en": "Let's paddle slowly."
+                },
+                "concept": "fest-dragon-boat"
+              },
+              {
+                "text": "划两下停一下，等待宝宝选择继续、只看或结束。",
+                "say": {
+                  "zh": "一起停一停。",
+                  "en": "Let's pause together."
+                }
+              },
+              {
+                "text": "轻声回应宝宝的选择，一起收好材料，不比赛谁做得多。",
+                "say": {
+                  "zh": "你想休息啦。",
+                  "en": "You want a rest."
+                }
+              }
+            ],
+            "playMin": 10,
+            "observe": [
+              "是否愿意关注端午图片。",
+              "是否尝试小幅伸手、收手或停一下。",
+              "是否能表达继续或停止，不要求同步准确。"
+            ],
+            "safety": "成人全程陪伴，在干燥地面空手坐稳，不拉手、不用棍或水盆。粽子有黏性窒息风险，切小压扁也不是安全保证，不试吃。香囊只看图，不佩戴，不给草药、绳子、小物件；纸和蜡笔不入口。"
+          }
+        }
+      ]
+    },
+    {
+      "schemaVersion": 1,
+      "id": "culture.parent-toddler.family-celebration",
+      "title": {
+        "zh": "生日：我们的祝福卡",
+        "en": "Birthdays: Our Good-Wishes Card"
+      },
+      "summary": {
+        "zh": "为生日或自家纪念日画大卡，自愿分享一句祝福。",
+        "en": "Draw a large card and choose a greeting for a birthday or a family celebration."
+      },
+      "ageRange": [
+        18,
+        36
+      ],
+      "domains": [
+        "social",
+        "art",
+        "language",
+        "english"
+      ],
+      "themeId": "culture.family-celebration",
+      "tags": [
+        "生日",
+        "家庭节日",
+        "家长指引"
+      ],
+      "durationMin": 3,
+      "coView": "required",
+      "audience": "parent",
+      "printables": [
+        {
+          "kind": "cards",
+          "title": "家庭庆祝大卡",
+          "items": [
+            "cake",
+            "clap",
+            "home"
+          ],
+          "size": "large",
+          "showText": true,
+          "showEnglish": true
+        }
+      ],
+      "objectives": [
+        {
+          "zh": "用画或短句表达祝福。",
+          "en": "Share good wishes through a drawing or a short phrase."
+        },
+        {
+          "zh": "轮流选择庆祝方式。",
+          "en": "Take turns choosing how to celebrate."
+        }
+      ],
+      "cover": {
+        "concept": "cake",
+        "bg": "room"
+      },
+      "parentGuide": {
+        "intro": "先读完关屏。生日、团聚日或自家的纪念日，都可以画一张大卡庆祝。宝宝决定画什么、向谁祝福，成人代写一句话。不用气球、蜡烛或爆响玩具；蛋糕只看图，活动与进餐分开，不要求所有家人到场。",
+        "tips": [
+          "十八月龄可只涂画；会说话后再邀请口述祝福。",
+          "每人轮流说一句或挥手，不逼表演。",
+          "普通问候也可以，生日快乐不是必须学会的口令。"
+        ],
+        "phrases": [
+          {
+            "zh": "生日快乐！",
+            "en": "Happy birthday!"
+          },
+          {
+            "zh": "这张画送给你。",
+            "en": "This drawing is for you."
+          },
+          {
+            "zh": "你想怎么庆祝？",
+            "en": "How would you like to celebrate?"
+          },
+          {
+            "zh": "谢谢你的祝福。",
+            "en": "Thank you for your good wishes."
+          }
+        ],
+        "why": "家长回应宝宝的选择，让家庭仪式成为有意义的交流。重在表达和相伴，不用奖品、声光或食物维持参与。",
+        "refs": [
+          "[8]",
+          "[44]",
+          "[80]",
+          "[82]",
+          "[93]"
+        ]
+      },
+      "offline": [
+        {
+          "title": "我们的祝福卡",
+          "minutes": 10,
+          "materials": [
+            "完整大纸",
+            "无毒粗蜡笔"
+          ],
+          "steps": [
+            "关屏，让宝宝选择要庆祝的生日或家庭日子。",
+            "宝宝画线条，成人描述而不纠正。",
+            "邀请宝宝说一句祝福，成人代写；只指或看也可以。",
+            "向身边家人分享画，轮流说话或轻轻拍手。",
+            "收好材料，按日常作息休息。"
+          ],
+          "safety": "成人全程陪伴，纸和蜡笔不入口；不用气球、气球碎片、明火蜡烛、爆响玩具、小装饰或彩纸碎屑，直径小于3.5厘米的小物件有窒息风险。蛋糕只看图，不提供糖果、坚果或未确认过敏原，不延迟睡眠，不强迫身体接触。",
+          "domains": [
+            "social",
+            "art",
+            "language"
+          ],
+          "question": "你想把什么祝福送给家人？",
+          "levels": {
+            "easier": "成人写祝福，宝宝添一条线或挥手。",
+            "harder": "宝宝选择一句中文或英文祝福，成人回应其意思，不要求复述。"
+          }
+        }
+      ],
+      "steps": [
+        {
+          "type": "guide",
+          "parentTip": "任何家庭纪念日都可以，安静庆祝，尊重选择。",
+          "props": {
+            "goal": "用宝宝自己的图画和短句，分享一份祝福。",
+            "materials": [
+              "完整大纸",
+              "无毒粗蜡笔",
+              "家庭庆祝大卡"
+            ],
+            "steps": [
+              {
+                "text": "关屏，让宝宝选要庆祝的生日或家庭纪念日，不要求家人齐全。",
+                "say": {
+                  "zh": "你想怎么庆祝？",
+                  "en": "How would you like to celebrate?"
+                },
+                "concept": "home"
+              },
+              {
+                "text": "宝宝在完整大纸上画，成人描述线条，不要求画蛋糕或人物。",
+                "say": {
+                  "zh": "这张画送给你。",
+                  "en": "This drawing is for you."
+                },
+                "concept": "crayon"
+              },
+              {
+                "text": "宝宝愿意时说一句祝福，成人帮写；接受挥手、点头或只看。",
+                "say": {
+                  "zh": "生日快乐！",
+                  "en": "Happy birthday!"
+                },
+                "concept": "cake"
+              },
+              {
+                "text": "和家人轮流看画或轻轻拍手，回应宝宝的意思。",
+                "say": {
+                  "zh": "谢谢你的祝福。",
+                  "en": "Thank you for your good wishes."
+                },
+                "concept": "clap"
+              },
+              {
+                "text": "收好材料，结束庆祝，不用奖品挽留宝宝。",
+                "say": {
+                  "zh": "我们一起收好。",
+                  "en": "Let's put everything away together."
+                }
+              }
+            ],
+            "playMin": 10,
+            "observe": [
+              "是否愿意选择庆祝方式或相伴的人。",
+              "是否用图画、手势或短句表达。",
+              "是否接受轮流，不要求演出或说标准句。"
+            ],
+            "safety": "成人陪伴，纸和蜡笔不入口；不用气球、明火、爆响和小碎物，蛋糕只看图，不提供糖果、坚果或未知过敏原；尊重身体接触意愿，庆祝不打乱睡眠。"
+          }
+        }
+      ]
+    },
+    {
+      "schemaVersion": 1,
+      "id": "culture.parent-toddler.lantern-festival",
+      "title": {
+        "zh": "元宵：画个纸灯笼",
+        "en": "Lantern Festival: Draw a Paper Lantern"
+      },
+      "summary": {
+        "zh": "画灯笼、看汤圆卡、用大形状卡配对，不试吃。",
+        "en": "Draw a lantern and match large shape cards; tangyuan stay in pictures."
+      },
+      "ageRange": [
+        18,
+        36
+      ],
+      "domains": [
+        "art",
+        "math",
+        "language"
+      ],
+      "themeId": "culture.lantern-festival",
+      "tags": [
+        "元宵",
+        "家长指引",
+        "灯笼",
+        "圆形",
+        "只看图不试吃"
+      ],
+      "durationMin": 3,
+      "coView": "required",
+      "audience": "parent",
+      "printables": [
+        {
+          "kind": "cards",
+          "title": "灯笼与形状大卡",
+          "items": [
+            "fest-lantern",
+            "fest-tangyuan",
+            "circle",
+            "square"
+          ],
+          "size": "large",
+          "showText": true,
+          "showEnglish": true
+        }
+      ],
+      "objectives": [
+        {
+          "zh": "用自己的线条画灯笼。",
+          "en": "Draw a lantern with your own marks."
+        },
+        {
+          "zh": "把两张相同圆形卡配对。",
+          "en": "Match two identical circle cards."
+        }
+      ],
+      "cover": {
+        "concept": "fest-lantern",
+        "bg": "paper"
+      },
+      "parentGuide": {
+        "intro": "先读完关屏，再用大纸和粗蜡笔画灯笼。元宵时许多家庭看灯笼、吃汤圆，本课只看汤圆卡，不试吃。灯笼有不同形状，不把所有灯笼说成圆形；用两张相同圆形卡玩配对。没有灯会也能在家庆祝。",
+        "tips": [
+          "成人画大轮廓，宝宝任意加线，不纠正作品。",
+          "只用无火纸画，不挂长绳、不装电池。",
+          "圆形配对先示范一组，等待宝宝尝试，不考识字。"
+        ],
+        "phrases": [
+          {
+            "zh": "这是灯笼。",
+            "en": "This is a lantern."
+          },
+          {
+            "zh": "你想画什么？",
+            "en": "What would you like to draw?"
+          },
+          {
+            "zh": "这两个一样。",
+            "en": "These two match."
+          },
+          {
+            "zh": "汤圆只看图。",
+            "en": "We'll only look at pictures of tangyuan."
+          }
+        ],
+        "why": "成人给简单材料和开放选择，让宝宝主导涂画与配对。真实动手和对话是重点，不靠闪灯或食物奖励。",
+        "refs": [
+          "[8]",
+          "[67]",
+          "[80]",
+          "[82]"
+        ]
+      },
+      "offline": [
+        {
+          "title": "我的纸灯笼",
+          "minutes": 10,
+          "materials": [
+            "大张完整纸",
+            "无毒粗蜡笔",
+            "两张圆形大卡"
+          ],
+          "steps": [
+            "关屏，成人在完整大纸上画一个灯笼轮廓。",
+            "宝宝用粗蜡笔加线条，成人描述正在画的动作。",
+            "放下蜡笔，看一次汤圆大卡，说明只看图。",
+            "成人放两张相同圆形大卡，陪宝宝把它们放到一起。",
+            "收好画纸、大卡和蜡笔。"
+          ],
+          "safety": "成人全程陪伴，纸和蜡笔不入口；不用剪刀、订书钉、长绳、明火或可拆纽扣电池。汤圆圆形且黏，有窒息风险，3岁以下不建议整颗吃；切小或压扁也不能消除黏性风险，本活动不试吃。",
+          "domains": [
+            "art",
+            "math",
+            "language"
+          ],
+          "question": "你的灯笼还想添什么？",
+          "levels": {
+            "easier": "只涂一张大纸，成人描述线条。",
+            "harder": "加入一张方形大卡，让宝宝把两张圆形卡配到一起。"
+          }
+        }
+      ],
+      "steps": [
+        {
+          "type": "guide",
+          "parentTip": "灯笼只是纸上的画；汤圆只看图，蜡笔不入口。",
+          "props": {
+            "goal": "画一幅纸灯笼，再配对两张相同圆形大卡。",
+            "materials": [
+              "完整大纸",
+              "无毒粗蜡笔",
+              "灯笼与汤圆大卡",
+              "两张圆形大卡"
+            ],
+            "steps": [
+              {
+                "text": "关屏后成人画大灯笼轮廓，宝宝坐稳用粗蜡笔添线条。",
+                "say": {
+                  "zh": "你想画什么？",
+                  "en": "What would you like to draw?"
+                },
+                "concept": "fest-lantern"
+              },
+              {
+                "text": "跟着宝宝的线条说颜色或动作，不要求画得像。",
+                "say": {
+                  "zh": "你画了长长的线。",
+                  "en": "You drew a long line."
+                },
+                "concept": "crayon"
+              },
+              {
+                "text": "收好蜡笔，成人展示汤圆大卡；不拿食物试吃。",
+                "say": {
+                  "zh": "汤圆只看图。",
+                  "en": "We'll only look at pictures of tangyuan."
+                },
+                "concept": "fest-tangyuan"
+              },
+              {
+                "text": "放两张相同圆形大卡，示范移到一起，再等宝宝试试。",
+                "say": {
+                  "zh": "这两个一样。",
+                  "en": "These two match."
+                },
+                "concept": "circle"
+              },
+              {
+                "text": "宝宝累了随时停，收好大卡、纸和蜡笔。",
+                "say": {
+                  "zh": "我们一起收好。",
+                  "en": "Let's put everything away together."
+                }
+              }
+            ],
+            "playMin": 10,
+            "observe": [
+              "是否用自己的线条表达。",
+              "是否注意两张相同卡片。",
+              "是否需要减少材料或结束。"
+            ],
+            "safety": "成人陪伴，纸与蜡笔不入口；不用剪刀、订书钉、绳子、火或小电池。汤圆只看图不试吃；3岁以下不建议整颗吃，切小压扁仍有黏性窒息风险。"
+          }
+        }
+      ]
+    },
+    {
+      "schemaVersion": 1,
+      "id": "culture.parent-toddler.mid-autumn",
+      "title": {
+        "zh": "中秋：月亮和团圆",
+        "en": "Mid-Autumn: The Moon and Togetherness"
+      },
+      "summary": {
+        "zh": "白天画月亮、送问候，合适时在安全地面赏月。",
+        "en": "Draw a moon and share greetings in daylight; notice the moon safely when it fits your routine."
+      },
+      "ageRange": [
+        18,
+        36
+      ],
+      "domains": [
+        "social",
+        "science",
+        "art",
+        "language"
+      ],
+      "themeId": "culture.mid-autumn",
+      "tags": [
+        "中秋",
+        "月饼",
+        "赏月",
+        "团圆",
+        "家长指引"
+      ],
+      "durationMin": 3,
+      "coView": "required",
+      "audience": "parent",
+      "printables": [
+        {
+          "kind": "cards",
+          "title": "中秋月亮大卡",
+          "items": [
+            "moon",
+            "fest-mooncake",
+            "circle",
+            "home"
+          ],
+          "size": "large",
+          "showText": true,
+          "showEnglish": true
+        }
+      ],
+      "objectives": [
+        {
+          "zh": "说说想一起过节的人。",
+          "en": "Talk about someone you would like to celebrate with."
+        },
+        {
+          "zh": "画出自己喜欢的月亮。",
+          "en": "Draw a moon in your own way."
+        }
+      ],
+      "cover": {
+        "concept": "fest-mooncake",
+        "bg": "sky"
+      },
+      "parentGuide": {
+        "intro": "读完关屏，白天看月亮与月饼大卡、画月亮。中秋常与赏月、团圆相连，但月亮有时圆、有时弯，也可能被云遮住。可给身边或远方亲人送一句问候，不要求全家到场。赏月不延迟睡眠，月饼只看图不试吃。",
+        "tips": [
+          "接住宝宝关于家人的话，不规定一定有谁。",
+          "接纳圆、弯或随意线条，不考画得像不像。",
+          "月亮在正常清醒时间可见才在安全地面看；看不到就用大卡。"
+        ],
+        "phrases": [
+          {
+            "zh": "月亮有时圆，有时弯。",
+            "en": "Sometimes the moon looks round, and sometimes it looks curved."
+          },
+          {
+            "zh": "我们在一起。",
+            "en": "We're together."
+          },
+          {
+            "zh": "你想问候谁？",
+            "en": "Who would you like to say hello to?"
+          },
+          {
+            "zh": "看不到也没关系。",
+            "en": "It's okay if we can't see it."
+          }
+        ],
+        "why": "用生活里的自然观察和家庭对话连接图画。团圆重在关系，不能挤占睡眠，也不要求完成特定食品或仪式。",
+        "refs": [
+          "[6]",
+          "[8]",
+          "[80]",
+          "[82]",
+          "[92]",
+          "[93]"
+        ]
+      },
+      "offline": [
+        {
+          "title": "把月亮画给家人",
+          "minutes": 10,
+          "materials": [
+            "完整大纸",
+            "无毒粗蜡笔",
+            "月亮与月饼大卡"
+          ],
+          "steps": [
+            "白天关屏，慢慢看月亮和月饼大卡。",
+            "让宝宝画喜欢的月亮形状，成人描述线条。",
+            "问想把画送给谁，接受任何熟悉的人。",
+            "宝宝口述一句问候，成人帮写，收好蜡笔。"
+          ],
+          "safety": "成人全程陪伴，纸和蜡笔不入口；月饼只看图不试吃，正常进餐不提供硬块、整粒坚果或未确认过敏原。用画表达，不拍摄或上传家人照片。",
+          "domains": [
+            "art",
+            "social"
+          ],
+          "question": "你想和谁一起看你的月亮？",
+          "levels": {
+            "easier": "成人画月亮，宝宝添一条线。",
+            "harder": "宝宝说说圆月和弯月的不同，用自己的线条表达。"
+          }
+        },
+        {
+          "title": "可选的安全赏月",
+          "minutes": 5,
+          "materials": [
+            "月亮大卡作为替代"
+          ],
+          "steps": [
+            "只有月亮在正常清醒时段可见且天气适合时才出门。",
+            "成人牵护，在平坦安全地面停一下，指向月亮。",
+            "说一说看到了什么，不要求月亮一定圆或可见。",
+            "看不到就回家看实体卡，按原作息休息。"
+          ],
+          "safety": "成人全程牵护，远离道路、水边和高处；不攀窗、不靠阳台边沿，纱窗不能防坠。不用激光笔或光学器材，不直视太阳；睡前一小时不开屏，不熬夜等待月亮。",
+          "domains": [
+            "science",
+            "language"
+          ],
+          "question": "你看到的月亮像什么？",
+          "levels": {
+            "easier": "白天只看月亮大卡，不出门。",
+            "harder": "以后另一天在合适时段再看，说说外观有没有变化。"
+          }
+        }
+      ],
+      "steps": [
+        {
+          "type": "guide",
+          "parentTip": "先白天关屏画画；赏月可跳过，睡眠不让步。",
+          "props": {
+            "goal": "画月亮、送问候，让团圆成为真实相伴。",
+            "materials": [
+              "月亮与月饼大卡",
+              "完整大纸",
+              "无毒粗蜡笔"
+            ],
+            "steps": [
+              {
+                "text": "白天读完关屏，看月亮和月饼大卡，说明食品只看图。",
+                "say": {
+                  "zh": "月亮有时圆，有时弯。",
+                  "en": "Sometimes the moon looks round, and sometimes it looks curved."
+                },
+                "concept": "moon"
+              },
+              {
+                "text": "宝宝用自己的线条画月亮，成人描述，不纠正作品。",
+                "say": {
+                  "zh": "你画了弯弯的线。",
+                  "en": "You drew a curved line."
+                },
+                "concept": "crayon"
+              },
+              {
+                "text": "问想把画或问候送给谁，接受不同家庭成员。",
+                "say": {
+                  "zh": "你想问候谁？",
+                  "en": "Who would you like to say hello to?"
+                },
+                "concept": "home"
+              },
+              {
+                "text": "若月亮在正常清醒时段可见，可由成人牵护在安全地面看一会儿。",
+                "say": {
+                  "zh": "我们在一起。",
+                  "en": "We're together."
+                }
+              },
+              {
+                "text": "天气不好或看不到就用实体卡，收材料，按原作息休息。",
+                "say": {
+                  "zh": "看不到也没关系。",
+                  "en": "It's okay if we can't see it."
+                }
+              }
+            ],
+            "playMin": 10,
+            "observe": [
+              "是否愿意说或指想相伴的人。",
+              "是否用线条表达自己的月亮。",
+              "是否需要休息，不要求看到真实月亮。"
+            ],
+            "safety": "成人陪伴，纸和蜡笔不入口；月饼只看图，不提供坚果硬块或未知过敏原。赏月远离窗边、阳台、道路、水边和高处，不直视太阳，睡前一小时不开屏，不熬夜。"
+          }
+        }
+      ]
+    },
+    {
+      "schemaVersion": 1,
+      "id": "culture.parent-toddler.qingming",
+      "title": {
+        "zh": "清明：踏青和种子",
+        "en": "Qingming: A Walk and a Seed"
+      },
+      "summary": {
+        "zh": "看看春天，成人种下种子，宝宝在看护下浇一勺水。",
+        "en": "Notice spring; an adult plants a seed while the child may help water with supervision."
+      },
+      "ageRange": [
+        18,
+        36
+      ],
+      "domains": [
+        "science",
+        "language",
+        "motor"
+      ],
+      "themeId": "culture.qingming",
+      "tags": [
+        "清明",
+        "踏青",
+        "种子",
+        "家长指引"
+      ],
+      "durationMin": 3,
+      "coView": "required",
+      "audience": "parent",
+      "printables": [
+        {
+          "kind": "cards",
+          "title": "春天与生长大卡",
+          "items": [
+            "seed",
+            "sprout",
+            "leaf",
+            "flower"
+          ],
+          "size": "large",
+          "showText": true,
+          "showEnglish": true
+        }
+      ],
+      "objectives": [
+        {
+          "zh": "说说春天里自己的发现。",
+          "en": "Share a discovery from a spring walk."
+        },
+        {
+          "zh": "在成人帮助下照看植物。",
+          "en": "Help care for a plant with an adult."
+        }
+      ],
+      "cover": {
+        "concept": "seed",
+        "bg": "grass"
+      },
+      "parentGuide": {
+        "intro": "先读完关屏，再到安全平坦处踏青。清明也有思念亲人的习俗，可按家庭需要温和提及，不讲恐吓故事。回家由成人种一颗适合本地种植的种子，宝宝看种子大卡、在帮助下浇一勺水，不抓种子和泥土。",
+        "tips": [
+          "户外跟着宝宝的发现说，不摘不明花叶。",
+          "种子、泥土和工具都由成人操作并收好。",
+          "发芽需要等待，不能承诺每颗种子明天都会长出来。"
+        ],
+        "phrases": [
+          {
+            "zh": "你发现了什么？",
+            "en": "What did you notice?"
+          },
+          {
+            "zh": "这是种子。",
+            "en": "This is a seed."
+          },
+          {
+            "zh": "一点点水。",
+            "en": "A little water."
+          },
+          {
+            "zh": "过几天再看看。",
+            "en": "Let's check again in a few days."
+          }
+        ],
+        "why": "把名称连到真实观察，允许宝宝选择和表达。照料植物提供共同注意的机会，不当作发育测验。",
+        "refs": [
+          "[6]",
+          "[8]",
+          "[59]",
+          "[80]",
+          "[82]"
+        ]
+      },
+      "offline": [
+        {
+          "title": "春天慢慢走",
+          "minutes": 10,
+          "materials": [
+            "日常出行用品"
+          ],
+          "steps": [
+            "关屏，成人牵护到安全平坦处。",
+            "宝宝指向树或花时，成人描述看到的东西。",
+            "停下来问还发现什么，接受指、说或只看。",
+            "回家一起洗手。"
+          ],
+          "safety": "成人全程牵护，远离道路、水边、高处和烟火，不直视太阳；不采不明花叶，不接触动物排泄物。看天气安排防晒，回家洗手。",
+          "domains": [
+            "science",
+            "language"
+          ],
+          "question": "你还发现了什么？",
+          "levels": {
+            "easier": "只观察一棵树，不要求说名称。",
+            "harder": "对比两片仍在树上的叶子，说说大小或颜色。"
+          }
+        },
+        {
+          "title": "大人种、宝宝看",
+          "minutes": 8,
+          "materials": [
+            "无裂纹的安全花盆",
+            "由成人管理的种子和土",
+            "少量清水",
+            "不易碎小杯"
+          ],
+          "steps": [
+            "成人先独自种好种子，收走种子、土袋和工具。",
+            "拿种子与小芽大卡说说可能的生长变化。",
+            "宝宝坐稳后，成人扶住小杯与花盆，宝宝自愿浇一勺水。",
+            "将花盆放到宝宝够不到处，擦干地面并洗手。",
+            "以后白天由成人拿稳花盆一起观察，不要求马上发芽。"
+          ],
+          "safety": "成人全程陪伴；直径小于3.5厘米的种子有窒息风险，种子与土不交给宝宝、不入口，工具和肥料收好。成人扶杯，只用一勺清水，不玩水盆；花盆防倾倒，洒水立即擦干，操作后洗手。",
+          "domains": [
+            "science",
+            "motor"
+          ],
+          "question": "你想先看大卡，还是帮我浇一点水？",
+          "levels": {
+            "easier": "只看大卡，成人完成所有种植和浇水。",
+            "harder": "宝宝说说下一次想观察叶子还是芽，成人记录口述，不拍儿童照片。"
+          }
+        }
+      ],
+      "steps": [
+        {
+          "type": "guide",
+          "parentTip": "种子与土只由大人操作，宝宝看卡或自愿帮浇水。",
+          "props": {
+            "goal": "安全观察春天，和成人一起等待植物变化。",
+            "materials": [
+              "自然大卡",
+              "成人种好的安全花盆",
+              "不易碎小杯",
+              "一勺清水"
+            ],
+            "steps": [
+              {
+                "text": "读完关屏，成人牵护到安全平坦处，跟随宝宝注意树和花。",
+                "say": {
+                  "zh": "你发现了什么？",
+                  "en": "What did you notice?"
+                },
+                "concept": "flower"
+              },
+              {
+                "text": "回家成人独自种好种子并收走材料，宝宝只看大卡。",
+                "say": {
+                  "zh": "这是种子。",
+                  "en": "This is a seed."
+                },
+                "concept": "seed"
+              },
+              {
+                "text": "宝宝坐稳，成人扶杯和花盆，愿意就一起浇一勺水；否则成人代做。",
+                "say": {
+                  "zh": "一点点水。",
+                  "en": "A little water."
+                },
+                "concept": "water"
+              },
+              {
+                "text": "收好花盆、擦干地面、洗手，约定以后白天再观察。",
+                "say": {
+                  "zh": "过几天再看看。",
+                  "en": "Let's check again in a few days."
+                },
+                "concept": "sprout"
+              }
+            ],
+            "playMin": 10,
+            "observe": [
+              "是否分享眼前自然物的发现。",
+              "是否愿意看大卡或帮浇一点水。",
+              "是否需要成人代做，不要求会种植。"
+            ],
+            "safety": "成人牵护远离水边和道路，不直视太阳；小种子有窒息风险，种子、泥土、肥料与工具只由成人管理。扶杯只用一勺水，洒水擦干，花盆放稳且放在宝宝够不到处，结束洗手。"
+          }
+        }
+      ]
+    },
+    {
+      "schemaVersion": 1,
+      "id": "culture.parent-toddler.spring-festival",
+      "title": {
+        "zh": "春节：贴福字包饺子",
+        "en": "Spring Festival: Fu and Pretend Dumplings"
+      },
+      "summary": {
+        "zh": "贴大福字、说新年好，用大软布假装包饺子。",
+        "en": "Place a large fu decoration, exchange New Year wishes, and fold cloth pretend dumplings."
+      },
+      "ageRange": [
+        18,
+        36
+      ],
+      "domains": [
+        "social",
+        "motor",
+        "language",
+        "english"
+      ],
+      "themeId": "culture.spring-festival",
+      "tags": [
+        "春节",
+        "家长指引",
+        "贴福字",
+        "包饺子"
+      ],
+      "durationMin": 3,
+      "coView": "required",
+      "audience": "parent",
+      "printables": [
+        {
+          "kind": "cards",
+          "title": "春节活动大卡",
+          "items": [
+            "fest-fu",
+            "dumpling",
+            "fest-lantern"
+          ],
+          "size": "large",
+          "showText": true,
+          "showEnglish": true
+        }
+      ],
+      "objectives": [
+        {
+          "zh": "自愿向家人送祝福。",
+          "en": "Offer good wishes to family by choice."
+        },
+        {
+          "zh": "用大软布练习放和折。",
+          "en": "Practice placing and folding large pieces of cloth."
+        }
+      ],
+      "cover": {
+        "concept": "fest-fu",
+        "bg": "paper"
+      },
+      "parentGuide": {
+        "intro": "屏幕只给家长看，读完关屏。陪宝宝选大福字的位置，说新年好，再用两块大软布假装包饺子。福字表示祝福，不教识字、不许愿求功效。没有家人来访也能庆祝，问好用说话、挥手或点头都可以。",
+        "tips": [
+          "贴在宝宝平视处，不踩凳子够高处。",
+          "先等五秒，再示范折布；不要求形状整齐。",
+          "成人包真饺子另行安排，宝宝不接触生面粉、生馅或灶具。"
+        ],
+        "phrases": [
+          {
+            "zh": "新年好！",
+            "en": "Happy New Year!"
+          },
+          {
+            "zh": "福字贴这里。",
+            "en": "Let's put the fu decoration here."
+          },
+          {
+            "zh": "放中间，折一下。",
+            "en": "Put it in the middle, then fold."
+          },
+          {
+            "zh": "轮到你啦。",
+            "en": "Your turn."
+          }
+        ],
+        "why": "熟悉的节日仪式让祝福和动手游戏有意义。成人示范后等待宝宝选择、尝试和回应，不追求标准作品。",
+        "refs": [
+          "[8]",
+          "[44]",
+          "[80]",
+          "[82]",
+          "[93]"
+        ]
+      },
+      "offline": [
+        {
+          "title": "贴福字送祝福",
+          "minutes": 5,
+          "materials": [
+            "完整大福字卡",
+            "由成人管理的纸胶带"
+          ],
+          "steps": [
+            "关屏，让宝宝指一个平视位置。",
+            "成人管理胶带，陪宝宝把完整福字卡贴好。",
+            "轮流向家人说新年好，接受挥手或点头。"
+          ],
+          "safety": "成人全程陪伴，胶带和卡片不入口；不登高、不踩凳子。直径小于3.5厘米的小物件有窒息风险，不提供硬币或小饰物。本课不燃放鞭炮烟花；遇到燃放时远离，必要时轻护耳朵。",
+          "domains": [
+            "social",
+            "language"
+          ],
+          "question": "你想把祝福送给谁？",
+          "levels": {
+            "easier": "成人贴好，宝宝自愿挥手。",
+            "harder": "宝宝选两个安全位置中的一个，并说自家的问候。"
+          }
+        },
+        {
+          "title": "大软布包饺子",
+          "minutes": 8,
+          "materials": [
+            "两块边长至少15厘米的清洁软布",
+            "安全平整桌面"
+          ],
+          "steps": [
+            "在桌面摊开一块软布当饺子皮。",
+            "把另一块大软布放中间，假装是馅。",
+            "把外层布对折，轻轻按一下边。",
+            "成人和宝宝轮流做，完成后收好两块布。"
+          ],
+          "safety": "成人全程陪伴；只用大软布，不用生面粉、生馅、生面团、小填充物或绳子。不入口、不盖口鼻，远离刀具、开水和灶具。真实饺子不是本活动道具，进餐另行安排。",
+          "domains": [
+            "motor",
+            "language"
+          ],
+          "question": "你想怎么折你的饺子？",
+          "levels": {
+            "easier": "成人折，宝宝按一下布边。",
+            "harder": "宝宝先放中间再折，成人用短句描述两步顺序。"
+          }
+        }
+      ],
+      "steps": [
+        {
+          "type": "guide",
+          "parentTip": "关屏后玩；包饺子用大软布，真实烹饪与游戏分开。",
+          "props": {
+            "goal": "贴福字送祝福，再轮流折大软布假装包饺子。",
+            "materials": [
+              "福字大卡",
+              "成人管理的纸胶带",
+              "两块至少15厘米的清洁软布"
+            ],
+            "steps": [
+              {
+                "text": "关屏，让宝宝选平视位置，成人管理胶带贴完整福字卡。",
+                "say": {
+                  "zh": "福字贴这里。",
+                  "en": "Let's put the fu decoration here."
+                },
+                "concept": "fest-fu"
+              },
+              {
+                "text": "成人先问好，再等宝宝说话、挥手或点头，不强求。",
+                "say": {
+                  "zh": "新年好！",
+                  "en": "Happy New Year!"
+                },
+                "concept": "wave"
+              },
+              {
+                "text": "摊开大软布，把另一块大软布放中间，假装饺子皮和馅。",
+                "say": {
+                  "zh": "放中间。",
+                  "en": "Put it in the middle."
+                },
+                "concept": "dumpling"
+              },
+              {
+                "text": "示范对折一次，轮流让宝宝尝试，不追求整齐。",
+                "say": {
+                  "zh": "折一下，轮到你。",
+                  "en": "Fold it. Your turn."
+                }
+              },
+              {
+                "text": "回应宝宝的办法，一起收好软布和胶带，结束陪玩。",
+                "say": {
+                  "zh": "我们一起收好。",
+                  "en": "Let's put everything away together."
+                }
+              }
+            ],
+            "playMin": 10,
+            "observe": [
+              "是否愿意用自己的方式送祝福。",
+              "是否尝试放到中间、对折或按边。",
+              "是否愿意轮流，不要求精确作品。"
+            ],
+            "safety": "成人全程陪伴，不登高；胶带、卡和布不入口、不盖口鼻，不用小物件、生面粉、生馅或绳子，远离灶具。本活动不燃放鞭炮烟花。"
+          }
+        }
+      ]
+    },
+    {
+      "schemaVersion": 1,
+      "id": "culture.parent-toddler.winter-solstice",
+      "title": {
+        "zh": "冬至：家里的节日",
+        "en": "Winter Solstice: Our Family's Customs"
+      },
+      "summary": {
+        "zh": "饺子和汤圆只看图，摆大卡、说说自家过节习惯。",
+        "en": "Arrange large dumpling and tangyuan cards and talk about family customs without tasting."
+      },
+      "ageRange": [
+        18,
+        36
+      ],
+      "domains": [
+        "social",
+        "math",
+        "language"
+      ],
+      "themeId": "culture.winter-solstice",
+      "tags": [
+        "冬至",
+        "家庭习俗",
+        "家长指引",
+        "只看图不试吃"
+      ],
+      "durationMin": 3,
+      "coView": "required",
+      "audience": "parent",
+      "printables": [
+        {
+          "kind": "cards",
+          "title": "冬至家庭大卡",
+          "items": [
+            "dumpling",
+            "fest-tangyuan",
+            "home"
+          ],
+          "size": "large",
+          "showText": true,
+          "showEnglish": true
+        }
+      ],
+      "objectives": [
+        {
+          "zh": "知道家庭习俗可以不同。",
+          "en": "Notice that family customs can be different."
+        },
+        {
+          "zh": "点一下大卡，说一个或两个。",
+          "en": "Touch each large card and hear one or two."
+        }
+      ],
+      "cover": {
+        "concept": "dumpling",
+        "bg": "room"
+      },
+      "parentGuide": {
+        "intro": "先读完关屏。冬至有些家庭吃饺子，有些吃汤圆，也有别的习惯；不用全都做。本课只看图，宝宝选择大卡，家长点一下说一个、两个，最后说总数。准备真实节日餐是成人的事，不用恐吓式俗语要求吃食物。",
+        "tips": [
+          "宝宝可选择任意卡，不必选与成人一样的习俗。",
+          "先只放一到两张卡，点一张说一个数，不考数数。",
+          "实际进餐不用屏幕，不用圆形黏食作数学材料。"
+        ],
+        "phrases": [
+          {
+            "zh": "这是饺子。",
+            "en": "This is a dumpling."
+          },
+          {
+            "zh": "这是汤圆。",
+            "en": "These are tangyuan."
+          },
+          {
+            "zh": "一张、两张，两张卡。",
+            "en": "One, two. Two cards."
+          },
+          {
+            "zh": "我们家怎么过节？",
+            "en": "How does our family celebrate?"
+          }
+        ],
+        "why": "给眼前物件点数并说总数，是生活里的数学对话。节日习俗保持包容，回应宝宝比答对知识题更重要。",
+        "refs": [
+          "[8]",
+          "[64]",
+          "[69]",
+          "[82]",
+          "[93]"
+        ]
+      },
+      "offline": [
+        {
+          "title": "冬至大卡摆一摆",
+          "minutes": 8,
+          "materials": [
+            "完整饺子和汤圆大卡",
+            "安全平整桌面"
+          ],
+          "steps": [
+            "关屏，在桌面放饺子和汤圆大卡，不放食物。",
+            "宝宝选一张，成人说说家里的一项节日习惯。",
+            "成人逐张点卡说一、二，再说两张卡，不要求宝宝复述。",
+            "轮流讲想和谁一起过节，收好大卡。"
+          ],
+          "safety": "成人全程陪伴，卡片不入口。汤圆圆形且黏，有窒息风险，3岁以下不建议整颗吃；切小压扁仍不能消除黏性风险，本课不试吃。真实饺子须在正常进餐时按已有能力切碎软烂、去硬馅并坐稳看护；本课不涉及喂食。远离热汤、生面团和灶具。",
+          "domains": [
+            "math",
+            "social",
+            "language"
+          ],
+          "question": "你想怎么和家人一起过节？",
+          "levels": {
+            "easier": "只看一张卡，成人说一句名称。",
+            "harder": "多打印一张卡，让宝宝把一样的两张摆到一起；成人点数并说总数。"
+          }
+        }
+      ],
+      "steps": [
+        {
+          "type": "guide",
+          "parentTip": "大卡替代食物做数学游戏，各家习俗都可以。",
+          "props": {
+            "goal": "说说家庭习俗，用一到两张大卡做点数对话。",
+            "materials": [
+              "完整饺子大卡",
+              "完整汤圆大卡",
+              "安全平整桌面"
+            ],
+            "steps": [
+              {
+                "text": "关屏，把两张完整大卡放桌面，宝宝选一张，成人命名。",
+                "say": {
+                  "zh": "这是饺子。",
+                  "en": "This is a dumpling."
+                },
+                "concept": "dumpling"
+              },
+              {
+                "text": "说说家里吃饺子、汤圆或其他食物的习惯，不要求照做。",
+                "say": {
+                  "zh": "我们家怎么过节？",
+                  "en": "How does our family celebrate?"
+                },
+                "concept": "fest-tangyuan"
+              },
+              {
+                "text": "点一张说一个数，数两张后再说总数，不考宝宝。",
+                "say": {
+                  "zh": "一张、两张，两张卡。",
+                  "en": "One, two. Two cards."
+                }
+              },
+              {
+                "text": "听宝宝说想相伴的人，接受手势或只看，一起收卡。",
+                "say": {
+                  "zh": "我们在一起。",
+                  "en": "We're together."
+                },
+                "concept": "home"
+              }
+            ],
+            "playMin": 8,
+            "observe": [
+              "是否愿意选卡或分享自家习惯。",
+              "是否注意成人逐张点数，不要求理解基数。",
+              "是否愿意说、指或听家人的回应。"
+            ],
+            "safety": "卡片不入口，不用食物当道具。汤圆只看图不试吃；3岁以下不建议整颗吃，切小压扁仍有黏性窒息风险。不喂整颗饺子、不用生面团，远离热汤与灶具。"
+          }
+        }
+      ]
+    },
+    {
+      "schemaVersion": 1,
+      "id": "culture.parent-young.double-ninth",
+      "title": {
+        "zh": "重阳：向长辈问好",
+        "en": "Double Ninth: Say Hello to an Elder"
+      },
+      "summary": {
+        "zh": "向熟悉长辈问好，尊重宝宝的亲近意愿。",
+        "en": "Greet a familiar elder while respecting your baby's comfort."
+      },
+      "ageRange": [
+        6,
+        17
+      ],
+      "domains": [
+        "social",
+        "language"
+      ],
+      "themeId": "culture.double-ninth",
+      "tags": [
+        "重阳",
+        "敬老",
+        "家长指引"
+      ],
+      "durationMin": 2,
+      "coView": "required",
+      "audience": "parent",
+      "printables": [
+        {
+          "kind": "cards",
+          "title": "长辈称呼参考大卡",
+          "items": [
+            "grandma-paternal",
+            "grandpa-paternal",
+            "grandma-maternal",
+            "grandpa-maternal"
+          ],
+          "size": "large",
+          "showText": true,
+          "showEnglish": true
+        }
+      ],
+      "objectives": [
+        {
+          "zh": "和熟悉长辈打招呼。",
+          "en": "Greet a familiar elder."
+        },
+        {
+          "zh": "用目光或手势回应。",
+          "en": "Respond with a look or a gesture."
+        }
+      ],
+      "cover": {
+        "concept": "grandma-paternal",
+        "bg": "room"
+      },
+      "parentGuide": {
+        "intro": "家长先读完关屏。重阳可以关心、看望爷爷奶奶、外公外婆或熟悉的长辈。选宝宝熟悉且方便见面的人，先由照护者问好；不想抱或亲就挥手、看看。长辈不在身边时，说说名字也可以，不必视频通话。",
+        "tips": [
+          "用自家的真实称呼，不要求同时认识所有长辈。",
+          "宝宝怕生时留在熟悉照护者怀里，距离由宝宝决定。",
+          "不将亲吻、拥抱、作揖或说话作为礼貌考核。"
+        ],
+        "phrases": [
+          {
+            "zh": "你好呀！",
+            "en": "Hello!"
+          },
+          {
+            "zh": "我们挥挥手。",
+            "en": "Let's wave."
+          },
+          {
+            "zh": "你想靠近吗？",
+            "en": "Would you like to come closer?"
+          },
+          {
+            "zh": "我陪着你。",
+            "en": "I'm here with you."
+          }
+        ],
+        "why": "熟悉关系里的回应与安全感是互动基础。用温暖的问候表达关心，不让宝宝承担成人社交期待。",
+        "refs": [
+          "[8]",
+          "[47]",
+          "[82]",
+          "[93]"
+        ]
+      },
+      "offline": [
+        {
+          "title": "温柔问好",
+          "minutes": 5,
+          "materials": [
+            "安静的见面空间"
+          ],
+          "steps": [
+            "关屏，选熟悉长辈方便休息的时段见面。",
+            "照护者先问好，让宝宝从舒适距离看。",
+            "宝宝愿意时轻轻挥手，停下来等长辈回应。",
+            "宝宝累了就离开，改天再见。"
+          ],
+          "safety": "成人全程抱稳或牵护，不强迫身体接触；不爬高、不把重阳登高作为婴儿动作任务。不提供热茶、药品、坚果或小礼物，直径小于3.5厘米的物件有窒息风险。长辈或宝宝不舒服时改期。",
+          "domains": [
+            "social",
+            "language"
+          ],
+          "question": "你想在这里看，还是靠近一点？",
+          "levels": {
+            "easier": "在熟悉照护者怀里看长辈，不要求动作。",
+            "harder": "十二月龄后可自愿挥手或递一张完整大卡，不强求。"
+          }
+        }
+      ],
+      "steps": [
+        {
+          "type": "guide",
+          "parentTip": "任何熟悉长辈都可以；宝宝只看也算参与。",
+          "props": {
+            "goal": "尊重宝宝意愿，向一位熟悉长辈问好。",
+            "materials": [
+              "安静的见面空间"
+            ],
+            "steps": [
+              {
+                "text": "读完关屏，按自家习惯选一位熟悉长辈，不要求家人齐全。",
+                "say": {
+                  "zh": "你好呀！",
+                  "en": "Hello!"
+                },
+                "concept": "grandma-paternal"
+              },
+              {
+                "text": "照护者先挥手示范，宝宝留在舒适距离，不交给陌生怀抱。",
+                "say": {
+                  "zh": "我们挥挥手。",
+                  "en": "Let's wave."
+                },
+                "concept": "wave"
+              },
+              {
+                "text": "看宝宝是否主动靠近或伸手，不愿意就继续陪着。",
+                "say": {
+                  "zh": "你想靠近吗？",
+                  "en": "Would you like to come closer?"
+                }
+              },
+              {
+                "text": "宝宝转头或疲倦就温和告别，不让长辈反复逗弄。",
+                "say": {
+                  "zh": "我陪着你。",
+                  "en": "I'm here with you."
+                }
+              }
+            ],
+            "playMin": 5,
+            "observe": [
+              "是否在熟悉照护者身边感到舒适。",
+              "是否自愿看、笑、挥手或发声。",
+              "是否需要退远一点或休息。"
+            ],
+            "safety": "不强迫亲吻或拥抱，不登高；成人抱稳或牵护，远离热茶、药物、坚果和小物件。"
+          }
+        }
+      ]
+    },
+    {
+      "schemaVersion": 1,
+      "id": "culture.parent-young.dragon-boat-festival",
+      "title": {
+        "zh": "端午：轻轻划呀",
+        "en": "Dragon Boat Festival: Gentle Paddling"
+      },
+      "summary": {
+        "zh": "看龙舟、粽子和香囊大卡，家长示范空手划桨。",
+        "en": "See dragon boat, zongzi, and sachet cards, then watch a grown-up paddle with empty hands."
+      },
+      "ageRange": [
+        6,
+        17
+      ],
+      "domains": [
+        "motor",
+        "language",
+        "social"
+      ],
+      "themeId": "culture.dragon-boat-festival",
+      "tags": [
+        "端午",
+        "龙舟",
+        "家长指引",
+        "只看图不试吃"
+      ],
+      "durationMin": 2,
+      "coView": "required",
+      "audience": "parent",
+      "printables": [
+        {
+          "kind": "cards",
+          "title": "端午大卡",
+          "items": [
+            "fest-dragon-boat",
+            "fest-zongzi",
+            "fest-sachet"
+          ],
+          "size": "large",
+          "showText": true,
+          "showEnglish": true
+        }
+      ],
+      "objectives": [
+        {
+          "zh": "看看家人的划桨动作。",
+          "en": "Watch a caregiver's paddling motion."
+        },
+        {
+          "zh": "听粽子和龙舟的名字。",
+          "en": "Hear the names zongzi and dragon boat."
+        }
+      ],
+      "cover": {
+        "concept": "fest-dragon-boat",
+        "bg": "sky"
+      },
+      "parentGuide": {
+        "intro": "家长读完关屏。端午时一些家庭吃粽子、看龙舟、做香囊。本课只看大卡；粽子不试吃，香囊不佩戴。在干燥地面上，成人空手慢慢划桨，宝宝看、笑或模仿都可以，不拉手臂、不强迫坐起。",
+        "tips": [
+          "按宝宝已有能力躺、趴或坐，不摆成尚做不到的姿势。",
+          "成人空手示范，动作小而慢，不摇晃宝宝。",
+          "不接近河边，也不播放嘈杂比赛声。"
+        ],
+        "phrases": [
+          {
+            "zh": "这是龙舟。",
+            "en": "This is a dragon boat."
+          },
+          {
+            "zh": "轻轻划呀。",
+            "en": "Paddle gently."
+          },
+          {
+            "zh": "这是粽子。",
+            "en": "This is zongzi."
+          },
+          {
+            "zh": "我们停一停。",
+            "en": "Let's stop for a moment."
+          }
+        ],
+        "why": "成人示范、等待和模仿让动作游戏有社会回应。文化认知不依靠冒险体验或吃到特定食物。",
+        "refs": [
+          "[6]",
+          "[8]",
+          "[82]",
+          "[83]"
+        ]
+      },
+      "offline": [
+        {
+          "title": "空手小龙舟",
+          "minutes": 5,
+          "materials": [
+            "防滑地垫",
+            "端午大卡"
+          ],
+          "steps": [
+            "关屏，在干燥地面安顿宝宝。",
+            "成人拿住龙舟大卡，说名称，再把卡收走。",
+            "成人空手向前伸、向回收，慢慢划两次。",
+            "停五秒，回应宝宝的笑、目光或自发动作。"
+          ],
+          "safety": "成人全程陪伴；只在干燥地面玩，不用真船、桨、棍或水盆。粽子黏性较强，有窒息风险，本课只看图不试吃；切小压扁也不是安全保证。香囊只看图，不提供草药、香料、绳子和小挂饰，不宣称防病功效。",
+          "domains": [
+            "motor",
+            "social"
+          ],
+          "question": "你想看看还是一起动？",
+          "levels": {
+            "easier": "成人只做一次小幅动作，宝宝观看成人的脸。",
+            "harder": "已能稳坐的宝宝可自愿空手模仿，不由成人拉拽带动。"
+          }
+        }
+      ],
+      "steps": [
+        {
+          "type": "guide",
+          "parentTip": "空手、慢动作、不拉拽；粽子和香囊只看图。",
+          "props": {
+            "goal": "在干燥地面观察并自愿模仿成人划桨。",
+            "materials": [
+              "防滑地垫",
+              "端午大卡"
+            ],
+            "steps": [
+              {
+                "text": "关屏，按宝宝已有能力在地垫上躺、趴或坐。",
+                "say": {
+                  "zh": "这是龙舟。",
+                  "en": "This is a dragon boat."
+                },
+                "concept": "fest-dragon-boat"
+              },
+              {
+                "text": "成人拿住粽子与香囊大卡各看一次，不提供实物。",
+                "say": {
+                  "zh": "这是粽子。",
+                  "en": "This is zongzi."
+                },
+                "concept": "fest-zongzi"
+              },
+              {
+                "text": "收卡后成人空手小幅向前伸、向回收，慢慢划两次。",
+                "say": {
+                  "zh": "轻轻划呀。",
+                  "en": "Paddle gently."
+                }
+              },
+              {
+                "text": "停下来等宝宝回应，接受只看或笑，不拉小手、不晃身体。",
+                "say": {
+                  "zh": "我们停一停。",
+                  "en": "Let's stop for a moment."
+                }
+              }
+            ],
+            "playMin": 5,
+            "observe": [
+              "是否关注成人动作或大卡。",
+              "是否微笑、发声或自发模仿。",
+              "是否失去兴趣或需要改变姿势。"
+            ],
+            "safety": "成人全程陪伴，不强迫坐起、不拉拽或摇晃；在干燥地面空手玩，远离水边。粽子有黏性窒息风险，切小压扁也不是安全保证，本课不试吃。香囊只看图，不给草药、绳子和小物件。"
+          }
+        }
+      ]
+    },
+    {
+      "schemaVersion": 1,
+      "id": "culture.parent-young.family-celebration",
+      "title": {
+        "zh": "生日：温柔的祝福",
+        "en": "Birthdays: Gentle Good Wishes"
+      },
+      "summary": {
+        "zh": "生日或自家的纪念日，面对面祝福、轻轻拍手。",
+        "en": "Share face-to-face wishes and gentle claps for a birthday or family celebration."
+      },
+      "ageRange": [
+        6,
+        17
+      ],
+      "domains": [
+        "social",
+        "language",
+        "motor"
+      ],
+      "themeId": "culture.family-celebration",
+      "tags": [
+        "生日",
+        "家庭节日",
+        "家长指引"
+      ],
+      "durationMin": 2,
+      "coView": "required",
+      "audience": "parent",
+      "printables": [
+        {
+          "kind": "cards",
+          "title": "家庭庆祝大卡",
+          "items": [
+            "cake",
+            "clap",
+            "home"
+          ],
+          "size": "large",
+          "showText": true,
+          "showEnglish": true
+        }
+      ],
+      "objectives": [
+        {
+          "zh": "听熟悉家人的祝福。",
+          "en": "Hear good wishes from familiar family members."
+        },
+        {
+          "zh": "在舒服的节奏里回应。",
+          "en": "Respond at a comfortable pace."
+        }
+      ],
+      "cover": {
+        "concept": "cake",
+        "bg": "room"
+      },
+      "parentGuide": {
+        "intro": "先读完关屏。生日或自家的团聚纪念日，都可以用一句祝福庆祝。对清醒、舒服的宝宝微笑说话，成人轻轻拍手，宝宝看或笑就好。不用气球、蜡烛、派对爆响或蛋糕试吃，也不要求全家到场。",
+        "tips": [
+          "庆祝可以很安静，只有一位照护者也足够。",
+          "按宝宝作息选白天时段，不惊喜吓唬、不延迟睡眠。",
+          "宝宝捂耳、转头或烦躁时降低声音并停止。"
+        ],
+        "phrases": [
+          {
+            "zh": "生日快乐！",
+            "en": "Happy birthday!"
+          },
+          {
+            "zh": "今天真开心。",
+            "en": "We're happy today."
+          },
+          {
+            "zh": "轻轻拍拍手。",
+            "en": "Clap gently."
+          },
+          {
+            "zh": "我陪着你。",
+            "en": "I'm here with you."
+          }
+        ],
+        "why": "熟悉、温暖的家庭仪式重在关系和回应。尊重宝宝节奏，不通过响声、奖品或食物刺激延长活动。",
+        "refs": [
+          "[8]",
+          "[47]",
+          "[82]",
+          "[92]",
+          "[93]"
+        ]
+      },
+      "offline": [
+        {
+          "title": "安静的生日祝福",
+          "minutes": 5,
+          "materials": [
+            "安静地垫",
+            "完整的蛋糕大卡"
+          ],
+          "steps": [
+            "关屏，选清醒舒服的时段面对面坐好。",
+            "成人拿住蛋糕大卡，说生日快乐或自家的祝福。",
+            "把卡收起，成人轻轻拍两下手，再等宝宝回应。",
+            "用看、笑、发声表达开心，宝宝累了就休息。"
+          ],
+          "safety": "成人全程陪伴，卡片不入口。不用气球及碎片、蜡烛明火、爆响玩具、彩纸碎屑或小礼物；直径小于3.5厘米的小物件有窒息风险。蛋糕只看图不试吃，不向宝宝提供糖果、整粒坚果和未经确认的过敏原。",
+          "domains": [
+            "social",
+            "motor"
+          ],
+          "question": "你想再看看，还是听我说话？",
+          "levels": {
+            "easier": "只看成人微笑、听一句祝福。",
+            "harder": "十二月龄后可自愿模仿拍手或挥手，不拉着手做。"
+          }
+        }
+      ],
+      "steps": [
+        {
+          "type": "guide",
+          "parentTip": "安静庆祝，不用气球、明火和食物奖励。",
+          "props": {
+            "goal": "用微笑和一句祝福，和宝宝分享家庭节日。",
+            "materials": [
+              "蛋糕大卡",
+              "安静地垫"
+            ],
+            "steps": [
+              {
+                "text": "读完关屏，选宝宝清醒舒服的时段，成人拿住蛋糕大卡。",
+                "say": {
+                  "zh": "生日快乐！",
+                  "en": "Happy birthday!"
+                },
+                "concept": "cake"
+              },
+              {
+                "text": "说一句祝福，停五秒，回应宝宝的笑、目光或声音。",
+                "say": {
+                  "zh": "今天真开心。",
+                  "en": "We're happy today."
+                }
+              },
+              {
+                "text": "收卡后成人轻轻拍两下手，宝宝愿意就模仿，不拉手带动。",
+                "say": {
+                  "zh": "轻轻拍拍手。",
+                  "en": "Clap gently."
+                },
+                "concept": "clap"
+              },
+              {
+                "text": "宝宝转头、困倦或嫌吵就结束，保持日常作息。",
+                "say": {
+                  "zh": "我陪着你。",
+                  "en": "I'm here with you."
+                }
+              }
+            ],
+            "playMin": 5,
+            "observe": [
+              "是否愿意看成人的脸。",
+              "是否自愿笑、发声或模仿拍手。",
+              "是否对声音敏感或需要结束。"
+            ],
+            "safety": "成人陪伴，不强迫拍手或身体接触；不用气球、蜡烛、爆响、小碎物和食物，卡片不入口，庆祝不打乱睡眠。"
+          }
+        }
+      ]
+    },
+    {
+      "schemaVersion": 1,
+      "id": "culture.parent-young.lantern-festival",
+      "title": {
+        "zh": "元宵：看看灯笼",
+        "en": "Lantern Festival: Look at a Lantern"
+      },
+      "summary": {
+        "zh": "用灯笼和汤圆大卡慢慢说话，不用真火、不试吃。",
+        "en": "Share lantern and tangyuan picture cards without flames or tasting."
+      },
+      "ageRange": [
+        6,
+        17
+      ],
+      "domains": [
+        "language",
+        "cognition",
+        "social"
+      ],
+      "themeId": "culture.lantern-festival",
+      "tags": [
+        "元宵",
+        "家长指引",
+        "只看图不试吃"
+      ],
+      "durationMin": 2,
+      "coView": "required",
+      "audience": "parent",
+      "printables": [
+        {
+          "kind": "cards",
+          "title": "元宵大卡",
+          "items": [
+            "fest-lantern",
+            "fest-tangyuan",
+            "circle"
+          ],
+          "size": "large",
+          "showText": true,
+          "showEnglish": true
+        }
+      ],
+      "objectives": [
+        {
+          "zh": "一起看看灯笼。",
+          "en": "Look at a lantern together."
+        },
+        {
+          "zh": "听圆圆和灯笼的词。",
+          "en": "Hear the words round and lantern."
+        }
+      ],
+      "cover": {
+        "concept": "fest-lantern",
+        "bg": "paper"
+      },
+      "parentGuide": {
+        "intro": "家长先读完关屏，再拿灯笼大卡陪宝宝。元宵时许多家庭看灯笼、吃汤圆。本课只看图片，不给宝宝吃汤圆。跟着宝宝的目光说一两句，不去拥挤灯会，不用闪灯吸引注意。",
+        "tips": [
+          "只展示静态大卡，不用发光或闪烁玩具。",
+          "等宝宝看过来再命名，不快速翻卡。",
+          "汤圆看图即可，普通软烂食物另按日常进餐安排。"
+        ],
+        "phrases": [
+          {
+            "zh": "你看，灯笼。",
+            "en": "Look, a lantern."
+          },
+          {
+            "zh": "这是汤圆。",
+            "en": "These are tangyuan."
+          },
+          {
+            "zh": "圆圆的。",
+            "en": "They're round."
+          },
+          {
+            "zh": "你在看呀。",
+            "en": "You're looking."
+          }
+        ],
+        "why": "指认、命名和等待让真实互动有来有往。低月龄不看电子词卡，不要求宝宝记住节日知识。",
+        "refs": [
+          "[8]",
+          "[45]",
+          "[47]",
+          "[82]"
+        ]
+      },
+      "offline": [
+        {
+          "title": "灯笼大卡慢慢看",
+          "minutes": 5,
+          "materials": [
+            "完整的灯笼大卡",
+            "汤圆大卡"
+          ],
+          "steps": [
+            "关屏，成人拿住一张灯笼大卡。",
+            "顺着宝宝目光命名，停下来等回应。",
+            "感兴趣时换成汤圆大卡，说圆圆的。",
+            "收好卡片，回到普通的亲子游戏。"
+          ],
+          "safety": "成人全程陪伴，卡片不入口。汤圆是圆形黏性食物，有窒息风险；3岁以下不建议整颗吃，切小或压扁也不能消除黏性风险，本课不试吃。真实灯笼不点火、不挂长绳、不用可拆纽扣电池，不让宝宝拉挂饰。",
+          "domains": [
+            "language",
+            "cognition"
+          ],
+          "question": "你想再看看哪张？",
+          "levels": {
+            "easier": "只看灯笼一张卡，家长说一句。",
+            "harder": "十二月龄后可并排放两张大卡，接受目光或手势选择。"
+          }
+        }
+      ],
+      "steps": [
+        {
+          "type": "guide",
+          "parentTip": "汤圆只看图；本活动不用真灯笼和食物。",
+          "props": {
+            "goal": "看一张灯笼大卡，跟着宝宝的目光交流。",
+            "materials": [
+              "灯笼大卡",
+              "汤圆大卡"
+            ],
+            "steps": [
+              {
+                "text": "读完关屏，成人拿住完整大卡，坐到宝宝面前。",
+                "say": {
+                  "zh": "你看，灯笼。",
+                  "en": "Look, a lantern."
+                },
+                "concept": "fest-lantern"
+              },
+              {
+                "text": "说完停五秒，宝宝看或发声时轻声回应。",
+                "say": {
+                  "zh": "你在看呀。",
+                  "en": "You're looking."
+                }
+              },
+              {
+                "text": "宝宝还感兴趣才换汤圆卡，手指沿图片轮廓慢慢移动。",
+                "say": {
+                  "zh": "圆圆的。",
+                  "en": "They're round."
+                },
+                "concept": "fest-tangyuan"
+              },
+              {
+                "text": "收走卡片，结束观察，不用食物奖励宝宝。",
+                "say": {
+                  "zh": "我们歇歇吧。",
+                  "en": "Let's take a break."
+                }
+              }
+            ],
+            "playMin": 5,
+            "observe": [
+              "是否看向成人指着的卡片。",
+              "是否用目光、表情或声音回应。",
+              "是否需要换成面对面聊天或休息。"
+            ],
+            "safety": "汤圆只看图不试吃；3岁以下不建议整颗吃，切小或压扁仍有黏性窒息风险。不用明火、长绳、闪灯或小电池，卡片不入口。"
+          }
+        }
+      ]
+    },
+    {
+      "schemaVersion": 1,
+      "id": "culture.parent-young.mid-autumn",
+      "title": {
+        "zh": "中秋：一起看月亮",
+        "en": "Mid-Autumn: The Moon and Family"
+      },
+      "summary": {
+        "zh": "白天看月亮大卡，和家人说话，不为赏月延迟睡觉。",
+        "en": "Share a moon card in daylight and talk with family without delaying sleep."
+      },
+      "ageRange": [
+        6,
+        17
+      ],
+      "domains": [
+        "social",
+        "language",
+        "science"
+      ],
+      "themeId": "culture.mid-autumn",
+      "tags": [
+        "中秋",
+        "团圆",
+        "家长指引"
+      ],
+      "durationMin": 2,
+      "coView": "required",
+      "audience": "parent",
+      "printables": [
+        {
+          "kind": "cards",
+          "title": "中秋团圆大卡",
+          "items": [
+            "moon",
+            "fest-mooncake",
+            "home"
+          ],
+          "size": "large",
+          "showText": true,
+          "showEnglish": true
+        }
+      ],
+      "objectives": [
+        {
+          "zh": "听月亮和家人的词。",
+          "en": "Hear words about the moon and family."
+        },
+        {
+          "zh": "和熟悉的人轮流说话。",
+          "en": "Take turns communicating with familiar people."
+        }
+      ],
+      "cover": {
+        "concept": "moon",
+        "bg": "sky"
+      },
+      "parentGuide": {
+        "intro": "先读完关屏，白天用月亮和月饼大卡陪宝宝。中秋有赏月、团圆的习俗，不要求月亮一定可见，也不让宝宝熬夜。团圆可以是与身边照护者相伴、说说远方亲人的名字；月饼只看图，不安排试吃。",
+        "tips": [
+          "睡前一小时不开屏，赏月不打乱睡眠。",
+          "可说身边或牵挂的任何家人，不规定家庭成员。",
+          "不要求宝宝说名字或亲吻、拥抱亲人。"
+        ],
+        "phrases": [
+          {
+            "zh": "你看，月亮。",
+            "en": "Look, the moon."
+          },
+          {
+            "zh": "这是月饼。",
+            "en": "This is a mooncake."
+          },
+          {
+            "zh": "我们在一起。",
+            "en": "We're together."
+          },
+          {
+            "zh": "我陪着你。",
+            "en": "I'm here with you."
+          }
+        ],
+        "why": "节日仪式提供温暖的交流情境。面对面回应和规律作息比必须完成赏月、进食或认词更重要。",
+        "refs": [
+          "[8]",
+          "[47]",
+          "[82]",
+          "[92]",
+          "[93]"
+        ]
+      },
+      "offline": [
+        {
+          "title": "月亮大卡和家人",
+          "minutes": 5,
+          "materials": [
+            "月亮大卡",
+            "家里已有的大绘本"
+          ],
+          "steps": [
+            "白天关屏，成人拿住月亮大卡。",
+            "宝宝看向月亮时说名称，停下来回应声音。",
+            "提到一位熟悉的家人，说我们在一起。",
+            "收卡，和宝宝一起翻纸质绘本。"
+          ],
+          "safety": "成人全程陪伴，卡片不入口。月饼只看图，不提供硬皮、大块、整粒坚果或未经确认的过敏原。赏月如不影响作息可在安全地面由成人陪同；不靠窗攀爬、不去阳台边沿，纱窗不能防坠。",
+          "domains": [
+            "social",
+            "language"
+          ],
+          "question": "你想和谁一起看？",
+          "levels": {
+            "easier": "只看照护者的脸，成人说一句我们在一起。",
+            "harder": "十二月龄后可在月亮卡与月饼卡间指认，不要求记住名称。"
+          }
+        }
+      ],
+      "steps": [
+        {
+          "type": "guide",
+          "parentTip": "白天看实体卡；没有月亮也能团圆，不延迟睡觉。",
+          "props": {
+            "goal": "借月亮大卡，与熟悉照护者轮流交流。",
+            "materials": [
+              "月亮大卡",
+              "月饼大卡"
+            ],
+            "steps": [
+              {
+                "text": "白天读完关屏，成人拿住月亮大卡，与宝宝面对面。",
+                "say": {
+                  "zh": "你看，月亮。",
+                  "en": "Look, the moon."
+                },
+                "concept": "moon"
+              },
+              {
+                "text": "宝宝感兴趣才换月饼大卡，命名后停五秒，不拿食物来试吃。",
+                "say": {
+                  "zh": "这是月饼。",
+                  "en": "This is a mooncake."
+                },
+                "concept": "fest-mooncake"
+              },
+              {
+                "text": "说一位熟悉家人的称呼，回应宝宝的声音，不考称呼。",
+                "say": {
+                  "zh": "我们在一起。",
+                  "en": "We're together."
+                },
+                "concept": "home"
+              },
+              {
+                "text": "收好卡片，继续纸质绘本或普通陪伴，不为赏月熬夜。",
+                "say": {
+                  "zh": "我陪着你。",
+                  "en": "I'm here with you."
+                }
+              }
+            ],
+            "playMin": 5,
+            "observe": [
+              "是否注意月亮卡或照护者的脸。",
+              "是否与成人轮流发声。",
+              "是否疲倦、转头或需要结束。"
+            ],
+            "safety": "卡片不入口，月饼只看图不试吃，不提供硬块、坚果和未知过敏原。睡前一小时不开屏，不为赏月延迟睡眠；远离窗边、阳台和高处。"
+          }
+        }
+      ]
+    },
+    {
+      "schemaVersion": 1,
+      "id": "culture.parent-young.qingming",
+      "title": {
+        "zh": "清明：春天散步",
+        "en": "Qingming: A Spring Walk"
+      },
+      "summary": {
+        "zh": "安全处看春天，种子只由大人操作，宝宝看大卡。",
+        "en": "Notice spring safely; adults handle seeds while babies see large cards."
+      },
+      "ageRange": [
+        6,
+        17
+      ],
+      "domains": [
+        "science",
+        "language",
+        "social"
+      ],
+      "themeId": "culture.qingming",
+      "tags": [
+        "清明",
+        "踏青",
+        "种子",
+        "家长指引"
+      ],
+      "durationMin": 2,
+      "coView": "required",
+      "audience": "parent",
+      "printables": [
+        {
+          "kind": "cards",
+          "title": "春天自然大卡",
+          "items": [
+            "flower",
+            "leaf",
+            "seed",
+            "sprout"
+          ],
+          "size": "large",
+          "showText": true,
+          "showEnglish": true
+        }
+      ],
+      "objectives": [
+        {
+          "zh": "听树叶和小花的名字。",
+          "en": "Hear the names of leaves and flowers."
+        },
+        {
+          "zh": "和照护者一起看春天。",
+          "en": "Notice spring with a caregiver."
+        }
+      ],
+      "cover": {
+        "concept": "flower",
+        "bg": "grass"
+      },
+      "parentGuide": {
+        "intro": "先读完关屏，再到安全处看看树和花。清明有踏青、思念亲人的习俗，本课只做温和春日观察。种子用大卡介绍；真实种子由成人收好并操作，不给宝宝抓。天气不适合时留在室内看实体卡。",
+        "tips": [
+          "跟着宝宝正在看的东西命名，不追求固定路线。",
+          "宝宝不会坐稳时用日常安全抱持，不摆成做不到的姿势。",
+          "自然物只观察，不采不明花叶，不直视太阳。"
+        ],
+        "phrases": [
+          {
+            "zh": "你看，小花。",
+            "en": "Look, a flower."
+          },
+          {
+            "zh": "叶子在动。",
+            "en": "The leaves are moving."
+          },
+          {
+            "zh": "这是种子。",
+            "en": "This is a seed."
+          },
+          {
+            "zh": "我陪着你。",
+            "en": "I'm here with you."
+          }
+        ],
+        "why": "自然观察给亲子交流提供真实对象。家长跟随目光并回应，不把户外时间变成认词测验。",
+        "refs": [
+          "[6]",
+          "[8]",
+          "[59]",
+          "[82]"
+        ]
+      },
+      "offline": [
+        {
+          "title": "安全处看春天",
+          "minutes": 8,
+          "materials": [
+            "花和叶大卡",
+            "日常出行用品"
+          ],
+          "steps": [
+            "关屏，在安全平坦处抱稳宝宝或按已有能力牵护。",
+            "停在一棵树旁，看叶子动一动。",
+            "成人指向花，命名后等待宝宝回应，不摘花。",
+            "回家由成人展示种子大卡，再收好卡片。"
+          ],
+          "safety": "成人全程陪伴，远离道路、水边、高处和烟火，不直视太阳。种子、泥土、花叶和肥料不入口；直径小于3.5厘米的物件有窒息风险，真实种子不交给宝宝。户外注意天气和防晒，返家洗手。",
+          "domains": [
+            "science",
+            "language"
+          ],
+          "question": "你还看到了什么？",
+          "levels": {
+            "easier": "在室内看一张自然大卡，接受目光回应。",
+            "harder": "能指认时，让宝宝指出树或花，成人接着描述。"
+          }
+        }
+      ],
+      "steps": [
+        {
+          "type": "guide",
+          "parentTip": "先关屏再出门；种子只看大卡，不给宝宝拿。",
+          "props": {
+            "goal": "跟着宝宝的目光，看看春天的树和花。",
+            "materials": [
+              "春天自然大卡",
+              "日常出行用品"
+            ],
+            "steps": [
+              {
+                "text": "关屏后先看天气，选择安全平坦处；不方便出门就用大卡。",
+                "say": {
+                  "zh": "你看，小花。",
+                  "en": "Look, a flower."
+                },
+                "concept": "flower"
+              },
+              {
+                "text": "成人指着叶子，慢慢说一句，停五秒等宝宝回应。",
+                "say": {
+                  "zh": "叶子在动。",
+                  "en": "The leaves are moving."
+                },
+                "concept": "leaf"
+              },
+              {
+                "text": "回家拿住种子大卡，说名称；真实种子由成人收在宝宝够不到处。",
+                "say": {
+                  "zh": "这是种子。",
+                  "en": "This is a seed."
+                },
+                "concept": "seed"
+              },
+              {
+                "text": "回应宝宝的手势或发声，收卡后一起洗手。",
+                "say": {
+                  "zh": "我陪着你。",
+                  "en": "I'm here with you."
+                }
+              }
+            ],
+            "playMin": 8,
+            "observe": [
+              "是否跟着成人看向树叶或卡片。",
+              "是否用指、看或发声分享发现。",
+              "是否因天气、声音或疲劳需要返回。"
+            ],
+            "safety": "不提供真实种子或泥土，卡片不入口；不直视太阳，远离道路、水边、高处和烟火，成人全程抱稳或牵护。"
+          }
+        }
+      ]
+    },
+    {
+      "schemaVersion": 1,
+      "id": "culture.parent-young.spring-festival",
+      "title": {
+        "zh": "春节：看福字",
+        "en": "Spring Festival: Good Wishes"
+      },
+      "summary": {
+        "zh": "家长读完关屏，陪宝宝看福字大卡、挥手拜年。",
+        "en": "Read, put the screen away, then share a fu card and a New Year greeting."
+      },
+      "ageRange": [
+        6,
+        17
+      ],
+      "domains": [
+        "social",
+        "language",
+        "english"
+      ],
+      "themeId": "culture.spring-festival",
+      "tags": [
+        "春节",
+        "家长指引",
+        "6–17月"
+      ],
+      "durationMin": 2,
+      "coView": "required",
+      "audience": "parent",
+      "printables": [
+        {
+          "kind": "cards",
+          "title": "春节祝福大卡",
+          "items": [
+            "fest-fu",
+            "fest-lantern",
+            "dumpling"
+          ],
+          "size": "large",
+          "showText": true,
+          "showEnglish": true
+        }
+      ],
+      "objectives": [
+        {
+          "zh": "听家人的新年问候。",
+          "en": "Hear a New Year greeting from family."
+        },
+        {
+          "zh": "轮流看、挥手或发声。",
+          "en": "Take turns looking, waving, or making sounds."
+        }
+      ],
+      "cover": {
+        "concept": "fest-fu",
+        "bg": "paper"
+      },
+      "parentGuide": {
+        "intro": "屏幕只给家长看。先读完、准备大卡，再关屏陪宝宝。春节是许多家庭互送祝福的日子。看福字、说新年好，宝宝看看或挥手就好。不考识字，不强迫亲吻、拥抱或拜年。",
+        "tips": [
+          "卡片由成人拿住，一次只看一张。",
+          "说一句后等五秒，回应宝宝的目光和声音。",
+          "家人称呼按自家习惯，任何照护者都能参与。"
+        ],
+        "phrases": [
+          {
+            "zh": "新年好！",
+            "en": "Happy New Year!"
+          },
+          {
+            "zh": "这是福字。",
+            "en": "This is a fu decoration."
+          },
+          {
+            "zh": "我们挥挥手。",
+            "en": "Let's wave."
+          },
+          {
+            "zh": "我在这里。",
+            "en": "I'm right here."
+          }
+        ],
+        "why": "面对面的等待与回应比屏幕认字更重要。节日问候是一起交流的机会，不把宝宝的反应当考试。",
+        "refs": [
+          "[8]",
+          "[21]",
+          "[47]",
+          "[82]",
+          "[93]"
+        ]
+      },
+      "offline": [
+        {
+          "title": "面对面拜年",
+          "minutes": 5,
+          "materials": [
+            "完整的福字大卡",
+            "安静地垫"
+          ],
+          "steps": [
+            "关屏，和清醒的宝宝面对面。",
+            "拿住福字大卡，说一句新年好。",
+            "轻轻挥手，等宝宝看、笑或发声，再回应。",
+            "宝宝转开头或累了就收卡休息。"
+          ],
+          "safety": "成人全程陪伴；卡片边缘光滑、不入口。直径小于3.5厘米的小物件有窒息风险，不给硬币、红包内钱币或小饰物。鞭炮和烟花不参与本活动；遇到燃放声由成人带宝宝远离，必要时轻护耳朵。照护者不在抱宝宝时贴高处装饰。",
+          "domains": [
+            "social",
+            "language"
+          ],
+          "question": "你想看哪一张？",
+          "levels": {
+            "easier": "只说一句问候，让宝宝看家人的脸。",
+            "harder": "十二月龄后可拿两张大卡，让宝宝指或看向喜欢的一张。"
+          }
+        }
+      ],
+      "steps": [
+        {
+          "type": "guide",
+          "parentTip": "先关屏，再面对面问好；不要求宝宝说话。",
+          "props": {
+            "goal": "用一个新年问候，等待并回应宝宝。",
+            "materials": [
+              "福字大卡",
+              "安静地垫"
+            ],
+            "steps": [
+              {
+                "text": "准备一张完整的大卡，关屏后坐在宝宝面前。",
+                "say": {
+                  "zh": "这是福字。",
+                  "en": "This is a fu decoration."
+                },
+                "concept": "fest-fu"
+              },
+              {
+                "text": "微笑说新年好，停五秒等目光、笑容或发声。",
+                "say": {
+                  "zh": "新年好！",
+                  "en": "Happy New Year!"
+                }
+              },
+              {
+                "text": "轻轻挥手，宝宝回应后模仿一次，不拉着小手挥。",
+                "say": {
+                  "zh": "我们挥挥手。",
+                  "en": "Let's wave."
+                },
+                "concept": "wave"
+              },
+              {
+                "text": "把卡收起，抱抱须先看宝宝意愿；不想玩就结束。",
+                "say": {
+                  "zh": "我在这里。",
+                  "en": "I'm right here."
+                }
+              }
+            ],
+            "playMin": 5,
+            "observe": [
+              "是否注意家人的脸或卡片。",
+              "是否用目光、声音或手势回应。",
+              "是否转头、烦躁或需要休息。"
+            ],
+            "safety": "不提供小物件和食物，不强迫社交；远离烟花鞭炮及拥挤场所，卡片不入口。"
+          }
+        }
+      ]
+    },
+    {
+      "schemaVersion": 1,
+      "id": "culture.parent-young.winter-solstice",
+      "title": {
+        "zh": "冬至：家人坐一起",
+        "en": "Winter Solstice: Together at Home"
+      },
+      "summary": {
+        "zh": "看饺子或汤圆大卡，听家里不同的冬至习惯。",
+        "en": "See dumpling or tangyuan cards and hear about your family's Winter Solstice customs."
+      },
+      "ageRange": [
+        6,
+        17
+      ],
+      "domains": [
+        "social",
+        "language",
+        "life"
+      ],
+      "themeId": "culture.winter-solstice",
+      "tags": [
+        "冬至",
+        "家庭习俗",
+        "家长指引",
+        "只看图不试吃"
+      ],
+      "durationMin": 2,
+      "coView": "required",
+      "audience": "parent",
+      "printables": [
+        {
+          "kind": "cards",
+          "title": "冬至家庭大卡",
+          "items": [
+            "dumpling",
+            "fest-tangyuan",
+            "home"
+          ],
+          "size": "large",
+          "showText": true,
+          "showEnglish": true
+        }
+      ],
+      "objectives": [
+        {
+          "zh": "听一项家庭节日习惯。",
+          "en": "Hear about one family festival custom."
+        },
+        {
+          "zh": "一起看图、轮流回应。",
+          "en": "Share pictures and take turns responding."
+        }
+      ],
+      "cover": {
+        "concept": "dumpling",
+        "bg": "room"
+      },
+      "parentGuide": {
+        "intro": "先读完关屏。冬至时有些家庭吃饺子，有些吃汤圆，也有别的习惯。选家里熟悉的一张大卡说话，不试吃、不做生面团游戏。节日重点是相伴，不说不吃某食物会生病或受伤。",
+        "tips": [
+          "不同地区和家庭习俗都可以，不规定必须吃什么。",
+          "看图与进餐分开，实际进餐不用屏幕。",
+          "宝宝看、笑或发声即可，不问知识题。"
+        ],
+        "phrases": [
+          {
+            "zh": "这是饺子。",
+            "en": "This is a dumpling."
+          },
+          {
+            "zh": "这是汤圆。",
+            "en": "These are tangyuan."
+          },
+          {
+            "zh": "我们在一起。",
+            "en": "We're together."
+          },
+          {
+            "zh": "你想看哪张？",
+            "en": "Which card would you like to see?"
+          }
+        ],
+        "why": "温暖、可预测的家庭仪式给交流提供机会。真人回应才是重点，不以食物或节日知识要求宝宝。",
+        "refs": [
+          "[6]",
+          "[8]",
+          "[47]",
+          "[82]",
+          "[93]"
+        ]
+      },
+      "offline": [
+        {
+          "title": "家里的冬至小聊天",
+          "minutes": 5,
+          "materials": [
+            "完整的饺子或汤圆大卡"
+          ],
+          "steps": [
+            "关屏，在安静处与宝宝面对面。",
+            "拿住家里熟悉的食物大卡，慢慢说名称。",
+            "说一句我们在一起，停下来回应宝宝。",
+            "收走大卡，回到日常游戏，实际进餐另行安排。"
+          ],
+          "safety": "成人全程陪伴，卡片不入口；汤圆圆形且黏，有窒息风险，3岁以下不建议整颗吃，切小压扁也不能消除黏性风险，本课不试吃。饺子不用整颗喂，正常进餐需按已有能力去硬馅、切碎软烂并坐稳看护；本课不涉及烹饪或喂食。远离热汤、生面团和灶具。",
+          "domains": [
+            "social",
+            "language"
+          ],
+          "question": "你想再看看什么？",
+          "levels": {
+            "easier": "只看一张大卡，听成人一句话。",
+            "harder": "十二月龄后并排展示饺子卡与汤圆卡，接受手势选择。"
+          }
+        }
+      ],
+      "steps": [
+        {
+          "type": "guide",
+          "parentTip": "各地习俗都可以；食物只看图，不说恐吓式俗语。",
+          "props": {
+            "goal": "介绍家里的一项冬至习惯，回应宝宝。",
+            "materials": [
+              "饺子大卡",
+              "汤圆大卡"
+            ],
+            "steps": [
+              {
+                "text": "读完关屏，选家里熟悉的饺子或汤圆大卡，不拿真食物。",
+                "say": {
+                  "zh": "这是饺子。",
+                  "en": "This is a dumpling."
+                },
+                "concept": "dumpling"
+              },
+              {
+                "text": "成人拿住大卡，说完停五秒；宝宝想换才换另一张。",
+                "say": {
+                  "zh": "你想看哪张？",
+                  "en": "Which card would you like to see?"
+                },
+                "concept": "fest-tangyuan"
+              },
+              {
+                "text": "说家里一起过节的习惯，不讲不吃某食物会受伤。",
+                "say": {
+                  "zh": "我们在一起。",
+                  "en": "We're together."
+                },
+                "concept": "home"
+              },
+              {
+                "text": "回应宝宝目光和发声，收卡后继续普通亲子游戏。",
+                "say": {
+                  "zh": "你在看呀。",
+                  "en": "You're looking."
+                }
+              }
+            ],
+            "playMin": 5,
+            "observe": [
+              "是否注意卡片与照护者。",
+              "是否用目光、发声或手势选择。",
+              "是否愿意继续交流或需要结束。"
+            ],
+            "safety": "汤圆只看图不试吃；3岁以下不建议整颗吃，切小压扁仍有黏性窒息风险。本课不喂饺子、不用生面团；远离热汤和灶具，卡片不入口。"
+          }
+        }
+      ]
+    }
+  ],
+  "audio": {
+    "schemaVersion": 1,
+    "voices": {
+      "zh": "Tingting",
+      "en": "Samantha"
+    },
+    "entries": {
+      "en:A circle has no corners.": "audio/tts/en/d1faabe24f1d5a99.m4a",
+      "en:A scented sachet is a little cloth bag.": "audio/tts/en/32bd717af4e74bad.m4a",
+      "en:A fu decoration carries good wishes.": "audio/tts/en/45691e423ef63f70.m4a",
+      "en:All done!": "audio/tts/en/aa09668068062f21.m4a",
+      "en:All done. Let's go draw a moon.": "audio/tts/en/922f142252557a6f.m4a",
+      "en:Breathe in": "audio/tts/en/a3ca6f68b2ce7595.m4a",
+      "en:Breathe out": "audio/tts/en/7b3e58813112f42a.m4a",
+      "en:Bye-bye, bubbles!": "audio/tts/en/20ac6019b301b30b.m4a",
+      "en:Draw Your Hands Back": "audio/tts/en/fcf69ff5d5cde972.m4a",
+      "en:Find the circle card.": "audio/tts/en/911518739c198e30.m4a",
+      "en:Find the fu decoration.": "audio/tts/en/ff7e4a9b69cb653a.m4a",
+      "en:Find the little scented sachet.": "audio/tts/en/d275fffd5fc0fc2f.m4a",
+      "en:Find the mooncake picture.": "audio/tts/en/2755eae661ec2c2c.m4a",
+      "en:Good Wishes for You": "audio/tts/en/f0efc5fd795068d0.m4a",
+      "en:Great moving!": "audio/tts/en/da8b274cb605c5a0.m4a",
+      "en:Happy New Year!": "audio/tts/en/4aa43d16b0f357d2.m4a",
+      "en:How many?": "audio/tts/en/3802d70bf2a5c496.m4a",
+      "en:It's Spring Festival. Family members share good wishes.": "audio/tts/en/25929a69b2499c95.m4a",
+      "en:It's round, with no corners.": "audio/tts/en/dbdc3245dea77182.m4a",
+      "en:Let's look at pictures for the Dragon Boat Festival.": "audio/tts/en/df55b99cf7f79eb4.m4a",
+      "en:Let's look at the pictures together.": "audio/tts/en/f999ffbe8e4cd69f.m4a",
+      "en:Let’s breathe slowly": "audio/tts/en/144918a08c9c9f2b.m4a",
+      "en:Let’s count together": "audio/tts/en/2691b486fed1e5ab.m4a",
+      "en:Let’s go play for real!": "audio/tts/en/d7a32d6e7a02269c.m4a",
+      "en:Let’s sing together": "audio/tts/en/939ef90e12540a9f.m4a",
+      "en:Let’s think again": "audio/tts/en/0da4b78362bf1b9c.m4a",
+      "en:Look again": "audio/tts/en/13226e3f8332145d.m4a",
+      "en:One lantern!": "audio/tts/en/d5804aa3f5250faa.m4a",
+      "en:Pause": "audio/tts/en/4ffe3f700a12bcfb.m4a",
+      "en:Peekaboo!": "audio/tts/en/2d975d2793c3ba05.m4a",
+      "en:People paddle a dragon boat together.": "audio/tts/en/cf2f2f124e62b50b.m4a",
+      "en:Reach Gently": "audio/tts/en/c1b7bee710f02745.m4a",
+      "en:Rest your hands on your lap and pause.": "audio/tts/en/a53aaf03ce136a28.m4a",
+      "en:Sit back a little": "audio/tts/en/35b011de56863656.m4a",
+      "en:Sit safely with your grown-up and paddle slowly with empty hands.": "audio/tts/en/add99a9f02e030fa.m4a",
+      "en:Sometimes the moon looks round, and sometimes it looks curved.": "audio/tts/en/cfd86e7d53e22d0b.m4a",
+      "en:Stay seated and gently reach forward with empty hands.": "audio/tts/en/c1c2a726ede4014a.m4a",
+      "en:Stay seated and slowly draw your hands back.": "audio/tts/en/92c531421a707af9.m4a",
+      "en:Tangyuan are glutinous rice balls.": "audio/tts/en/4502277c628cc0e7.m4a",
+      "en:The Moon and Us": "audio/tts/en/2fbb0baf94c6bdb2.m4a",
+      "en:The end!": "audio/tts/en/40cd5fb5a046c05f.m4a",
+      "en:This is a lantern.": "audio/tts/en/04d13b5a6de2bddf.m4a",
+      "en:This is a mooncake.": "audio/tts/en/18e28c67abf1057c.m4a",
+      "en:This is a mooncake. Family members talk together.": "audio/tts/en/d1433bbf202f47ac.m4a",
+      "en:This is a picture of a mooncake.": "audio/tts/en/63b72c554a092397.m4a",
+      "en:This is the moon in the sky.": "audio/tts/en/adf61d8060598bb9.m4a",
+      "en:Time for a break": "audio/tts/en/56d92dfa554ba044.m4a",
+      "en:Try again": "audio/tts/en/958f635c578de31f.m4a",
+      "en:Two lanterns!": "audio/tts/en/cd8faf62a049349c.m4a",
+      "en:We've shared our greetings. Let's go play.": "audio/tts/en/0885beb6cfae3bcc.m4a",
+      "en:Well done!": "audio/tts/en/e78d52816e276085.m4a",
+      "en:What comes next?": "audio/tts/en/c3a463adbe1d10c0.m4a",
+      "en:What do we do next?": "audio/tts/en/e9306402c15a9ff2.m4a",
+      "en:Where did it go?": "audio/tts/en/bd46a24058fdbdcf.m4a",
+      "en:Where is the dragon boat?": "audio/tts/en/3b8368669f5e2e84.m4a",
+      "en:Where is the lantern?": "audio/tts/en/098a44c72274e26c.m4a",
+      "en:Where is the moon?": "audio/tts/en/e74c57b4d111e0fd.m4a",
+      "en:You found it!": "audio/tts/en/c4efccd43d50314f.m4a",
+      "en:You looked so carefully!": "audio/tts/en/4935528a426b58af.m4a",
+      "en:Zongzi are wrapped in leaves.": "audio/tts/en/de3c38ad39e2905a.m4a",
+      "en:circle": "audio/tts/en/2e0022f48ab4adcc.m4a",
+      "en:dragon boat": "audio/tts/en/14df6a2e92f8373f.m4a",
+      "en:dumpling": "audio/tts/en/05b34929403349e8.m4a",
+      "en:eight": "audio/tts/en/f3fb7d077fe9daf9.m4a",
+      "en:five": "audio/tts/en/575203c3dbd4ddc2.m4a",
+      "en:four": "audio/tts/en/358f7671360a2799.m4a",
+      "en:fu decoration": "audio/tts/en/492f6af9f04ebd1b.m4a",
+      "en:lantern": "audio/tts/en/fb39de5f5edfe3a4.m4a",
+      "en:moon": "audio/tts/en/0a2dac72347144ef.m4a",
+      "en:mooncake": "audio/tts/en/bc08aca4ae466dd1.m4a",
+      "en:nine": "audio/tts/en/9013f0377cba1ef6.m4a",
+      "en:one": "audio/tts/en/25e4b04dc4c2ec70.m4a",
+      "en:scented sachet": "audio/tts/en/3e3f32595ddd3f22.m4a",
+      "en:seven": "audio/tts/en/ca41575bd4a5751c.m4a",
+      "en:six": "audio/tts/en/fb8b5c745932d4a2.m4a",
+      "en:square": "audio/tts/en/dfee95a3adb0f747.m4a",
+      "en:tangyuan": "audio/tts/en/55be9c22a3fe0a13.m4a",
+      "en:ten": "audio/tts/en/3d4b0754d0fbdbb2.m4a",
+      "en:three": "audio/tts/en/d45897f2e16eb6f8.m4a",
+      "en:two": "audio/tts/en/a6cf6983b68d2c4f.m4a",
+      "en:zongzi": "audio/tts/en/0fa9f87310ad8d05.m4a",
+      "zh:一": "audio/tts/zh/2f940f7653e0124b.m4a",
+      "zh:一共一盏灯笼": "audio/tts/zh/0712a3e35acdb955.m4a",
+      "zh:一共两盏灯笼": "audio/tts/zh/93f10528b32f98f1.m4a",
+      "zh:一起慢慢看图片。": "audio/tts/zh/774b8780ba1e931a.m4a",
+      "zh:七": "audio/tts/zh/7b663bb8ed48a78c.m4a",
+      "zh:三": "audio/tts/zh/01a807f187e802b2.m4a",
+      "zh:九": "audio/tts/zh/3f98633a09cb434e.m4a",
+      "zh:二": "audio/tts/zh/5506ea49686b5cb7.m4a",
+      "zh:五": "audio/tts/zh/542b9b7a80593788.m4a",
+      "zh:休息一下吧": "audio/tts/zh/c4c6817f7f6e2c56.m4a",
+      "zh:你找到了！": "audio/tts/zh/79c95ac1ff956c42.m4a",
+      "zh:你看得真仔细！": "audio/tts/zh/c99e4ec6cca233b8.m4a",
+      "zh:做得真好！": "audio/tts/zh/b22488e6435b31fe.m4a",
+      "zh:停一停": "audio/tts/zh/6dcd767c5a8d1d41.m4a",
+      "zh:八": "audio/tts/zh/c9c6c60eab3dae48.m4a",
+      "zh:六": "audio/tts/zh/d883f9bb0203a5df.m4a",
+      "zh:再想想": "audio/tts/zh/54c4817152633672.m4a",
+      "zh:再找找": "audio/tts/zh/d683005c57b0e36f.m4a",
+      "zh:再看看": "audio/tts/zh/3fc7d1fb6406c5a9.m4a",
+      "zh:十": "audio/tts/zh/105d3a24de0b0612.m4a",
+      "zh:去哪儿啦？": "audio/tts/zh/d8bad186b39cd7ae.m4a",
+      "zh:叶子包着粽子。": "audio/tts/zh/f832e509d9ef8001.m4a",
+      "zh:吸气": "audio/tts/zh/674b3c25ca03c2fe.m4a",
+      "zh:呼气": "audio/tts/zh/0f31cb18480ba6f5.m4a",
+      "zh:和宝宝一起唱": "audio/tts/zh/a3e20e2095afa522.m4a",
+      "zh:和家长坐稳，空手慢慢划。": "audio/tts/zh/9669980875767d77.m4a",
+      "zh:四": "audio/tts/zh/f71af8a75e111860.m4a",
+      "zh:圆圆的，没有角。": "audio/tts/zh/53e57795eb5d9bd4.m4a",
+      "zh:圆形": "audio/tts/zh/7aaa545f270b9a67.m4a",
+      "zh:圆形没有角": "audio/tts/zh/43c79c19edc9667b.m4a",
+      "zh:在这儿！": "audio/tts/zh/b0e5c099ea0e16af.m4a",
+      "zh:坐稳，慢慢把手收回来。": "audio/tts/zh/72dc938841700349.m4a",
+      "zh:坐稳，空手轻轻向前伸。": "audio/tts/zh/af2a559d676f7d46.m4a",
+      "zh:坐远一点，保护眼睛": "audio/tts/zh/26b697a65061a698.m4a",
+      "zh:大家一起划龙舟。": "audio/tts/zh/de041d101f726dd4.m4a",
+      "zh:慢慢收手": "audio/tts/zh/77075a7702631e9b.m4a",
+      "zh:我们一起慢慢呼吸": "audio/tts/zh/3661564872a393fd.m4a",
+      "zh:我们一起数一数": "audio/tts/zh/95bf995735e15c00.m4a",
+      "zh:我们去玩真的玩具吧！": "audio/tts/zh/eb34496bf7a1a685.m4a",
+      "zh:手放腿上，轻轻停一停。": "audio/tts/zh/f73ee227917f028b.m4a",
+      "zh:找找圆形卡。": "audio/tts/zh/715543d211635d78.m4a",
+      "zh:找找月饼图片。": "audio/tts/zh/58afcdcdb50ee950.m4a",
+      "zh:找找福字装饰。": "audio/tts/zh/14536343e0f1bc5b.m4a",
+      "zh:找找香囊小布袋。": "audio/tts/zh/d0c192f901637822.m4a",
+      "zh:把祝福送给你": "audio/tts/zh/61a46ba4be40a5f8.m4a",
+      "zh:接下来做什么？": "audio/tts/zh/8e4beec1a4055fb7.m4a",
+      "zh:接下来是什么？": "audio/tts/zh/584d76472815dac5.m4a",
+      "zh:故事讲完啦！": "audio/tts/zh/312f545e389dfe4b.m4a",
+      "zh:新年好！": "audio/tts/zh/d312107731152be1.m4a",
+      "zh:春节到了，家人送祝福。": "audio/tts/zh/6fe790456213cdb7.m4a",
+      "zh:月亮": "audio/tts/zh/6de2420005e6f1fd.m4a",
+      "zh:月亮和我们": "audio/tts/zh/ddb0569d3c228a5b.m4a",
+      "zh:月亮在哪里？": "audio/tts/zh/a4f10b08b9747b1d.m4a",
+      "zh:月亮有时圆，有时弯。": "audio/tts/zh/396180934b36a60e.m4a",
+      "zh:月饼": "audio/tts/zh/cd11d8e7fec07997.m4a",
+      "zh:有几个？": "audio/tts/zh/7f9217d861d93bae.m4a",
+      "zh:正方形": "audio/tts/zh/c292942914e663d8.m4a",
+      "zh:汤圆": "audio/tts/zh/9c5e32d91b0ab9dc.m4a",
+      "zh:汤圆是糯米团子。": "audio/tts/zh/b51b3346177cb5cd.m4a",
+      "zh:泡泡飞走啦！": "audio/tts/zh/235ed5d570a0c7b4.m4a",
+      "zh:灯笼": "audio/tts/zh/ceab823462c1569a.m4a",
+      "zh:灯笼在哪里？": "audio/tts/zh/30c27b06ae267f28.m4a",
+      "zh:看完啦！": "audio/tts/zh/99a9ed20447e2e49.m4a",
+      "zh:看完啦，我们去画月亮。": "audio/tts/zh/25fd7176f4409dd2.m4a",
+      "zh:看看端午的图片。": "audio/tts/zh/4851d44f904cd7ef.m4a",
+      "zh:真棒，动完啦！": "audio/tts/zh/a7835be7152598b9.m4a",
+      "zh:福字": "audio/tts/zh/1b2c46bdab1728ab.m4a",
+      "zh:福字送祝福。": "audio/tts/zh/cd7d25855f4894b4.m4a",
+      "zh:粽子": "audio/tts/zh/17b262884bac325d.m4a",
+      "zh:轻轻伸手": "audio/tts/zh/cc38d50752471bf0.m4a",
+      "zh:这是一个月饼。": "audio/tts/zh/69b29f7c325340b4.m4a",
+      "zh:这是一个灯笼。": "audio/tts/zh/91619ba22d766f83.m4a",
+      "zh:这是天上的月亮。": "audio/tts/zh/d9efa6551d226383.m4a",
+      "zh:这是月饼。家人一起说话。": "audio/tts/zh/e54aae97bab29389.m4a",
+      "zh:这是月饼图片。": "audio/tts/zh/dd6862bce22964ca.m4a",
+      "zh:这是灯笼。": "audio/tts/zh/dabe56b2355d4d54.m4a",
+      "zh:问候说完啦，我们去玩吧。": "audio/tts/zh/ed78a977ed36b549.m4a",
+      "zh:饺子": "audio/tts/zh/0d7498b07242e9ec.m4a",
+      "zh:香囊": "audio/tts/zh/59f0904c70dc007b.m4a",
+      "zh:香囊是小布袋。": "audio/tts/zh/c3fe966b3f5a2ff7.m4a",
+      "zh:龙舟": "audio/tts/zh/71cfb236e82cfffe.m4a",
+      "zh:龙舟在哪里？": "audio/tts/zh/81a2e1da6bdef4a9.m4a"
+    }
+  }
+}

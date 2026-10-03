@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" role="img" aria-label="A round plate">
+  <ellipse cx="128" cy="143" rx="94" ry="58" fill="#DFF1FB" stroke="#5D9FBE" stroke-width="5"/>
+  <ellipse cx="128" cy="137" rx="66" ry="35" fill="#FFF6E8" stroke="#8CBBCB" stroke-width="4"/>
+  <ellipse cx="128" cy="137" rx="42" ry="18" fill="#F3E2C8" opacity=".8"/>
+  <path d="M62 180Q128 209 194 180" fill="none" stroke="#8CBBCB" stroke-width="4" stroke-linecap="round"/>
+</svg>

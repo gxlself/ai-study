@@ -1,5 +1,5 @@
 import { afterEach, describe, expect, it, vi } from 'vitest';
-import { observeMediaQuery, requestDeadline } from './compat';
+import { observeMediaQuery, requestDeadline, tryFullscreen } from './compat';
 
 afterEach(() => vi.useRealTimers());
 
@@ -52,5 +52,23 @@ describe('旧 Safari 媒体查询订阅', () => {
     expect(add).toHaveBeenCalledWith(...(modern ? ['change', change] : [change]));
     dispose();
     expect(remove).toHaveBeenCalledWith(...(modern ? ['change', change] : [change]));
+  });
+});
+
+describe('全屏容错', () => {
+  it.each(['standard', 'webkit'] as const)('兼容 %s 返回 void，并绑定正确元素', async (kind) => {
+    const request = vi.fn(function (this: HTMLElement) { expect(this).toBe(element); });
+    const element = (kind === 'standard' ? { requestFullscreen: request }
+      : { webkitRequestFullscreen: request }) as unknown as HTMLElement;
+    await expect(tryFullscreen(element)).resolves.toBeUndefined();
+    expect(request).toHaveBeenCalledOnce();
+  });
+
+  it.each(['missing', 'throw', 'reject', 'resolve'] as const)('全屏不可用不影响播放：%s', async (kind) => {
+    const requestFullscreen = kind === 'missing' ? undefined : () => {
+      if (kind === 'throw') throw new Error('Not allowed');
+      return kind === 'reject' ? Promise.reject(new Error('Not allowed')) : Promise.resolve();
+    };
+    await expect(tryFullscreen({ requestFullscreen } as unknown as HTMLElement)).resolves.toBeUndefined();
   });
 });

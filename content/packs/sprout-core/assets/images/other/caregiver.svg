@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" role="img" aria-label="A caregiver beside a child">
+  <circle cx="91" cy="73" r="25" fill="#FFD15C" stroke="#D6A13C" stroke-width="4"/>
+  <path d="M91 101V157M91 119L61 145M91 119L122 143M91 157L68 210M91 157L115 210" fill="none" stroke="#5DA9E9" stroke-width="13" stroke-linecap="round"/>
+  <circle cx="170" cy="119" r="19" fill="#F08A5D" stroke="#BD674D" stroke-width="4"/>
+  <path d="M170 141V183M170 153L146 170M170 153L194 170M170 183L154 211M170 183L188 211" fill="none" stroke="#FFD15C" stroke-width="11" stroke-linecap="round"/>
+  <path d="M125 104Q143 87 161 101" fill="none" stroke="#E5677D" stroke-width="8" stroke-linecap="round"/>
+  <path d="M128 82Q139 67 150 82Q139 94 128 82Z" fill="#E5677D" stroke="#B64C65" stroke-width="3"/>
+  <path d="M52 218H207" stroke="#A67C63" stroke-width="8" stroke-linecap="round"/>
+</svg>

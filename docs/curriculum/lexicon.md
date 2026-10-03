@@ -53,29 +53,29 @@ ID 注意：`orange` 是橙子，`orange-color` 是橙色；`star` 是星星，`
 
 <!-- GENERATED_LEXICON_TABLES -->
 
-共 **220 条、19 类**。
+共 **252 条、19 类**。
 
 | 类别 | Category | 条数 |
 |---|---|---|
-| 动物 / Animals | animals | 30 |
+| 动物 / Animals | animals | 31 |
 | 水果 / Fruit | fruits | 12 |
 | 蔬菜 / Vegetables | vegetables | 8 |
 | 食物与饮品 / Food & Drinks | food | 12 |
-| 交通工具 / Vehicles | vehicles | 12 |
-| 身体 / Body | body | 12 |
+| 交通工具 / Vehicles | vehicles | 13 |
+| 身体 / Body | body | 15 |
 | 家人 / Family | family | 11 |
-| 家居与用品 / Household Objects | home | 21 |
-| 衣物 / Clothing | clothes | 10 |
-| 自然 / Nature | nature | 16 |
+| 家居与用品 / Household Objects | home | 24 |
+| 衣物 / Clothing | clothes | 13 |
+| 自然 / Nature | nature | 19 |
 | 颜色 / Colors | colors | 10 |
 | 形状 / Shapes | shapes | 8 |
 | 数字 / Numbers | numbers | 11 |
 | 情绪与感受 / Feelings | emotions | 8 |
-| 动作 / Actions | actions | 14 |
-| 玩具 / Toys | toys | 10 |
+| 动作 / Actions | actions | 27 |
+| 玩具 / Toys | toys | 12 |
 | 乐器 / Music | music | 8 |
-| 场所 / Places | places | 6 |
-| 小芽 / Sprout | other | 1 |
+| 场所 / Places | places | 7 |
+| 其他 / Other | other | 3 |
 
 ### 动物 / Animals（30）
 
@@ -111,6 +111,7 @@ ID 注意：`orange` 是橙子，`orange-color` 是橙色；`star` 是星星，`
 | `goose` | `assets/images/animals/goose.svg` | 大鹅 | dà é | goose | 只 | 嘎嘎 / honk honk |
 | `whale` | `assets/images/animals/whale.svg` | 鲸鱼 | jīng yú | whale | 头 | 无 |
 | `spider` | `assets/images/animals/spider.svg` | 小蜘蛛 | xiǎo zhī zhū | spider | 只 | 无 |
+| `duckling` | `assets/images/animals/duckling.svg` | 小鸭 | xiǎo yā | duckling | 只 | 嘎嘎 / quack quack |
 
 ### 水果 / Fruit（12）
 
@@ -175,6 +176,7 @@ ID 注意：`orange` 是橙子，`orange-color` 是橙色；`star` 是星星，`
 | `taxi` | `assets/images/vehicles/taxi.svg` | 出租车 | chū zū chē | taxi | 辆 | 无 |
 | `tractor` | `assets/images/vehicles/tractor.svg` | 拖拉机 | tuō lā jī | tractor | 辆 | 无 |
 | `helicopter` | `assets/images/vehicles/helicopter.svg` | 直升机 | zhí shēng jī | helicopter | 架 | 无 |
+| `wheel` | `assets/images/vehicles/wheel.svg` | 轮子 | lún zi | wheel | 个 | 无 |
 
 ### 身体 / Body（12）
 
@@ -192,6 +194,9 @@ ID 注意：`orange` 是橙子，`orange-color` 是橙色；`star` 是星星，`
 | `leg` | `assets/images/body/leg.svg` | 腿 | tuǐ | leg | 条 | 无 |
 | `head` | `assets/images/body/head.svg` | 头 | tóu | head | 个 | 无 |
 | `belly` | `assets/images/body/belly.svg` | 肚子 | dù zi | belly | 个 | 无 |
+| `shoulder` | `assets/images/body/shoulder.svg` | 肩膀 | jiān bǎng | shoulder | 个 | 无 |
+| `knee` | `assets/images/body/knee.svg` | 膝盖 | xī gài | knee | 个 | 无 |
+| `hair` | `assets/images/body/hair.svg` | 头发 | tóu fa | hair | 缕 | 无 |
 
 ### 家人 / Family（11）
 
@@ -234,6 +239,9 @@ ID 注意：`orange` 是橙子，`orange-color` 是橙色；`star` 是星星，`
 | `basket` | `assets/images/home/basket.svg` | 篮子 | lán zi | basket | 个 | 无 |
 | `comb` | `assets/images/home/comb.svg` | 梳子 | shū zi | comb | 把 | 无 |
 | `box` | `assets/images/home/box.svg` | 盒子 | hé zi | box | 个 | 无 |
+| `mirror` | `assets/images/home/mirror.svg` | 镜子 | jìng zi | mirror | 面 | 无 |
+| `plate` | `assets/images/home/plate.svg` | 盘子 | pán zi | plate | 个 | 无 |
+| `toothpaste` | `assets/images/home/toothpaste.svg` | 牙膏 | yá gāo | toothpaste | 管 | 无 |
 
 ### 衣物 / Clothing（10）
 
@@ -249,6 +257,9 @@ ID 注意：`orange` 是橙子，`orange-color` 是橙色；`star` 是星星，`
 | `gloves` | `assets/images/clothes/gloves.svg` | 手套 | shǒu tào | glove | 只 | 无 |
 | `dress` | `assets/images/clothes/dress.svg` | 连衣裙 | lián yī qún | dress | 条 | 无 |
 | `backpack` | `assets/images/clothes/backpack.svg` | 书包 | shū bāo | backpack | 个 | 无 |
+| `rain-boots` | `assets/images/clothes/rain-boots.svg` | 雨靴 | yǔ xuē | rain boot | 双 | 无 |
+| `underwear` | `assets/images/clothes/underwear.svg` | 内裤 | nèi kù | underwear | 条 | 无 |
+| `undershirt` | `assets/images/clothes/undershirt.svg` | 贴身上衣 | tiē shēn shàng yī | undershirt | 件 | 无 |
 
 ### 自然 / Nature（16）
 
@@ -270,6 +281,9 @@ ID 注意：`orange` 是橙子，`orange-color` 是橙色；`star` 是星星，`
 | `seed` | `assets/images/nature/seed.svg` | 种子 | zhǒng zi | seed | 颗 | 无 |
 | `grass` | `assets/images/nature/grass.svg` | 小草 | xiǎo cǎo | grass | 丛 | 无 |
 | `sea` | `assets/images/nature/sea.svg` | 大海 | dà hǎi | sea | 片 | 无 |
+| `seedling` | `assets/images/nature/seedling.svg` | 幼苗 | yòu miáo | seedling | 棵 | 无 |
+| `sapling` | `assets/images/nature/sapling.svg` | 小苗 | xiǎo miáo | sapling | 棵 | 无 |
+| `bamboo` | `assets/images/nature/bamboo.svg` | 竹子 | zhú zi | bamboo | 根 | 无 |
 
 ### 颜色 / Colors（10）
 
@@ -346,6 +360,19 @@ ID 注意：`orange` 是橙子，`orange-color` 是橙色；`star` 是星星，`
 | `wash-hands` | `assets/images/actions/wash-hands.svg` | 洗手 | xǐ shǒu | wash your hands | 次 | 无 |
 | `hug` | `assets/images/actions/hug.svg` | 抱抱 | bào bao | hug | 次 | 无 |
 | `sit-down` | `assets/images/actions/sit-down.svg` | 坐下 | zuò xià | sit down | 次 | 无 |
+| `wake-up` | `assets/images/actions/wake-up.svg` | 起床 | qǐ chuáng | wake up | 次 | 无 |
+| `wash-face` | `assets/images/actions/wash-face.svg` | 洗脸 | xǐ liǎn | wash your face | 次 | 无 |
+| `wet-hands` | `assets/images/actions/wet-hands.svg` | 湿手 | shī shǒu | wet hands | 次 | 无 |
+| `rinse-hands` | `assets/images/actions/rinse-hands.svg` | 冲洗双手 | chōng xǐ shuāng shǒu | rinse your hands | 次 | 无 |
+| `crawl` | `assets/images/actions/crawl.svg` | 爬 | pá | crawl | 次 | 无 |
+| `duck-under` | `assets/images/actions/duck-under.svg` | 钻过 | zuān guò | duck under | 次 | 无 |
+| `stamp-feet` | `assets/images/actions/stamp-feet.svg` | 轻跺脚 | qīng duò jiǎo | stamp your feet | 次 | 无 |
+| `balance-with-support` | `assets/images/actions/balance-with-support.svg` | 扶稳抬脚 | fú wěn tái jiǎo | balance with support | 次 | 无 |
+| `bend-gently` | `assets/images/actions/bend-gently.svg` | 轻轻弯腰 | qīng qīng wān yāo | bend gently | 次 | 无 |
+| `turn-slowly` | `assets/images/actions/turn-slowly.svg` | 慢慢转身 | màn màn zhuǎn shēn | turn slowly | 次 | 无 |
+| `morning-breakfast` | `assets/images/actions/morning-breakfast.svg` | 早上吃早饭 | zǎo shàng chī zǎo fàn | have breakfast | 次 | 无 |
+| `daytime-walk` | `assets/images/actions/daytime-walk.svg` | 白天散步 | bái tiān sàn bù | take a daytime walk | 次 | 无 |
+| `bedtime-reading` | `assets/images/actions/bedtime-reading.svg` | 睡前读书 | shuì qián dú shū | read at bedtime | 次 | 无 |
 
 ### 玩具 / Toys（10）
 
@@ -361,6 +388,8 @@ ID 注意：`orange` 是橙子，`orange-color` 是橙色；`star` 是星星，`
 | `crayon` | `assets/images/toys/crayon.svg` | 蜡笔 | là bǐ | crayon | 支 | 无 |
 | `yo-yo` | `assets/images/toys/yo-yo.svg` | 悠悠球 | yōu yōu qiú | yo-yo | 个 | 无 |
 | `toy-car` | `assets/images/toys/toy-car.svg` | 玩具车 | wán jù chē | toy car | 辆 | 无 |
+| `ramp` | `assets/images/toys/ramp.svg` | 斜坡 | xié pō | ramp | 个 | 无 |
+| `single-block` | `assets/images/toys/single-block.svg` | 单块积木 | dān kuài jī mù | single block | 块 | 无 |
 
 ### 乐器 / Music（8）
 
@@ -385,12 +414,15 @@ ID 注意：`orange` 是橙子，`orange-color` 是橙色；`star` 是星星，`
 | `shop` | `assets/images/places/shop.svg` | 商店 | shāng diàn | shop | 家 | 无 |
 | `park` | `assets/images/places/park.svg` | 公园 | gōng yuán | park | 座 | 无 |
 | `playground` | `assets/images/places/playground.svg` | 游乐场 | yóu lè chǎng | playground | 个 | 无 |
+| `slide` | `assets/images/places/slide.svg` | 滑梯 | huá tī | slide | 架 | 无 |
 
-### 小芽 / Sprout（1）
+### 其他 / Other（3）
 
 | ID | 图片路径 | 中文 | 拼音 | English | 量词 | 拟声（中 / 英） |
 |---|---|---|---|---|---|---|
 | `sprout` | `assets/images/other/sprout.svg` | 小芽 | xiǎo yá | sprout | 棵 | 无 |
+| `teacher` | `assets/images/other/teacher.svg` | 老师 | lǎo shī | teacher | 位 | 无 |
+| `caregiver` | `assets/images/other/caregiver.svg` | 照护者 | zhào hù zhě | caregiver | 位 | 无 |
 
 <!-- END_GENERATED_LEXICON_TABLES -->
 

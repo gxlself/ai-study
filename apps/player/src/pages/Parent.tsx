@@ -53,7 +53,7 @@ export function Parent() {
   return <Page className="parent-page" onBack={() => navigate('/')}>
     <header><div className="header-group"><BackButton home onClick={() => navigate('/')} /><h1>家长菜单</h1></div><Brand /></header>
     <div className="parent-layout">
-      <nav className="parent-tabs" aria-label="家长菜单">{tabs.map(({ id, label, icon: Icon }) => <button data-focusable key={id} aria-current={id === tab ? 'page' : undefined} onClick={() => { setTab(id); setMessage(''); }}><Icon />{label}</button>)}</nav>
+      <nav className="parent-tabs" aria-label="家长菜单">{tabs.map(({ id, label, icon: Icon }) => <button data-focusable key={id} aria-current={id === tab ? 'page' : undefined} onClick={() => { setTab(id); setMessage(''); }}><Icon /><span>{label}</span></button>)}</nav>
       <main className="parent-content" key={tab}>
         {tab === 'children' && <><h2>陪谁一起长大</h2>
           <div className="parent-children">{app.bootstrap?.children.map((profile) => <button data-focusable key={profile.id} disabled={busy} className={profile.id === child?.id ? 'selected' : ''} onClick={() => void run(() => app.switchChild(profile.id))}>

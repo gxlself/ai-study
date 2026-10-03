@@ -13,6 +13,7 @@ import { InteractionWatch } from '../state/idle';
 import { BackButton, IconButton, Loading, OfflineCards, Page, Problem } from '../ui/common';
 import { ActivityStage } from '../ui/ActivityStage';
 import { OfflineLesson } from './OfflineLesson';
+import { tryFullscreen } from '../compat';
 
 export function LessonPlayer() {
   const { id = '' } = useParams();
@@ -243,7 +244,7 @@ export function LessonExperience({ data, initialScreen, preview }: { data: Lesso
     preloadController.current = controller;
     setStartError(''); setPhase('preload');
     await app.speech.unlock().catch(() => undefined);
-    if (!preview && !document.fullscreenElement && window.innerWidth >= 1366) void document.documentElement.requestFullscreen?.().catch(() => undefined);
+    if (!preview && !document.fullscreenElement && window.innerWidth >= 1366) void tryFullscreen(document.documentElement);
     try {
       if (!alive.current || controller.signal.aborted) return;
       if (!preview && !parentLesson) {

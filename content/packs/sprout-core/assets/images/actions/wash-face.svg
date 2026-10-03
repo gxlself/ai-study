@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" role="img" aria-label="Washing a face with water">
+  <circle cx="128" cy="122" r="67" fill="#FFD15C" stroke="#D6A13C" stroke-width="5"/>
+  <path d="M93 111Q103 103 113 111M143 111Q153 103 163 111" fill="none" stroke="#725447" stroke-width="5" stroke-linecap="round"/>
+  <circle cx="106" cy="125" r="5" fill="#3B3226"/>
+  <circle cx="150" cy="125" r="5" fill="#3B3226"/>
+  <path d="M117 151Q128 160 139 151" fill="none" stroke="#9C5946" stroke-width="5" stroke-linecap="round"/>
+  <path d="M55 169Q76 153 96 170L84 207Q62 210 47 193Z" fill="#DFF1FB" stroke="#5D9FBE" stroke-width="4" stroke-linejoin="round"/>
+  <path d="M201 169Q180 153 160 170L172 207Q194 210 209 193Z" fill="#DFF1FB" stroke="#5D9FBE" stroke-width="4" stroke-linejoin="round"/>
+  <path d="M72 74L63 57M183 74L192 57M77 191L66 211M179 191L190 211" stroke="#75BDDA" stroke-width="6" stroke-linecap="round"/>
+</svg>

@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" role="img" aria-label="A young sapling with long leaves">
+  <path d="M73 202Q128 185 183 202Q171 224 128 227Q85 224 73 202Z" fill="#A67C63" stroke="#805A4A" stroke-width="4"/>
+  <path d="M126 203V95" stroke="#6C9A3B" stroke-width="9" stroke-linecap="round"/>
+  <path d="M126 142Q89 123 67 91Q104 87 128 111" fill="#77B77D" stroke="#4D8D57" stroke-width="4" stroke-linejoin="round"/>
+  <path d="M127 123Q164 94 192 105Q175 140 130 145" fill="#6C9A3B" stroke="#4D8D57" stroke-width="4" stroke-linejoin="round"/>
+  <path d="M126 99Q102 70 111 43Q142 57 132 101" fill="#8DCC8C" stroke="#4D8D57" stroke-width="4" stroke-linejoin="round"/>
+  <path d="M101 192Q128 202 155 192" fill="none" stroke="#D6A13C" stroke-width="3" stroke-linecap="round"/>
+</svg>

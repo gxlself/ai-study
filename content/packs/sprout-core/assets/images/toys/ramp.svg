@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" role="img" aria-label="A low toy ramp">
+  <path d="M45 199H213L147 79H45Z" fill="#5DA9E9" stroke="#3F83BE" stroke-width="5" stroke-linejoin="round"/>
+  <path d="M45 199H213" stroke="#3F83BE" stroke-width="9" stroke-linecap="round"/>
+  <path d="M76 176L157 176" stroke="#91C5F0" stroke-width="7" stroke-linecap="round"/>
+  <path d="M82 153L145 153M91 130L133 130" stroke="#91C5F0" stroke-width="6" stroke-linecap="round"/>
+  <g transform="translate(119 92) rotate(28)">
+    <rect x="-28" y="-16" width="56" height="32" rx="9" fill="#F08A5D" stroke="#BD674D" stroke-width="4"/>
+    <circle cx="-17" cy="19" r="9" fill="#3B3226"/>
+    <circle cx="17" cy="19" r="9" fill="#3B3226"/>
+    <circle cx="-17" cy="19" r="4" fill="#FFF4D8"/>
+    <circle cx="17" cy="19" r="4" fill="#FFF4D8"/>
+  </g>
+</svg>

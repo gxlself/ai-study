@@ -67,7 +67,7 @@ export function LessonCard({ lesson, compact = false, offlineOnly = false, adult
   const domain = DOMAIN_LABELS[lesson.domains[0]];
   return <button
     className={`lesson-card ${compact ? 'compact' : ''} ${adult ? 'adult-card' : ''}`} data-focusable data-lesson-id={lesson.id} onClick={() => navigate(`/lesson/${encodeURIComponent(lesson.id)}`, { state: { offlineOnly } })}
-    style={{ '--domain-color': domain.color } as React.CSSProperties}
+    style={{ '--domain-color': domain.color, '--domain-tint': `${domain.color}33` } as React.CSSProperties}
   >
     <div className="lesson-picture">{image ? <img src={image} alt="" /> : <Leaf aria-hidden="true" />}<span className="domain-label">{domain.zh}</span></div>
     <div className="lesson-caption"><h3>{lesson.title.zh}</h3>{adult && lesson.summary ? <p>{lesson.summary.zh}</p> : lesson.title.en && <p lang="en">{lesson.title.en}</p>}<small>{adult ? `家长阅读 · ${lesson.durationMin} 分钟` : `${lesson.durationMin} 分钟`}</small>

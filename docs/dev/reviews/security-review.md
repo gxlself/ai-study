@@ -45,7 +45,7 @@
 - 可复现步骤：
   1. 调用 `previewUrl` 时传入任意 token，返回地址的 fragment 路由参数中直接包含 `token=<token>`。
   2. 预览页面再用该值请求 `/api/plugins`，证明 token 会被带入 API 请求。
-  3. 若预览加载了同源第三方插件，该插件可读取 `location.search`。
+  3. 若预览加载了同源第三方插件，该插件可读取 `location.hash`。
 - 建议修复：改为一次性、短时、只读的预览 token，通过父子窗口握手后的 `postMessage` 或后端短链下发，不放入 URL；预览使用独立 origin；草稿预览默认不加载第三方插件。若必须 iframe，去掉 `allow-same-origin` 或使用真正独立的来源，并配置 `CSP frame-ancestors`。
 
 ### H-04：网页活动重定向后未校验最终 origin

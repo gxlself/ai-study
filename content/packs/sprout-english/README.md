@@ -56,9 +56,22 @@ pnpm content:validate --pack content/packs/sprout-english --strict
 pnpm content:bundle --pack content/packs/sprout-english
 pnpm content:zip content/packs/sprout-english --out release/
 pnpm exec tsx --test content/packs/sprout-english/tests/english.test.ts
+pnpm exec tsx content/packs/sprout-english/tests/import-check.mjs
 ```
 
 输出归档为 `release/sprout.english-1.0.0.zip`，ZIP 根目录含 `pack.json` 和 `bundle.json`。不要只因 bundle 或 ZIP 生成成功就当成严格发布通过；必须阅读校验输出。测试检查课程契约、短语、音标、年龄、线下活动、引用、乐句节奏、音频文件与最终归档，不启动服务或浏览器。
+
+`import-check.mjs` 使用现有服务端的进程内请求，在本包 `.qa/` 下创建一次性数据目录，验证真实 ZIP 导入、年龄筛选、家长课置顶与跨包素材，然后关闭应用、删除临时数据库和导入副本；不监听端口、不修改仓库 `data/`。
+
+可用本机已有的 Playwright 和浏览器串行做素材及音频检查，不向工作区新增依赖：
+
+```sh
+SPROUT_PLAYWRIGHT_MODULE=/absolute/path/to/playwright/index.mjs \
+SPROUT_BROWSER_PATH=/absolute/path/to/browser \
+node content/packs/sprout-english/tests/media-check.mjs
+```
+
+该脚本逐一检查实际概念引用对应的图片，保存两种视口截图，用 Canvas 检查非空与可见范围，再逐条解码音频检查非静音样本。它不播放声音，退出时关闭 AudioContext 和临时浏览器；`.qa/` 截图与报告不进入 ZIP。它是素材检查，不冒充实际播放端交互或真机测试。
 
 ### 已登记的流水线阻塞
 

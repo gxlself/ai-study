@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" role="img" aria-label="A bent leg with a highlighted knee">
+  <path d="M78 43H131V131Q131 143 143 150L207 189L181 226L110 183Q78 165 78 128Z" fill="#FFD15C" stroke="#D6A13C" stroke-width="5" stroke-linejoin="round"/>
+  <path d="M79 116Q106 102 133 123Q149 137 135 153Q118 170 100 155Q82 140 79 116Z" fill="#F08A5D" stroke="#BD674D" stroke-width="5"/>
+  <circle cx="109" cy="138" r="10" fill="#FFE6B8" stroke="#BD674D" stroke-width="3"/>
+  <path d="M58 43H151" stroke="#5DA9E9" stroke-width="10" stroke-linecap="round" opacity=".55"/>
+</svg>
