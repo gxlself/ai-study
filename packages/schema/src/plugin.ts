@@ -51,6 +51,8 @@ export interface PluginInfo {
   enabled: boolean;
   /** 播放端 import() 的入口 URL（builtin 为空） */
   entryUrl?: string;
+  /** 远程登记的插件：其 plugin.json 地址（安装/启用确认弹窗展示来源用） */
+  manifestUrl?: string;
   activities: PluginActivityDecl[];
   permissions: string[];
   errors?: string[];
