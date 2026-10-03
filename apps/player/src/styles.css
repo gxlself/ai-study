@@ -716,5 +716,72 @@ small { font-size: 18px; }
   .home > .parent-button { bottom: 3vmin; right: 4vmin; width: 10vmin; height: 10vmin; min-height: 10vmin; padding: 2vmin; }
   .home > .parent-button svg { width: 5vmin; height: 5vmin; }
 }
+/* setup 的内侧余量覆盖 1.06 放大与 3vmin 外发光，不跟随矮屏页面缩减安全区。 */
+.setup {
+  --setup-focus-space: calc(3.8vmin + 1.5vw);
+  padding: var(--sp-safe);
+}
+.setup > header { margin: 4.3vmin 4.3vmin 3vmin; min-height: 10vmin; }
+.setup [data-focusable] { min-width: 0; max-width: 100%; }
+.setup .sp-focused { outline: none; }
+.setup .setup-welcome { min-height: calc(100vh - 28vmin); --sp-layout-setup-welcome: 3vmin; }
+.setup .setup-options {
+  width: 100%;
+  max-width: 1400px;
+  padding: var(--setup-focus-space);
+  grid-gap: var(--setup-focus-space);
+  overflow: visible;
+}
+.setup .setup-option { width: 100%; grid-template-columns: auto minmax(0, 1fr) auto; }
+.setup .setup-option span { min-width: 0; }
+.setup .setup-form { max-width: 1000px; margin: 0 auto; padding: 0 calc(3.8vmin + 3vw) 4vmin; }
+.setup .pairing { max-width: 1200px; margin: 0 auto; padding: 4vmin var(--setup-focus-space); }
+.setup .pairing-details { width: 100%; min-width: 0; }
+.setup .pairing-details > * + * { margin-top: 4vmin; }
+.setup .server-display input:first-of-type { flex: 1; width: 0; }
+.setup .server-display input:last-of-type { flex: 0 0 22%; width: 22%; }
+.setup .advanced-address { flex-direction: column; align-items: stretch; text-align: left; }
+.setup .advanced-address > * + * { margin: 1.5vmin 0 0; }
+.setup .numeric-keypad { grid-gap: var(--setup-focus-space); }
+.setup .numeric-keypad .keypad-confirm { min-width: 0; }
+.setup .pair-code { margin: 4vmin 0; }
+@media (min-width: 701px) {
+  .setup .child-form {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    grid-gap: 5vmin;
+    align-items: center;
+  }
+  .setup .child-form > * + * { margin: 0; }
+  .setup .name-field { grid-column: 1; grid-row: 1 / span 2; grid-gap: 4.5vmin; }
+  .setup .child-form > p, .setup .birthday-steppers { grid-column: 2; }
+  .setup .child-form > .primary, .setup .child-form > .form-error { grid-column: 1 / -1; width: 100%; }
+  .setup .birthday-steppers { --sp-layout-birthday-steppers: 6vmin; }
+  .setup .stepper { min-width: 0; flex: 1; }
+  .setup .pairing-entry {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+    grid-gap: var(--setup-focus-space);
+    align-items: center;
+  }
+  .setup .pairing-entry > * + * { margin: 0; }
+}
+@media (min-width: 701px) and (max-height: 760px) {
+  .setup > header { min-height: 10vmin; margin-bottom: 3.5vmin; }
+  .setup .setup-welcome { min-height: calc(100vh - 28.5vmin); }
+  .setup .setup-form h1 { margin-bottom: 3vmin; }
+  .setup .name-field { align-content: center; }
+  .setup .pairing { --sp-layout-pairing: 3vmin; padding-top: 1vmin; padding-bottom: 4vmin; font-size: 3vmin; }
+  .setup .pairing h1 { font-size: 5vmin; line-height: 1.3; }
+  .setup .pairing-details > * + * { margin-top: 5vmin; }
+  .setup .server-display { --sp-layout-server-display: 1vmin; font-size: 2.8vmin; }
+  .setup .server-display input, .setup .advanced-address input { min-height: 8vmin; padding: 1vmin; font-size: 3vmin; }
+  .setup .server-address { font-size: 2.8vmin; }
+  .setup .advanced-address { font-size: 2.8vmin; }
+  .setup .numeric-keypad { grid-gap: var(--setup-focus-space); }
+  .setup .numeric-keypad button { height: 8vmin; min-height: 8vmin; padding: 1vmin; font-size: 4vmin; }
+  .setup .numeric-keypad .keypad-confirm { font-size: 3.4vmin; }
+  .setup .pair-code span { width: 12vmin; height: 18vmin; font-size: 10vmin; }
+}
 @media (prefers-reduced-motion: reduce) { *, *::before, *::after { animation: none !important; transition: none !important; } }
 html[data-reduced-motion="true"] *, html[data-reduced-motion="true"] *::before, html[data-reduced-motion="true"] *::after { animation: none !important; transition: none !important; }

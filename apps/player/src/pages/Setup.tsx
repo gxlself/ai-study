@@ -110,26 +110,28 @@ export function Setup() {
       </div>
     </main>}
     {mode === 'local' && <main className="setup-form"><h1>认识一下小小的你</h1><ChildForm onSave={async (input) => { await app.useLocal(input); navigate('/', { replace: true }); }} /></main>}
-    {mode === 'remote' && <main className="pairing">
+    {mode === 'remote' && <main className={`pairing${!pair && !approved ? ' pairing-entry' : ''}`}>
       {pair ? <>
         <h1>等待家长确认</h1><div className="pair-code" aria-label={`配对码 ${pair.code}`}>{pair.code.split('').map((digit, i) => <span key={i}>{digit}</span>)}</div>
         <p>请在后台「设备」页输入此码</p><small>{Math.max(0, Math.ceil((Date.parse(pair.expiresAt) - clock) / 60_000))} 分钟内有效</small>
         {error && <p className="form-error" role="alert">{error}</p>}
         <button className="secondary" data-focusable onClick={() => void connect()}><RefreshCw />重新获取</button>
       </> : approved ? <>{app.error ? <><p role="alert">{app.error}</p><button data-focusable className="primary" onClick={() => void app.refresh().catch(() => undefined)}>重新连接</button></> : <Loading text="正在连接孩子的成长路线" />}</> : <>
-        <h1>连接家庭服务器</h1>
-        <div className="server-display">
-          <span>http://</span>
-          <input data-focusable aria-label="服务器 IP" value={host} onFocus={() => setField('host')} onChange={(e) => { setHost(e.target.value); setServer(''); }} className={field === 'host' ? 'active' : ''} />
-          <span>:</span><input data-focusable aria-label="服务器端口" value={port} onFocus={() => setField('port')} onChange={(e) => { setPort(e.target.value.replace(/\D/g, '').slice(0, 5)); setServer(''); }} className={field === 'port' ? 'active' : ''} />
+        <div className="pairing-details">
+          <h1>连接家庭服务器</h1>
+          <div className="server-display">
+            <span>http://</span>
+            <input data-focusable aria-label="服务器 IP" value={host} onFocus={() => setField('host')} onChange={(e) => { setHost(e.target.value); setServer(''); }} className={field === 'host' ? 'active' : ''} />
+            <span>:</span><input data-focusable aria-label="服务器端口" value={port} onFocus={() => setField('port')} onChange={(e) => { setPort(e.target.value.replace(/\D/g, '').slice(0, 5)); setServer(''); }} className={field === 'port' ? 'active' : ''} />
+          </div>
+          {server && <p className="server-address">{server}</p>}
+          <label className="advanced-address">完整地址<input data-focusable aria-label="完整服务器地址" value={server} placeholder="http://192.168.1.10:4310" onChange={(e) => setServer(e.target.value)} /></label>
+          {error && <p className="form-error" role="alert">{error}</p>}
         </div>
-        {server && <p className="server-address">{server}</p>}
         <div className="numeric-keypad">{['1', '2', '3', '4', '5', '6', '7', '8', '9', '.', '0', ':'].map((value) => <button data-focusable key={value} onClick={() => digit(value)}>{value}</button>)}
           <button data-focusable aria-label="删除一位" title="删除一位" onClick={() => digit('delete')}><Delete /></button>
           <button data-focusable className="primary keypad-confirm" disabled={busy} onClick={() => void connect()}>{busy ? '连接中' : '确认'}<ArrowRight /></button>
         </div>
-        <label className="advanced-address">完整地址<input data-focusable aria-label="完整服务器地址" value={server} placeholder="http://192.168.1.10:4310" onChange={(e) => setServer(e.target.value)} /></label>
-        {error && <p className="form-error" role="alert">{error}</p>}
       </>}
     </main>}
     {mode === 'children' && <main className="choose-child"><h1>谁的小旅程？</h1>

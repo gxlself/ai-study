@@ -1,6 +1,51 @@
 # 芽芽成长 Sprout 原生与部署验证记录
 
-## T26b 最终验收收尾（2026-10-03 至 2026-10-04）
+## T29 安全边距与终版重建（2026-10-04，Asia/Seoul）
+
+**P2-01 已关闭。** setup 选择页、离线建档、配对输入和等待码页保留 `5vmin` 安全区及完整焦点光圈，按钮间距覆盖焦点溢出。只修改 setup 页结构、其作用域样式和回归测试；没有修改首页、课程、活动、内容源、schema 或 SDK，没有 Git 提交。下方 T26/T26b/T8 的 APK 数据均为历史，不代表当前产物。
+
+本轮约 31 分钟，略超 30 分钟目标；额外收紧了等待码页的纵向余量和跨列确认键间距，并换装终版重新采集证据。
+
+### 当前 APK
+
+最终重建于 2026-10-04 01:59–02:01 完成，日志 `release/t29/build-latest/`。基于 Git HEAD `f9530fe84d5e384fc58b0bc98a133a133bb8f249` 加 T29 未提交改动；132 文件构建前后源码快照一致，指纹 `e48d376970412f5b668a6a6c47641d459f44b36c90020130bc8abc91ef3ecceb`。
+
+| 文件 | 字节 | MiB | SHA-256 |
+| --- | ---: | ---: | --- |
+| `release/sprout-player-1.0.0-debug.apk` | 30303971 | 28.90 | `bf4a16cc0cd9e444d2f38b55b5482ec0b9f34108c28b24103fe2e7fd44f86fed` |
+| `release/sprout-player-1.0.0-release.apk` | 28875180 | 27.54 | `b9b6a7b5a62ccafd048d75f1071ed887df4b9992b6045eddd0200ca52f475e77` |
+
+相邻 `.sha256` 校验通过，release 的 v2 签名有效；2026-10-04 02:01 换装后的设备内 APK 哈希与上表一致，见 `apps/player/test-artifacts/android-final/t29/reinstall.json`。内置正式内容仍为 **96 课 / 120 步 / 252 词 / 1548 条音频**；APK 音频和词条图片非空，Android/iOS/dist 的三个网页资源哈希一致，元数据 `release/t26-native-final/metadata.json`。
+
+### 测试与截图
+
+所有 pnpm 调用前均导出 `pnpm_config_verify_deps_before_run=false`。
+
+| 命令 / 检查 | 结果 |
+| --- | --- |
+| `pnpm --filter @sprout/player typecheck` | 通过 |
+| `pnpm --filter @sprout/player test` | 21 文件 / 242 个 Vitest 用例 + 25 个兼容性 Node 用例通过，新增 3 个 setup 用例 |
+| `pnpm --filter @sprout/player build` | 通过，含 postbuild 兼容检查 |
+| `pnpm --filter @sprout/player check:compat` | 通过，Chrome 70 / Safari 14 语法基线 |
+| `node release/t29/setup-layout.mjs` | 15/15，通过零容差安全区、单焦点不覆盖相邻按钮、无滚动及文字溢出检查 |
+| `bash apps/player/android/scripts/native-final-check.sh build-only` | Android debug/release、iOS Simulator 构建及源码/资源/校验和核对完整通过 |
+| `apksigner verify --verbose` | 终版 release 通过，v2 有效 |
+
+Playwright 截图：`apps/player/test-artifacts/t29/`，960×540 / DPR 2、1280×720、1920×1080，真实注入 Noto Sans CJK SC 并将行高乘 1.2；每个视口覆盖选择页两种焦点、离线建档、数字键盘及等待配对码。实际渲染字体已用 CDP 核对。浏览器使用 dist 临时快照，结束关闭浏览器和 HTTP 服务并删除快照。可用 `SPROUT_QA_FONT` 指定同字体的本地 OTF。
+
+终版 Android 截图：`apps/player/test-artifacts/android-final/t29/`，API 34 ARM64、1920×1080、默认 320dpi（960×540 CSS / DPR 2），没有显示密度覆盖；真实 ADB 按键建立 `2026-02` 的 7 月龄档案，没有脚本注入或改时钟。
+
+| 场景 | 终版证据 |
+| --- | --- |
+| 选择页两个按钮分别获得焦点，安全边距及光圈完整 | `06-final-setup-remote-focused.png`、`07-final-setup-offline-focused.png` |
+| 离线建档、出生年月及保存按钮焦点完整 | `08-final-offline-create.png`、`09-final-seven-birthday.png`、`10-final-offline-save-focused.png` |
+| 7 月龄家长首页两卡及封面完整同屏 | `11-final-seven-home.png` |
+
+最终裁定：`release/t29/results.json` 与 `release/t26-native-final/findings.md`。交互 `report.json` 的 APK 哈希为首次安装值，终版换装核验以 `reinstall.json` 为准；旧版证据已归档，不作为终版通过依据。初次按键截图 `01` 是 TV 启动器，已保留并排除；重新拉起后正常，Java crash 缓冲为空，未判定原因或宣称启动稳定性全通过。早期首页封面尚未加载，最终 `11` 已完整显示。
+
+没有真实家庭服务器，配对页为浏览器布局测试桩；TV 的 Ethernet 仍连接，不声称彻底断网。未重新验收 movement、全量课程、iPad 实测或扬声器试听，P2-02 沿用 T26b 结论。最终 TV、ADB 5069、临时 AVD 均已清理，未操作他人设备。
+
+## T26b 最终验收收尾（历史：2026-10-03 至 2026-10-04）
 
 设备日志时间：2026-10-03 23:44 至 2026-10-04 01:22，Asia/Seoul，中途外部中断后续接。**最终代码要求内 5/5 功能流程已完成；P2-02 关闭，P2-01 部分修复但首次选择页焦点安全边距仍保留，不是无问题发布批准。** 30 分钟目标未达成。下方 T26/T8 均为历史，其哈希、截图与测试数量不是当前产物。
 
