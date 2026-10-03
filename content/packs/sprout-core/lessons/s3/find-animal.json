@@ -1,0 +1,141 @@
+{
+  "schemaVersion": 1,
+  "id": "core.s3.find-animal",
+  "title": {
+    "zh": "哪个是小狗？",
+    "en": "Where Is the Dog?"
+  },
+  "summary": {
+    "zh": "用两张卡玩指认游戏，听懂熟悉的动物词。",
+    "en": "Use two cards to help your baby understand a familiar animal word."
+  },
+  "ageRange": [12, 17],
+  "domains": ["language", "cognition"],
+  "themeId": "s3-t1",
+  "tags": ["first-words", "pointing"],
+  "durationMin": 2,
+  "coView": "required",
+  "audience": "parent",
+  "printables": [
+    {
+      "kind": "cards",
+      "title": "动物找一找大卡",
+      "items": ["dog", "cat", "duck", "fish", "bird", "rabbit"],
+      "size": "large",
+      "showText": true,
+      "showEnglish": true
+    }
+  ],
+  "objectives": [
+    {
+      "zh": "宝宝在两张卡中寻找被说出的动物。",
+      "en": "Your baby looks for the named animal among two cards."
+    },
+    {
+      "zh": "宝宝用手指、眼神或爬近来选择。",
+      "en": "Your baby chooses with a point, look, or movement toward the card."
+    }
+  ],
+  "cover": {
+    "concept": "dog",
+    "bg": "paper"
+  },
+  "parentGuide": {
+    "intro": "把两张大动物卡平放在安全地面上。问“哪个是小狗？”，给宝宝足够时间寻找；看、指、伸手或爬近都算回应。",
+    "tips": [
+      "先把卡放得近一些，减少干扰。",
+      "问完后等五秒，不要马上替宝宝指出。",
+      "宝宝选错时只需重新命名，不说“错了”。"
+    ],
+    "phrases": [
+      {
+        "zh": "小狗在哪里？",
+        "en": "Where is the dog?"
+      },
+      {
+        "zh": "你在找小狗。",
+        "en": "You are looking for the dog."
+      },
+      {
+        "zh": "你看到了！",
+        "en": "You found it!"
+      },
+      {
+        "zh": "我们再看看。",
+        "en": "Let's look again."
+      }
+    ],
+    "why": "自然手势和共同注意是早期语言交流的重要入口。成人提问、等待、回应，比快速测试更适合这个月龄。",
+    "refs": ["R45", "R47", "R59", "R82"]
+  },
+  "offline": [
+    {
+      "title": "地上找小动物",
+      "minutes": 8,
+      "materials": ["动物大卡"],
+      "steps": [
+        "在干净地面放两张卡，和宝宝保持舒服的距离。",
+        "问“哪个是小狗？”，把手伸向两张卡中间。",
+        "等宝宝看、指、伸手或爬近，再说出他正在看的卡。"
+      ],
+      "safety": "成人全程陪伴，清空地面上的小物件。卡片要完整平整，不让宝宝咬卡片；不要把卡放在高处或楼梯边。",
+      "domains": ["language", "cognition"],
+      "question": "你还想找哪个小动物？",
+      "levels": {
+        "easier": "只放一张卡，家长说出它的名字。",
+        "harder": "两张卡交换位置，再问同一个词。"
+      }
+    }
+  ],
+  "steps": [
+    {
+      "type": "guide",
+      "parentTip": "问完停一停，接受任何主动回应。",
+      "props": {
+        "goal": "听懂一个熟悉词，找出对应卡片。",
+        "materials": ["动物打印卡"],
+        "steps": [
+          {
+            "text": "把小狗和小猫卡平放在宝宝前方。",
+            "concept": "dog",
+            "say": {
+              "zh": "小狗在哪里？",
+              "en": "Where is the dog?"
+            }
+          },
+          {
+            "text": "问完等五秒，观察宝宝看向哪里。",
+            "concept": "cat",
+            "say": {
+              "zh": "你在找小狗。",
+              "en": "You are looking for the dog."
+            }
+          },
+          {
+            "text": "宝宝伸手或爬近时，跟着他的目光说名字。",
+            "concept": "dog",
+            "say": {
+              "zh": "小狗在这儿。",
+              "en": "The dog is here."
+            }
+          },
+          {
+            "text": "交换两张卡的位置，再玩一轮。",
+            "concept": "duck",
+            "say": {
+              "zh": "小鸭子在哪里？",
+              "en": "Where is the duck?"
+            }
+          }
+        ],
+        "playMin": 8,
+        "observe": [
+          "宝宝是否看向被说出的动物。",
+          "宝宝是否用手指、伸手或移动来回应。",
+          "宝宝是否能在换位置后继续寻找。"
+        ],
+        "safety": "成人全程陪伴，保持地面干净。宝宝不愿意爬或拿卡时，不拉拽、不催促，改为家长指认。"
+      }
+    }
+  ]
+}

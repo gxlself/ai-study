@@ -20,6 +20,10 @@ const PATHS = [DOG, 'assets/Dog/Flat/dog_flat.svg', 'assets/Cat/Color/cat_color.
 const IMAGE = 'assets/images/animals/dog.svg';
 const SOURCE = { source: 'fluent-emoji', name: 'Dog', style: 'Color' } as const;
 const SVG = '<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32"><path d="M0 0L32 32" fill="#abc"/></svg>';
+const MASKED_SVG = SVG.replace(
+  '<path',
+  '<mask id="mask0" style="mask-type:alpha"><rect width="32" height="32" fill="#fff"/></mask><path mask="url(#mask0)"',
+);
 
 let root: string;
 let pack: string;
@@ -148,6 +152,42 @@ describe('SVG XML 解析与安全规范化', () => {
   });
 
   it.each([
+    'mask-type:alpha', 'mask-type: alpha;', ' MASK-TYPE : ALPHA ; fill: #fff;',
+    'mask-type:luminance',
+  ])('保留安全的 mask-type 样式、遮罩引用与幂等性：%s', (style) => {
+    const normalized = normalizeSvg(MASKED_SVG.replace('mask-type:alpha', style));
+    expect(normalized).toContain(`style="${style}"`);
+    expect(normalized).toContain('mask="url(#mask0)"');
+    expect(normalized).toContain('viewBox="0 0 32 32"');
+    expect(normalized).toContain('width="100%" height="100%"');
+    expect(normalizeSvg(normalized)).toBe(normalized);
+  });
+
+  it.each(['alpha', 'luminance'])('继续支持 mask-type="%s" 普通属性', (value) => {
+    const normalized = normalizeSvg(MASKED_SVG.replace('style="mask-type:alpha"', `mask-type="${value}"`));
+    expect(normalized).toContain(`mask-type="${value}"`);
+    expect(normalized).toContain('mask="url(#mask0)"');
+  });
+
+  it.each([
+    '', 'unknown', 'alpha !important', 'alpha luminance', 'url(#mask0)',
+    'url(https://tracker.example/mask)', 'var(--mask-type)', 'alpha/**/',
+    'a\\6cpha', 'expression(alert(1))',
+  ])('mask-type 样式与普通属性拒绝非法值 %#', (value) => {
+    expect(() => normalizeSvg(MASKED_SVG.replace('mask-type:alpha', `mask-type:${value}`))).toThrow();
+    expect(() => normalizeSvg(MASKED_SVG.replace('style="mask-type:alpha"', `mask-type="${value}"`))).toThrow();
+  });
+
+  it.each([
+    'mask-type:alpha;fill:url(https://tracker.example)',
+    'mask-type:alpha;background-image:url(https://tracker.example)',
+    'mask-type:alpha;onload:alert(1)',
+    'mask-type:alpha;@import:https://tracker.example',
+  ])('合法 mask-type 不能掩盖同一 style 内的危险声明 %#', (style) => {
+    expect(() => normalizeSvg(MASKED_SVG.replace('mask-type:alpha', style))).toThrow();
+  });
+
+  it.each([
     '',
     '<svg',
     SVG.replace('</svg>', ''),
@@ -208,6 +248,7 @@ describe('SVG XML 解析与安全规范化', () => {
     '<?xml-stylesheet href="https://tracker.example"?>',
   ])('拒绝脚本、事件、外部资源和 CSS 绕过 %#', (payload) => {
     expect(() => normalizeSvg(SVG.replace('</svg>', `${payload}</svg>`))).toThrow();
+    expect(() => normalizeSvg(MASKED_SVG.replace('</svg>', `${payload}</svg>`))).toThrow();
   });
 
   it('拒绝 DTD、实体声明与处理指令', () => {
@@ -416,6 +457,18 @@ describe('内容包下载、增量、force 与 custom', () => {
     const report = await fetchAssets({ rootDir: root, pack: 'content/packs/example', cacheFile, now: NOW, fetchImpl: network() });
     expect(report).toMatchObject({ packs: 1, downloaded: 1 });
     expect(existsSync(join(root, 'content/packs/other', IMAGE))).toBe(false);
+  });
+
+  it('下载并写入含 mask-type:alpha 的 Fluent 图片，再次运行增量跳过', async () => {
+    manifest({ [IMAGE]: SOURCE });
+    cache();
+    const fetchImpl = vi.fn<FetchImplementation>().mockImplementation(async () => new Response(MASKED_SVG));
+    const options = { pack, cacheFile, now: NOW, fetchImpl };
+    const report = await fetchAssets(options);
+    expect(report).toMatchObject({ downloaded: 1, errors: 0, exitCode: 0 });
+    expect(readFileSync(join(pack, IMAGE), 'utf8')).toBe(normalizeSvg(MASKED_SVG));
+    expect(await fetchAssets(options)).toMatchObject({ downloaded: 0, skipped: 1, errors: 0, exitCode: 0 });
+    expect(fetchImpl).toHaveBeenCalledTimes(1);
   });
 
   it('已有文件默认跳过，不访问索引或网络', async () => {

@@ -1,0 +1,169 @@
+{
+  "schemaVersion": 1,
+  "id": "core.s3.head-shoulders",
+  "title": {
+    "zh": "头发肩膀膝盖脚",
+    "en": "Head, Shoulders, Knees and Toes"
+  },
+  "summary": {
+    "zh": "家长慢慢学唱，带宝宝轻轻做动作。",
+    "en": "Learn the song slowly and invite gentle movements."
+  },
+  "ageRange": [12, 17],
+  "domains": ["music", "english", "motor"],
+  "themeId": "s3-t2",
+  "tags": ["song", "body-awareness"],
+  "durationMin": 3,
+  "coView": "required",
+  "audience": "parent",
+  "objectives": [
+    {
+      "zh": "宝宝在亲子歌唱中听身体词和节奏。",
+      "en": "Your baby hears body words and rhythm during shared singing."
+    },
+    {
+      "zh": "宝宝用看、笑或动作参与歌唱。",
+      "en": "Your baby joins with a look, smile, or movement."
+    }
+  ],
+  "cover": {
+    "concept": "head",
+    "bg": "paper"
+  },
+  "parentGuide": {
+    "intro": "先学会慢速旋律，再面对面唱给宝宝听。家长先碰自己的身体部位，宝宝只听、看或做一个动作都很好。",
+    "tips": [
+      "每个词之间留一点停顿。",
+      "先做自己身上的动作，不拉宝宝。",
+      "宝宝累了就唱一小段并结束。"
+    ],
+    "phrases": [
+      {
+        "zh": "和宝宝一起唱。",
+        "en": "Let's sing together."
+      },
+      {
+        "zh": "头，肩膀，膝盖，脚。",
+        "en": "Head, shoulders, knees, and toes."
+      },
+      {
+        "zh": "你想做哪个动作？",
+        "en": "Which move would you like?"
+      },
+      {
+        "zh": "听完啦。",
+        "en": "All done."
+      }
+    ],
+    "why": "主动歌唱和同步动作比背景播放更有互动价值。儿歌在这里是家长与宝宝轮流、模仿和共享节奏的工具。",
+    "refs": ["R50", "R54", "R87", "R88"]
+  },
+  "offline": [
+    {
+      "title": "慢慢唱，轻轻碰",
+      "minutes": 8,
+      "materials": ["软垫或成人腿上"],
+      "steps": [
+        "家长抱稳或坐在宝宝对面，先唱一遍并碰自己的部位。",
+        "第二遍只唱两个部位，停下来等宝宝看或动。",
+        "宝宝愿意时，轻轻邀请他碰自己的头、手或脚。"
+      ],
+      "safety": "成人保持稳定坐姿，不抱着宝宝快速转动或上下抛接；不拉扯宝宝的手脚，不强迫触碰脸部；地面保持防滑。",
+      "domains": ["music", "motor", "language"],
+      "question": "你想听哪一个身体词？",
+      "levels": {
+        "easier": "只唱“头”和“脚”两句。",
+        "harder": "唱完整一段，并在每个词后停五秒。"
+      }
+    }
+  ],
+  "steps": [
+    {
+      "type": "guide",
+      "parentTip": "先学唱，之后关屏实唱。",
+      "props": {
+        "goal": "用慢歌听身体词，和宝宝共享节奏。",
+        "materials": ["软垫或成人腿上"],
+        "steps": [
+          {
+            "text": "家长先坐稳，边唱边碰自己的头和手。",
+            "concept": "head",
+            "say": {
+              "zh": "头，手，脚。",
+              "en": "Head, hands, feet."
+            }
+          },
+          {
+            "text": "唱到一个部位时停一下，等宝宝看你。",
+            "concept": "hand",
+            "say": {
+              "zh": "小手看这里。",
+              "en": "Look at your hands."
+            }
+          },
+          {
+            "text": "宝宝愿意时，邀请他轻轻碰自己的脚。",
+            "concept": "foot",
+            "say": {
+              "zh": "小脚碰一碰。",
+              "en": "Touch your feet."
+            }
+          }
+        ],
+        "playMin": 8,
+        "observe": [
+          "宝宝是否看向家长或身体部位。",
+          "宝宝是否用微笑、发声或动作参与。",
+          "宝宝是否喜欢慢节奏重复。"
+        ],
+        "safety": "只做宝宝愿意的动作。未能站稳时不要求站立；不快速弯腰、抱举或拉扯关节。"
+      }
+    },
+    {
+      "type": "song",
+      "parentTip": "家长学唱后关屏，面对面唱给宝宝听。",
+      "props": {
+        "title": {
+          "zh": "头发肩膀膝盖脚",
+          "en": "Head, Shoulders, Knees and Toes"
+        },
+        "credit": "旋律：传统（公有领域）；中文词：芽芽成长原创；English lyrics: traditional, public domain",
+        "bpm": 72,
+        "instrument": "musicbox",
+        "lines": [
+          {
+            "lang": "zh",
+            "text": "头发肩膀膝盖脚",
+            "notes": "C4/1 D4/1 E4/1 F4/1 E4/1 D4/1 C4/2"
+          },
+          {
+            "lang": "zh",
+            "text": "膝盖脚",
+            "notes": "E4/1 D4/1 C4/2"
+          },
+          {
+            "lang": "en",
+            "text": "Head shoulders knees and toes",
+            "notes": "C4/1 D4/1 E4/1 F4/1 E4/1 D4/2"
+          },
+          {
+            "lang": "en",
+            "text": "Knees and toes",
+            "notes": "E4/1 D4/1 C4/2"
+          }
+        ],
+        "repeat": 1,
+        "actions": [
+          {
+            "zh": "碰一碰自己的身体",
+            "en": "Touch your own body"
+          },
+          {
+            "zh": "停下来等宝宝",
+            "en": "Pause for your baby"
+          }
+        ]
+      }
+    }
+  ]
+}

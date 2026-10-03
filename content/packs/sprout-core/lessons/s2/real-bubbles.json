@@ -1,0 +1,126 @@
+{
+  "schemaVersion": 1,
+  "id": "core.s2.real-bubbles",
+  "title": {
+    "zh": "吹泡泡",
+    "en": "Bubbles"
+  },
+  "summary": {
+    "zh": "看泡泡出现、飘走和消失，和宝宝来回回应。",
+    "en": "Watch bubbles appear, float, and pop while taking turns responding."
+  },
+  "ageRange": [9, 11],
+  "domains": ["cognition", "math"],
+  "themeId": "s2-t1",
+  "tags": ["cause-effect", "serve-return"],
+  "durationMin": 2,
+  "coView": "required",
+  "audience": "parent",
+  "objectives": [
+    {
+      "zh": "观察泡泡出现、移动和消失。",
+      "en": "Notice bubbles appear, move, and disappear."
+    },
+    {
+      "zh": "用目光、伸手或声音回应家长。",
+      "en": "Respond with a look, reach, or sound."
+    }
+  ],
+  "cover": {
+    "bg": "sky"
+  },
+  "parentGuide": {
+    "intro": "先读完指引，再关掉屏幕。家长吹一两个泡泡，停下来等宝宝看、伸手或发声。",
+    "tips": [
+      "泡泡离宝宝远一点，慢慢吹。",
+      "宝宝看见后先停五秒。",
+      "接受看、伸手和发声，不要求说话。"
+    ],
+    "phrases": [
+      {
+        "zh": "泡泡！",
+        "en": "Bubbles!"
+      },
+      {
+        "zh": "还要吗？",
+        "en": "More?"
+      },
+      {
+        "zh": "泡泡飞走啦！",
+        "en": "Bye-bye, bubbles!"
+      },
+      {
+        "zh": "我看到你啦。",
+        "en": "I see you."
+      }
+    ],
+    "why": "慢慢呈现并等待回应，把泡泡的因果体验变成你来我往的互动，不把屏幕当作宝宝的玩伴。",
+    "refs": ["[6]", "[47]", "[82]"]
+  },
+  "offline": [
+    {
+      "title": "泡泡看一看",
+      "minutes": 5,
+      "materials": ["按说明使用的泡泡水", "毛巾", "防滑地垫"],
+      "steps": [
+        "家长坐稳，吹一个泡泡，先看宝宝的目光和手势。",
+        "泡泡消失后停五秒，再问“还要吗？”。",
+        "宝宝有回应就再吹一个；没有回应或转开就停下。"
+      ],
+      "safety": "泡泡水不入口，不朝宝宝脸上吹；地面湿滑要及时擦干；宝宝揉眼或不舒服时立即停止。",
+      "domains": ["cognition", "math"],
+      "question": "泡泡往哪儿飘？",
+      "levels": {
+        "easier": "只吹一个泡泡，等宝宝看见。",
+        "harder": "让泡泡从左边慢慢飘到右边，等宝宝追视后再吹。"
+      }
+    }
+  ],
+  "steps": [
+    {
+      "type": "guide",
+      "parentTip": "家长读完后关屏，宝宝只看真实泡泡。",
+      "props": {
+        "goal": "观察泡泡的出现、移动和消失，练习来回回应。",
+        "materials": ["按说明使用的泡泡水", "毛巾"],
+        "steps": [
+          {
+            "text": "先把泡泡水和毛巾放好，家长坐在宝宝旁边。",
+            "say": {
+              "zh": "我们看泡泡。",
+              "en": "Let's watch bubbles."
+            }
+          },
+          {
+            "text": "从侧前方慢慢吹一个泡泡，停下来等宝宝看或伸手。",
+            "say": {
+              "zh": "泡泡！",
+              "en": "Bubbles!"
+            }
+          },
+          {
+            "text": "泡泡消失后等五秒，再问宝宝还要不要。",
+            "say": {
+              "zh": "还要吗？",
+              "en": "More?"
+            }
+          },
+          {
+            "text": "宝宝转开、揉眼或不舒服时，马上收好泡泡水。",
+            "say": {
+              "zh": "泡泡飞走啦！",
+              "en": "Bye-bye, bubbles!"
+            }
+          }
+        ],
+        "playMin": 5,
+        "observe": [
+          "宝宝是否看向泡泡。",
+          "宝宝是否伸手、发声或看向家长。",
+          "宝宝转开时是否需要停下。"
+        ],
+        "safety": "泡泡水不入口，不朝脸上吹；地面湿滑要及时擦干；宝宝揉眼或不舒服时立即停止。"
+      }
+    }
+  ]
+}

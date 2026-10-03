@@ -1,0 +1,202 @@
+{
+  "schemaVersion": 1,
+  "id": "core.s3.wash-hands",
+  "title": {
+    "zh": "洗手歌",
+    "en": "The Hand-Washing Song"
+  },
+  "summary": {
+    "zh": "家长学唱洗手歌，再在水池边慢慢做。",
+    "en": "Learn a hand-washing song and use it slowly at the sink."
+  },
+  "ageRange": [12, 17],
+  "domains": ["life", "music"],
+  "themeId": "s3-t5",
+  "tags": ["song", "daily-routine"],
+  "durationMin": 3,
+  "coView": "required",
+  "audience": "parent",
+  "objectives": [
+    {
+      "zh": "宝宝在洗手常规中听动作词。",
+      "en": "Your baby hears action words in the hand-washing routine."
+    },
+    {
+      "zh": "宝宝在成人帮助下参与洗手和擦干。",
+      "en": "Your baby joins washing and drying with adult help."
+    }
+  ],
+  "cover": {
+    "concept": "wash-hands",
+    "bg": "sky"
+  },
+  "parentGuide": {
+    "intro": "先学唱短歌，再到水池边做真实洗手。家长说“打湿、擦泡泡、冲一冲、擦干”，宝宝可以伸手、看水或听歌，不需要独立完成。",
+    "tips": [
+      "水温先由成人检查。",
+      "动作慢，宝宝的手由成人保护。",
+      "唱一小段就够，不追求唱完。"
+    ],
+    "phrases": [
+      {
+        "zh": "小手打湿。",
+        "en": "Wet your hands."
+      },
+      {
+        "zh": "擦出泡泡。",
+        "en": "Make some bubbles."
+      },
+      {
+        "zh": "冲一冲。",
+        "en": "Rinse your hands."
+      },
+      {
+        "zh": "擦干啦。",
+        "en": "Dry your hands."
+      }
+    ],
+    "why": "把歌曲、动作和稳定常规放在一起，能增加亲子共同参与。重点是生活照护和语言输入，不用恐吓细菌，也不把清洁变成压力。",
+    "refs": ["R6", "R82", "R87", "R93"]
+  },
+  "offline": [
+    {
+      "title": "水池边唱洗手歌",
+      "minutes": 8,
+      "materials": ["肥皂", "毛巾", "稳固的洗手台"],
+      "steps": [
+        "成人先检查水温、地面和洗手台是否安全。",
+        "扶着宝宝的手打湿，边唱边说“擦出泡泡”。",
+        "冲掉泡沫，用毛巾慢慢擦干。",
+        "洗完抱离水池，告诉宝宝“洗好啦”。"
+      ],
+      "safety": "成人全程一臂之内看护，不让宝宝独自站凳子或接近水池；防滑，水不宜过热；肥皂不入口，水边不要放小物件。",
+      "domains": ["life", "music"],
+      "question": "你想先听哪一句？",
+      "levels": {
+        "easier": "只做打湿和擦干两个动作。",
+        "harder": "按打湿、擦泡泡、冲洗、擦干的顺序唱一小段。"
+      }
+    }
+  ],
+  "steps": [
+    {
+      "type": "guide",
+      "parentTip": "先学唱，之后关屏到水池边做。",
+      "props": {
+        "goal": "用歌声记住洗手动作词。",
+        "materials": ["肥皂", "毛巾", "稳固的洗手台"],
+        "steps": [
+          {
+            "text": "家长先学会四个动作词，再放下屏幕。",
+            "concept": "wash-hands",
+            "say": {
+              "zh": "小手打湿。",
+              "en": "Wet your hands."
+            }
+          },
+          {
+            "text": "扶住宝宝的手，边唱边轻轻擦泡泡。",
+            "concept": "soap",
+            "say": {
+              "zh": "擦出泡泡。",
+              "en": "Make some bubbles."
+            }
+          },
+          {
+            "text": "用清水冲掉泡沫，再唱一句。",
+            "concept": "water",
+            "say": {
+              "zh": "冲一冲。",
+              "en": "Rinse your hands."
+            }
+          },
+          {
+            "text": "用毛巾擦干，温柔结束常规。",
+            "concept": "towel",
+            "say": {
+              "zh": "擦干啦。",
+              "en": "Dry your hands."
+            }
+          }
+        ],
+        "playMin": 8,
+        "observe": [
+          "宝宝是否看向水、泡泡或毛巾。",
+          "宝宝是否愿意伸手参与。",
+          "宝宝是否对重复歌声有回应。"
+        ],
+        "safety": "成人全程看护水边，检查水温并防滑。宝宝不愿碰水时停止，不把洗手液、肥皂或毛巾边角放入口。"
+      }
+    },
+    {
+      "type": "song",
+      "parentTip": "家长慢唱一遍，唱完去真实水池边做。",
+      "props": {
+        "title": {
+          "zh": "这样洗洗手",
+          "en": "This Is How We Wash Our Hands"
+        },
+        "credit": "旋律：传统（公有领域，Mulberry Bush）；中文词：芽芽成长原创；English lyrics: Sprout original",
+        "bpm": 76,
+        "instrument": "musicbox",
+        "lines": [
+          {
+            "lang": "zh",
+            "text": "这样洗洗小手",
+            "notes": "C4/1 D4/1 E4/1 F4/1 G4/1 F4/1"
+          },
+          {
+            "lang": "zh",
+            "text": "手心手背都洗洗",
+            "notes": "C4/1 D4/1 E4/1 F4/1 G4/1 F4/1 E4/1"
+          },
+          {
+            "lang": "zh",
+            "text": "冲一冲擦一擦",
+            "notes": "C4/1 D4/1 E4/1 F4/1 E4/1 D4/1"
+          },
+          {
+            "lang": "zh",
+            "text": "小手干净啦",
+            "notes": "C4/1 D4/1 E4/1 F4/1 G4/2"
+          },
+          {
+            "lang": "en",
+            "text": "This is how we wash our hands",
+            "notes": "C4/1 D4/1 E4/1 F4/1 G4/1 F4/1 E4/1"
+          },
+          {
+            "lang": "en",
+            "text": "Wash the palms and backs",
+            "notes": "C4/1 D4/1 E4/1 F4/1 G4/1"
+          },
+          {
+            "lang": "en",
+            "text": "Rinse and dry them well",
+            "notes": "C4/1 D4/1 E4/1 F4/1 G4/1"
+          },
+          {
+            "lang": "en",
+            "text": "Clean hands all done",
+            "notes": "C4/1 D4/1 E4/1 F4/2"
+          }
+        ],
+        "repeat": 1,
+        "actions": [
+          {
+            "zh": "打湿小手",
+            "en": "Wet the hands"
+          },
+          {
+            "zh": "擦泡泡",
+            "en": "Make bubbles"
+          },
+          {
+            "zh": "擦干小手",
+            "en": "Dry the hands"
+          }
+        ]
+      }
+    }
+  ]
+}

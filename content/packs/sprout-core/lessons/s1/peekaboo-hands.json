@@ -1,0 +1,103 @@
+{
+  "schemaVersion": 1,
+  "id": "core.s1.peekaboo-hands",
+  "title": { "zh": "躲猫猫", "en": "Peekaboo" },
+  "summary": { "zh": "躲一下，再见面。", "en": "Hide briefly, then meet again." },
+  "ageRange": [6, 8],
+  "domains": ["social", "cognition"],
+  "themeId": "s1-t3",
+  "tags": ["家长指引", "躲猫猫", "轮流回应"],
+  "durationMin": 2,
+  "coView": "required",
+  "audience": "parent",
+  "objectives": [
+    { "zh": "等熟悉的脸出现。", "en": "Wait for a familiar face to reappear." },
+    { "zh": "享受来回的小互动。", "en": "Enjoy a little back-and-forth game." }
+  ],
+  "cover": { "concept": "hand", "bg": "room" },
+  "parentGuide": {
+    "intro": "先读完，再关屏。只遮家长自己的脸。先留一只眼睛，短短一停就露出来。轻声问、轻声应。宝宝不笑也可以；不喜欢遮脸，就改成普通面对面。",
+    "tips": [
+      "优先用双手。纱巾只是可选，不盖宝宝。",
+      "遮住的时间短一些。宝宝紧张就马上露出脸。",
+      "重复同一句，让节奏可预期。不突然喊叫。",
+      "九个月清单才列躲猫猫时笑，不提前当考核。"
+    ],
+    "phrases": [
+      { "zh": "宝宝在哪里？", "en": "Where is baby?" },
+      { "zh": "在这儿！", "en": "Here you are!" },
+      { "zh": "我在这里。", "en": "I am here." },
+      { "zh": "再见面啦！", "en": "Here I am again!" }
+    ],
+    "why": "躲猫猫是指南建议的亲子游戏。短暂遮住再出现，给宝宝可预期的互动。六到八个月先体验，不宣称已经理解物体恒存。",
+    "refs": ["[6]", "[82]", "[83]"]
+  },
+  "offline": [
+    {
+      "title": "从手后面问好",
+      "minutes": 3,
+      "materials": ["家长的双手", "地垫"],
+      "steps": [
+        "面对清醒的宝宝。",
+        "用手遮自己的半张脸。",
+        "短暂停一下，轻声问。",
+        "露出脸，温柔说问好。",
+        "等宝宝回应，再重复。"
+      ],
+      "safety": "只遮大人的脸，不遮宝宝口鼻。宝宝在平稳地面得到照看。不突然大叫或离开。宝宝紧张、转开脸或烦躁就停，不追着逗。",
+      "domains": ["social", "cognition"],
+      "question": "你想看看什么呀？",
+      "levels": {
+        "easier": "只挡一点脸，马上露出。不遮眼睛也可以。",
+        "harder": "宝宝轻松期待时，遮家长整张脸一瞬再露出。不延长等待。"
+      }
+    }
+  ],
+  "steps": [
+    {
+      "type": "guide",
+      "title": { "zh": "家长躲一下", "en": "A Caregiver Hides Briefly" },
+      "parentTip": "屏幕给家长看。关屏后玩；只遮大人的脸，宝宝口鼻始终露着。",
+      "props": {
+        "goal": "用短暂、可预期的遮脸与出现，陪宝宝体验熟悉的人仍在身边。",
+        "materials": ["地垫", "家长双手", "可选的无绳、无流苏纱巾"],
+        "steps": [
+          {
+            "text": "让宝宝舒服地仰躺。家长面对面微笑。",
+            "say": { "zh": "我在这里。", "en": "I am here." },
+            "concept": "baby"
+          },
+          {
+            "text": "用手遮住自己的半张脸，留一只眼睛。",
+            "say": { "zh": "躲一下呀。", "en": "I'll hide for a moment." },
+            "concept": "hand"
+          },
+          {
+            "text": "短暂停一下，温柔问一句。",
+            "say": { "zh": "宝宝在哪里？", "en": "Where is baby?" }
+          },
+          {
+            "text": "马上露出笑脸，与宝宝相见。",
+            "say": { "zh": "在这儿！", "en": "Here you are!" },
+            "concept": "happy"
+          },
+          {
+            "text": "停几秒，回应目光、声音或笑容。感兴趣才重复。",
+            "say": { "zh": "再见面啦！", "en": "Here I am again!" }
+          },
+          {
+            "text": "宝宝紧张或转开脸，就放下手，安静陪着。",
+            "say": { "zh": "我一直在呀。", "en": "I am right here." }
+          }
+        ],
+        "playMin": 5,
+        "observe": [
+          "家长露出脸时，是否看过来、发声或微笑。",
+          "是否期待下一回合；安静看也算参与。",
+          "遮脸是否让宝宝紧张；不笑不代表没学会。"
+        ],
+        "safety": "优先用手，纱巾仅遮家长自己的脸，并始终握在大人手里。不盖宝宝口鼻，不绕头颈或四肢，不让宝宝扯到布。游戏后收走纱巾，不留在睡眠区。不突然喊叫，不逗到哭。"
+      }
+    }
+  ]
+}

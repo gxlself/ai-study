@@ -1,0 +1,132 @@
+{
+  "schemaVersion": 1,
+  "id": "core.s3.little-tree",
+  "title": {
+    "zh": "像小树一样",
+    "en": "Like a Little Tree"
+  },
+  "summary": {
+    "zh": "用小树、小鸟和小兔动作做安全模仿。",
+    "en": "Use safe imitation movements inspired by a tree, bird, and rabbit."
+  },
+  "ageRange": [12, 17],
+  "domains": ["motor"],
+  "themeId": "s3-t6",
+  "tags": ["imitation", "movement"],
+  "durationMin": 2,
+  "coView": "required",
+  "audience": "parent",
+  "objectives": [
+    {
+      "zh": "宝宝观察家长做慢动作。",
+      "en": "Your baby watches a grown-up make slow movements."
+    },
+    {
+      "zh": "宝宝按自己的能力尝试一个动作。",
+      "en": "Your baby tries one movement at their own level."
+    }
+  ],
+  "cover": {
+    "concept": "tree",
+    "bg": "grass"
+  },
+  "parentGuide": {
+    "intro": "在平整地面上做三个慢动作：站直或坐直像小树，挥手像小鸟，屈膝像小兔。宝宝可以坐着看，不需要跳、跑或站稳。",
+    "tips": [
+      "成人先示范，动作幅度小。",
+      "不要求宝宝完成全部动作。",
+      "宝宝想停就停，换成抱抱或观察。"
+    ],
+    "phrases": [
+      {
+        "zh": "站得像小树。",
+        "en": "Stand tall like a tree."
+      },
+      {
+        "zh": "小鸟飞一飞。",
+        "en": "The bird flaps."
+      },
+      {
+        "zh": "小兔蹲一蹲。",
+        "en": "The rabbit bends down."
+      },
+      {
+        "zh": "我们休息啦。",
+        "en": "Let's rest."
+      }
+    ],
+    "why": "家长示范、宝宝选择和慢速重复，能把动作与语言放在回应性互动中。这个月龄不需要做标准动作或追求运动表现。",
+    "refs": ["R82", "R83", "R87", "R88"]
+  },
+  "offline": [
+    {
+      "title": "自然动作跟一跟",
+      "minutes": 8,
+      "materials": ["软垫或干净地面"],
+      "steps": [
+        "成人先坐着伸直身体，像一棵小树。",
+        "慢慢挥动双手，像小鸟翅膀。",
+        "屈膝再起身，像小兔蹲下；不能稳站时继续坐着。",
+        "每个动作后停下来，看宝宝是否想模仿。"
+      ],
+      "safety": "地面防滑并远离桌角、台阶和家具；不要求单脚站、跳高、爬树或快速转圈；成人近距离扶护，宝宝不愿站时不扶拉起。",
+      "domains": ["motor", "language"],
+      "question": "你想做哪一个动作？",
+      "levels": {
+        "easier": "坐着做伸直身体和挥手。",
+        "harder": "把两个动作连起来，中间停下来等回应。"
+      }
+    }
+  ],
+  "steps": [
+    {
+      "type": "guide",
+      "parentTip": "先示范低风险动作，宝宝可只看不做。",
+      "props": {
+        "goal": "用自然形象做慢速模仿动作。",
+        "materials": ["软垫或干净地面"],
+        "steps": [
+          {
+            "text": "成人坐直或站稳，慢慢伸展身体。",
+            "concept": "tree",
+            "say": {
+              "zh": "像小树一样。",
+              "en": "Like a little tree."
+            }
+          },
+          {
+            "text": "挥动双手，做小鸟飞的动作。",
+            "concept": "bird",
+            "say": {
+              "zh": "小鸟飞一飞。",
+              "en": "The bird flaps."
+            }
+          },
+          {
+            "text": "屈膝再起身，不稳时只做坐姿。",
+            "concept": "rabbit",
+            "say": {
+              "zh": "小兔蹲一蹲。",
+              "en": "The rabbit bends down."
+            }
+          },
+          {
+            "text": "停下来抱抱或喝水，结束动作。",
+            "concept": "hug",
+            "say": {
+              "zh": "我们休息啦。",
+              "en": "Let's rest."
+            }
+          }
+        ],
+        "playMin": 8,
+        "observe": [
+          "宝宝是否看向家长的身体动作。",
+          "宝宝是否尝试挥手、伸展或屈膝。",
+          "宝宝是否保持舒服和愿意参与。"
+        ],
+        "safety": "不做跳跃、快跑、单脚站和高处动作。成人保护宝宝平衡，不拉手起身；宝宝疲倦或不愿意时立即停止。"
+      }
+    }
+  ]
+}

@@ -405,7 +405,7 @@ const ATTRIBUTES = new Set([
 const STYLE_PROPERTIES = new Set([
   'fill', 'fill-rule', 'fill-opacity', 'stroke', 'stroke-width', 'stroke-linecap',
   'stroke-linejoin', 'stroke-miterlimit', 'stroke-opacity', 'stroke-dasharray', 'stroke-dashoffset',
-  'opacity', 'color', 'clip-rule', 'clip-path', 'mask', 'filter', 'stop-color', 'stop-opacity',
+  'opacity', 'color', 'clip-rule', 'clip-path', 'mask', 'mask-type', 'filter', 'stop-color', 'stop-opacity',
   'flood-color', 'flood-opacity', 'color-interpolation-filters', 'mix-blend-mode', 'isolation',
 ]);
 const REFERENCE_ATTRIBUTES = new Set(['fill', 'stroke', 'clip-path', 'mask', 'filter']);
@@ -415,6 +415,9 @@ const SVG_NUMBER = '[+-]?(?:\\d+(?:\\.\\d*)?|\\.\\d+)(?:[eE][+-]?\\d+)?';
 const VIEW_BOX = new RegExp(`^\\s*${SVG_NUMBER}(?:(?:\\s*,\\s*|\\s+)${SVG_NUMBER}){3}\\s*$`);
 
 function safeAttributeValue(name: string, value: string): void {
+  if (name === 'mask-type' && !/^(?:alpha|luminance)$/i.test(value.trim())) {
+    throw new Error('SVG 属性 mask-type 仅允许 alpha 或 luminance');
+  }
   // CSS 仅接受受限的字面值及本地 url(#id)，不支持转义、注释、变量或外部加载语法。
   if (/[\\@{}\u0000-\u0008\u000b\u000c\u000e-\u001f\u007f]/u.test(value) || value.includes('/*') || value.includes('*/')) {
     throw new Error(`SVG 属性 ${name} 含不允许的转义或 CSS 语法`);

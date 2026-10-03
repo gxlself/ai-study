@@ -1,0 +1,74 @@
+{
+  "schemaVersion": 1,
+  "id": "core.s6.clap-pattern",
+  "title": { "zh": "拍手跺脚", "en": "Clap and Stamp" },
+  "summary": { "zh": "轻轻拍手，轻轻跺脚，轮流来。", "en": "Clap gently, stamp gently, and repeat." },
+  "ageRange": [30, 36],
+  "domains": ["math", "motor"],
+  "themeId": "s6-t1",
+  "tags": ["ab-pattern", "gentle-movement"],
+  "durationMin": 4,
+  "coView": "required",
+  "audience": "child",
+  "objectives": [
+    { "zh": "体验拍手、跺脚的重复。", "en": "Experience a repeating clap-and-stamp pattern." },
+    { "zh": "按舒服的节奏做小动作。", "en": "Move at a comfortable pace." }
+  ],
+  "cover": { "concept": "clap", "bg": "room" },
+  "parentGuide": {
+    "intro": "先腾出平整防滑的空地。家长示范一拍手、一跺脚，两组后邀请孩子加入。不跟倒计时比快。站不稳时坐着拍手、拍腿，也能体验规律。",
+    "tips": [
+      "每步只做一次，再等一等。",
+      "跺脚轻轻落地，不用使劲。",
+      "孩子只想看时，成人自己做。",
+      "做完关屏，再轮流当带头人。"
+    ],
+    "phrases": [
+      { "zh": "拍一下，跺一下。", "en": "One clap, one gentle stamp." },
+      { "zh": "这一组又来了。", "en": "Here is the pair again." },
+      { "zh": "轮到你带我做啦。", "en": "Your turn to lead me." },
+      { "zh": "累了就停一停。", "en": "Stop for a rest if you feel tired." }
+    ],
+    "why": "重复动作可把规律变成身体经验。跟随与轮流是专家建议的游戏；不把动作准确率或节拍作为发育判断。",
+    "refs": ["[69]", "[83]", "[87]", "[88]"]
+  },
+  "offline": [
+    {
+      "title": "你来带动作",
+      "minutes": 6,
+      "materials": ["平整防滑的空地", "可选稳固的小椅子"],
+      "steps": [
+        "关屏，清走脚边的玩具。",
+        "成人做拍手、跺脚，共两组。",
+        "邀请孩子跟做，节奏慢下来。",
+        "请孩子带一组，成人跟着做。",
+        "一起停下，说说刚才的动作。"
+      ],
+      "safety": "成人站在旁边照看。远离楼梯、玻璃和家具尖角。不猛跺、不跳到家具上，不拉孩子手臂。坐姿替代时椅子须稳固；疼痛、头晕或不愿继续时立即停止。",
+      "domains": ["math", "motor"],
+      "question": "你想让哪两个动作轮流来？",
+      "levels": {
+        "easier": "坐稳，只做拍手、拍腿两组。",
+        "harder": "孩子选两个安全动作，带成人重复两组。"
+      }
+    }
+  ],
+  "steps": [
+    {
+      "type": "movement",
+      "title": { "zh": "两个动作轮流来", "en": "Two Moves Take Turns" },
+      "parentTip": "小脚图只提示跺脚。每步一次，剩余时间等待；可暂停、跳过或坐着拍腿。",
+      "props": {
+        "intro": { "zh": "拍手、跺脚，轻轻轮流来。", "en": "Clap and stamp gently, taking turns." },
+        "moves": [
+          { "concept": "clap", "name": { "zh": "拍一下", "en": "One Clap" }, "say": { "zh": "轻轻拍一下手。", "en": "Clap your hands once, gently." }, "seconds": 6 },
+          { "concept": "foot", "name": { "zh": "跺一下", "en": "One Gentle Stamp" }, "say": { "zh": "轻轻跺一下脚。", "en": "Stamp one foot once, gently." }, "seconds": 6 },
+          { "concept": "clap", "name": { "zh": "再拍一下", "en": "Clap Again" }, "say": { "zh": "又轮到拍手啦。", "en": "Time for one clap again." }, "seconds": 6 },
+          { "concept": "foot", "name": { "zh": "再跺一下", "en": "Stamp Again" }, "say": { "zh": "又轮到跺脚啦。", "en": "Time for one gentle stamp again." }, "seconds": 6 },
+          { "concept": "clap", "name": { "zh": "拍一下", "en": "One Clap" }, "say": { "zh": "轻轻拍一下手。", "en": "Clap your hands once, gently." }, "seconds": 6 },
+          { "concept": "foot", "name": { "zh": "跺一下", "en": "One Gentle Stamp" }, "say": { "zh": "轻轻跺一下脚。", "en": "Stamp one foot once, gently." }, "seconds": 6 }
+        ]
+      }
+    }
+  ]
+}

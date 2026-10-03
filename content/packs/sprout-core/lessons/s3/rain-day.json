@@ -1,0 +1,132 @@
+{
+  "schemaVersion": 1,
+  "id": "core.s3.rain-day",
+  "title": {
+    "zh": "下雨天",
+    "en": "Rainy Day"
+  },
+  "summary": {
+    "zh": "先安全听雨看雨，再决定是否短暂出门。",
+    "en": "Listen to and watch rain safely before deciding whether to go outside."
+  },
+  "ageRange": [12, 17],
+  "domains": ["science", "motor"],
+  "themeId": "s3-t6",
+  "tags": ["weather", "outdoors"],
+  "durationMin": 2,
+  "coView": "required",
+  "audience": "parent",
+  "objectives": [
+    {
+      "zh": "宝宝在真实雨天听到下雨和湿等词。",
+      "en": "Your baby hears words such as rain and wet in a real rainy-day setting."
+    },
+    {
+      "zh": "宝宝在成人保护下慢慢走或观察水面。",
+      "en": "Your baby walks slowly or watches water with adult protection."
+    }
+  ],
+  "cover": {
+    "concept": "rain",
+    "bg": "sky"
+  },
+  "parentGuide": {
+    "intro": "下雨时先在室内看窗外、听雨声。若天气和路线都安全，再由成人牵护短暂出门；不把踩水坑当任务，宝宝舒服和安全最重要。",
+    "tips": [
+      "先看路面是否防滑。",
+      "雨伞由成人拿，伞尖远离宝宝。",
+      "雷雨、低温或积水时留在室内。"
+    ],
+    "phrases": [
+      {
+        "zh": "下雨了。",
+        "en": "It is raining."
+      },
+      {
+        "zh": "地面湿湿的。",
+        "en": "The ground is wet."
+      },
+      {
+        "zh": "我们慢慢走。",
+        "en": "Let's walk slowly."
+      },
+      {
+        "zh": "回家擦干啦。",
+        "en": "Let's dry off at home."
+      }
+    ],
+    "why": "天气词放进真实感官和共同对话，能连接语言、自然观察与动作。户外活动必须让位于防滑、防雷和温度安全。",
+    "refs": ["R6", "R9", "R10", "R11"]
+  },
+  "offline": [
+    {
+      "title": "听雨看水",
+      "minutes": 8,
+      "materials": ["成人雨伞", "干毛巾", "防滑鞋"],
+      "steps": [
+        "先在室内窗边听雨、看雨，说“下雨了”。",
+        "成人检查天气和地面，决定是否短暂出门。",
+        "出门时成人牵护，走过干净浅水处或只观察。",
+        "回家脱下湿衣物，擦干并洗手。"
+      ],
+      "safety": "地面湿滑，成人全程牵护或抱护；避开深水、沟渠、井盖、道路和积水电线；雷雨、大风、低温时不出门；雨伞尖端不朝向宝宝。",
+      "domains": ["science", "motor"],
+      "question": "你听到雨了吗？",
+      "levels": {
+        "easier": "只在室内听雨和看窗外。",
+        "harder": "安全出门后慢走几步，描述湿地面和雨声。"
+      }
+    }
+  ],
+  "steps": [
+    {
+      "type": "guide",
+      "parentTip": "安全第一，能在室内观察就不必出门。",
+      "props": {
+        "goal": "在安全雨天体验声音、湿和慢走。",
+        "materials": ["成人雨伞", "干毛巾", "防滑鞋"],
+        "steps": [
+          {
+            "text": "先站在室内窗边，听雨看雨。",
+            "concept": "rain",
+            "say": {
+              "zh": "下雨了。",
+              "en": "It is raining."
+            }
+          },
+          {
+            "text": "成人检查路面，拿好雨伞再决定出门。",
+            "concept": "umbrella",
+            "say": {
+              "zh": "雨伞在这里。",
+              "en": "The umbrella is here."
+            }
+          },
+          {
+            "text": "若路面安全，牵着宝宝慢慢走几步。",
+            "concept": "walk",
+            "say": {
+              "zh": "我们慢慢走。",
+              "en": "Let's walk slowly."
+            }
+          },
+          {
+            "text": "回家后用毛巾擦干，再说湿和干。",
+            "concept": "towel",
+            "say": {
+              "zh": "回家擦干啦。",
+              "en": "Let's dry off at home."
+            }
+          }
+        ],
+        "playMin": 8,
+        "observe": [
+          "宝宝是否对雨声或水面有反应。",
+          "宝宝是否在成人保护下保持平稳。",
+          "宝宝是否愿意继续观察。"
+        ],
+        "safety": "防滑、防雷、防车和防深水优先。任何天气风险、宝宝不适或路面不稳时，立即回到室内。"
+      }
+    }
+  ]
+}

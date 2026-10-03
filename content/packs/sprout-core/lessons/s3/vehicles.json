@@ -1,0 +1,141 @@
+{
+  "schemaVersion": 1,
+  "id": "core.s3.vehicles",
+  "title": {
+    "zh": "嘀嘀叭叭",
+    "en": "Beep Beep, Let's Go"
+  },
+  "summary": {
+    "zh": "在安全的地方看真实车辆，慢慢说名字和声音。",
+    "en": "Notice real vehicles safely and name them slowly."
+  },
+  "ageRange": [12, 17],
+  "domains": ["language"],
+  "themeId": "s3-t3",
+  "tags": ["first-words", "outdoors"],
+  "durationMin": 2,
+  "coView": "required",
+  "audience": "parent",
+  "printables": [
+    {
+      "kind": "cards",
+      "title": "交通工具大卡",
+      "items": ["car", "bus", "train", "airplane", "boat"],
+      "size": "large",
+      "showText": true,
+      "showEnglish": true
+    }
+  ],
+  "objectives": [
+    {
+      "zh": "宝宝听到车辆名称时看向实物或卡片。",
+      "en": "Your baby looks toward a vehicle or card when you name it."
+    },
+    {
+      "zh": "宝宝听到声音时用表情或动作回应。",
+      "en": "Your baby responds to a sound with a look or movement."
+    }
+  ],
+  "cover": {
+    "concept": "car",
+    "bg": "sky"
+  },
+  "parentGuide": {
+    "intro": "在家中窗边、院内或安全的人行区域观察。家长指向眼前的一种交通工具，说名字和声音；没有合适实物时使用打印卡，不靠近车辆。",
+    "tips": [
+      "一次只说一种眼前的车辆。",
+      "先描述，再邀请宝宝看或听。",
+      "英语只做短标签，不替代中文对话。"
+    ],
+    "phrases": [
+      {
+        "zh": "这是汽车，嘀嘀。",
+        "en": "This is a car, beep beep."
+      },
+      {
+        "zh": "公交车开过去了。",
+        "en": "The bus is going by."
+      },
+      {
+        "zh": "你听到了吗？",
+        "en": "Did you hear it?"
+      },
+      {
+        "zh": "我们站在安全处。",
+        "en": "We stay in a safe place."
+      }
+    ],
+    "why": "把名称放进共同注意和真实生活，能增加有意义的对话。英语以熟悉短语和真人互动为主，不把录播当作语言输入。",
+    "refs": ["R43", "R45", "R50", "R54"]
+  },
+  "offline": [
+    {
+      "title": "安全地看车",
+      "minutes": 10,
+      "materials": ["交通工具大卡"],
+      "steps": [
+        "成人先选远离车道、停车场出入口和水边的位置。",
+        "看到一种车辆时，家长指向它并说名字。",
+        "停下来让宝宝看、听或用动作回应，再慢慢离开。"
+      ],
+      "safety": "成人全程牵护或抱护，宝宝不靠近道路、车辆、车门、车轮和轨道；不在行驶车辆旁停留，不让宝宝模仿驾驶；雷雨或视线差时改为室内看卡。",
+      "domains": ["language", "science"],
+      "question": "你听到了什么声音？",
+      "levels": {
+        "easier": "在家看一张卡，家长说名字和声音。",
+        "harder": "在安全位置找两种车辆，分别说名字。"
+      }
+    }
+  ],
+  "steps": [
+    {
+      "type": "guide",
+      "parentTip": "先读指引，再去安全处看真实车辆。",
+      "props": {
+        "goal": "看真实车辆，听名称和声音。",
+        "materials": ["交通工具打印卡"],
+        "steps": [
+          {
+            "text": "在窗边或安全位置，先找眼前的一种车辆。",
+            "concept": "car",
+            "say": {
+              "zh": "这是汽车，嘀嘀。",
+              "en": "This is a car, beep beep."
+            }
+          },
+          {
+            "text": "看到公交车时，指一指并慢慢说名字。",
+            "concept": "bus",
+            "say": {
+              "zh": "公交车开过去了。",
+              "en": "The bus is going by."
+            }
+          },
+          {
+            "text": "如果听到火车声，先描述声音再找方向。",
+            "concept": "train",
+            "say": {
+              "zh": "火车，呜呜。",
+              "en": "Train, choo choo."
+            }
+          },
+          {
+            "text": "没有实物时，回家用卡片说飞机和小船。",
+            "concept": "airplane",
+            "say": {
+              "zh": "飞机在天上飞。",
+              "en": "The airplane flies in the sky."
+            }
+          }
+        ],
+        "playMin": 10,
+        "observe": [
+          "宝宝是否看向车辆或卡片。",
+          "宝宝是否对声音有表情或动作回应。",
+          "宝宝是否跟随家长的手指看。"
+        ],
+        "safety": "观察必须在安全区域进行。成人不抱宝宝靠近车辆或水边；宝宝疲倦、受惊或想离开时立即结束。"
+      }
+    }
+  ]
+}

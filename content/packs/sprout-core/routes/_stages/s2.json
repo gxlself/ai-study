@@ -1,0 +1,145 @@
+{
+  "id": "s2",
+  "title": {
+    "zh": "互动探索",
+    "en": "Interacting and Exploring"
+  },
+  "subtitle": {
+    "zh": "9–11 月：在来回互动中发现因果",
+    "en": "9–11 months: Discover cause and effect through back-and-forth play"
+  },
+  "ageRange": [9, 11],
+  "focus": [
+    {
+      "zh": "在安全陪伴中发现放入、拿出和藏起再出现。",
+      "en": "Discover in, out, and hidden-and-found play with a caregiver."
+    },
+    {
+      "zh": "用拍手、挥手、声音和目光参与来回互动。",
+      "en": "Join back-and-forth interaction with claps, waves, sounds, and looks."
+    },
+    {
+      "zh": "把还要、没有了和简单数量词放进进餐。",
+      "en": "Bring more, all gone, and simple number words into meals."
+    },
+    {
+      "zh": "跟随宝宝的注意，在家中真实物品上扩展词语。",
+      "en": "Follow your baby's attention and add words to real home objects."
+    },
+    {
+      "zh": "让宝宝在可预测的日常节奏里尝试和回应。",
+      "en": "Offer predictable routines for trying and responding."
+    }
+  ],
+  "screen": {
+    "sessionMaxMin": 3,
+    "dailyMaxMin": 10,
+    "lessonsPerDay": 2,
+    "coView": "required",
+    "childScreen": "none"
+  },
+  "themes": [
+    {
+      "id": "s2-t1",
+      "title": {
+        "zh": "因果与藏找",
+        "en": "Cause and Find"
+      },
+      "description": {
+        "zh": "用泡泡、盒子和杯子，把出现、消失、进去和出来变成真实游戏。",
+        "en": "Use bubbles, boxes, and cups to explore appearing, disappearing, in, and out."
+      },
+      "weeks": 3,
+      "domains": ["cognition", "math"],
+      "lessons": [
+        "core.s2.real-bubbles",
+        "core.s2.in-and-out",
+        "core.s2.under-cup"
+      ],
+      "offlineFocus": [
+        "用真实泡泡和大块玩具观察动作带来的变化。",
+        "用大卡片和宽口杯玩藏起来、找出来。",
+        "所有物品都由成人准备和看护。"
+      ]
+    },
+    {
+      "id": "s2-t2",
+      "title": {
+        "zh": "拍拍手挥挥手",
+        "en": "Clap and Wave"
+      },
+      "description": {
+        "zh": "在面对面游戏、问候和儿歌中练习模仿、手势和等待。",
+        "en": "Practice imitation, gestures, and waiting through face-to-face play and songs."
+      },
+      "weeks": 3,
+      "domains": ["motor", "social", "music"],
+      "lessons": [
+        "core.s2.clap-wave",
+        "core.s2.if-happy",
+        "core.s2.hello-bye"
+      ],
+      "offlineFocus": [
+        "先示范，再停下来等宝宝自然回应。",
+        "把你好、拜拜放进每天的迎送仪式。",
+        "儿歌唱完就转入抱抱、说话或地面游戏。"
+      ]
+    },
+    {
+      "id": "s2-t3",
+      "title": {
+        "zh": "好吃的",
+        "en": "Yummy Food"
+      },
+      "description": {
+        "zh": "在安全进餐中听见食物名称、还要、没有了和简单数字话。",
+        "en": "Hear food names, more, all gone, and simple number talk during safe meals."
+      },
+      "weeks": 3,
+      "domains": ["language", "math", "life"],
+      "lessons": [
+        "core.s2.fruits",
+        "core.s2.more-all-gone",
+        "core.s2.mealtime"
+      ],
+      "offlineFocus": [
+        "以宝宝平时吃的食物为素材，不额外延长进餐。",
+        "只谈眼前的一两块食物，数完说总数。",
+        "尊重闭嘴、转头、推开等停止信号。"
+      ]
+    },
+    {
+      "id": "s2-t4",
+      "title": {
+        "zh": "家里的东西",
+        "en": "Things at Home"
+      },
+      "description": {
+        "zh": "跟随宝宝的目光，把家里的物品、晚安卡和歌声连到日常生活。",
+        "en": "Follow your baby's attention and connect home objects, cards, and songs to daily life."
+      },
+      "weeks": 3,
+      "domains": ["language", "life", "music"],
+      "lessons": [
+        "core.s2.home-things",
+        "core.s2.goodnight",
+        "core.s2.row-boat"
+      ],
+      "offlineFocus": [
+        "先跟随宝宝的注意，再给真实物品命名。",
+        "白天使用晚安卡书，睡前不打开屏幕。",
+        "抱唱或律动时托稳身体，动作小而慢。"
+      ]
+    }
+  ],
+  "dailyRhythm": [
+    "起床和换尿布时叫宝宝名字，等宝宝看过来再继续。",
+    "自由游戏时把大块玩具放进盒子再拿出来，说“进去”“出来”。",
+    "吃饭时只谈眼前的一两块食物，说“还要吗”“没有了”，尊重闭嘴和转头。",
+    "家人进门、离开时用同样的“你好”“拜拜”，停下来等回应。",
+    "读纸卡或小书时跟随宝宝的目光，一页只说一个词。",
+    "唱歌时抱稳宝宝，做小幅度拍手或挥手，唱完就关屏。",
+    "每天安排地面自由活动和户外看一看，不把手机当作陪伴。"
+  ],
+  "milestonesAt": [9]
+}

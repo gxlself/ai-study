@@ -1,0 +1,142 @@
+{
+  "schemaVersion": 1,
+  "id": "core.s3.dress-up",
+  "title": {
+    "zh": "出门啦",
+    "en": "Getting Ready to Go Out"
+  },
+  "summary": {
+    "zh": "用袜子、鞋子、帽子卡说出门流程。",
+    "en": "Use socks, shoes, and hat cards to describe the going-out routine."
+  },
+  "ageRange": [12, 17],
+  "domains": ["life"],
+  "themeId": "s3-t5",
+  "tags": ["daily-routine", "sequence"],
+  "durationMin": 2,
+  "coView": "required",
+  "audience": "parent",
+  "printables": [
+    {
+      "kind": "cards",
+      "title": "出门流程卡",
+      "items": ["socks", "shoes", "hat"],
+      "size": "large",
+      "showText": true,
+      "showEnglish": true
+    }
+  ],
+  "objectives": [
+    {
+      "zh": "宝宝在固定流程中听到衣物词。",
+      "en": "Your baby hears clothing words in a predictable routine."
+    },
+    {
+      "zh": "宝宝通过看和参与动作建立预期。",
+      "en": "Your baby builds anticipation through looking and joining actions."
+    }
+  ],
+  "cover": {
+    "concept": "hat",
+    "bg": "paper"
+  },
+  "parentGuide": {
+    "intro": "把三张大流程卡贴在门边成人可拿到的位置，按袜子、鞋子、帽子的顺序说。真实顺序可按天气和家庭习惯调整，重点是稳定、温和的预告。",
+    "tips": [
+      "每次出门都用相似短句。",
+      "卡片给家长提示，不让宝宝独自拿卡。",
+      "赶时间时只说一两步也可以。"
+    ],
+    "phrases": [
+      {
+        "zh": "先穿袜子。",
+        "en": "Socks first."
+      },
+      {
+        "zh": "再穿鞋子。",
+        "en": "Shoes next."
+      },
+      {
+        "zh": "戴上帽子。",
+        "en": "Put on your hat."
+      },
+      {
+        "zh": "我们出门啦。",
+        "en": "We are going out."
+      }
+    ],
+    "why": "可预测的家庭常规给宝宝稳定的语言和行动线索。固定短句能帮助理解流程，但不要求宝宝按卡片完成每一步。",
+    "refs": ["R45", "R82", "R93"]
+  },
+  "offline": [
+    {
+      "title": "门边流程卡",
+      "minutes": 8,
+      "materials": ["出门流程卡", "当天要穿的衣物"],
+      "steps": [
+        "把三张卡按袜子、鞋子、帽子顺序贴好。",
+        "每完成一步，家长指卡并说出名称。",
+        "宝宝愿意时让他摸衣物或抬脚，成人完成穿戴。",
+        "出门前检查门、楼梯和道路，再牵护宝宝。"
+      ],
+      "safety": "卡片贴在成人可管理的位置，避免小胶片脱落入口；不让宝宝站在门边、楼梯边或高处穿衣；出门时成人始终牵护或抱护。",
+      "domains": ["life", "language"],
+      "question": "下一步要穿什么？",
+      "levels": {
+        "easier": "只用袜子和鞋子两张卡。",
+        "harder": "按家庭当天需要加入外套或雨伞，并保持慢速说明。"
+      }
+    }
+  ],
+  "steps": [
+    {
+      "type": "guide",
+      "parentTip": "卡片给家长提示，真实流程在门边完成。",
+      "props": {
+        "goal": "用固定短句预告出门流程。",
+        "materials": ["出门流程卡", "当天要穿的衣物"],
+        "steps": [
+          {
+            "text": "先指第一张卡，拿起真实袜子。",
+            "concept": "socks",
+            "say": {
+              "zh": "先穿袜子。",
+              "en": "Socks first."
+            }
+          },
+          {
+            "text": "宝宝抬脚时，成人帮忙穿好袜子。",
+            "concept": "socks",
+            "say": {
+              "zh": "小脚穿袜子。",
+              "en": "Socks on your feet."
+            }
+          },
+          {
+            "text": "指第二张卡，再拿起鞋子。",
+            "concept": "shoes",
+            "say": {
+              "zh": "再穿鞋子。",
+              "en": "Shoes next."
+            }
+          },
+          {
+            "text": "最后按天气决定是否戴帽子，再说出门。",
+            "concept": "hat",
+            "say": {
+              "zh": "戴上帽子，出门啦。",
+              "en": "Put on your hat. We are going out."
+            }
+          }
+        ],
+        "playMin": 8,
+        "observe": [
+          "宝宝是否看向下一张卡或衣物。",
+          "宝宝是否在穿衣时参与小动作。",
+          "宝宝是否对固定短句有预期。"
+        ],
+        "safety": "衣物和卡片由成人管理。检查鞋袜和帽子没有小配件或过长绳带，出门前确认道路、门口和楼梯安全。"
+      }
+    }
+  ]
+}

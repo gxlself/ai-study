@@ -1,0 +1,156 @@
+{
+  "schemaVersion": 1,
+  "id": "core.s1.old-macdonald",
+  "title": { "zh": "王老先生有块地", "en": "Old MacDonald Had a Farm" },
+  "summary": { "zh": "唱到谁，看看谁。", "en": "Look at the animal in the song." },
+  "ageRange": [6, 8],
+  "domains": ["music", "english"],
+  "themeId": "s1-t4",
+  "tags": ["家长指引", "家长学唱", "实体卡"],
+  "durationMin": 3,
+  "coView": "required",
+  "audience": "parent",
+  "objectives": [
+    { "zh": "听歌，看看动物卡。", "en": "Hear a song and look at an animal card." },
+    { "zh": "来回发出小声音。", "en": "Share little sounds back and forth." }
+  ],
+  "cover": { "concept": "cow", "bg": "grass" },
+  "printables": [
+    {
+      "kind": "cards",
+      "title": "农场唱歌卡",
+      "items": ["cow", "pig", "duck", "sheep"],
+      "size": "large",
+      "showText": false,
+      "showEnglish": false
+    }
+  ],
+  "parentGuide": {
+    "intro": "家长白天学唱，再关屏。先选奶牛一张卡，唱到奶牛就举起。轻声学哞哞，停下来等宝宝回应。歌曲只示范一段；换其他卡时先说名字和叫声，一次一个就够了。",
+    "tips": [
+      "举起的是实体卡，不给宝宝看歌曲画面。",
+      "中文唱熟了，再按家长能力加英文，不必都唱。",
+      "其余卡可用小猪哼哼、小鸭嘎嘎、绵羊咩咩来聊。",
+      "拟声是人用语言学叫，不代表动物只会发这一种声音。"
+    ],
+    "phrases": [
+      { "zh": "奶牛在这里。", "en": "Here is the cow." },
+      { "zh": "奶牛，哞哞。", "en": "Cow, moo moo." },
+      { "zh": "小猪，哼哼。", "en": "Pig, oink oink." },
+      { "zh": "小鸭，嘎嘎。", "en": "Duck, quack quack." },
+      { "zh": "绵羊，咩咩。", "en": "Sheep, baa baa." }
+    ],
+    "why": "主动亲子音乐重在真人唱、看同一张卡、停顿回应。少量英语拟声用于共同玩耍，不把背景播放当语言输入，也不要求宝宝会认动物。",
+    "refs": ["[16]", "[47]", "[87]"]
+  },
+  "offline": [
+    {
+      "title": "换一张，换一声",
+      "minutes": 3,
+      "materials": ["一两张农场动物打印卡"],
+      "steps": [
+        "家长拿稳一张奶牛卡。",
+        "轻声说“奶牛，哞哞”。",
+        "停几秒，接宝宝的声音。",
+        "感兴趣时，再换另一张。",
+        "说新名字，学新叫声。"
+      ],
+      "safety": "大卡由家长拿，边角磨圆，勿含咬，破损或湿软即收起。不用小夹子、钉子、小磁铁固定，不凑耳边叫。宝宝不想听时立即停，不用动物声音压过哭声。",
+      "domains": ["music", "language", "english"],
+      "question": "你想跟谁聊聊呀？",
+      "levels": {
+        "easier": "只用一张卡。说一次名字和叫声即可。",
+        "harder": "宝宝感兴趣时，再加一种动物。一次仍只展示一张，不考二选一。"
+      }
+    }
+  ],
+  "steps": [
+    {
+      "type": "guide",
+      "title": { "zh": "关屏后举卡唱", "en": "Sing with a Printed Card" },
+      "parentTip": "家长白天学唱。陪宝宝时关屏，用实体卡、人声与停顿，不自动循环。",
+      "props": {
+        "goal": "把真人歌声与眼前的动物卡相伴呈现，并等待宝宝的小回应。",
+        "materials": ["一张奶牛打印卡", "可选的其他农场动物打印卡", "地垫"],
+        "steps": [
+          {
+            "text": "关好屏幕。让清醒的宝宝躺好，或由家长稳稳抱着。",
+            "say": { "zh": "我唱给你听。", "en": "I'll sing to you." }
+          },
+          {
+            "text": "唱到奶牛时，举起奶牛实体卡，停住给宝宝看。",
+            "say": { "zh": "奶牛在这里。", "en": "Here is the cow." },
+            "concept": "cow"
+          },
+          {
+            "text": "轻声唱或说一次奶牛叫声。",
+            "say": { "zh": "奶牛，哞哞。", "en": "Cow, moo moo." }
+          },
+          {
+            "text": "停几秒。宝宝发声、看你或微笑时，回应一次。",
+            "say": { "zh": "我听见啦。", "en": "I hear you." }
+          },
+          {
+            "text": "宝宝仍感兴趣时，可换一张卡，先说新的名字和叫声。",
+            "say": { "zh": "小鸭，嘎嘎。", "en": "Duck, quack quack." },
+            "concept": "duck"
+          },
+          {
+            "text": "一小段唱完就停。收好卡片，按宝宝需要休息。",
+            "say": { "zh": "唱到这里啦。", "en": "That's our song for now." }
+          }
+        ],
+        "playMin": 5,
+        "observe": [
+          "是否看向被举起的卡，或看家长。",
+          "叫声后的停顿里，是否发声、微笑或动身体。",
+          "是否想听下一句；不要求跟唱或选对卡。"
+        ],
+        "safety": "家长全程看护，抱稳头颈和躯干。拿卡时不要松开必要支撑。卡片由成人拿，勿含咬，无尖角、小夹子或小磁铁。声音轻柔，不使用耳机，也不把歌曲当背景播放。宝宝烦躁、转开脸或困了就停。"
+      }
+    },
+    {
+      "type": "song",
+      "title": { "zh": "家长学唱农场歌", "en": "Learn the Tune: Old MacDonald" },
+      "parentTip": "仅家长白天学唱，C大调奶牛段。学会后关屏，拿实体卡给宝宝唱。",
+      "props": {
+        "title": { "zh": "王老先生有块地", "en": "Old MacDonald Had a Farm" },
+        "credit": "旋律：传统（公有领域）；中文词：芽芽成长原创；英文词：传统儿歌（公有领域），奶牛段",
+        "bpm": 84,
+        "instrument": "marimba",
+        "repeat": 1,
+        "lines": [
+          { "lang": "zh", "text": "王老先生有块地", "notes": "C4/0.5 C4/0.5 C4/0.5 G3/0.5 A3/0.5 A3/0.5 G3/1" },
+          { "lang": "zh", "text": "咿呀咿呀哟", "notes": "E4/0.5 E4/0.5 D4/0.5 D4/0.5 C4/1 R/0.5" },
+          { "lang": "zh", "text": "农场里有一头奶牛", "notes": "G3/0.5 C4/0.5 C4/0.5 C4/0.5 G3/0.5 A3/0.5 A3/0.5 G3/1" },
+          { "lang": "zh", "text": "咿呀咿呀哟", "notes": "E4/0.5 E4/0.5 D4/0.5 D4/0.5 C4/1 R/0.5" },
+          { "lang": "zh", "text": "这边哞哞叫那边哞哞叫", "notes": "G3/0.25 G3/0.25 C4/0.5 C4/0.5 C4/0.5 G3/0.25 G3/0.25 C4/0.5 C4/0.5 C4/1" },
+          { "lang": "zh", "text": "这里哞那里哞大家都哞哞叫", "notes": "C4/0.25 C4/0.25 C4/0.5 C4/0.25 C4/0.25 C4/0.5 C4/0.25 C4/0.25 C4/0.25 C4/0.25 C4/0.5 C4/0.5" },
+          { "lang": "zh", "text": "王老先生有块地", "notes": "C4/0.5 C4/0.5 C4/0.5 G3/0.5 A3/0.5 A3/0.5 G3/1" },
+          { "lang": "zh", "text": "咿呀咿呀哟", "notes": "E4/0.5 E4/0.5 D4/0.5 D4/0.5 C4/1 R/1" },
+          { "lang": "en", "text": "Old MacDonald had a farm.", "notes": "C4/0.5 C4/0.5 C4/0.5 G3/0.5 A3/0.5 A3/0.5 G3/1" },
+          { "lang": "en", "text": "E-I-E-I-O.", "notes": "E4/0.5 E4/0.5 D4/0.5 D4/0.5 C4/1 R/0.5" },
+          { "lang": "en", "text": "And on his farm he had a cow.", "notes": "G3/0.5 C4/0.5 C4/0.5 C4/0.5 G3/0.5 A3/0.5 A3/0.5 G3/1" },
+          { "lang": "en", "text": "E-I-E-I-O.", "notes": "E4/0.5 E4/0.5 D4/0.5 D4/0.5 C4/1 R/0.5" },
+          { "lang": "en", "text": "With a moo moo here and a moo moo there.", "notes": "G3/0.25 G3/0.25 C4/0.5 C4/0.5 C4/0.5 G3/0.25 G3/0.25 C4/0.5 C4/0.5 C4/1" },
+          { "lang": "en", "text": "Here a moo, there a moo, everywhere a moo moo.", "notes": "C4/0.25 C4/0.25 C4/0.5 C4/0.25 C4/0.25 C4/0.5 C4/0.25 C4/0.25 C4/0.25 C4/0.25 C4/0.5 C4/0.5" },
+          { "lang": "en", "text": "Old MacDonald had a farm.", "notes": "C4/0.5 C4/0.5 C4/0.5 G3/0.5 A3/0.5 A3/0.5 G3/1" },
+          { "lang": "en", "text": "E-I-E-I-O.", "notes": "E4/0.5 E4/0.5 D4/0.5 D4/0.5 C4/1 R/1" }
+        ],
+        "scene": {
+          "bg": "grass",
+          "ground": "grass",
+          "sprites": [
+            { "concept": "cow", "x": 30, "y": 74, "size": 35, "anim": "none" },
+            { "concept": "pig", "x": 59, "y": 77, "size": 22, "anim": "none" },
+            { "concept": "duck", "x": 79, "y": 78, "size": 18, "anim": "none" }
+          ]
+        },
+        "actions": [
+          { "zh": "唱到奶牛，举起实体卡。", "en": "Raise the printed cow card when singing about the cow." },
+          { "zh": "轻声哞哞，再等一等。", "en": "Make a soft moo, then wait." }
+        ]
+      }
+    }
+  ]
+}

@@ -1,0 +1,130 @@
+{
+  "schemaVersion": 1,
+  "id": "core.s2.hello-bye",
+  "title": {
+    "zh": "你好和拜拜",
+    "en": "Hello and Bye-Bye"
+  },
+  "summary": {
+    "zh": "把迎接和道别变成短短的家庭互动仪式。",
+    "en": "Turn greetings and goodbyes into a short family ritual."
+  },
+  "ageRange": [9, 11],
+  "domains": ["social", "english"],
+  "themeId": "s2-t2",
+  "tags": ["social-routine", "gestures"],
+  "durationMin": 2,
+  "coView": "required",
+  "audience": "parent",
+  "objectives": [
+    {
+      "zh": "在固定情境中听见你好和拜拜。",
+      "en": "Hear hello and bye-bye in familiar routines."
+    },
+    {
+      "zh": "观察宝宝看人、挥手或发声的回应。",
+      "en": "Notice your baby's look, wave, or vocal response."
+    }
+  ],
+  "cover": {
+    "concept": "wave",
+    "bg": "room"
+  },
+  "parentGuide": {
+    "intro": "家人进门和离开时，先蹲到宝宝附近，慢慢说你好或拜拜，停下来等宝宝看你、挥手或发声。",
+    "tips": [
+      "每次用同样的短句。",
+      "先让宝宝看见你再挥手。",
+      "不把挥手当成必须完成的动作。"
+    ],
+    "phrases": [
+      {
+        "zh": "你好，宝宝。",
+        "en": "Hello, baby."
+      },
+      {
+        "zh": "拜拜。",
+        "en": "Bye-bye."
+      },
+      {
+        "zh": "我回来啦。",
+        "en": "I'm back."
+      },
+      {
+        "zh": "我看到你啦。",
+        "en": "I see you."
+      }
+    ],
+    "why": "重复的家庭仪式给宝宝可预测的来回交流机会，手势、目光和声音都可以成为有意义的回应。",
+    "refs": ["[6]", "[47]", "[59]", "[82]"]
+  },
+  "offline": [
+    {
+      "title": "门口你好拜拜",
+      "minutes": 5,
+      "materials": ["家中安全的门口空间"],
+      "steps": [
+        "家人走到宝宝看得见的位置，先停下来微笑。",
+        "家长挥手说“你好”，等宝宝看、笑或发声。",
+        "家人离开几步再回来，用“拜拜”和“我回来啦”重复一次。"
+      ],
+      "safety": "宝宝不要靠近门缝、门锁、楼梯或门外；家长负责开关门，抱着宝宝时要托稳身体。",
+      "domains": ["social", "english"],
+      "question": "宝宝听到哪一句会看过来？",
+      "levels": {
+        "easier": "只练习家人进门时说“你好”。",
+        "harder": "家人轮流进出，每次都留出等待宝宝回应的时间。"
+      }
+    }
+  ],
+  "steps": [
+    {
+      "type": "guide",
+      "parentTip": "把屏幕放下，在真实的进门和离开时使用短句。",
+      "props": {
+        "goal": "用你好和拜拜建立可预测的来回互动。",
+        "materials": ["家中安全的门口空间"],
+        "steps": [
+          {
+            "text": "家人走到宝宝看得见的位置，先停下来微笑。",
+            "concept": "wave",
+            "say": {
+              "zh": "你好，宝宝。",
+              "en": "Hello, baby."
+            }
+          },
+          {
+            "text": "家长挥手说你好，停下来等宝宝看或发声。",
+            "concept": "wave",
+            "say": {
+              "zh": "你好。",
+              "en": "Hello."
+            }
+          },
+          {
+            "text": "家人离开几步再回来，重复短短的迎送动作。",
+            "concept": "door",
+            "say": {
+              "zh": "拜拜。",
+              "en": "Bye-bye."
+            }
+          },
+          {
+            "text": "回来时回应宝宝的表情、声音或动作，不要求挥手。",
+            "say": {
+              "zh": "我回来啦。",
+              "en": "I'm back."
+            }
+          }
+        ],
+        "playMin": 5,
+        "observe": [
+          "宝宝是否在叫名或问候时看过来。",
+          "宝宝是否挥手、抬手、微笑或发声。",
+          "宝宝是否需要更多时间适应离开和回来。"
+        ],
+        "safety": "宝宝不要靠近门缝、门锁、楼梯或门外；家长负责开关门，抱着宝宝时要托稳身体。"
+      }
+    }
+  ]
+}

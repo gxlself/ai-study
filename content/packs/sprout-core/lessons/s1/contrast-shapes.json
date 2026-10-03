@@ -1,0 +1,109 @@
+{
+  "schemaVersion": 1,
+  "id": "core.s1.contrast-shapes",
+  "title": { "zh": "黑白卡片追视", "en": "Follow a Black-and-White Card" },
+  "summary": { "zh": "慢慢移，停下来。", "en": "Move slowly, then pause." },
+  "ageRange": [6, 8],
+  "domains": ["cognition"],
+  "themeId": "s1-t1",
+  "tags": ["家长指引", "实体卡", "追视"],
+  "durationMin": 2,
+  "coView": "required",
+  "audience": "parent",
+  "objectives": [
+    { "zh": "看看移动的卡片。", "en": "Watch a slowly moving card." },
+    { "zh": "想歇时就歇一歇。", "en": "Take a break when needed." }
+  ],
+  "cover": { "concept": "circle", "bg": "paper" },
+  "printables": [
+    {
+      "kind": "contrast",
+      "title": "黑白追视卡",
+      "patterns": ["bullseye", "stripes", "checker", "circle", "dots"],
+      "palette": "bw"
+    }
+  ],
+  "parentGuide": {
+    "intro": "先读完，再关屏。选一张实体卡即可。在宝宝清醒、舒服时陪看。不要求看满五分钟。看向别处、烦躁或困了，就收起卡片。",
+    "tips": [
+      "先停住卡片。等宝宝看过来，再缓慢移动。",
+      "一次只用一张。不快速换卡，不考形状名。",
+      "跟着宝宝的目光走。不扳头，不追着脸晃。",
+      "不打印也可以。家长的脸同样能一起看。"
+    ],
+    "phrases": [
+      { "zh": "看看这张卡。", "en": "Look at this card." },
+      { "zh": "慢慢移过去。", "en": "It moves slowly." },
+      { "zh": "你在看呀。", "en": "You are looking." },
+      { "zh": "我们歇一歇。", "en": "Let's take a break." }
+    ],
+    "why": "实体卡只是陪看材料。家长观察并回应宝宝，符合回应性照护。没有证据表明这套卡能提高视力或智力，也不替代眼保健检查。",
+    "refs": ["[6]", "[8]", "[82]"]
+  },
+  "offline": [
+    {
+      "title": "看看熟悉的脸",
+      "minutes": 3,
+      "materials": ["干净的地垫"],
+      "steps": [
+        "让宝宝舒服地仰躺。",
+        "把脸停在宝宝面前。",
+        "等宝宝看向你。",
+        "缓慢往一侧移一点。",
+        "停下，回应笑容或声音。"
+      ],
+      "safety": "全程在旁看护。在地面玩，远离床沿。不要扳动宝宝的头。转开目光或不舒服就停，不强求追视。",
+      "domains": ["cognition", "social"],
+      "question": "你想看看什么呀？",
+      "levels": {
+        "easier": "脸先不动。只回应宝宝的目光。",
+        "harder": "宝宝愿意时，向另一侧缓慢移一点。不要加快。"
+      }
+    }
+  ],
+  "steps": [
+    {
+      "type": "guide",
+      "title": { "zh": "拿一张卡陪看", "en": "Look Together with One Card" },
+      "parentTip": "屏幕给家长看。读完关屏，再拿实体卡。计时只是提醒，随时可结束。",
+      "props": {
+        "goal": "观察宝宝怎样看卡片，并回应宝宝的停顿与休息信号。",
+        "materials": ["一张黑白打印卡", "干净、平稳的地垫"],
+        "steps": [
+          {
+            "text": "让清醒的宝宝舒服地仰躺在地垫上。",
+            "say": { "zh": "我们看看吧。", "en": "Let's have a look." }
+          },
+          {
+            "text": "把卡片放在眼前约20～30厘米处。先停住。",
+            "say": { "zh": "卡片在这里。", "en": "Here is the card." },
+            "concept": "circle"
+          },
+          {
+            "text": "等宝宝看向卡片，再缓慢向左移一小段。",
+            "say": { "zh": "慢慢移过去。", "en": "It moves slowly." }
+          },
+          {
+            "text": "回到中间停一停。愿意看时，再向右移。",
+            "say": { "zh": "停一停。", "en": "Let's pause." }
+          },
+          {
+            "text": "宝宝仍感兴趣时，试着缓慢向上或向下移一点。",
+            "say": { "zh": "看看上面。", "en": "Look up here." }
+          },
+          {
+            "text": "宝宝转开目光时，收起卡片。",
+            "say": { "zh": "我们歇一歇。", "en": "Let's take a break." }
+          }
+        ],
+        "playMin": 5,
+        "observe": [
+          "眼睛是否看向卡片，或跟着卡片移动。",
+          "是否转头、转开目光，表示想休息。",
+          "哪些停顿让宝宝更舒服；不记录对错。"
+        ],
+        "safety": "家长全程看护。卡片由大人拿，边角磨圆。破损、掉屑或湿软就收起，勿让宝宝含咬。不用订书钉、夹子或小磁铁固定。不快速晃卡，不贴近眼睛。20～30厘米是游戏摆放建议，不是视力测量标准。"
+      }
+    }
+  ]
+}

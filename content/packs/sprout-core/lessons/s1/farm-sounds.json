@@ -1,0 +1,113 @@
+{
+  "schemaVersion": 1,
+  "id": "core.s1.farm-sounds",
+  "title": { "zh": "小动物怎么叫", "en": "Animal Sounds" },
+  "summary": { "zh": "学一声，等一等。", "en": "Make one sound, then wait." },
+  "ageRange": [6, 8],
+  "domains": ["language", "science"],
+  "themeId": "s1-t4",
+  "tags": ["家长指引", "动物叫声", "实体卡"],
+  "durationMin": 2,
+  "coView": "required",
+  "audience": "parent",
+  "objectives": [
+    { "zh": "听动物名字和叫声。", "en": "Hear animal names and playful sounds." },
+    { "zh": "来回发出小声音。", "en": "Make little sounds back and forth." }
+  ],
+  "cover": { "concept": "dog", "bg": "paper" },
+  "printables": [
+    {
+      "kind": "cards",
+      "title": "动物叫声陪看卡",
+      "items": ["dog", "cat", "cow", "duck"],
+      "size": "large",
+      "showText": false,
+      "showEnglish": false
+    }
+  ],
+  "parentGuide": {
+    "intro": "先读完，再关屏。从一张卡或一个大动物玩具开始。说名字，轻声学叫一次，停下来等。宝宝发任何声音都可以回应，不要求像动物，也不要求选对卡。",
+    "tips": [
+      "小狗汪汪、小猫喵喵、奶牛哞哞、小鸭嘎嘎，都是陪玩的拟声。",
+      "英语可选woof、meow、moo、quack，不必一次都说。",
+      "宝宝看哪张，就围着那张说。不要轮番快速闪卡。",
+      "真人轻声学叫即可。不用高音量的动物录音。"
+    ],
+    "phrases": [
+      { "zh": "小狗，汪汪。", "en": "Dog, woof woof." },
+      { "zh": "小猫，喵喵。", "en": "Cat, meow meow." },
+      { "zh": "奶牛，哞哞。", "en": "Cow, moo moo." },
+      { "zh": "小鸭，嘎嘎。", "en": "Duck, quack quack." },
+      { "zh": "我听见啦。", "en": "I hear you." }
+    ],
+    "why": "指南建议模仿动物叫声。儿向语言研究支持命名、停顿与回应，而非单向声音灌输。本课不考动物知识，也不要求六到八个月会模仿叫声。",
+    "refs": ["[6]", "[47]", "[82]"]
+  },
+  "offline": [
+    {
+      "title": "一个玩具聊一聊",
+      "minutes": 3,
+      "materials": ["完整、适龄的大动物玩具", "地垫"],
+      "steps": [
+        "让宝宝舒服地待着。",
+        "把动物玩具放在手边。",
+        "说名字，轻声学叫。",
+        "停几秒，等宝宝回应。",
+        "回应后，让宝宝再看看。"
+      ],
+      "safety": "玩具要完整、适龄、可清洁，无脱落眼珠或小零件。直径小于3.5厘米的物件有窒息风险，更大也不自动安全。勿用钮扣电池玩具或气球代替。不让真实动物与宝宝独处，也不要求接触宠物。",
+      "domains": ["language", "science", "social"],
+      "question": "你想跟它说什么呀？",
+      "levels": {
+        "easier": "只说动物名字，回应宝宝的目光。",
+        "harder": "宝宝发声后，模仿一次宝宝的声音，再轻声学动物叫。仍不要求模仿。"
+      }
+    }
+  ],
+  "steps": [
+    {
+      "type": "guide",
+      "title": { "zh": "拿一张卡聊聊", "en": "Talk with One Animal Card" },
+      "parentTip": "读完关屏。叫声要轻柔。宝宝的呀呀声、目光或动作都值得回应。",
+      "props": {
+        "goal": "用动物名字和轻柔拟声，陪宝宝体验来回发声。",
+        "materials": ["一两张大动物打印卡", "可选的适龄大动物玩具", "地垫"],
+        "steps": [
+          {
+            "text": "让清醒的宝宝舒服地躺着，或在怀里得到支撑。",
+            "say": { "zh": "一起看看呀。", "en": "Let's look together." }
+          },
+          {
+            "text": "拿一张小狗卡，指着图说名字。",
+            "say": { "zh": "这是小狗。", "en": "This is a dog." },
+            "concept": "dog"
+          },
+          {
+            "text": "轻声学一次小狗叫，再停几秒。",
+            "say": { "zh": "小狗，汪汪。", "en": "Dog, woof woof." }
+          },
+          {
+            "text": "宝宝发声、微笑或看你时，轻声回应。",
+            "say": { "zh": "我听见啦。", "en": "I hear you." }
+          },
+          {
+            "text": "宝宝仍感兴趣时，可换一张卡，再说名字和叫声。",
+            "say": { "zh": "小猫，喵喵。", "en": "Cat, meow meow." },
+            "concept": "cat"
+          },
+          {
+            "text": "收好卡片。宝宝愿意时，留下完整的大玩具陪探索。",
+            "say": { "zh": "玩具在这里。", "en": "Here is the toy." }
+          }
+        ],
+        "playMin": 5,
+        "observe": [
+          "是否看图或看家长的脸。",
+          "停顿后是否发声、微笑或动手脚。",
+          "哪种音量更舒服；不要求发出相同声音。"
+        ],
+        "safety": "轻声拟声，不突然吼叫，不凑在耳边叫。不让宝宝戴耳机。纸卡由家长拿，边角磨圆，破损、湿软即收起，勿含咬。玩具无可拆小件，不要求独坐。宝宝烦躁或转开脸就停。"
+      }
+    }
+  ]
+}

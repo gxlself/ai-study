@@ -1,0 +1,114 @@
+{
+  "id": "s1",
+  "title": { "zh": "感知世界", "en": "Sensing the World" },
+  "subtitle": { "zh": "6～8个月，面对面慢慢玩", "en": "6–8 Months: Gentle Face-to-Face Play" },
+  "ageRange": [6, 8],
+  "focus": [
+    { "zh": "熟悉面孔与温柔回应", "en": "Familiar Faces and Warm Responses" },
+    { "zh": "你来我往的小声音", "en": "Back-and-Forth Little Sounds" },
+    { "zh": "实体卡的慢慢陪看", "en": "Slow, Shared Looking at Printed Cards" },
+    { "zh": "短暂遮住与再出现", "en": "Brief Hiding and Reappearing" },
+    { "zh": "真人歌声与重复节奏", "en": "Live Singing and Repeated Rhythms" },
+    { "zh": "清醒俯卧与自主够取", "en": "Awake Tummy Time and Self-Initiated Reaching" }
+  ],
+  "screen": {
+    "sessionMaxMin": 3,
+    "dailyMaxMin": 10,
+    "lessonsPerDay": 2,
+    "coView": "required",
+    "childScreen": "none"
+  },
+  "themes": [
+    {
+      "id": "s1-t1",
+      "title": { "zh": "黑白红的世界", "en": "Black, White & Red" },
+      "description": {
+        "zh": "用实体卡、熟悉的脸和地垫陪看陪玩。不快速闪卡，不考形状，不要求趴满一次计时。",
+        "en": "Look and play with printed cards, familiar faces, and a floor mat. No rapid card changes, shape tests, or forced tummy-time sessions."
+      },
+      "weeks": 3,
+      "domains": ["cognition", "social", "language", "motor"],
+      "lessons": [
+        "core.s1.contrast-shapes",
+        "core.s1.contrast-faces",
+        "core.s1.tummy-time"
+      ],
+      "offlineFocus": [
+        "拿一张实体卡缓慢移动，停下来观察宝宝。",
+        "回应宝宝的目光、笑容和声音，不强求模仿。",
+        "清醒时分次陪趴；未会移动时，每天累计至少30分钟。累了就停。"
+      ]
+    },
+    {
+      "id": "s1-t2",
+      "title": { "zh": "你好，宝宝", "en": "Hello, Baby" },
+      "description": {
+        "zh": "用真实家人照片、真人五官和轻声儿歌认识熟悉的生活。按家中实际成员与称呼替换，不要求说词或稳定叫名反应。",
+        "en": "Share real family photos, facial features, and gentle songs. Use the people and names familiar to your family, without expecting words or a consistent response to baby's name."
+      },
+      "weeks": 3,
+      "domains": ["social", "language", "science", "music", "english"],
+      "lessons": [
+        "core.s1.family-faces",
+        "core.s1.my-face",
+        "core.s1.twinkle"
+      ],
+      "offlineFocus": [
+        "优先看真实照片或真人，只说熟悉家人的称呼。",
+        "换衣时先告知，指着自己的五官慢慢命名。",
+        "家长白天学唱，关屏后用人声唱一句、停一下。"
+      ]
+    },
+    {
+      "id": "s1-t3",
+      "title": { "zh": "躲猫猫", "en": "Peekaboo" },
+      "description": {
+        "zh": "先遮一点，再一起发现。用手遮家长的脸、半藏大玩具、看安全镜子。不会找、没有笑都不作为失败。",
+        "en": "Hide a little and discover together. Briefly cover the caregiver's face, partly hide a large toy, and share a safe mirror. Looking without searching or smiling is welcome."
+      },
+      "weeks": 3,
+      "domains": ["social", "cognition"],
+      "lessons": [
+        "core.s1.peekaboo-hands",
+        "core.s1.hide-toy",
+        "core.s1.mirror"
+      ],
+      "offlineFocus": [
+        "只遮家长自己的脸，宝宝口鼻始终露着。",
+        "从露出一部分的玩具开始，家长可以帮着揭开。",
+        "用防碎圆角婴儿镜共同看脸，不测试认出自己。"
+      ]
+    },
+    {
+      "id": "s1-t4",
+      "title": { "zh": "动物的声音", "en": "Animal Sounds" },
+      "description": {
+        "zh": "用动物实体卡和家长的人声轮流聊、轮流唱。重复熟悉的短歌，并把无屏轻哼融入温柔的晚安流程。",
+        "en": "Take turns talking and singing with printed animal cards and a caregiver's voice. Repeat familiar short songs and use screen-free humming in a gentle bedtime routine."
+      },
+      "weeks": 4,
+      "domains": ["language", "science", "music", "english", "life"],
+      "lessons": [
+        "core.s1.farm-sounds",
+        "core.s1.old-macdonald",
+        "core.s1.lullaby"
+      ],
+      "offlineFocus": [
+        "一次一张卡，轻声命名和学叫，停下来接宝宝的声音。",
+        "唱到哪只动物就举起哪张实体卡，不背景播放。",
+        "摇篮曲只在白天给家长学，睡前关屏轻哼。睡眠时仰卧放置在安全婴儿睡眠面。"
+      ]
+    }
+  ],
+  "dailyRhythm": [
+    "起床：面对面问好，叫一次宝宝名字，等目光、声音或动作回应，不反复催。",
+    "换尿布或穿衣：先说要做什么，再轻柔操作。一次说一个五官，眼睛只指不碰。",
+    "喂养：说说眼前正在发生的事；宝宝闭唇、转头时尊重停下的信号。用餐不用屏。",
+    "清醒地板游戏：分次陪趴与自主够玩具；未会移动时俯卧每天累计至少30分钟，累了就休息。",
+    "短段陪看：选一张实体卡或真实照片，慢慢看、停一下；不快速闪卡，不考名字。",
+    "散步或窗边：顺着宝宝正在看的东西，轻声说一个名字。家长全程照看，不用手机吸引目光。",
+    "家人相处：接住一声咿呀，轻声模仿，再等一回合。按家中实际照护者和称呼来玩。",
+    "睡前：白天已熟悉的短歌由家长轻哼，按需要换尿布、穿睡衣、说晚安；睡前不用屏，不要求唱完才睡。"
+  ],
+  "milestonesAt": [6]
+}

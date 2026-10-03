@@ -1,0 +1,141 @@
+{
+  "schemaVersion": 1,
+  "id": "core.s2.fruits",
+  "title": {
+    "zh": "认识水果",
+    "en": "Explore Fruit"
+  },
+  "summary": {
+    "zh": "在真实吃饭时摸、闻、看和尝水果，慢慢说出名字。",
+    "en": "Touch, smell, look at, and taste fruit while naming it together."
+  },
+  "ageRange": [9, 11],
+  "domains": ["language", "english"],
+  "themeId": "s2-t3",
+  "tags": ["mealtime-talk", "joint-attention"],
+  "durationMin": 3,
+  "coView": "required",
+  "audience": "parent",
+  "printables": [
+    {
+      "kind": "cards",
+      "title": "水果大卡片",
+      "items": ["apple", "banana", "orange", "watermelon", "strawberry"],
+      "size": "large",
+      "showText": true,
+      "showEnglish": true
+    }
+  ],
+  "objectives": [
+    {
+      "zh": "在真实水果中听见并关注名称。",
+      "en": "Notice names while exploring real fruit."
+    },
+    {
+      "zh": "用看、摸、闻或尝参与互动。",
+      "en": "Join through looking, touching, smelling, or tasting."
+    }
+  ],
+  "cover": {
+    "concept": "apple",
+    "bg": "paper"
+  },
+  "parentGuide": {
+    "intro": "选一两种宝宝熟悉的水果，先洗净、去核、切好。吃饭时指一指、慢慢命名，等宝宝看、摸、闻或尝。",
+    "tips": [
+      "一次只说一个水果名。",
+      "先给宝宝看，再给宝宝摸。",
+      "不想尝时不强迫，接受看一看。"
+    ],
+    "phrases": [
+      {
+        "zh": "这是苹果。",
+        "en": "This is an apple."
+      },
+      {
+        "zh": "闻一闻。",
+        "en": "Smell it."
+      },
+      {
+        "zh": "还要吗？",
+        "en": "More?"
+      },
+      {
+        "zh": "你转开啦。",
+        "en": "You turned away."
+      }
+    ],
+    "why": "把词语放进宝宝正在经历的吃饭、触摸和回应中，比单独看词卡更贴近日常的高质量对话。",
+    "refs": ["[6]", "[43]", "[45]", "[47]"]
+  },
+  "offline": [
+    {
+      "title": "水果看一看",
+      "minutes": 8,
+      "materials": ["一两种熟透的水果", "宝宝餐盘", "围兜"],
+      "steps": [
+        "宝宝坐稳后，家长拿出一种水果，指着它慢慢说名字。",
+        "让宝宝看、摸或闻，再给适合的软小块。",
+        "宝宝有兴趣就重复名字；宝宝转开就先收起食物。"
+      ],
+      "safety": "宝宝坐直进食，成人全程看护；圆形食物如葡萄要纵向切成四份，水果要去核去籽、切成软烂小块；不边走边吃，不强迫进食。",
+      "domains": ["language", "english"],
+      "question": "你想先看哪一种？",
+      "levels": {
+        "easier": "只用一种熟悉水果，家长重复名称两三次。",
+        "harder": "用两种水果轮流命名，让宝宝用目光或手势选择。"
+      }
+    }
+  ],
+  "steps": [
+    {
+      "type": "guide",
+      "parentTip": "看完指引后拿真实水果，宝宝不看电子卡片。",
+      "props": {
+        "goal": "在真实进食中听见水果名称并回应。",
+        "materials": ["一两种熟透的水果", "宝宝餐盘", "围兜"],
+        "steps": [
+          {
+            "text": "先选一两种熟悉水果，洗净、去核并切好。",
+            "concept": "apple",
+            "say": {
+              "zh": "这是苹果。",
+              "en": "This is an apple."
+            }
+          },
+          {
+            "text": "让宝宝先看、摸或闻，再给适合的软小块。",
+            "concept": "banana",
+            "say": {
+              "zh": "闻一闻。",
+              "en": "Smell it."
+            }
+          },
+          {
+            "text": "宝宝有回应时慢慢重复名字，停下来等宝宝再回应。",
+            "concept": "orange",
+            "say": {
+              "zh": "还要吗？",
+              "en": "More?"
+            }
+          },
+          {
+            "text": "宝宝转开、闭嘴或不舒服时，尊重信号并结束。",
+            "concept": "watermelon",
+            "say": {
+              "zh": "你转开啦。",
+              "en": "You turned away."
+            }
+          }
+        ],
+        "playMin": 8,
+        "observe": [
+          "宝宝是否看向被命名的水果。",
+          "宝宝是否伸手、触摸、闻或尝。",
+          "宝宝是否用转开、闭嘴表达暂停。"
+        ],
+        "safety": "宝宝坐直进食，成人全程看护；圆形食物如葡萄要纵向切成四份，水果要去核去籽、切成软烂小块；不边走边吃，不强迫进食。"
+      }
+    }
+  ]
+}

@@ -1,0 +1,142 @@
+{
+  "schemaVersion": 1,
+  "id": "core.s3.duck-mom",
+  "title": {
+    "zh": "小鸭子找妈妈",
+    "en": "The Duck Looks for Mama"
+  },
+  "summary": {
+    "zh": "用动物卡讲一个短故事，练习听懂和回应。",
+    "en": "Tell a short story with animal cards and invite your baby to respond."
+  },
+  "ageRange": [12, 17],
+  "domains": ["language", "social"],
+  "themeId": "s3-t1",
+  "tags": ["first-words", "pretend-play"],
+  "durationMin": 3,
+  "coView": "required",
+  "audience": "parent",
+  "printables": [
+    {
+      "kind": "cards",
+      "title": "小动物故事卡",
+      "items": ["duck", "chicken", "cow", "dog"],
+      "size": "large",
+      "showText": true,
+      "showEnglish": true
+    }
+  ],
+  "objectives": [
+    {
+      "zh": "宝宝跟随卡片和声音听短故事。",
+      "en": "Your baby follows the cards and voices during a short story."
+    },
+    {
+      "zh": "宝宝用眼神、动作或声音参与故事。",
+      "en": "Your baby joins the story with a look, movement, or sound."
+    }
+  ],
+  "cover": {
+    "concept": "duck",
+    "bg": "grass"
+  },
+  "parentGuide": {
+    "intro": "用大卡讲四句小故事。小鸭子在找鸭妈妈，先问一问，再给宝宝时间看和回应；故事重点是陪伴，不要求宝宝回答正确。",
+    "tips": [
+      "声音可以有变化，但节奏要慢。",
+      "把卡片移近宝宝正在看的方向。",
+      "把“妈妈在这里”说得安心、稳定。"
+    ],
+    "phrases": [
+      {
+        "zh": "小鸭子找妈妈。",
+        "en": "The duck looks for mama."
+      },
+      {
+        "zh": "是妈妈吗？",
+        "en": "Is that mama?"
+      },
+      {
+        "zh": "不是小鸭妈妈。",
+        "en": "Not duck mama."
+      },
+      {
+        "zh": "妈妈在这里。",
+        "en": "Mama is here."
+      }
+    ],
+    "why": "短故事把词语放进有意义的情境。成人提问、等待和回应，能让宝宝参与，而不是只听一串词。",
+    "refs": ["R45", "R47", "R48", "R82"]
+  },
+  "offline": [
+    {
+      "title": "小鸭子找一找",
+      "minutes": 8,
+      "materials": ["小动物故事卡"],
+      "steps": [
+        "把小鸭卡放在家长手里，另外两张卡放在地上。",
+        "边移动小鸭卡边说“小鸭子找妈妈”。",
+        "指向一张卡问“是妈妈吗？”，停下来等宝宝看或伸手。",
+        "最后让小鸭卡回到家长身边，说“妈妈在这里”。"
+      ],
+      "safety": "故事中的“找妈妈”只是假装游戏，成人始终在宝宝身边。卡片要大而完整，不让宝宝入口；不要用故事制造分离或害怕。",
+      "domains": ["language", "social"],
+      "question": "小鸭子想先看看哪一张卡？",
+      "levels": {
+        "easier": "只用小鸭卡和成人的手，讲三句故事。",
+        "harder": "加入两张动物卡，每次停下来让宝宝选择看哪张。"
+      }
+    }
+  ],
+  "steps": [
+    {
+      "type": "guide",
+      "parentTip": "故事给家长看，讲完就放下屏幕。",
+      "props": {
+        "goal": "用动物卡讲短故事，等宝宝参与。",
+        "materials": ["小动物打印卡"],
+        "steps": [
+          {
+            "text": "拿起小鸭卡，慢慢说小鸭子找妈妈。",
+            "concept": "duck",
+            "say": {
+              "zh": "小鸭子找妈妈。",
+              "en": "The duck looks for mama."
+            }
+          },
+          {
+            "text": "举起小鸡卡，问它是不是妈妈。",
+            "concept": "chicken",
+            "say": {
+              "zh": "是妈妈吗？",
+              "en": "Is that mama?"
+            }
+          },
+          {
+            "text": "再拿出奶牛卡和小狗卡，慢慢说不是。",
+            "concept": "cow",
+            "say": {
+              "zh": "不是小鸭妈妈。",
+              "en": "Not duck mama."
+            }
+          },
+          {
+            "text": "让小鸭卡回到家长身边，安静收尾。",
+            "concept": "dog",
+            "say": {
+              "zh": "妈妈在这里。",
+              "en": "Mama is here."
+            }
+          }
+        ],
+        "playMin": 8,
+        "observe": [
+          "宝宝是否跟着卡片或声音看。",
+          "宝宝是否在提问后停下来等待。",
+          "宝宝是否用表情、动作或声音参与。"
+        ],
+        "safety": "成人全程陪伴，语气保持温和。宝宝出现不安时立刻停止故事并抱抱，不继续演分离情节。"
+      }
+    }
+  ]
+}

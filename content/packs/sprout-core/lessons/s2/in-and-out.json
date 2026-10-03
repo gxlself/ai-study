@@ -1,0 +1,130 @@
+{
+  "schemaVersion": 1,
+  "id": "core.s2.in-and-out",
+  "title": {
+    "zh": "放进去，拿出来",
+    "en": "In and Out"
+  },
+  "summary": {
+    "zh": "用大块玩具体验进去、出来和再来一次。",
+    "en": "Explore in, out, and again with large safe toys."
+  },
+  "ageRange": [9, 11],
+  "domains": ["math", "motor"],
+  "themeId": "s2-t1",
+  "tags": ["cause-effect", "spatial-language"],
+  "durationMin": 2,
+  "coView": "required",
+  "audience": "parent",
+  "objectives": [
+    {
+      "zh": "体验物品进盒和出盒的变化。",
+      "en": "Explore objects going in and coming out."
+    },
+    {
+      "zh": "听到“里面”“出来”等空间词。",
+      "en": "Hear simple spatial words such as in and out."
+    }
+  ],
+  "cover": {
+    "concept": "box",
+    "bg": "paper"
+  },
+  "parentGuide": {
+    "intro": "准备一个稳固的大盒子和大块玩具。家长先示范放进去、拿出来，再把玩具交给宝宝尝试。",
+    "tips": [
+      "每次只放一个玩具。",
+      "动作慢一点，词语重复说。",
+      "宝宝只看或拿起也算回应。"
+    ],
+    "phrases": [
+      {
+        "zh": "进去啦。",
+        "en": "In it goes."
+      },
+      {
+        "zh": "出来啦。",
+        "en": "Out it comes."
+      },
+      {
+        "zh": "还在里面。",
+        "en": "Still inside."
+      },
+      {
+        "zh": "再来一次。",
+        "en": "Let's do it again."
+      }
+    ],
+    "why": "把空间词放进宝宝正在做的动作里，成人示范后等待宝宝尝试，符合早期数学和回应式互动的方向。",
+    "refs": ["[6]", "[69]", "[82]"]
+  },
+  "offline": [
+    {
+      "title": "盒子进出游戏",
+      "minutes": 6,
+      "materials": ["稳固的大盒子", "最小尺寸大于3.5厘米的大块玩具"],
+      "steps": [
+        "家长把一个大块玩具放进盒子，再慢慢拿出来。",
+        "把玩具交给宝宝，等待宝宝拿、放或看。",
+        "宝宝放进去后，家长说“进去啦”；拿出来后说“出来啦”。"
+      ],
+      "safety": "只用最小尺寸大于3.5厘米、没有尖角的大块玩具；不要用塑料袋、绳子或小零件；盒子要稳，成人全程陪伴。",
+      "domains": ["math", "motor"],
+      "question": "玩具现在在哪里？",
+      "levels": {
+        "easier": "只用一个玩具，家长做一次进出示范。",
+        "harder": "轮流放入两个不同的大块玩具，每次只说一个空间词。"
+      }
+    }
+  ],
+  "steps": [
+    {
+      "type": "guide",
+      "parentTip": "使用真实的大块玩具，宝宝不看电子画面。",
+      "props": {
+        "goal": "用大块玩具体验“进去”和“出来”。",
+        "materials": ["稳固的大盒子", "最小尺寸大于3.5厘米的大块玩具"],
+        "steps": [
+          {
+            "text": "把盒子放在宝宝面前，先让宝宝摸一摸大块玩具。",
+            "concept": "blocks",
+            "say": {
+              "zh": "这是积木。",
+              "en": "Here is a block."
+            }
+          },
+          {
+            "text": "家长慢慢把玩具放进盒子，停一下再说空间词。",
+            "concept": "box",
+            "say": {
+              "zh": "进去啦。",
+              "en": "In it goes."
+            }
+          },
+          {
+            "text": "把玩具拿出来，交给宝宝，等宝宝自己试一试。",
+            "concept": "ball",
+            "say": {
+              "zh": "出来啦。",
+              "en": "Out it comes."
+            }
+          },
+          {
+            "text": "宝宝想继续时再重复，宝宝转开就先收好玩具。",
+            "say": {
+              "zh": "再来一次。",
+              "en": "Let's do it again."
+            }
+          }
+        ],
+        "playMin": 6,
+        "observe": [
+          "宝宝是否看向盒子里的玩具。",
+          "宝宝是否尝试伸手、抓握或放入。",
+          "宝宝是否把玩具从一只手换到另一只手。"
+        ],
+        "safety": "只用最小尺寸大于3.5厘米、没有尖角的大块玩具；不要用塑料袋、绳子或小零件；盒子要稳，成人全程陪伴。"
+      }
+    }
+  ]
+}

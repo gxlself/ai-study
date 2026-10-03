@@ -1,0 +1,132 @@
+{
+  "schemaVersion": 1,
+  "id": "core.s3.roll-car",
+  "title": {
+    "zh": "小车滑下去",
+    "en": "The Little Car Rolls Down"
+  },
+  "summary": {
+    "zh": "用低矮斜坡体验小车下滑和快慢。",
+    "en": "Use a low ramp to notice a toy car rolling down and changing speed."
+  },
+  "ageRange": [12, 17],
+  "domains": ["science", "math"],
+  "themeId": "s3-t3",
+  "tags": ["cause-and-effect", "fast-slow"],
+  "durationMin": 2,
+  "coView": "required",
+  "audience": "parent",
+  "objectives": [
+    {
+      "zh": "宝宝观察小车从高处滑到低处。",
+      "en": "Your baby watches a toy car roll from high to low."
+    },
+    {
+      "zh": "宝宝听到上、下、快、慢等生活词。",
+      "en": "Your baby hears everyday words such as up, down, fast, and slow."
+    }
+  ],
+  "cover": {
+    "concept": "toy-car",
+    "bg": "paper"
+  },
+  "parentGuide": {
+    "intro": "用厚纸板和一两本大书做低矮斜坡。家长先示范小车怎么下去，再让宝宝看、伸手或轻轻推；重点是因果体验，不是学会物理词。",
+    "tips": [
+      "斜坡低一点，动作慢一点。",
+      "每次只说一个词并停下来。",
+      "让宝宝自己决定看几次。"
+    ],
+    "phrases": [
+      {
+        "zh": "小车在上面。",
+        "en": "The car is up."
+      },
+      {
+        "zh": "小车下去了。",
+        "en": "The car rolls down."
+      },
+      {
+        "zh": "这次慢一点。",
+        "en": "This time is slower."
+      },
+      {
+        "zh": "你看到了。",
+        "en": "You saw it."
+      }
+    ],
+    "why": "低风险的实物游戏让宝宝观察动作和结果。成人用短句描述并给一点挑战，符合有引导的游戏和支架原则。",
+    "refs": ["R67", "R80", "R81", "R83"]
+  },
+  "offline": [
+    {
+      "title": "纸板小斜坡",
+      "minutes": 8,
+      "materials": ["大号玩具车", "厚纸板", "一两本大书"],
+      "steps": [
+        "把厚纸板一端放在地面，成人扶稳另一端。",
+        "先让小车从平地慢慢走，再放到低斜坡上。",
+        "说“小车下去了”，停下来让宝宝看或伸手。",
+        "换回平地，比较这次动作，不要求宝宝说快慢。"
+      ],
+      "safety": "只用低而稳的斜坡，远离楼梯和高处；成人全程扶住纸板，不让宝宝爬上斜坡；玩具车不能有可拆小零件，所有小物件直径小于3.5厘米都要远离宝宝。",
+      "domains": ["science", "math"],
+      "question": "你觉得小车会到哪里？",
+      "levels": {
+        "easier": "只在平地轻轻推小车。",
+        "harder": "用两个不同高度的低斜坡，看动作有什么变化。"
+      }
+    }
+  ],
+  "steps": [
+    {
+      "type": "guide",
+      "parentTip": "用低斜坡实物玩，屏幕只给家长看。",
+      "props": {
+        "goal": "观察小车下滑，听上、下和快慢。",
+        "materials": ["大号玩具车", "厚纸板", "一两本大书"],
+        "steps": [
+          {
+            "text": "先把小车放在平地，让宝宝看清楚。",
+            "concept": "toy-car",
+            "say": {
+              "zh": "小车在地上。",
+              "en": "The car is on the floor."
+            }
+          },
+          {
+            "text": "成人扶稳低斜坡，把小车放在上端。",
+            "concept": "blocks",
+            "say": {
+              "zh": "小车在上面。",
+              "en": "The car is up."
+            }
+          },
+          {
+            "text": "轻轻松手，看小车滑到地面。",
+            "concept": "toy-car",
+            "say": {
+              "zh": "小车下去了。",
+              "en": "The car rolls down."
+            }
+          },
+          {
+            "text": "换低一点的斜坡，再慢慢做一遍。",
+            "concept": "toy-car",
+            "say": {
+              "zh": "这次慢一点。",
+              "en": "This time is slower."
+            }
+          }
+        ],
+        "playMin": 8,
+        "observe": [
+          "宝宝是否看着小车移动。",
+          "宝宝是否期待下一次下滑。",
+          "宝宝是否用伸手或声音回应。"
+        ],
+        "safety": "斜坡始终低、稳、无尖角。成人保护宝宝不爬高、不把玩具放入口；宝宝失去兴趣时停止。"
+      }
+    }
+  ]
+}

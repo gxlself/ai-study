@@ -1,0 +1,141 @@
+{
+  "schemaVersion": 1,
+  "id": "core.s2.mealtime",
+  "title": {
+    "zh": "吃饭啦",
+    "en": "Mealtime"
+  },
+  "summary": {
+    "zh": "命名碗、勺、杯和食物，让宝宝在安全进餐中参与选择。",
+    "en": "Name bowls, spoons, cups, and food while your baby joins a safe meal."
+  },
+  "ageRange": [9, 11],
+  "domains": ["life", "language"],
+  "themeId": "s2-t3",
+  "tags": ["self-feeding", "choice"],
+  "durationMin": 3,
+  "coView": "required",
+  "audience": "parent",
+  "printables": [
+    {
+      "kind": "cards",
+      "title": "吃饭用具和食物大卡片",
+      "items": ["bowl", "spoon", "cup", "milk", "rice"],
+      "size": "large",
+      "showText": true,
+      "showEnglish": true
+    }
+  ],
+  "objectives": [
+    {
+      "zh": "在真实进餐中听见用具和食物名称。",
+      "en": "Hear names of mealtime objects and food."
+    },
+    {
+      "zh": "在两个安全选择中表达偏好。",
+      "en": "Show a preference between two safe choices."
+    }
+  ],
+  "cover": {
+    "concept": "bowl",
+    "bg": "paper"
+  },
+  "parentGuide": {
+    "intro": "吃饭前先指认碗、勺、杯和食物。给宝宝两个符合家庭安排的安全选择，让宝宝看、伸手或拿取，不要求马上说话。",
+    "tips": [
+      "一次只给两个选择。",
+      "让宝宝摸一摸安全用具。",
+      "宝宝自己抓握时，家长在旁观察。"
+    ],
+    "phrases": [
+      {
+        "zh": "碗还是杯？",
+        "en": "Bowl or cup?"
+      },
+      {
+        "zh": "你选哪个？",
+        "en": "Which one?"
+      },
+      {
+        "zh": "小手拿。",
+        "en": "Hold it with your hands."
+      },
+      {
+        "zh": "慢慢吃。",
+        "en": "Eat slowly."
+      }
+    ],
+    "why": "照护时的真实命名、等待和选择，能增加回合对话，也让宝宝在安全边界内参与日常生活。",
+    "refs": ["[6]", "[43]", "[47]", "[82]"]
+  },
+  "offline": [
+    {
+      "title": "餐前二选一",
+      "minutes": 8,
+      "materials": ["宝宝餐碗", "婴幼儿勺", "无盖杯", "适龄食物"],
+      "steps": [
+        "把两个安全用具放在宝宝面前，先逐个命名。",
+        "给出两个符合家庭安排的选择，等宝宝看、伸手或拿取。",
+        "进餐中允许宝宝在成人看护下用手拿适合的软食，家长慢慢说食物名称。"
+      ],
+      "safety": "宝宝必须坐直进食，成人全程看护；食物要软、小、适龄且不烫；勺子和杯子没有尖角或碎片，不让宝宝边走边吃，不强迫进食。",
+      "domains": ["life", "language"],
+      "question": "宝宝想先看哪一个？",
+      "levels": {
+        "easier": "只命名碗和勺，不要求宝宝选择。",
+        "harder": "在两个安全用具或食物中等待宝宝用目光、手势或伸手选择。"
+      }
+    }
+  ],
+  "steps": [
+    {
+      "type": "guide",
+      "parentTip": "看完后关屏，把指引变成真实的餐桌对话。",
+      "props": {
+        "goal": "在安全进餐中命名物品，并给宝宝两个选择。",
+        "materials": ["宝宝餐碗", "婴幼儿勺", "无盖杯", "适龄食物"],
+        "steps": [
+          {
+            "text": "吃饭前逐个指认碗、勺和杯，等宝宝看一看。",
+            "concept": "bowl",
+            "say": {
+              "zh": "这是碗。",
+              "en": "This is a bowl."
+            }
+          },
+          {
+            "text": "给宝宝两个符合家庭安排的安全选择，等宝宝回应。",
+            "concept": "cup",
+            "say": {
+              "zh": "碗还是杯？",
+              "en": "Bowl or cup?"
+            }
+          },
+          {
+            "text": "宝宝自己抓握软食时，家长在旁慢慢命名。",
+            "concept": "rice",
+            "say": {
+              "zh": "慢慢吃。",
+              "en": "Eat slowly."
+            }
+          },
+          {
+            "text": "宝宝闭嘴、转头或烦躁时，先停下并照顾需要。",
+            "concept": "spoon",
+            "say": {
+              "zh": "先停一停。",
+              "en": "Let's pause."
+            }
+          }
+        ],
+        "playMin": 8,
+        "observe": [
+          "宝宝是否看向被命名的用具。",
+          "宝宝是否用目光、伸手或拿取表达选择。",
+          "宝宝是否用闭嘴、转头或烦躁表示暂停。"
+        ],
+        "safety": "宝宝必须坐直进食，成人全程看护；食物要软、小、适龄且不烫；勺子和杯子没有尖角或碎片，不让宝宝边走边吃，不强迫进食。"
+      }
+    }
+  ]
+}

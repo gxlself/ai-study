@@ -1,0 +1,131 @@
+{
+  "schemaVersion": 1,
+  "id": "core.s3.touch-nose",
+  "title": {
+    "zh": "摸摸小鼻子",
+    "en": "Touch Your Nose"
+  },
+  "summary": {
+    "zh": "用简单动作听身体词，宝宝可以只看和笑。",
+    "en": "Use simple body actions; your baby may simply watch or smile."
+  },
+  "ageRange": [12, 17],
+  "domains": ["motor", "language"],
+  "themeId": "s3-t2",
+  "tags": ["body-awareness", "imitation"],
+  "durationMin": 2,
+  "coView": "required",
+  "audience": "parent",
+  "objectives": [
+    {
+      "zh": "宝宝听到身体词时观察家长动作。",
+      "en": "Your baby watches your action when hearing a body word."
+    },
+    {
+      "zh": "宝宝尝试做一个舒适的小动作。",
+      "en": "Your baby tries one comfortable little action."
+    }
+  ],
+  "cover": {
+    "concept": "nose",
+    "bg": "paper"
+  },
+  "parentGuide": {
+    "intro": "面对面坐好，家长先做动作，再用一句短话邀请宝宝。宝宝可以看、笑、发声或只做一小部分，不需要动作同步。",
+    "tips": [
+      "先示范，再停下来等宝宝。",
+      "动作幅度小而慢，不拉宝宝的手。",
+      "不会站或走时，全部动作都可坐着做。"
+    ],
+    "phrases": [
+      {
+        "zh": "摸摸鼻子。",
+        "en": "Touch your nose."
+      },
+      {
+        "zh": "拍拍肚子。",
+        "en": "Pat your belly."
+      },
+      {
+        "zh": "小手举起来。",
+        "en": "Raise your hands."
+      },
+      {
+        "zh": "我们慢慢做。",
+        "en": "Let's go slowly."
+      }
+    ],
+    "why": "家长示范、宝宝尝试和等待回应，是回应性互动与早期模仿的简单练习。动作不需要完成得标准。",
+    "refs": ["R82", "R83", "R87"]
+  },
+  "offline": [
+    {
+      "title": "身体动作跟一跟",
+      "minutes": 6,
+      "materials": ["软垫或干净地面"],
+      "steps": [
+        "家长坐在宝宝对面，先摸自己的鼻子。",
+        "邀请宝宝拍拍肚子、举手或拍拍脚。",
+        "宝宝想站且站得稳时，成人在旁扶护；不稳时继续坐着做。"
+      ],
+      "safety": "地面防滑并清开桌角、硬玩具和小物件。不戳鼻孔、不按压肚子和脖子；不拉手、不强迫站立或跺脚。",
+      "domains": ["motor", "language"],
+      "question": "你想做哪个动作？",
+      "levels": {
+        "easier": "只做坐着摸鼻子和举手。",
+        "harder": "把两个动作连起来，中间停下来等宝宝。"
+      }
+    }
+  ],
+  "steps": [
+    {
+      "type": "guide",
+      "parentTip": "家长先做，宝宝想跟就跟。",
+      "props": {
+        "goal": "听身体词，尝试安全的小动作。",
+        "materials": ["软垫或干净地面"],
+        "steps": [
+          {
+            "text": "家长先摸自己的鼻子，再停下来。",
+            "concept": "nose",
+            "say": {
+              "zh": "摸摸鼻子。",
+              "en": "Touch your nose."
+            }
+          },
+          {
+            "text": "轻轻拍拍自己的肚子，等宝宝看你。",
+            "concept": "belly",
+            "say": {
+              "zh": "拍拍肚子。",
+              "en": "Pat your belly."
+            }
+          },
+          {
+            "text": "慢慢举起双手，再放下双手。",
+            "concept": "raise-hands",
+            "say": {
+              "zh": "小手举起来。",
+              "en": "Raise your hands."
+            }
+          },
+          {
+            "text": "坐着拍拍小脚，站稳时再轻轻踏地。",
+            "concept": "foot",
+            "say": {
+              "zh": "拍拍小脚。",
+              "en": "Pat your feet."
+            }
+          }
+        ],
+        "playMin": 6,
+        "observe": [
+          "宝宝是否看向家长的动作。",
+          "宝宝是否尝试一个小动作。",
+          "宝宝是否在停顿时发声或微笑。"
+        ],
+        "safety": "按宝宝的能力选择坐姿或站姿。保持成人近距离保护，避免跳跃、转快圈和任何拉扯关节的动作。"
+      }
+    }
+  ]
+}

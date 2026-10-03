@@ -1,0 +1,114 @@
+{
+  "schemaVersion": 1,
+  "id": "core.s1.my-face",
+  "title": { "zh": "眼睛鼻子嘴巴", "en": "Eyes, Nose, and Mouth" },
+  "summary": { "zh": "看看脸，听听名字。", "en": "Look at a face and hear simple names." },
+  "ageRange": [6, 8],
+  "domains": ["language", "science"],
+  "themeId": "s1-t2",
+  "tags": ["家长指引", "五官", "日常照护"],
+  "durationMin": 2,
+  "coView": "required",
+  "audience": "parent",
+  "objectives": [
+    { "zh": "听听五官的名字。", "en": "Hear the names of facial features." },
+    { "zh": "用目光或声音回应。", "en": "Respond with a look or a sound." }
+  ],
+  "cover": { "concept": "nose", "bg": "paper" },
+  "printables": [
+    {
+      "kind": "cards",
+      "title": "五官陪看卡",
+      "items": ["eye", "nose", "mouth", "ear"],
+      "size": "large",
+      "showText": false,
+      "showEnglish": false
+    }
+  ],
+  "parentGuide": {
+    "intro": "先读完，再关屏。趁换衣或照安全镜子的片刻，说说五官。先指家长自己的脸，再轻触宝宝愿意被碰的部位。眼睛只指不碰，不要求宝宝指认或复述。",
+    "tips": [
+      "一次选一两个部位。说完停一下。",
+      "先中文，再按家长熟悉程度加一句英语。无需逐句翻译。",
+      "指真实的脸，图卡只做补充，不教认字。",
+      "先告知再轻触。不愿被碰，就只指自己的脸。"
+    ],
+    "phrases": [
+      { "zh": "这是眼睛。", "en": "These are eyes." },
+      { "zh": "这是鼻子。", "en": "This is a nose." },
+      { "zh": "这是嘴巴。", "en": "This is a mouth." },
+      { "zh": "这是耳朵。", "en": "This is an ear." }
+    ],
+    "why": "照护时的命名与等待回应，符合儿向语言和回应性照护。不用双语替代熟悉的中文交流，也不把听过五官名字当成已经理解。",
+    "refs": ["[6]", "[47]", "[50]", "[53]", "[82]"]
+  },
+  "offline": [
+    {
+      "title": "穿衣说说脸",
+      "minutes": 3,
+      "materials": ["干净的地垫", "宝宝的衣服"],
+      "steps": [
+        "在地垫上准备好衣服。",
+        "先说一句“穿衣啦”。",
+        "指自己的鼻子，说名字。",
+        "愿意被碰时，轻触宝宝鼻尖。",
+        "停下来回应，再继续穿衣。"
+      ],
+      "safety": "大人全程看护。不把指头伸进眼睛、鼻孔、耳道或嘴里，不捏鼻子。手先洗净，宝宝躲开就不触碰。不为了游戏延长宝宝裸露时间。",
+      "domains": ["language", "science", "life"],
+      "question": "你想看看哪儿呀？",
+      "levels": {
+        "easier": "只指家长自己的鼻子，说一次名字。",
+        "harder": "宝宝仍感兴趣时，再指家长自己的嘴巴。仍不考宝宝。"
+      }
+    }
+  ],
+  "steps": [
+    {
+      "type": "guide",
+      "title": { "zh": "指指自己的脸", "en": "Point to Your Own Face" },
+      "parentTip": "读完关屏。宝宝只看真人、实体卡或安全镜子。不要求摸对、指对。",
+      "props": {
+        "goal": "在温柔的日常照护里，让五官名称与真实面孔相伴出现。",
+        "materials": ["地垫", "可选的安全婴儿镜", "可选的五官打印卡"],
+        "steps": [
+          {
+            "text": "宝宝清醒时，面对面相处，或一起看固定好的安全镜子。",
+            "say": { "zh": "看看我们的脸。", "en": "Look at our faces." }
+          },
+          {
+            "text": "指自己眼睛旁边，别碰眼球。",
+            "say": { "zh": "这是眼睛。", "en": "These are eyes." },
+            "concept": "eye"
+          },
+          {
+            "text": "指自己的鼻子。宝宝愿意时，先告知，再轻触宝宝鼻尖。",
+            "say": { "zh": "这是鼻子。", "en": "This is a nose." },
+            "concept": "nose"
+          },
+          {
+            "text": "指自己的嘴巴，慢慢说名字。",
+            "say": { "zh": "这是嘴巴。", "en": "This is a mouth." },
+            "concept": "mouth"
+          },
+          {
+            "text": "轻触自己的耳朵外侧。宝宝愿意看时再说一次。",
+            "say": { "zh": "这是耳朵。", "en": "This is an ear." },
+            "concept": "ear"
+          },
+          {
+            "text": "停几秒，回应一个目光或声音，再结束。",
+            "say": { "zh": "我听见啦。", "en": "I hear you." }
+          }
+        ],
+        "playMin": 5,
+        "observe": [
+          "是否看家长的脸，或看向被指的地方。",
+          "说话停顿后，是否发声或动动身体。",
+          "是否躲开触碰；立即尊重，不拉手示范。"
+        ],
+        "safety": "手先洗净。眼睛只指不碰，不捏鼻、不拉耳朵，不把手指伸进孔洞或口腔。镜子须防碎、圆角、无破损，稳固放在地面或由大人拿；不用玻璃镜。卡片边角磨圆，由大人拿，勿含咬。"
+      }
+    }
+  ]
+}

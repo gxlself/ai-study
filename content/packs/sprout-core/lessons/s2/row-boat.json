@@ -1,0 +1,208 @@
+{
+  "schemaVersion": 1,
+  "id": "core.s2.row-boat",
+  "title": {
+    "zh": "划船歌",
+    "en": "Row Row Row Your Boat"
+  },
+  "summary": {
+    "zh": "家长学会轻柔的划船歌，抱稳宝宝或坐在身边小幅律动。",
+    "en": "Learn a gentle rowing song and move safely with your baby."
+  },
+  "ageRange": [9, 11],
+  "domains": ["music", "english", "motor"],
+  "themeId": "s2-t4",
+  "tags": ["active-music", "rhythm", "co-regulation"],
+  "durationMin": 3,
+  "coView": "required",
+  "audience": "parent",
+  "objectives": [
+    {
+      "zh": "用歌声和轻柔律动和宝宝互动。",
+      "en": "Interact through singing and gentle movement."
+    },
+    {
+      "zh": "听见重复的中文和英文节奏。",
+      "en": "Hear repeated Chinese and English rhythms."
+    }
+  ],
+  "cover": {
+    "concept": "boat",
+    "bg": "sea"
+  },
+  "parentGuide": {
+    "intro": "先学会旋律，再关屏陪宝宝唱。宝宝可以被稳稳抱着，也可以坐在家长腿边；只做很小的前后律动。",
+    "tips": [
+      "先确认宝宝坐得稳。",
+      "律动幅度小而慢。",
+      "唱完停下，不自动重复。"
+    ],
+    "phrases": [
+      {
+        "zh": "坐稳。",
+        "en": "Sit safely."
+      },
+      {
+        "zh": "轻轻划。",
+        "en": "Row gently."
+      },
+      {
+        "zh": "和我一起唱。",
+        "en": "Sing with me."
+      },
+      {
+        "zh": "划船歌唱完啦。",
+        "en": "The rowing song is done."
+      }
+    ],
+    "why": "主动音乐和成人同步律动能增加交流与共同参与；对还不能独坐稳的宝宝，安全抱持比完成动作更重要。",
+    "refs": ["[6]", "[47]", "[87]", "[88]"]
+  },
+  "offline": [
+    {
+      "title": "腿上轻轻摇",
+      "minutes": 7,
+      "materials": ["地面软垫"],
+      "steps": [
+        "家长坐在地面软垫上，确认宝宝被稳稳抱住或坐在安全位置。",
+        "用小幅度前后律动唱中文，句子之间停一下。",
+        "宝宝愿意时再唱英文，唱完抱抱并平稳结束。"
+      ],
+      "safety": "不把宝宝抛起、提起或快速摇晃；始终托住头颈和躯干，不在沙发边、床边或楼梯旁做；宝宝不舒服、脸色异常或转开时立即停止。",
+      "domains": ["music", "english", "motor"],
+      "question": "宝宝喜欢听歌还是看你的脸？",
+      "levels": {
+        "easier": "只唱中文，不做律动。",
+        "harder": "中文和英文各唱一遍，句子之间都停下来等回应。"
+      }
+    }
+  ],
+  "steps": [
+    {
+      "type": "guide",
+      "parentTip": "先关屏，再在地面安全位置唱歌和小幅律动。",
+      "props": {
+        "goal": "用划船歌和宝宝一起唱、一起轻轻动。",
+        "materials": ["地面软垫"],
+        "steps": [
+          {
+            "text": "家长坐在地面软垫上，先确认宝宝坐得稳。",
+            "concept": "boat",
+            "say": {
+              "zh": "坐稳。",
+              "en": "Sit safely."
+            }
+          },
+          {
+            "text": "家长托稳宝宝，用小幅度前后律动配合中文歌。",
+            "say": {
+              "zh": "轻轻划。",
+              "en": "Row gently."
+            }
+          },
+          {
+            "text": "每句歌后停一下，等宝宝看脸、发声或动身体。",
+            "say": {
+              "zh": "和我一起唱。",
+              "en": "Sing with me."
+            }
+          },
+          {
+            "text": "中文和英文唱完一遍后，平稳放下宝宝并收尾。",
+            "concept": "hug",
+            "say": {
+              "zh": "划船歌唱完啦。",
+              "en": "The rowing song is done."
+            }
+          }
+        ],
+        "playMin": 7,
+        "observe": [
+          "宝宝是否看向家长的脸。",
+          "宝宝是否随歌声发声或动身体。",
+          "宝宝是否需要更小的律动或更快结束。"
+        ],
+        "safety": "不把宝宝抛起、提起或快速摇晃；始终托住头颈和躯干，不在沙发边、床边或楼梯旁做；宝宝不舒服、脸色异常或转开时立即停止。"
+      }
+    },
+    {
+      "type": "song",
+      "parentTip": "家长跟唱一遍，唱完关屏。",
+      "props": {
+        "title": {
+          "zh": "划船歌",
+          "en": "Row Row Row Your Boat"
+        },
+        "credit": "旋律：Row Row Row Your Boat（传统，公有领域）；中文词：芽芽成长原创；英文词：传统公有领域",
+        "bpm": 76,
+        "instrument": "musicbox",
+        "lines": [
+          {
+            "lang": "zh",
+            "text": "划呀划小船",
+            "notes": "C4/1 C4/1 C4/1 D4/1 E4/2"
+          },
+          {
+            "lang": "en",
+            "text": "Row row row your boat",
+            "notes": "C4/1 C4/1 C4/1 D4/1 E4/2"
+          },
+          {
+            "lang": "zh",
+            "text": "顺着小河流",
+            "notes": "E4/1 D4/1 E4/1 F4/1 G4/2"
+          },
+          {
+            "lang": "en",
+            "text": "Gently down the stream",
+            "notes": "E4/1 D4/1 E4/1 F4/1 G4/2"
+          },
+          {
+            "lang": "zh",
+            "text": "划呀划呀小船快快乐乐向前",
+            "notes": "C5/1 C5/1 C5/1 G4/1 G4/1 G4/1 E4/1 E4/1 E4/1 C4/1 C4/1 C4/1"
+          },
+          {
+            "lang": "en",
+            "text": "Merrily, merrily, merrily, merrily",
+            "notes": "C5/1 C5/1 C5/1 G4/1 G4/1 G4/1 E4/1 E4/1 E4/1 C4/1 C4/1 C4/1"
+          },
+          {
+            "lang": "zh",
+            "text": "生活像个梦",
+            "notes": "G4/1 F4/1 E4/1 D4/1 C4/2"
+          },
+          {
+            "lang": "en",
+            "text": "Life is but a dream",
+            "notes": "G4/1 F4/1 E4/1 D4/1 C4/2"
+          }
+        ],
+        "scene": {
+          "bg": "sea",
+          "ground": "water",
+          "sprites": [
+            {
+              "concept": "boat",
+              "x": 50,
+              "y": 58,
+              "size": 36,
+              "anim": "bob"
+            }
+          ]
+        },
+        "repeat": 1,
+        "actions": [
+          {
+            "zh": "坐稳，轻轻摇",
+            "en": "Sit safely and sway gently."
+          },
+          {
+            "zh": "句子之间停一下",
+            "en": "Pause between lines."
+          }
+        ]
+      }
+    }
+  ]
+}

@@ -1,0 +1,130 @@
+{
+  "schemaVersion": 1,
+  "id": "core.s2.clap-wave",
+  "title": {
+    "zh": "拍手和挥手",
+    "en": "Clap and Wave"
+  },
+  "summary": {
+    "zh": "家长示范拍拍手、挥挥手，留出时间等宝宝回应。",
+    "en": "Model clapping and waving, then wait for your baby's response."
+  },
+  "ageRange": [9, 11],
+  "domains": ["motor", "social"],
+  "themeId": "s2-t2",
+  "tags": ["imitation", "gestures"],
+  "durationMin": 2,
+  "coView": "required",
+  "audience": "parent",
+  "objectives": [
+    {
+      "zh": "观察并尝试模仿拍手和挥手。",
+      "en": "Notice and try clapping and waving."
+    },
+    {
+      "zh": "在轮流动作中等待彼此回应。",
+      "en": "Wait for a response during turn-taking."
+    }
+  ],
+  "cover": {
+    "concept": "clap",
+    "bg": "paper"
+  },
+  "parentGuide": {
+    "intro": "和宝宝面对面坐好。家长先做一个慢动作，再停下来等宝宝看、笑、发声或动一动。",
+    "tips": [
+      "动作小一点，速度慢一点。",
+      "模仿宝宝的声音或动作。",
+      "宝宝不想做时，不拉着他的手做。"
+    ],
+    "phrases": [
+      {
+        "zh": "拍拍手。",
+        "en": "Clap your hands."
+      },
+      {
+        "zh": "挥挥手。",
+        "en": "Wave your hand."
+      },
+      {
+        "zh": "轮到你啦。",
+        "en": "Your turn."
+      },
+      {
+        "zh": "我看到啦。",
+        "en": "I see you."
+      }
+    ],
+    "why": "自然手势和成人等待能支持来回交流；主动唱歌和动作比背景播放更适合婴儿参与。",
+    "refs": ["[6]", "[47]", "[59]", "[82]", "[87]"]
+  },
+  "offline": [
+    {
+      "title": "拍手挥手轮流玩",
+      "minutes": 6,
+      "materials": ["软垫"],
+      "steps": [
+        "家长和宝宝面对面坐在软垫上，先轻轻拍两下手。",
+        "停下来等宝宝看、笑、发声或动手。",
+        "家长慢慢挥手说“拜拜”，再等宝宝的回应。",
+        "宝宝愿意时，加入轻轻碰掌的“做蛋糕拍拍”。"
+      ],
+      "safety": "成人坐在宝宝旁边，不拉拽手臂或手指；保持地面平整，宝宝疲倦、烦躁或转开时就停下。",
+      "domains": ["motor", "social"],
+      "question": "宝宝想做哪个动作？",
+      "levels": {
+        "easier": "只做拍手，做两下后停下来等待。",
+        "harder": "拍手和挥手交替，等宝宝有回应再换动作。"
+      }
+    }
+  ],
+  "steps": [
+    {
+      "type": "guide",
+      "parentTip": "家长读完后关屏，面对面慢慢做动作。",
+      "props": {
+        "goal": "用拍手和挥手玩轮流模仿。",
+        "materials": ["软垫"],
+        "steps": [
+          {
+            "text": "和宝宝面对面坐好，先轻轻拍两下手。",
+            "concept": "clap",
+            "say": {
+              "zh": "拍拍手。",
+              "en": "Clap your hands."
+            }
+          },
+          {
+            "text": "停下来等宝宝看、笑、发声或动一动。",
+            "say": {
+              "zh": "轮到你啦。",
+              "en": "Your turn."
+            }
+          },
+          {
+            "text": "家长慢慢挥手，示范迎接和道别的动作。",
+            "concept": "wave",
+            "say": {
+              "zh": "挥挥手。",
+              "en": "Wave your hand."
+            }
+          },
+          {
+            "text": "宝宝愿意时轻轻碰掌，不拉着宝宝的手完成动作。",
+            "say": {
+              "zh": "我看到啦。",
+              "en": "I see you."
+            }
+          }
+        ],
+        "playMin": 6,
+        "observe": [
+          "宝宝是否看向家长的手。",
+          "宝宝是否尝试抬手、拍手或挥手。",
+          "宝宝是否在停顿后发声或微笑。"
+        ],
+        "safety": "成人坐在宝宝旁边，不拉拽手臂或手指；保持地面平整，宝宝疲倦、烦躁或转开时就停下。"
+      }
+    }
+  ]
+}

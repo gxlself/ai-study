@@ -1,0 +1,141 @@
+{
+  "schemaVersion": 1,
+  "id": "core.s3.farm-animals",
+  "title": {
+    "zh": "农场动物",
+    "en": "Farm Animals"
+  },
+  "summary": {
+    "zh": "看动物卡，听叫声，等宝宝回应。",
+    "en": "Look at animal cards, make sounds, and wait for your baby to respond."
+  },
+  "ageRange": [12, 17],
+  "domains": ["language", "science"],
+  "themeId": "s3-t1",
+  "tags": ["first-words", "serve-and-return"],
+  "durationMin": 2,
+  "coView": "required",
+  "audience": "parent",
+  "printables": [
+    {
+      "kind": "cards",
+      "title": "农场动物大卡",
+      "items": ["cow", "pig", "sheep", "horse", "chicken"],
+      "size": "large",
+      "showText": true,
+      "showEnglish": true
+    }
+  ],
+  "objectives": [
+    {
+      "zh": "宝宝听到名字时看向动物卡。",
+      "en": "Your baby looks toward an animal card when you name it."
+    },
+    {
+      "zh": "宝宝用眼神、手势或声音回应。",
+      "en": "Your baby responds with a look, gesture, or sound."
+    }
+  ],
+  "cover": {
+    "concept": "cow",
+    "bg": "grass"
+  },
+  "parentGuide": {
+    "intro": "先读完，再放下屏幕。拿出两三张大卡，慢慢说动物名字和叫声，停下来等宝宝看、指、发声或模仿。",
+    "tips": [
+      "一次只看一张卡，语速放慢。",
+      "宝宝看向哪里，就跟着说哪里。",
+      "宝宝没有模仿也没关系，继续温和回应。"
+    ],
+    "phrases": [
+      {
+        "zh": "奶牛，哞哞。",
+        "en": "Cow, moo moo."
+      },
+      {
+        "zh": "你听到了吗？",
+        "en": "Did you hear it?"
+      },
+      {
+        "zh": "轮到你啦。",
+        "en": "Your turn."
+      },
+      {
+        "zh": "我听见你了。",
+        "en": "I hear you."
+      }
+    ],
+    "why": "一对一的儿向语言、停顿和轮流回应，能增加亲子回合对话。重点是互动，不是背词。",
+    "refs": ["R45", "R47", "R82"]
+  },
+  "offline": [
+    {
+      "title": "动物叫声轮流说",
+      "minutes": 8,
+      "materials": ["农场动物大卡", "一个安全的大动物玩具"],
+      "steps": [
+        "只放两张卡，家长指一张并慢慢说名字。",
+        "家长发出叫声，停五秒等宝宝回应。",
+        "宝宝看、指或发声时，家长模仿并说“轮到你啦”。"
+      ],
+      "safety": "成人全程陪伴。卡片边缘要平整，玩具不能有可拆小零件；不把卡片或玩具放进宝宝嘴里。",
+      "domains": ["language", "science"],
+      "question": "你想再听哪个声音？",
+      "levels": {
+        "easier": "只看一张卡，家长说名字和叫声。",
+        "harder": "放两张卡，请宝宝用眼神或手指选一张。"
+      }
+    }
+  ],
+  "steps": [
+    {
+      "type": "guide",
+      "parentTip": "先看卡，再放下屏幕陪玩。",
+      "props": {
+        "goal": "听名字和叫声，等宝宝回应。",
+        "materials": ["农场动物打印卡", "一个安全的大动物玩具"],
+        "steps": [
+          {
+            "text": "先放两张卡，选宝宝正在看的那一张。",
+            "concept": "cow",
+            "say": {
+              "zh": "奶牛，哞哞。",
+              "en": "Cow, moo moo."
+            }
+          },
+          {
+            "text": "指着卡片慢慢说名字，再说一次叫声。",
+            "concept": "pig",
+            "say": {
+              "zh": "小猪，哼哼。",
+              "en": "Pig, oink oink."
+            }
+          },
+          {
+            "text": "停五秒，看看宝宝有没有回应。",
+            "concept": "sheep",
+            "say": {
+              "zh": "绵羊，咩咩。",
+              "en": "Sheep, baa baa."
+            }
+          },
+          {
+            "text": "宝宝有回应时，模仿它，再等一轮。",
+            "concept": "horse",
+            "say": {
+              "zh": "小马，咴咴。",
+              "en": "Horse, neigh neigh."
+            }
+          }
+        ],
+        "playMin": 8,
+        "observe": [
+          "宝宝是否看向被命名的卡片。",
+          "宝宝是否用眼神、手势或声音回应。",
+          "宝宝是否愿意继续轮流。"
+        ],
+        "safety": "成人拿卡并陪伴。宝宝转开、烦躁或想爬走时就停止；不强迫模仿或触摸。"
+      }
+    }
+  ]
+}

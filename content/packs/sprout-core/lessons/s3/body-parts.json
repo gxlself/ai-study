@@ -1,0 +1,149 @@
+{
+  "schemaVersion": 1,
+  "id": "core.s3.body-parts",
+  "title": {
+    "zh": "我的身体",
+    "en": "My Body"
+  },
+  "summary": {
+    "zh": "在洗澡和穿衣时，慢慢说身体部位。",
+    "en": "Name body parts slowly during bathing and dressing."
+  },
+  "ageRange": [12, 17],
+  "domains": ["language", "science"],
+  "themeId": "s3-t2",
+  "tags": ["first-words", "body-awareness"],
+  "durationMin": 2,
+  "coView": "required",
+  "audience": "parent",
+  "printables": [
+    {
+      "kind": "cards",
+      "title": "身体部位大卡",
+      "items": ["eye", "ear", "nose", "mouth", "hand", "foot"],
+      "size": "large",
+      "showText": true,
+      "showEnglish": true
+    }
+  ],
+  "objectives": [
+    {
+      "zh": "宝宝在日常照护中听到身体部位词。",
+      "en": "Your baby hears body-part words during everyday care."
+    },
+    {
+      "zh": "宝宝用眼神、手势或触摸回应。",
+      "en": "Your baby responds with a look, gesture, or touch."
+    }
+  ],
+  "cover": {
+    "concept": "nose",
+    "bg": "paper"
+  },
+  "parentGuide": {
+    "intro": "选洗澡、穿衣或照镜子的自然时刻。家长先指自己的身体部位，再邀请宝宝看、指或轻轻碰；宝宝不愿意时只听也可以。",
+    "tips": [
+      "先说真实词，再加一个短句。",
+      "轻触前先让宝宝看见你的手。",
+      "不把身体部位变成必须答对的测试。"
+    ],
+    "phrases": [
+      {
+        "zh": "鼻子在哪里？",
+        "en": "Where is your nose?"
+      },
+      {
+        "zh": "这是你的鼻子。",
+        "en": "This is your nose."
+      },
+      {
+        "zh": "这是我的手。",
+        "en": "This is my hand."
+      },
+      {
+        "zh": "你想摸一摸吗？",
+        "en": "Would you like to touch?"
+      }
+    ],
+    "why": "把语言放进穿衣、洗澡等真实情境，能增加有回应的回合对话，也尊重宝宝通过看、指和触摸表达的方式。",
+    "refs": ["R43", "R45", "R47", "R59"]
+  },
+  "offline": [
+    {
+      "title": "洗澡时找身体",
+      "minutes": 8,
+      "materials": ["身体部位大卡", "干净的小镜子"],
+      "steps": [
+        "家长先指自己的鼻子、手和脚，慢慢说名字。",
+        "洗澡或穿衣时问一个问题，停下来等宝宝看或指。",
+        "宝宝愿意时，轻轻碰宝宝对应部位，再说一遍名字。"
+      ],
+      "safety": "洗澡时成人一臂之内全程看护，不能把宝宝单独留在水中；不戳眼睛、鼻孔和嘴巴，不拉扯四肢；镜子要安全、无裂口。",
+      "domains": ["language", "science"],
+      "question": "你想先找哪一个？",
+      "levels": {
+        "easier": "只说一个部位，家长先指自己的身体。",
+        "harder": "家长和宝宝轮流指同一个部位。"
+      }
+    }
+  ],
+  "steps": [
+    {
+      "type": "guide",
+      "parentTip": "先指自己，再邀请宝宝回应。",
+      "props": {
+        "goal": "在照护中听懂并感受身体部位词。",
+        "materials": ["身体部位打印卡", "干净的小镜子"],
+        "steps": [
+          {
+            "text": "拿出一张卡，先指家长自己的身体。",
+            "concept": "eye",
+            "say": {
+              "zh": "这是我的眼睛。",
+              "en": "This is my eye."
+            }
+          },
+          {
+            "text": "把卡放在宝宝看得到的地方，慢慢说名字。",
+            "concept": "ear",
+            "say": {
+              "zh": "耳朵可以听。",
+              "en": "Ears can hear."
+            }
+          },
+          {
+            "text": "问宝宝一个部位在哪里，停五秒等回应。",
+            "concept": "nose",
+            "say": {
+              "zh": "鼻子在哪里？",
+              "en": "Where is your nose?"
+            }
+          },
+          {
+            "text": "宝宝愿意时，轻轻碰对应部位并重复。",
+            "concept": "mouth",
+            "say": {
+              "zh": "这是你的嘴巴。",
+              "en": "This is your mouth."
+            }
+          },
+          {
+            "text": "最后找小手和小脚，跟着宝宝的目光说。",
+            "concept": "hand",
+            "say": {
+              "zh": "小手挥一挥。",
+              "en": "Wave your little hand."
+            }
+          }
+        ],
+        "playMin": 8,
+        "observe": [
+          "宝宝是否看向被说出的部位。",
+          "宝宝是否用手势、触摸或声音回应。",
+          "宝宝是否在被尊重时愿意继续。"
+        ],
+        "safety": "只做轻柔、宝宝愿意的触摸。宝宝转开或抗拒时停止；照护时保持水、镜子和卡片在成人控制下。"
+      }
+    }
+  ]
+}

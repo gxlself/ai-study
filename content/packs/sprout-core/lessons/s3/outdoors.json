@@ -1,0 +1,142 @@
+{
+  "schemaVersion": 1,
+  "id": "core.s3.outdoors",
+  "title": {
+    "zh": "外面有什么",
+    "en": "What Is Outside?"
+  },
+  "summary": {
+    "zh": "在安全户外散步中跟随宝宝看自然。",
+    "en": "Follow your baby's attention to nature during a safe outdoor walk."
+  },
+  "ageRange": [12, 17],
+  "domains": ["science", "language"],
+  "themeId": "s3-t6",
+  "tags": ["outdoors", "joint-attention"],
+  "durationMin": 2,
+  "coView": "required",
+  "audience": "parent",
+  "printables": [
+    {
+      "kind": "cards",
+      "title": "户外自然大卡",
+      "items": ["sun", "tree", "flower", "bird", "cloud"],
+      "size": "large",
+      "showText": true,
+      "showEnglish": true
+    }
+  ],
+  "objectives": [
+    {
+      "zh": "宝宝在户外共同注意自然物。",
+      "en": "Your baby shares attention to natural things outdoors."
+    },
+    {
+      "zh": "宝宝听到树、花、鸟等生活词。",
+      "en": "Your baby hears everyday words such as tree, flower, and bird."
+    }
+  ],
+  "cover": {
+    "concept": "tree",
+    "bg": "grass"
+  },
+  "parentGuide": {
+    "intro": "选安全、阴凉、远离道路和水边的地方散步。跟着宝宝的目光和手指说一两种眼前的自然物，摸自然物前先由成人检查。",
+    "tips": [
+      "跟着宝宝的注意点说，不急着换目标。",
+      "先描述颜色、声音或动作，再说名称。",
+      "天气不好时在窗边看卡片也可以。"
+    ],
+    "phrases": [
+      {
+        "zh": "你看，树。",
+        "en": "Look, a tree."
+      },
+      {
+        "zh": "叶子在动。",
+        "en": "The leaf is moving."
+      },
+      {
+        "zh": "小鸟在哪里？",
+        "en": "Where is the bird?"
+      },
+      {
+        "zh": "我们慢慢走。",
+        "en": "Let's walk slowly."
+      }
+    ],
+    "why": "户外共同注意把语言、自然观察和身体活动放在真实情境中。跟随宝宝的兴趣并回应手势，是高质量来回交流。",
+    "refs": ["R6", "R9", "R10", "R11", "R43", "R59"]
+  },
+  "offline": [
+    {
+      "title": "散步看一看",
+      "minutes": 12,
+      "materials": ["户外自然大卡", "湿纸巾或清水"],
+      "steps": [
+        "成人先检查路线，避开车道、深水、施工处和不明植物。",
+        "跟随宝宝看到的方向，指一棵树或一朵花并命名。",
+        "成人检查后，让宝宝短暂摸一片干净的大叶子。",
+        "回家洗手，再说一遍今天看到的词。"
+      ],
+      "safety": "成人全程牵护或抱护，不让宝宝入口叶子、花、土、蘑菇或昆虫；不直视太阳，不靠近道路、池塘和高处；接触自然物后洗手。",
+      "domains": ["science", "language", "motor"],
+      "question": "你还看到了什么？",
+      "levels": {
+        "easier": "在窗边看一张自然卡，家长说出名称。",
+        "harder": "安全散步时找两种自然物，分别描述动作或声音。"
+      }
+    }
+  ],
+  "steps": [
+    {
+      "type": "guide",
+      "parentTip": "关屏后出门，跟着宝宝的目光说。",
+      "props": {
+        "goal": "在户外共同注意自然物并听名称。",
+        "materials": ["户外自然大卡", "湿纸巾或清水"],
+        "steps": [
+          {
+            "text": "到安全位置后，先跟着宝宝正在看的方向。",
+            "concept": "sun",
+            "say": {
+              "zh": "你看，太阳。",
+              "en": "Look, the sun."
+            }
+          },
+          {
+            "text": "指一棵树，描述它的叶子和影子。",
+            "concept": "tree",
+            "say": {
+              "zh": "这是树，叶子在动。",
+              "en": "This is a tree. The leaves are moving."
+            }
+          },
+          {
+            "text": "听到鸟叫时停下来，一起找声音。",
+            "concept": "bird",
+            "say": {
+              "zh": "小鸟在哪里？",
+              "en": "Where is the bird?"
+            }
+          },
+          {
+            "text": "看见花或云时，只说一个短词。",
+            "concept": "flower",
+            "say": {
+              "zh": "花，云。",
+              "en": "Flower, cloud."
+            }
+          }
+        ],
+        "playMin": 12,
+        "observe": [
+          "宝宝是否跟随家长的手指看。",
+          "宝宝是否对声音、叶子或光影有反应。",
+          "宝宝是否在户外保持舒服和有兴趣。"
+        ],
+        "safety": "户外活动由成人全程看护。避开道路、水边、强光和不明植物，不让宝宝捡拾或入口自然物；宝宝疲倦时及时回家。"
+      }
+    }
+  ]
+}

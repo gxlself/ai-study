@@ -1,0 +1,128 @@
+{
+  "schemaVersion": 1,
+  "id": "core.s2.more-all-gone",
+  "title": {
+    "zh": "还要和没有了",
+    "en": "More and All Gone"
+  },
+  "summary": {
+    "zh": "在进餐中听见还要、没有了和一块、两块。",
+    "en": "Hear more, all gone, one piece, and two pieces at mealtime."
+  },
+  "ageRange": [9, 11],
+  "domains": ["math", "language"],
+  "themeId": "s2-t3",
+  "tags": ["number-talk", "mealtime-talk"],
+  "durationMin": 2,
+  "coView": "required",
+  "audience": "parent",
+  "objectives": [
+    {
+      "zh": "听懂进餐中的还要和没有了。",
+      "en": "Hear more and all gone during a meal."
+    },
+    {
+      "zh": "在眼前食物中听见一块和两块。",
+      "en": "Hear one piece and two pieces with visible food."
+    }
+  ],
+  "cover": {
+    "concept": "rice",
+    "bg": "paper"
+  },
+  "parentGuide": {
+    "intro": "宝宝坐稳后，在正常进餐中用一两块安全的小食物做数字谈话。先说一块，再问还要吗，尊重宝宝的停下信号。",
+    "tips": [
+      "只数眼前看得见的食物。",
+      "数完说总数，不要求宝宝跟读。",
+      "闭嘴、转头就是可以停下。"
+    ],
+    "phrases": [
+      {
+        "zh": "一块。",
+        "en": "One piece."
+      },
+      {
+        "zh": "两块。",
+        "en": "Two pieces."
+      },
+      {
+        "zh": "还要吗？",
+        "en": "More?"
+      },
+      {
+        "zh": "没有了。",
+        "en": "All gone."
+      }
+    ],
+    "why": "对眼前物体说数量和总数，是适合婴儿的生活数学；回应宝宝的饱足信号比追求吃完更重要。",
+    "refs": ["[6]", "[64]", "[65]", "[82]"]
+  },
+  "offline": [
+    {
+      "title": "餐桌数字话",
+      "minutes": 6,
+      "materials": ["宝宝平时吃的安全食物", "餐盘", "小勺"],
+      "steps": [
+        "把一块适合的软食物放在宝宝看得见的位置，说“一块”。",
+        "等宝宝看、伸手或吃下，再问“还要吗？”。",
+        "宝宝继续要时再放一块，说“两块”；宝宝停下时说“没有了”或“先停一停”。"
+      ],
+      "safety": "食物要符合宝宝当前的进食能力，切成软小块；宝宝坐直，成人全程看护；不把食物硬塞进嘴里，不用硬糖、坚果、整颗葡萄等高风险食物。",
+      "domains": ["math", "language"],
+      "question": "宝宝是在说还要，还是想停一停？",
+      "levels": {
+        "easier": "只说“一块”和“还要吗”，不增加数量。",
+        "harder": "眼前放一块或两块，家长慢慢点数并说出总数。"
+      }
+    }
+  ],
+  "steps": [
+    {
+      "type": "guide",
+      "parentTip": "把数字话放进正常进餐，不额外延长吃饭时间。",
+      "props": {
+        "goal": "在进餐中听见还要、没有了和简单数量词。",
+        "materials": ["宝宝平时吃的安全食物", "餐盘", "小勺"],
+        "steps": [
+          {
+            "text": "宝宝坐稳后，把一块安全软食放在眼前。",
+            "concept": "rice",
+            "say": {
+              "zh": "一块。",
+              "en": "One piece."
+            }
+          },
+          {
+            "text": "等宝宝看、伸手或吃下，再问宝宝还要吗。",
+            "say": {
+              "zh": "还要吗？",
+              "en": "More?"
+            }
+          },
+          {
+            "text": "宝宝继续要时再放一块，慢慢说出两块。",
+            "say": {
+              "zh": "两块。",
+              "en": "Two pieces."
+            }
+          },
+          {
+            "text": "宝宝闭嘴、转头或推开时，尊重信号并停下。",
+            "say": {
+              "zh": "没有了。",
+              "en": "All gone."
+            }
+          }
+        ],
+        "playMin": 6,
+        "observe": [
+          "宝宝是否看向眼前的食物。",
+          "宝宝是否用伸手或声音表示继续。",
+          "宝宝是否用闭嘴、转头或推开表示暂停。"
+        ],
+        "safety": "食物要符合宝宝当前的进食能力，切成软小块；宝宝坐直，成人全程看护；不把食物硬塞进嘴里，不用硬糖、坚果、整颗葡萄等高风险食物。"
+      }
+    }
+  ]
+}

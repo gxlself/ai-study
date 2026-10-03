@@ -1,0 +1,111 @@
+{
+  "schemaVersion": 1,
+  "id": "core.s1.tummy-time",
+  "title": { "zh": "趴一趴，看一看", "en": "Tummy Time, Look Together" },
+  "summary": { "zh": "清醒时，陪着趴。", "en": "Stay close during awake tummy time." },
+  "ageRange": [6, 8],
+  "domains": ["motor"],
+  "themeId": "s1-t1",
+  "tags": ["家长指引", "清醒俯卧", "实体卡"],
+  "durationMin": 3,
+  "coView": "required",
+  "audience": "parent",
+  "objectives": [
+    { "zh": "趴着抬头看看。", "en": "Look around during tummy time." },
+    { "zh": "试着伸手够一够。", "en": "Try reaching for something nearby." }
+  ],
+  "cover": { "concept": "baby", "bg": "paper" },
+  "printables": [
+    {
+      "kind": "contrast",
+      "title": "趴趴黑白红卡",
+      "patterns": ["circle", "star", "heart", "spiral"],
+      "palette": "bwr"
+    }
+  ],
+  "parentGuide": {
+    "intro": "先读完，再关屏。宝宝清醒、舒服时，在地垫上陪趴。一次几分钟，可更短，分次累积。未会移动的婴儿，WHO建议清醒俯卧每天累计至少三十分钟。不靠一次撑满，也不忍哭完成。",
+    "tips": [
+      "刚吃饱、困倦或明显不舒服时，换个时间。",
+      "把脸放低，与宝宝平视，比举高卡片更好陪。",
+      "已经能移动时，也给自由翻滚和探索的空间。",
+      "有特殊健康情况或动作限制，先问儿保医生。"
+    ],
+    "phrases": [
+      { "zh": "我在这里。", "en": "I am here." },
+      { "zh": "抬头看看呀。", "en": "Have a look up here." },
+      { "zh": "小手够一够。", "en": "You can reach for it." },
+      { "zh": "累了就歇歇。", "en": "Rest when you are tired." }
+    ],
+    "why": "WHO建议未会移动的婴儿分次俯卧。系统综述发现俯卧时间与大运动发展有关，但不代表这张卡能促进语言或认知。清醒陪趴与睡眠姿势要分开。",
+    "refs": ["[1]", "[2]", "[89]"]
+  },
+  "offline": [
+    {
+      "title": "够够大玩具",
+      "minutes": 3,
+      "materials": ["地垫", "完整、适龄的大玩具"],
+      "steps": [
+        "让清醒的宝宝趴好。",
+        "把大玩具放在手边。",
+        "趴下来，陪宝宝看看。",
+        "等待宝宝自己伸手。",
+        "累了就结束这一小段。"
+      ],
+      "safety": "大人全程近距离看护。只在清醒时俯卧，不在沙发、软床或高处练习。不拉手臂，不压头。玩具无小零件；直径小于3.5厘米的物件有窒息风险，更大也不代表安全。困了应停止活动，睡眠时仰卧放置于坚实、平坦的婴儿睡眠面。",
+      "domains": ["motor", "cognition"],
+      "question": "你想够哪边呀？",
+      "levels": {
+        "easier": "玩具再近一点。只抬头看一会儿也可以。",
+        "harder": "宝宝愿意时，放在稍偏一侧、仍能碰到的位置。不把玩具越移越远。"
+      }
+    }
+  ],
+  "steps": [
+    {
+      "type": "guide",
+      "title": { "zh": "地垫上陪着趴", "en": "Stay Close on the Floor" },
+      "parentTip": "五分钟是陪玩窗口，包含休息，不是连续趴的要求。宝宝累了就停。",
+      "props": {
+        "goal": "在清醒、有人看护时，给宝宝短段俯卧和自主抬头的机会。",
+        "materials": ["干净、平稳的地垫", "一张黑白红打印卡", "可选的适龄大玩具"],
+        "steps": [
+          {
+            "text": "清出地面空间。让清醒、舒服的宝宝俯卧。",
+            "say": { "zh": "趴一小会儿吧。", "en": "Let's try a little tummy time." }
+          },
+          {
+            "text": "用手把卡立在宝宝面前。约20～30厘米，别挡住脸。",
+            "say": { "zh": "看看这张卡。", "en": "Look at this card." },
+            "concept": "circle"
+          },
+          {
+            "text": "家长趴下来，与宝宝平视。",
+            "say": { "zh": "我在这里。", "en": "I am here." },
+            "concept": "baby"
+          },
+          {
+            "text": "宝宝愿意时，把完整的大玩具放在手边。",
+            "say": { "zh": "小手够一够。", "en": "You can reach for it." },
+            "concept": "ball"
+          },
+          {
+            "text": "宝宝累了、趴低或烦躁时，结束这段并抱起安抚。",
+            "say": { "zh": "我们歇一歇。", "en": "Let's take a break." }
+          },
+          {
+            "text": "以后在其他清醒时段再陪趴。未会移动时，每天分次累计至少30分钟。",
+            "say": { "zh": "下次再玩呀。", "en": "We can play again later." }
+          }
+        ],
+        "playMin": 5,
+        "observe": [
+          "是否自主抬头，或用手臂撑起上身。",
+          "是否看向家长、卡片，或试着伸手。",
+          "何时需要休息；每次时长可不同。"
+        ],
+        "safety": "清醒且大人全程看护才俯卧。地垫要平稳，不用枕头、软垫或带子摆姿势，不强拉爬行。卡片由大人拿，不用夹子、小磁铁固定，勿含咬。五分钟可提前结束；哭闹、困倦即停。睡眠时仰卧放置在坚实、平坦、无枕头和松散物品的婴儿睡眠面。"
+      }
+    }
+  ]
+}

@@ -1,0 +1,113 @@
+{
+  "schemaVersion": 1,
+  "id": "core.s1.family-faces",
+  "title": { "zh": "爸爸妈妈和宝宝", "en": "Parents and Baby" },
+  "summary": { "zh": "看看家人，听听名字。", "en": "Look at family and hear their names." },
+  "ageRange": [6, 8],
+  "domains": ["social", "language"],
+  "themeId": "s1-t2",
+  "tags": ["家长指引", "真实照片", "家人"],
+  "durationMin": 2,
+  "coView": "required",
+  "audience": "parent",
+  "objectives": [
+    { "zh": "看看熟悉的家人。", "en": "Look at familiar family members." },
+    { "zh": "听听宝宝的名字。", "en": "Hear baby's own name." }
+  ],
+  "cover": { "concept": "baby", "bg": "room" },
+  "printables": [
+    {
+      "kind": "cards",
+      "title": "家人陪看卡",
+      "items": ["mom", "dad", "baby", "grandma-paternal", "grandpa-paternal"],
+      "size": "large",
+      "showText": false,
+      "showEnglish": false
+    }
+  ],
+  "parentGuide": {
+    "intro": "先读完，再关屏。优先用家里已有的真实照片。也可由家长在后台上传后打印，不给宝宝看手机。只选熟悉的一两位，按家中实际称呼来说。课程标题不代表每个家庭都要有这些成员。",
+    "tips": [
+      "插画卡不是真人照片。家人照片或真人优先。",
+      "宝宝的目光停在哪儿，就说那位家人的称呼。",
+      "平时叫名字，留几秒空白。不反复大声叫。",
+      "六到八个月不要求稳定叫名反应，也不要求叫爸爸妈妈。"
+    ],
+    "phrases": [
+      { "zh": "这是妈妈。", "en": "This is Mom." },
+      { "zh": "这是爸爸。", "en": "This is Dad." },
+      { "zh": "这是宝宝。", "en": "This is you, baby." },
+      { "zh": "我在这里。", "en": "I am here." },
+      { "zh": "你好呀，宝宝。", "en": "Hello, baby." }
+    ],
+    "why": "六个月里程碑包括认识熟悉的人。把名字放在真实互动中，符合回应性照护。叫名看过来列在九个月清单，不作为本课的通过要求。",
+    "refs": ["[6]", "[8]", "[82]"]
+  },
+  "offline": [
+    {
+      "title": "家人来问好",
+      "minutes": 3,
+      "materials": ["地垫", "一位宝宝熟悉的照护者"],
+      "steps": [
+        "和宝宝在地垫上相处。",
+        "请熟悉的人走近问好。",
+        "指着真人，说家中称呼。",
+        "停下来，看宝宝的反应。",
+        "接住一个声音或笑容。"
+      ],
+      "safety": "一次一位，声音轻柔，不围着宝宝逗。宝宝不愿意时，不强迫抱、亲或看人。不把宝宝留在床沿或高处，也不交给不熟悉的人来练胆量。",
+      "domains": ["social", "language"],
+      "question": "你想跟谁说说话呀？",
+      "levels": {
+        "easier": "只和最熟悉的一位照护者问好。",
+        "harder": "宝宝愿意时，加另一位熟悉家人。两位轮流，不同时说话。"
+      }
+    }
+  ],
+  "steps": [
+    {
+      "type": "guide",
+      "title": { "zh": "看照片，说名字", "en": "Look at Photos and Name People" },
+      "parentTip": "按家中实际成员与称呼替换。照片只在线下看，不把上传变成必须步骤。",
+      "props": {
+        "goal": "把熟悉的人与日常称呼联系起来，温柔回应宝宝的注意。",
+        "materials": ["一两张家人真实照片", "地垫", "可选的家人打印卡"],
+        "steps": [
+          {
+            "text": "让宝宝舒服地躺着，或由家长稳稳抱着。",
+            "say": { "zh": "一起看看呀。", "en": "Let's look together." }
+          },
+          {
+            "text": "拿出一张熟悉家人的照片。用手指着脸。",
+            "say": { "zh": "这是妈妈。", "en": "This is Mom." },
+            "concept": "mom"
+          },
+          {
+            "text": "宝宝看照片时，用家中实际称呼再说一次。",
+            "say": { "zh": "妈妈在这里。", "en": "Here is Mom." }
+          },
+          {
+            "text": "指着宝宝的照片，换成宝宝的名字问好。",
+            "say": { "zh": "你好呀，宝宝。", "en": "Hello, baby." },
+            "concept": "baby"
+          },
+          {
+            "text": "放下照片。叫一次宝宝名字，停几秒等回应。",
+            "say": { "zh": "我在这里。", "en": "I am here." }
+          },
+          {
+            "text": "回应宝宝的目光、声音或动作，再收好照片。",
+            "say": { "zh": "我听见啦。", "en": "I hear you." }
+          }
+        ],
+        "playMin": 5,
+        "observe": [
+          "看到熟悉的脸或听到声音时，是否有目光或表情变化。",
+          "是否看你、发声或动手；不必马上看向被命名的人。",
+          "是否想休息；没有回应不等于没有听见。"
+        ],
+        "safety": "由大人拿照片和卡片，边角磨圆，破损、湿软即收起，勿含咬。不用玻璃相框、订书钉、夹子或小磁铁。抱稳头颈和躯干，不要求宝宝独坐。真实照片仅由家长按需使用，不必上传或分享。"
+      }
+    }
+  ]
+}

@@ -1,0 +1,142 @@
+{
+  "schemaVersion": 1,
+  "id": "core.s2.under-cup",
+  "title": {
+    "zh": "杯子下面有什么",
+    "en": "What's Under the Cup?"
+  },
+  "summary": {
+    "zh": "先藏一张大卡，再藏两张，和宝宝一起找一找。",
+    "en": "Hide one large card, then two, and look together."
+  },
+  "ageRange": [9, 11],
+  "domains": ["cognition"],
+  "themeId": "s2-t1",
+  "tags": ["object-permanence", "joint-attention"],
+  "durationMin": 2,
+  "coView": "required",
+  "audience": "parent",
+  "printables": [
+    {
+      "kind": "cards",
+      "title": "躲起来的大卡片",
+      "items": ["ball", "teddy-bear", "duck"],
+      "size": "large",
+      "showText": true,
+      "showEnglish": true
+    }
+  ],
+  "objectives": [
+    {
+      "zh": "寻找被杯子遮住的物品。",
+      "en": "Look for an object hidden under a cup."
+    },
+    {
+      "zh": "在等待和揭开中体验物体恒存。",
+      "en": "Experience that an object is still there when hidden."
+    }
+  ],
+  "cover": {
+    "concept": "ball",
+    "bg": "paper"
+  },
+  "parentGuide": {
+    "intro": "先打印大卡片。家长把一张卡慢慢藏在杯子下，停下来等宝宝找，再逐步增加到两个杯子。",
+    "tips": [
+      "先让宝宝看见卡片再遮住。",
+      "遮住后停两三秒。",
+      "宝宝伸手或看向杯子就回应。"
+    ],
+    "phrases": [
+      {
+        "zh": "球去哪儿啦？",
+        "en": "Where did the ball go?"
+      },
+      {
+        "zh": "在这儿！",
+        "en": "Here it is!"
+      },
+      {
+        "zh": "我们找到了。",
+        "en": "We found it."
+      },
+      {
+        "zh": "还在这里。",
+        "en": "It is still here."
+      }
+    ],
+    "why": "藏起再找回的游戏把物体恒存放进真实互动，也给宝宝练习等待、寻找和共同注意的机会。",
+    "refs": ["[6]", "[82]", "[83]"]
+  },
+  "offline": [
+    {
+      "title": "卡片藏一藏",
+      "minutes": 6,
+      "materials": ["三张大号打印卡片", "一个或两个宽口塑料杯"],
+      "steps": [
+        "让宝宝看见一张卡片，家长用杯子慢慢盖住它。",
+        "停两三秒，问“去哪儿啦？”，等宝宝看或伸手。",
+        "揭开杯子，和宝宝一起说“在这儿！”。",
+        "宝宝熟悉后再用两个杯子，只藏一张卡。"
+      ],
+      "safety": "只用宽口、轻便、没有碎裂风险的塑料杯；杯子不能盖住宝宝的脸；卡片由成人看护，避免入口或撕咬。",
+      "domains": ["cognition"],
+      "question": "你觉得卡片还在吗？",
+      "levels": {
+        "easier": "只用一个杯子，慢慢盖住一张卡。",
+        "harder": "用两个杯子换位置，每次只藏一张卡，给宝宝充分等待时间。"
+      }
+    }
+  ],
+  "steps": [
+    {
+      "type": "guide",
+      "parentTip": "用实体大卡片游戏，卡片藏好后关掉屏幕。",
+      "props": {
+        "goal": "通过藏卡和找卡，练习寻找与共同注意。",
+        "materials": ["三张大号打印卡片", "一个或两个宽口塑料杯"],
+        "steps": [
+          {
+            "text": "先拿出一张大卡，让宝宝看见卡片上的图。",
+            "concept": "ball",
+            "say": {
+              "zh": "这是球。",
+              "en": "This is a ball."
+            }
+          },
+          {
+            "text": "把卡片慢慢盖在杯子下面，停两三秒再提问。",
+            "concept": "cup",
+            "say": {
+              "zh": "球去哪儿啦？",
+              "en": "Where did the ball go?"
+            }
+          },
+          {
+            "text": "宝宝看向杯子、伸手或发声时，马上揭开杯子。",
+            "concept": "teddy-bear",
+            "say": {
+              "zh": "在这儿！",
+              "en": "Here it is!"
+            }
+          },
+          {
+            "text": "宝宝熟悉后再用两个杯子，只藏一张大卡。",
+            "concept": "duck",
+            "say": {
+              "zh": "还在这里。",
+              "en": "It is still here."
+            }
+          }
+        ],
+        "playMin": 6,
+        "observe": [
+          "宝宝是否看向被盖住的杯子。",
+          "宝宝是否伸手或移动身体去找。",
+          "揭开时宝宝是否微笑、发声或继续看。"
+        ],
+        "safety": "只用宽口、轻便、没有碎裂风险的塑料杯；杯子不能盖住宝宝的脸；卡片由成人看护，避免入口或撕咬。"
+      }
+    }
+  ]
+}

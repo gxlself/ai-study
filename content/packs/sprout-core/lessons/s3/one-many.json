@@ -1,0 +1,124 @@
+{
+  "schemaVersion": 1,
+  "id": "core.s3.one-many",
+  "title": {
+    "zh": "一个和很多",
+    "en": "One and Many"
+  },
+  "summary": {
+    "zh": "用大积木或安全食物说一个和很多。",
+    "en": "Use large blocks or safe food to talk about one and many."
+  },
+  "ageRange": [12, 17],
+  "domains": ["math"],
+  "themeId": "s3-t4",
+  "tags": ["early-math", "one-many"],
+  "durationMin": 2,
+  "coView": "required",
+  "audience": "parent",
+  "objectives": [
+    {
+      "zh": "宝宝在实物中听到一个和很多。",
+      "en": "Your baby hears one and many in real objects."
+    },
+    {
+      "zh": "宝宝观察一件和一堆物品的不同。",
+      "en": "Your baby notices the difference between one item and a group."
+    }
+  ],
+  "cover": {
+    "concept": "num-1",
+    "bg": "grass"
+  },
+  "parentGuide": {
+    "intro": "准备几个不会入口的大号积木或家庭常用物品。先给宝宝看一个，再把几个放在一起，说“一个”和“很多”；不要求宝宝回答或数清楚。",
+    "tips": [
+      "物品要大、软或完整。",
+      "把数量放在真实动作里说。",
+      "“很多”不是固定数量，跟着眼前情境说。"
+    ],
+    "phrases": [
+      {
+        "zh": "给你一个。",
+        "en": "Here is one."
+      },
+      {
+        "zh": "这里有很多。",
+        "en": "Here are many."
+      },
+      {
+        "zh": "你想看哪边？",
+        "en": "Which side would you like?"
+      },
+      {
+        "zh": "我们一起看看。",
+        "en": "Let's look together."
+      }
+    ],
+    "why": "对眼前物品进行慢速数字谈话，比抽象数字训练更适合这个月龄。成人给出词语和实物，宝宝通过看、拿和比较积累经验。",
+    "refs": ["R64", "R65", "R69", "R80"]
+  },
+  "offline": [
+    {
+      "title": "一个还是很多",
+      "minutes": 8,
+      "materials": ["三个以上的大号积木或软球"],
+      "steps": [
+        "先放一个物品在宝宝面前，说“一个”。",
+        "再把几个物品放在一起，说“很多”。",
+        "让宝宝自由看、拿或推，不要求说出答案。",
+        "收起物品时再说“没有了”，然后结束。"
+      ],
+      "safety": "所有物品都要足够大，直径小于3.5厘米的物件有窒息风险，必须远离宝宝；成人全程陪伴，不把硬物或食物强塞给宝宝。",
+      "domains": ["math", "motor"],
+      "question": "你想看看一个，还是很多？",
+      "levels": {
+        "easier": "只给一个大物品，重复说“一个”。",
+        "harder": "在一个和一堆之间慢慢交换位置，继续描述。"
+      }
+    }
+  ],
+  "steps": [
+    {
+      "type": "guide",
+      "parentTip": "用真实物品说数量，不做小测验。",
+      "props": {
+        "goal": "在实物中体验一个和很多。",
+        "materials": ["大号积木或软球"],
+        "steps": [
+          {
+            "text": "只放一个大物品，先让宝宝看清楚。",
+            "concept": "num-1",
+            "say": {
+              "zh": "给你一个。",
+              "en": "Here is one."
+            }
+          },
+          {
+            "text": "把几个大物品放在一起，慢慢说很多。",
+            "concept": "blocks",
+            "say": {
+              "zh": "这里有很多。",
+              "en": "Here are many."
+            }
+          },
+          {
+            "text": "把一件和一堆放在两边，等宝宝看或伸手。",
+            "concept": "num-1",
+            "say": {
+              "zh": "你想看哪边？",
+              "en": "Which side would you like?"
+            }
+          }
+        ],
+        "playMin": 8,
+        "observe": [
+          "宝宝是否看向一件或一堆物品。",
+          "宝宝是否用手拿、推或指。",
+          "宝宝是否愿意重复观察。"
+        ],
+        "safety": "物品必须大于3.5厘米且没有松脱部件。成人全程看护，宝宝把物品放入口时立刻换成更安全的大物品。"
+      }
+    }
+  ]
+}

@@ -1,0 +1,146 @@
+{
+  "schemaVersion": 1,
+  "id": "core.s1.twinkle",
+  "title": { "zh": "小星星", "en": "Twinkle, Twinkle, Little Star" },
+  "summary": { "zh": "轻轻唱，停停听。", "en": "Sing softly, then pause and listen." },
+  "ageRange": [6, 8],
+  "domains": ["music", "english"],
+  "themeId": "s1-t2",
+  "tags": ["家长指引", "家长学唱", "真人唱歌"],
+  "durationMin": 3,
+  "coView": "required",
+  "audience": "parent",
+  "objectives": [
+    { "zh": "听家长轻轻唱。", "en": "Listen to a caregiver singing softly." },
+    { "zh": "听听中英的韵律。", "en": "Hear the rhythms of Chinese and English." }
+  ],
+  "cover": { "concept": "star", "bg": "night" },
+  "parentGuide": {
+    "intro": "家长白天读指引、学唱，再关屏陪宝宝。稳稳抱着，轻声唱一句。用自己的手做闪星动作，再等宝宝的目光或声音。只唱一小段也可以，不连续播放给宝宝听。",
+    "tips": [
+      "不必唱完整首，选熟悉的一段就好。",
+      "家长张合自己的手，不拉宝宝手臂。",
+      "唱完一句留空白，回应宝宝的声音。",
+      "英语不熟时，先用中文陪唱。少量英语不替代中文对话。"
+    ],
+    "phrases": [
+      { "zh": "我唱给你听。", "en": "I'll sing to you." },
+      { "zh": "小星星，闪一闪。", "en": "Twinkle, little star." },
+      { "zh": "听见你啦。", "en": "I hear you." },
+      { "zh": "再唱一句吧。", "en": "Let's sing one more line." }
+    ],
+    "why": "婴儿亲子主动音乐研究支持一起唱、一起回应，而非背景播放。本课让家长真人陪唱，不承诺短时儿歌接触能教会英语。",
+    "refs": ["[16]", "[53]", "[87]"]
+  },
+  "offline": [
+    {
+      "title": "一闪一停",
+      "minutes": 3,
+      "materials": ["家长的声音和手"],
+      "steps": [
+        "抱稳清醒的宝宝。",
+        "轻声唱一小句。",
+        "张合自己的空闲手。",
+        "停下来，看看宝宝。",
+        "回应后，再唱或结束。"
+      ],
+      "safety": "抱稳头颈和躯干，始终有可靠支撑。手指动作远离眼睛，不抓宝宝的手做动作。不摇晃、不抛接、不用闪光灯或闪烁玩具。哭闹或困了就停止。",
+      "domains": ["music", "social"],
+      "question": "你想听哪一小句呀？",
+      "levels": {
+        "easier": "不做手势。只唱一句，再等待。",
+        "harder": "宝宝感兴趣时，用同一句轮流唱和停。接住宝宝的声音，不要求同拍。"
+      }
+    }
+  ],
+  "steps": [
+    {
+      "type": "guide",
+      "title": { "zh": "关屏后轻轻唱", "en": "Sing Together Away from Screens" },
+      "parentTip": "先由家长白天熟悉歌词和旋律。宝宝不看歌曲画面，陪唱只用家长的人声。",
+      "props": {
+        "goal": "用柔和的人声和停顿，陪宝宝听一小段儿歌并彼此回应。",
+        "materials": ["家长的声音", "可选的地垫"],
+        "steps": [
+          {
+            "text": "关好屏幕，让清醒的宝宝在怀里得到稳妥支撑。",
+            "say": { "zh": "我唱给你听。", "en": "I'll sing to you." },
+            "concept": "hug"
+          },
+          {
+            "text": "轻声唱中文的一句。不熟悉时，先用熟悉的旋律轻哼。",
+            "say": { "zh": "轻轻唱呀。", "en": "Let's sing softly." }
+          },
+          {
+            "text": "保持抱稳，用自己的空闲手缓慢张开、合上。",
+            "say": { "zh": "小星星，闪一闪。", "en": "Twinkle, little star." },
+            "concept": "hand"
+          },
+          {
+            "text": "停几秒，回应宝宝的声音或目光。",
+            "say": { "zh": "听见你啦。", "en": "I hear you." }
+          },
+          {
+            "text": "宝宝愿意听时，再唱一句熟悉的中文或英文。",
+            "say": { "zh": "再唱一句吧。", "en": "Let's sing one more line." }
+          },
+          {
+            "text": "宝宝转开脸、烦躁或困了，就停下。",
+            "say": { "zh": "唱到这里啦。", "en": "That's our song for now." }
+          }
+        ],
+        "playMin": 5,
+        "observe": [
+          "是否看家长的脸或手，或安静听一小段。",
+          "停顿后是否发声、微笑或动手脚。",
+          "是否转开脸或困倦；不要求跟唱或做动作。"
+        ],
+        "safety": "家长始终抱稳。不要为手势松开必要支撑，不拉宝宝手臂，不晃头颈，不抛接。音量轻柔，不戴耳机给宝宝听，也不当背景播放。屏幕只供家长另择白天学唱。"
+      }
+    },
+    {
+      "type": "song",
+      "title": { "zh": "家长学唱小星星", "en": "Learn the Tune: Twinkle, Twinkle" },
+      "parentTip": "仅家长白天学唱，C大调。中文两段、英文一段，学完关屏，不循环给宝宝听。",
+      "props": {
+        "title": { "zh": "小星星", "en": "Twinkle, Twinkle, Little Star" },
+        "credit": "旋律：传统（公有领域）；中文词：芽芽成长原创；英文词：Jane Taylor《The Star》（1806，公有领域），首段加传统重复句",
+        "bpm": 84,
+        "instrument": "musicbox",
+        "repeat": 1,
+        "lines": [
+          { "lang": "zh", "text": "天上星星轻轻亮", "notes": "C4/1 C4/1 G4/1 G4/1 A4/1 A4/1 G4/2" },
+          { "lang": "zh", "text": "我和宝宝看星星", "notes": "F4/1 F4/1 E4/1 E4/1 D4/1 D4/1 C4/2" },
+          { "lang": "zh", "text": "张开小手闪一闪", "notes": "G4/1 G4/1 F4/1 F4/1 E4/1 E4/1 D4/2" },
+          { "lang": "zh", "text": "合上小手歇一歇", "notes": "G4/1 G4/1 F4/1 F4/1 E4/1 E4/1 D4/2" },
+          { "lang": "zh", "text": "你看我呀我看你", "notes": "C4/1 C4/1 G4/1 G4/1 A4/1 A4/1 G4/2" },
+          { "lang": "zh", "text": "小小笑脸暖心里", "notes": "F4/1 F4/1 E4/1 E4/1 D4/1 D4/1 C4/2" },
+          { "lang": "zh", "text": "我唱一声你来听", "notes": "C4/1 C4/1 G4/1 G4/1 A4/1 A4/1 G4/2" },
+          { "lang": "zh", "text": "你呀一声我来听", "notes": "F4/1 F4/1 E4/1 E4/1 D4/1 D4/1 C4/2" },
+          { "lang": "zh", "text": "慢慢唱呀轻轻唱", "notes": "G4/1 G4/1 F4/1 F4/1 E4/1 E4/1 D4/2" },
+          { "lang": "zh", "text": "停一停呀等一等", "notes": "G4/1 G4/1 F4/1 F4/1 E4/1 E4/1 D4/2" },
+          { "lang": "zh", "text": "你看我呀我看你", "notes": "C4/1 C4/1 G4/1 G4/1 A4/1 A4/1 G4/2" },
+          { "lang": "zh", "text": "小手小脚动一动", "notes": "F4/1 F4/1 E4/1 E4/1 D4/1 D4/1 C4/2" },
+          { "lang": "en", "text": "Twinkle, twinkle, little star.", "notes": "C4/1 C4/1 G4/1 G4/1 A4/1 A4/1 G4/2" },
+          { "lang": "en", "text": "How I wonder what you are.", "notes": "F4/1 F4/1 E4/1 E4/1 D4/1 D4/1 C4/2" },
+          { "lang": "en", "text": "Up above the world so high.", "notes": "G4/1 G4/1 F4/1 F4/1 E4/1 E4/1 D4/2" },
+          { "lang": "en", "text": "Like a diamond in the sky.", "notes": "G4/1 G4/1 F4/1 F4/1 E4/1 E4/1 D4/2" },
+          { "lang": "en", "text": "Twinkle, twinkle, little star.", "notes": "C4/1 C4/1 G4/1 G4/1 A4/1 A4/1 G4/2" },
+          { "lang": "en", "text": "How I wonder what you are.", "notes": "F4/1 F4/1 E4/1 E4/1 D4/1 D4/1 C4/2" }
+        ],
+        "scene": {
+          "bg": "night",
+          "ground": "none",
+          "sprites": [
+            { "concept": "star", "x": 38, "y": 25, "size": 30, "anim": "none" },
+            { "concept": "moon", "x": 72, "y": 22, "size": 20, "anim": "none" }
+          ]
+        },
+        "actions": [
+          { "zh": "家长的小手闪一闪。", "en": "The caregiver opens and closes one hand." },
+          { "zh": "停一停，听听宝宝。", "en": "Pause and listen to baby." }
+        ]
+      }
+    }
+  ]
+}

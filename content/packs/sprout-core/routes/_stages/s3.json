@@ -1,0 +1,191 @@
+{
+  "id": "s3",
+  "title": {
+    "zh": "词语萌芽",
+    "en": "First Words"
+  },
+  "subtitle": {
+    "zh": "在真实生活里听、看、指和说",
+    "en": "Listen, look, point, and talk in everyday life"
+  },
+  "ageRange": [12, 17],
+  "focus": [
+    {
+      "zh": "在共同注意中指认熟悉的动物、身体和物品。",
+      "en": "Notice familiar animals, body parts, and objects through joint attention."
+    },
+    {
+      "zh": "把第一批词放进照护、游戏和出门常规。",
+      "en": "Place first words in care, play, and going-out routines."
+    },
+    {
+      "zh": "用模仿、假装和儿向语言增加来回交流。",
+      "en": "Build back-and-forth interaction through imitation, pretend play, and parentese."
+    },
+    {
+      "zh": "在生活中体验一个、很多和一、二。",
+      "en": "Experience one, many, and one and two in daily life."
+    },
+    {
+      "zh": "用安全的动作、儿歌和户外观察连接语言与经验。",
+      "en": "Connect language with experience through safe movement, songs, and outdoor noticing."
+    }
+  ],
+  "screen": {
+    "sessionMaxMin": 3,
+    "dailyMaxMin": 10,
+    "lessonsPerDay": 2,
+    "coView": "required",
+    "childScreen": "none"
+  },
+  "themes": [
+    {
+      "id": "s3-t1",
+      "title": {
+        "zh": "动物朋友",
+        "en": "Animal Friends"
+      },
+      "description": {
+        "zh": "用动物卡和短故事听名称、叫声与轮流回应。",
+        "en": "Use animal cards and short stories for names, sounds, and turn-taking."
+      },
+      "weeks": 4,
+      "domains": ["language", "science", "social"],
+      "lessons": [
+        "core.s3.farm-animals",
+        "core.s3.find-animal",
+        "core.s3.duck-mom"
+      ],
+      "offlineFocus": [
+        "用大卡片或安全玩具指认动物。",
+        "模仿叫声后停下来等宝宝回应。",
+        "故事只做温和的假装游戏，不制造走失和害怕。"
+      ]
+    },
+    {
+      "id": "s3-t2",
+      "title": {
+        "zh": "我的身体",
+        "en": "My Body"
+      },
+      "description": {
+        "zh": "在照护和歌唱中认识身体部位，尊重宝宝的身体界限。",
+        "en": "Name body parts during care and songs while respecting body boundaries."
+      },
+      "weeks": 4,
+      "domains": ["language", "science", "motor", "music"],
+      "lessons": [
+        "core.s3.body-parts",
+        "core.s3.touch-nose",
+        "core.s3.head-shoulders"
+      ],
+      "offlineFocus": [
+        "洗澡、穿衣时指一指、说一说。",
+        "家长先示范，宝宝可以只看或做一小部分。",
+        "用慢歌和轻动作，不拉扯、不强迫触摸。"
+      ]
+    },
+    {
+      "id": "s3-t3",
+      "title": {
+        "zh": "车车出发",
+        "en": "Let's Go"
+      },
+      "description": {
+        "zh": "在安全处观察车辆，用玩具体验下滑和快慢。",
+        "en": "Notice vehicles safely and explore rolling and speed with a toy."
+      },
+      "weeks": 4,
+      "domains": ["language", "science", "math", "music"],
+      "lessons": [
+        "core.s3.vehicles",
+        "core.s3.roll-car",
+        "core.s3.car-song"
+      ],
+      "offlineFocus": [
+        "远离道路、车轮和车门看真实车辆。",
+        "用低而稳的斜坡玩大号玩具车。",
+        "把汽车歌唱给宝宝听，再关屏推真实玩具车。"
+      ]
+    },
+    {
+      "id": "s3-t4",
+      "title": {
+        "zh": "一个和很多",
+        "en": "One and Many"
+      },
+      "description": {
+        "zh": "用眼前的大物品说一个、很多和一、二。",
+        "en": "Talk about one, many, one, and two with visible everyday objects."
+      },
+      "weeks": 4,
+      "domains": ["math", "language", "music"],
+      "lessons": [
+        "core.s3.one-many",
+        "core.s3.count-two",
+        "core.s3.two-tigers"
+      ],
+      "offlineFocus": [
+        "只用足够大的安全物品，不用小颗食物测数。",
+        "点一个说一个，数完说总数。",
+        "儿歌用来共享节奏，不要求宝宝认数字。"
+      ]
+    },
+    {
+      "id": "s3-t5",
+      "title": {
+        "zh": "穿衣服",
+        "en": "Getting Dressed"
+      },
+      "description": {
+        "zh": "把衣物名称和出门、洗手等生活常规连起来。",
+        "en": "Connect clothing words with going out and hand-washing routines."
+      },
+      "weeks": 4,
+      "domains": ["life", "language", "music"],
+      "lessons": [
+        "core.s3.clothes",
+        "core.s3.dress-up",
+        "core.s3.wash-hands"
+      ],
+      "offlineFocus": [
+        "穿衣时给宝宝看衣物，邀请伸手或抬脚。",
+        "用流程卡预告袜子、鞋子、帽子等步骤。",
+        "洗手歌只给家长学，水边全程看护。"
+      ]
+    },
+    {
+      "id": "s3-t6",
+      "title": {
+        "zh": "去户外",
+        "en": "Outdoors"
+      },
+      "description": {
+        "zh": "在安全散步和天气观察中听自然词、做慢动作。",
+        "en": "Hear nature words and move slowly during safe walks and weather noticing."
+      },
+      "weeks": 6,
+      "domains": ["science", "language", "motor"],
+      "lessons": [
+        "core.s3.outdoors",
+        "core.s3.rain-day",
+        "core.s3.little-tree"
+      ],
+      "offlineFocus": [
+        "跟随宝宝的目光命名树、花、鸟和云。",
+        "雨天先在室内听雨，出门前检查防滑、防雷和积水。",
+        "模仿小树、小鸟和小兔时不要求跳跃或站稳。"
+      ]
+    }
+  ],
+  "dailyRhythm": [
+    "穿衣时拿起一件衣物，先让宝宝看，再说“上衣”“袜子”或“鞋子”。",
+    "洗澡和换衣时说一个身体部位，停下来等宝宝看、指或触摸。",
+    "吃饭时对安全的大物品说“一个”和“很多”，不拿小颗食物做测验。",
+    "收玩具时说“一个放进去”，再说“这里有很多”，全程由成人管理小物件。",
+    "出门时用固定短句预告“先穿袜子，再穿鞋子”，顺序按家庭和天气调整。",
+    "窗边或散步时跟随宝宝的目光，说眼前的一种树、花、鸟、车或云。",
+    "在洗手、等车和收拾前唱一小段熟悉儿歌，唱完就关屏做真实动作。"
+  ],
+  "milestonesAt": [12, 15, 18]
+}

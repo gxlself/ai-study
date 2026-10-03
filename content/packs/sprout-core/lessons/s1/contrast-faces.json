@@ -1,0 +1,110 @@
+{
+  "schemaVersion": 1,
+  "id": "core.s1.contrast-faces",
+  "title": { "zh": "看看脸，说说话", "en": "Look at Faces and Take Turns" },
+  "summary": { "zh": "你呀一声，我来应。", "en": "You make a sound, and I respond." },
+  "ageRange": [6, 8],
+  "domains": ["social", "language"],
+  "themeId": "s1-t1",
+  "tags": ["家长指引", "回合对话", "实体卡"],
+  "durationMin": 2,
+  "coView": "required",
+  "audience": "parent",
+  "objectives": [
+    { "zh": "看看熟悉的笑脸。", "en": "Look at a familiar smiling face." },
+    { "zh": "轮流发出小声音。", "en": "Take turns making little sounds." }
+  ],
+  "cover": { "concept": "happy", "bg": "paper" },
+  "printables": [
+    {
+      "kind": "contrast",
+      "title": "笑脸陪看卡",
+      "patterns": ["face", "heart", "dots"],
+      "palette": "bw"
+    }
+  ],
+  "parentGuide": {
+    "intro": "先读完，再关屏。和宝宝面对面。宝宝发声、看你或笑，都可以接一回合。模仿一个小声音，再停下来。笑脸卡只是备选，真人的回应更重要。",
+    "tips": [
+      "语速放慢，声音温柔。说真实、简单的词。",
+      "留几秒空白。不连续说，也不催着学。",
+      "只看你或动动手，也算参与。",
+      "转开脸时先等一等。不用逗到笑才结束。"
+    ],
+    "phrases": [
+      { "zh": "你好呀，宝宝。", "en": "Hello, baby." },
+      { "zh": "我听见啦。", "en": "I hear you." },
+      { "zh": "你笑啦。", "en": "You are smiling." },
+      { "zh": "我在这里。", "en": "I am here." }
+    ],
+    "why": "从六个月起的家长辅导研究支持儿向语言和轮流回应。这里练的是家长接住宝宝的信号，不要求宝宝模仿成功或说出词。",
+    "refs": ["[47]", "[82]"]
+  },
+  "offline": [
+    {
+      "title": "穿衣时应一声",
+      "minutes": 3,
+      "materials": ["当天要穿的衣服", "地垫"],
+      "steps": [
+        "在地垫上准备好衣服。",
+        "先告诉宝宝要穿衣。",
+        "说一句，停下来等。",
+        "宝宝发声时，轻声回应。",
+        "边穿边接下一回合。"
+      ],
+      "safety": "在平稳的地面照护。手不离开需要扶护的宝宝。不拉手臂，不用衣服盖住口鼻。哭闹时先处理需要，不延长换衣。",
+      "domains": ["social", "language", "life"],
+      "question": "你想跟我说什么呀？",
+      "levels": {
+        "easier": "只说一句“穿衣啦”，再回应宝宝的目光。",
+        "harder": "宝宝愿意时，接两三个短回合。仍留停顿。"
+      }
+    }
+  ],
+  "steps": [
+    {
+      "type": "guide",
+      "title": { "zh": "面对面应一应", "en": "Respond Face to Face" },
+      "parentTip": "这是给家长的指引。读完关屏。宝宝不回应，也可以安静陪着。",
+      "props": {
+        "goal": "跟着宝宝的目光和声音，体验温柔的来回交流。",
+        "materials": ["地垫", "可选的一张笑脸打印卡"],
+        "steps": [
+          {
+            "text": "让清醒的宝宝舒服地躺好。把脸靠近到能互相看见。",
+            "say": { "zh": "你好呀，宝宝。", "en": "Hello, baby." },
+            "concept": "baby"
+          },
+          {
+            "text": "慢慢微笑或张开嘴。做一个温和、稍明显的表情。",
+            "say": { "zh": "我笑啦。", "en": "I am smiling." },
+            "concept": "happy"
+          },
+          {
+            "text": "宝宝发出声音时，轻声模仿一次。",
+            "say": { "zh": "我听见啦。", "en": "I hear you." }
+          },
+          {
+            "text": "停几秒，把这一回合留给宝宝。",
+            "say": { "zh": "我等着你。", "en": "I am waiting for you." }
+          },
+          {
+            "text": "宝宝看你或动动手时，回应一次。愿意看卡时才举起笑脸卡。",
+            "say": { "zh": "你在看我呀。", "en": "You are looking at me." }
+          },
+          {
+            "text": "宝宝转开脸或烦躁时，停下互动。",
+            "say": { "zh": "我们歇一歇。", "en": "Let's take a break." }
+          }
+        ],
+        "playMin": 5,
+        "observe": [
+          "是否看向家长的脸，或短暂微笑。",
+          "停顿后是否发声、动手或看过来。",
+          "是否转开脸或烦躁；这也是需要回应的信号。"
+        ],
+        "safety": "不用大叫、突然凑近或做吓人的表情逗宝宝。不强迫眼神接触。打印卡由家长拿，边角磨圆，破损、湿软即收起，勿含咬。家长全程在旁，困了就结束。"
+      }
+    }
+  ]
+}

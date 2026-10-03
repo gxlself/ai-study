@@ -1,0 +1,142 @@
+{
+  "schemaVersion": 1,
+  "id": "core.s3.clothes",
+  "title": {
+    "zh": "我的衣服",
+    "en": "My Clothes"
+  },
+  "summary": {
+    "zh": "穿衣时说衣物名称，让宝宝参与小动作。",
+    "en": "Name clothing during dressing and invite small helpful actions."
+  },
+  "ageRange": [12, 17],
+  "domains": ["life", "language"],
+  "themeId": "s3-t5",
+  "tags": ["daily-routine", "first-words"],
+  "durationMin": 2,
+  "coView": "required",
+  "audience": "parent",
+  "printables": [
+    {
+      "kind": "cards",
+      "title": "衣物大卡",
+      "items": ["hat", "shirt", "pants", "socks", "shoes"],
+      "size": "large",
+      "showText": true,
+      "showEnglish": true
+    }
+  ],
+  "objectives": [
+    {
+      "zh": "宝宝在穿衣时听到衣物名称。",
+      "en": "Your baby hears clothing names during dressing."
+    },
+    {
+      "zh": "宝宝用伸手、抬脚或看向衣物来参与。",
+      "en": "Your baby joins by reaching, lifting a foot, or looking at clothing."
+    }
+  ],
+  "cover": {
+    "concept": "shirt",
+    "bg": "paper"
+  },
+  "parentGuide": {
+    "intro": "穿衣就是很好的语言时间。拿起一件真实衣物先命名，再等宝宝伸手、抬脚或看向它；给两个安全选择，但不强迫宝宝选。",
+    "tips": [
+      "边穿边说，不需要额外训练。",
+      "先给宝宝看衣物，再穿上。",
+      "天气和舒适度比完成选择更重要。"
+    ],
+    "phrases": [
+      {
+        "zh": "这是上衣。",
+        "en": "This is a shirt."
+      },
+      {
+        "zh": "你想穿帽子吗？",
+        "en": "Would you like the hat?"
+      },
+      {
+        "zh": "小脚抬起来。",
+        "en": "Lift your little foot."
+      },
+      {
+        "zh": "穿好啦。",
+        "en": "All dressed."
+      }
+    ],
+    "why": "把名称放进固定生活常规，能增加重复而有意义的输入，也给宝宝参与照护的机会。选择是邀请，不是服从测试。",
+    "refs": ["R43", "R45", "R47", "R82"]
+  },
+  "offline": [
+    {
+      "title": "衣服二选一",
+      "minutes": 8,
+      "materials": ["两件当天天气合适的衣物", "衣物大卡"],
+      "steps": [
+        "拿出两件安全衣物，分别说出名称。",
+        "把衣物放在宝宝能看到的地方，问想看哪一件。",
+        "宝宝看、伸手或转开时，成人尊重回应并完成穿衣。",
+        "穿好后再说一次衣物名称。"
+      ],
+      "safety": "衣物不能有长绳、松脱纽扣、珠片或可入口小配件；鞋袜不宜过紧；成人在平稳地面完成穿衣，不让宝宝站在高处。",
+      "domains": ["life", "language"],
+      "question": "你想先看哪一件？",
+      "levels": {
+        "easier": "只拿出一件衣物，边穿边命名。",
+        "harder": "给两件衣物，让宝宝用目光或手势表达偏好。"
+      }
+    }
+  ],
+  "steps": [
+    {
+      "type": "guide",
+      "parentTip": "用真实衣物说词，给宝宝时间参与。",
+      "props": {
+        "goal": "在穿衣常规中听名称并参与小动作。",
+        "materials": ["当天合适的衣物", "衣物打印卡"],
+        "steps": [
+          {
+            "text": "拿起上衣，先让宝宝看，再说名称。",
+            "concept": "shirt",
+            "say": {
+              "zh": "这是上衣。",
+              "en": "This is a shirt."
+            }
+          },
+          {
+            "text": "穿袖子时，等宝宝伸出一只手。",
+            "concept": "shirt",
+            "say": {
+              "zh": "小手伸进来。",
+              "en": "Put your hand in."
+            }
+          },
+          {
+            "text": "拿起袜子和鞋子，轻轻说出名称。",
+            "concept": "socks",
+            "say": {
+              "zh": "这是袜子。",
+              "en": "These are socks."
+            }
+          },
+          {
+            "text": "宝宝抬脚时帮忙穿好，再说小脚。",
+            "concept": "shoes",
+            "say": {
+              "zh": "小脚穿鞋。",
+              "en": "Shoes on your feet."
+            }
+          }
+        ],
+        "playMin": 8,
+        "observe": [
+          "宝宝是否看向被命名的衣物。",
+          "宝宝是否伸手、抬脚或等待。",
+          "宝宝是否能在舒适时参与穿衣。"
+        ],
+        "safety": "不强迫伸手或抬脚。检查衣物无绳带和小配件，穿衣时成人始终托护宝宝，避免从高处操作。"
+      }
+    }
+  ]
+}

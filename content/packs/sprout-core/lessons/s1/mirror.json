@@ -1,0 +1,102 @@
+{
+  "schemaVersion": 1,
+  "id": "core.s1.mirror",
+  "title": { "zh": "镜子里的宝宝", "en": "Baby in the Mirror" },
+  "summary": { "zh": "看看笑脸，来回应。", "en": "Look at smiling faces and respond." },
+  "ageRange": [6, 8],
+  "domains": ["social"],
+  "themeId": "s1-t3",
+  "tags": ["家长指引", "安全镜子", "面孔互动"],
+  "durationMin": 2,
+  "coView": "required",
+  "audience": "parent",
+  "objectives": [
+    { "zh": "看看镜子中的脸。", "en": "Look at faces in a mirror." },
+    { "zh": "和家长一起笑笑。", "en": "Share a smile with a caregiver." }
+  ],
+  "cover": { "concept": "baby", "bg": "room" },
+  "parentGuide": {
+    "intro": "先读完，再关屏。用防碎、圆角的婴儿镜，和宝宝一起看看。指着镜中的脸，说家中称呼。宝宝看、笑、发声，都温柔接住。不需要知道镜中是自己。",
+    "tips": [
+      "没有安全镜子，就改为面对面，不用手机自拍代替。",
+      "家长和宝宝一起入镜，不只让宝宝单独看。",
+      "先做一个表情，再停下来。宝宝不笑也可以。",
+      "照镜子感兴趣，不等于已经有镜中自我认知。"
+    ],
+    "phrases": [
+      { "zh": "这是宝宝。", "en": "This is you, baby." },
+      { "zh": "我也在这里。", "en": "I am here too." },
+      { "zh": "笑脸在这里。", "en": "Here is a smiling face." },
+      { "zh": "你看见啦。", "en": "You are looking." }
+    ],
+    "why": "六个月里程碑包括喜欢照镜子看自己。这里用安全镜子促进亲子面孔互动，不把兴趣解释为自我认知，也不测试宝宝是否认出自己。",
+    "refs": ["[6]", "[82]"]
+  },
+  "offline": [
+    {
+      "title": "没有镜子也能笑",
+      "minutes": 3,
+      "materials": ["地垫", "家长的脸"],
+      "steps": [
+        "让宝宝舒服地躺好。",
+        "面对面，慢慢微笑。",
+        "停一下，等宝宝反应。",
+        "宝宝发声时，回应一次。",
+        "想歇时就结束。"
+      ],
+      "safety": "在地面玩，家长全程照看。不突然凑脸、喊叫或强迫看人。宝宝不笑也不继续逗，不为游戏摆成独坐或站立姿势。",
+      "domains": ["social", "language"],
+      "question": "你想看看什么表情呀？",
+      "levels": {
+        "easier": "家长只微笑，安静等待。",
+        "harder": "宝宝感兴趣时，再慢慢张嘴，等一轮回应。不做吓人的表情。"
+      }
+    }
+  ],
+  "steps": [
+    {
+      "type": "guide",
+      "title": { "zh": "一起看看镜子", "en": "Look in a Mirror Together" },
+      "parentTip": "读完关屏。镜子不是手机画面，也不是认出自己的测验。",
+      "props": {
+        "goal": "和宝宝共同看面孔，接住一个目光、笑容或声音。",
+        "materials": ["防碎、圆角、适龄的婴儿镜", "地垫"],
+        "steps": [
+          {
+            "text": "检查镜面无破损。由大人拿稳，或稳固放在地面。",
+            "say": { "zh": "一起看看呀。", "en": "Let's look together." }
+          },
+          {
+            "text": "抱稳宝宝，让家长和宝宝的脸都出现在镜子里。",
+            "say": { "zh": "我也在这里。", "en": "I am here too." }
+          },
+          {
+            "text": "指着镜中的宝宝，轻声说宝宝的名字。",
+            "say": { "zh": "这是宝宝。", "en": "This is you, baby." },
+            "concept": "baby"
+          },
+          {
+            "text": "慢慢微笑，再停几秒等回应。",
+            "say": { "zh": "笑脸在这里。", "en": "Here is a smiling face." },
+            "concept": "happy"
+          },
+          {
+            "text": "宝宝发声或看你时，温柔回应。",
+            "say": { "zh": "我听见啦。", "en": "I hear you." }
+          },
+          {
+            "text": "转开目光或烦躁时，把镜子收好。",
+            "say": { "zh": "我们歇一歇。", "en": "Let's take a break." }
+          }
+        ],
+        "playMin": 5,
+        "observe": [
+          "是否看镜中的脸，或转头看真实的家长。",
+          "是否微笑、发声，或想碰镜面。",
+          "是否需要休息；不要求认出自己或模仿表情。"
+        ],
+        "safety": "不用玻璃镜、裂镜或尖角相框。婴儿镜要完整、圆角、防碎，成人拿稳或可靠固定，不能倾倒。远离强光反射，不压在宝宝身上。不要求独坐，抱时支撑头颈与躯干，始终全程看护。"
+      }
+    }
+  ]
+}

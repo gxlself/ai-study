@@ -1,0 +1,206 @@
+{
+  "schemaVersion": 1,
+  "id": "core.s2.if-happy",
+  "title": {
+    "zh": "如果感到幸福你就拍拍手",
+    "en": "If You're Happy and You Know It"
+  },
+  "summary": {
+    "zh": "家长学会慢速儿歌，关屏后抱着或面对面和宝宝做动作。",
+    "en": "Learn a slow action song, then sing and move together off-screen."
+  },
+  "ageRange": [9, 11],
+  "domains": ["music", "english"],
+  "themeId": "s2-t2",
+  "tags": ["active-music", "gesture"],
+  "durationMin": 3,
+  "coView": "required",
+  "audience": "parent",
+  "objectives": [
+    {
+      "zh": "用歌声和动作和宝宝轮流互动。",
+      "en": "Take turns interacting through song and movement."
+    },
+    {
+      "zh": "听见简单的中文和英文固定短句。",
+      "en": "Hear simple repeated Chinese and English phrases."
+    }
+  ],
+  "cover": {
+    "concept": "clap",
+    "bg": "paper"
+  },
+  "parentGuide": {
+    "intro": "先听一遍旋律，再关掉屏幕。家长用轻柔声音唱，带宝宝拍手或挥手，不要求动作整齐。",
+    "tips": [
+      "先唱中文，再唱英文。",
+      "每句唱完停一下。",
+      "宝宝只听、看或笑也很好。"
+    ],
+    "phrases": [
+      {
+        "zh": "和宝宝一起唱。",
+        "en": "Let's sing together."
+      },
+      {
+        "zh": "轻轻拍拍手。",
+        "en": "Clap gently."
+      },
+      {
+        "zh": "动作慢一点。",
+        "en": "Move slowly."
+      },
+      {
+        "zh": "唱完啦。",
+        "en": "All done singing."
+      }
+    ],
+    "why": "主动唱歌、抱持和同步动作给宝宝真实的社会回应；英语以短句和亲子互动为主，不靠屏幕或音频单独学习。",
+    "refs": ["[16]", "[47]", "[53]", "[87]", "[88]"]
+  },
+  "offline": [
+    {
+      "title": "慢慢唱，轻轻动",
+      "minutes": 7,
+      "materials": ["软垫"],
+      "steps": [
+        "家长抱稳宝宝或让宝宝坐在身边，先唱一遍中文。",
+        "唱到“拍拍手”时，家长自己示范拍手，再停一下。",
+        "宝宝愿意时加入挥手或微笑，最后用一句“唱完啦”收尾。"
+      ],
+      "safety": "抱唱时托住宝宝的头颈和身体；坐在地面软垫上，不边走边抱着做大幅动作；宝宝不舒服就停止。",
+      "domains": ["music", "english"],
+      "question": "宝宝对哪一句有回应？",
+      "levels": {
+        "easier": "只唱一遍中文，家长做一个慢动作。",
+        "harder": "中文后唱英文，两个版本都留出等待回应的停顿。"
+      }
+    }
+  ],
+  "steps": [
+    {
+      "type": "guide",
+      "parentTip": "先学唱，随后关屏和宝宝面对面唱。",
+      "props": {
+        "goal": "用一首慢速动作歌和宝宝来回互动。",
+        "materials": ["软垫"],
+        "steps": [
+          {
+            "text": "家长先听一遍旋律，准备轻柔地唱。",
+            "say": {
+              "zh": "和宝宝一起唱。",
+              "en": "Let's sing together."
+            }
+          },
+          {
+            "text": "唱中文时示范拍拍手，唱完一句停一下。",
+            "concept": "clap",
+            "say": {
+              "zh": "轻轻拍拍手。",
+              "en": "Clap gently."
+            }
+          },
+          {
+            "text": "宝宝愿意时加入挥手或微笑，不要求动作整齐。",
+            "concept": "wave",
+            "say": {
+              "zh": "动作慢一点。",
+              "en": "Move slowly."
+            }
+          },
+          {
+            "text": "唱完中文和英文后关屏，抱抱宝宝再结束。",
+            "concept": "hug",
+            "say": {
+              "zh": "唱完啦。",
+              "en": "All done singing."
+            }
+          }
+        ],
+        "playMin": 7,
+        "observe": [
+          "宝宝是否看向家长的脸或手。",
+          "宝宝是否笑、发声或动身体。",
+          "宝宝累了或转开时是否能及时收尾。"
+        ],
+        "safety": "抱唱时托住宝宝的头颈和身体；坐在地面软垫上，不边走边抱着做大幅动作；宝宝不舒服就停止。"
+      }
+    },
+    {
+      "type": "song",
+      "parentTip": "家长跟唱即可，唱完后关屏。",
+      "props": {
+        "title": {
+          "zh": "如果感到幸福你就拍拍手",
+          "en": "If You're Happy and You Know It"
+        },
+        "credit": "旋律：传统（公有领域）；中文词：芽芽成长原创；英文词：传统公有领域",
+        "bpm": 78,
+        "instrument": "musicbox",
+        "lines": [
+          {
+            "lang": "zh",
+            "text": "如果感到幸福你就拍拍手",
+            "notes": "G4/1 G4/1 A4/1 A4/1 G4/1 G4/1 F4/1 E4/1 E4/1 F4/1 G4/2"
+          },
+          {
+            "lang": "en",
+            "text": "If you're happy and you know it, clap your hands",
+            "notes": "G4/1 G4/1 A4/1 A4/1 G4/1 G4/1 F4/1 E4/1 E4/1 F4/1 G4/2"
+          },
+          {
+            "lang": "zh",
+            "text": "如果感到幸福你就挥挥手",
+            "notes": "G4/1 G4/1 A4/1 A4/1 G4/1 G4/1 F4/1 E4/1 E4/1 F4/1 G4/2"
+          },
+          {
+            "lang": "en",
+            "text": "If you're happy and you know it, wave hello",
+            "notes": "G4/1 G4/1 A4/1 A4/1 G4/1 G4/1 F4/1 E4/1 E4/1 F4/1 G4/2"
+          },
+          {
+            "lang": "zh",
+            "text": "如果感到幸福请你笑一笑",
+            "notes": "G4/1 G4/1 A4/1 A4/1 G4/1 G4/1 F4/1 E4/1 E4/1 F4/1 G4/2"
+          },
+          {
+            "lang": "en",
+            "text": "If you're happy and you know it, smile and smile",
+            "notes": "G4/1 G4/1 A4/1 A4/1 G4/1 G4/1 F4/1 E4/1 E4/1 F4/1 G4/2"
+          }
+        ],
+        "scene": {
+          "bg": "paper",
+          "ground": "none",
+          "sprites": [
+            {
+              "concept": "clap",
+              "x": 42,
+              "y": 55,
+              "size": 28,
+              "anim": "pulse"
+            },
+            {
+              "concept": "wave",
+              "x": 62,
+              "y": 55,
+              "size": 28,
+              "anim": "sway"
+            }
+          ]
+        },
+        "repeat": 1,
+        "actions": [
+          {
+            "zh": "先拍手，再挥手",
+            "en": "Clap first, then wave."
+          },
+          {
+            "zh": "动作慢一点",
+            "en": "Move slowly."
+          }
+        ]
+      }
+    }
+  ]
+}

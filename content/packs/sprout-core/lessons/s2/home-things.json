@@ -1,0 +1,141 @@
+{
+  "schemaVersion": 1,
+  "id": "core.s2.home-things",
+  "title": {
+    "zh": "这是什么",
+    "en": "What's That?"
+  },
+  "summary": {
+    "zh": "跟着宝宝的目光和手势，给家里的东西说出名字。",
+    "en": "Follow your baby's gaze and gestures while naming things at home."
+  },
+  "ageRange": [9, 11],
+  "domains": ["language"],
+  "themeId": "s2-t4",
+  "tags": ["joint-attention", "home-language"],
+  "durationMin": 2,
+  "coView": "required",
+  "audience": "parent",
+  "printables": [
+    {
+      "kind": "cards",
+      "title": "家里的东西大卡片",
+      "items": ["cup", "ball", "book", "shoes", "bed"],
+      "size": "large",
+      "showText": true,
+      "showEnglish": true
+    }
+  ],
+  "objectives": [
+    {
+      "zh": "跟随宝宝的目光或手势命名家中物品。",
+      "en": "Follow your baby's gaze or gesture and name home objects."
+    },
+    {
+      "zh": "在命名后等待宝宝的声音或动作。",
+      "en": "Wait for a sound or movement after naming."
+    }
+  ],
+  "cover": {
+    "concept": "cup",
+    "bg": "room"
+  },
+  "parentGuide": {
+    "intro": "先打印大卡片，再把注意力放回家里。宝宝看向哪里，家长就跟着看、指一指、说出名字，再停下来等回应。",
+    "tips": [
+      "先跟随宝宝，不急着换目标。",
+      "一句只说一个重点词。",
+      "宝宝看、伸手或发声都算回应。"
+    ],
+    "phrases": [
+      {
+        "zh": "你在看灯。",
+        "en": "You are looking at the lamp."
+      },
+      {
+        "zh": "这是杯子。",
+        "en": "This is a cup."
+      },
+      {
+        "zh": "你看到了。",
+        "en": "You found it."
+      },
+      {
+        "zh": "轮到我说啦。",
+        "en": "My turn to talk."
+      }
+    ],
+    "why": "成人跟随宝宝的注意并用真实词语回应，能增加共同注意和回合对话，而不是把语言变成单向讲解。",
+    "refs": ["[43]", "[45]", "[47]", "[82]"]
+  },
+  "offline": [
+    {
+      "title": "家里找一找",
+      "minutes": 7,
+      "materials": ["五张大号打印卡片", "家中固定摆放的安全物品"],
+      "steps": [
+        "把一张卡放在家长手边，观察宝宝正在看的方向。",
+        "家长跟着宝宝看，指向安全物品并说出名字。",
+        "停下来等宝宝看、伸手或发声，再回应宝宝的动作。"
+      ],
+      "safety": "只观察固定摆放的安全物品；不让宝宝拉电线、摸插座、碰热灯或电器；成人抱着宝宝移动时要托稳身体。",
+      "domains": ["language"],
+      "question": "你还发现了什么？",
+      "levels": {
+        "easier": "只围绕一个安全物品重复名称。",
+        "harder": "家长跟随宝宝在两个安全物品之间来回命名，并等待每次回应。"
+      }
+    }
+  ],
+  "steps": [
+    {
+      "type": "guide",
+      "parentTip": "卡片给家长做准备，真正的指认发生在家里。",
+      "props": {
+        "goal": "跟随宝宝的注意，给真实物品说出名字。",
+        "materials": ["五张大号打印卡片", "家中固定摆放的安全物品"],
+        "steps": [
+          {
+            "text": "先观察宝宝正在看的方向，不急着把宝宝转过来。",
+            "concept": "lamp",
+            "say": {
+              "zh": "你在看灯。",
+              "en": "You are looking at the lamp."
+            }
+          },
+          {
+            "text": "跟着宝宝一起看，指一指眼前的安全物品。",
+            "concept": "cup",
+            "say": {
+              "zh": "这是杯子。",
+              "en": "This is a cup."
+            }
+          },
+          {
+            "text": "说完一个词就停下来，等宝宝看、伸手或发声。",
+            "concept": "ball",
+            "say": {
+              "zh": "你看到了。",
+              "en": "You found it."
+            }
+          },
+          {
+            "text": "宝宝换了目标时，家长跟着换词，再回应宝宝。",
+            "concept": "book",
+            "say": {
+              "zh": "轮到我说啦。",
+              "en": "My turn to talk."
+            }
+          }
+        ],
+        "playMin": 7,
+        "observe": [
+          "宝宝是否和家长看向同一个物品。",
+          "宝宝是否伸手、触摸或发声。",
+          "家长是否能在停顿中等到回应。"
+        ],
+        "safety": "只观察固定摆放的安全物品；不让宝宝拉电线、摸插座、碰热灯或电器；成人抱着宝宝移动时要托稳身体。"
+      }
+    }
+  ]
+}

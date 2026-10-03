@@ -1,0 +1,141 @@
+{
+  "schemaVersion": 1,
+  "id": "core.s2.goodnight",
+  "title": {
+    "zh": "晚安小书",
+    "en": "Goodnight Little Book"
+  },
+  "summary": {
+    "zh": "白天把大卡片做成小书，关屏后一起指一指、说一说。",
+    "en": "Make a little book from large cards and read it together off-screen."
+  },
+  "ageRange": [9, 11],
+  "domains": ["language", "life"],
+  "themeId": "s2-t4",
+  "tags": ["dialogic-reading", "bedtime-routine"],
+  "durationMin": 2,
+  "coView": "required",
+  "audience": "parent",
+  "printables": [
+    {
+      "kind": "cards",
+      "title": "晚安大卡片",
+      "items": ["moon", "star", "bed", "bird", "cat"],
+      "size": "large",
+      "showText": true,
+      "showEnglish": true
+    }
+  ],
+  "objectives": [
+    {
+      "zh": "通过指认和停顿分享一本小卡书。",
+      "en": "Share a small card book through pointing and pauses."
+    },
+    {
+      "zh": "把晚安词语放进白天和晚上的生活流程。",
+      "en": "Use simple bedtime words in daily routines."
+    }
+  ],
+  "cover": {
+    "concept": "bed",
+    "bg": "night"
+  },
+  "parentGuide": {
+    "intro": "白天先看完指引并把大卡片装成小书。关掉屏幕后，家长一页一页指认，停下来等宝宝看、摸或发声；睡前不再打开屏幕。",
+    "tips": [
+      "一页只说一个重点词。",
+      "让宝宝摸卡片的边缘。",
+      "宝宝转开时就合上小书。"
+    ],
+    "phrases": [
+      {
+        "zh": "月亮出来了。",
+        "en": "The moon is out."
+      },
+      {
+        "zh": "小星星。",
+        "en": "Little star."
+      },
+      {
+        "zh": "要睡觉啦。",
+        "en": "It is time to sleep."
+      },
+      {
+        "zh": "晚安，宝宝。",
+        "en": "Goodnight, baby."
+      }
+    ],
+    "why": "纸卡和成人回应保留了指认、等待和对话；固定的睡前流程有助于可预测的家庭节律，睡前应远离屏幕。",
+    "refs": ["[3]", "[6]", "[48]", "[92]", "[93]"]
+  },
+  "offline": [
+    {
+      "title": "白天读晚安卡书",
+      "minutes": 6,
+      "materials": ["五张大号打印卡片", "成人使用的装订材料"],
+      "steps": [
+        "由成人把卡片装成小书，白天先和宝宝一起看。",
+        "一页一页指认月亮、星星和床，停下来等宝宝回应。",
+        "合上小书后说“晚安”，把卡片收在宝宝够不到的地方。"
+      ],
+      "safety": "装订时不让宝宝接触订书钉、夹子、绳子等小件；卡片不放进婴儿睡眠区域，也不盖住口鼻；纸张破损时及时收起。",
+      "domains": ["language", "life"],
+      "question": "哪一张卡让宝宝停下来看看？",
+      "levels": {
+        "easier": "只读月亮和床两张卡。",
+        "harder": "把五张卡按每天相似的顺序读一遍，给每页留出等待时间。"
+      }
+    }
+  ],
+  "steps": [
+    {
+      "type": "guide",
+      "parentTip": "白天准备和阅读，睡前关屏并用真实的晚安流程。",
+      "props": {
+        "goal": "用大卡片做白天的对话式小书，练习指认和等待。",
+        "materials": ["五张大号打印卡片", "成人使用的装订材料"],
+        "steps": [
+          {
+            "text": "白天由成人把卡片装成小书，先让宝宝看封面。",
+            "concept": "bed",
+            "say": {
+              "zh": "这是小床。",
+              "en": "This is a bed."
+            }
+          },
+          {
+            "text": "一页一页指认月亮、星星和小动物，慢慢说名字。",
+            "concept": "moon",
+            "say": {
+              "zh": "月亮出来了。",
+              "en": "The moon is out."
+            }
+          },
+          {
+            "text": "每说一个词就停下来，等宝宝看、摸或发声。",
+            "concept": "star",
+            "say": {
+              "zh": "小星星。",
+              "en": "Little star."
+            }
+          },
+          {
+            "text": "合上卡书，把卡片收好，睡前不再打开屏幕。",
+            "concept": "cat",
+            "say": {
+              "zh": "晚安，宝宝。",
+              "en": "Goodnight, baby."
+            }
+          }
+        ],
+        "playMin": 6,
+        "observe": [
+          "宝宝是否看向被指认的卡片。",
+          "宝宝是否摸卡、发声或等待下一页。",
+          "宝宝转开时家长是否及时结束。"
+        ],
+        "safety": "装订时不让宝宝接触订书钉、夹子、绳子等小件；卡片不放进婴儿睡眠区域，也不盖住口鼻；纸张破损时及时收起。"
+      }
+    }
+  ]
+}

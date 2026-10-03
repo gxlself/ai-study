@@ -1,0 +1,145 @@
+{
+  "schemaVersion": 1,
+  "id": "core.s1.lullaby",
+  "title": { "zh": "摇篮曲", "en": "Lullaby" },
+  "summary": { "zh": "轻轻唱，慢慢歇。", "en": "Sing softly and wind down." },
+  "ageRange": [6, 8],
+  "domains": ["music", "life"],
+  "themeId": "s1-t4",
+  "tags": ["家长指引", "家长学唱", "睡前无屏"],
+  "durationMin": 3,
+  "coView": "required",
+  "audience": "parent",
+  "objectives": [
+    { "zh": "听熟悉的轻柔歌声。", "en": "Hear a familiar, gentle voice." },
+    { "zh": "体验安静的晚安流程。", "en": "Experience a calm bedtime routine." }
+  ],
+  "cover": { "concept": "moon", "bg": "night" },
+  "parentGuide": {
+    "intro": "家长白天学旋律，睡前不开屏。临睡前按家里熟悉的顺序，换尿布、穿睡衣，再轻声哼唱。不必唱完，也不保证宝宝马上睡。哭闹时先回应需要，别用音乐盖过哭声。",
+    "tips": [
+      "每天用相近的短流程，不必卡在同一分钟。",
+      "睡前一小时不用屏幕。宝宝平时也不看本课画面。",
+      "家长真人轻哼即可，不循环播放或开着计时器哄睡。",
+      "困了就收尾。不摇晃、不抛接，不要求自己止哭。"
+    ],
+    "phrases": [
+      { "zh": "换好睡衣啦。", "en": "Your pajamas are on." },
+      { "zh": "我在这里。", "en": "I am here." },
+      { "zh": "轻轻唱给你听。", "en": "I'll sing softly to you." },
+      { "zh": "晚安，宝宝。", "en": "Good night, baby." }
+    ],
+    "why": "睡前常规研究发现，规律流程与较好的睡眠相关，但不是保证入睡的治疗。家长的轻声回应可融入常规，屏幕不进入睡前安抚。",
+    "refs": ["[3]", "[6]", "[92]", "[93]"]
+  },
+  "offline": [
+    {
+      "title": "晚安小仪式",
+      "minutes": 5,
+      "materials": ["干净尿布", "合身睡衣", "符合安全要求的婴儿睡眠空间"],
+      "steps": [
+        "按需要换好尿布。",
+        "温柔告知，再穿睡衣。",
+        "轻声哼一小段熟悉的歌。",
+        "回应宝宝的需要。",
+        "准备睡觉时，仰卧放下。",
+        "轻声说一句晚安。"
+      ],
+      "safety": "哼唱只用家长人声，睡前不用屏。抱时支撑头颈与躯干，不摇晃。每次睡眠都应仰卧放置于坚实、平坦、无倾斜的婴儿睡眠面；不放枕头、松散被褥、布巾或玩具。不抱着宝宝在沙发或扶手椅上睡着。有特殊健康需要时遵医嘱。",
+      "domains": ["life", "music", "social"],
+      "question": "你想听怎样的小声音呀？",
+      "levels": {
+        "easier": "只轻声哼一句，再说晚安。困了就直接收尾。",
+        "harder": "宝宝清醒且愿意听时，多哼一小句。不延长入睡流程，不要求自己入睡。"
+      }
+    }
+  ],
+  "steps": [
+    {
+      "type": "guide",
+      "title": { "zh": "白天学，睡前哼", "en": "Learn by Day, Hum at Bedtime" },
+      "parentTip": "本页与歌曲都只在白天给家长看。睡前关屏，五分钟计时不是哄睡要求。",
+      "props": {
+        "goal": "把熟悉的人声放进简短、可预期的无屏晚安流程。",
+        "materials": ["干净尿布", "合身睡衣", "安全的婴儿睡眠空间", "家长的声音"],
+        "steps": [
+          {
+            "text": "白天读完指引、熟悉旋律。睡前把屏幕收起。",
+            "say": { "zh": "晚上轻轻唱。", "en": "We'll sing softly tonight." }
+          },
+          {
+            "text": "临睡前，按需要换尿布。动作前先温柔告知。",
+            "say": { "zh": "换尿布啦。", "en": "Let's change your diaper." }
+          },
+          {
+            "text": "穿好睡衣，用家里熟悉的相近顺序收尾。",
+            "say": { "zh": "换好睡衣啦。", "en": "Your pajamas are on." }
+          },
+          {
+            "text": "稳稳抱着，或在安全睡眠空间旁，轻声唱一小段或哼唱。",
+            "say": { "zh": "我在这里。", "en": "I am here." },
+            "concept": "hug"
+          },
+          {
+            "text": "宝宝哭闹时，停下歌声，先回应需要。",
+            "say": { "zh": "我听见你啦。", "en": "I hear you." }
+          },
+          {
+            "text": "准备睡觉时，仰卧放在坚实、平坦的婴儿睡眠面上，说晚安。",
+            "say": { "zh": "晚安，宝宝。", "en": "Good night, baby." },
+            "concept": "moon"
+          }
+        ],
+        "playMin": 5,
+        "observe": [
+          "是否愿意听熟悉的人声，或已经想休息。",
+          "什么收尾顺序较舒服；不按入睡速度评分。",
+          "哭闹或其他需要是否被及时回应，不要求唱完。"
+        ],
+        "safety": "仅家长白天学习，睡前不开屏、不循环播放。抱稳头颈与躯干，不摇晃，不靠着宝宝一起在沙发或扶手椅上睡。每次睡眠仰卧放置于坚实、平坦、无倾斜的婴儿睡眠面；移走枕头、松散被褥、布巾和玩具。俯卧只用于清醒且有人看护的游戏，不用于哄睡。有特殊医疗情况遵医嘱。"
+      }
+    },
+    {
+      "type": "song",
+      "title": { "zh": "家长白天学摇篮曲", "en": "Learn the Lullaby During the Day" },
+      "parentTip": "仅家长白天学唱。60拍，C大调。睡前不用屏幕、音箱或循环播放，只轻声哼唱。",
+      "props": {
+        "title": { "zh": "摇篮曲", "en": "Lullaby" },
+        "credit": "旋律：Johannes Brahms《Wiegenlied》Op.49 No.4（1868，公有领域）；中文词、英文词：芽芽成长原创；主旋律移至C大调，省略装饰倚音",
+        "bpm": 60,
+        "instrument": "musicbox",
+        "repeat": 1,
+        "lines": [
+          { "lang": "zh", "text": "宝宝，晚安晚安", "notes": "E4/0.5 E4/0.5 G4/1.5 E4/0.5 E4/1 G4/1 R/1" },
+          { "lang": "zh", "text": "轻轻唱呀轻轻唱", "notes": "E4/0.5 G4/0.5 C5/1 B4/1.5 A4/0.5 A4/1 G4/1" },
+          { "lang": "zh", "text": "我在这里陪着你", "notes": "D4/0.5 E4/0.5 F4/1 D4/1 D4/0.5 E4/0.5 F4/1 R/1" },
+          { "lang": "zh", "text": "小手小脚歇一歇", "notes": "D4/0.5 F4/0.5 B4/0.5 A4/0.5 G4/1 B4/1 C5/1 R/1" },
+          { "lang": "zh", "text": "宝宝晚安，我在身边", "notes": "C4/0.5 C4/0.5 C5/2 A4/0.5 F4/0.5 G4/2 E4/0.5 C4/0.5" },
+          { "lang": "zh", "text": "慢慢睡呀晚安", "notes": "F4/1 G4/1 A4/1 G4/2 C4/0.5 C4/0.5" },
+          { "lang": "zh", "text": "抱抱你呀晚安", "notes": "C5/2 A4/0.5 F4/0.5 G4/2 E4/0.5 C4/0.5" },
+          { "lang": "zh", "text": "晚安宝宝", "notes": "F4/1 E4/1 D4/1 C4/2 R/1" },
+          { "lang": "en", "text": "Good night, sleep tight, my love.", "notes": "E4/0.5 E4/0.5 G4/1.5 E4/0.5 E4/1 G4/1 R/1" },
+          { "lang": "en", "text": "Hear my song, so soft and slow.", "notes": "E4/0.5 G4/0.5 C5/1 B4/1.5 A4/0.5 A4/1 G4/1" },
+          { "lang": "en", "text": "Rest now, I am here with you.", "notes": "D4/0.5 E4/0.5 F4/1 D4/1 D4/0.5 E4/0.5 F4/1 R/1" },
+          { "lang": "en", "text": "Hands and feet can rest as well.", "notes": "D4/0.5 F4/0.5 B4/0.5 A4/0.5 G4/1 B4/1 C5/1 R/1" },
+          { "lang": "en", "text": "Good night, my love, I am right here.", "notes": "C4/0.5 C4/0.5 C5/2 A4/0.5 F4/0.5 G4/2 E4/0.5 C4/0.5" },
+          { "lang": "en", "text": "Sleep tight, my dear, sleep tight.", "notes": "F4/1 G4/1 A4/1 G4/2 C4/0.5 C4/0.5" },
+          { "lang": "en", "text": "Warm hugs, sweet dreams, my love.", "notes": "C5/2 A4/0.5 F4/0.5 G4/2 E4/0.5 C4/0.5" },
+          { "lang": "en", "text": "Good night, my love.", "notes": "F4/1 E4/1 D4/1 C4/2 R/1" }
+        ],
+        "scene": {
+          "bg": "night",
+          "ground": "none",
+          "sprites": [
+            { "concept": "moon", "x": 46, "y": 26, "size": 32, "anim": "none" },
+            { "concept": "star", "x": 74, "y": 20, "size": 16, "anim": "none" }
+          ]
+        },
+        "actions": [
+          { "zh": "家长白天熟悉旋律。", "en": "The caregiver learns the tune during the day." },
+          { "zh": "睡前关屏，轻声哼。", "en": "Turn screens off and hum softly at bedtime." }
+        ]
+      }
+    }
+  ]
+}

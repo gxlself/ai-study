@@ -1,0 +1,230 @@
+{
+  "schemaVersion": 1,
+  "id": "core.s3.two-tigers",
+  "title": {
+    "zh": "两只老虎",
+    "en": "Two Tigers"
+  },
+  "summary": {
+    "zh": "家长慢唱熟悉旋律，和宝宝做轻柔动作。",
+    "en": "Sing the familiar melody slowly with gentle shared movements."
+  },
+  "ageRange": [12, 17],
+  "domains": ["music", "english"],
+  "themeId": "s3-t4",
+  "tags": ["song", "rhythm"],
+  "durationMin": 3,
+  "coView": "required",
+  "audience": "parent",
+  "objectives": [
+    {
+      "zh": "宝宝在重复旋律中听一和二。",
+      "en": "Your baby hears one and two in a repeated melody."
+    },
+    {
+      "zh": "宝宝用看、拍手或发声参与。",
+      "en": "Your baby joins with a look, clap, or sound."
+    }
+  ],
+  "cover": {
+    "concept": "tiger",
+    "bg": "grass"
+  },
+  "parentGuide": {
+    "intro": "这首歌的重点是共享节奏，不是教宝宝认数字。家长慢慢唱、轻轻拍手或摇摆；宝宝只听和看也算参与。",
+    "tips": [
+      "不使用吓人的老虎叫声。",
+      "每句唱完停一停，等宝宝反应。",
+      "宝宝不想拍手时，家长自己做即可。"
+    ],
+    "phrases": [
+      {
+        "zh": "两只老虎。",
+        "en": "Two little tigers."
+      },
+      {
+        "zh": "跑得快呀。",
+        "en": "They run so fast."
+      },
+      {
+        "zh": "和宝宝一起唱。",
+        "en": "Let's sing together."
+      },
+      {
+        "zh": "休息一下吧。",
+        "en": "Let's take a break."
+      }
+    ],
+    "why": "亲子主动歌唱和同步动作能创造来回互动。儿歌用于节奏、模仿和亲密时刻，不把幼儿的歌唱当作数字测验。",
+    "refs": ["R50", "R54", "R87", "R88"]
+  },
+  "offline": [
+    {
+      "title": "膝上慢唱",
+      "minutes": 8,
+      "materials": ["成人稳固的椅子或软垫"],
+      "steps": [
+        "家长坐稳，让宝宝以舒服姿势坐在身边或腿上。",
+        "先唱一段，只做轻轻拍腿或拍手。",
+        "唱完停下来，观察宝宝是否看你、笑或发声。",
+        "宝宝愿意时再唱一遍，不想继续就结束。"
+      ],
+      "safety": "成人保持坐稳，不快速摇晃、抛接或抱着转圈；不强迫宝宝拍手，不使用高音量或惊吓音效。",
+      "domains": ["music", "english"],
+      "question": "你想再听哪一句？",
+      "levels": {
+        "easier": "只唱“两只老虎”两句。",
+        "harder": "每句唱完停五秒，等宝宝用动作或声音回应。"
+      }
+    }
+  ],
+  "steps": [
+    {
+      "type": "guide",
+      "parentTip": "慢唱、轻动作，宝宝不必跟唱。",
+      "props": {
+        "goal": "用重复旋律共享节奏和亲密时刻。",
+        "materials": ["成人稳固的椅子或软垫"],
+        "steps": [
+          {
+            "text": "家长坐稳，先唱两句并轻轻拍腿。",
+            "concept": "tiger",
+            "say": {
+              "zh": "两只老虎。",
+              "en": "Two little tigers."
+            }
+          },
+          {
+            "text": "唱到跑得快时，手臂慢慢向前动。",
+            "concept": "walk",
+            "say": {
+              "zh": "跑得快呀。",
+              "en": "They run so fast."
+            }
+          },
+          {
+            "text": "唱完停五秒，看宝宝是否回应。",
+            "concept": "clap",
+            "say": {
+              "zh": "和宝宝一起唱。",
+              "en": "Let's sing together."
+            }
+          }
+        ],
+        "playMin": 8,
+        "observe": [
+          "宝宝是否看向家长的脸。",
+          "宝宝是否对旋律有微笑、拍手或发声。",
+          "宝宝是否在停顿时期待下一句。"
+        ],
+        "safety": "动作轻柔、节奏慢。保持宝宝头颈和身体稳定，不做快速摇晃或高处动作。"
+      }
+    },
+    {
+      "type": "song",
+      "parentTip": "家长学会后关屏，面对面慢唱。",
+      "props": {
+        "title": {
+          "zh": "两只老虎",
+          "en": "Are You Sleeping"
+        },
+        "credit": "旋律：传统（公有领域）；中文词：传统；English lyrics: traditional public-domain melody adaptation",
+        "bpm": 76,
+        "instrument": "musicbox",
+        "lines": [
+          {
+            "lang": "zh",
+            "text": "两只老虎",
+            "notes": "C4/1 D4/1 E4/1 C4/1"
+          },
+          {
+            "lang": "zh",
+            "text": "两只老虎",
+            "notes": "C4/1 D4/1 E4/1 C4/1"
+          },
+          {
+            "lang": "zh",
+            "text": "跑得快呀",
+            "notes": "E4/1 F4/1 G4/2"
+          },
+          {
+            "lang": "zh",
+            "text": "跑得快呀",
+            "notes": "E4/1 F4/1 G4/2"
+          },
+          {
+            "lang": "zh",
+            "text": "一只没有耳朵",
+            "notes": "G4/1 A4/1 G4/1 F4/1 E4/1 C4/2"
+          },
+          {
+            "lang": "zh",
+            "text": "一只没有尾巴",
+            "notes": "G4/1 A4/1 G4/1 F4/1 E4/1 C4/2"
+          },
+          {
+            "lang": "zh",
+            "text": "真奇怪呀",
+            "notes": "C4/1 G3/1 C4/2"
+          },
+          {
+            "lang": "zh",
+            "text": "真奇怪呀",
+            "notes": "C4/1 G3/1 C4/2"
+          },
+          {
+            "lang": "en",
+            "text": "Are you sleeping",
+            "notes": "C4/1 D4/1 E4/1 C4/1"
+          },
+          {
+            "lang": "en",
+            "text": "Are you sleeping",
+            "notes": "C4/1 D4/1 E4/1 C4/1"
+          },
+          {
+            "lang": "en",
+            "text": "Little one",
+            "notes": "E4/1 F4/1 G4/2"
+          },
+          {
+            "lang": "en",
+            "text": "Little one",
+            "notes": "E4/1 F4/1 G4/2"
+          },
+          {
+            "lang": "en",
+            "text": "Morning bells are ringing",
+            "notes": "G4/1 A4/1 G4/1 F4/1 E4/1 C4/2"
+          },
+          {
+            "lang": "en",
+            "text": "Morning bells are ringing",
+            "notes": "G4/1 A4/1 G4/1 F4/1 E4/1 C4/2"
+          },
+          {
+            "lang": "en",
+            "text": "Ding dang dong",
+            "notes": "C4/1 G3/1 C4/2"
+          },
+          {
+            "lang": "en",
+            "text": "Ding dang dong",
+            "notes": "C4/1 G3/1 C4/2"
+          }
+        ],
+        "repeat": 1,
+        "actions": [
+          {
+            "zh": "轻轻拍腿",
+            "en": "Pat your lap gently"
+          },
+          {
+            "zh": "唱完停一下",
+            "en": "Pause after the song"
+          }
+        ]
+      }
+    }
+  ]
+}
