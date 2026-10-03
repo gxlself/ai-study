@@ -184,8 +184,17 @@ export interface DeviceInfo {
   /** tv / tablet / browser */
   kind: string;
   childId: string | null;
+  /** 允许该设备切换/上报的孩子；null = 家庭全部孩子（安全审查 H-05） */
+  allowedChildIds?: string[] | null;
   createdAt: string;
   lastSeenAt: string | null;
+}
+
+/** POST /api/preview/token（admin）→ 只读短期预览令牌（安全审查 H-03） */
+export interface PreviewToken {
+  token: string;
+  /** ISO，签发后 10 分钟 */
+  expiresAt: string;
 }
 
 /** GET /api/device/bootstrap：播放端启动所需的一切 */

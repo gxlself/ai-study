@@ -88,3 +88,10 @@ Base：`http://<host>:4310`。JSON 请求/响应；错误统一 `{"error": {"cod
 - `/admin/*` → `apps/admin/dist`（SPA 回退 index.html）
 - `/*` → `apps/player/dist`（SPA 回退）
 - `/api/docs` → Swagger UI
+
+
+## 安全补充（v1.1，安全审查后新增）
+| 方法 | 路径 | 鉴权 | 说明 |
+|---|---|---|---|
+| POST | `/api/preview/token` | 👤 | → `PreviewToken`。令牌 scope=preview：10 分钟过期，只允许 GET `/api/lessons*`、`/api/lexicon`、`/api/packs`、`/api/plugins`、`/api/routes*`、`/api/schemas` 与 `/packs/*`、`/plugins/*` 静态文件；不能调用任何写接口或管理接口。播放端预览 URL 使用 `#/preview/<id>?previewToken=<token>`（不再携带 admin token）。 |
+| PUT | `/api/devices/:id` | 👤 | 新增可选字段 `allowedChildIds: string[] \| null`（null=全部孩子）。`PUT /api/device/child` 与 `POST /api/sessions` 只接受其中的孩子。 |
