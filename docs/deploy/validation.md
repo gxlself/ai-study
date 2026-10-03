@@ -1,6 +1,92 @@
 # 芽芽成长 Sprout 原生与部署验证记录
 
-## T26 最终原生验收（2026-10-03）
+## T26b 最终验收收尾（2026-10-03 至 2026-10-04）
+
+设备日志时间：2026-10-03 23:44 至 2026-10-04 01:22，Asia/Seoul，中途外部中断后续接。**最终代码要求内 5/5 功能流程已完成；P2-02 关闭，P2-01 部分修复但首次选择页焦点安全边距仍保留，不是无问题发布批准。** 30 分钟目标未达成。下方 T26/T8 均为历史，其哈希、截图与测试数量不是当前产物。
+
+本轮只修改原生验收脚本、验收工具测试、`release/` 报告和本文件；没有修改网页源码、活动、内容源、schema、SDK 或其他任务报告，没有提交 Git。
+
+### 最终产物
+
+`git log -1 -- apps/player/src` 为 `4efc89c7b44bf26a51e1e76a9b2f40c0781fc18a`，2026-10-03 22:31:32 +09:00，包含 T27/T28 首页修复。APK 文件时间均为 **23:09:03**，晚于最终源码；`native-final-metadata.mjs` 核对构建前源码快照、当前源码和双端产物通过，无需再次运行 `build-only`。
+
+| 文件 | 字节 | MiB | SHA-256 |
+| --- | ---: | ---: | --- |
+| `release/sprout-player-1.0.0-debug.apk` | 30303951 | 28.90 | `627db6b7b0054c5a5731335c9ebda292f079a4b9df2fd2a59c1dc723e9ec0b9d` |
+| `release/sprout-player-1.0.0-release.apk` | 28874668 | 27.54 | `2981a5e5469159bbbee84bfbbd5a90cccfe7003395e14e872d0e79c0be973bc6` |
+
+相邻 `.sha256` 校验通过；最终 release 经 `apksigner verify --verbose` 验证，v2 签名有效。设备内 `base.apk` 与该 release 的 SHA-256 相同，见 `apps/player/test-artifacts/android-final/t26b/reinstall.json`。
+
+iOS 沿用已成功的最终构建：`apps/player/ios/DerivedData/Build/Products/Debug-iphonesimulator/App.app`。23:18 的构建日志通过；01:18 续接设备时再次核对设备内 JS/CSS 与内容 bundle 哈希，没有因原生可执行文件的增量复用误判网页资源过期。无真机签名。
+
+正式内置 **sprout.core 1.0.0：96 课 / 120 步 / 252 词 / 1548 条音频**，家长课 54、共看课 42。两个 APK 的音频与词条图片非空，iOS 音频非空；两端内容除构建时间外语义一致，并与正式根 bundle 相同。两端及网页 dist 的 3 个 JS/CSS 文件哈希一致。
+
+元数据：`release/t26-native-final/metadata.json`。源码指纹 `637946f2a0645e3291aa0277b0129a5508b88e773414d01c58f29ffed9fba64c`，131 文件与构建前快照一致，源码最后文件修改时间为 22:28:28 +09:00，早于 APK。
+
+### 最终设备实测
+
+Android 证据目录统一为 `apps/player/test-artifacts/android-final/t26b/`；iPad 为 `apps/player/ios/test-artifacts/final/t26b/`。只引用实际检查过的页面，不按文件名判通过。
+
+| 场景 | 结果 | 本轮证据 |
+| --- | --- | --- |
+| 首次选择页、7 月龄离线建档、家长首页两卡同屏 | 功能通过；首次页焦点仍贴边 | `14d-thirty-choose.png` / `03-select-offline.png` 为左右焦点；`05-seven-birthday.png` 为 `2026-02`；`06-seven-home.png` 两卡完整同屏 |
+| 家长课导语开始、guide 暗屏开始/结束、返回首页 | 通过 | `core.s1.my-face`；`07-seven-guide-intro.png`、`07b-guide-start-focused.png`、`09-seven-guide-dim-start.png`、`11-seven-guide-reaction.png`、`12-seven-guide-ended.png`、`13c-seven-home-returned.png` |
+| 30 月龄离线建档与共看提示 | 通过 | `15b-thirty-birthday.png` 为 `2024-03`；共看提示 `17-thirty-home.png`；实际首页 `17a-thirty-current.png` |
+| movement、结束页、系统返回键家长门 | 通过；P2-02 关闭 | `core.s6.clap-pattern`；`19b-thirty-clap-playing.png` 倒计时与暂停分离，`21-thirty-lesson-end.png`、`22-thirty-parent-gate.png`；后续按钮回首页 `24-thirty-home-returned.png` |
+| 最终 iOS 安装、横屏首页与一节实际课程 | 通过 | 7 月龄家长模式，`core.s1.my-face`；`01-ipad-home.png`、`02-ipad-lesson-intro.png`、`03-ipad-lesson-playing.png` |
+
+TV API 34 ARM64，1920×1080、默认 320dpi / 960×540dp，未调整显示密度。全部交互使用真实 ADB DPAD / 确认 / 返回键，没有 WebView 调试或 JS 注入，没有改 localStorage 或时钟。独立 ADB 5059，模拟器 5582/5583。
+
+iPad (A16)、iOS 26.5，使用原生 Rotate 与真实点按。原始帧缓冲 1640×2360，显示图仅顺时针旋转 90 度为 2360×1640，原图保留。夜间 30 月龄尝试正常进入休息页，最终改用不受孩子屏幕时段限制的 7 月龄家长课，不声称最终 iPad movement 已复测。
+
+### 问题最终状态
+
+- **P2-01 部分修复，未关闭。** 建档保存、家长首页两卡同屏、导语开始按钮均已修复并实测。首次选择页左右选项的黄色焦点外圈仍在屏幕左右边缘裁切，标签和功能可用，但 TV 安全留白未达标；证据 `14d-thirty-choose.png`、`03-select-offline.png`。由 T9c / 播放端收敛首次页焦点放大安全边距。
+- **P2-02 已关闭。** 最终 release 的 movement 倒计时环位于暂停按钮下方，两个控件没有重叠；证据 `19b-thirty-clap-playing.png`。不是依据代码或构建成功推断。
+
+完整结论：`release/t26-native-final/findings.md`、`results.json`，原始报告的人工标记订正见 `t26b-adjudication.json`。
+
+### 命令与测试
+
+所有 pnpm 调用前已设置 `pnpm_config_verify_deps_before_run=false`。恢复后没有重跑已正确完成的播放器测试/构建；新增 iOS 续接保护的工具测试单独串行执行。
+
+| 命令 | 结果 |
+| --- | --- |
+| `pnpm --filter @sprout/player typecheck` | 本轮通过 |
+| `pnpm --filter @sprout/player test` | 本轮 20 文件 / 239 个 Vitest 用例 + 25 个兼容性 Node 用例通过 |
+| `pnpm --filter @sprout/player native:test` | 本轮 13 用例通过 |
+| `node --test --test-concurrency=1 apps/player/android/scripts/tests/final-tools.test.mjs` | 最终 8 用例通过，含目录穿越和 iOS 续接 UDID 防护；`t26b-final-tools-tests.log` |
+| `pnpm --filter @sprout/player build` / `android:all` / `ios:build` | 沿用 23:04 / 23:09 / 23:18 已成功的最终构建，不重复重建 |
+| `shasum -a 256 -c` 两个 APK 校验文件 | 本轮通过 |
+| `apksigner verify --verbose release/sprout-player-1.0.0-release.apk` | 本轮通过，v2 有效 |
+| `node apps/player/android/scripts/native-final-metadata.mjs` | 本轮通过，131 文件源码快照及正式双端资源一致 |
+
+可重复设备验收与中断续接：
+
+```sh
+export pnpm_config_verify_deps_before_run=false
+SPROUT_NATIVE_FINAL_RUN=t26b-next SPROUT_ADB_PORT=5059 \
+  SPROUT_T26_TIMEZONE=Etc/UTC node apps/player/android/scripts/android-final.mjs
+# 逐帧检查真实画面后，向交互终端发送 JSON 按键/capture；结束发送 quit。
+# 确认 TV 退出后才启动 iPad：
+SPROUT_NATIVE_FINAL_RUN=t26b-next node apps/player/ios/scripts/ios-final.mjs
+# 仅进程中断、该报告记录的自有 UDID 仍 Booted 时；UDID 取自该轮 report.json：
+SPROUT_NATIVE_FINAL_RUN=t26b-next SPROUT_IOS_FINAL_UDID="$UDID" \
+  node apps/player/ios/scripts/ios-final.mjs
+```
+
+续接入口要求报告 UDID、设备名称、Booted 状态、安装资源哈希一致，不能用 `booted` 或他人设备续接。新 run 标签只允许字母数字、下划线和横线，旧证据不被新一轮覆盖。
+
+### 裁定与清理
+
+- 本轮是逐帧遥控器实测，不是自动脚本全绿。原始 Android `report.json` 人工 check 曾写“家长门验证”，但按键在家长门 30 秒超时后，`23-thirty-home-after-gate.png` 实际仍为结束页。仅确认系统返回键弹门；没有方向验证成功的本轮证据。后来 `24` 是通过结束页按钮返回首页。
+- 早期空帧/未到预期页面、家长门超时及一次 Sprout 失去前台均保留。失败的 `19-thirty-clap-playing.png` 是 TV 系统界面，成功证据为 `19b`。Java crash 缓冲为空，不能据此保证全部 WebView JS / 稳定性正常。
+- LocalSource 离线模式，没有家庭服务器。TV Wi-Fi/蜂窝关闭，Ethernet 仍连接，`networkDisabled:false`；不声称完全断网。TV 时区仅设 UTC，没有改系统时钟。未覆盖全量原生课程、品牌真机、实体遥控器、扬声器试听或 TestFlight。
+- 本任务始终只运行 1 个自有模拟器。Android 于 2026-10-04 00:37 停止、独立 ADB 5059 关闭并删除临时 AVD；iPad 于 01:22 关闭本任务窗口，terminate/shutdown/delete 本任务 UDID，续接进程正常退出。没有关闭机器上他人已启动的 YiCi 设备。
+
+## T26 初轮历史记录（2026-10-03，非最终产物）
+
+以下结论仅属于 17:13–17:48 初轮。初轮截图与报告见 `release/t26-native-final/android-initial-evidence/`、`ios-initial-evidence/` 和 `initial-results.json`；后来被覆盖的根目录截图不用于证明初轮或 T26b。
 
 本轮构建与设备测试时间：2026-10-03 17:13–17:48（Asia/Seoul），随后完成证据核对与报告。**构建、正式资源核对及 5/5 原生功能流程通过；保留 2 项 P2 视觉问题，不是无问题发布批准。** 下方 T8 为历史记录，其 APK 大小、哈希和内容数量不代表本轮产物。
 

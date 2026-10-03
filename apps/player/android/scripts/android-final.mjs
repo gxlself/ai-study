@@ -13,7 +13,9 @@ import { javaHome } from '../../resources/native-utils.mjs';
 
 const exec = promisify(execFile);
 const root = resolve(dirname(fileURLToPath(import.meta.url)), '../../../..');
-const artifacts = join(root, 'apps/player/test-artifacts/android-final');
+const run = process.env.SPROUT_NATIVE_FINAL_RUN || '';
+assert.match(run, /^[a-zA-Z0-9_-]*$/);
+const artifacts = join(root, 'apps/player/test-artifacts/android-final', run);
 const sdk = process.env.ANDROID_HOME || join(process.env.HOME, 'Library/Android/sdk');
 const adb = join(sdk, 'platform-tools/adb');
 const adbPort = process.env.SPROUT_ADB_PORT || '5049';
@@ -22,7 +24,7 @@ const timezone = process.env.SPROUT_T26_TIMEZONE || 'Asia/Seoul';
 const serial = `emulator-${emulatorPort}`;
 const app = 'com.sprout.growth';
 const delay = (ms) => new Promise((done) => setTimeout(done, ms));
-const report = { startedAt: new Date().toISOString(), serial, adbPort, variant: 'release', actions: [], checks: [], errors: [] };
+const report = { startedAt: new Date().toISOString(), run, serial, adbPort, variant: 'release', actions: [], checks: [], errors: [] };
 let temporary;
 let emulator;
 let log;
@@ -138,6 +140,7 @@ async function action(input) {
     assert.ok(nodes.some((node) => `${node.text} ${node.label}`.includes(input.assertText)), `页面缺少：${input.assertText}`);
     report.checks.push({ name: input.note || input.assertText, passed: true });
   }
+  if (input.check) report.checks.push({ name: input.check, passed: input.passed === true, at: new Date().toISOString() });
   if (input.capture) await capture(input.capture);
   await writeFile(join(artifacts, 'report.json'), JSON.stringify(report, null, 2) + '\n');
 }
@@ -209,6 +212,8 @@ try {
   report.timezoneSetup = await command('shell', 'cmd', 'alarm', 'set-timezone', timezone).catch((error) => error.message);
   report.deviceTimezone = await command('shell', 'getprop', 'persist.sys.timezone');
   report.deviceTime = await command('shell', 'date', '+%Y-%m-%dT%H:%M:%S%z');
+  report.density = await command('shell', 'wm', 'density');
+  report.displaySize = await command('shell', 'wm', 'size');
   const { version } = JSON.parse(await readFile(join(root, 'apps/player/package.json'), 'utf8'));
   const apk = join(root, 'release', `sprout-player-${version}-release.apk`);
   report.apkSha256 = createHash('sha256').update(await readFile(apk)).digest('hex');
