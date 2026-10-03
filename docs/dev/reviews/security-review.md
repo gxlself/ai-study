@@ -43,6 +43,8 @@
 
 状态：已缓解（后台安装/启用前展示声明的权限、清单来源与入口 URL，提示同源风险并要求勾选确认；启用前复核清单，安装返回声明变化时请求停用并显示失败警告；尚未实现运行时隔离或远程代码内容固定）——T21
 
+状态：已缓解（播放端在求值前追加 CSP，跨源脚本仅放行已启用登记的 entryUrl；拒绝危险协议、凭据与入口替换，预检不跟随重定向；生产运行期禁用内联脚本与 eval。ESM 仍同源执行，未实现能力隔离、代码签名或内容固定，连接保留 HTTP(S) 以支持独立 H5 来源检查）——T22
+
 ### H-03：管理员预览 token 放在 URL fragment，且生产预览与后台同源
 
 - 严重度：高
@@ -58,6 +60,8 @@
 
 状态：已缓解（后台先 POST /api/preview/token，再仅通过 previewToken 打开预览，不回退到管理员凭据；过期卸载 iframe，草稿消息只发给确定的播放端 origin；预览仍使用短期 URL 凭据和同源 iframe）——T21
 
+状态：已缓解（播放端仅消费 previewToken，拒绝旧 token 参数并从当前 URL 移除凭据；预览数据源只读且仅用内存，不读取设备连接或保存记录。短期凭据首次仍经 iframe URL 传入，父页 iframe.src 与同源预览风险未完全消除）——T22
+
 ### H-04：网页活动重定向后未校验最终 origin
 
 - 严重度：高
@@ -68,6 +72,8 @@
   2. 让该地址返回 302，目标为播放端 origin。
   3. 当前代码不会重新检查最终 URL；若最终页面脚本执行，它可能尝试访问同源父窗口。
 - 建议修复：网页活动使用不带 `allow-same-origin` 的 opaque sandbox，并通过 nonce 消息桥接；或由服务端解析并校验最终 URL，拒绝任何重定向到宿主 origin。完成消息仍应使用一次性 nonce，而不只依赖 origin。
+
+状态：已缓解（独立 HTTP(S) 地址先以 CORS HEAD 校验最终 origin，拒绝重定向；iframe 使用 allow-scripts opaque sandbox 和 no-referrer，完成事件必须满足 null origin、当前 contentWindow 和本次 128 位随机 nonce，恢复/重试轮换 nonce。浏览器不能读取跨源 iframe 的实际最终 URL，预检与导航之间的响应变化仍由 opaque sandbox 隔离保护宿主）——T22
 
 ### H-05：设备 token 可绕过服务端家长门切换到任意孩子
 
@@ -138,6 +144,8 @@
 
 状态：已缓解（后台默认将管理员 token 存 sessionStorage，仅明确勾选“在此设备保持登录”才持久化；旧凭据迁入会话，退出/401 清除两类存储；同源 JavaScript 仍能读取凭据，播放端存储不在 T21 所有权内）——T21
 
+状态：已缓解（远程队列键改为 server+token 的 SHA-256 身份摘要，迁移所有可识别旧身份时先保留队列再移除可反解 token 的旧键，不借用当前凭据上传其它身份；切换/清除连接删除旧身份队列与旧格式键。设备凭据为电视持久配对仍在 localStorage，已在播放端所有权内补充存储说明，未实现平台安全存储或同源插件隔离）——T22
+
 ### M-05：视频、海报、字幕和预加载资源允许任意外部地址
 
 - 严重度：中
@@ -149,6 +157,8 @@
   3. 恶意内容可借此向任意外部站点发起带 URL 参数的请求，或消耗播放端带宽/内存。
 - 建议修复：默认只允许内容包相对路径；外部媒体使用 HTTPS origin 白名单，预加载改为不读完整响应或设置 Content-Length/流式字节上限，并使用 `no-referrer`。
 
+状态：已修复（资源解析、video/poster/captions 写 DOM 和插件预加载均限制包内路径或已配置服务器同源地址，拒绝外站、协议相对地址与重复编码穿越；预加载不带凭据/referrer、不跟随跳转，限制并发、资源数、整体八秒、单资源 2 MiB 与累计 8 MiB，不再无界读取 arrayBuffer）——T22
+
 ### M-06：排序活动的颜色字段可注入任意 CSS token
 
 - 严重度：低
@@ -156,12 +166,16 @@
 - 问题：`bin.color` 没有颜色格式校验，直接写入 `--spa-bin-color`，随后参与 `background` 和 `color-mix`。恶意内容可以构造 `url(...)` 等 CSS 值，引发外部资源请求；目前未发现可直接执行脚本的路径。
 - 建议修复：schema 只允许十六进制、RGB/HSL 等明确颜色格式，拒绝 `url()`、分号、括号嵌套和未知 CSS token。
 
+状态：已修复（不改共享 schema 契约，在 sort 写样式前仅接受 hex、范围合法的 rgb/rgba 和具名颜色白名单，拒绝 url/var/分号及其它 CSS token；非法颜色回退宿主强调色，已有内容仍可运行）——T22
+
 ### L-01：预览消息信任范围被 `document.referrer` 动态扩大
 
 - 严重度：低
 - 位置：`apps/player/src/pages/Preview.tsx:48-55`
 - 问题：除预期 server/player origin 外，还把任意 `document.referrer` origin 加入允许集合。恶意网页嵌入预览 URL 后，可从自身 origin 发送合法格式的 `sprout:preview` 消息，注入任意合法课程草稿。
 - 建议修复：只接受显式配置的后台 origin，并增加一次性 nonce；不要把 referrer 当作信任来源。
+
+状态：已修复（预览消息仅接收实际父窗口和明确后台 origin；独立部署可用 VITE_SPROUT_ADMIN_ORIGIN 配置，不再根据 referrer 扩大来源。保留现有后台草稿消息契约，未额外引入双方未约定的预览 nonce）——T22
 
 ## 已验证的现有防护
 

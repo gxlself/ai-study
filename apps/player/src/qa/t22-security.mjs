@@ -8,7 +8,7 @@ import { chromium, expect } from '@playwright/test';
 const root = fileURLToPath(new URL('../../', import.meta.url));
 const dist = resolve(root, 'dist');
 const artifacts = resolve(root, 'test-artifacts/t22-security');
-const fixture = JSON.parse(await readFile(resolve(root, 'dev-fixtures/sprout.core/bundle.json'), 'utf8'));
+const fixture = JSON.parse(await readFile(resolve(dist, 'bundled/packs/sprout.core/bundle.json'), 'utf8'));
 const template = fixture.lessons.find((lesson) => (lesson.audience ?? 'child') === 'child');
 const credentials = { preview: 'qa-only-preview-token', device: 'qa-only-device-token' };
 const report = { checks: [], errors: [], resourcesClosed: false };
@@ -68,12 +68,15 @@ const external = createServer((request, response) => {
         return {unmount(){button.remove();}}; }
     };`);
   } else if (path === '/web.html') {
-    response.writeHead(200, { 'Content-Type': 'text/html' });
-    response.end(`<!doctype html><html><body style="margin:24px;font:28px sans-serif;background:#e6f4d7">
+    response.writeHead(200, { 'Content-Type': 'text/html; charset=utf-8' });
+    response.end(`<!doctype html><html><head><meta charset="UTF-8"></head><body style="margin:24px;font:28px sans-serif;background:#e6f4d7">
       <h1>一起轻轻拍拍手</h1><button id="done" style="font:inherit;padding:16px">完成网页活动</button>
       <script>document.querySelector('#done').onclick = () => { const p = new URL(location.href).searchParams;
         parent.postMessage({type:'sprout:complete',nonce:p.get('sproutNonce')},p.get('sproutParentOrigin')); };</script>
     </body></html>`);
+  } else if (path === '/untrusted-host.html') {
+    response.writeHead(200, { 'Content-Type': 'text/html' });
+    response.end(`<!doctype html><iframe id="preview" src="${home}/#/preview/security.remote?previewToken=${credentials.preview}&server=${encodeURIComponent(home)}" style="width:100vw;height:100vh"></iframe>`);
   } else if (path === '/redirect') {
     response.writeHead(302, { Location: `${home}/` }); response.end();
   } else {
@@ -85,11 +88,16 @@ const listen = (server) => new Promise((done) => server.listen(0, '127.0.0.1', d
 const close = (server) => new Promise((done) => { server.closeAllConnections(); server.close(done); });
 
 async function context(viewport) {
-  const ctx = await browser.newContext({ viewport, reducedMotion: 'reduce', serviceWorkers: 'block' });
+  const ctx = await browser.newContext({ viewport, reducedMotion: 'reduce' });
   await ctx.addInitScript((values) => {
-    localStorage.setItem('sprout.source', 'remote');
-    localStorage.setItem('sprout.deviceToken', values.device);
-    localStorage.setItem('sprout.server', location.origin);
+    try {
+      localStorage.setItem('sprout.source', 'remote');
+      localStorage.setItem('sprout.deviceToken', values.device);
+      localStorage.setItem('sprout.server', location.origin);
+    } catch { /* opaque sandbox 本来就不能使用家庭存储。 */ }
+    try {
+      navigator.serviceWorker.register = () => Promise.reject(new Error('验收关闭 Service Worker'));
+    } catch { /* opaque sandbox 不允许访问 Service Worker。 */ }
     Object.defineProperty(window, 'speechSynthesis', { configurable: true, value: undefined });
     Element.prototype.requestFullscreen = () => Promise.reject(new DOMException('验收固定尺寸', 'NotAllowedError'));
   }, credentials);
@@ -169,6 +177,23 @@ try {
     }, location.origin), lesson('remote', '可信后台草稿'));
     await expect(frame.getByRole('heading', { name: '可信后台草稿' })).toBeVisible();
     report.checks.push({ name: '预览严格校验后台 origin 与父窗口，可信草稿可更新', passed: true });
+    const untrustedHost = `${remote}/untrusted-host.html`;
+    await page.goto(untrustedHost);
+    const untrustedFrame = page.frameLocator('#preview');
+    try {
+      await expect(untrustedFrame.getByRole('heading', { name: '安全验收 remote' })).toBeVisible();
+    } catch (error) {
+      console.log(JSON.stringify(await Promise.all(page.frames().map(async (frame) => ({
+        origin: new URL(frame.url()).origin,
+        body: await frame.locator('body').innerText().catch(() => ''),
+      }))), null, 2));
+      throw error;
+    }
+    await page.evaluate(({ draft, origin }) => document.querySelector('iframe').contentWindow.postMessage({
+      type: 'sprout:preview', lesson: draft, packId: 'sprout.core',
+    }, origin), { draft: badDraft, origin: home });
+    await expect(untrustedFrame.getByRole('heading', { name: '安全验收 remote' })).toBeVisible();
+    report.checks.push({ name: '不可信 referrer/嵌入父来源不能注入草稿', passed: true });
   } finally { await ctx.close(); }
 
   for (const viewport of [{ width: 1920, height: 1080 }, { width: 1024, height: 768 }, { width: 390, height: 844 }]) {
@@ -178,6 +203,7 @@ try {
       await page.getByRole('button', { name: '开始', exact: true }).click();
       await expect(page.locator('.spa-sort-bin')).toHaveCount(2);
       assert.equal(await page.locator('.spa-sort-bin').first().evaluate((element) => element.style.getPropertyValue('--spa-bin-color')), 'var(--sp-accent-2)');
+      await expect.poll(() => page.locator('.spa-sort-item img').evaluate((image) => image.naturalWidth)).toBeGreaterThan(0);
       await page.screenshot({ path: resolve(artifacts, `sort-${viewport.width}.png`), fullPage: true });
       await page.close();
       const video = await openPreview(ctx, 'video');
@@ -196,7 +222,17 @@ try {
     await expect(page.locator('.spa-web iframe')).toHaveAttribute('sandbox', 'allow-scripts');
     await expect(page.locator('.spa-web iframe')).toHaveAttribute('referrerpolicy', 'no-referrer');
     const web = page.frameLocator('.spa-web iframe');
-    await expect(web.getByRole('button', { name: '完成网页活动' })).toBeVisible();
+    try {
+      await expect(web.getByRole('button', { name: '完成网页活动' })).toBeVisible();
+    } catch (error) {
+      console.log(JSON.stringify({
+        frames: await Promise.all(page.frames().map(async (frame) => ({
+          path: new URL(frame.url()).pathname, body: await frame.locator('body').innerText().catch(() => ''),
+        }))),
+        requests: requests.filter((entry) => entry.external),
+      }, null, 2));
+      throw error;
+    }
     const parentReadable = await web.locator('body').evaluate(() => {
       try { return !!parent.localStorage; } catch { return false; }
     });

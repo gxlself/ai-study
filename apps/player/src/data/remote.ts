@@ -80,25 +80,51 @@ export class RemoteSource implements DataSource {
     this.legacyKey = legacyRemoteStateKey(this.server, this.token);
   }
 
-  private state(): RemoteState {
-    let value = readJson(this.storage, this.stateKey);
-    const legacy = readJson(this.storage, this.legacyKey);
-    if (legacy !== null) {
+  private migrateLegacyStates(): void {
+    const keys = new Map([[this.legacyKey, this.stateKey]]);
+    const enumerable = this.storage as DataStorage & Partial<Pick<Storage, 'length' | 'key'>>;
+    if (typeof enumerable.length === 'number' && typeof enumerable.key === 'function') {
+      for (let i = 0; i < enumerable.length; i += 1) {
+        const key = enumerable.key(i);
+        if (!key?.startsWith('sprout.remote:') || key.startsWith('sprout.remote:v2:')) continue;
+        try {
+          const identity: unknown = JSON.parse(decodeURIComponent(key.slice('sprout.remote:'.length)));
+          if (Array.isArray(identity) && identity.length === 2 && identity.every((part) => typeof part === 'string')) {
+            keys.set(key, remoteStateKey(identity[0], identity[1]));
+          }
+        } catch { /* 未识别格式不静默删除，清除连接时统一移除旧格式键。 */ }
+      }
+    }
+    for (const [oldKey, stateKey] of keys) {
+      const legacy = readJson(this.storage, oldKey);
+      if (legacy === null) continue;
+      const value = readJson(this.storage, stateKey);
       if (!isRecord(legacy) || legacy.version !== 1) throw new StorageError('旧待上传记录格式无效，未覆盖原记录。');
       const oldSessions = parseStoredSessions(legacy.sessions);
       const oldPending = parseStoredSessions(legacy.pending);
       if (oldPending.some((session) => !session.clientId)) throw new StorageError('旧待上传记录缺少去重标识。');
       if (value !== null && (!isRecord(value) || value.version !== 1)) throw new StorageError('本机待上传记录格式无效。');
       const current = value as RemoteState | null;
-      value = {
+      const seen = new Set<string>();
+      const merged = {
         version: 1,
         sessions: recentSessions([...parseStoredSessions(current?.sessions ?? []), ...oldSessions]),
-        pending: [...parseStoredSessions(current?.pending ?? []), ...oldPending],
+        pending: [...parseStoredSessions(current?.pending ?? []), ...oldPending].filter((session) => {
+          if (!session.clientId) throw new StorageError('待上传记录缺少去重标识。');
+          if (seen.has(session.clientId)) return false;
+          seen.add(session.clientId);
+          return true;
+        }),
       };
       // 先写新身份，成功后再删旧键；失败时不得丢失未补传记录。
-      writeJson(this.storage, this.stateKey, value);
-      this.storage.removeItem(this.legacyKey);
+      writeJson(this.storage, stateKey, merged);
+      this.storage.removeItem(oldKey);
     }
+  }
+
+  private state(): RemoteState {
+    this.migrateLegacyStates();
+    const value = readJson(this.storage, this.stateKey);
     if (value === null) return { version: 1, sessions: [], pending: [] };
     if (!isRecord(value) || value.version !== 1) {
       throw new StorageError('本机待上传记录格式无效，原有记录未被覆盖。');

@@ -1,5 +1,5 @@
 import { useEffect, useMemo, useState } from 'react';
-import { useParams, useSearchParams } from 'react-router';
+import { useLocation, useParams, useSearchParams } from 'react-router';
 import { ChildInput, LanguageMode, validateLesson, type ChildProfile, type PluginInfo, type ResolvedConcept } from '@sprout/schema';
 import { LocalSource, normalizeServer, RemoteSource, type LessonData } from '../data';
 import { ActivityRegistry } from '../host';
@@ -12,6 +12,7 @@ import { adminOrigin, consumePreviewCredential, trustedPreviewMessage } from '..
 export function Preview() {
   const { lessonId } = useParams();
   const [params] = useSearchParams();
+  const routeKey = useLocation().key;
   const { speech } = useApp();
   const [data, setData] = useState<LessonData | null>(null);
   const [concepts, setConcepts] = useState<ResolvedConcept[]>([]);
@@ -19,7 +20,7 @@ export function Preview() {
   const [ready, setReady] = useState(false);
   const [revision, setRevision] = useState(0);
   const serverValue = params.get('server') || (/^https?:$/.test(location.protocol) ? location.origin : '');
-  const [credential] = useState(() => consumePreviewCredential(params));
+  const credential = useMemo(() => consumePreviewCredential(params), [params, routeKey]);
   const token = credential.token;
   const parsedMode = LanguageMode.safeParse(params.get('mode') ?? 'zh-en');
   const mode = parsedMode.success ? parsedMode.data : 'zh-en';

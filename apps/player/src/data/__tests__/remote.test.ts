@@ -404,6 +404,20 @@ describe('远程身份与只读预览', () => {
     await expect(create(undefined, storage).source.recent('child-1')).rejects.toBeInstanceOf(StorageError);
     expect(storage.getItem(old)).toBe(value);
   });
+  it('同时迁移其它旧身份，保留未上传记录，不借用当前 token 上传', async () => {
+    const storage = new MemoryStorage();
+    const otherServer = 'http://192.168.1.3:4310';
+    const otherToken = 'other-legacy-token';
+    const old = legacyRemoteStateKey(otherServer, otherToken);
+    storage.setItem(old, JSON.stringify({ version: 1, sessions: [session()], pending: [session()] }));
+    const { source, fetch } = create(undefined, storage);
+    expect(await source.recent('child-1')).toEqual([]);
+    expect(storage.getItem(old)).toBeNull();
+    expect(JSON.parse(storage.getItem(remoteStateKey(otherServer, otherToken))!).pending).toHaveLength(1);
+    expect([...storage.items.keys()].some((key) => decodeURIComponent(key).includes(otherToken))).toBe(false);
+    await source.flush();
+    expect(fetch).not.toHaveBeenCalled();
+  });
 
   it('预览拒绝设备/记录接口并且不读写传入或浏览器存储', async () => {
     const storage = new MemoryStorage();

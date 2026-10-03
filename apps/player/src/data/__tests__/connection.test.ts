@@ -71,4 +71,14 @@ describe('连接设置', () => {
     expect(() => saveConnection({ kind: 'local' })).toThrow(StorageError);
     expect(() => clearConnection()).toThrow(StorageError);
   });
+  it('损坏的旧服务器地址不阻止清除设备凭据或重新配对', () => {
+    storage.setItem('sprout.server', 'not a URL');
+    storage.setItem('sprout.deviceToken', 'old-token');
+    clearConnection();
+    expect(storage.getItem('sprout.deviceToken')).toBeNull();
+    storage.setItem('sprout.server', 'not a URL');
+    storage.setItem('sprout.deviceToken', 'old-token');
+    saveConnection({ kind: 'remote', server: 'http://localhost:4310', token: 'new-token' });
+    expect(readConnection()?.token).toBe('new-token');
+  });
 });
