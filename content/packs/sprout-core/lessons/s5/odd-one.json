@@ -1,0 +1,73 @@
+{
+  "schemaVersion": 1,
+  "id": "core.s5.odd-one",
+  "title": {"zh": "哪个不一样？", "en": "Which One Is Different?"},
+  "summary": {"zh": "先说一组是什么，再找不同类。", "en": "Name the group, then find the different kind."},
+  "ageRange": [24, 29],
+  "domains": ["cognition", "math"],
+  "themeId": "s5-t1",
+  "durationMin": 5,
+  "coView": "required",
+  "audience": "child",
+  "objectives": [
+    {"zh": "注意三个同类和一个不同类。", "en": "Notice three of one kind and one of another."},
+    {"zh": "用指或短句说自己的发现。", "en": "Point to or describe a discovery."}
+  ],
+  "cover": {"concept": "banana", "bg": "paper"},
+  "parentGuide": {
+    "intro": "四张图都可能有不同特点，所以先说“这次按种类看”。每轮明确三张同类，再找不同类。宝宝若按颜色找到不同，也先听解释，不把有道理的观察说成错。",
+    "tips": ["每轮先命名四张图，确认宝宝熟悉它们。", "先示范一轮；四张太多时关屏用两张玩。", "问完停五秒，不连续追问。"],
+    "phrases": [
+      {"zh": "这次按种类看。", "en": "Let's look at the kind this time."},
+      {"zh": "这三个都是水果。", "en": "These three are all fruit."},
+      {"zh": "小狗是动物。", "en": "The dog is an animal."},
+      {"zh": "你发现了什么？", "en": "What did you notice?"}
+    ],
+    "why": "分类取决于所选规则。清楚说出规则，再接住宝宝的观察，比把“不同”当成只有一个答案的泛化测验更合适。",
+    "refs": ["[69]", "[71]", "[81]", "[83]"]
+  },
+  "offline": [{
+    "title": "找一个新朋友",
+    "minutes": 6,
+    "materials": ["三只大袜子", "一只完整大玩偶"],
+    "steps": ["把三只袜子和玩偶平放在地垫上。", "说“这次按是什么来分”。", "请宝宝把袜子放一起，留下玩偶。", "宝宝愿意时换成三本书和一只袜子。"],
+    "safety": "成人陪同。袜子不要带脱落装饰，玩偶无松动纽扣或眼睛。直径小于3.5厘米的小物件有窒息风险。材料不套住头脸，不让宝宝含咬布料。",
+    "domains": ["cognition", "math"],
+    "question": "你想怎么把它们分开？",
+    "levels": {"easier": "只给两只袜子和一只玩偶，成人先把袜子并排。", "harder": "换一组熟悉的大物品，让宝宝指着示范分组规则。"}
+  }],
+  "steps": [{
+    "type": "choose",
+    "parentTip": "明确按种类找不同。若宝宝说的是颜色，认可发现后再说明本轮规则。",
+    "props": {
+      "showLabels": false,
+      "hintAfter": 1,
+      "rounds": [
+        {
+          "prompt": {"zh": "三个是水果，哪个不一样？", "en": "Three are fruit. Which one is different?"},
+          "options": ["apple", "banana", "dog", "orange"],
+          "answer": "dog",
+          "explain": {"zh": "小狗是动物，其他是水果。", "en": "The dog is an animal. The others are fruit."}
+        },
+        {
+          "prompt": {"zh": "三个是动物，哪个不一样？", "en": "Three are animals. Which one is different?"},
+          "options": ["cat", "pear", "rabbit", "cow"],
+          "answer": "pear",
+          "explain": {"zh": "梨是水果，其他是动物。", "en": "The pear is a fruit. The others are animals."}
+        },
+        {
+          "prompt": {"zh": "三个在路上开，哪个不一样？", "en": "Three drive on roads. Which one is different?"},
+          "options": ["car", "bus", "truck", "boat"],
+          "answer": "boat",
+          "explain": {"zh": "小船在水上，不在路上开。", "en": "The boat travels on water, not on roads."}
+        },
+        {
+          "prompt": {"zh": "三个是衣物，哪个不一样？", "en": "Three are clothes. Which one is different?"},
+          "options": ["book", "shirt", "coat", "pants"],
+          "answer": "book",
+          "explain": {"zh": "书用来看，其他是衣物。", "en": "A book is for reading. The others are clothes."}
+        }
+      ]
+    }
+  }]
+}

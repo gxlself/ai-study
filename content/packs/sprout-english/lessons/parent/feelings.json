@@ -1,0 +1,79 @@
+{
+  "schemaVersion": 1,
+  "id": "english.parent.feelings",
+  "title": {"zh": "我在这里陪你", "en": "I'm Here with You"},
+  "summary": {"zh": "六句情绪短语，先陪伴，不考问。", "en": "Six phrases for noticing feelings and offering connection."},
+  "ageRange": [18, 36],
+  "audience": "parent",
+  "domains": ["english", "social", "language"],
+  "tags": ["feelings", "parent-led", "tpr"],
+  "durationMin": 3,
+  "coView": "required",
+  "objectives": [
+    {"zh": "看表情，轻声回应。", "en": "Notice expressions and respond gently."},
+    {"zh": "尊重抱抱与休息选择。", "en": "Respect choices about hugs and breaks."}
+  ],
+  "cover": {"concept": "happy", "bg": "sky"},
+  "parentGuide": {
+    "intro": "家长在平静时学六句。真实情绪来了先关屏，用宝宝熟悉的语言陪伴，再自然加入一句英文；不让哭泣的宝宝跟读，也不要求马上开心。",
+    "tips": [
+      "每步附美式音标，只给家长参考；语气轻柔，不用中文谐音。",
+      "动作游戏在平静时做，成人微笑、摊开手或挥手，宝宝可只看。",
+      "抱抱先询问，宝宝拒绝就尊重；需要休息时一起停下，不用屏幕安抚。"
+    ],
+    "phrases": [
+      {"zh": "我很开心。", "en": "I feel happy."},
+      {"zh": "你好像难过了。", "en": "You look sad."},
+      {"zh": "难过也没关系。", "en": "It's okay to feel sad."},
+      {"zh": "想要抱抱吗？", "en": "Would you like a hug?"},
+      {"zh": "我在这里陪你。", "en": "I'm here with you."},
+      {"zh": "我们休息一下吧。", "en": "Let's take a break."}
+    ],
+    "why": "回应和接纳比要求正确英语更重要。情绪命名与回应性照护一致，但本课不是情绪治疗，不保证调节能力提升。",
+    "refs": ["[47]", "[53]", "[54]", "[91]"]
+  },
+  "printables": [
+    {"kind": "cards", "title": "平静时看的情绪实体卡", "items": ["happy", "sad"], "size": "large", "showText": true, "showEnglish": true}
+  ],
+  "offline": [
+    {
+      "title": "平静时做表情，难过时陪伴",
+      "minutes": 5,
+      "materials": ["成人拿持的大张情绪卡，可不用"],
+      "steps": [
+        "平静时关屏，成人微笑，指自己的表情说开心短句。",
+        "用实体卡看看难过的表情，不要求宝宝假哭或选正确答案。",
+        "成人摊开手询问是否想抱抱，接受靠近或拒绝。",
+        "真实情绪出现时收好材料，先用宝宝熟悉的语言陪伴，愿意时再轻声说一句。"
+      ],
+      "question": "你现在想让我怎么陪你呀？",
+      "levels": {
+        "easier": "不拿卡片，只在宝宝身边轻声陪伴。",
+        "harder": "平静时让宝宝选择一张卡或一个陪伴动作，成人跟着回应。"
+      },
+      "safety": "成人陪伴，尊重身体接触意愿，不强抱、不强迫开心或深呼吸，不用屏幕转移哭闹；卡片保持完整，避免入口。",
+      "domains": ["english", "social"]
+    }
+  ],
+  "steps": [
+    {
+      "type": "guide",
+      "parentTip": "情绪不是英语测验；先用宝宝听得懂的语言陪伴。",
+      "props": {
+        "goal": "用六句短语示范接纳情绪与尊重选择。",
+        "materials": ["可选的大张实体情绪卡"],
+        "steps": [
+          {"text": "平静时成人微笑，示范自己的感受。美式 /aɪ fil ˈhæpi/。", "concept": "happy", "say": {"zh": "我很开心。", "en": "I feel happy."}},
+          {"text": "留意表情，用好像而非断定来回应。美式 /ju lʊk sæd/。", "concept": "sad", "say": {"zh": "你好像难过了。", "en": "You look sad."}},
+          {"text": "先用宝宝熟悉的语言接纳，再自然示范。美式 /ɪts oʊˈkeɪ tə fil sæd/。", "say": {"zh": "难过也没关系。", "en": "It's okay to feel sad."}},
+          {"text": "摊开自己的手邀请，宝宝拒绝就尊重。美式 /wʊd ju laɪk ə hʌɡ/。", "concept": "hug", "say": {"zh": "想要抱抱吗？", "en": "Would you like a hug?"}},
+          {"text": "安静留在宝宝身边，不要求回答。美式 /aɪm hɪr wɪð ju/。", "say": {"zh": "我在这里陪你。", "en": "I'm here with you."}},
+          {"text": "一起停下活动，允许宝宝按自己的需要休息。美式 /lɛts teɪk ə breɪk/。", "say": {"zh": "我们休息一下吧。", "en": "Let's take a break."}}
+        ],
+        "playMin": 5,
+        "observe": ["宝宝怎样表达需要陪伴或想保持距离。", "家长有没有先回应情绪而非纠正英文。", "宝宝愿意继续或需要停止时，家长是否跟随。"],
+        "safety": "不强制身体接触，不强迫表演情绪，不用屏幕安抚；宝宝不舒服时停止语言游戏。"
+      }
+    }
+  ]
+}

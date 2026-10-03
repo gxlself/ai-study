@@ -1,0 +1,63 @@
+{
+  "schemaVersion": 1,
+  "id": "core.s4.grow-big",
+  "title": { "zh": "变大变小", "en": "Make a Big Shape, Make a Small Shape" },
+  "summary": { "zh": "蹲低、站高，轻轻伸伸手。", "en": "Crouch low, stand tall, and gently reach." },
+  "themeId": "s4-t6",
+  "ageRange": [18, 23],
+  "domains": ["motor", "math"],
+  "audience": "parent",
+  "durationMin": 2,
+  "coView": "required",
+  "objectives": [
+    { "zh": "在安全动作中体验高和低。", "en": "Experience high and low through safe movement." },
+    { "zh": "听到动作里的大和小。", "en": "Hear big and small while changing body shapes." }
+  ],
+  "cover": { "concept": "raise-hands", "bg": "grass" },
+  "parentGuide": {
+    "intro": "先读再关屏，在平坦空地陪着做。成人蹲低，再站起来伸手。宝宝按自己能力模仿，坐着也能玩。这里的变大变小是身体姿势，不是身体真的变了大小。",
+    "tips": ["先示范，等宝宝愿意再一起做。", "动作慢，不要求跳起或踮脚。", "站不稳就坐着伸手，不拉手臂。"],
+    "phrases": [
+      { "zh": "蹲低一点，看起来小小的。", "en": "Crouch low and make a small shape." },
+      { "zh": "站起来，身体高一些。", "en": "Stand up. Your body is taller." },
+      { "zh": "伸伸手，看起来大一些。", "en": "Reach out and make a bigger shape." },
+      { "zh": "我们歇一会儿。", "en": "Let's rest for a moment." }
+    ],
+    "why": "动作让高低和大小词连到经验。成人提供安全支持，允许不同参与方式。不用动作完成度评价宝宝能力。",
+    "refs": ["6", "67", "71", "83"]
+  },
+  "offline": [
+    {
+      "title": "坐着也能变大变小",
+      "minutes": 5,
+      "materials": ["稳固防滑地垫"],
+      "steps": ["和宝宝面对面坐稳。", "成人把手收近，说小小的。", "再把双手轻轻展开，说大一些。", "伸手向上，说高一些。", "把手放下，一起休息。"],
+      "safety": "动作轻缓，不屏息、不强压关节。不拉手臂站起，不踮脚够高物。地面防滑，清开桌角和台阶。小物件直径小于3.5厘米有窒息风险，先收走。成人贴近看护。",
+      "domains": ["motor", "math"],
+      "question": "你想把手往哪里伸？",
+      "levels": { "easier": "宝宝只看，或坐着做一个伸手动作。", "harder": "能稳站且愿意时，慢慢蹲低、站高，再回到休息姿势。" }
+    }
+  ],
+  "steps": [
+    {
+      "type": "guide",
+      "title": { "zh": "身体高一点，低一点", "en": "A Little Higher, a Little Lower" },
+      "parentTip": "按宝宝已会的动作玩。可以坐着；大和小只是姿势的比喻。",
+      "props": {
+        "goal": "用慢而安全的身体姿势体验高低与大小。",
+        "materials": ["平坦防滑空地", "稳固地垫"],
+        "steps": [
+          { "text": "清开地面，在宝宝身边站稳。", "say": { "zh": "我们慢慢玩。", "en": "Let's play slowly." } },
+          { "text": "成人先缓缓蹲低，等宝宝看。", "say": { "zh": "蹲低，看起来小小的。", "en": "Crouch low. A small shape." } },
+          { "text": "成人慢慢站直，双脚稳稳着地。", "say": { "zh": "站起来，高一些。", "en": "Stand up, a little taller." } },
+          { "text": "把双手轻轻展开，再向上伸。", "say": { "zh": "伸伸手，看起来大一些。", "en": "Reach out. A bigger shape." }, "concept": "raise-hands" },
+          { "text": "坐下后再收手、展开，陪宝宝试。", "say": { "zh": "坐着也可以一起玩。", "en": "We can play while sitting too." }, "concept": "sit-down" },
+          { "text": "放下双手，和宝宝一起休息。", "say": { "zh": "歇一会儿吧。", "en": "Let's rest for a moment." } }
+        ],
+        "playMin": 5,
+        "observe": ["宝宝喜欢看还是模仿哪种动作。", "宝宝能舒服地做哪种姿势。", "宝宝怎样表示疲倦或结束。"],
+        "safety": "成人在旁，动作慢，双脚不必离地。不要求跳、踮脚或站到高处。不拉手臂，不强压下蹲，不抱着摇晃。站不稳用坐姿。地面防滑，清开台阶、桌角和小物件。"
+      }
+    }
+  ]
+}

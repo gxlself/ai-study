@@ -51,12 +51,23 @@ function PatternActivity({ ctx }: { ctx: ActivityContext<PatternProps> }) {
   }
   useNav(ctx, (key) => {
     if (key === 'left' || key === 'right') {
-      const index = (focusIndex + (key === 'right' ? 1 : round.options.length - 1)) % round.options.length;
+      const focused = ctx.focus.current();
+      const focusedIndex = focused ? buttons.current.indexOf(focused as HTMLButtonElement) : -1;
+      const currentIndex = focusedIndex >= 0 ? focusedIndex : focusIndex;
+      const index = (currentIndex + (key === 'right' ? 1 : round.options.length - 1)) % round.options.length;
       setFocusIndex(index);
       ctx.focus.focus(buttons.current[index]);
       return true;
     }
-    if (key === 'ok') { if (answer) next(); else choose(round.options[focusIndex]); return true; }
+    if (key === 'ok') {
+      if (answer) next();
+      else {
+        const focused = ctx.focus.current();
+        const index = focused ? buttons.current.indexOf(focused as HTMLButtonElement) : -1;
+        choose(round.options[index >= 0 ? index : focusIndex]);
+      }
+      return true;
+    }
     return false;
   });
 
@@ -70,7 +81,7 @@ function PatternActivity({ ctx }: { ctx: ActivityContext<PatternProps> }) {
       </div>
     </div>
     <Text ctx={ctx} text={wrong ? PHRASES.tryAgain : PHRASES.whatsNext} className="spa-question" />
-    <div className="spa-pattern-options">
+    <div className="spa-pattern-options" data-round-index={roundIndex}>
       {round.options.map((item, index) => <button type="button" data-focusable key={item}
         ref={(el) => { buttons.current[index] = el; }} disabled={busy.busy || !!answer}
         className={`spa-pattern-option ${wrong === item ? 'is-retry' : ''}`}
@@ -85,4 +96,6 @@ function PatternActivity({ ctx }: { ctx: ActivityContext<PatternProps> }) {
   </Stage>;
 }
 
-export const patternActivity = defineBuiltin<PatternProps>('pattern', PatternActivity, () => [PHRASES.whatsNext, PHRASES.tryAgain]);
+export const patternActivity = defineBuiltin<PatternProps>('pattern', PatternActivity, (props) => [
+  props.intro ?? PHRASES.whatsNext, PHRASES.tryAgain,
+]);

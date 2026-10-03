@@ -3,10 +3,10 @@
   "id": "core.s3.car-song",
   "title": {
     "zh": "汽车开呀开",
-    "en": "Little Car Goes Round"
+    "en": "The Little Car Goes"
   },
   "summary": {
-    "zh": "家长学唱汽车歌，再用真实玩具车互动。",
+    "zh": "家长先学唱。关屏后推真实玩具车。",
     "en": "Learn a car song, then play with a real toy car."
   },
   "ageRange": [12, 17],
@@ -18,11 +18,11 @@
   "audience": "parent",
   "objectives": [
     {
-      "zh": "宝宝在歌声中听汽车词和节奏。",
+      "zh": "听汽车词和歌声。",
       "en": "Your baby hears car words and rhythm in a shared song."
     },
     {
-      "zh": "宝宝用看、推或发声参与互动。",
+      "zh": "用看、推或发声参与。",
       "en": "Your baby joins with a look, push, or sound."
     }
   ],
@@ -31,11 +31,11 @@
     "bg": "paper"
   },
   "parentGuide": {
-    "intro": "先学会慢速唱法，关屏后拿出大号玩具车。家长边唱边慢慢推车，唱到“停”时停一下，给宝宝看和回应的机会。",
+    "intro": "家长先单独学唱。关屏后拿出大号小车。边唱边慢慢推。唱到停一停就停住。等宝宝看、伸手或发声。没有小车可推布球。",
     "tips": [
       "先唱给宝宝听，不必追求音准。",
       "推车动作慢，留出停顿。",
-      "英语只跟唱短句，中文保持自然对话。"
+      "英语只跟唱短句。中文保持自然对话。"
     ],
     "phrases": [
       {
@@ -55,8 +55,8 @@
         "en": "Your turn to push."
       }
     ],
-    "why": "主动唱歌、同步动作和轮流推车，把声音放进真实互动。英语用短句和熟悉旋律输入，不承诺屏幕本身带来语言效果。",
-    "refs": ["R50", "R54", "R87", "R88"]
+    "why": "主动音乐研究支持亲子参与。这里把歌声和推车相连。家长接住宝宝的回应。不承诺英语学习效果。",
+    "refs": ["[53]", "[82]", "[87]"]
   },
   "offline": [
     {
@@ -64,17 +64,17 @@
       "minutes": 8,
       "materials": ["大号玩具车", "干净地面"],
       "steps": [
-        "家长坐在地上，先唱一遍并慢慢推车。",
-        "唱到“嘀嘀”时停一下，看宝宝是否看车。",
-        "把车推到宝宝面前，邀请宝宝伸手或轻推。",
-        "唱完关掉玩具，和宝宝说“看完啦”。"
+        "家长坐在地上。先唱一遍并慢慢推车。",
+        "唱到“嘀嘀”时停一下。看宝宝是否看车。",
+        "把车推到宝宝面前。邀请宝宝伸手或轻推。",
+        "唱完把小车放好。再说“玩好啦”。"
       ],
-      "safety": "只用没有可拆小零件的大号玩具车；成人全程陪伴，保持地面干净，不把车放在楼梯、桌边或道路上。",
+      "safety": "只用三岁以下适龄车。小零件不可拆卸。地面干净、防滑。远离楼梯、桌边和道路。成人全程陪伴。防玩具碎裂入口。",
       "domains": ["music", "english", "motor"],
       "question": "小车想开到哪里？",
       "levels": {
         "easier": "家长唱一小句，只做慢慢推车。",
-        "harder": "唱到停顿时停住小车，等宝宝用动作回应。"
+        "harder": "唱到停顿时停住小车。等宝宝用动作回应。"
       }
     }
   ],
@@ -87,7 +87,7 @@
         "materials": ["大号玩具车", "干净地面"],
         "steps": [
           {
-            "text": "家长先唱歌，慢慢推一辆大号玩具车。",
+            "text": "家长先唱歌。慢慢推一辆大号玩具车。",
             "concept": "toy-car",
             "say": {
               "zh": "小汽车慢慢开。",
@@ -103,7 +103,7 @@
             }
           },
           {
-            "text": "把车推近宝宝，邀请宝宝伸手或轻推。",
+            "text": "把车推近宝宝。邀请宝宝伸手或轻推。",
             "concept": "toy-car",
             "say": {
               "zh": "轮到你推啦。",
@@ -113,64 +113,74 @@
         ],
         "playMin": 8,
         "observe": [
-          "宝宝是否看向移动的小车。",
-          "宝宝是否在停顿时等待或发声。",
-          "宝宝是否愿意伸手参与。"
+          "是否看向移动的小车。",
+          "是否在停顿时等待或发声。",
+          "是否愿意伸手参与。"
         ],
-        "safety": "玩具车要大且完整。成人陪伴并控制速度，不让宝宝把车或小零件放入口。"
+        "safety": "玩具车要大且完整。成人控制速度。小零件不能拆卸。防止玩具碎裂入口。远离楼梯和高处。"
       }
     },
     {
       "type": "song",
-      "parentTip": "慢慢唱一遍，唱完就去玩真实小车。",
+      "parentTip": "慢慢唱一遍。唱完就去玩真实小车。",
       "props": {
         "title": {
           "zh": "汽车开呀开",
-          "en": "Little Car Goes Round"
+          "en": "The Little Car Goes"
         },
-        "credit": "旋律：传统（公有领域，Mulberry Bush）；中文词：芽芽成长原创；English lyrics: Sprout original",
+        "credit": "旋律：传统（公有领域）；中文词：芽芽成长原创；英文词：芽芽成长原创；旋律名：Mulberry Bush",
         "bpm": 78,
         "instrument": "musicbox",
         "lines": [
           {
             "lang": "zh",
-            "text": "小汽车慢慢开呀开",
-            "notes": "C4/1 D4/1 E4/1 F4/1 G4/1 F4/1 E4/1 D4/1"
+            "text": "小车小车慢慢开呀",
+            "notes": "C4/0.5 C4/0.5 C4/0.5 C4/1 E4/0.5 G4/1 E4/0.5 C4/1"
           },
           {
             "lang": "zh",
-            "text": "嘀嘀嘀呀出发啦",
-            "notes": "C4/1 D4/1 E4/1 F4/1 E4/1 D4/1 C4/1"
+            "text": "慢慢开呀",
+            "notes": "C4/0.5 D4/1 D4/0.5 D4/1"
           },
           {
             "lang": "zh",
-            "text": "开到前面再回来",
-            "notes": "C4/1 D4/1 E4/1 F4/1 E4/1 D4/1 C4/1"
+            "text": "嘀嘀嘀呀",
+            "notes": "E4/0.5 D4/1 B3/0.5 G3/1.5"
           },
           {
             "lang": "zh",
-            "text": "小汽车慢慢开回家",
-            "notes": "C4/1 D4/1 E4/1 F4/1 G4/1 F4/1 E4/1 D4/1"
+            "text": "小车小车慢慢开呀",
+            "notes": "C4/0.5 C4/0.5 C4/0.5 C4/1 E4/0.5 G4/1 E4/0.5 C4/1"
+          },
+          {
+            "lang": "zh",
+            "text": "开到这里我们停一停",
+            "notes": "E4/0.5 D4/0.5 E4/0.5 D4/0.5 C4/0.5 B3/0.5 A3/0.5 G3/1.5 G3/1 R/0.5"
           },
           {
             "lang": "en",
-            "text": "Little car goes round and round",
-            "notes": "C4/1 D4/1 E4/1 F4/1 G4/1 F4/1 E4/1"
+            "text": "This is how we drive our small car",
+            "notes": "C4/0.5 C4/0.5 C4/0.5 C4/1 E4/0.5 G4/1 E4/0.5 C4/1"
           },
           {
             "lang": "en",
-            "text": "Beep beep beep let us go",
-            "notes": "C4/1 D4/1 E4/1 F4/1 E4/1 D4/1"
+            "text": "Drive our small car",
+            "notes": "C4/0.5 D4/1 D4/0.5 D4/1"
           },
           {
             "lang": "en",
-            "text": "Drive ahead and come back home",
-            "notes": "C4/1 D4/1 E4/1 F4/1 G4/1 F4/1 E4/1"
+            "text": "Beep beep beep beep",
+            "notes": "E4/0.5 D4/1 B3/0.5 G3/1.5"
           },
           {
             "lang": "en",
-            "text": "Little car goes home so slow",
-            "notes": "C4/1 D4/1 E4/1 F4/1 G4/1 F4/1 E4/1"
+            "text": "This is how we drive our small car",
+            "notes": "C4/0.5 C4/0.5 C4/0.5 C4/1 E4/0.5 G4/1 E4/0.5 C4/1"
+          },
+          {
+            "lang": "en",
+            "text": "Now we stop the car and rest right here",
+            "notes": "E4/0.5 D4/0.5 E4/0.5 D4/0.5 C4/0.5 B3/0.5 A3/0.5 G3/1.5 G3/1 R/0.5"
           }
         ],
         "repeat": 1,

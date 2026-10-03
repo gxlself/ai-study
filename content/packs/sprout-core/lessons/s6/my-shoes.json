@@ -1,0 +1,112 @@
+{
+  "schemaVersion": 1,
+  "id": "core.s6.my-shoes",
+  "title": { "zh": "我自己穿鞋", "en": "Trying My Shoes" },
+  "summary": { "zh": "可以再试，也可以请人帮忙。", "en": "You can try again or ask for help." },
+  "ageRange": [30, 36],
+  "domains": ["life", "social"],
+  "themeId": "s6-t3",
+  "tags": ["story", "getting-dressed", "process-praise"],
+  "durationMin": 7,
+  "coView": "required",
+  "audience": "child",
+  "objectives": [
+    { "zh": "听小熊尝试穿鞋的故事。", "en": "Hear a story about Bear trying to put on shoes." },
+    { "zh": "练习说再试试或帮帮我。", "en": "Practise saying I'll try again or please help me." }
+  ],
+  "cover": { "concept": "shoes", "bg": "room" },
+  "parentGuide": {
+    "intro": "慢读小熊的五页故事。问一个问题后等待，孩子只指图也可以。左右由成人检查，不要求记住口诀。课后坐稳试穿宽口鞋；疲累时直接帮忙，不让坚持变成强迫。",
+    "tips": [
+      "可以停下来谈谈孩子的尝试。",
+      "夸具体动作，不说“你最能干”。",
+      "先问想自己试还是需要帮忙。",
+      "鞋子最终是否合脚由成人确认。"
+    ],
+    "phrases": [
+      { "zh": "你把鞋口打开了。", "en": "You opened the shoe." },
+      { "zh": "换过来，再试试。", "en": "Swap them and try again." },
+      { "zh": "帮帮我，好吗？", "en": "Please help me." },
+      { "zh": "我们一起做到了。", "en": "We did it together." }
+    ],
+    "why": "成人提供少量帮助，让孩子参与真实步骤。具体过程性表扬与后续动机相关，但不保证坚持或成功；求助也是解决问题。",
+    "refs": ["[7]", "[81]", "[82]", "[95]"]
+  },
+  "offline": [
+    {
+      "title": "坐稳试穿鞋",
+      "minutes": 8,
+      "materials": ["合脚的宽口粘扣鞋", "稳固低座位或地垫"],
+      "steps": [
+        "关屏，让孩子稳稳坐好。",
+        "成人摆好左右鞋，打开鞋口。",
+        "邀请孩子把一只脚伸进去。",
+        "需要时扶住鞋，帮助调整。",
+        "扣好后，成人检查是否舒适。",
+        "愿意时试另一只，不愿意就帮忙。"
+      ],
+      "safety": "成人全程陪伴，在地垫或稳固低座位上进行，远离楼梯和门口。不拉扯脚踝，不用力挤脚；确认鞋内无异物、鞋合脚且扣带牢固。不用小贴纸教左右，直径小于三点五厘米的小物件有窒息风险。",
+      "domains": ["life", "social"],
+      "question": "哪一步想自己试，哪一步需要帮助？",
+      "levels": {
+        "easier": "成人穿好鞋，孩子只合上粘扣。",
+        "harder": "孩子尝试打开鞋口、伸脚、合扣，成人始终检查。"
+      }
+    }
+  ],
+  "steps": [
+    {
+      "type": "story",
+      "title": { "zh": "小熊试穿鞋", "en": "Bear Tries Shoes" },
+      "parentTip": "这是小熊的假装故事。停顿等孩子回应；成人帮忙不是失败，不要求孩子分清左右。",
+      "props": {
+        "title": { "zh": "小熊试穿鞋", "en": "Bear Tries Shoes" },
+        "pages": [
+          {
+            "scene": { "bg": "room", "ground": "floor", "sprites": [
+              { "concept": "bear", "x": 28, "y": 72, "size": 38, "anim": "none" },
+              { "concept": "shoes", "x": 60, "y": 78, "size": 22, "anim": "none" },
+              { "concept": "chair", "x": 81, "y": 76, "size": 22, "anim": "none" }
+            ] },
+            "text": { "zh": "小熊坐稳了。它想自己穿鞋。", "en": "Bear sits safely. Bear wants to try putting on shoes." },
+            "prompts": [{ "kind": "distancing", "zh": "你想自己试过什么？", "en": "What have you wanted to try by yourself?" }]
+          },
+          {
+            "scene": { "bg": "room", "ground": "floor", "sprites": [
+              { "concept": "bear", "x": 28, "y": 72, "size": 38, "anim": "none" },
+              { "concept": "shoes", "x": 60, "y": 78, "size": 22, "anim": "none" },
+              { "concept": "dad", "x": 81, "y": 75, "size": 24, "anim": "none" }
+            ] },
+            "text": { "zh": "鞋子放反了。爸爸说：“换过来试试。”", "en": "The shoes are swapped. Dad says, \"Let's swap them back and try.\"" }
+          },
+          {
+            "scene": { "bg": "room", "ground": "floor", "sprites": [
+              { "concept": "bear", "x": 28, "y": 72, "size": 38, "anim": "none" },
+              { "concept": "shoes", "x": 60, "y": 78, "size": 22, "anim": "none" },
+              { "concept": "dad", "x": 81, "y": 75, "size": 24, "anim": "none" }
+            ] },
+            "text": { "zh": "小熊试了试。“帮我打开鞋口，好吗？”", "en": "Bear tries. \"Please help me open the shoe.\"" },
+            "prompts": [{ "kind": "open", "zh": "你会怎样帮小熊？", "en": "How would you help Bear?" }]
+          },
+          {
+            "scene": { "bg": "room", "ground": "floor", "sprites": [
+              { "concept": "bear", "x": 28, "y": 72, "size": 38, "anim": "none" },
+              { "concept": "shoes", "x": 60, "y": 78, "size": 22, "anim": "none" },
+              { "concept": "dad", "x": 81, "y": 75, "size": 24, "anim": "none" }
+            ] },
+            "text": { "zh": "爸爸扶住鞋。小熊把脚伸进去，合好扣带。", "en": "Dad holds the shoe steady. Bear slides a foot in and fastens the strap." }
+          },
+          {
+            "scene": { "bg": "room", "ground": "floor", "sprites": [
+              { "concept": "bear", "x": 28, "y": 72, "size": 38, "anim": "none" },
+              { "concept": "shoes", "x": 60, "y": 78, "size": 22, "anim": "none" },
+              { "concept": "dad", "x": 81, "y": 75, "size": 24, "anim": "none" }
+            ] },
+            "text": { "zh": "爸爸检查好两只鞋。“我们一起穿好啦！”", "en": "Dad checks both shoes. \"We put them on together!\"" },
+            "prompts": [{ "kind": "recall", "zh": "小熊刚才怎样请人帮忙？", "en": "How did Bear ask for help?" }]
+          }
+        ]
+      }
+    }
+  ]
+}

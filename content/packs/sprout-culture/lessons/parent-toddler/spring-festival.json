@@ -1,0 +1,71 @@
+{
+  "schemaVersion": 1,
+  "id": "culture.parent-toddler.spring-festival",
+  "title": { "zh": "春节：贴福字包饺子", "en": "Spring Festival: Fu and Pretend Dumplings" },
+  "summary": { "zh": "贴大福字、说新年好，用大软布假装包饺子。", "en": "Place a large fu decoration, exchange New Year wishes, and fold cloth pretend dumplings." },
+  "ageRange": [18, 36],
+  "audience": "parent",
+  "domains": ["social", "motor", "language", "english"],
+  "themeId": "culture.spring-festival",
+  "tags": ["春节", "家长指引", "贴福字", "包饺子"],
+  "durationMin": 3,
+  "coView": "required",
+  "objectives": [
+    { "zh": "自愿向家人送祝福。", "en": "Offer good wishes to family by choice." },
+    { "zh": "用大软布练习放和折。", "en": "Practice placing and folding large pieces of cloth." }
+  ],
+  "cover": { "concept": "fest-fu", "bg": "paper" },
+  "parentGuide": {
+    "intro": "屏幕只给家长看，读完关屏。陪宝宝选大福字的位置，说新年好，再用两块大软布假装包饺子。福字表示祝福，不教识字、不许愿求功效。没有家人来访也能庆祝，问好用说话、挥手或点头都可以。",
+    "tips": ["贴在宝宝平视处，不踩凳子够高处。", "先等五秒，再示范折布；不要求形状整齐。", "成人包真饺子另行安排，宝宝不接触生面粉、生馅或灶具。"],
+    "phrases": [
+      { "zh": "新年好！", "en": "Happy New Year!" },
+      { "zh": "福字贴这里。", "en": "Let's put the fu decoration here." },
+      { "zh": "放中间，折一下。", "en": "Put it in the middle, then fold." },
+      { "zh": "轮到你啦。", "en": "Your turn." }
+    ],
+    "why": "熟悉的节日仪式让祝福和动手游戏有意义。成人示范后等待宝宝选择、尝试和回应，不追求标准作品。",
+    "refs": ["[8]", "[44]", "[80]", "[82]", "[93]"]
+  },
+  "printables": [{ "kind": "cards", "title": "春节活动大卡", "items": ["fest-fu", "dumpling", "fest-lantern"], "size": "large", "showText": true, "showEnglish": true }],
+  "offline": [
+    {
+      "title": "贴福字送祝福",
+      "minutes": 5,
+      "materials": ["完整大福字卡", "由成人管理的纸胶带"],
+      "steps": ["关屏，让宝宝指一个平视位置。", "成人管理胶带，陪宝宝把完整福字卡贴好。", "轮流向家人说新年好，接受挥手或点头。"],
+      "question": "你想把祝福送给谁？",
+      "levels": { "easier": "成人贴好，宝宝自愿挥手。", "harder": "宝宝选两个安全位置中的一个，并说自家的问候。" },
+      "safety": "成人全程陪伴，胶带和卡片不入口；不登高、不踩凳子。直径小于3.5厘米的小物件有窒息风险，不提供硬币或小饰物。本课不燃放鞭炮烟花；遇到燃放时远离，必要时轻护耳朵。",
+      "domains": ["social", "language"]
+    },
+    {
+      "title": "大软布包饺子",
+      "minutes": 8,
+      "materials": ["两块边长至少15厘米的清洁软布", "安全平整桌面"],
+      "steps": ["在桌面摊开一块软布当饺子皮。", "把另一块大软布放中间，假装是馅。", "把外层布对折，轻轻按一下边。", "成人和宝宝轮流做，完成后收好两块布。"],
+      "question": "你想怎么折你的饺子？",
+      "levels": { "easier": "成人折，宝宝按一下布边。", "harder": "宝宝先放中间再折，成人用短句描述两步顺序。" },
+      "safety": "成人全程陪伴；只用大软布，不用生面粉、生馅、生面团、小填充物或绳子。不入口、不盖口鼻，远离刀具、开水和灶具。真实饺子不是本活动道具，进餐另行安排。",
+      "domains": ["motor", "language"]
+    }
+  ],
+  "steps": [{
+    "type": "guide",
+    "parentTip": "关屏后玩；包饺子用大软布，真实烹饪与游戏分开。",
+    "props": {
+      "goal": "贴福字送祝福，再轮流折大软布假装包饺子。",
+      "materials": ["福字大卡", "成人管理的纸胶带", "两块至少15厘米的清洁软布"],
+      "steps": [
+        { "text": "关屏，让宝宝选平视位置，成人管理胶带贴完整福字卡。", "concept": "fest-fu", "say": { "zh": "福字贴这里。", "en": "Let's put the fu decoration here." } },
+        { "text": "成人先问好，再等宝宝说话、挥手或点头，不强求。", "concept": "wave", "say": { "zh": "新年好！", "en": "Happy New Year!" } },
+        { "text": "摊开大软布，把另一块大软布放中间，假装饺子皮和馅。", "concept": "dumpling", "say": { "zh": "放中间。", "en": "Put it in the middle." } },
+        { "text": "示范对折一次，轮流让宝宝尝试，不追求整齐。", "say": { "zh": "折一下，轮到你。", "en": "Fold it. Your turn." } },
+        { "text": "回应宝宝的办法，一起收好软布和胶带，结束陪玩。", "say": { "zh": "我们一起收好。", "en": "Let's put everything away together." } }
+      ],
+      "playMin": 10,
+      "observe": ["是否愿意用自己的方式送祝福。", "是否尝试放到中间、对折或按边。", "是否愿意轮流，不要求精确作品。"],
+      "safety": "成人全程陪伴，不登高；胶带、卡和布不入口、不盖口鼻，不用小物件、生面粉、生馅或绳子，远离灶具。本活动不燃放鞭炮烟花。"
+    }
+  }]
+}

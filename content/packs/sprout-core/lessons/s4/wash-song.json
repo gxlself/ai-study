@@ -1,0 +1,116 @@
+{
+  "schemaVersion": 1,
+  "id": "core.s4.wash-song",
+  "title": { "zh": "这样洗洗手", "en": "This Is How We Wash" },
+  "summary": { "zh": "唱唱洗手、刷牙和梳头。", "en": "Sing about washing, brushing, and combing." },
+  "themeId": "s4-t5",
+  "ageRange": [18, 23],
+  "domains": ["music", "life"],
+  "audience": "child",
+  "durationMin": 5,
+  "coView": "required",
+  "objectives": [
+    { "zh": "和家长唱歌，轻轻模仿动作。", "en": "Sing with a grown-up and gently imitate the actions." },
+    { "zh": "看看洗手的四个步骤。", "en": "Notice four steps for washing hands." }
+  ],
+  "cover": { "concept": "wash-hands", "bg": "room" },
+  "parentGuide": {
+    "intro": "共看默认关闭，也可由家长学唱。若开启，在干燥处空手模仿。唱完关屏再洗手。搓手至少20秒，家长帮忙。歌长不是洗手或刷牙时长，不能唱完就算洗好了。",
+    "tips": ["先唱一段，宝宝只看或动一下都可以。", "真实洗手要搓到手心、手背和指间。", "真刷牙仍由大人完成。", "睡前刷牙不开屏，可直接轻唱。"],
+    "phrases": [
+      { "zh": "我们一起搓搓手。", "en": "Let's rub our hands together." },
+      { "zh": "手心、手背，还有指缝。", "en": "Palms, backs, and between your fingers." },
+      { "zh": "冲干净，再擦干。", "en": "Rinse clean, then dry." },
+      { "zh": "我帮你轻轻刷。", "en": "I'll brush gently for you." }
+    ],
+    "why": "音乐以亲子主动参与为主。流程展示后立即转入真实照护。洗手和刷牙细节另见阶段指南官方补充资料。",
+    "refs": ["3", "6", "8", "87", "93"]
+  },
+  "offline": [
+    {
+      "title": "关屏后一起洗手",
+      "minutes": 5,
+      "materials": ["清洁流动水", "肥皂或洗手液", "干净毛巾"],
+      "steps": ["关屏，成人先调好温和的水。", "湿手，涂皂，帮宝宝搓手。", "手心、手背和指间都搓到。", "搓手至少20秒后冲净。", "用干净毛巾擦干。"],
+      "safety": "成人全程贴近看护并控制水温。台面高就由成人安全抱扶，不独自爬凳。肥皂和洗手液不入口、不入眼。不把歌的长度当清洁计时。擦干积水，电器远离水。",
+      "domains": ["life", "music"],
+      "question": "你想用哪条干净毛巾？",
+      "levels": { "easier": "成人帮助完成全部步骤，宝宝伸手参与。", "harder": "宝宝愿意时递毛巾、一起搓手，成人仍负责完整清洁。" }
+    },
+    {
+      "title": "干燥处轻轻梳头",
+      "minutes": 3,
+      "materials": ["宝宝用的圆滑梳子"],
+      "steps": ["坐稳，先告知要梳头。", "成人沿着头发轻轻梳。", "唱一小句，停下来等回应。"],
+      "safety": "梳齿圆滑，成人操作。不拉扯打结处，不强迫触摸头部。不含梳子走动。梳子无可拆小件；小物件直径小于3.5厘米有窒息风险。",
+      "domains": ["life", "music"],
+      "question": "你想先唱，还是先摸摸梳子？",
+      "levels": { "easier": "只让宝宝看梳子，成人唱一句。", "harder": "宝宝愿意时递梳子，成人轻柔梳理；不要求自己操作。" }
+    }
+  ],
+  "steps": [
+    {
+      "type": "song",
+      "title": { "zh": "洗手、刷牙、梳头歌", "en": "Wash, Brush, and Comb" },
+      "parentTip": "先在干燥处空手模仿。真洗手、刷牙时关屏。唱完不等于清洁完成。",
+      "props": {
+        "title": { "zh": "这样洗洗手", "en": "This Is How We Wash" },
+        "credit": "旋律：传统（公有领域）；中文词：芽芽成长原创；英文词：芽芽成长原创。旋律为Mulberry Bush，C大调，6/8拍。",
+        "bpm": 90,
+        "instrument": "piano",
+        "repeat": 1,
+        "lines": [
+          { "lang": "zh", "text": "这样洗洗小手搓搓手", "notes": "C4/0.5 C4/0.5 C4/0.5 C4/1 E4/0.5 G4/1 E4/0.5 C4/1 C4/0.5" },
+          { "lang": "zh", "text": "手心手背都搓搓", "notes": "D4/1 D4/0.5 D4/1 C4/0.5 B3/1 A3/0.5 G3/1.5" },
+          { "lang": "zh", "text": "这样洗洗小手搓搓手", "notes": "C4/0.5 C4/0.5 C4/0.5 C4/1 E4/0.5 G4/1 E4/0.5 C4/1 C4/0.5" },
+          { "lang": "zh", "text": "大人陪我洗手", "notes": "D4/1 D4/0.5 G3/1 G3/0.5 C4/1.5 C4/1.5" },
+          { "lang": "zh", "text": "这样刷刷牙齿轻轻刷", "notes": "C4/0.5 C4/0.5 C4/0.5 C4/1 E4/0.5 G4/1 E4/0.5 C4/1 C4/0.5" },
+          { "lang": "zh", "text": "牙齿里面外面刷", "notes": "D4/1 D4/0.5 D4/1 C4/0.5 B3/1 A3/0.5 G3/1.5" },
+          { "lang": "zh", "text": "这样刷刷牙齿轻轻刷", "notes": "C4/0.5 C4/0.5 C4/0.5 C4/1 E4/0.5 G4/1 E4/0.5 C4/1 C4/0.5" },
+          { "lang": "zh", "text": "大人帮我刷牙", "notes": "D4/1 D4/0.5 G3/1 G3/0.5 C4/1.5 C4/1.5" },
+          { "lang": "zh", "text": "这样梳梳头发轻轻梳", "notes": "C4/0.5 C4/0.5 C4/0.5 C4/1 E4/0.5 G4/1 E4/0.5 C4/1 C4/0.5" },
+          { "lang": "zh", "text": "顺着头发慢慢梳", "notes": "D4/1 D4/0.5 D4/1 C4/0.5 B3/1 A3/0.5 G3/1.5" },
+          { "lang": "zh", "text": "这样梳梳头发轻轻梳", "notes": "C4/0.5 C4/0.5 C4/0.5 C4/1 E4/0.5 G4/1 E4/0.5 C4/1 C4/0.5" },
+          { "lang": "zh", "text": "大人帮我梳头", "notes": "D4/1 D4/0.5 G3/1 G3/0.5 C4/1.5 C4/1.5" },
+          { "lang": "en", "text": "Now we can wash our little hands clean", "notes": "C4/0.5 C4/0.5 C4/0.5 C4/1 E4/0.5 G4/1 E4/0.5 C4/1 C4/0.5" },
+          { "lang": "en", "text": "Rub each side, yes, rub each side", "notes": "D4/1 D4/0.5 D4/1 C4/0.5 B3/1 A3/0.5 G3/1.5" },
+          { "lang": "en", "text": "Now we can wash our little hands clean", "notes": "C4/0.5 C4/0.5 C4/0.5 C4/1 E4/0.5 G4/1 E4/0.5 C4/1 C4/0.5" },
+          { "lang": "en", "text": "Wash with me, nice and clean", "notes": "D4/1 D4/0.5 G3/1 G3/0.5 C4/1.5 C4/1.5" },
+          { "lang": "en", "text": "Now we can brush our little teeth clean", "notes": "C4/0.5 C4/0.5 C4/0.5 C4/1 E4/0.5 G4/1 E4/0.5 C4/1 C4/0.5" },
+          { "lang": "en", "text": "Brush each side, yes, brush each side", "notes": "D4/1 D4/0.5 D4/1 C4/0.5 B3/1 A3/0.5 G3/1.5" },
+          { "lang": "en", "text": "Now we can brush our little teeth clean", "notes": "C4/0.5 C4/0.5 C4/0.5 C4/1 E4/0.5 G4/1 E4/0.5 C4/1 C4/0.5" },
+          { "lang": "en", "text": "Brush with me, nice and clean", "notes": "D4/1 D4/0.5 G3/1 G3/0.5 C4/1.5 C4/1.5" },
+          { "lang": "en", "text": "Now we can comb our hair nice and smooth", "notes": "C4/0.5 C4/0.5 C4/0.5 C4/1 E4/0.5 G4/1 E4/0.5 C4/1 C4/0.5" },
+          { "lang": "en", "text": "Comb it smooth, yes, comb it smooth", "notes": "D4/1 D4/0.5 D4/1 C4/0.5 B3/1 A3/0.5 G3/1.5" },
+          { "lang": "en", "text": "Now we can comb our hair nice and smooth", "notes": "C4/0.5 C4/0.5 C4/0.5 C4/1 E4/0.5 G4/1 E4/0.5 C4/1 C4/0.5" },
+          { "lang": "en", "text": "Comb with me, nice and smooth", "notes": "D4/1 D4/0.5 G3/1 G3/0.5 C4/1.5 C4/1.5" }
+        ],
+        "scene": { "bg": "room", "ground": "floor", "sprites": [
+          { "concept": "wash-hands", "x": 28, "y": 73, "size": 40, "anim": "none" },
+          { "concept": "toothbrush", "x": 65, "y": 75, "size": 23, "anim": "none" },
+          { "concept": "comb", "x": 85, "y": 75, "size": 20, "anim": "none" }
+        ] },
+        "actions": [
+          { "zh": "空手轻轻搓手。", "en": "Pretend to rub your hands." },
+          { "zh": "空手轻轻做刷牙动作。", "en": "Pretend to brush gently." },
+          { "zh": "空手轻轻做梳头动作。", "en": "Pretend to comb gently." }
+        ]
+      }
+    },
+    {
+      "type": "sequence",
+      "title": { "zh": "洗手四步", "en": "Four Handwashing Steps" },
+      "parentTip": "涂皂搓手这一步至少20秒，手心、手背、指间都洗到；实际操作由成人帮助。",
+      "props": {
+        "mode": "show",
+        "intro": { "zh": "看看四步，再去一起洗手。", "en": "Look at four steps, then wash together." },
+        "steps": [
+          { "concept": "droplet", "caption": { "zh": "先用清水湿手。", "en": "Wet hands with clean running water." }, "say": { "zh": "先把小手弄湿。", "en": "First, wet your hands." } },
+          { "concept": "soap", "caption": { "zh": "涂皂搓手至少20秒。", "en": "Use soap and rub for at least 20 seconds." }, "say": { "zh": "手心手背指间都搓搓。", "en": "Rub palms, backs, and between fingers." } },
+          { "concept": "droplet", "caption": { "zh": "用清水冲干净。", "en": "Rinse with clean running water." }, "say": { "zh": "把泡沫冲干净。", "en": "Rinse the soap away." } },
+          { "concept": "towel", "caption": { "zh": "用干净毛巾擦干。", "en": "Dry with a clean towel." }, "say": { "zh": "擦干啦，关屏去洗手。", "en": "Dry hands. Now let's turn the screen off and wash." } }
+        ]
+      }
+    }
+  ]
+}

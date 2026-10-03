@@ -1,7 +1,7 @@
 import { useRef, useState, type CSSProperties } from 'react';
 import { PHRASES, type SortProps } from '@sprout/schema';
 import type { ActivityContext } from '@sprout/plugin-sdk';
-import { ConceptImage, conceptSpeech, defineBuiltin, InputHint, Stage, Text, useBusy, useNav, useSession, useTask } from '../shared';
+import { ConceptImage, conceptSpeech, defineBuiltin, InputHint, Stage, Text, speechForConcept, useBusy, useNav, useSession, useTask } from '../shared';
 
 function SortActivity({ ctx }: { ctx: ActivityContext<SortProps> }) {
   const props = ctx.props;
@@ -49,12 +49,20 @@ function SortActivity({ ctx }: { ctx: ActivityContext<SortProps> }) {
   }
   useNav(ctx, (key) => {
     if (key === 'left' || key === 'right') {
-      const index = (selectedBin + (key === 'right' ? 1 : props.bins.length - 1)) % props.bins.length;
+      const focused = ctx.focus.current();
+      const focusedIndex = focused ? buttons.current.indexOf(focused as HTMLButtonElement) : -1;
+      const currentIndex = focusedIndex >= 0 ? focusedIndex : selectedBin;
+      const index = (currentIndex + (key === 'right' ? 1 : props.bins.length - 1)) % props.bins.length;
       setSelectedBin(index);
       ctx.focus.focus(buttons.current[index]);
       return true;
     }
-    if (key === 'ok') { place(selectedBin); return true; }
+    if (key === 'ok') {
+      const focused = ctx.focus.current();
+      const index = focused ? buttons.current.indexOf(focused as HTMLButtonElement) : -1;
+      place(index >= 0 ? index : selectedBin);
+      return true;
+    }
     return false;
   });
 
@@ -64,7 +72,7 @@ function SortActivity({ ctx }: { ctx: ActivityContext<SortProps> }) {
       style={{ '--spa-drop-x': `${(selectedBin - (props.bins.length - 1) / 2) * 180}px` } as CSSProperties}>
       <ConceptImage ctx={ctx} concept={current.item} />
     </div>
-    <div className={`spa-sort-bins ${done ? 'spa-celebrate' : ''}`}>
+    <div className={`spa-sort-bins ${done ? 'spa-celebrate' : ''}`} data-item-index={itemIndex}>
       {props.bins.map((bin, index) => <button type="button" data-focusable key={bin.id}
         ref={(el) => { buttons.current[index] = el; }} disabled={busy.busy || done}
         className={`spa-sort-bin ${selectedBin === index ? 'is-selected' : ''}`}
@@ -79,4 +87,11 @@ function SortActivity({ ctx }: { ctx: ActivityContext<SortProps> }) {
   </Stage>;
 }
 
-export const sortActivity = defineBuiltin<SortProps>('sort', SortActivity, () => [PHRASES.thinkAgain]);
+export const sortActivity = defineBuiltin<SortProps>('sort', SortActivity, (props) => [
+  PHRASES.thinkAgain, props.prompt,
+  ...props.items.flatMap(({ item }) => {
+    const speech = speechForConcept(item);
+    return speech ? [speech] : [];
+  }),
+  ...props.bins.map((bin) => bin.label),
+]);

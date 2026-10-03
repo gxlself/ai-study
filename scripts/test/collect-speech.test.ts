@@ -195,8 +195,8 @@ const activityCases: {
   },
   {
     type: 'video',
-    props: { src: 'assets/movie.mp4', title: { zh: '视频标题不朗读' }, captions: 'assets/captions.vtt' },
-    keys: [],
+    props: { src: 'assets/movie.mp4', title: { zh: '视频标题' }, captions: 'assets/captions.vtt' },
+    keys: ['zh:视频标题'],
   },
   {
     type: 'web',

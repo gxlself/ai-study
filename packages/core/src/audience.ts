@@ -7,7 +7,7 @@ export function resolveSessionAudience(
   lessons: Record<string, LessonSummary>,
 ): Audience {
   if (session.audience !== undefined) return session.audience;
-  return Object.hasOwn(lessons, session.lessonId) ? lessons[session.lessonId]?.audience ?? 'child' : 'child';
+  return Object.prototype.hasOwnProperty.call(lessons, session.lessonId) ? lessons[session.lessonId]?.audience ?? 'child' : 'child';
 }
 
 export function childScreenSeconds(

@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useLayoutEffect, useRef, useState } from 'react';
 import type { CSSProperties } from 'react';
 import { SCENE_BACKGROUNDS } from '@sprout/schema';
 import type { Scene as SceneData } from '@sprout/schema';
@@ -13,6 +13,19 @@ export interface SceneProps {
 }
 
 export function Scene({ ctx, scene, paused = false, className = '' }: SceneProps) {
+  const element = useRef<HTMLDivElement>(null);
+  const [height, setHeight] = useState(0);
+  useLayoutEffect(() => {
+    const el = element.current;
+    if (!el) return;
+    // 精灵按场景高度保持正方形，不能依赖电视尚不支持的 aspect-ratio。
+    const resize = () => setHeight(el.clientHeight);
+    resize();
+    const observer = typeof ResizeObserver === 'function' ? new ResizeObserver(resize) : null;
+    observer?.observe(el);
+    window.addEventListener('resize', resize);
+    return () => { observer?.disconnect(); window.removeEventListener('resize', resize); };
+  }, []);
   const [stopped, setStopped] = useState(ctx.signal.aborted);
   useEffect(() => {
     const stop = () => setStopped(true);
@@ -23,6 +36,7 @@ export function Scene({ ctx, scene, paused = false, className = '' }: SceneProps
 
   return (
     <div
+      ref={element}
       className={`spa-scene spa-scene--${preset ?? 'paper'} ${className}`}
       data-reduced-motion={ctx.reducedMotion}
       data-paused={paused || stopped}
@@ -39,6 +53,7 @@ export function Scene({ ctx, scene, paused = false, className = '' }: SceneProps
             left: `${sprite.x}%`,
             top: `${sprite.y}%`,
             height: `${sprite.size}%`,
+            width: height * sprite.size / 100,
             zIndex: sprite.z ?? 1,
             '--spa-sprite-delay': `${sprite.delay ?? 0}s`,
           } as CSSProperties}

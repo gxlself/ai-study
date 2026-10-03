@@ -1,0 +1,79 @@
+{
+  "schemaVersion": 1,
+  "id": "culture.child.lantern-festival",
+  "title": { "zh": "元宵：灯笼在哪里", "en": "Lantern Festival: Find the Lantern" },
+  "summary": { "zh": "慢慢看灯笼、汤圆和圆形图片，关屏后画纸灯笼。", "en": "Look slowly at lantern, tangyuan, and circle pictures, then draw a paper lantern off-screen." },
+  "ageRange": [24, 36],
+  "audience": "child",
+  "domains": ["language", "math", "art"],
+  "themeId": "culture.lantern-festival",
+  "tags": ["元宵", "亲子共看", "只看图不试吃"],
+  "durationMin": 4,
+  "coView": "required",
+  "objectives": [
+    { "zh": "指认灯笼和圆形大卡。", "en": "Point to a lantern and a circle card." },
+    { "zh": "听一盏、两盏灯笼的数量。", "en": "Hear one lantern and two lanterns." }
+  ],
+  "cover": { "concept": "fest-lantern", "bg": "paper" },
+  "parentGuide": {
+    "intro": "可选四分钟共看，仅供24–36月龄且须成人陪同。手动翻词卡，一起说名称、指图，再数一到两盏灯笼。汤圆只是图片，不试吃；圆形问题只比较圆形卡与方形卡，不说所有灯笼都圆。结束关屏去画纸灯笼。",
+    "tips": ["不自动翻卡，宝宝说或指后再由家长推进。", "数一个指一个，数完说总数，不要求宝宝会数。", "不想看屏幕可直接用打印卡做线下版，进餐和睡前一小时不用屏。"],
+    "phrases": [
+      { "zh": "这是灯笼。", "en": "This is a lantern." },
+      { "zh": "汤圆只看图。", "en": "We'll only look at pictures of tangyuan." },
+      { "zh": "一共两盏灯笼。", "en": "Two lanterns." },
+      { "zh": "我们去画灯笼吧。", "en": "Let's go draw a lantern." }
+    ],
+    "why": "成人共看并回应，把图画连接到离屏涂画。对眼前小数量逐个指认并说总数，不做认词或数数测验。",
+    "refs": ["[3]", "[6]", "[25]", "[64]", "[69]", "[80]"]
+  },
+  "printables": [{ "kind": "cards", "title": "元宵与形状大卡", "items": ["fest-lantern", "fest-tangyuan", "circle", "square"], "size": "large", "showText": true, "showEnglish": true }],
+  "offline": [{
+    "title": "关屏画灯笼",
+    "minutes": 10,
+    "materials": ["完整大纸", "无毒粗蜡笔", "灯笼大卡"],
+    "steps": ["关屏，成人在完整大纸画一个灯笼轮廓。", "宝宝添线条、选颜色，成人描述而不纠正。", "愿意时摆一到两张灯笼大卡，成人逐张点数并说总数。", "收好纸、卡和蜡笔，不继续播放课程。"],
+    "question": "你的灯笼还想添什么？",
+    "levels": { "easier": "只涂一张大纸，成人描述线条。", "harder": "宝宝在两张完整灯笼卡中选择放一张或两张，成人点数说总数。" },
+    "safety": "成人全程陪伴，纸和蜡笔不入口；不用火、剪刀、订书钉、长绳、闪灯或纽扣电池。汤圆圆形且黏，有窒息风险，3岁以下不建议整颗吃；切小或压扁仍不能消除黏性风险，本课只看图不试吃。",
+    "domains": ["art", "math", "language"]
+  }],
+  "steps": [
+    {
+      "type": "word-cards",
+      "parentTip": "汤圆只看图不试吃；手动翻页，留出说话时间。",
+      "props": {
+        "items": ["fest-lantern", "fest-tangyuan", "circle"],
+        "show": { "text": true, "english": true, "pinyin": false },
+        "speak": "name+phrase",
+        "autoAdvanceSec": null,
+        "intro": { "zh": "一起慢慢看图片。", "en": "Let's look at the pictures together." }
+      }
+    },
+    {
+      "type": "choose",
+      "parentTip": "两轮各只找一个明确对象，不要求独立操作。",
+      "props": {
+        "rounds": [
+          { "prompt": { "zh": "灯笼在哪里？", "en": "Where is the lantern?" }, "options": ["fest-lantern", "dumpling"], "answer": "fest-lantern", "explain": { "zh": "这是灯笼。", "en": "This is a lantern." } },
+          { "prompt": { "zh": "找找圆形卡。", "en": "Find the circle card." }, "options": ["square", "circle"], "answer": "circle", "explain": { "zh": "圆圆的，没有角。", "en": "It's round, with no corners." } }
+        ],
+        "showLabels": false,
+        "hintAfter": 2
+      }
+    },
+    {
+      "type": "count",
+      "parentTip": "数一盏、两盏，数完说总数，再关屏。",
+      "props": {
+        "rounds": [
+          { "item": "fest-lantern", "count": 1, "layout": "row" },
+          { "item": "fest-lantern", "count": 2, "layout": "row" }
+        ],
+        "mode": "guided",
+        "showNumeral": true,
+        "cardinality": true
+      }
+    }
+  ]
+}

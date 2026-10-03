@@ -20,6 +20,7 @@ async function main() {
     <React.StrictMode>
       <ConfigProvider locale={zhCN} theme={{
         token: {
+          motion: !window.matchMedia('(prefers-reduced-motion: reduce)').matches,
           colorPrimary: '#F08A5D', colorInfo: '#438DC3', colorSuccess: '#42947A',
           colorWarning: '#BF8C25', borderRadius: 8, colorText: '#283A38',
           colorBgLayout: '#F5F7F7',

@@ -1,0 +1,82 @@
+{
+  "schemaVersion": 1,
+  "concepts": [
+    {
+      "id": "fest-fu",
+      "category": "other",
+      "zh": "福字",
+      "en": "fu decoration",
+      "measure": "张",
+      "plural": "fu decorations",
+      "image": "assets/images/festivals/fu.svg",
+      "phrase": { "zh": "福字送祝福。", "en": "A fu decoration carries good wishes." },
+      "tags": ["春节", "祝福"]
+    },
+    {
+      "id": "fest-lantern",
+      "category": "home",
+      "zh": "灯笼",
+      "en": "lantern",
+      "measure": "盏",
+      "plural": "lanterns",
+      "image": "assets/images/festivals/lantern.svg",
+      "phrase": { "zh": "这是一个灯笼。", "en": "This is a lantern." },
+      "tags": ["春节", "元宵"]
+    },
+    {
+      "id": "fest-tangyuan",
+      "category": "food",
+      "zh": "汤圆",
+      "en": "tangyuan",
+      "measure": "个",
+      "plural": "tangyuan",
+      "image": "assets/images/festivals/tangyuan.svg",
+      "phrase": { "zh": "汤圆是糯米团子。", "en": "Tangyuan are glutinous rice balls." },
+      "tags": ["元宵", "冬至", "只看图不试吃"]
+    },
+    {
+      "id": "fest-zongzi",
+      "category": "food",
+      "zh": "粽子",
+      "en": "zongzi",
+      "measure": "个",
+      "plural": "zongzi",
+      "image": "assets/images/festivals/zongzi.svg",
+      "phrase": { "zh": "叶子包着粽子。", "en": "Zongzi are wrapped in leaves." },
+      "tags": ["端午", "只看图不试吃"]
+    },
+    {
+      "id": "fest-sachet",
+      "category": "other",
+      "zh": "香囊",
+      "en": "scented sachet",
+      "measure": "个",
+      "plural": "scented sachets",
+      "image": "assets/images/festivals/sachet.svg",
+      "phrase": { "zh": "香囊是小布袋。", "en": "A scented sachet is a little cloth bag." },
+      "tags": ["端午", "只看图不佩戴"]
+    },
+    {
+      "id": "fest-dragon-boat",
+      "category": "vehicles",
+      "zh": "龙舟",
+      "en": "dragon boat",
+      "measure": "条",
+      "plural": "dragon boats",
+      "image": "assets/images/festivals/dragon-boat.svg",
+      "phrase": { "zh": "大家一起划龙舟。", "en": "People paddle a dragon boat together." },
+      "tags": ["端午", "合作"]
+    },
+    {
+      "id": "fest-mooncake",
+      "category": "food",
+      "zh": "月饼",
+      "en": "mooncake",
+      "measure": "个",
+      "plural": "mooncakes",
+      "image": "assets/images/festivals/mooncake.svg",
+      "phrase": { "zh": "这是一个月饼。", "en": "This is a mooncake." },
+      "tags": ["中秋", "只看图不试吃"]
+    }
+  ]
+}

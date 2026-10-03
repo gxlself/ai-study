@@ -1,0 +1,79 @@
+{
+  "schemaVersion": 1,
+  "id": "english.parent.clean-up",
+  "title": {"zh": "一起收玩具", "en": "Clean Up Together"},
+  "summary": {"zh": "六句收拾短语，轮流捡起和放进去。", "en": "Take turns putting toys away with six familiar phrases."},
+  "ageRange": [18, 36],
+  "audience": "parent",
+  "domains": ["english", "life", "social"],
+  "tags": ["clean-up", "parent-led", "tpr"],
+  "durationMin": 3,
+  "coView": "required",
+  "objectives": [
+    {"zh": "捡起、放入配短句。", "en": "Pair short phrases with picking up and putting away."},
+    {"zh": "和家长轮流收拾。", "en": "Take turns tidying with a grown-up."}
+  ],
+  "cover": {"concept": "box", "bg": "room"},
+  "parentGuide": {
+    "intro": "家长学六句后关屏，只选两三件大玩具收拾。成人先捡起、放进去，再邀请宝宝轮流；不比速度、不要求说对才算完成。",
+    "tips": [
+      "每步附美式音标，短句慢说一次，再留五秒给宝宝看或行动。",
+      "指着正在拿的那一件说，避免一口气给多步指令。",
+      "动作游戏就是捡起和放入；宝宝拒绝时由成人收好，保留下一次机会。"
+    ],
+    "phrases": [
+      {"zh": "该收玩具啦。", "en": "Time to clean up."},
+      {"zh": "捡起这块积木。", "en": "Pick up the block."},
+      {"zh": "把它放进盒子。", "en": "Put it in the box."},
+      {"zh": "轮到我啦。", "en": "My turn."},
+      {"zh": "轮到你啦。", "en": "Your turn."},
+      {"zh": "我们做到了。", "en": "We did it."}
+    ],
+    "why": "语言与眼前动作相连，成人示范并回应宝宝的尝试。重复生活短语不等于测验，也不需要积分或物质奖励。",
+    "refs": ["[47]", "[54]", "[82]", "[94]"]
+  },
+  "printables": [
+    {"kind": "cards", "title": "收玩具实物卡", "items": ["blocks", "box", "ball"], "size": "large", "showText": true, "showEnglish": true}
+  ],
+  "offline": [
+    {
+      "title": "轮流放进盒子",
+      "minutes": 5,
+      "materials": ["两三件完整的大玩具", "没有重盖子的矮盒子"],
+      "steps": [
+        "关屏，把矮盒子和两三件大玩具放在地上。",
+        "成人捡起一件并放进盒子，说轮到我啦。",
+        "指着另一件邀请宝宝，等待宝宝自愿捡起或指一指。",
+        "需要时一起收好，具体说出你看到的尝试，然后结束。"
+      ],
+      "question": "你想先把什么放进去呀？",
+      "levels": {
+        "easier": "只有一件玩具，宝宝看成人放进去。",
+        "harder": "用两件玩具轮流放，宝宝自己选择先收哪件。"
+      },
+      "safety": "成人陪伴；物件完整且大于三点五厘米，不用小零件、磁铁或纽扣电池；盒子无尖边、无重盖子，不让宝宝钻进去，不举重物。",
+      "domains": ["english", "social", "life"]
+    }
+  ],
+  "steps": [
+    {
+      "type": "guide",
+      "parentTip": "只收几件就结束；家长的帮助不是宝宝的失败。",
+      "props": {
+        "goal": "在真实收拾中用六句短语轮流行动。",
+        "materials": ["完整的大玩具", "矮的无盖收纳盒"],
+        "steps": [
+          {"text": "关屏，指向地上的两三件大玩具。美式 /taɪm tə klin ʌp/。", "concept": "box", "say": {"zh": "该收玩具啦。", "en": "Time to clean up."}},
+          {"text": "成人先捡起一块安全大积木作示范。美式 /pɪk ʌp ðə blɑk/。", "concept": "blocks", "say": {"zh": "捡起这块积木。", "en": "Pick up the block."}},
+          {"text": "指着盒子慢慢把这一块放进去。美式 /pʊt ɪt ɪn ðə bɑks/。", "concept": "box", "say": {"zh": "把它放进盒子。", "en": "Put it in the box."}},
+          {"text": "拿起另一件，先示范自己的回合。美式 /maɪ tɝn/。", "concept": "ball", "say": {"zh": "轮到我啦。", "en": "My turn."}},
+          {"text": "邀请宝宝自愿选择一件，停下来等。美式 /jər tɝn/。", "say": {"zh": "轮到你啦。", "en": "Your turn."}},
+          {"text": "一起收好就结束，指出刚才的尝试。美式 /wi dɪd ɪt/。", "say": {"zh": "我们做到了。", "en": "We did it."}}
+        ],
+        "playMin": 5,
+        "observe": ["宝宝是否看向正在命名的玩具。", "有没有尝试拿起、放入或指认。", "家长能否等待，不催促速度和英文回答。"],
+        "safety": "不用小物件、重箱盖或锐利物品，成人全程看护，宝宝不愿意就停止邀请。"
+      }
+    }
+  ]
+}

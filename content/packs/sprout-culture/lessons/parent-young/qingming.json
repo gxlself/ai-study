@@ -1,0 +1,58 @@
+{
+  "schemaVersion": 1,
+  "id": "culture.parent-young.qingming",
+  "title": { "zh": "清明：春天散步", "en": "Qingming: A Spring Walk" },
+  "summary": { "zh": "安全处看春天，种子只由大人操作，宝宝看大卡。", "en": "Notice spring safely; adults handle seeds while babies see large cards." },
+  "ageRange": [6, 17],
+  "audience": "parent",
+  "domains": ["science", "language", "social"],
+  "themeId": "culture.qingming",
+  "tags": ["清明", "踏青", "种子", "家长指引"],
+  "durationMin": 2,
+  "coView": "required",
+  "objectives": [
+    { "zh": "听树叶和小花的名字。", "en": "Hear the names of leaves and flowers." },
+    { "zh": "和照护者一起看春天。", "en": "Notice spring with a caregiver." }
+  ],
+  "cover": { "concept": "flower", "bg": "grass" },
+  "parentGuide": {
+    "intro": "先读完关屏，再到安全处看看树和花。清明有踏青、思念亲人的习俗，本课只做温和春日观察。种子用大卡介绍；真实种子由成人收好并操作，不给宝宝抓。天气不适合时留在室内看实体卡。",
+    "tips": ["跟着宝宝正在看的东西命名，不追求固定路线。", "宝宝不会坐稳时用日常安全抱持，不摆成做不到的姿势。", "自然物只观察，不采不明花叶，不直视太阳。"],
+    "phrases": [
+      { "zh": "你看，小花。", "en": "Look, a flower." },
+      { "zh": "叶子在动。", "en": "The leaves are moving." },
+      { "zh": "这是种子。", "en": "This is a seed." },
+      { "zh": "我陪着你。", "en": "I'm here with you." }
+    ],
+    "why": "自然观察给亲子交流提供真实对象。家长跟随目光并回应，不把户外时间变成认词测验。",
+    "refs": ["[6]", "[8]", "[59]", "[82]"]
+  },
+  "printables": [{ "kind": "cards", "title": "春天自然大卡", "items": ["flower", "leaf", "seed", "sprout"], "size": "large", "showText": true, "showEnglish": true }],
+  "offline": [{
+    "title": "安全处看春天",
+    "minutes": 8,
+    "materials": ["花和叶大卡", "日常出行用品"],
+    "steps": ["关屏，在安全平坦处抱稳宝宝或按已有能力牵护。", "停在一棵树旁，看叶子动一动。", "成人指向花，命名后等待宝宝回应，不摘花。", "回家由成人展示种子大卡，再收好卡片。"],
+    "question": "你还看到了什么？",
+    "levels": { "easier": "在室内看一张自然大卡，接受目光回应。", "harder": "能指认时，让宝宝指出树或花，成人接着描述。" },
+    "safety": "成人全程陪伴，远离道路、水边、高处和烟火，不直视太阳。种子、泥土、花叶和肥料不入口；直径小于3.5厘米的物件有窒息风险，真实种子不交给宝宝。户外注意天气和防晒，返家洗手。",
+    "domains": ["science", "language"]
+  }],
+  "steps": [{
+    "type": "guide",
+    "parentTip": "先关屏再出门；种子只看大卡，不给宝宝拿。",
+    "props": {
+      "goal": "跟着宝宝的目光，看看春天的树和花。",
+      "materials": ["春天自然大卡", "日常出行用品"],
+      "steps": [
+        { "text": "关屏后先看天气，选择安全平坦处；不方便出门就用大卡。", "concept": "flower", "say": { "zh": "你看，小花。", "en": "Look, a flower." } },
+        { "text": "成人指着叶子，慢慢说一句，停五秒等宝宝回应。", "concept": "leaf", "say": { "zh": "叶子在动。", "en": "The leaves are moving." } },
+        { "text": "回家拿住种子大卡，说名称；真实种子由成人收在宝宝够不到处。", "concept": "seed", "say": { "zh": "这是种子。", "en": "This is a seed." } },
+        { "text": "回应宝宝的手势或发声，收卡后一起洗手。", "say": { "zh": "我陪着你。", "en": "I'm here with you." } }
+      ],
+      "playMin": 8,
+      "observe": ["是否跟着成人看向树叶或卡片。", "是否用指、看或发声分享发现。", "是否因天气、声音或疲劳需要返回。"],
+      "safety": "不提供真实种子或泥土，卡片不入口；不直视太阳，远离道路、水边、高处和烟火，成人全程抱稳或牵护。"
+    }
+  }]
+}

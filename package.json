@@ -10,18 +10,22 @@
   },
   "scripts": {
     "dev": "pnpm -r --parallel --filter ./apps/* dev",
-    "build": "pnpm -r --filter ./packages/* --filter ./apps/* build",
+    "build": "pnpm -r --workspace-concurrency=1 --filter './packages/*' --filter './apps/*' build",
     "test": "pnpm -r test",
     "typecheck": "pnpm -r typecheck",
     "start": "pnpm --filter @sprout/server start",
     "content:validate": "tsx scripts/validate-content.ts",
+    "content:route": "tsx scripts/merge-route.ts",
     "content:assets": "tsx scripts/fetch-assets.ts",
     "content:audio": "tsx scripts/gen-audio.ts",
     "content:bundle": "tsx scripts/bundle-pack.ts",
     "content:zip": "tsx scripts/pack-zip.ts",
     "content:all": "tsx scripts/content-all.ts",
     "content:typecheck": "pnpm --dir scripts typecheck",
-    "content:test": "pnpm --dir scripts test"
+    "content:test": "pnpm --dir scripts test",
+    "qa:integration": "node scripts/qa-integration.mjs",
+    "qa:verify": "node scripts/qa-verify.mjs",
+    "qa:report": "node scripts/qa-report.mjs"
   },
   "devDependencies": {
     "@sprout/schema": "workspace:*",

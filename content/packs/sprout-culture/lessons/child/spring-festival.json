@@ -1,0 +1,100 @@
+{
+  "schemaVersion": 1,
+  "id": "culture.child.spring-festival",
+  "title": { "zh": "春节：新年好", "en": "Spring Festival: Happy New Year" },
+  "summary": { "zh": "和家长共看一个祝福小故事，再关屏贴福字、玩软布饺子。", "en": "Share a short story about good wishes, then place a fu card and fold cloth dumplings off-screen." },
+  "ageRange": [24, 36],
+  "audience": "child",
+  "domains": ["social", "language", "english"],
+  "themeId": "culture.spring-festival",
+  "tags": ["春节", "亲子共看", "新年好"],
+  "durationMin": 4,
+  "coView": "required",
+  "objectives": [
+    { "zh": "和家人分享新年问候。", "en": "Share a New Year greeting with family." },
+    { "zh": "指认福字装饰与灯笼。", "en": "Point to a fu decoration and a lantern." }
+  ],
+  "cover": { "concept": "fest-fu", "bg": "paper" },
+  "parentGuide": {
+    "intro": "这是一节可选的四分钟共看课，仅供24–36月龄并须成人陪同。逐页慢慢看，停下来回应宝宝，不考读福字。看完关屏贴大卡、玩软布饺子。家人称呼按自家习惯，宝宝不想问好或看屏幕就直接做线下活动。",
+    "tips": ["每页停五秒，让宝宝指图或说话，再回应并扩展一句。", "选择题先由家长示范指整张装饰，不考识字。", "进餐、卧室和睡前一小时不用屏，共看结束不继续播其他课。"],
+    "phrases": [
+      { "zh": "新年好！", "en": "Happy New Year!" },
+      { "zh": "你想问候谁？", "en": "Who would you like to say hello to?" },
+      { "zh": "你在看福字呀。", "en": "You're looking at the fu decoration." },
+      { "zh": "我们去玩软布吧。", "en": "Let's go play with the cloth." }
+    ],
+    "why": "共看只是线下相伴的引子。成人等待并回应，帮助把图画联系到家庭生活，不期待视频单独带来学习。",
+    "refs": ["[3]", "[6]", "[25]", "[26]", "[48]", "[93]"]
+  },
+  "printables": [{ "kind": "cards", "title": "春节祝福大卡", "items": ["fest-fu", "fest-lantern", "dumpling"], "size": "large", "showText": true, "showEnglish": true }],
+  "offline": [
+    {
+      "title": "福字送祝福",
+      "minutes": 5,
+      "materials": ["完整福字大卡", "成人管理的纸胶带"],
+      "steps": ["关屏，让宝宝指一个安全平视位置。", "成人管理胶带，陪宝宝贴完整福字大卡。", "选择向身边或牵挂的家人说新年好、挥手或点头。"],
+      "question": "你想把祝福送给谁？",
+      "levels": { "easier": "成人贴卡，宝宝只看或挥手。", "harder": "宝宝自己选位置并口述一句祝福，不要求读字。" },
+      "safety": "成人全程陪伴，胶带与卡片不入口，不登高；不提供硬币、红包内钱币和小挂件，直径小于3.5厘米的物件有窒息风险。本活动不燃放鞭炮烟花，遇到燃放声远离并必要时轻护耳朵。",
+      "domains": ["social", "language"]
+    },
+    {
+      "title": "软布包饺子",
+      "minutes": 8,
+      "materials": ["两块边长至少15厘米的清洁软布"],
+      "steps": ["摊开一块大软布当饺子皮。", "把另一块大软布放中间假装是馅。", "轮流对折一次、按一下边，完成后收好两块布。"],
+      "question": "你想怎么折？",
+      "levels": { "easier": "成人折，宝宝自愿按一下边。", "harder": "宝宝先放中间再折，成人描述动作顺序。" },
+      "safety": "成人全程陪伴，软布不入口、不盖口鼻；不用小填充物、绳子、生面粉、生馅、生面团和刀具，远离灶具与开水。食物只看图，不用真饺子作游戏材料。",
+      "domains": ["motor", "language"]
+    }
+  ],
+  "steps": [
+    {
+      "type": "story",
+      "parentTip": "每页停一下，接住宝宝的话；家人可以是任何照护者。",
+      "props": {
+        "title": { "zh": "把祝福送给你", "en": "Good Wishes for You" },
+        "pages": [
+          {
+            "scene": { "bg": "paper", "ground": "none", "sprites": [
+              { "concept": "fest-fu", "x": 45, "y": 45, "size": 42, "anim": "none" },
+              { "concept": "fest-lantern", "x": 78, "y": 32, "size": 22, "anim": "none" }
+            ] },
+            "text": { "zh": "春节到了，家人送祝福。", "en": "It's Spring Festival. Family members share good wishes." },
+            "prompts": [{ "kind": "point", "zh": "你想指哪张装饰？", "en": "Which decoration would you like to point to?" }]
+          },
+          {
+            "scene": { "bg": "room", "ground": "floor", "sprites": [
+              { "concept": "baby", "x": 38, "y": 75, "size": 32, "anim": "none" },
+              { "concept": "dad", "x": 65, "y": 70, "size": 40, "anim": "none" },
+              { "concept": "fest-fu", "x": 17, "y": 28, "size": 20, "anim": "none" }
+            ] },
+            "text": { "zh": "宝宝挥挥手：新年好！", "en": "Baby waves. Happy New Year!" },
+            "prompts": [{ "kind": "distancing", "zh": "你想向谁问好？说或挥手都可以。", "en": "Who would you like to greet? You can speak or wave." }]
+          },
+          {
+            "scene": { "bg": "room", "ground": "floor", "sprites": [
+              { "concept": "baby", "x": 40, "y": 75, "size": 32, "anim": "none" },
+              { "concept": "dad", "x": 68, "y": 70, "size": 40, "anim": "none" }
+            ] },
+            "text": { "zh": "问候说完啦，我们去玩吧。", "en": "We've shared our greetings. Let's go play." }
+          }
+        ]
+      }
+    },
+    {
+      "type": "choose",
+      "parentTip": "只指认整体装饰，不考读字；不想选择就由成人示范。",
+      "props": {
+        "rounds": [
+          { "prompt": { "zh": "找找福字装饰。", "en": "Find the fu decoration." }, "options": ["fest-fu", "moon"], "answer": "fest-fu", "explain": { "zh": "福字送祝福。", "en": "A fu decoration carries good wishes." } },
+          { "prompt": { "zh": "灯笼在哪里？", "en": "Where is the lantern?" }, "options": ["dumpling", "fest-lantern"], "answer": "fest-lantern", "explain": { "zh": "这是灯笼。", "en": "This is a lantern." } }
+        ],
+        "showLabels": false,
+        "hintAfter": 2
+      }
+    }
+  ]
+}

@@ -1,0 +1,65 @@
+{
+  "schemaVersion": 1,
+  "id": "core.s4.color-hunt",
+  "title": { "zh": "找颜色", "en": "A Color Hunt" },
+  "summary": { "zh": "找找红色，再收收袜子。", "en": "Find something red, then sort a few socks." },
+  "themeId": "s4-t1",
+  "ageRange": [18, 23],
+  "domains": ["cognition", "english"],
+  "audience": "parent",
+  "durationMin": 2,
+  "coView": "required",
+  "objectives": [
+    { "zh": "在实物旁听颜色的名字。", "en": "Hear color names beside real objects." },
+    { "zh": "试着把同色袜子放一起。", "en": "Try putting socks of the same color together." }
+  ],
+  "cover": { "concept": "red", "bg": "paper" },
+  "printables": [
+    { "kind": "cards", "title": "红黄蓝颜色卡", "items": ["red", "yellow", "blue"], "size": "large", "showText": true, "showEnglish": true }
+  ],
+  "parentGuide": {
+    "intro": "先自己读，再放下屏幕。拿一张红色卡找家里的同色物品。宝宝看、指或递给你，都算回应。收袜子时再玩一次。今天不必记住三种颜色。",
+    "tips": ["先找一种颜色，不同时问很多题。", "跟着宝宝指的东西说名字。", "停几秒再回应，不要求跟读。"],
+    "phrases": [
+      { "zh": "红色，在这里。", "en": "Red, right here." },
+      { "zh": "这只袜子也是红色的。", "en": "This sock is red too." },
+      { "zh": "放在一起吧。", "en": "Let's put them together." },
+      { "zh": "你找到了这只袜子。", "en": "You found this sock." }
+    ],
+    "why": "实物、命名和等待把词语连到经验。回应宝宝比反复考问更重要。颜色配对是探索，不是月龄达标测试。",
+    "refs": ["44", "47", "71", "82"]
+  },
+  "offline": [
+    {
+      "title": "袜子找同色朋友",
+      "minutes": 6,
+      "materials": ["两三只单色袜子", "浅篮子"],
+      "steps": ["把两只同色袜子和一只异色袜子放下。", "指着一只袜子说颜色。", "邀请宝宝找一只相像的。", "把同色袜子一起放进篮子。"],
+      "safety": "袜子不能有脱落纽扣或装饰。小物件直径小于3.5厘米有窒息风险。不把袜子套在口鼻上。成人全程在旁。",
+      "domains": ["cognition", "english"],
+      "question": "你想让哪两只袜子做朋友？",
+      "levels": { "easier": "只放两只同色袜子，家长陪着归拢。", "harder": "加一只不同颜色的袜子，请宝宝试着配对。" }
+    }
+  ],
+  "steps": [
+    {
+      "type": "guide",
+      "title": { "zh": "家里找一找", "en": "Look Around at Home" },
+      "parentTip": "先读完再放下设备，宝宝只看实物和打印卡。",
+      "props": {
+        "goal": "在家里找颜色，用短句回应宝宝。",
+        "materials": ["红黄蓝打印卡", "单色袜子", "浅篮子"],
+        "steps": [
+          { "text": "把红色卡放在宝宝面前。", "say": { "zh": "这是红色。", "en": "This is red." }, "concept": "red" },
+          { "text": "把红袜子放在红色卡旁。", "say": { "zh": "袜子也是红色的。", "en": "The sock is red too." } },
+          { "text": "指着附近安全的红色物品。", "say": { "zh": "你想看看哪个？", "en": "Which one would you like to see?" } },
+          { "text": "把两只同色袜子放在一起。", "say": { "zh": "一样的颜色，放一起。", "en": "The same color. Together." }, "concept": "socks" },
+          { "text": "请宝宝把一只袜子放进篮子。", "say": { "zh": "放进去啦。", "en": "In it goes." }, "concept": "basket" }
+        ],
+        "playMin": 8,
+        "observe": ["宝宝是否看向你说的物品。", "宝宝用看、指或递来回应了吗？", "宝宝是否愿意试着配对。"],
+        "safety": "只找宝宝够得到的安全物品。不为找颜色爬家具。小物件直径小于3.5厘米有窒息风险。卡片用大张厚纸，成人剪裁。防止入口和纸边划伤。"
+      }
+    }
+  ]
+}

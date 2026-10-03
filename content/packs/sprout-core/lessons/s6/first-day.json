@@ -1,0 +1,129 @@
+{
+  "schemaVersion": 1,
+  "id": "core.s6.first-day",
+  "title": { "zh": "第一天上幼儿园", "en": "The First Day at Preschool" },
+  "summary": { "zh": "说好再见，也说好什么时候来接。", "en": "Say goodbye and make a clear pick-up plan." },
+  "ageRange": [30, 36],
+  "domains": ["social"],
+  "themeId": "s6-t4",
+  "tags": ["story", "preschool-preparation", "feelings", "predictable-goodbye"],
+  "durationMin": 8,
+  "coView": "required",
+  "audience": "child",
+  "objectives": [
+    { "zh": "听懂一个具体的接送约定。", "en": "Hear a clear goodbye and pick-up plan." },
+    { "zh": "知道想家时可以找老师。", "en": "Know that a teacher can help when you miss home." },
+    { "zh": "认识入园可能有的生活环节。", "en": "Notice some parts of a preschool day." }
+  ],
+  "cover": { "concept": "school", "bg": "sky" },
+  "parentGuide": {
+    "intro": "这是小熊的入园故事，不是催孩子入园。故事由妈妈接送，讲时可换成真实照护者。按园所安排说明具体来接环节，并守约；不承诺孩子不哭。老师暂用文字呈现，不借家人图片冒充。",
+    "tips": [
+      "先认可想家，再谈求助。",
+      "接送约定按真实安排说，不说马上。",
+      "明确道别，不趁孩子分心偷偷走。",
+      "午睡与活动流程以实际园所为准。"
+    ],
+    "phrases": [
+      { "zh": "想妈妈也没关系。", "en": "It is okay to miss Mom." },
+      { "zh": "老师，我想请你帮忙。", "en": "Teacher, please help me." },
+      { "zh": "我们按约定来接你。", "en": "We will pick you up as planned." },
+      { "zh": "你想怎样说再见？", "en": "How would you like to say goodbye?" }
+    ],
+    "why": "可预期的常规与回应情绪符合回应性照护。绘本可帮助谈论分离，但不能保证迅速适应入园，也不能代替园所和家庭的支持。",
+    "refs": ["[7]", "[48]", "[82]", "[91]", "[93]"]
+  },
+  "offline": [
+    {
+      "title": "玩具的幼儿园一天",
+      "minutes": 10,
+      "materials": ["两个牢固的大玩偶", "大积木", "一本图画书"],
+      "steps": [
+        "关屏，约定玩偶怎样说再见。",
+        "成人说出一个真实的来接环节。",
+        "假装老师陪玩偶看书、玩积木。",
+        "玩偶想家时，练习向老师求助。",
+        "演到约定环节，让照护者来接。",
+        "听孩子讲想带什么、担心什么。"
+      ],
+      "safety": "成人全程陪伴，这是假装游戏，不用真实分离考验孩子。不把孩子独自留下，不吓唬、不强迫拥抱。玩具无可拆小件，直径小于三点五厘米的小物件有窒息风险；真实接送遵守园所交接制度。",
+      "domains": ["social", "language"],
+      "question": "如果玩偶想家了，你希望大人怎样帮它？",
+      "levels": {
+        "easier": "只演道别和来接，孩子随时可停。",
+        "harder": "孩子选一个活动环节，并说一句求助的话。"
+      }
+    }
+  ],
+  "steps": [
+    {
+      "type": "story",
+      "title": { "zh": "小熊的第一天", "en": "Bear's First Day" },
+      "parentTip": "真实接送人和来接环节可替换。想家、哭泣都允许；故事不保证孩子立刻适应。",
+      "props": {
+        "title": { "zh": "小熊的第一天", "en": "Bear's First Day" },
+        "pages": [
+          {
+            "scene": { "bg": "sky", "ground": "grass", "sprites": [
+              { "concept": "bear", "x": 27, "y": 73, "size": 36, "anim": "none" },
+              { "concept": "school", "x": 60, "y": 74, "size": 25, "anim": "none" },
+              { "concept": "mom", "x": 83, "y": 75, "size": 24, "anim": "none" }
+            ] },
+            "text": { "zh": "今天，小熊第一次入园。妈妈说：“午睡后再玩会儿，我来接。”", "en": "It is Bear's first day at preschool. Mom says, \"I will come after your nap and a little more play.\"" }
+          },
+          {
+            "scene": { "bg": "room", "ground": "floor", "sprites": [
+              { "concept": "bear", "x": 30, "y": 73, "size": 36, "anim": "none" },
+              { "concept": "sad", "x": 70, "y": 48, "size": 22, "anim": "none" },
+              { "concept": "book", "x": 72, "y": 78, "size": 20, "anim": "none" }
+            ] },
+            "text": { "zh": "小熊想妈妈，哭了。老师说：“想妈妈也没关系。”", "en": "Bear cries and misses Mom. The teacher says, \"It is okay to miss Mom.\"" },
+            "prompts": [{ "kind": "distancing", "zh": "想家时，你希望谁陪你？", "en": "Who would you like beside you when you miss home?" }]
+          },
+          {
+            "scene": { "bg": "room", "ground": "floor", "sprites": [
+              { "concept": "bear", "x": 28, "y": 73, "size": 36, "anim": "none" },
+              { "concept": "book", "x": 56, "y": 78, "size": 20, "anim": "none" },
+              { "concept": "rabbit", "x": 79, "y": 76, "size": 24, "anim": "none" }
+            ] },
+            "text": { "zh": "老师陪它看看书。小兔在旁边翻书。", "en": "The teacher reads with Bear. Rabbit turns pages nearby." }
+          },
+          {
+            "scene": { "bg": "room", "ground": "floor", "sprites": [
+              { "concept": "bear", "x": 28, "y": 73, "size": 36, "anim": "none" },
+              { "concept": "blocks", "x": 57, "y": 78, "size": 22, "anim": "none" },
+              { "concept": "rabbit", "x": 81, "y": 76, "size": 24, "anim": "none" }
+            ] },
+            "text": { "zh": "小熊和小兔一起搭积木。", "en": "Bear and Rabbit build with blocks together." },
+            "prompts": [{ "kind": "open", "zh": "你想用积木搭什么？", "en": "What would you like to build with blocks?" }]
+          },
+          {
+            "scene": { "bg": "room", "ground": "floor", "sprites": [
+              { "concept": "bear", "x": 30, "y": 73, "size": 36, "anim": "none" },
+              { "concept": "bed", "x": 70, "y": 78, "size": 25, "anim": "none" },
+              { "concept": "sleepy", "x": 72, "y": 46, "size": 18, "anim": "none" }
+            ] },
+            "text": { "zh": "午睡时间到了。老师陪小熊休息。", "en": "It is nap time. The teacher stays nearby while Bear rests." }
+          },
+          {
+            "scene": { "bg": "room", "ground": "floor", "sprites": [
+              { "concept": "bear", "x": 30, "y": 73, "size": 36, "anim": "none" },
+              { "concept": "ball", "x": 63, "y": 79, "size": 22, "anim": "none" },
+              { "concept": "book", "x": 84, "y": 78, "size": 18, "anim": "none" }
+            ] },
+            "text": { "zh": "睡醒后，小熊又玩了一会儿。它想妈妈，就告诉老师。", "en": "After the nap, Bear plays a little more. Bear tells the teacher when Bear misses Mom." }
+          },
+          {
+            "scene": { "bg": "sky", "ground": "grass", "sprites": [
+              { "concept": "bear", "x": 28, "y": 73, "size": 36, "anim": "none" },
+              { "concept": "mom", "x": 63, "y": 75, "size": 24, "anim": "none" },
+              { "concept": "school", "x": 85, "y": 77, "size": 20, "anim": "none" }
+            ] },
+            "text": { "zh": "妈妈按约定来接了。小熊说：“今天我搭了积木！”", "en": "Mom comes as planned. Bear says, \"I built with blocks today!\"" },
+            "prompts": [{ "kind": "recall", "zh": "妈妈什么时候来接小熊？", "en": "When did Mom come to pick up Bear?" }]
+          }
+        ]
+      }
+    }
+  ]
+}

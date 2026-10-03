@@ -1,0 +1,76 @@
+{
+  "schemaVersion": 1,
+  "id": "english.parent.good-morning",
+  "title": {"zh": "起床说早安", "en": "Good Morning"},
+  "summary": {"zh": "家长先学六句，起床时看信号、慢慢回应。", "en": "Six phrases for a calm, responsive morning."},
+  "ageRange": [6, 24],
+  "audience": "parent",
+  "domains": ["english", "life", "social"],
+  "tags": ["morning", "parent-led", "tpr"],
+  "durationMin": 3,
+  "coView": "required",
+  "objectives": [
+    {"zh": "看信号，等回应。", "en": "Notice cues and wait for a response."},
+    {"zh": "固定短句配动作。", "en": "Pair familiar phrases with gentle actions."}
+  ],
+  "cover": {"concept": "sun", "bg": "sky"},
+  "parentGuide": {
+    "intro": "屏幕只给家长看。白天先学六句，起床时关屏，跟随宝宝的目光和声音说一两句；不叫醒宝宝练英语，也不要求复读。",
+    "tips": [
+      "音标采用常见美式读法，斜线内内容只给家长参考，不读给宝宝听。",
+      "慢说完整短句，重读有意义的词，再停五秒；发声、看你或微笑都算回应。",
+      "动作游戏由家长伸展、挥手示范；宝宝未能自主完成的姿势不摆放、不拉拽。"
+    ],
+    "phrases": [
+      {"zh": "早上好。", "en": "Good morning."},
+      {"zh": "睡得好吗？", "en": "Did you sleep well?"},
+      {"zh": "我在这里。", "en": "I'm here."},
+      {"zh": "伸个懒腰吧。", "en": "Let's stretch."},
+      {"zh": "抱你起来啦。", "en": "Up you go."},
+      {"zh": "我们穿衣服吧。", "en": "Let's get dressed."}
+    ],
+    "why": "外语输入依靠真人回应而非录像；短句与宝宝正在经历的事情相连。几句家庭英语不是研究中的高强度干预，不保证学习效果。",
+    "refs": ["[16]", "[47]", "[53]", "[54]"]
+  },
+  "offline": [
+    {
+      "title": "早安小对话",
+      "minutes": 5,
+      "materials": ["家长自己的双手"],
+      "steps": [
+        "关掉设备，等宝宝自然醒来，面对面用早安短句问候。",
+        "模仿宝宝一个声音，再停下来等下一次回应。",
+        "家长自己慢慢伸展双臂，宝宝愿意时一起做小幅度动作。",
+        "按日常照护方式抱起或穿衣，说一句就做一个动作。"
+      ],
+      "question": "你想先看看什么呀？",
+      "levels": {
+        "easier": "只说早安，回应宝宝的目光或声音。",
+        "harder": "让已会指认的宝宝用手势选择先穿哪件衣服，再说相应短句。"
+      },
+      "safety": "成人全程陪伴；抱起时按宝宝已有的照护需要支持身体，不提拉手腕，不强拉四肢，不在高处玩，不打断睡眠。",
+      "domains": ["english", "social"]
+    }
+  ],
+  "steps": [
+    {
+      "type": "guide",
+      "parentTip": "看完放下屏幕。宝宝不需要看电子卡片或完成动作。",
+      "props": {
+        "goal": "家长用早安短句回应宝宝，动作只是共同关注的线索。",
+        "materials": ["安静的日常照护空间"],
+        "steps": [
+          {"text": "等宝宝自然醒来，面向宝宝问好。美式 /ɡʊd ˈmɔrnɪŋ/。", "concept": "sun", "say": {"zh": "早上好。", "en": "Good morning."}},
+          {"text": "轻声问候，等宝宝用表情或声音回应。美式 /dɪd ju slip wɛl/。", "say": {"zh": "睡得好吗？", "en": "Did you sleep well?"}},
+          {"text": "宝宝看向你时，挥挥自己的手回应。美式 /aɪm hɪr/。", "concept": "wave", "say": {"zh": "我在这里。", "en": "I'm here."}},
+          {"text": "家长自己慢慢伸展，宝宝可只看真人。美式 /lɛts strɛtʃ/。", "concept": "raise-hands", "say": {"zh": "伸个懒腰吧。", "en": "Let's stretch."}},
+          {"text": "先告知，再按平日安全方式抱起宝宝。美式 /ʌp ju ɡoʊ/。", "say": {"zh": "抱你起来啦。", "en": "Up you go."}},
+          {"text": "拿起要穿的衣服，先说再做。美式 /lɛts ɡɛt drɛst/。", "concept": "shirt", "say": {"zh": "我们穿衣服吧。", "en": "Let's get dressed."}}
+        ],
+        "playMin": 5,
+        "observe": ["宝宝是否看向你的脸或衣服。", "你是否等到一个声音、手势或表情再回应。", "宝宝转头、困倦或不舒服时就结束。"],
+        "safety": "不叫醒练习，不强迫伸展或站立，不把屏幕交给宝宝。"
+      }
+    }
+  ]
+}

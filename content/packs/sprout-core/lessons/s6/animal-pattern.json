@@ -1,0 +1,71 @@
+{
+  "schemaVersion": 1,
+  "id": "core.s6.animal-pattern",
+  "title": { "zh": "动物排队", "en": "Animal Patterns" },
+  "summary": { "zh": "和家长找找三张一组的重复。", "en": "Explore repeating groups of three with your grown-up." },
+  "ageRange": [30, 36],
+  "domains": ["math"],
+  "themeId": "s6-t1",
+  "tags": ["abb-pattern", "aab-pattern", "optional-challenge"],
+  "durationMin": 5,
+  "coView": "required",
+  "audience": "child",
+  "objectives": [
+    { "zh": "一起发现整组又出现了。", "en": "Notice a whole group repeating." },
+    { "zh": "在帮助下尝试接下一张。", "en": "Try adding the next card with help." }
+  ],
+  "cover": { "concept": "cat", "bg": "paper" },
+  "parentGuide": {
+    "intro": "这是可选挑战，不是三岁前的要求。家长把猫、狗、狗读成一组，指着两组慢慢比较。孩子困惑就改回两样轮流排，或直接去玩动物玩具。",
+    "tips": [
+      "手指划过一整组，再读下一组。",
+      "只玩第一轮也可以。",
+      "不靠加快速度或多做题练习。",
+      "接错时一起读队伍，不说笨或不认真。"
+    ],
+    "phrases": [
+      { "zh": "猫、狗、狗，是一组。", "en": "Cat, dog, dog. That is one group." },
+      { "zh": "这组又来了。", "en": "Here is that group again." },
+      { "zh": "我们一起看看下一张。", "en": "Let's look at the next card together." },
+      { "zh": "换个简单的也可以。", "en": "We can try an easier pattern." }
+    ],
+    "why": "三张一组比两样交替更复杂。低月龄规律干预证据有限，本课只作成人陪同的探索，不能据此评价数学能力。",
+    "refs": ["[69]", "[71]", "[80]", "[81]"]
+  },
+  "offline": [
+    {
+      "title": "布品小队伍",
+      "minutes": 8,
+      "materials": ["两条干净小毛巾", "四只干净袜子", "地垫"],
+      "steps": [
+        "关屏，坐在地垫旁。",
+        "摆毛巾、袜子、袜子，共两组。",
+        "成人用手指圈出每一组。",
+        "邀请孩子把下一条毛巾接上。",
+        "孩子想换排法时，一起重新摆。"
+      ],
+      "safety": "成人全程陪伴。布品不遮口鼻，不绕脖子。替换的玩具须牢固、无可拆小件；直径小于三点五厘米的小物件有窒息风险。不用真动物练习排队。",
+      "domains": ["math"],
+      "question": "你想把哪几样放成一组？",
+      "levels": {
+        "easier": "改为毛巾、袜子交替排两组。",
+        "harder": "改为毛巾、毛巾、袜子，摆两组再续接。"
+      }
+    }
+  ],
+  "steps": [
+    {
+      "type": "pattern",
+      "title": { "zh": "三张一组", "en": "Groups of Three" },
+      "parentTip": "ABB／AAB 是可选挑战。先读整组；孩子困惑时立即降为 AB 实物游戏。",
+      "props": {
+        "intro": { "zh": "三张一组，看看又来了哪一组。", "en": "Look for the group of three that repeats." },
+        "rounds": [
+          { "sequence": ["cat", "dog", "dog", "cat", "dog", "dog"], "options": ["dog", "cat"], "answer": "cat" },
+          { "sequence": ["rabbit", "rabbit", "bear", "rabbit", "rabbit", "bear"], "options": ["rabbit", "bear"], "answer": "rabbit" },
+          { "sequence": ["duck", "bird", "bird", "duck", "bird", "bird"], "options": ["bird", "duck"], "answer": "duck" }
+        ]
+      }
+    }
+  ]
+}

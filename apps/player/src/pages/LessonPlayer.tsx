@@ -1,5 +1,5 @@
 import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
-import { useNavigate, useParams } from 'react-router';
+import { useLocation, useNavigate, useParams } from 'react-router';
 import { Armchair, ArrowRight, Eye, Leaf, NotebookPen, Pause, Play, Printer, Sparkles, Users, X } from 'lucide-react';
 import { ageOf, type ChildProfile, type ResolvedConcept, type ScreenStatus, type SessionInput } from '@sprout/schema';
 import { screenStatus } from '@sprout/core';
@@ -12,31 +12,39 @@ import { effectiveScreen, grantEvents, VisibleClock } from '../state/policy';
 import { InteractionWatch } from '../state/idle';
 import { BackButton, IconButton, Loading, OfflineCards, Page, Problem } from '../ui/common';
 import { ActivityStage } from '../ui/ActivityStage';
+import { OfflineLesson } from './OfflineLesson';
 
 export function LessonPlayer() {
   const { id = '' } = useParams();
   const { source, bootstrap } = useApp();
   const navigate = useNavigate();
+  const requestedOffline = useLocation().state?.offlineOnly === true;
   const [data, setData] = useState<LessonData | null>(null);
   const [screen, setScreen] = useState<ScreenStatus | null>(null);
+  const [offlineOnly, setOfflineOnly] = useState(false);
   const [error, setError] = useState('');
   const [attempt, setAttempt] = useState(0);
   useEffect(() => {
     let active = true;
-    setData(null); setError('');
+    setData(null); setError(''); setOfflineOnly(false);
     if (!source || !bootstrap?.child) return;
     void source.lesson(id).then(async (loaded) => {
       if (!active) return;
-      if (loaded.lesson.audience === 'parent') { setScreen(null); setData(loaded); return; }
+      if (loaded.lesson.audience === 'parent' || requestedOffline) {
+        setScreen(null); setOfflineOnly(requestedOffline && loaded.lesson.audience !== 'parent'); setData(loaded); return;
+      }
       const status = await source.screen(bootstrap.child!.id);
       if (!active) return;
-      if (resolvePlaybackMode(status, bootstrap.child!) === 'parent-only') { navigate('/', { replace: true }); return; }
+      if (resolvePlaybackMode(status, bootstrap.child!) === 'parent-only') {
+        setScreen(null); setOfflineOnly(true); setData(loaded); return;
+      }
       if (!effectiveScreen(status, bootstrap.child!.id).allowedNow) { navigate('/rest', { replace: true }); return; }
       setScreen(status); setData(loaded);
     }).catch((e: unknown) => { if (active) setError(e instanceof Error ? e.message : '课程暂时无法打开'); });
     return () => { active = false; };
-  }, [source, bootstrap?.child?.id, id, attempt, navigate]);
+  }, [source, bootstrap?.child?.id, id, attempt, navigate, requestedOffline]);
   if (!data) return <Page onBack={() => navigate('/')}><BackButton onClick={() => navigate('/')} />{error ? <Problem message={error} retry={() => setAttempt(attempt + 1)} /> : <Loading />}</Page>;
+  if (offlineOnly) return <OfflineLesson key={`${bootstrap?.child?.id}:${data.lesson.id}`} data={data} />;
   return <LessonExperience key={data.lesson.id} data={data} initialScreen={screen ?? undefined} />;
 }
 

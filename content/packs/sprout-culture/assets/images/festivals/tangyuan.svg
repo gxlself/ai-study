@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="0 0 320 320" role="img" aria-labelledby="title">
+  <title id="title">Tangyuan rice balls pictured in a blue bowl, for looking only</title>
+  <path d="M41 164 Q48 264 160 270 Q272 264 279 164Z" fill="#77B2C3" stroke="#3B7185" stroke-width="7"/>
+  <ellipse cx="160" cy="165" rx="118" ry="48" fill="#C8E0E5" stroke="#3B7185" stroke-width="7"/>
+  <circle cx="115" cy="147" r="43" fill="#FFF4DF" stroke="#BBA78A" stroke-width="5"/>
+  <circle cx="204" cy="151" r="43" fill="#FFF4DF" stroke="#BBA78A" stroke-width="5"/>
+  <path d="M95 126 Q105 117 117 119 M185 130 Q195 121 207 123" fill="none" stroke="#E5D6BE" stroke-width="7" stroke-linecap="round"/>
+  <path d="M73 213 Q160 258 247 213" fill="none" stroke="#D5EAE9" stroke-width="6" stroke-linecap="round"/>
+</svg>

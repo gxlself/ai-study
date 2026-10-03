@@ -1,0 +1,116 @@
+{
+  "id": "s6",
+  "title": { "zh": "准备入园", "en": "Ready for Preschool" },
+  "subtitle": { "zh": "有人陪着，慢慢试，安心长大", "en": "Explore with support and grow with reassurance" },
+  "ageRange": [30, 36],
+  "focus": [
+    { "zh": "在物品和动作中发现重复。", "en": "Notice repetition in objects and movements." },
+    { "zh": "成人带着点数，数完说总数。", "en": "Count with adult support and hear the total." },
+    { "zh": "参与生活小步骤，遇到困难能求助。", "en": "Join small daily tasks and ask for help." },
+    { "zh": "用具体约定准备道别，允许想家。", "en": "Prepare for goodbyes with clear plans and space for feelings." },
+    { "zh": "在生活情境中练习来回对话。", "en": "Practise back-and-forth conversation in everyday situations." },
+    { "zh": "观察植物、昼夜和家乡的变化。", "en": "Notice changes in plants, day and night, and local surroundings." }
+  ],
+  "screen": {
+    "sessionMaxMin": 15,
+    "dailyMaxMin": 30,
+    "lessonsPerDay": 2,
+    "coView": "required",
+    "childScreen": "default"
+  },
+  "themes": [
+    {
+      "id": "s6-t1",
+      "title": { "zh": "找规律", "en": "Patterns" },
+      "description": { "zh": "先玩两样交替，再共同看看三张一组。", "en": "Start with alternating pairs, then explore groups of three together." },
+      "weeks": 4,
+      "domains": ["math", "motor"],
+      "lessons": ["core.s6.fruit-pattern", "core.s6.clap-pattern", "core.s6.animal-pattern"],
+      "offlineFocus": [
+        "用袜子、毛巾摆两组完整重复。",
+        "拍手、跺脚轻轻轮流来，可坐姿替代。",
+        "三张一组只作可选挑战，困惑就回到两样交替。"
+      ]
+    },
+    {
+      "id": "s6-t2",
+      "title": { "zh": "数到十", "en": "Count to 10" },
+      "description": { "zh": "成人带数较大集合，孩子从小数量动手。", "en": "Adults model larger sets while children explore small sets hands-on." },
+      "weeks": 4,
+      "domains": ["math"],
+      "lessons": ["core.s6.count-ten", "core.s6.quick-five", "core.s6.more-fewer"],
+      "offlineFocus": [
+        "点一个数一个，数完说总数，不考数字认读。",
+        "先用一至三个大物品，四五个由成人支持。",
+        "同样大小的物品一对一摆齐，再说多和少。"
+      ]
+    },
+    {
+      "id": "s6-t3",
+      "title": { "zh": "我会自己做", "en": "I Can Do It" },
+      "description": { "zh": "把熟悉流程拆成小步，尝试和求助都可以。", "en": "Break familiar routines into small steps, with room to try and ask for help." },
+      "weeks": 4,
+      "domains": ["life", "math", "social"],
+      "lessons": ["core.s6.dress-order", "core.s6.morning-routine", "core.s6.my-shoes"],
+      "offlineFocus": [
+        "坐稳试穿一件衣物，成人检查舒适与安全。",
+        "用先、再说两步计划，按家庭需要调整。",
+        "如厕不催促，上厕所或尿布照护后做好清洁。",
+        "夸具体尝试，需要帮助时及时支持。"
+      ]
+    },
+    {
+      "id": "s6-t4",
+      "title": { "zh": "上幼儿园", "en": "Off to Preschool" },
+      "description": { "zh": "认识生活环节，练习道别、求助和温柔的话。", "en": "Explore preschool routines, goodbyes, requests for help, and kind words." },
+      "weeks": 4,
+      "domains": ["social", "language", "english"],
+      "lessons": ["core.s6.first-day", "core.s6.school-things", "core.s6.polite-words"],
+      "offlineFocus": [
+        "用玩偶演道别和按约定来接，不制造真实分离。",
+        "让孩子说担心什么，想家时可以找老师。",
+        "用真实物品命名，接送与携带规定以园所为准。",
+        "礼貌用语由成人示范，不强迫拥抱或当众说英语。"
+      ]
+    },
+    {
+      "id": "s6-t5",
+      "title": { "zh": "健康的我", "en": "Healthy Me" },
+      "description": { "zh": "认识多样饮食、安全活动和无屏晚安流程。", "en": "Explore food variety, safe movement, and screen-free bedtime routines." },
+      "weeks": 4,
+      "domains": ["life", "science", "motor"],
+      "lessons": ["core.s6.healthy-food", "core.s6.body-move", "core.s6.sleep-well"],
+      "offlineFocus": [
+        "日常食物轮换，甜点偶尔少量，不强迫清盘。",
+        "动作可降阶，扶稳抬脚，不把平衡当考核。",
+        "晚安课与摇篮曲只在白天学，睡前关屏。",
+        "进餐不开屏，水边、刷牙与灯具操作有成人照看。"
+      ]
+    },
+    {
+      "id": "s6-t6",
+      "title": { "zh": "大自然的变化", "en": "Nature Changes" },
+      "description": { "zh": "观察具体植物和当地天气，不用图例替代真实自然。", "en": "Observe specific plants and local weather rather than treating pictures as universal rules." },
+      "weeks": 6,
+      "domains": ["science", "english"],
+      "lessons": ["core.s6.seed-grow", "core.s6.day-night", "core.s6.four-seasons"],
+      "offlineFocus": [
+        "成人管理种子和盆土，孩子观察真实幼苗。",
+        "昼夜按明确时段聊生活，月亮白天也可能看见。",
+        "重复看同一棵树，允许家乡和故事不一样。",
+        "不直视太阳，不攀窗台，恶劣天气改室内观察。"
+      ]
+    }
+  ],
+  "dailyRhythm": [
+    "起床后预告两件事，先清洁，再穿衣。成人及时帮助，不催如厕成功。",
+    "穿衣时坐稳，邀请孩子做一小步。试过和求助都得到回应。",
+    "饭前聊聊今天的食物种类。用餐关屏，回应饥饱，不用甜点交换清盘。",
+    "收拾时点两三件大物品，数完说总数。也可一对一摆齐，看看多和少。",
+    "白天空地玩两个安全动作的重复。舒服就做，累了就停，不盯着屏幕跑跳。",
+    "出门或接送前明确说再见和来接环节。真实交接遵守园所安排，照护者守约。",
+    "散步时看同一棵树或安全处的天空。记录真实变化，不把季节图当标准答案。",
+    "睡前一小时不用屏。按家庭需要清洁、刷牙、读纸质书，再用真人轻唱说晚安。"
+  ],
+  "milestonesAt": [30, 36]
+}

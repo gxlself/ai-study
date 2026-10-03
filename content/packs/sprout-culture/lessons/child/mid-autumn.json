@@ -1,0 +1,89 @@
+{
+  "schemaVersion": 1,
+  "id": "culture.child.mid-autumn",
+  "title": { "zh": "中秋：月亮陪着我们", "en": "Mid-Autumn: The Moon and Us" },
+  "summary": { "zh": "看一个团圆小故事，关屏画月亮、向家人送问候。", "en": "Share a short story about togetherness, then draw a moon and greet family off-screen." },
+  "ageRange": [24, 36],
+  "audience": "child",
+  "domains": ["social", "language", "science"],
+  "themeId": "culture.mid-autumn",
+  "tags": ["中秋", "亲子共看", "月亮", "团圆", "只看图不试吃"],
+  "durationMin": 5,
+  "coView": "required",
+  "objectives": [
+    { "zh": "指认月亮与月饼图片。", "en": "Point to pictures of the moon and a mooncake." },
+    { "zh": "说说想和谁一起过节。", "en": "Talk about someone you would like to celebrate with." }
+  ],
+  "cover": { "concept": "moon", "bg": "sky" },
+  "parentGuide": {
+    "intro": "可选五分钟共看，仅供24–36月龄且须成人陪同。白天看三页故事，逐页停下来回应。月亮不总是圆的，也不保证中秋能看见；团圆可以是身边相伴和问候远方亲人。月饼只看图不试吃，结束关屏画月亮，不熬夜赏月。",
+    "tips": ["问宝宝想和谁一起，接受任何熟悉照护者。", "宝宝说一个词时扩展一句，不要求复述。", "进餐、卧室和睡前一小时不用屏，不想共看就直接用大卡画画。"],
+    "phrases": [
+      { "zh": "你看，月亮。", "en": "Look, the moon." },
+      { "zh": "这是月饼。", "en": "This is a mooncake." },
+      { "zh": "我们在一起。", "en": "We're together." },
+      { "zh": "你想和谁一起？", "en": "Who would you like to be with?" }
+    ],
+    "why": "成人回应和联系家庭生活帮助理解图画。故事只是相伴的引子，不要求食物、家人齐全或看到真实月亮。",
+    "refs": ["[3]", "[6]", "[25]", "[26]", "[48]", "[92]", "[93]"]
+  },
+  "printables": [{ "kind": "cards", "title": "中秋团圆大卡", "items": ["moon", "fest-mooncake", "home"], "size": "large", "showText": true, "showEnglish": true }],
+  "offline": [{
+    "title": "关屏画月亮送问候",
+    "minutes": 10,
+    "materials": ["完整大纸", "无毒粗蜡笔", "月亮大卡"],
+    "steps": ["白天关屏，看一张月亮实体卡。", "宝宝用自己的线条画月亮，圆、弯或随意涂画都可以。", "问想向谁送问候，成人把宝宝的一句话写在大纸上。", "向身边家人分享画，远方问候由成人另行转达，不必视频通话。", "收好材料，按日常作息休息，不为赏月熬夜。"],
+    "question": "你想和谁一起看你的月亮？",
+    "levels": { "easier": "成人画月亮，宝宝添一条线或挥手。", "harder": "宝宝说说圆月和弯月的不同，再口述自己的祝福。" },
+    "safety": "成人全程陪伴，纸和蜡笔不入口；月饼只看图不试吃，不提供硬块、整粒坚果或未知过敏原。若另行赏月须在安全地面由成人牵护，不攀窗、不靠阳台边沿、不熬夜，纱窗不能防坠。",
+    "domains": ["art", "social", "language"]
+  }],
+  "steps": [
+    {
+      "type": "story",
+      "parentTip": "每页停下来，问问宝宝想和谁相伴；不要求全家到场。",
+      "props": {
+        "title": { "zh": "月亮和我们", "en": "The Moon and Us" },
+        "pages": [
+          {
+            "scene": { "bg": "sky", "ground": "grass", "sprites": [
+              { "concept": "moon", "x": 48, "y": 24, "size": 36, "anim": "none" },
+              { "concept": "home", "x": 74, "y": 75, "size": 24, "anim": "none" }
+            ] },
+            "text": { "zh": "月亮有时圆，有时弯。", "en": "Sometimes the moon looks round, and sometimes it looks curved." },
+            "prompts": [{ "kind": "point", "zh": "月亮在哪里？慢慢指一指。", "en": "Where is the moon? Point to it slowly." }]
+          },
+          {
+            "scene": { "bg": "room", "ground": "floor", "sprites": [
+              { "concept": "baby", "x": 28, "y": 75, "size": 32, "anim": "none" },
+              { "concept": "grandma-maternal", "x": 53, "y": 70, "size": 40, "anim": "none" },
+              { "concept": "fest-mooncake", "x": 80, "y": 75, "size": 22, "anim": "none" }
+            ] },
+            "text": { "zh": "这是月饼。家人一起说话。", "en": "This is a mooncake. Family members talk together." },
+            "prompts": [{ "kind": "distancing", "zh": "你想和谁一起说话？任何熟悉的人都可以。", "en": "Who would you like to talk with? It can be anyone you know well." }]
+          },
+          {
+            "scene": { "bg": "room", "ground": "floor", "sprites": [
+              { "concept": "baby", "x": 38, "y": 75, "size": 32, "anim": "none" },
+              { "concept": "crayon", "x": 66, "y": 74, "size": 22, "anim": "none" }
+            ] },
+            "text": { "zh": "看完啦，我们去画月亮。", "en": "All done. Let's go draw a moon." },
+            "prompts": [{ "kind": "open", "zh": "你想画什么样的月亮？", "en": "What kind of moon would you like to draw?" }]
+          }
+        ]
+      }
+    },
+    {
+      "type": "choose",
+      "parentTip": "按名称找图，不把月亮和月饼说成一直同形。",
+      "props": {
+        "rounds": [
+          { "prompt": { "zh": "月亮在哪里？", "en": "Where is the moon?" }, "options": ["fest-mooncake", "moon"], "answer": "moon", "explain": { "zh": "这是天上的月亮。", "en": "This is the moon in the sky." } },
+          { "prompt": { "zh": "找找月饼图片。", "en": "Find the mooncake picture." }, "options": ["fest-mooncake", "fest-lantern"], "answer": "fest-mooncake", "explain": { "zh": "这是月饼图片。", "en": "This is a picture of a mooncake." } }
+        ],
+        "showLabels": false,
+        "hintAfter": 2
+      }
+    }
+  ]
+}

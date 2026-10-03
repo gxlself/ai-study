@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="0 0 320 320" role="img" aria-labelledby="title">
+  <title id="title">A leaf-wrapped zongzi, for looking only</title>
+  <path d="M154 44 Q161 32 172 47 L278 236 Q289 260 264 271 L67 275 Q36 270 49 243Z" fill="#75A574" stroke="#3C7051" stroke-width="7" stroke-linejoin="round"/>
+  <path d="M64 258 161 62 169 267 M75 243 258 249 M109 181 225 188" fill="none" stroke="#B9D094" stroke-width="6" stroke-linecap="round"/>
+  <path d="M104 147 240 211 M91 173 224 237" fill="none" stroke="#EAD5A3" stroke-width="10" stroke-linecap="round"/>
+  <path d="M166 192 Q131 170 132 193 Q135 218 166 192 Q207 177 202 199 Q196 219 166 192" fill="none" stroke="#EAD5A3" stroke-width="8" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>

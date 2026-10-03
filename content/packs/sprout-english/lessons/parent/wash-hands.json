@@ -1,0 +1,79 @@
+{
+  "schemaVersion": 1,
+  "id": "english.parent.wash-hands",
+  "title": {"zh": "洗洗小手", "en": "Wash, Wash, Wash"},
+  "summary": {"zh": "六句短语配真实洗手，不在水边用屏幕。", "en": "Six phrases to use during real handwashing."},
+  "ageRange": [18, 36],
+  "audience": "parent",
+  "domains": ["english", "life", "motor"],
+  "tags": ["handwashing", "parent-led", "tpr"],
+  "durationMin": 3,
+  "coView": "required",
+  "objectives": [
+    {"zh": "短语配合洗手步骤。", "en": "Pair phrases with the steps of handwashing."},
+    {"zh": "模仿搓手，成人帮助。", "en": "Try rubbing hands with adult help."}
+  ],
+  "cover": {"concept": "wash-hands", "bg": "sky"},
+  "parentGuide": {
+    "intro": "家长在干燥处学六句，放下设备再陪宝宝洗手。先做无水搓手动作游戏，再按家里日常方式用肥皂洗、冲净、擦干，成人全程帮助。",
+    "tips": [
+      "每步附美式音标，慢读后用自然短句配一个动作，不用中文谐音。",
+      "三次洗洗只是节奏短语，不代表完整洗手时长；不能唱完就省略清洁步骤。",
+      "不要求宝宝记流程，成人完成必要清洁；水边不拿手机、不留宝宝独处。"
+    ],
+    "phrases": [
+      {"zh": "我们洗洗手吧。", "en": "Let's wash your hands."},
+      {"zh": "抹上肥皂。", "en": "Soap on."},
+      {"zh": "洗呀，洗呀，洗呀。", "en": "Wash, wash, wash."},
+      {"zh": "冲一冲小手。", "en": "Rinse your hands."},
+      {"zh": "擦干小手。", "en": "Dry your hands."},
+      {"zh": "干净啦。", "en": "All clean."}
+    ],
+    "why": "固定短语与眼前的照护动作相连，成人示范后等待回应。英语不替代清洁，也不把看视频或背景听音当成学习方式。",
+    "refs": ["[16]", "[47]", "[53]", "[54]"]
+  },
+  "printables": [
+    {"kind": "cards", "title": "洗手用品实物卡", "items": ["soap", "towel"], "size": "large", "showText": true, "showEnglish": true}
+  ],
+  "offline": [
+    {
+      "title": "先搓手，再洗手",
+      "minutes": 5,
+      "materials": ["肥皂", "干净毛巾", "安全可及的洗手位置"],
+      "steps": [
+        "设备留在干燥处，成人先用自己的双手示范慢慢搓手。",
+        "成人陪同并帮助宝宝按平日日常流程湿手、抹肥皂、认真清洁。",
+        "清洁时慢说一两句，不要求跟读，也不因短语结束提前停止清洗。",
+        "帮助冲净和擦干，离开水边后用笑容回应宝宝。"
+      ],
+      "question": "你想怎么搓搓小手呀？",
+      "levels": {
+        "easier": "宝宝只看成人搓手，成人帮助完成洗手。",
+        "harder": "在成人帮助下，宝宝主动伸手，或指出接下来用的毛巾。"
+      },
+      "safety": "水边全程近距离看护，不留宝宝独处，不用热水，不站不稳的小凳；肥皂不入口，地面保持防滑，电器和设备远离水。",
+      "domains": ["english", "life", "motor"]
+    }
+  ],
+  "steps": [
+    {
+      "type": "guide",
+      "parentTip": "在干燥处先学；离开屏幕后再去水边照护。",
+      "props": {
+        "goal": "用洗手短语配合真实清洁，动作游戏不代替洗手。",
+        "materials": ["肥皂", "毛巾"],
+        "steps": [
+          {"text": "关屏，成人先示范无水搓手。美式 /lɛts wɑʃ jər hændz/。", "concept": "wash-hands", "say": {"zh": "我们洗洗手吧。", "en": "Let's wash your hands."}},
+          {"text": "帮助湿手后抹肥皂，不让肥皂入口。美式 /soʊp ɑn/。", "concept": "soap", "say": {"zh": "抹上肥皂。", "en": "Soap on."}},
+          {"text": "成人帮助认真清洁，短语不是时长。美式 /wɑʃ wɑʃ wɑʃ/。", "concept": "hand", "say": {"zh": "洗呀，洗呀，洗呀。", "en": "Wash, wash, wash."}},
+          {"text": "帮助冲净肥皂，始终留在宝宝身边。美式 /rɪns jər hændz/。", "say": {"zh": "冲一冲小手。", "en": "Rinse your hands."}},
+          {"text": "拿毛巾帮助擦干双手。美式 /draɪ jər hændz/。", "concept": "towel", "say": {"zh": "擦干小手。", "en": "Dry your hands."}},
+          {"text": "清洁完成就离开水边，不反复洗来练英语。美式 /ɔl klin/。", "say": {"zh": "干净啦。", "en": "All clean."}}
+        ],
+        "playMin": 5,
+        "observe": ["宝宝有没有主动伸手或看向用品。", "宝宝是否愿意模仿无水搓手。", "遇到抗拒时成人是否减少考问并帮助清洁。"],
+        "safety": "成人全程照护，不用热水，不攀高；肥皂不入口，设备不带到水边。"
+      }
+    }
+  ]
+}

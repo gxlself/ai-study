@@ -1,0 +1,101 @@
+{
+  "schemaVersion": 1,
+  "id": "core.s5.what-to-wear",
+  "title": {"zh": "下雨带什么？", "en": "What Do We Take in the Rain?"},
+  "summary": {"zh": "想想遮雨、保暖和遮阳。", "en": "Think about staying dry, warm, and shaded."},
+  "ageRange": [24, 29],
+  "domains": ["science", "life"],
+  "themeId": "s5-t6",
+  "durationMin": 5,
+  "coView": "required",
+  "audience": "child",
+  "objectives": [
+    {"zh": "把雨伞、外套和帽子连到用途。", "en": "Connect an umbrella, a coat, and a hat with their uses."},
+    {"zh": "和大人商量出门要带什么。", "en": "Talk with an adult about what to take outside."}
+  ],
+  "cover": {"concept": "umbrella", "bg": "sky"},
+  "parentGuide": {
+    "intro": "先看三个出门情境，再找遮雨的伞、保暖的外套、戴头上遮阳的帽子。题目说清用途，不暗示晴天一定热。真实穿戴还要看温度、风和活动量，由成人判断；不是只靠一件物品就足够。",
+    "tips": ["说物品的用途，不只背天气和物品配对。", "宝宝只指伞时接一句“伞能遮雨”。", "晴天的帽子是遮阳例子，不表示冬天不用帽子。"],
+    "phrases": [
+      {"zh": "雨伞能遮雨。", "en": "An umbrella keeps rain off us."},
+      {"zh": "天冷了，穿保暖的外套。", "en": "It's cold. Put on a warm coat."},
+      {"zh": "帽子戴头上，可以遮阳。", "en": "A hat can shade your head."},
+      {"zh": "还需要带什么？", "en": "What else do we need?"}
+    ],
+    "why": "把物品用途连接真实出门准备，帮助宝宝参与生活选择。成人给清楚线索和适度帮助，不把简化天气图变成固定穿衣规则。",
+    "refs": ["[6]", "[7]", "[71]", "[82]"]
+  },
+  "offline": [{
+    "title": "一起准备出门篮",
+    "minutes": 7,
+    "materials": ["帽子", "适合当天天气的外套", "成人管理的雨伞", "浅篮子"],
+    "steps": ["大人先看实际天气，选好安全、合适的衣物。", "把帽子和外套放在宝宝够得着的地面。", "问“今天出门要用什么”，让宝宝拿或指。", "成人解释用途，帮忙穿戴，再检查舒服不舒服。", "若要用伞，由成人拿、开合和撑着。"],
+    "safety": "成人看护。伞尖、伞骨和开合关节由成人管理，不让宝宝独自开合或挥伞。衣物无长绳、松动纽扣，不用围巾绕头颈做游戏。直径小于3.5厘米的小物件有窒息风险。雷电、强风、积水时不为了试衣外出；帽子和伞不能代替全部防晒或保暖措施。",
+    "domains": ["science", "life"],
+    "question": "今天出门，你想先准备什么？",
+    "levels": {"easier": "只给一件合适衣物，成人说用途，宝宝递过来。", "harder": "给两个同样合适的选择，宝宝选喜欢的一件，再说或指它用在哪里。"}
+  }],
+  "steps": [
+    {
+      "type": "story",
+      "parentTip": "先听出门情境。图是天气示意，真正出门由成人按实际冷热和安全判断。",
+      "props": {
+        "title": {"zh": "出门前想一想", "en": "Think Before Going Out"},
+        "pages": [
+          {
+            "scene": {"bg": "sky", "ground": "grass", "sprites": [
+              {"concept": "rain", "x": 50, "y": 25, "size": 35, "anim": "none"},
+              {"concept": "home", "x": 50, "y": 74, "size": 38, "anim": "none"}
+            ]},
+            "text": {"zh": "下雨了。出门想带能遮雨的东西。", "en": "It is raining. We want something to keep the rain off us."},
+            "prompts": [{"kind": "wh", "zh": "你见过什么能遮雨？", "en": "What have you seen that keeps rain off us?"}]
+          },
+          {
+            "scene": {"bg": "snow", "ground": "snow", "sprites": [
+              {"concept": "snow", "x": 50, "y": 25, "size": 32, "anim": "none"},
+              {"concept": "home", "x": 50, "y": 74, "size": 38, "anim": "none"}
+            ]},
+            "text": {"zh": "下雪了，外面冷。准备保暖的衣服。", "en": "It is snowing and cold outside. We get warm clothes ready."}
+          },
+          {
+            "scene": {"bg": "sky", "ground": "grass", "sprites": [
+              {"concept": "sun", "x": 68, "y": 23, "size": 30, "anim": "none"},
+              {"concept": "home", "x": 45, "y": 74, "size": 38, "anim": "none"}
+            ]},
+            "text": {"zh": "今天有太阳。给头顶找点遮阳。", "en": "It is sunny today. We look for some shade for our heads."},
+            "prompts": [{"kind": "distancing", "zh": "出门前，你想准备什么？", "en": "What would you like to get ready before going out?"}]
+          }
+        ]
+      }
+    },
+    {
+      "type": "choose",
+      "parentTip": "每轮只问一种用途。外套用于题目里“冷”的情境，不按天气图固定穿衣。",
+      "props": {
+        "showLabels": false,
+        "hintAfter": 1,
+        "rounds": [
+          {
+            "prompt": {"zh": "下雨出门，哪样能遮雨？", "en": "It's raining. Which one keeps rain off us?"},
+            "options": ["ball", "umbrella", "spoon"],
+            "answer": "umbrella",
+            "explain": {"zh": "雨伞能遮雨，大人来撑。", "en": "An umbrella keeps rain off us. A grown-up holds it."}
+          },
+          {
+            "prompt": {"zh": "下雪天冷，哪件衣物能保暖？", "en": "It's snowy and cold. Which item of clothing keeps us warm?"},
+            "options": ["coat", "crayon", "spoon"],
+            "answer": "coat",
+            "explain": {"zh": "保暖的外套帮我们挡冷风。", "en": "A warm coat helps keep the cold wind off us."}
+          },
+          {
+            "prompt": {"zh": "晴天出门，哪样戴头上遮阳？", "en": "It's sunny. Which one do we wear on our heads for shade?"},
+            "options": ["shirt", "umbrella", "hat"],
+            "answer": "hat",
+            "explain": {"zh": "帽子戴头上，能遮一点阳光。", "en": "A hat shades our heads from some sunlight."}
+          }
+        ]
+      }
+    }
+  ]
+}

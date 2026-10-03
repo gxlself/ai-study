@@ -69,7 +69,7 @@ export async function registerStatic(app: FastifyInstance, context: AppContext):
     if (!root) throw new ApiError(404, 'PLUGIN_NOT_FOUND', '插件不存在或不是本地插件');
     return send(reply, root, path);
   });
-  const spa = (root: string, path: string, label: string, reply: FastifyReply) => {
+  const spa = (root: string, path: string, label: string, reply: FastifyReply, knownRoute = false) => {
     if (!existsSync(join(root, 'index.html'))) {
       return reply.type('text/html; charset=utf-8').header('Cache-Control', 'no-store').send(
         `<!doctype html><html lang="zh-CN"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>芽芽成长 Sprout</title><body style="font-family:system-ui;max-width:42rem;margin:12vh auto;padding:24px;color:#283b35;background:#f4f8f6"><h1>芽芽成长 Sprout</h1><p>${label}尚未构建，服务端已就绪。</p><p>可访问 <a href="/api/docs">接口文档</a> 查看服务状态。</p></body></html>`,
@@ -77,13 +77,15 @@ export async function registerStatic(app: FastifyInstance, context: AppContext):
     }
     const file = safeFile(root, path || 'index.html');
     if (file) return send(reply, root, path || 'index.html', path === 'index.html');
-    if (extname(path)) throw new ApiError(404, 'FILE_NOT_FOUND', '静态资源不存在');
+    if (extname(path) && !knownRoute) throw new ApiError(404, 'FILE_NOT_FOUND', '静态资源不存在');
     return send(reply, root, 'index.html', true);
   };
   app.get('/admin', hidden, async (_request, reply) => reply.redirect('/admin/'));
-  app.get('/admin/*', hidden, async (request, reply) => spa(
-    context.config.adminDist, (request.params as { '*': string })['*'], '管理端', reply,
-  ));
+  app.get('/favicon.ico', hidden, async (_request, reply) => send(reply, context.config.playerDist, 'favicon.png'));
+  app.get('/admin/*', hidden, async (request, reply) => {
+    const path = (request.params as { '*': string })['*'];
+    return spa(context.config.adminDist, path, '管理端', reply, /^print\/(?:lesson|theme)\/[^/]+\/?$/.test(path));
+  });
   app.get('/*', hidden, async (request, reply) => {
     const path = (request.params as { '*': string })['*'];
     if (/^(?:api|packs|plugins)(?:\/|$)/.test(path)) throw new ApiError(404, 'NOT_FOUND', '接口或资源不存在');

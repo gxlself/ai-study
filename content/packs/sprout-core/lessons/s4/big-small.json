@@ -1,0 +1,133 @@
+{
+  "schemaVersion": 1,
+  "id": "core.s4.big-small",
+  "title": { "zh": "大象和小老鼠", "en": "Elephant and Mouse" },
+  "summary": { "zh": "看看大小朋友，一起玩玩具。", "en": "Meet big and small friends and play together." },
+  "themeId": "s4-t6",
+  "ageRange": [18, 23],
+  "domains": ["math", "language"],
+  "audience": "child",
+  "durationMin": 6,
+  "coView": "required",
+  "objectives": [
+    { "zh": "在故事中听大和小。", "en": "Hear big and small in a story." },
+    { "zh": "观察同类物品的明显大小差。", "en": "Notice a clear size difference between matching objects." }
+  ],
+  "cover": { "concept": "elephant", "bg": "grass" },
+  "printables": [
+    { "kind": "cards", "title": "大小朋友故事卡", "items": ["elephant", "mouse", "ball", "bowl"], "size": "large", "showText": true, "showEnglish": true }
+  ],
+  "parentGuide": {
+    "intro": "共看默认关闭，也可只用卡讲故事。若开启，指着物品说大和小。大象和老鼠是玩具故事角色。选择题比较同类图片，避免靠动物名字猜。结束后关屏比真物品。",
+    "tips": ["一次只比较两个物品。", "说比旁边这个大或小，不当成固定标签。", "大和小不表示谁更好、谁更厉害。"],
+    "phrases": [
+      { "zh": "这两个球，一个大，一个小。", "en": "These two balls: one big, one small." },
+      { "zh": "这个杯子比旁边的小。", "en": "This cup is smaller than the one beside it." },
+      { "zh": "你想先看看哪个？", "en": "Which one would you like to look at first?" },
+      { "zh": "大小玩具都可以一起玩。", "en": "We can play with big and small toys together." }
+    ],
+    "why": "明显差异的比较连到空间词。比较同类物品，减少名字带来的猜测。不要求本月龄独立判断每一轮。",
+    "refs": ["3", "6", "8", "67", "71"]
+  },
+  "offline": [
+    {
+      "title": "两只碗比一比",
+      "minutes": 5,
+      "materials": ["两只同形状、大小明显不同的不易碎碗"],
+      "steps": ["关屏，把两个碗并排放下。", "分别指着说大一些和小一些。", "把小碗放入大碗，再拿出来。", "请宝宝选一个递给你。"],
+      "safety": "两只碗都要足够大、圆滑、不易碎。小物件直径小于3.5厘米有窒息风险。空碗无热水，不扣在宝宝头脸上。成人看护，套放不夹手。",
+      "domains": ["math", "language"],
+      "question": "你想先拿哪个碗来试试？",
+      "levels": { "easier": "只摸两个碗，家长描述大小。", "harder": "交换左右位置，再请宝宝试着找较小的碗。" }
+    }
+  ],
+  "steps": [
+    {
+      "type": "story",
+      "title": { "zh": "大小朋友一起玩", "en": "Big and Small Friends Play" },
+      "parentTip": "这是拟人的玩具故事，不是动物习性的介绍。大小不代表能力或价值。",
+      "props": {
+        "title": { "zh": "大象和小老鼠", "en": "Elephant and Mouse" },
+        "pages": [
+          {
+            "scene": { "bg": "grass", "ground": "grass", "sprites": [
+              { "concept": "elephant", "x": 29, "y": 73, "size": 43, "anim": "none" },
+              { "concept": "mouse", "x": 71, "y": 79, "size": 18, "anim": "none" },
+              { "concept": "flower", "x": 86, "y": 79, "size": 15, "anim": "none" }
+            ] },
+            "text": { "zh": "大象和小老鼠一起玩。大象大，老鼠小。", "en": "Elephant and Mouse play together. Elephant is big, and Mouse is small." }
+          },
+          {
+            "scene": { "bg": "grass", "ground": "grass", "sprites": [
+              { "concept": "elephant", "x": 22, "y": 73, "size": 40, "anim": "none" },
+              { "concept": "ball", "x": 45, "y": 76, "size": 30, "anim": "none" },
+              { "concept": "mouse", "x": 72, "y": 79, "size": 18, "anim": "none" },
+              { "concept": "ball", "x": 87, "y": 79, "size": 15, "anim": "none" }
+            ] },
+            "text": { "zh": "这里有两个球。一个大，一个小。", "en": "Here are two balls. One is big, and one is small." },
+            "prompts": [{ "kind": "point", "zh": "你想指哪个球？", "en": "Which ball would you like to point to?" }]
+          },
+          {
+            "scene": { "bg": "grass", "ground": "grass", "sprites": [
+              { "concept": "elephant", "x": 22, "y": 73, "size": 40, "anim": "none" },
+              { "concept": "bowl", "x": 46, "y": 78, "size": 30, "anim": "none" },
+              { "concept": "mouse", "x": 71, "y": 79, "size": 18, "anim": "none" },
+              { "concept": "bowl", "x": 86, "y": 79, "size": 15, "anim": "none" }
+            ] },
+            "text": { "zh": "大象选大碗。小老鼠选小碗。", "en": "Elephant chooses the big bowl. Mouse chooses the small bowl." }
+          },
+          {
+            "scene": { "bg": "grass", "ground": "grass", "sprites": [
+              { "concept": "elephant", "x": 24, "y": 73, "size": 40, "anim": "none" },
+              { "concept": "mouse", "x": 77, "y": 79, "size": 18, "anim": "none" },
+              { "concept": "ball", "x": 48, "y": 77, "size": 28, "anim": "none" },
+              { "concept": "ball", "x": 63, "y": 79, "size": 15, "anim": "none" }
+            ] },
+            "text": { "zh": "它们把两个球放在一起。一起玩，真开心。", "en": "They put the two balls together. Playing together is fun." },
+            "prompts": [{ "kind": "point", "zh": "小球在哪里？", "en": "Where is the small ball?" }]
+          },
+          {
+            "scene": { "bg": "grass", "ground": "grass", "sprites": [
+              { "concept": "elephant", "x": 20, "y": 73, "size": 40, "anim": "none" },
+              { "concept": "mouse", "x": 80, "y": 79, "size": 18, "anim": "none" },
+              { "concept": "box", "x": 52, "y": 77, "size": 25, "anim": "none" },
+              { "concept": "ball", "x": 40, "y": 79, "size": 23, "anim": "none" },
+              { "concept": "ball", "x": 65, "y": 80, "size": 15, "anim": "none" }
+            ] },
+            "text": { "zh": "玩好啦，一起收玩具。大的小的都收好。", "en": "All done. They tidy up together, putting away both big and small toys." },
+            "prompts": [{ "kind": "point", "zh": "玩具要放在哪里？", "en": "Where will the toys go?" }]
+          }
+        ]
+      }
+    },
+    {
+      "type": "choose",
+      "title": { "zh": "看看哪个大，哪个小", "en": "Look for Big and Small" },
+      "parentTip": "每轮用同一个词条，只改变图片大小。大人可指给宝宝看，再去比实物。",
+      "props": {
+        "rounds": [
+          {
+            "prompt": { "zh": "哪个球大一些？", "en": "Which ball is bigger?" },
+            "options": [{ "id": "big-ball", "concept": "ball", "scale": 1.2 }, { "id": "small-ball", "concept": "ball", "scale": 0.6 }],
+            "answer": "big-ball",
+            "explain": { "zh": "这个球比旁边的大。", "en": "This ball is bigger than the one beside it." }
+          },
+          {
+            "prompt": { "zh": "哪个杯子小一些？", "en": "Which cup is smaller?" },
+            "options": [{ "id": "big-cup", "concept": "cup", "scale": 1.2 }, { "id": "small-cup", "concept": "cup", "scale": 0.6 }],
+            "answer": "small-cup",
+            "explain": { "zh": "这个杯子比旁边的小。", "en": "This cup is smaller than the one beside it." }
+          },
+          {
+            "prompt": { "zh": "哪张老鼠图片大一些？", "en": "Which picture of a mouse is bigger?" },
+            "options": [{ "id": "small-mouse", "concept": "mouse", "scale": 0.6 }, { "id": "big-mouse", "concept": "mouse", "scale": 1.2 }],
+            "answer": "big-mouse",
+            "explain": { "zh": "这张图大一些，去比碗吧。", "en": "This picture is bigger. Let's compare real bowls now." }
+          }
+        ],
+        "showLabels": false,
+        "hintAfter": 1
+      }
+    }
+  ]
+}

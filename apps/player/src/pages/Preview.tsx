@@ -6,6 +6,7 @@ import { ActivityRegistry } from '../host';
 import { useApp } from '../state/AppContext';
 import { Loading, Page, Problem } from '../ui/common';
 import { LessonExperience } from './LessonPlayer';
+import { requestDeadline } from '../compat';
 
 export function Preview() {
   const { lessonId } = useParams();
@@ -73,10 +74,12 @@ export function Preview() {
         ]);
         let plugins: PluginInfo[] = [];
         if (connection.server && token) {
+          const deadline = requestDeadline(controller.signal, 10_000);
           try {
-            const response = await fetch(`${connection.server}/api/plugins`, { headers: { Authorization: `Bearer ${token}` }, signal: AbortSignal.any([controller.signal, AbortSignal.timeout(10_000)]) });
+            const response = await fetch(`${connection.server}/api/plugins`, { headers: { Authorization: `Bearer ${token}` }, signal: deadline.signal });
             if (response.ok) plugins = await response.json() as PluginInfo[];
           } catch { /* 未保存课程仍可用内置活动和内联词条预览。 */ }
+          finally { deadline.dispose(); }
         }
         await registry.load(plugins, (url) => connection.source.resolveAsset('sprout.core', url));
         if (!active) return;

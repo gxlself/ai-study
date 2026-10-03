@@ -1,0 +1,58 @@
+{
+  "schemaVersion": 1,
+  "id": "culture.parent-young.family-celebration",
+  "title": { "zh": "生日：温柔的祝福", "en": "Birthdays: Gentle Good Wishes" },
+  "summary": { "zh": "生日或自家的纪念日，面对面祝福、轻轻拍手。", "en": "Share face-to-face wishes and gentle claps for a birthday or family celebration." },
+  "ageRange": [6, 17],
+  "audience": "parent",
+  "domains": ["social", "language", "motor"],
+  "themeId": "culture.family-celebration",
+  "tags": ["生日", "家庭节日", "家长指引"],
+  "durationMin": 2,
+  "coView": "required",
+  "objectives": [
+    { "zh": "听熟悉家人的祝福。", "en": "Hear good wishes from familiar family members." },
+    { "zh": "在舒服的节奏里回应。", "en": "Respond at a comfortable pace." }
+  ],
+  "cover": { "concept": "cake", "bg": "room" },
+  "parentGuide": {
+    "intro": "先读完关屏。生日或自家的团聚纪念日，都可以用一句祝福庆祝。对清醒、舒服的宝宝微笑说话，成人轻轻拍手，宝宝看或笑就好。不用气球、蜡烛、派对爆响或蛋糕试吃，也不要求全家到场。",
+    "tips": ["庆祝可以很安静，只有一位照护者也足够。", "按宝宝作息选白天时段，不惊喜吓唬、不延迟睡眠。", "宝宝捂耳、转头或烦躁时降低声音并停止。"],
+    "phrases": [
+      { "zh": "生日快乐！", "en": "Happy birthday!" },
+      { "zh": "今天真开心。", "en": "We're happy today." },
+      { "zh": "轻轻拍拍手。", "en": "Clap gently." },
+      { "zh": "我陪着你。", "en": "I'm here with you." }
+    ],
+    "why": "熟悉、温暖的家庭仪式重在关系和回应。尊重宝宝节奏，不通过响声、奖品或食物刺激延长活动。",
+    "refs": ["[8]", "[47]", "[82]", "[92]", "[93]"]
+  },
+  "printables": [{ "kind": "cards", "title": "家庭庆祝大卡", "items": ["cake", "clap", "home"], "size": "large", "showText": true, "showEnglish": true }],
+  "offline": [{
+    "title": "安静的生日祝福",
+    "minutes": 5,
+    "materials": ["安静地垫", "完整的蛋糕大卡"],
+    "steps": ["关屏，选清醒舒服的时段面对面坐好。", "成人拿住蛋糕大卡，说生日快乐或自家的祝福。", "把卡收起，成人轻轻拍两下手，再等宝宝回应。", "用看、笑、发声表达开心，宝宝累了就休息。"],
+    "question": "你想再看看，还是听我说话？",
+    "levels": { "easier": "只看成人微笑、听一句祝福。", "harder": "十二月龄后可自愿模仿拍手或挥手，不拉着手做。" },
+    "safety": "成人全程陪伴，卡片不入口。不用气球及碎片、蜡烛明火、爆响玩具、彩纸碎屑或小礼物；直径小于3.5厘米的小物件有窒息风险。蛋糕只看图不试吃，不向宝宝提供糖果、整粒坚果和未经确认的过敏原。",
+    "domains": ["social", "motor"]
+  }],
+  "steps": [{
+    "type": "guide",
+    "parentTip": "安静庆祝，不用气球、明火和食物奖励。",
+    "props": {
+      "goal": "用微笑和一句祝福，和宝宝分享家庭节日。",
+      "materials": ["蛋糕大卡", "安静地垫"],
+      "steps": [
+        { "text": "读完关屏，选宝宝清醒舒服的时段，成人拿住蛋糕大卡。", "concept": "cake", "say": { "zh": "生日快乐！", "en": "Happy birthday!" } },
+        { "text": "说一句祝福，停五秒，回应宝宝的笑、目光或声音。", "say": { "zh": "今天真开心。", "en": "We're happy today." } },
+        { "text": "收卡后成人轻轻拍两下手，宝宝愿意就模仿，不拉手带动。", "concept": "clap", "say": { "zh": "轻轻拍拍手。", "en": "Clap gently." } },
+        { "text": "宝宝转头、困倦或嫌吵就结束，保持日常作息。", "say": { "zh": "我陪着你。", "en": "I'm here with you." } }
+      ],
+      "playMin": 5,
+      "observe": ["是否愿意看成人的脸。", "是否自愿笑、发声或模仿拍手。", "是否对声音敏感或需要结束。"],
+      "safety": "成人陪伴，不强迫拍手或身体接触；不用气球、蜡烛、爆响、小碎物和食物，卡片不入口，庆祝不打乱睡眠。"
+    }
+  }]
+}

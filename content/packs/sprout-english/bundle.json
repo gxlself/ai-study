@@ -1,0 +1,2553 @@
+{
+  "schemaVersion": 1,
+  "builtAt": "2026-10-03T04:22:12.016Z",
+  "manifest": {
+    "schemaVersion": 1,
+    "id": "sprout.english",
+    "version": "1.0.0",
+    "name": {
+      "zh": "英语日常",
+      "en": "Everyday English"
+    },
+    "description": {
+      "zh": "家长先学几句，再放下屏幕，在起床、穿衣、吃饭和玩耍中真人互动。九节家长指引与三节可选亲子共看，不承诺英语学习效果。",
+      "en": "Learn a few phrases, put the screen away, and use them in real conversations. Nine parent guides and three optional co-viewing lessons, without promises of language gains."
+    },
+    "author": "芽芽成长 Sprout",
+    "license": "CC0-1.0",
+    "ageRange": [
+      6,
+      36
+    ],
+    "lexicon": "lexicon.json",
+    "routes": [],
+    "lessonsDir": "lessons",
+    "requires": {
+      "sdk": "^1.0.0"
+    },
+    "credits": [
+      {
+        "name": "芽芽成长原创课程、英文歌词与自绘插画",
+        "license": "CC0-1.0",
+        "note": "许可限本包原创文字、词条、插画和测试源码，不覆盖核心包素材或系统语音。"
+      },
+      {
+        "name": "Frère Jacques 传统旋律",
+        "license": "Public domain",
+        "note": "只使用传统旋律；中英文歌词为本包原创，播放时由活动合成，无第三方录音。"
+      },
+      {
+        "name": "sprout.core 词库与图片",
+        "license": "按核心包 LICENSES.md",
+        "note": "通过概念标识符引用，不复制、不改写；导入时须保留已启用的 sprout.core。"
+      },
+      {
+        "name": "macOS 系统合成语音",
+        "license": "受适用的系统软件及声音使用条款约束",
+        "note": "音频用于家庭使用和内部验收，不宣称为 CC0；对外分发前另行核对声音授权。"
+      }
+    ],
+    "cover": "assets/images/everyday-english.svg",
+    "tags": [
+      "english",
+      "daily-routines",
+      "parent-led",
+      "co-view"
+    ]
+  },
+  "lexicon": {
+    "schemaVersion": 1,
+    "concepts": [
+      {
+        "id": "english.stand-up",
+        "category": "actions",
+        "zh": "站起来",
+        "en": "stand up",
+        "image": "assets/images/actions/stand-up.svg",
+        "phrase": {
+          "zh": "慢慢站起来。",
+          "en": "Stand up slowly."
+        },
+        "ageRange": [
+          18,
+          36
+        ],
+        "tags": [
+          "action",
+          "non-count",
+          "adult-supervision"
+        ]
+      }
+    ]
+  },
+  "routes": [],
+  "lessons": [
+    {
+      "schemaVersion": 1,
+      "id": "english.child.everyday-things",
+      "title": {
+        "zh": "找找身边的东西",
+        "en": "Things Around Us"
+      },
+      "summary": {
+        "zh": "四张手动词卡、两次指认，然后去找真实物品。",
+        "en": "Four manual word cards and two choices, followed by a real-object game."
+      },
+      "ageRange": [
+        24,
+        36
+      ],
+      "domains": [
+        "english",
+        "language",
+        "cognition"
+      ],
+      "tags": [
+        "word-cards",
+        "co-view",
+        "daytime"
+      ],
+      "durationMin": 3,
+      "coView": "required",
+      "audience": "child",
+      "printables": [
+        {
+          "kind": "cards",
+          "title": "日常物品实物对照卡",
+          "items": [
+            "cup",
+            "spoon",
+            "book",
+            "ball"
+          ],
+          "size": "large",
+          "showText": true,
+          "showEnglish": true
+        }
+      ],
+      "objectives": [
+        {
+          "zh": "把图片和实物连起来。",
+          "en": "Connect pictures with familiar real objects."
+        },
+        {
+          "zh": "指认或递给家长。",
+          "en": "Point to an object or offer it to a grown-up."
+        }
+      ],
+      "cover": {
+        "concept": "cup",
+        "bg": "sky"
+      },
+      "parentGuide": {
+        "intro": "仅供家长已选择共看的家庭白天使用，成人全程陪同。一次慢看一张，用指认或目光回应即可；两轮找一找后关屏，拿真实杯子、书和球一起玩。",
+        "tips": [
+          "名称和短句配慢读音频，家长听一遍再自然说，不要求复读。",
+          "cup /kʌp/，spoon /spun/，book /bʊk/，ball /bɔl/；音标只给家长参考。",
+          "词卡不自动翻页，宝宝不想看时直接结束，未选中就和家长一起找。",
+          "不看屏幕也可以直接用安全实物玩；指、看、递出或中文回答都可以。"
+        ],
+        "phrases": [
+          {
+            "zh": "这是你的杯子。",
+            "en": "Here's your cup."
+          },
+          {
+            "zh": "这是你的勺子。",
+            "en": "Here's your spoon."
+          },
+          {
+            "zh": "我们读本书吧。",
+            "en": "Let's read a book."
+          },
+          {
+            "zh": "把球滚过来。",
+            "en": "Roll the ball to me."
+          },
+          {
+            "zh": "杯子在哪里？",
+            "en": "Where is the cup?"
+          },
+          {
+            "zh": "书在哪里？",
+            "en": "Where is the book?"
+          }
+        ],
+        "why": "图片之后马上转到真实物品，由家长及时回应；指认服务共同关注而非考试。短共看不能替代丰富的日常中文对话。",
+        "refs": [
+          "[16]",
+          "[24]",
+          "[25]",
+          "[53]"
+        ]
+      },
+      "offline": [
+        {
+          "title": "关屏找实物",
+          "minutes": 5,
+          "materials": [
+            "空的安全杯子",
+            "安全勺子",
+            "纸书",
+            "大软球"
+          ],
+          "steps": [
+            "关屏，成人放好两个安全实物，不给整屋搜寻任务。",
+            "成人指着杯子说一句，等宝宝看、指或递给你。",
+            "换成纸书或球，边做翻页、递出或轻轻滚球动作边说短句。",
+            "宝宝选择一个想玩的物品，成人回应，回到自由游戏。"
+          ],
+          "safety": "成人全程陪伴；杯子为空且不易碎，勺子无锐边，球大于三点五厘米；不提供小零件或热饮，不在进食时玩，不追跑、不攀高。",
+          "domains": [
+            "english",
+            "language",
+            "cognition"
+          ],
+          "question": "你想拿哪一样和我玩呀？",
+          "levels": {
+            "easier": "只放一个物品，成人命名，宝宝可以只看。",
+            "harder": "用两张实体卡配两个实物，宝宝自己选择配对，不要求说英文。"
+          }
+        }
+      ],
+      "steps": [
+        {
+          "type": "word-cards",
+          "parentTip": "慢看一张，指一指再等回应；不自动翻页，不要求读字。",
+          "props": {
+            "items": [
+              "cup",
+              "spoon",
+              "book",
+              "ball"
+            ],
+            "show": {
+              "text": true,
+              "english": true,
+              "pinyin": false
+            },
+            "speak": "name+phrase",
+            "autoAdvanceSec": null,
+            "intro": {
+              "zh": "一起看看身边的东西。",
+              "en": "Let's look at things around us."
+            }
+          }
+        },
+        {
+          "type": "choose",
+          "parentTip": "宝宝可指图，让家长操作；找完就关屏，去玩真实物品。",
+          "props": {
+            "rounds": [
+              {
+                "prompt": {
+                  "zh": "杯子在哪里？",
+                  "en": "Where is the cup?"
+                },
+                "options": [
+                  "cup",
+                  "book"
+                ],
+                "answer": "cup",
+                "explain": {
+                  "zh": "这是杯子。",
+                  "en": "Here is the cup."
+                }
+              },
+              {
+                "prompt": {
+                  "zh": "书在哪里？",
+                  "en": "Where is the book?"
+                },
+                "options": [
+                  "ball",
+                  "book"
+                ],
+                "answer": "book",
+                "explain": {
+                  "zh": "这是书。",
+                  "en": "Here is the book."
+                }
+              }
+            ],
+            "showLabels": false,
+            "hintAfter": 1
+          }
+        }
+      ]
+    },
+    {
+      "schemaVersion": 1,
+      "id": "english.child.hello-hands",
+      "title": {
+        "zh": "小手问好歌",
+        "en": "Hello, Hands"
+      },
+      "summary": {
+        "zh": "原创双语歌词配传统旋律，和家长挥手拍手。",
+        "en": "Original bilingual words to a traditional tune, sung with a grown-up."
+      },
+      "ageRange": [
+        24,
+        36
+      ],
+      "domains": [
+        "english",
+        "music",
+        "motor"
+      ],
+      "tags": [
+        "song",
+        "co-view",
+        "daytime"
+      ],
+      "durationMin": 2,
+      "coView": "required",
+      "audience": "child",
+      "objectives": [
+        {
+          "zh": "和家长轻声唱。",
+          "en": "Sing softly with a grown-up."
+        },
+        {
+          "zh": "挥手拍手后休息。",
+          "en": "Wave, clap, and then rest."
+        }
+      ],
+      "cover": {
+        "concept": "wave",
+        "bg": "sky"
+      },
+      "parentGuide": {
+        "intro": "仅供自愿选择短共看的家庭白天使用，成人全程陪同。先听慢读标题，成人带着挥手、拍手并自己唱，宝宝可只看你；唱一遍后关屏去玩。",
+        "tips": [
+          "标题有慢读音频，歌词不自动朗读；家长按画面歌词跟合成旋律唱，不把音乐当背景。",
+          "副词 together 重读第二音节；wave /weɪv/，clap /klæp/，rest /rɛst/。",
+          "先唱英文一遍，再唱同义中文一遍；六句参考短语无需一次教完。",
+          "孩子坐稳也可以挥手拍手，不要求站立、唱准或及时完成动作。"
+        ],
+        "phrases": [
+          {
+            "zh": "你好，你好。",
+            "en": "Hello, hello."
+          },
+          {
+            "zh": "挥挥你的手。",
+            "en": "Wave your hands."
+          },
+          {
+            "zh": "我们一起拍手。",
+            "en": "Clap your hands together."
+          },
+          {
+            "zh": "小手歇一歇。",
+            "en": "Rest your hands."
+          },
+          {
+            "zh": "现在玩好啦。",
+            "en": "All done now."
+          },
+          {
+            "zh": "我们一起唱吧。",
+            "en": "Let's sing together."
+          }
+        ],
+        "why": "主动亲子音乐活动不同于背景播放；家长的歌声、动作与回应才是重点。本课不承诺英语学习或发展效果。",
+        "refs": [
+          "[16]",
+          "[47]",
+          "[54]",
+          "[87]"
+        ]
+      },
+      "offline": [
+        {
+          "title": "不看屏幕的问好歌",
+          "minutes": 5,
+          "materials": [
+            "家长的歌声和双手"
+          ],
+          "steps": [
+            "关屏，成人面对宝宝轻声唱问好，不继续播放音频。",
+            "唱到挥手时挥自己的手，等宝宝自愿回应。",
+            "轻轻拍手，唱到休息时把自己的手放下。",
+            "宝宝愿意时换宝宝带动作，成人跟着唱；几轮后自然结束。"
+          ],
+          "safety": "成人陪伴，动作轻柔，不拉宝宝手臂，不要求站立或跳跃；音量低，不用背景播放，不在嘴里有食物时玩动作。",
+          "domains": [
+            "english",
+            "music",
+            "motor"
+          ],
+          "question": "你想让小手做什么呀？",
+          "levels": {
+            "easier": "只唱问好，宝宝看成人挥手。",
+            "harder": "宝宝选挥手或拍手，成人先等待，再用对应短句回应。"
+          }
+        }
+      ],
+      "steps": [
+        {
+          "type": "song",
+          "parentTip": "英文与中文各一段，同一旋律；家长自己唱，休息句时放下手。",
+          "props": {
+            "title": {
+              "zh": "小手问好歌",
+              "en": "Hello, Hands"
+            },
+            "credit": "旋律：Frère Jacques 传统旋律（公有领域）；中英文歌词：芽芽成长原创，CC0-1.0；无第三方录音。",
+            "bpm": 70,
+            "instrument": "musicbox",
+            "lines": [
+              {
+                "lang": "en",
+                "text": "Hello, hello.",
+                "notes": "C4/1 D4/1 E4/1 C4/1"
+              },
+              {
+                "lang": "en",
+                "text": "Hello, hello.",
+                "notes": "C4/1 D4/1 E4/1 C4/1"
+              },
+              {
+                "lang": "en",
+                "text": "Wave your hands.",
+                "notes": "E4/1 F4/1 G4/2"
+              },
+              {
+                "lang": "en",
+                "text": "Wave your hands.",
+                "notes": "E4/1 F4/1 G4/2"
+              },
+              {
+                "lang": "en",
+                "text": "Clap your hands together.",
+                "notes": "G4/0.5 A4/0.5 G4/0.5 F4/0.5 E4/1 C4/1"
+              },
+              {
+                "lang": "en",
+                "text": "Clap your hands together.",
+                "notes": "G4/0.5 A4/0.5 G4/0.5 F4/0.5 E4/1 C4/1"
+              },
+              {
+                "lang": "en",
+                "text": "Rest your hands.",
+                "notes": "C4/1 G3/1 C4/2"
+              },
+              {
+                "lang": "en",
+                "text": "All done now.",
+                "notes": "C4/1 G3/1 C4/2"
+              },
+              {
+                "lang": "zh",
+                "text": "你好你好",
+                "notes": "C4/1 D4/1 E4/1 C4/1"
+              },
+              {
+                "lang": "zh",
+                "text": "你好你好",
+                "notes": "C4/1 D4/1 E4/1 C4/1"
+              },
+              {
+                "lang": "zh",
+                "text": "挥挥手",
+                "notes": "E4/1 F4/1 G4/2"
+              },
+              {
+                "lang": "zh",
+                "text": "挥挥手",
+                "notes": "E4/1 F4/1 G4/2"
+              },
+              {
+                "lang": "zh",
+                "text": "我们一起拍手",
+                "notes": "G4/0.5 A4/0.5 G4/0.5 F4/0.5 E4/1 C4/1"
+              },
+              {
+                "lang": "zh",
+                "text": "我们一起拍手",
+                "notes": "G4/0.5 A4/0.5 G4/0.5 F4/0.5 E4/1 C4/1"
+              },
+              {
+                "lang": "zh",
+                "text": "歇歇手",
+                "notes": "C4/1 G3/1 C4/2"
+              },
+              {
+                "lang": "zh",
+                "text": "玩好啦",
+                "notes": "C4/1 G3/1 C4/2"
+              }
+            ],
+            "scene": {
+              "bg": "sky",
+              "ground": "none",
+              "sprites": [
+                {
+                  "concept": "wave",
+                  "x": 32,
+                  "y": 42,
+                  "size": 30,
+                  "anim": "none"
+                },
+                {
+                  "concept": "clap",
+                  "x": 68,
+                  "y": 42,
+                  "size": 30,
+                  "anim": "none"
+                }
+              ]
+            },
+            "repeat": 1,
+            "actions": [
+              {
+                "zh": "轻轻挥手。",
+                "en": "Wave gently."
+              },
+              {
+                "zh": "轻轻拍手。",
+                "en": "Clap gently."
+              },
+              {
+                "zh": "小手歇一歇。",
+                "en": "Rest your hands."
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "schemaVersion": 1,
+      "id": "english.child.move-together",
+      "title": {
+        "zh": "和家长一起动",
+        "en": "Move Together"
+      },
+      "summary": {
+        "zh": "可选短共看，成人示范六个动作，然后离屏玩。",
+        "en": "An optional short action lesson with a grown-up, followed by real play."
+      },
+      "ageRange": [
+        24,
+        36
+      ],
+      "domains": [
+        "english",
+        "motor",
+        "social"
+      ],
+      "tags": [
+        "tpr",
+        "co-view",
+        "daytime"
+      ],
+      "durationMin": 3,
+      "coView": "required",
+      "audience": "child",
+      "objectives": [
+        {
+          "zh": "看真人示范一个动作。",
+          "en": "Watch a grown-up demonstrate an action."
+        },
+        {
+          "zh": "自愿跟做，随时休息。",
+          "en": "Join in by choice and rest whenever needed."
+        }
+      ],
+      "cover": {
+        "concept": "english.stand-up",
+        "bg": "grass"
+      },
+      "parentGuide": {
+        "intro": "仅供家长已选择共看的家庭白天使用，成人全程陪同。先清空平地，宝宝看你的真人示范，可跳过不会的动作；结束就关屏，继续面对面玩。",
+        "tips": [
+          "音频用慢读语速；家长先听一句再配动作，不要求孩子照读或跟上倒计时。",
+          "站和坐由家长示范；不会轻跳就轻抬脚跟或坐着拍手，不能拉拽孩子。",
+          "不用共看也可以直接做线下活动；不在吃饭、睡前或情绪激动时播放。"
+        ],
+        "phrases": [
+          {
+            "zh": "站起来。",
+            "en": "Stand up."
+          },
+          {
+            "zh": "坐下来。",
+            "en": "Sit down."
+          },
+          {
+            "zh": "胳膊举起来。",
+            "en": "Arms up."
+          },
+          {
+            "zh": "摸摸你的鼻子。",
+            "en": "Touch your nose."
+          },
+          {
+            "zh": "拍拍你的手。",
+            "en": "Clap your hands."
+          },
+          {
+            "zh": "轻轻跳一下。",
+            "en": "Jump gently."
+          }
+        ],
+        "why": "共看时成人的及时回应才是关键；屏幕只引出真人动作。本课不是英语测评，不保证语言效果，选择全程线下同样完整。",
+        "refs": [
+          "[16]",
+          "[25]",
+          "[27]",
+          "[54]"
+        ]
+      },
+      "offline": [
+        {
+          "title": "关屏后你来带动作",
+          "minutes": 5,
+          "materials": [
+            "防滑平地"
+          ],
+          "steps": [
+            "关屏，成人先慢慢拍手，再等待宝宝回应。",
+            "让宝宝选择一个会做的动作，家长用相应短句并跟做。",
+            "一人一次，不会站或跳就改成坐稳拍手，不要求速度。",
+            "宝宝不想继续时结束，回到自由玩耍。"
+          ],
+          "safety": "成人近距离陪伴，平地防滑、无障碍，远离楼梯和家具尖角；不拉手、不强迫跳跃、不攀高，不设限时。",
+          "domains": [
+            "english",
+            "motor",
+            "social"
+          ],
+          "question": "接下来你想带我做什么呀？",
+          "levels": {
+            "easier": "只轮流拍手，宝宝可以只看成人。",
+            "harder": "宝宝选择两种动作轮流示范，家长仍一次说一个短句。"
+          }
+        }
+      ],
+      "steps": [
+        {
+          "type": "movement",
+          "parentTip": "每个动作可暂停或跳过；先看家长，不会跳就抬脚跟或坐着拍手。",
+          "props": {
+            "intro": {
+              "zh": "和家长一起慢慢做。",
+              "en": "Move slowly with your grown-up."
+            },
+            "moves": [
+              {
+                "concept": "english.stand-up",
+                "name": {
+                  "zh": "站起来",
+                  "en": "Stand up"
+                },
+                "say": {
+                  "zh": "慢慢站起来。",
+                  "en": "Stand up slowly."
+                },
+                "seconds": 15
+              },
+              {
+                "concept": "sit-down",
+                "name": {
+                  "zh": "坐下来",
+                  "en": "Sit down"
+                },
+                "say": {
+                  "zh": "慢慢坐下来。",
+                  "en": "Sit down slowly."
+                },
+                "seconds": 15
+              },
+              {
+                "concept": "raise-hands",
+                "name": {
+                  "zh": "举胳膊",
+                  "en": "Arms up"
+                },
+                "say": {
+                  "zh": "胳膊举起来。",
+                  "en": "Arms up."
+                },
+                "seconds": 15
+              },
+              {
+                "concept": "nose",
+                "name": {
+                  "zh": "摸鼻子",
+                  "en": "Touch your nose"
+                },
+                "say": {
+                  "zh": "轻轻摸摸你的鼻子。",
+                  "en": "Touch your nose gently."
+                },
+                "seconds": 15
+              },
+              {
+                "concept": "clap",
+                "name": {
+                  "zh": "拍手",
+                  "en": "Clap your hands"
+                },
+                "say": {
+                  "zh": "轻轻拍拍手。",
+                  "en": "Clap your hands gently."
+                },
+                "seconds": 15
+              },
+              {
+                "concept": "jump",
+                "name": {
+                  "zh": "轻轻跳",
+                  "en": "Jump gently"
+                },
+                "say": {
+                  "zh": "轻轻跳，或抬抬脚跟。",
+                  "en": "Jump gently, or lift your heels."
+                },
+                "seconds": 15
+              }
+            ],
+            "bpm": 60
+          }
+        }
+      ]
+    },
+    {
+      "schemaVersion": 1,
+      "id": "english.parent.action-game",
+      "title": {
+        "zh": "真人动作小游戏",
+        "en": "An Off-Screen Action Game"
+      },
+      "summary": {
+        "zh": "家长学六句动作短语，关屏后一起做。",
+        "en": "Learn six action phrases and play face to face, without a screen."
+      },
+      "ageRange": [
+        18,
+        36
+      ],
+      "domains": [
+        "english",
+        "motor",
+        "social"
+      ],
+      "tags": [
+        "tpr",
+        "parent-led",
+        "screen-free"
+      ],
+      "durationMin": 3,
+      "coView": "required",
+      "audience": "parent",
+      "printables": [
+        {
+          "kind": "cards",
+          "title": "真人动作示意卡",
+          "items": [
+            "english.stand-up",
+            "sit-down",
+            "raise-hands",
+            "nose",
+            "clap",
+            "jump"
+          ],
+          "size": "large",
+          "showText": true,
+          "showEnglish": true
+        }
+      ],
+      "objectives": [
+        {
+          "zh": "短句对应一个动作。",
+          "en": "Connect each short phrase with one action."
+        },
+        {
+          "zh": "轮流示范，不催促。",
+          "en": "Take turns demonstrating without rushing."
+        }
+      ],
+      "cover": {
+        "concept": "english.stand-up",
+        "bg": "grass"
+      },
+      "parentGuide": {
+        "intro": "家长先学六句，再关屏到安全平地玩。一次只说一个动作，成人先示范，等宝宝自愿参加；不会站或跳就只看、坐着拍手或轻抬脚跟。",
+        "tips": [
+          "每步附美式音标，先慢读，不用中文谐音，也不要求宝宝模仿音标。",
+          "TPR 是短语配动作，不是反应速度训练；一个动作后停五秒。",
+          "站坐用地面或稳固低座，跳只做宝宝已会的轻跳；不拉手臂、不追跑。"
+        ],
+        "phrases": [
+          {
+            "zh": "站起来。",
+            "en": "Stand up."
+          },
+          {
+            "zh": "坐下来。",
+            "en": "Sit down."
+          },
+          {
+            "zh": "胳膊举起来。",
+            "en": "Arms up."
+          },
+          {
+            "zh": "摸摸你的鼻子。",
+            "en": "Touch your nose."
+          },
+          {
+            "zh": "拍拍你的手。",
+            "en": "Clap your hands."
+          },
+          {
+            "zh": "跳一下。",
+            "en": "Jump."
+          }
+        ],
+        "why": "外语与真人、手势和眼前动作相连，成人等待并回应。动作游戏只是互动方式，不声称几分钟可以复制研究中的英语干预效果。",
+        "refs": [
+          "[16]",
+          "[47]",
+          "[54]",
+          "[83]"
+        ]
+      },
+      "offline": [
+        {
+          "title": "你做一个，我说一句",
+          "minutes": 5,
+          "materials": [
+            "安全平地",
+            "可选的稳固低座"
+          ],
+          "steps": [
+            "关屏，清空脚边障碍，成人面对宝宝。",
+            "成人从拍手或举手中选一个，边说边慢慢示范。",
+            "等待宝宝用动作、手势或目光回应，再接着回应宝宝。",
+            "已能安全完成时才玩站坐和轻跳；不会跳可轻抬脚跟或坐着拍手。",
+            "让宝宝选择一个已会的动作，成人跟做，几轮后自然结束。"
+          ],
+          "safety": "成人全程近距离陪伴，平地防滑，避开楼梯、家具尖角和热物；只做宝宝已会的动作，不拉拽、不强迫站立或跳跃，不设限时。",
+          "domains": [
+            "english",
+            "motor",
+            "social"
+          ],
+          "question": "你想让我跟你做什么呀？",
+          "levels": {
+            "easier": "宝宝坐稳，只玩拍手或看成人挥手。",
+            "harder": "宝宝选择两个熟悉动作，成人仍一次说一个，轮流示范。"
+          }
+        }
+      ],
+      "steps": [
+        {
+          "type": "guide",
+          "parentTip": "看真人，不看屏幕；一个动作一停顿，不会的动作跳过。",
+          "props": {
+            "goal": "家长用六个动作短句和宝宝轮流互动。",
+            "materials": [
+              "安全平地",
+              "可选的稳固低座"
+            ],
+            "steps": [
+              {
+                "text": "成人慢慢站起，宝宝已会且愿意时才跟做。美式 /stænd ʌp/。",
+                "say": {
+                  "zh": "站起来。",
+                  "en": "Stand up."
+                },
+                "concept": "english.stand-up"
+              },
+              {
+                "text": "成人慢慢坐在地面或稳固低座上示范。美式 /sɪt daʊn/。",
+                "say": {
+                  "zh": "坐下来。",
+                  "en": "Sit down."
+                },
+                "concept": "sit-down"
+              },
+              {
+                "text": "举起自己的双臂，等宝宝自愿模仿。美式 /ɑrmz ʌp/。",
+                "say": {
+                  "zh": "胳膊举起来。",
+                  "en": "Arms up."
+                },
+                "concept": "raise-hands"
+              },
+              {
+                "text": "成人轻触自己的鼻子，不戳眼睛或鼻孔。美式 /tʌtʃ jər noʊz/。",
+                "say": {
+                  "zh": "摸摸你的鼻子。",
+                  "en": "Touch your nose."
+                },
+                "concept": "nose"
+              },
+              {
+                "text": "轻轻拍自己的手，留一次停顿等宝宝。美式 /klæp jər hændz/。",
+                "say": {
+                  "zh": "拍拍你的手。",
+                  "en": "Clap your hands."
+                },
+                "concept": "clap"
+              },
+              {
+                "text": "已会才轻跳一下；不会就抬脚跟或坐着拍手。美式 /dʒʌmp/。",
+                "say": {
+                  "zh": "跳一下。",
+                  "en": "Jump."
+                },
+                "concept": "jump"
+              }
+            ],
+            "playMin": 5,
+            "observe": [
+              "宝宝有没有看向成人的示范。",
+              "有没有自愿做一个已会的动作。",
+              "成人能否接受只看、休息或跳过动作。"
+            ],
+            "safety": "只在防滑平地进行，宝宝不会的动作不要求；不拉拽、不追跑、不攀高，不设速度要求。"
+          }
+        }
+      ]
+    },
+    {
+      "schemaVersion": 1,
+      "id": "english.parent.clean-up",
+      "title": {
+        "zh": "一起收玩具",
+        "en": "Clean Up Together"
+      },
+      "summary": {
+        "zh": "六句收拾短语，轮流捡起和放进去。",
+        "en": "Take turns putting toys away with six familiar phrases."
+      },
+      "ageRange": [
+        18,
+        36
+      ],
+      "domains": [
+        "english",
+        "life",
+        "social"
+      ],
+      "tags": [
+        "clean-up",
+        "parent-led",
+        "tpr"
+      ],
+      "durationMin": 3,
+      "coView": "required",
+      "audience": "parent",
+      "printables": [
+        {
+          "kind": "cards",
+          "title": "收玩具实物卡",
+          "items": [
+            "blocks",
+            "box",
+            "ball"
+          ],
+          "size": "large",
+          "showText": true,
+          "showEnglish": true
+        }
+      ],
+      "objectives": [
+        {
+          "zh": "捡起、放入配短句。",
+          "en": "Pair short phrases with picking up and putting away."
+        },
+        {
+          "zh": "和家长轮流收拾。",
+          "en": "Take turns tidying with a grown-up."
+        }
+      ],
+      "cover": {
+        "concept": "box",
+        "bg": "room"
+      },
+      "parentGuide": {
+        "intro": "家长学六句后关屏，只选两三件大玩具收拾。成人先捡起、放进去，再邀请宝宝轮流；不比速度、不要求说对才算完成。",
+        "tips": [
+          "每步附美式音标，短句慢说一次，再留五秒给宝宝看或行动。",
+          "指着正在拿的那一件说，避免一口气给多步指令。",
+          "动作游戏就是捡起和放入；宝宝拒绝时由成人收好，保留下一次机会。"
+        ],
+        "phrases": [
+          {
+            "zh": "该收玩具啦。",
+            "en": "Time to clean up."
+          },
+          {
+            "zh": "捡起这块积木。",
+            "en": "Pick up the block."
+          },
+          {
+            "zh": "把它放进盒子。",
+            "en": "Put it in the box."
+          },
+          {
+            "zh": "轮到我啦。",
+            "en": "My turn."
+          },
+          {
+            "zh": "轮到你啦。",
+            "en": "Your turn."
+          },
+          {
+            "zh": "我们做到了。",
+            "en": "We did it."
+          }
+        ],
+        "why": "语言与眼前动作相连，成人示范并回应宝宝的尝试。重复生活短语不等于测验，也不需要积分或物质奖励。",
+        "refs": [
+          "[47]",
+          "[54]",
+          "[82]",
+          "[94]"
+        ]
+      },
+      "offline": [
+        {
+          "title": "轮流放进盒子",
+          "minutes": 5,
+          "materials": [
+            "两三件完整的大玩具",
+            "没有重盖子的矮盒子"
+          ],
+          "steps": [
+            "关屏，把矮盒子和两三件大玩具放在地上。",
+            "成人捡起一件并放进盒子，说轮到我啦。",
+            "指着另一件邀请宝宝，等待宝宝自愿捡起或指一指。",
+            "需要时一起收好，具体说出你看到的尝试，然后结束。"
+          ],
+          "safety": "成人陪伴；物件完整且大于三点五厘米，不用小零件、磁铁或纽扣电池；盒子无尖边、无重盖子，不让宝宝钻进去，不举重物。",
+          "domains": [
+            "english",
+            "social",
+            "life"
+          ],
+          "question": "你想先把什么放进去呀？",
+          "levels": {
+            "easier": "只有一件玩具，宝宝看成人放进去。",
+            "harder": "用两件玩具轮流放，宝宝自己选择先收哪件。"
+          }
+        }
+      ],
+      "steps": [
+        {
+          "type": "guide",
+          "parentTip": "只收几件就结束；家长的帮助不是宝宝的失败。",
+          "props": {
+            "goal": "在真实收拾中用六句短语轮流行动。",
+            "materials": [
+              "完整的大玩具",
+              "矮的无盖收纳盒"
+            ],
+            "steps": [
+              {
+                "text": "关屏，指向地上的两三件大玩具。美式 /taɪm tə klin ʌp/。",
+                "say": {
+                  "zh": "该收玩具啦。",
+                  "en": "Time to clean up."
+                },
+                "concept": "box"
+              },
+              {
+                "text": "成人先捡起一块安全大积木作示范。美式 /pɪk ʌp ðə blɑk/。",
+                "say": {
+                  "zh": "捡起这块积木。",
+                  "en": "Pick up the block."
+                },
+                "concept": "blocks"
+              },
+              {
+                "text": "指着盒子慢慢把这一块放进去。美式 /pʊt ɪt ɪn ðə bɑks/。",
+                "say": {
+                  "zh": "把它放进盒子。",
+                  "en": "Put it in the box."
+                },
+                "concept": "box"
+              },
+              {
+                "text": "拿起另一件，先示范自己的回合。美式 /maɪ tɝn/。",
+                "say": {
+                  "zh": "轮到我啦。",
+                  "en": "My turn."
+                },
+                "concept": "ball"
+              },
+              {
+                "text": "邀请宝宝自愿选择一件，停下来等。美式 /jər tɝn/。",
+                "say": {
+                  "zh": "轮到你啦。",
+                  "en": "Your turn."
+                }
+              },
+              {
+                "text": "一起收好就结束，指出刚才的尝试。美式 /wi dɪd ɪt/。",
+                "say": {
+                  "zh": "我们做到了。",
+                  "en": "We did it."
+                }
+              }
+            ],
+            "playMin": 5,
+            "observe": [
+              "宝宝是否看向正在命名的玩具。",
+              "有没有尝试拿起、放入或指认。",
+              "家长能否等待，不催促速度和英文回答。"
+            ],
+            "safety": "不用小物件、重箱盖或锐利物品，成人全程看护，宝宝不愿意就停止邀请。"
+          }
+        }
+      ]
+    },
+    {
+      "schemaVersion": 1,
+      "id": "english.parent.feelings",
+      "title": {
+        "zh": "我在这里陪你",
+        "en": "I'm Here with You"
+      },
+      "summary": {
+        "zh": "六句情绪短语，先陪伴，不考问。",
+        "en": "Six phrases for noticing feelings and offering connection."
+      },
+      "ageRange": [
+        18,
+        36
+      ],
+      "domains": [
+        "english",
+        "social",
+        "language"
+      ],
+      "tags": [
+        "feelings",
+        "parent-led",
+        "tpr"
+      ],
+      "durationMin": 3,
+      "coView": "required",
+      "audience": "parent",
+      "printables": [
+        {
+          "kind": "cards",
+          "title": "平静时看的情绪实体卡",
+          "items": [
+            "happy",
+            "sad"
+          ],
+          "size": "large",
+          "showText": true,
+          "showEnglish": true
+        }
+      ],
+      "objectives": [
+        {
+          "zh": "看表情，轻声回应。",
+          "en": "Notice expressions and respond gently."
+        },
+        {
+          "zh": "尊重抱抱与休息选择。",
+          "en": "Respect choices about hugs and breaks."
+        }
+      ],
+      "cover": {
+        "concept": "happy",
+        "bg": "sky"
+      },
+      "parentGuide": {
+        "intro": "家长在平静时学六句。真实情绪来了先关屏，用宝宝熟悉的语言陪伴，再自然加入一句英文；不让哭泣的宝宝跟读，也不要求马上开心。",
+        "tips": [
+          "每步附美式音标，只给家长参考；语气轻柔，不用中文谐音。",
+          "动作游戏在平静时做，成人微笑、摊开手或挥手，宝宝可只看。",
+          "抱抱先询问，宝宝拒绝就尊重；需要休息时一起停下，不用屏幕安抚。"
+        ],
+        "phrases": [
+          {
+            "zh": "我很开心。",
+            "en": "I feel happy."
+          },
+          {
+            "zh": "你好像难过了。",
+            "en": "You look sad."
+          },
+          {
+            "zh": "难过也没关系。",
+            "en": "It's okay to feel sad."
+          },
+          {
+            "zh": "想要抱抱吗？",
+            "en": "Would you like a hug?"
+          },
+          {
+            "zh": "我在这里陪你。",
+            "en": "I'm here with you."
+          },
+          {
+            "zh": "我们休息一下吧。",
+            "en": "Let's take a break."
+          }
+        ],
+        "why": "回应和接纳比要求正确英语更重要。情绪命名与回应性照护一致，但本课不是情绪治疗，不保证调节能力提升。",
+        "refs": [
+          "[47]",
+          "[53]",
+          "[54]",
+          "[91]"
+        ]
+      },
+      "offline": [
+        {
+          "title": "平静时做表情，难过时陪伴",
+          "minutes": 5,
+          "materials": [
+            "成人拿持的大张情绪卡，可不用"
+          ],
+          "steps": [
+            "平静时关屏，成人微笑，指自己的表情说开心短句。",
+            "用实体卡看看难过的表情，不要求宝宝假哭或选正确答案。",
+            "成人摊开手询问是否想抱抱，接受靠近或拒绝。",
+            "真实情绪出现时收好材料，先用宝宝熟悉的语言陪伴，愿意时再轻声说一句。"
+          ],
+          "safety": "成人陪伴，尊重身体接触意愿，不强抱、不强迫开心或深呼吸，不用屏幕转移哭闹；卡片保持完整，避免入口。",
+          "domains": [
+            "english",
+            "social"
+          ],
+          "question": "你现在想让我怎么陪你呀？",
+          "levels": {
+            "easier": "不拿卡片，只在宝宝身边轻声陪伴。",
+            "harder": "平静时让宝宝选择一张卡或一个陪伴动作，成人跟着回应。"
+          }
+        }
+      ],
+      "steps": [
+        {
+          "type": "guide",
+          "parentTip": "情绪不是英语测验；先用宝宝听得懂的语言陪伴。",
+          "props": {
+            "goal": "用六句短语示范接纳情绪与尊重选择。",
+            "materials": [
+              "可选的大张实体情绪卡"
+            ],
+            "steps": [
+              {
+                "text": "平静时成人微笑，示范自己的感受。美式 /aɪ fil ˈhæpi/。",
+                "say": {
+                  "zh": "我很开心。",
+                  "en": "I feel happy."
+                },
+                "concept": "happy"
+              },
+              {
+                "text": "留意表情，用好像而非断定来回应。美式 /ju lʊk sæd/。",
+                "say": {
+                  "zh": "你好像难过了。",
+                  "en": "You look sad."
+                },
+                "concept": "sad"
+              },
+              {
+                "text": "先用宝宝熟悉的语言接纳，再自然示范。美式 /ɪts oʊˈkeɪ tə fil sæd/。",
+                "say": {
+                  "zh": "难过也没关系。",
+                  "en": "It's okay to feel sad."
+                }
+              },
+              {
+                "text": "摊开自己的手邀请，宝宝拒绝就尊重。美式 /wʊd ju laɪk ə hʌɡ/。",
+                "say": {
+                  "zh": "想要抱抱吗？",
+                  "en": "Would you like a hug?"
+                },
+                "concept": "hug"
+              },
+              {
+                "text": "安静留在宝宝身边，不要求回答。美式 /aɪm hɪr wɪð ju/。",
+                "say": {
+                  "zh": "我在这里陪你。",
+                  "en": "I'm here with you."
+                }
+              },
+              {
+                "text": "一起停下活动，允许宝宝按自己的需要休息。美式 /lɛts teɪk ə breɪk/。",
+                "say": {
+                  "zh": "我们休息一下吧。",
+                  "en": "Let's take a break."
+                }
+              }
+            ],
+            "playMin": 5,
+            "observe": [
+              "宝宝怎样表达需要陪伴或想保持距离。",
+              "家长有没有先回应情绪而非纠正英文。",
+              "宝宝愿意继续或需要停止时，家长是否跟随。"
+            ],
+            "safety": "不强制身体接触，不强迫表演情绪，不用屏幕安抚；宝宝不舒服时停止语言游戏。"
+          }
+        }
+      ]
+    },
+    {
+      "schemaVersion": 1,
+      "id": "english.parent.get-dressed",
+      "title": {
+        "zh": "穿衣伸伸手",
+        "en": "Getting Dressed"
+      },
+      "summary": {
+        "zh": "穿衣时先说再做，让宝宝自愿参与。",
+        "en": "Use six short phrases while helping your child get dressed."
+      },
+      "ageRange": [
+        18,
+        36
+      ],
+      "domains": [
+        "english",
+        "life",
+        "motor"
+      ],
+      "tags": [
+        "clothes",
+        "parent-led",
+        "tpr"
+      ],
+      "durationMin": 3,
+      "coView": "required",
+      "audience": "parent",
+      "printables": [
+        {
+          "kind": "cards",
+          "title": "穿衣实物对照卡",
+          "items": [
+            "shirt",
+            "socks",
+            "shoes"
+          ],
+          "size": "large",
+          "showText": true,
+          "showEnglish": true
+        }
+      ],
+      "objectives": [
+        {
+          "zh": "穿衣时先说再做。",
+          "en": "Say what you will do before helping with clothes."
+        },
+        {
+          "zh": "伸手配合，不强迫。",
+          "en": "Invite participation without forcing a movement."
+        }
+      ],
+      "cover": {
+        "concept": "shirt",
+        "bg": "room"
+      },
+      "parentGuide": {
+        "intro": "家长先读六句，穿衣时关屏。把衣服放在眼前，说一句、做一步；宝宝可以伸手、抬脚或只看，不用背单词。",
+        "tips": [
+          "每步附美式音标，先慢读，再自然连成短句；不用中文谐音。",
+          "动作游戏先由家长举自己的手示范，等宝宝自愿配合，不拉手臂。",
+          "袜子和鞋子在坐稳时穿，先做一侧，再做另一侧。"
+        ],
+        "phrases": [
+          {
+            "zh": "胳膊举起来。",
+            "en": "Arms up."
+          },
+          {
+            "zh": "一只胳膊伸进来。",
+            "en": "One arm in."
+          },
+          {
+            "zh": "另一只胳膊伸进来。",
+            "en": "Other arm in."
+          },
+          {
+            "zh": "我们穿上袜子吧。",
+            "en": "Let's put your socks on."
+          },
+          {
+            "zh": "穿上鞋子。",
+            "en": "Shoes on."
+          },
+          {
+            "zh": "穿好啦。",
+            "en": "All dressed."
+          }
+        ],
+        "why": "把语言放在真实照护中，先告知、等待、回应；保留丰富中文对话，不用不熟练英语替代交流，也不以说英文为穿衣条件。",
+        "refs": [
+          "[47]",
+          "[53]",
+          "[54]",
+          "[82]"
+        ]
+      },
+      "offline": [
+        {
+          "title": "坐稳穿衣小游戏",
+          "minutes": 5,
+          "materials": [
+            "宽松上衣",
+            "袜子",
+            "鞋子"
+          ],
+          "steps": [
+            "关屏，拿出宝宝要穿的衣服，先让宝宝看看。",
+            "家长举起自己的胳膊示范，再等宝宝自愿伸手。",
+            "一侧一侧穿袖子，说一句就停一停。",
+            "坐稳后穿袜子和鞋子，宝宝愿意时自己试，家长再帮助。"
+          ],
+          "safety": "成人陪伴，不拉拽关节，不勒住颈部，不用绳带或脱落小扣子做教具；穿鞋袜时坐稳，不站在椅子上。",
+          "domains": [
+            "english",
+            "life",
+            "motor"
+          ],
+          "question": "你想先拿哪一件呀？",
+          "levels": {
+            "easier": "家长只说举胳膊，示范一次，宝宝可只看。",
+            "harder": "让宝宝选择袜子或上衣，再用两句熟悉短语配合穿衣。"
+          }
+        }
+      ],
+      "steps": [
+        {
+          "type": "guide",
+          "parentTip": "先告知，等宝宝配合；不为学英语反复穿脱。",
+          "props": {
+            "goal": "用六句穿衣短语邀请宝宝参与真实照护。",
+            "materials": [
+              "宝宝平日穿的宽松衣物"
+            ],
+            "steps": [
+              {
+                "text": "家长举起自己的胳膊，等待宝宝自愿跟做。美式 /ɑrmz ʌp/。",
+                "say": {
+                  "zh": "胳膊举起来。",
+                  "en": "Arms up."
+                },
+                "concept": "raise-hands"
+              },
+              {
+                "text": "展开一只袖口，等宝宝伸一只胳膊。美式 /wʌn ɑrm ɪn/。",
+                "say": {
+                  "zh": "一只胳膊伸进来。",
+                  "en": "One arm in."
+                },
+                "concept": "arm"
+              },
+              {
+                "text": "再展开另一只袖口，不拉扯宝宝。美式 /ˈʌðər ɑrm ɪn/。",
+                "say": {
+                  "zh": "另一只胳膊伸进来。",
+                  "en": "Other arm in."
+                },
+                "concept": "shirt"
+              },
+              {
+                "text": "让宝宝坐稳，拿袜子给宝宝看。美式 /lɛts pʊt jər sɑks ɑn/。",
+                "say": {
+                  "zh": "我们穿上袜子吧。",
+                  "en": "Let's put your socks on."
+                },
+                "concept": "socks"
+              },
+              {
+                "text": "坐稳穿鞋，宝宝能做的部分留给宝宝。美式 /ʃuz ɑn/。",
+                "say": {
+                  "zh": "穿上鞋子。",
+                  "en": "Shoes on."
+                },
+                "concept": "shoes"
+              },
+              {
+                "text": "穿好就结束，用挥手或笑容回应配合。美式 /ɔl drɛst/。",
+                "say": {
+                  "zh": "穿好啦。",
+                  "en": "All dressed."
+                },
+                "concept": "wave"
+              }
+            ],
+            "playMin": 5,
+            "observe": [
+              "宝宝是否看向所指衣物。",
+              "有没有自愿伸手、抬脚或尝试自己穿。",
+              "出现抗拒时是否减少语言并给予帮助。"
+            ],
+            "safety": "只做宝宝已能自主完成的动作；不拉拽，不攀高，不将小配件交给宝宝。"
+          }
+        }
+      ]
+    },
+    {
+      "schemaVersion": 1,
+      "id": "english.parent.good-morning",
+      "title": {
+        "zh": "起床说早安",
+        "en": "Good Morning"
+      },
+      "summary": {
+        "zh": "家长先学六句，起床时看信号、慢慢回应。",
+        "en": "Six phrases for a calm, responsive morning."
+      },
+      "ageRange": [
+        6,
+        24
+      ],
+      "domains": [
+        "english",
+        "life",
+        "social"
+      ],
+      "tags": [
+        "morning",
+        "parent-led",
+        "tpr"
+      ],
+      "durationMin": 3,
+      "coView": "required",
+      "audience": "parent",
+      "objectives": [
+        {
+          "zh": "看信号，等回应。",
+          "en": "Notice cues and wait for a response."
+        },
+        {
+          "zh": "固定短句配动作。",
+          "en": "Pair familiar phrases with gentle actions."
+        }
+      ],
+      "cover": {
+        "concept": "sun",
+        "bg": "sky"
+      },
+      "parentGuide": {
+        "intro": "屏幕只给家长看。白天先学六句，起床时关屏，跟随宝宝的目光和声音说一两句；不叫醒宝宝练英语，也不要求复读。",
+        "tips": [
+          "音标采用常见美式读法，斜线内内容只给家长参考，不读给宝宝听。",
+          "慢说完整短句，重读有意义的词，再停五秒；发声、看你或微笑都算回应。",
+          "动作游戏由家长伸展、挥手示范；宝宝未能自主完成的姿势不摆放、不拉拽。"
+        ],
+        "phrases": [
+          {
+            "zh": "早上好。",
+            "en": "Good morning."
+          },
+          {
+            "zh": "睡得好吗？",
+            "en": "Did you sleep well?"
+          },
+          {
+            "zh": "我在这里。",
+            "en": "I'm here."
+          },
+          {
+            "zh": "伸个懒腰吧。",
+            "en": "Let's stretch."
+          },
+          {
+            "zh": "抱你起来啦。",
+            "en": "Up you go."
+          },
+          {
+            "zh": "我们穿衣服吧。",
+            "en": "Let's get dressed."
+          }
+        ],
+        "why": "外语输入依靠真人回应而非录像；短句与宝宝正在经历的事情相连。几句家庭英语不是研究中的高强度干预，不保证学习效果。",
+        "refs": [
+          "[16]",
+          "[47]",
+          "[53]",
+          "[54]"
+        ]
+      },
+      "offline": [
+        {
+          "title": "早安小对话",
+          "minutes": 5,
+          "materials": [
+            "家长自己的双手"
+          ],
+          "steps": [
+            "关掉设备，等宝宝自然醒来，面对面用早安短句问候。",
+            "模仿宝宝一个声音，再停下来等下一次回应。",
+            "家长自己慢慢伸展双臂，宝宝愿意时一起做小幅度动作。",
+            "按日常照护方式抱起或穿衣，说一句就做一个动作。"
+          ],
+          "safety": "成人全程陪伴；抱起时按宝宝已有的照护需要支持身体，不提拉手腕，不强拉四肢，不在高处玩，不打断睡眠。",
+          "domains": [
+            "english",
+            "social"
+          ],
+          "question": "你想先看看什么呀？",
+          "levels": {
+            "easier": "只说早安，回应宝宝的目光或声音。",
+            "harder": "让已会指认的宝宝用手势选择先穿哪件衣服，再说相应短句。"
+          }
+        }
+      ],
+      "steps": [
+        {
+          "type": "guide",
+          "parentTip": "看完放下屏幕。宝宝不需要看电子卡片或完成动作。",
+          "props": {
+            "goal": "家长用早安短句回应宝宝，动作只是共同关注的线索。",
+            "materials": [
+              "安静的日常照护空间"
+            ],
+            "steps": [
+              {
+                "text": "等宝宝自然醒来，面向宝宝问好。美式 /ɡʊd ˈmɔrnɪŋ/。",
+                "say": {
+                  "zh": "早上好。",
+                  "en": "Good morning."
+                },
+                "concept": "sun"
+              },
+              {
+                "text": "轻声问候，等宝宝用表情或声音回应。美式 /dɪd ju slip wɛl/。",
+                "say": {
+                  "zh": "睡得好吗？",
+                  "en": "Did you sleep well?"
+                }
+              },
+              {
+                "text": "宝宝看向你时，挥挥自己的手回应。美式 /aɪm hɪr/。",
+                "say": {
+                  "zh": "我在这里。",
+                  "en": "I'm here."
+                },
+                "concept": "wave"
+              },
+              {
+                "text": "家长自己慢慢伸展，宝宝可只看真人。美式 /lɛts strɛtʃ/。",
+                "say": {
+                  "zh": "伸个懒腰吧。",
+                  "en": "Let's stretch."
+                },
+                "concept": "raise-hands"
+              },
+              {
+                "text": "先告知，再按平日安全方式抱起宝宝。美式 /ʌp ju ɡoʊ/。",
+                "say": {
+                  "zh": "抱你起来啦。",
+                  "en": "Up you go."
+                }
+              },
+              {
+                "text": "拿起要穿的衣服，先说再做。美式 /lɛts ɡɛt drɛst/。",
+                "say": {
+                  "zh": "我们穿衣服吧。",
+                  "en": "Let's get dressed."
+                },
+                "concept": "shirt"
+              }
+            ],
+            "playMin": 5,
+            "observe": [
+              "宝宝是否看向你的脸或衣服。",
+              "你是否等到一个声音、手势或表情再回应。",
+              "宝宝转头、困倦或不舒服时就结束。"
+            ],
+            "safety": "不叫醒练习，不强迫伸展或站立，不把屏幕交给宝宝。"
+          }
+        }
+      ]
+    },
+    {
+      "schemaVersion": 1,
+      "id": "english.parent.good-night",
+      "title": {
+        "zh": "关屏说晚安",
+        "en": "Good Night, Screen Off"
+      },
+      "summary": {
+        "zh": "白天学六句，睡前只和真人、纸书在一起。",
+        "en": "Learn six phrases in the daytime and keep bedtime screen-free."
+      },
+      "ageRange": [
+        6,
+        24
+      ],
+      "domains": [
+        "english",
+        "life",
+        "social"
+      ],
+      "tags": [
+        "bedtime",
+        "parent-led",
+        "tpr",
+        "screen-free"
+      ],
+      "durationMin": 3,
+      "coView": "required",
+      "audience": "parent",
+      "printables": [
+        {
+          "kind": "cards",
+          "title": "白天读的晚安实物卡",
+          "items": [
+            "book",
+            "moon",
+            "star"
+          ],
+          "size": "large",
+          "showText": true,
+          "showEnglish": true
+        }
+      ],
+      "objectives": [
+        {
+          "zh": "晚安短句配纸书。",
+          "en": "Use bedtime phrases with a real book."
+        },
+        {
+          "zh": "睡前不看屏幕。",
+          "en": "Keep screens out of bedtime."
+        }
+      ],
+      "cover": {
+        "concept": "book",
+        "bg": "night"
+      },
+      "parentGuide": {
+        "intro": "家长白天独自学六句，不在睡前打开本课。晚上放下设备，用纸书和轻声交流完成家里原有的睡前流程；不播放音频哄睡，也不要求宝宝复读。",
+        "tips": [
+          "每步附美式音标，白天慢读练习，睡前只用你已熟悉的一两句。",
+          "动作游戏在白天做翻书、挥手示范；睡前不跳跃、不兴奋表演。",
+          "宝宝不想读就结束，英语不替代安静中文交流和宝宝的休息需要。"
+        ],
+        "phrases": [
+          {
+            "zh": "我们读本书吧。",
+            "en": "Let's read a book."
+          },
+          {
+            "zh": "再看一页。",
+            "en": "One more page."
+          },
+          {
+            "zh": "该休息啦。",
+            "en": "Time to rest."
+          },
+          {
+            "zh": "晚安。",
+            "en": "Good night."
+          },
+          {
+            "zh": "我爱你。",
+            "en": "I love you."
+          },
+          {
+            "zh": "睡个好觉。",
+            "en": "Sleep well."
+          }
+        ],
+        "why": "固定、温暖的交流属于真实生活，不是睡眠训练。睡前不用屏，家长真人回应；几句英文不保证语言或睡眠改善。",
+        "refs": [
+          "[3]",
+          "[16]",
+          "[47]",
+          "[93]"
+        ]
+      },
+      "offline": [
+        {
+          "title": "白天练，晚上轻声说",
+          "minutes": 5,
+          "materials": [
+            "平日共读的纸书"
+          ],
+          "steps": [
+            "白天关屏后，成人拿纸书示范慢慢翻一页，宝宝可看真人。",
+            "看宝宝的兴趣，指一幅图说一句，再等一个目光或声音。",
+            "白天以挥手和晚安短句结束练习，不要求闭眼装睡。",
+            "晚上不用设备，按家里原有流程轻声说一两句，困倦就结束。"
+          ],
+          "safety": "成人陪伴，不用屏幕或背景音哄睡；遵循家庭已有的安全睡眠安排，不把打印卡、纸书、玩具或绳带留在宝宝睡眠空间。",
+          "domains": [
+            "english",
+            "social",
+            "life"
+          ],
+          "question": "这页你想看看哪里呀？",
+          "levels": {
+            "easier": "只指一幅图，再用晚安结束。",
+            "harder": "白天由宝宝选择最后一页，家长接着宝宝的指认说短句。"
+          }
+        }
+      ],
+      "steps": [
+        {
+          "type": "guide",
+          "parentTip": "这页只在白天给家长看，睡前关屏，不播放课程。",
+          "props": {
+            "goal": "家长白天学六句，睡前只保留温暖真人交流。",
+            "materials": [
+              "一册纸书",
+              "白天的安静练习时间"
+            ],
+            "steps": [
+              {
+                "text": "白天关屏后，拿纸书坐在宝宝身边。美式 /lɛts rid ə bʊk/。",
+                "say": {
+                  "zh": "我们读本书吧。",
+                  "en": "Let's read a book."
+                },
+                "concept": "book"
+              },
+              {
+                "text": "宝宝仍有兴趣时，慢慢翻最后一页。美式 /wʌn mɔr peɪdʒ/。",
+                "say": {
+                  "zh": "再看一页。",
+                  "en": "One more page."
+                },
+                "concept": "book"
+              },
+              {
+                "text": "合上书，示范安静收尾，不要求装睡。美式 /taɪm tə rɛst/。",
+                "say": {
+                  "zh": "该休息啦。",
+                  "en": "Time to rest."
+                }
+              },
+              {
+                "text": "挥挥自己的手，轻声示范晚安。美式 /ɡʊd naɪt/。",
+                "say": {
+                  "zh": "晚安。",
+                  "en": "Good night."
+                },
+                "concept": "wave"
+              },
+              {
+                "text": "看向宝宝，用温柔声音表达关爱。美式 /aɪ lʌv ju/。",
+                "say": {
+                  "zh": "我爱你。",
+                  "en": "I love you."
+                }
+              },
+              {
+                "text": "白天练完就结束；晚上不用设备说熟悉短句。美式 /slip wɛl/。",
+                "say": {
+                  "zh": "睡个好觉。",
+                  "en": "Sleep well."
+                }
+              }
+            ],
+            "playMin": 5,
+            "observe": [
+              "宝宝是否愿意看纸书或你的脸。",
+              "家长能否跟随困倦信号而结束。",
+              "晚上的交流是否保持安静、无设备。"
+            ],
+            "safety": "不把本课放在睡前播放，不用屏幕哄睡，不强迫闭眼或憋气；睡眠空间不留课程材料。"
+          }
+        }
+      ]
+    },
+    {
+      "schemaVersion": 1,
+      "id": "english.parent.lets-go",
+      "title": {
+        "zh": "牵手出门啦",
+        "en": "Let's Go"
+      },
+      "summary": {
+        "zh": "六句出门短语，安全指令不只靠英文。",
+        "en": "Six phrases for leaving home, walking together, and coming back."
+      },
+      "ageRange": [
+        18,
+        36
+      ],
+      "domains": [
+        "english",
+        "life",
+        "motor"
+      ],
+      "tags": [
+        "outdoors",
+        "parent-led",
+        "tpr"
+      ],
+      "durationMin": 3,
+      "coView": "required",
+      "audience": "parent",
+      "objectives": [
+        {
+          "zh": "出门前后说短句。",
+          "en": "Use familiar phrases before and after going out."
+        },
+        {
+          "zh": "室内练慢走和停。",
+          "en": "Practice walking and stopping in a safe indoor space."
+        }
+      ],
+      "cover": {
+        "concept": "shoes",
+        "bg": "grass"
+      },
+      "parentGuide": {
+        "intro": "家长先学六句，出门时不拿屏幕。先在室内空地做慢走和停的动作游戏；真正到路边时，成人用宝宝懂的语言和实际看护确保安全。",
+        "tips": [
+          "每步附美式音标，慢读后在对应场景说，不用中文谐音。",
+          "停和等待不能只靠宝宝听懂英文；遇到危险立即用明确中文并保护宝宝。",
+          "不让宝宝自己开门、过路或跟屏幕追跑；不会稳走时不要求练走。"
+        ],
+        "phrases": [
+          {
+            "zh": "我们走吧。",
+            "en": "Let's go."
+          },
+          {
+            "zh": "牵着我的手。",
+            "en": "Hold my hand."
+          },
+          {
+            "zh": "在这里等一等。",
+            "en": "Wait here."
+          },
+          {
+            "zh": "停下来。",
+            "en": "Stop."
+          },
+          {
+            "zh": "我们慢慢走吧。",
+            "en": "Let's walk."
+          },
+          {
+            "zh": "我们到家啦。",
+            "en": "We're home."
+          }
+        ],
+        "why": "熟悉短语通过真人、动作和真实情境获得意义。英语游戏不替代安全看护，不把交通场景变成听力测验。",
+        "refs": [
+          "[16]",
+          "[47]",
+          "[54]",
+          "[82]"
+        ]
+      },
+      "offline": [
+        {
+          "title": "室内走停小游戏",
+          "minutes": 5,
+          "materials": [
+            "没有障碍的平地"
+          ],
+          "steps": [
+            "出门前关屏，在室内平地由成人示范慢走一步。",
+            "成人伸手邀请牵手，宝宝自愿且已能稳走时一起走一步。",
+            "成人用语言和手势示范停住，不设速度或反应时间要求。",
+            "真正出门时结束游戏，由成人专心看护，回家后再说到家啦。"
+          ],
+          "safety": "不在路边、停车场、楼梯或电梯口玩走停；成人负责牵护和交通安全，不依赖英文口令；不拉手臂，不攀高，不追跑。",
+          "domains": [
+            "english",
+            "motor"
+          ],
+          "question": "你想和我慢慢走到哪里呀？",
+          "levels": {
+            "easier": "成人走停示范，宝宝坐稳看真人或只挥手。",
+            "harder": "在室内轮流当示范者，宝宝选择走或停，成人配一句短语。"
+          }
+        }
+      ],
+      "steps": [
+        {
+          "type": "guide",
+          "parentTip": "安全先于英语；交通环境只做照护，不玩口令游戏。",
+          "props": {
+            "goal": "家长在安全日常场景说六句出门短语。",
+            "materials": [
+              "安全室内平地",
+              "平日外出用品"
+            ],
+            "steps": [
+              {
+                "text": "关屏，成人拿好用品再邀请出发。美式 /lɛts ɡoʊ/。",
+                "say": {
+                  "zh": "我们走吧。",
+                  "en": "Let's go."
+                },
+                "concept": "shoes"
+              },
+              {
+                "text": "室内伸出自己的手邀请，成人负责看护。美式 /hoʊld maɪ hænd/。",
+                "say": {
+                  "zh": "牵着我的手。",
+                  "en": "Hold my hand."
+                },
+                "concept": "hand"
+              },
+              {
+                "text": "在室内安全位置示范等待，不考反应速度。美式 /weɪt hɪr/。",
+                "say": {
+                  "zh": "在这里等一等。",
+                  "en": "Wait here."
+                }
+              },
+              {
+                "text": "成人在室内示范停住，危险时立即中文保护。美式 /stɑp/。",
+                "say": {
+                  "zh": "停下来。",
+                  "en": "Stop."
+                }
+              },
+              {
+                "text": "宝宝会稳走且自愿时一起慢走一步。美式 /lɛts wɔk/。",
+                "say": {
+                  "zh": "我们慢慢走吧。",
+                  "en": "Let's walk."
+                },
+                "concept": "walk"
+              },
+              {
+                "text": "回家由成人关好门，面对面说到家啦。美式 /wɪr hoʊm/。",
+                "say": {
+                  "zh": "我们到家啦。",
+                  "en": "We're home."
+                },
+                "concept": "door"
+              }
+            ],
+            "playMin": 5,
+            "observe": [
+              "宝宝是否愿意牵手或看示范。",
+              "宝宝能否以动作或手势回应熟悉短句。",
+              "家长是否把真正外出的安全看护放在第一位。"
+            ],
+            "safety": "只在室内平地玩走停，成人不依赖口令看护；不追跑、不拉拽、不让宝宝独自开门或过路。"
+          }
+        }
+      ]
+    },
+    {
+      "schemaVersion": 1,
+      "id": "english.parent.mealtime",
+      "title": {
+        "zh": "还要和吃好啦",
+        "en": "More, Please and All Done"
+      },
+      "summary": {
+        "zh": "回应饥饿和吃饱的信号，不让进餐变测验。",
+        "en": "Respond to hunger and fullness with six useful phrases."
+      },
+      "ageRange": [
+        6,
+        24
+      ],
+      "domains": [
+        "english",
+        "life",
+        "social"
+      ],
+      "tags": [
+        "mealtime",
+        "parent-led",
+        "tpr"
+      ],
+      "durationMin": 3,
+      "coView": "required",
+      "audience": "parent",
+      "printables": [
+        {
+          "kind": "cards",
+          "title": "餐具实物对照卡",
+          "items": [
+            "spoon",
+            "bowl",
+            "cup"
+          ],
+          "size": "large",
+          "showText": true,
+          "showEnglish": true
+        }
+      ],
+      "objectives": [
+        {
+          "zh": "看见还要与吃饱。",
+          "en": "Notice requests for more and signs of fullness."
+        },
+        {
+          "zh": "先回应，再示范。",
+          "en": "Respond first, then model a short phrase."
+        }
+      ],
+      "cover": {
+        "concept": "spoon",
+        "bg": "room"
+      },
+      "parentGuide": {
+        "intro": "家长在饭前学六句，吃饭时关屏。看到宝宝伸手要更多或转头不想吃，立即回应；英文只是示范，不要求说出来才给食物。",
+        "tips": [
+          "每步附美式音标，慢说一整句即可，不教宝宝念音标或模仿口型考试。",
+          "还要和吃好都可以用手势表达；闭嘴、转头或推开也要尊重。",
+          "动作游戏只在开餐前做举手示范；嘴里有食物时不玩跳跃、拍手或追跑。"
+        ],
+        "phrases": [
+          {
+            "zh": "吃饭时间到啦。",
+            "en": "Time to eat."
+          },
+          {
+            "zh": "这是你的勺子。",
+            "en": "Here's your spoon."
+          },
+          {
+            "zh": "还想要一些吗？",
+            "en": "Would you like more?"
+          },
+          {
+            "zh": "我还要，请给我。",
+            "en": "More, please."
+          },
+          {
+            "zh": "吃好啦。",
+            "en": "All done."
+          },
+          {
+            "zh": "谢谢你。",
+            "en": "Thank you."
+          }
+        ],
+        "why": "真人在宝宝请求时及时回应，比背景视频更贴近日常学习。手势和声音都是交流，不以英语表现换取食物，也不承诺启蒙效果。",
+        "refs": [
+          "[16]",
+          "[47]",
+          "[54]",
+          "[59]"
+        ]
+      },
+      "offline": [
+        {
+          "title": "没有屏幕的进餐对话",
+          "minutes": 5,
+          "materials": [
+            "宝宝平日使用的安全餐具"
+          ],
+          "steps": [
+            "饭前关屏，把餐具放好，成人用举自己的手做一次轻柔动作示范。",
+            "按宝宝平常的适龄进餐方式进行，指着勺子说一句短语。",
+            "宝宝请求更多时先满足合理需要，再用短句示范，不等待复读。",
+            "宝宝表示吃饱时停止劝吃，回应吃好啦并收好餐具。"
+          ],
+          "safety": "全程近距离看护，坐稳进食；只用适龄、安全且平日可吃的食物，不提供整颗圆形硬食物或小零件，不追喂、不强喂，不用吃东西做奖励。",
+          "domains": [
+            "english",
+            "life"
+          ],
+          "question": "你想告诉我什么呀？",
+          "levels": {
+            "easier": "只示范还要或吃好，接受目光、声音和手势。",
+            "harder": "在真实需要发生时，让宝宝主动指餐具或用自己的语言表达。"
+          }
+        }
+      ],
+      "steps": [
+        {
+          "type": "guide",
+          "parentTip": "饭前学，饭时关屏；语言示范不替代及时喂养和回应。",
+          "props": {
+            "goal": "把六句英文放进真实进餐，用回应而非考问支持交流。",
+            "materials": [
+              "安全餐具",
+              "宝宝已有的适龄进餐安排"
+            ],
+            "steps": [
+              {
+                "text": "饭前关屏，指一指准备好的餐具。美式 /taɪm tə it/。",
+                "say": {
+                  "zh": "吃饭时间到啦。",
+                  "en": "Time to eat."
+                },
+                "concept": "bowl"
+              },
+              {
+                "text": "把安全勺子放在宝宝可见处。美式 /hɪrz jər spun/。",
+                "say": {
+                  "zh": "这是你的勺子。",
+                  "en": "Here's your spoon."
+                },
+                "concept": "spoon"
+              },
+              {
+                "text": "观察需要再询问，不打断正在吞咽的宝宝。美式 /wʊd ju laɪk mɔr/。",
+                "say": {
+                  "zh": "还想要一些吗？",
+                  "en": "Would you like more?"
+                }
+              },
+              {
+                "text": "宝宝要更多时先回应，再示范请求，不等复读。美式 /mɔr pliz/。",
+                "say": {
+                  "zh": "我还要，请给我。",
+                  "en": "More, please."
+                }
+              },
+              {
+                "text": "宝宝转头或推开时尊重吃饱信号。美式 /ɔl dʌn/。",
+                "say": {
+                  "zh": "吃好啦。",
+                  "en": "All done."
+                }
+              },
+              {
+                "text": "进餐结束，成人收餐具并示范感谢。美式 /θæŋk ju/。",
+                "say": {
+                  "zh": "谢谢你。",
+                  "en": "Thank you."
+                },
+                "concept": "cup"
+              }
+            ],
+            "playMin": 5,
+            "observe": [
+              "宝宝如何表示想要或不想要。",
+              "家长有没有先回应再示范，而不是反复考问。",
+              "嘴里有食物时保持安静、安全进餐。"
+            ],
+            "safety": "坐稳吃饭并全程看护，不喂食小硬物，不把英语、手势或动作当进食条件。"
+          }
+        }
+      ]
+    },
+    {
+      "schemaVersion": 1,
+      "id": "english.parent.wash-hands",
+      "title": {
+        "zh": "洗洗小手",
+        "en": "Wash, Wash, Wash"
+      },
+      "summary": {
+        "zh": "六句短语配真实洗手，不在水边用屏幕。",
+        "en": "Six phrases to use during real handwashing."
+      },
+      "ageRange": [
+        18,
+        36
+      ],
+      "domains": [
+        "english",
+        "life",
+        "motor"
+      ],
+      "tags": [
+        "handwashing",
+        "parent-led",
+        "tpr"
+      ],
+      "durationMin": 3,
+      "coView": "required",
+      "audience": "parent",
+      "printables": [
+        {
+          "kind": "cards",
+          "title": "洗手用品实物卡",
+          "items": [
+            "soap",
+            "towel"
+          ],
+          "size": "large",
+          "showText": true,
+          "showEnglish": true
+        }
+      ],
+      "objectives": [
+        {
+          "zh": "短语配合洗手步骤。",
+          "en": "Pair phrases with the steps of handwashing."
+        },
+        {
+          "zh": "模仿搓手，成人帮助。",
+          "en": "Try rubbing hands with adult help."
+        }
+      ],
+      "cover": {
+        "concept": "wash-hands",
+        "bg": "sky"
+      },
+      "parentGuide": {
+        "intro": "家长在干燥处学六句，放下设备再陪宝宝洗手。先做无水搓手动作游戏，再按家里日常方式用肥皂洗、冲净、擦干，成人全程帮助。",
+        "tips": [
+          "每步附美式音标，慢读后用自然短句配一个动作，不用中文谐音。",
+          "三次洗洗只是节奏短语，不代表完整洗手时长；不能唱完就省略清洁步骤。",
+          "不要求宝宝记流程，成人完成必要清洁；水边不拿手机、不留宝宝独处。"
+        ],
+        "phrases": [
+          {
+            "zh": "我们洗洗手吧。",
+            "en": "Let's wash your hands."
+          },
+          {
+            "zh": "抹上肥皂。",
+            "en": "Soap on."
+          },
+          {
+            "zh": "洗呀，洗呀，洗呀。",
+            "en": "Wash, wash, wash."
+          },
+          {
+            "zh": "冲一冲小手。",
+            "en": "Rinse your hands."
+          },
+          {
+            "zh": "擦干小手。",
+            "en": "Dry your hands."
+          },
+          {
+            "zh": "干净啦。",
+            "en": "All clean."
+          }
+        ],
+        "why": "固定短语与眼前的照护动作相连，成人示范后等待回应。英语不替代清洁，也不把看视频或背景听音当成学习方式。",
+        "refs": [
+          "[16]",
+          "[47]",
+          "[53]",
+          "[54]"
+        ]
+      },
+      "offline": [
+        {
+          "title": "先搓手，再洗手",
+          "minutes": 5,
+          "materials": [
+            "肥皂",
+            "干净毛巾",
+            "安全可及的洗手位置"
+          ],
+          "steps": [
+            "设备留在干燥处，成人先用自己的双手示范慢慢搓手。",
+            "成人陪同并帮助宝宝按平日日常流程湿手、抹肥皂、认真清洁。",
+            "清洁时慢说一两句，不要求跟读，也不因短语结束提前停止清洗。",
+            "帮助冲净和擦干，离开水边后用笑容回应宝宝。"
+          ],
+          "safety": "水边全程近距离看护，不留宝宝独处，不用热水，不站不稳的小凳；肥皂不入口，地面保持防滑，电器和设备远离水。",
+          "domains": [
+            "english",
+            "life",
+            "motor"
+          ],
+          "question": "你想怎么搓搓小手呀？",
+          "levels": {
+            "easier": "宝宝只看成人搓手，成人帮助完成洗手。",
+            "harder": "在成人帮助下，宝宝主动伸手，或指出接下来用的毛巾。"
+          }
+        }
+      ],
+      "steps": [
+        {
+          "type": "guide",
+          "parentTip": "在干燥处先学；离开屏幕后再去水边照护。",
+          "props": {
+            "goal": "用洗手短语配合真实清洁，动作游戏不代替洗手。",
+            "materials": [
+              "肥皂",
+              "毛巾"
+            ],
+            "steps": [
+              {
+                "text": "关屏，成人先示范无水搓手。美式 /lɛts wɑʃ jər hændz/。",
+                "say": {
+                  "zh": "我们洗洗手吧。",
+                  "en": "Let's wash your hands."
+                },
+                "concept": "wash-hands"
+              },
+              {
+                "text": "帮助湿手后抹肥皂，不让肥皂入口。美式 /soʊp ɑn/。",
+                "say": {
+                  "zh": "抹上肥皂。",
+                  "en": "Soap on."
+                },
+                "concept": "soap"
+              },
+              {
+                "text": "成人帮助认真清洁，短语不是时长。美式 /wɑʃ wɑʃ wɑʃ/。",
+                "say": {
+                  "zh": "洗呀，洗呀，洗呀。",
+                  "en": "Wash, wash, wash."
+                },
+                "concept": "hand"
+              },
+              {
+                "text": "帮助冲净肥皂，始终留在宝宝身边。美式 /rɪns jər hændz/。",
+                "say": {
+                  "zh": "冲一冲小手。",
+                  "en": "Rinse your hands."
+                }
+              },
+              {
+                "text": "拿毛巾帮助擦干双手。美式 /draɪ jər hændz/。",
+                "say": {
+                  "zh": "擦干小手。",
+                  "en": "Dry your hands."
+                },
+                "concept": "towel"
+              },
+              {
+                "text": "清洁完成就离开水边，不反复洗来练英语。美式 /ɔl klin/。",
+                "say": {
+                  "zh": "干净啦。",
+                  "en": "All clean."
+                }
+              }
+            ],
+            "playMin": 5,
+            "observe": [
+              "宝宝有没有主动伸手或看向用品。",
+              "宝宝是否愿意模仿无水搓手。",
+              "遇到抗拒时成人是否减少考问并帮助清洁。"
+            ],
+            "safety": "成人全程照护，不用热水，不攀高；肥皂不入口，设备不带到水边。"
+          }
+        }
+      ]
+    }
+  ],
+  "audio": {
+    "schemaVersion": 1,
+    "voices": {
+      "zh": "Tingting",
+      "en": "Samantha"
+    },
+    "entries": {
+      "en:Breathe in": "audio/tts/en/a3ca6f68b2ce7595.m4a",
+      "en:Arms up": "audio/tts/en/98d26d0f2f63ec38.m4a",
+      "en:All done!": "audio/tts/en/aa09668068062f21.m4a",
+      "en:Arms up.": "audio/tts/en/fe24004e5efd1b01.m4a",
+      "en:Breathe out": "audio/tts/en/7b3e58813112f42a.m4a",
+      "en:Clap your hands": "audio/tts/en/746579e2c2c8defc.m4a",
+      "en:Bye-bye, bubbles!": "audio/tts/en/20ac6019b301b30b.m4a",
+      "en:Clap your hands gently.": "audio/tts/en/b6406631e8b6f4cf.m4a",
+      "en:Here is the book.": "audio/tts/en/6008ce1faad243a2.m4a",
+      "en:Hello, Hands": "audio/tts/en/2ed0bacc346655fb.m4a",
+      "en:Here is the cup.": "audio/tts/en/325063917be03ce0.m4a",
+      "en:Great moving!": "audio/tts/en/da8b274cb605c5a0.m4a",
+      "en:How many?": "audio/tts/en/3802d70bf2a5c496.m4a",
+      "en:Jump gently": "audio/tts/en/c053e2f6ba5b5ccb.m4a",
+      "en:Let's look at things around us.": "audio/tts/en/86ca8ee9352e7fd3.m4a",
+      "en:Jump gently, or lift your heels.": "audio/tts/en/3542d12a3a411174.m4a",
+      "en:Let's read together.": "audio/tts/en/3d129e1b9228858d.m4a",
+      "en:Let’s breathe slowly": "audio/tts/en/144918a08c9c9f2b.m4a",
+      "en:Let’s count together": "audio/tts/en/2691b486fed1e5ab.m4a",
+      "en:Let’s go play for real!": "audio/tts/en/d7a32d6e7a02269c.m4a",
+      "en:Let’s think again": "audio/tts/en/0da4b78362bf1b9c.m4a",
+      "en:Let’s sing together": "audio/tts/en/939ef90e12540a9f.m4a",
+      "en:Look again": "audio/tts/en/13226e3f8332145d.m4a",
+      "en:Move slowly with your grown-up.": "audio/tts/en/3ecdf92a2989341f.m4a",
+      "en:Sit down": "audio/tts/en/713fafba8cfac8b2.m4a",
+      "en:Peekaboo!": "audio/tts/en/2d975d2793c3ba05.m4a",
+      "en:Sit back a little": "audio/tts/en/35b011de56863656.m4a",
+      "en:Scoop rice with a spoon.": "audio/tts/en/f34113581f548a5e.m4a",
+      "en:Stand up": "audio/tts/en/73af0e31f72c0cbc.m4a",
+      "en:Sit down slowly.": "audio/tts/en/0640c2a6bb5f622b.m4a",
+      "en:Stand up slowly.": "audio/tts/en/070a005e66b65209.m4a",
+      "en:The ball can roll.": "audio/tts/en/42a66e1d9671cba8.m4a",
+      "en:Touch your nose": "audio/tts/en/29bff012a0fdd857.m4a",
+      "en:Time for a break": "audio/tts/en/56d92dfa554ba044.m4a",
+      "en:The end!": "audio/tts/en/40cd5fb5a046c05f.m4a",
+      "en:The cup can hold water.": "audio/tts/en/81dadede5d7c3e33.m4a",
+      "en:Try again": "audio/tts/en/958f635c578de31f.m4a",
+      "en:Touch your nose gently.": "audio/tts/en/d8cc11ea8f5c20eb.m4a",
+      "en:Well done!": "audio/tts/en/e78d52816e276085.m4a",
+      "en:What comes next?": "audio/tts/en/c3a463adbe1d10c0.m4a",
+      "en:Where is the book?": "audio/tts/en/0a853e471c0ea5cb.m4a",
+      "en:Where did it go?": "audio/tts/en/bd46a24058fdbdcf.m4a",
+      "en:Where is the cup?": "audio/tts/en/671e911a436a14ec.m4a",
+      "en:What do we do next?": "audio/tts/en/e9306402c15a9ff2.m4a",
+      "en:You found it!": "audio/tts/en/c4efccd43d50314f.m4a",
+      "en:ball": "audio/tts/en/b2798093ffed9b3e.m4a",
+      "en:book": "audio/tts/en/25f9feaaf5ded4a7.m4a",
+      "en:You looked so carefully!": "audio/tts/en/4935528a426b58af.m4a",
+      "en:cup": "audio/tts/en/821015caccf057f3.m4a",
+      "en:eight": "audio/tts/en/f3fb7d077fe9daf9.m4a",
+      "en:four": "audio/tts/en/358f7671360a2799.m4a",
+      "en:five": "audio/tts/en/575203c3dbd4ddc2.m4a",
+      "en:nine": "audio/tts/en/9013f0377cba1ef6.m4a",
+      "en:one": "audio/tts/en/25e4b04dc4c2ec70.m4a",
+      "en:spoon": "audio/tts/en/41ae0931990d3990.m4a",
+      "en:six": "audio/tts/en/fb8b5c745932d4a2.m4a",
+      "en:seven": "audio/tts/en/ca41575bd4a5751c.m4a",
+      "en:two": "audio/tts/en/a6cf6983b68d2c4f.m4a",
+      "en:three": "audio/tts/en/d45897f2e16eb6f8.m4a",
+      "en:ten": "audio/tts/en/3d4b0754d0fbdbb2.m4a",
+      "en:stand up": "audio/tts/en/5c851ee1c61bd865.m4a",
+      "zh:七": "audio/tts/zh/7b663bb8ed48a78c.m4a",
+      "zh:一": "audio/tts/zh/2f940f7653e0124b.m4a",
+      "zh:一起看书吧": "audio/tts/zh/138d1aaf62bbfa5d.m4a",
+      "zh:一起看看身边的东西。": "audio/tts/zh/4ec549d86ca59bc2.m4a",
+      "zh:三": "audio/tts/zh/01a807f187e802b2.m4a",
+      "zh:九": "audio/tts/zh/3f98633a09cb434e.m4a",
+      "zh:书": "audio/tts/zh/698c782c5e811fc7.m4a",
+      "zh:举胳膊": "audio/tts/zh/c3b309b00a8c41af.m4a",
+      "zh:五": "audio/tts/zh/542b9b7a80593788.m4a",
+      "zh:二": "audio/tts/zh/5506ea49686b5cb7.m4a",
+      "zh:休息一下吧": "audio/tts/zh/c4c6817f7f6e2c56.m4a",
+      "zh:书在哪里？": "audio/tts/zh/878a1ab67bcf86c3.m4a",
+      "zh:你找到了！": "audio/tts/zh/79c95ac1ff956c42.m4a",
+      "zh:你看得真仔细！": "audio/tts/zh/c99e4ec6cca233b8.m4a",
+      "zh:八": "audio/tts/zh/c9c6c60eab3dae48.m4a",
+      "zh:做得真好！": "audio/tts/zh/b22488e6435b31fe.m4a",
+      "zh:再想想": "audio/tts/zh/54c4817152633672.m4a",
+      "zh:六": "audio/tts/zh/d883f9bb0203a5df.m4a",
+      "zh:再看看": "audio/tts/zh/3fc7d1fb6406c5a9.m4a",
+      "zh:再找找": "audio/tts/zh/d683005c57b0e36f.m4a",
+      "zh:十": "audio/tts/zh/105d3a24de0b0612.m4a",
+      "zh:勺子": "audio/tts/zh/dc0a4b7e3e25fd18.m4a",
+      "zh:去哪儿啦？": "audio/tts/zh/d8bad186b39cd7ae.m4a",
+      "zh:吸气": "audio/tts/zh/674b3c25ca03c2fe.m4a",
+      "zh:呼气": "audio/tts/zh/0f31cb18480ba6f5.m4a",
+      "zh:四": "audio/tts/zh/f71af8a75e111860.m4a",
+      "zh:和宝宝一起唱": "audio/tts/zh/a3e20e2095afa522.m4a",
+      "zh:和家长一起慢慢做。": "audio/tts/zh/ce9119205a4327f6.m4a",
+      "zh:坐下来": "audio/tts/zh/be1e7d218d4bd860.m4a",
+      "zh:在这儿！": "audio/tts/zh/b0e5c099ea0e16af.m4a",
+      "zh:坐远一点，保护眼睛": "audio/tts/zh/26b697a65061a698.m4a",
+      "zh:小手问好歌": "audio/tts/zh/e665dc8f23001c11.m4a",
+      "zh:我们一起慢慢呼吸": "audio/tts/zh/3661564872a393fd.m4a",
+      "zh:我们一起数一数": "audio/tts/zh/95bf995735e15c00.m4a",
+      "zh:慢慢坐下来。": "audio/tts/zh/2bbb342373235a1f.m4a",
+      "zh:慢慢站起来。": "audio/tts/zh/6e335034bba45d6b.m4a",
+      "zh:拍手": "audio/tts/zh/629fdf4f534f3662.m4a",
+      "zh:接下来是什么？": "audio/tts/zh/584d76472815dac5.m4a",
+      "zh:接下来做什么？": "audio/tts/zh/8e4beec1a4055fb7.m4a",
+      "zh:我们去玩真的玩具吧！": "audio/tts/zh/eb34496bf7a1a685.m4a",
+      "zh:摸鼻子": "audio/tts/zh/1dbafc8fc37e2510.m4a",
+      "zh:杯子": "audio/tts/zh/7f3c685f07c4c413.m4a",
+      "zh:有几个？": "audio/tts/zh/7f9217d861d93bae.m4a",
+      "zh:故事讲完啦！": "audio/tts/zh/312f545e389dfe4b.m4a",
+      "zh:泡泡飞走啦！": "audio/tts/zh/235ed5d570a0c7b4.m4a",
+      "zh:球": "audio/tts/zh/68f8cbb42ce2a0cd.m4a",
+      "zh:杯子在哪里？": "audio/tts/zh/7e725c53118a57b8.m4a",
+      "zh:杯子可以装水": "audio/tts/zh/77a169cb40a96937.m4a",
+      "zh:球可以滚一滚": "audio/tts/zh/b017d3b938882aad.m4a",
+      "zh:用勺子舀米饭": "audio/tts/zh/6eff3330b0db5d51.m4a",
+      "zh:看完啦！": "audio/tts/zh/99a9ed20447e2e49.m4a",
+      "zh:真棒，动完啦！": "audio/tts/zh/a7835be7152598b9.m4a",
+      "zh:站起来": "audio/tts/zh/3438ba8fa5f0514a.m4a",
+      "zh:胳膊举起来。": "audio/tts/zh/850ec269a32b0a02.m4a",
+      "zh:轻轻拍拍手。": "audio/tts/zh/59bad82fd39c490e.m4a",
+      "zh:轻轻摸摸你的鼻子。": "audio/tts/zh/e50c9b845a716d17.m4a",
+      "zh:轻轻跳": "audio/tts/zh/39cbe93b1ea361a5.m4a",
+      "zh:这是杯子。": "audio/tts/zh/6c2e62bc80bb4a87.m4a",
+      "zh:这是书。": "audio/tts/zh/c08c9cb398f86e04.m4a",
+      "zh:轻轻跳，或抬抬脚跟。": "audio/tts/zh/6ac553f44c0fa624.m4a"
+    }
+  }
+}

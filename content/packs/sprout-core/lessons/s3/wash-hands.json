@@ -6,7 +6,7 @@
     "en": "The Hand-Washing Song"
   },
   "summary": {
-    "zh": "家长学唱洗手歌，再在水池边慢慢做。",
+    "zh": "家长先学唱。关屏后一起洗小手。",
     "en": "Learn a hand-washing song and use it slowly at the sink."
   },
   "ageRange": [12, 17],
@@ -18,11 +18,11 @@
   "audience": "parent",
   "objectives": [
     {
-      "zh": "宝宝在洗手常规中听动作词。",
+      "zh": "听洗手动作词。",
       "en": "Your baby hears action words in the hand-washing routine."
     },
     {
-      "zh": "宝宝在成人帮助下参与洗手和擦干。",
+      "zh": "在成人帮助下洗手。",
       "en": "Your baby joins washing and drying with adult help."
     }
   ],
@@ -31,11 +31,11 @@
     "bg": "sky"
   },
   "parentGuide": {
-    "intro": "先学唱短歌，再到水池边做真实洗手。家长说“打湿、擦泡泡、冲一冲、擦干”，宝宝可以伸手、看水或听歌，不需要独立完成。",
+    "intro": "家长先单独读和学唱。关屏后再洗手。先打湿，再抹肥皂。帮宝宝揉搓至少二十秒。然后冲净、擦干。唱歌不代替计时。八分钟含离水演练。不让宝宝一直玩水。",
     "tips": [
-      "水温先由成人检查。",
-      "动作慢，宝宝的手由成人保护。",
-      "唱一小段就够，不追求唱完。"
+      "成人先试水温。安排熟悉的成人托稳。",
+      "搓到手心、手背和指缝。宝宝不必独立做。",
+      "水边不看手机。先记好流程再开始。"
     ],
     "phrases": [
       {
@@ -55,8 +55,8 @@
         "en": "Dry your hands."
       }
     ],
-    "why": "把歌曲、动作和稳定常规放在一起，能增加亲子共同参与。重点是生活照护和语言输入，不用恐吓细菌，也不把清洁变成压力。",
-    "refs": ["R6", "R82", "R87", "R93"]
+    "why": "固定常规有助于预期。歌声用于温和陪伴。洗手由成人帮助完成。不用细菌故事吓宝宝。",
+    "refs": ["[6]", "[82]", "[87]", "[93]"]
   },
   "offline": [
     {
@@ -64,17 +64,17 @@
       "minutes": 8,
       "materials": ["肥皂", "毛巾", "稳固的洗手台"],
       "steps": [
-        "成人先检查水温、地面和洗手台是否安全。",
-        "扶着宝宝的手打湿，边唱边说“擦出泡泡”。",
-        "冲掉泡沫，用毛巾慢慢擦干。",
-        "洗完抱离水池，告诉宝宝“洗好啦”。"
+        "离开水池做空手演练。家长唱一小段。",
+        "需要洗手时再试水温。托稳宝宝并打湿小手。",
+        "抹肥皂并轻轻揉搓。至少二十秒。搓到手背和指缝。",
+        "用清洁流水冲净。用干净毛巾擦干。离开水池就结束。"
       ],
-      "safety": "成人全程一臂之内看护，不让宝宝独自站凳子或接近水池；防滑，水不宜过热；肥皂不入口，水边不要放小物件。",
+      "safety": "成人全程一臂之内看护。不让宝宝独自站凳子。不独自接近水池。防滑，先试水温。肥皂不入口、不入眼。水边不要放小物件。",
       "domains": ["life", "music"],
-      "question": "你想先听哪一句？",
+      "question": "洗手时你看到了什么？",
       "levels": {
-        "easier": "只做打湿和擦干两个动作。",
-        "harder": "按打湿、擦泡泡、冲洗、擦干的顺序唱一小段。"
+        "easier": "成人完成全部清洁。宝宝看或伸手就好。",
+        "harder": "宝宝愿意时搓一下手。其余由成人帮忙完成。"
       }
     }
   ],
@@ -83,11 +83,11 @@
       "type": "guide",
       "parentTip": "先学唱，之后关屏到水池边做。",
       "props": {
-        "goal": "用歌声记住洗手动作词。",
+        "goal": "听动作词，在成人帮助下洗手。",
         "materials": ["肥皂", "毛巾", "稳固的洗手台"],
         "steps": [
           {
-            "text": "家长先学会四个动作词，再放下屏幕。",
+            "text": "成人先试好水温。托稳宝宝并打湿小手。",
             "concept": "wash-hands",
             "say": {
               "zh": "小手打湿。",
@@ -95,15 +95,15 @@
             }
           },
           {
-            "text": "扶住宝宝的手，边唱边轻轻擦泡泡。",
+            "text": "抹肥皂并轻轻揉搓。至少二十秒。含手心、手背和指缝。",
             "concept": "soap",
             "say": {
-              "zh": "擦出泡泡。",
-              "en": "Make some bubbles."
+              "zh": "搓一搓小手。",
+              "en": "Rub your hands."
             }
           },
           {
-            "text": "用清水冲掉泡沫，再唱一句。",
+            "text": "用清洁流水冲净泡沫。",
             "concept": "water",
             "say": {
               "zh": "冲一冲。",
@@ -111,7 +111,7 @@
             }
           },
           {
-            "text": "用毛巾擦干，温柔结束常规。",
+            "text": "用干净毛巾擦干。离开水池。",
             "concept": "towel",
             "say": {
               "zh": "擦干啦。",
@@ -121,64 +121,74 @@
         ],
         "playMin": 8,
         "observe": [
-          "宝宝是否看向水、泡泡或毛巾。",
-          "宝宝是否愿意伸手参与。",
-          "宝宝是否对重复歌声有回应。"
+          "是否看向水、泡泡或毛巾。",
+          "是否愿意伸手参与。",
+          "是否对重复歌声有回应。"
         ],
-        "safety": "成人全程看护水边，检查水温并防滑。宝宝不愿碰水时停止，不把洗手液、肥皂或毛巾边角放入口。"
+        "safety": "水边全程看护。不独自站凳子。成人托稳身体。不拽手臂悬空。先检查水温和防滑。肥皂不入口、不入眼。不使用热水或积水盆。宝宝不适时先安抚。再换合适方式清洁。计时是建议陪伴时长。不是玩水时长。"
       }
     },
     {
       "type": "song",
-      "parentTip": "家长慢唱一遍，唱完去真实水池边做。",
+      "parentTip": "家长慢唱一遍。唱完去真实水池边做。",
       "props": {
         "title": {
           "zh": "这样洗洗手",
           "en": "This Is How We Wash Our Hands"
         },
-        "credit": "旋律：传统（公有领域，Mulberry Bush）；中文词：芽芽成长原创；English lyrics: Sprout original",
-        "bpm": 76,
+        "credit": "旋律：传统（公有领域）；中文词：芽芽成长原创；英文词：芽芽成长原创；旋律名：Mulberry Bush",
+        "bpm": 72,
         "instrument": "musicbox",
         "lines": [
           {
             "lang": "zh",
-            "text": "这样洗洗小手",
-            "notes": "C4/1 D4/1 E4/1 F4/1 G4/1 F4/1"
+            "text": "我们一起搓搓小手",
+            "notes": "C4/0.5 C4/0.5 C4/0.5 C4/1 E4/0.5 G4/1 E4/0.5 C4/1"
           },
           {
             "lang": "zh",
-            "text": "手心手背都洗洗",
-            "notes": "C4/1 D4/1 E4/1 F4/1 G4/1 F4/1 E4/1"
+            "text": "手心搓搓",
+            "notes": "C4/0.5 D4/1 D4/0.5 D4/1"
           },
           {
             "lang": "zh",
-            "text": "冲一冲擦一擦",
-            "notes": "C4/1 D4/1 E4/1 F4/1 E4/1 D4/1"
+            "text": "手背搓搓",
+            "notes": "E4/0.5 D4/1 B3/0.5 G3/1.5"
           },
           {
             "lang": "zh",
-            "text": "小手干净啦",
-            "notes": "C4/1 D4/1 E4/1 F4/1 G4/2"
+            "text": "我们一起搓搓小手",
+            "notes": "C4/0.5 C4/0.5 C4/0.5 C4/1 E4/0.5 G4/1 E4/0.5 C4/1"
+          },
+          {
+            "lang": "zh",
+            "text": "手指之间也要搓一搓",
+            "notes": "E4/0.5 D4/0.5 E4/0.5 D4/0.5 C4/0.5 B3/0.5 A3/0.5 G3/1.5 G3/1 R/0.5"
           },
           {
             "lang": "en",
-            "text": "This is how we wash our hands",
-            "notes": "C4/1 D4/1 E4/1 F4/1 G4/1 F4/1 E4/1"
+            "text": "This is how we rub both our hands",
+            "notes": "C4/0.5 C4/0.5 C4/0.5 C4/1 E4/0.5 G4/1 E4/0.5 C4/1"
           },
           {
             "lang": "en",
-            "text": "Wash the palms and backs",
-            "notes": "C4/1 D4/1 E4/1 F4/1 G4/1"
+            "text": "Rub both our palms",
+            "notes": "C4/0.5 D4/1 D4/0.5 D4/1"
           },
           {
             "lang": "en",
-            "text": "Rinse and dry them well",
-            "notes": "C4/1 D4/1 E4/1 F4/1 G4/1"
+            "text": "Rub the backs too",
+            "notes": "E4/0.5 D4/1 B3/0.5 G3/1.5"
           },
           {
             "lang": "en",
-            "text": "Clean hands all done",
-            "notes": "C4/1 D4/1 E4/1 F4/2"
+            "text": "This is how we rub both our hands",
+            "notes": "C4/0.5 C4/0.5 C4/0.5 C4/1 E4/0.5 G4/1 E4/0.5 C4/1"
+          },
+          {
+            "lang": "en",
+            "text": "Rub each finger and the gaps as well",
+            "notes": "E4/0.5 D4/0.5 E4/0.5 D4/0.5 C4/0.5 B3/0.5 A3/0.5 G3/1.5 G3/1 R/0.5"
           }
         ],
         "repeat": 1,

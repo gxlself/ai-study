@@ -5,6 +5,7 @@ import { useApp } from '../state/AppContext';
 import { Brand, LessonCard, Loading, Page, ParentButton, Problem, useMinuteRefresh } from '../ui/common';
 import { effectiveScreen } from '../state/policy';
 import { resolvePlaybackMode } from '../data';
+import { CoViewNotice } from '../ui/CoViewNotice';
 import type { LessonSummary, SessionInput } from '@sprout/schema';
 
 export function Home() {
@@ -25,8 +26,11 @@ export function Home() {
   const parentOnly = resolvePlaybackMode(plan.screen, child) === 'parent-only';
   if (!parentOnly && !screen.allowedNow) return <Navigate to="/rest" replace />;
   const appropriateParents = app.lessons.filter((lesson) => lesson.audience === 'parent' && !child.plan.skipped.includes(lesson.id) && plan.child.ageMonths >= lesson.ageRange[0] && plan.child.ageMonths <= lesson.ageRange[1]);
-  const parents = [...new Map([...plan.items.map(({ lesson }) => lesson).filter((lesson) => lesson.audience === 'parent'), ...appropriateParents].map((lesson) => [lesson.id, lesson])).values()].slice(0, 4);
-  const journeys = plan.items.filter(({ lesson }) => lesson.audience !== 'parent');
+  const parents = [...new Map([
+    ...plan.items.filter((item) => item.offlineOnly || item.lesson.audience === 'parent'),
+    ...appropriateParents.map((lesson) => ({ lessonId: lesson.id, lesson, offlineOnly: false })),
+  ].map((item) => [item.lesson.id, item])).values()].slice(0, parentOnly ? plan.items.length : 4);
+  const journeys = plan.items.filter(({ lesson, offlineOnly }) => !offlineOnly && lesson.audience !== 'parent');
   const hour = new Date().getHours();
   const greeting = hour < 12 ? '早上好' : hour < 18 ? '下午好' : '晚上好';
   const seen = new Set<string>();
@@ -38,7 +42,7 @@ export function Home() {
   async function back() {
     if (await app.askParent()) { app.setParentAccess(true); navigate('/parent'); }
   }
-  return <Page className={`home ${parentOnly ? 'parent-home' : ''}`} onBack={() => void back()}>
+  return <><Page className={`home ${parentOnly ? 'parent-home' : ''}`} onBack={() => void back()}>
     <header className="home-header"><Brand />
       {parentOnly ? <span className="parent-mode-label">家长模式</span> : <div className="screen-time" aria-label={`今日屏幕时间 ${Math.ceil(screen.usedSec / 60)} 分钟，共 ${screen.dailyMaxSec / 60} 分钟`}>
         <span className="time-ring" style={{ '--used-angle': `${used * 360}deg` } as React.CSSProperties}><small>{Math.ceil(screen.usedSec / 60)}</small></span>
@@ -49,7 +53,7 @@ export function Home() {
       <div className="home-greeting"><h1>{parentOnly ? `${child.nickname || child.name}的家长，${greeting}` : `${greeting}，${child.nickname || child.name}`}</h1><p>{plan.stage?.title.zh ?? '一起探索'}{plan.theme && <> · {plan.theme.title.zh}</>}</p>
         {parentOnly && <p className="parent-mode-notice">这个月龄屏幕只给家长看：读 1–3 分钟就放下，去和宝宝玩真东西</p>}
       </div>
-      {parentOnly ? <section className="parent-journey"><h2>今天陪宝宝玩什么</h2><div className="parent-guide-grid">{parents.map((lesson) => <LessonCard key={lesson.id} lesson={lesson} adult />)}</div>
+      {parentOnly ? <section className="parent-journey"><h2>今天陪宝宝玩什么</h2><div className="parent-guide-grid">{parents.map(({ lesson, offlineOnly }) => <LessonCard key={lesson.id} lesson={lesson} offlineOnly={offlineOnly} adult />)}</div>
         {!parents.length && <p className="empty">这个阶段的家长指引正在准备，请先和宝宝面对面玩一玩。</p>}
       </section> : <><section className="journey"><div className="section-heading"><h2>今天的小旅程</h2><span><Leaf />家长全程陪同</span></div>
         <div className="journey-grid" style={{ '--lesson-count': Math.max(1, Math.min(4, journeys.length)) } as React.CSSProperties}>
@@ -57,10 +61,12 @@ export function Home() {
         </div>
         {!journeys.length && <p className="empty">今天先和家人玩一玩，课程准备好后再相见。</p>}
       </section>
-      <section className="parent-guide-section"><h2>家长指引</h2><div className="parent-guide-grid">{parents.map((lesson) => <LessonCard key={lesson.id} lesson={lesson} adult />)}</div>{!parents.length && <p className="muted">当前内容包暂无适龄的家长指引课。</p>}</section>
+      <section className="parent-guide-section"><h2>家长指引</h2><div className="parent-guide-grid">{parents.map(({ lesson, offlineOnly }) => <LessonCard key={lesson.id} lesson={lesson} offlineOnly={offlineOnly} adult />)}</div>{!parents.length && <p className="muted">当前内容包暂无适龄的家长指引课。</p>}</section>
       {completed.length > 0 && <section className="again"><h2>再玩一次</h2><div className="recent-grid">{completed.map((lesson) => <LessonCard key={lesson.id} lesson={lesson} compact />)}</div></section>}</>}
       {app.error && <p className="connection-note" role="status">连接暂时中断，正在保留本机记录。</p>}
     </main>
     <ParentButton />
-  </Page>;
+  </Page>
+    {!parentOnly && <CoViewNotice childId={child.id} />}
+  </>;
 }

@@ -80,4 +80,6 @@ function CountActivity({ ctx }: { ctx: ActivityContext<CountProps> }) {
 }
 
 export const countActivity = defineBuiltin<CountProps>('count', CountActivity, (props) =>
-  props.rounds.flatMap((round) => quantitySpeeches(round.item, round.count)));
+  props.rounds.flatMap((round) => props.cardinality
+    ? quantitySpeeches(round.item, round.count)
+    : Array.from({ length: round.count }, (_, i) => countSpeech(i + 1))));

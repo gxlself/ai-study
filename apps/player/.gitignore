@@ -2,3 +2,6 @@ dist/
 test-artifacts/
 public/bundled/
 .vite/
+android/keystore/
+android/keystore.properties
+ios/.swiftpm/

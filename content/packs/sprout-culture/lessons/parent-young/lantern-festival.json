@@ -1,0 +1,58 @@
+{
+  "schemaVersion": 1,
+  "id": "culture.parent-young.lantern-festival",
+  "title": { "zh": "元宵：看看灯笼", "en": "Lantern Festival: Look at a Lantern" },
+  "summary": { "zh": "用灯笼和汤圆大卡慢慢说话，不用真火、不试吃。", "en": "Share lantern and tangyuan picture cards without flames or tasting." },
+  "ageRange": [6, 17],
+  "audience": "parent",
+  "domains": ["language", "cognition", "social"],
+  "themeId": "culture.lantern-festival",
+  "tags": ["元宵", "家长指引", "只看图不试吃"],
+  "durationMin": 2,
+  "coView": "required",
+  "objectives": [
+    { "zh": "一起看看灯笼。", "en": "Look at a lantern together." },
+    { "zh": "听圆圆和灯笼的词。", "en": "Hear the words round and lantern." }
+  ],
+  "cover": { "concept": "fest-lantern", "bg": "paper" },
+  "parentGuide": {
+    "intro": "家长先读完关屏，再拿灯笼大卡陪宝宝。元宵时许多家庭看灯笼、吃汤圆。本课只看图片，不给宝宝吃汤圆。跟着宝宝的目光说一两句，不去拥挤灯会，不用闪灯吸引注意。",
+    "tips": ["只展示静态大卡，不用发光或闪烁玩具。", "等宝宝看过来再命名，不快速翻卡。", "汤圆看图即可，普通软烂食物另按日常进餐安排。"],
+    "phrases": [
+      { "zh": "你看，灯笼。", "en": "Look, a lantern." },
+      { "zh": "这是汤圆。", "en": "These are tangyuan." },
+      { "zh": "圆圆的。", "en": "They're round." },
+      { "zh": "你在看呀。", "en": "You're looking." }
+    ],
+    "why": "指认、命名和等待让真实互动有来有往。低月龄不看电子词卡，不要求宝宝记住节日知识。",
+    "refs": ["[8]", "[45]", "[47]", "[82]"]
+  },
+  "printables": [{ "kind": "cards", "title": "元宵大卡", "items": ["fest-lantern", "fest-tangyuan", "circle"], "size": "large", "showText": true, "showEnglish": true }],
+  "offline": [{
+    "title": "灯笼大卡慢慢看",
+    "minutes": 5,
+    "materials": ["完整的灯笼大卡", "汤圆大卡"],
+    "steps": ["关屏，成人拿住一张灯笼大卡。", "顺着宝宝目光命名，停下来等回应。", "感兴趣时换成汤圆大卡，说圆圆的。", "收好卡片，回到普通的亲子游戏。"],
+    "question": "你想再看看哪张？",
+    "levels": { "easier": "只看灯笼一张卡，家长说一句。", "harder": "十二月龄后可并排放两张大卡，接受目光或手势选择。" },
+    "safety": "成人全程陪伴，卡片不入口。汤圆是圆形黏性食物，有窒息风险；3岁以下不建议整颗吃，切小或压扁也不能消除黏性风险，本课不试吃。真实灯笼不点火、不挂长绳、不用可拆纽扣电池，不让宝宝拉挂饰。",
+    "domains": ["language", "cognition"]
+  }],
+  "steps": [{
+    "type": "guide",
+    "parentTip": "汤圆只看图；本活动不用真灯笼和食物。",
+    "props": {
+      "goal": "看一张灯笼大卡，跟着宝宝的目光交流。",
+      "materials": ["灯笼大卡", "汤圆大卡"],
+      "steps": [
+        { "text": "读完关屏，成人拿住完整大卡，坐到宝宝面前。", "concept": "fest-lantern", "say": { "zh": "你看，灯笼。", "en": "Look, a lantern." } },
+        { "text": "说完停五秒，宝宝看或发声时轻声回应。", "say": { "zh": "你在看呀。", "en": "You're looking." } },
+        { "text": "宝宝还感兴趣才换汤圆卡，手指沿图片轮廓慢慢移动。", "concept": "fest-tangyuan", "say": { "zh": "圆圆的。", "en": "They're round." } },
+        { "text": "收走卡片，结束观察，不用食物奖励宝宝。", "say": { "zh": "我们歇歇吧。", "en": "Let's take a break." } }
+      ],
+      "playMin": 5,
+      "observe": ["是否看向成人指着的卡片。", "是否用目光、表情或声音回应。", "是否需要换成面对面聊天或休息。"],
+      "safety": "汤圆只看图不试吃；3岁以下不建议整颗吃，切小或压扁仍有黏性窒息风险。不用明火、长绳、闪灯或小电池，卡片不入口。"
+    }
+  }]
+}

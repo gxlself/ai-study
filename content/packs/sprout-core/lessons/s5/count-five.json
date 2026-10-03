@@ -1,0 +1,53 @@
+{
+  "schemaVersion": 1,
+  "id": "core.s5.count-five",
+  "title": {"zh": "数到五", "en": "Count to Five"},
+  "summary": {"zh": "点一个，说一个，最后说总数。", "en": "Touch one, say one number, then name the total."},
+  "ageRange": [24, 29],
+  "domains": ["math"],
+  "themeId": "s5-t2",
+  "durationMin": 5,
+  "coView": "required",
+  "audience": "child",
+  "objectives": [
+    {"zh": "跟着大人点一个、说一个。", "en": "Touch one item for each number with an adult."},
+    {"zh": "听见数完后的总数。", "en": "Hear the total after counting."}
+  ],
+  "cover": {"concept": "duck", "bg": "paper"},
+  "parentGuide": {
+    "intro": "这节一起数三只鸭、四个苹果、五颗星。你指一个，等宝宝看或指，再数下一个。数完说总数。宝宝只愿意数一两个就停，不把数到五当作两岁的达标任务。",
+    "tips": ["用手指和按键同步，一个物体只数一次。", "分散排列时，按从左到右慢慢找。", "星星是数量图示，不教宝宝说真实星星有五个尖。"],
+    "phrases": [
+      {"zh": "一个一个慢慢数。", "en": "Let's count one at a time."},
+      {"zh": "一、二、三。", "en": "One, two, three."},
+      {"zh": "一共三只小鸭子。", "en": "Three ducks in all."},
+      {"zh": "还有哪个没有数？", "en": "Which one have we not counted?"}
+    ],
+    "why": "眼前实物的数字谈话与后续数量理解相关。点数和说总数提供经验；唱数、认数字和理解数量不是同一种能力。",
+    "refs": ["[63]", "[64]", "[65]", "[69]"]
+  },
+  "offline": [{
+    "title": "给玩偶摆餐具",
+    "minutes": 8,
+    "materials": ["一到五把儿童勺", "一到五只玩偶", "地垫"],
+    "steps": ["先摆两个玩偶，请宝宝各放一把勺。", "一起指着勺，一把说一个数。", "数完说“一共两把勺”。", "宝宝愿意时，大人加一个玩偶和一把勺再数。"],
+    "safety": "成人陪同。勺子须完整、圆钝、适龄，不拿着走跑，也不含在嘴里玩。直径小于3.5厘米的小物件有窒息风险；玩偶不带松动小零件。游戏结束收起餐具。",
+    "domains": ["math"],
+    "question": "怎样让每个玩偶都有一把勺？",
+    "levels": {"easier": "只摆一个玩偶，放一把勺，说“一把”。", "harder": "在宝宝愿意时增到三至五把，由大人示范点数并说总数。"}
+  }],
+  "steps": [{
+    "type": "count",
+    "parentTip": "guided 模式一起点数。宝宝只看也可以。数完说总数，不考数字字形。",
+    "props": {
+      "rounds": [
+        {"item": "duck", "count": 3, "layout": "row"},
+        {"item": "apple", "count": 4, "layout": "scatter"},
+        {"item": "star", "count": 5, "layout": "row"}
+      ],
+      "showNumeral": false,
+      "cardinality": true,
+      "mode": "guided"
+    }
+  }]
+}

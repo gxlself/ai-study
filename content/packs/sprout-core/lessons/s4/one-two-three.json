@@ -1,0 +1,62 @@
+{
+  "schemaVersion": 1,
+  "id": "core.s4.one-two-three",
+  "title": { "zh": "一二三，木头人", "en": "One, Two, Three, Freeze" },
+  "summary": { "zh": "一起走，数到三，停一下。", "en": "Walk together, count to three, and pause." },
+  "themeId": "s4-t3",
+  "ageRange": [18, 23],
+  "domains": ["math", "motor"],
+  "audience": "parent",
+  "durationMin": 2,
+  "coView": "required",
+  "objectives": [
+    { "zh": "在慢动作中听一、二、三。", "en": "Hear one, two, three while moving slowly." },
+    { "zh": "和家长试着停一下再走。", "en": "Try pausing and moving again with a grown-up." }
+  ],
+  "cover": { "concept": "walk", "bg": "grass" },
+  "parentGuide": {
+    "intro": "读完关屏，清出一小块空地。一起慢走，数到三就停一小会儿。站不稳时坐着拍手也可以。不淘汰、不憋气，也不要求定住很久。",
+    "tips": ["先示范停和走，数词可以由你说。", "只停一两秒，动了也能继续玩。", "宝宝累了就休息，不追赶催促。"],
+    "phrases": [
+      { "zh": "一、二、三，停一下。", "en": "One, two, three. Pause." },
+      { "zh": "我们慢慢走。", "en": "Let's walk slowly." },
+      { "zh": "现在可以动啦。", "en": "Now we can move." },
+      { "zh": "坐着拍手也可以。", "en": "We can clap while sitting too." }
+    ],
+    "why": "停走游戏提供短暂的轮流和等待经验。它是成人陪伴的轻松活动。不把游戏表现当成自控能力测评。",
+    "refs": ["6", "83"]
+  },
+  "offline": [
+    {
+      "title": "坐着拍手，停一停",
+      "minutes": 5,
+      "materials": ["稳固防滑地垫"],
+      "steps": ["和宝宝面对面坐稳。", "拍手时慢慢说一、二、三。", "张开手停一秒，再笑着放下。", "邀请宝宝当领头人，大人跟着做。"],
+      "safety": "不憋气，不比谁能不动更久。不拉拽手臂，不强按身体。地垫防滑，远离台阶和桌角。小物件直径小于3.5厘米有窒息风险，先清开。",
+      "domains": ["math", "motor"],
+      "question": "下一次你想拍手还是慢走？",
+      "levels": { "easier": "宝宝只看，大人拍三下再停。", "harder": "宝宝愿意时当领头人，用一个动作邀请大人跟随。" }
+    }
+  ],
+  "steps": [
+    {
+      "type": "guide",
+      "title": { "zh": "走走，停停", "en": "Move and Pause" },
+      "parentTip": "只需停一两秒。可以坐着玩，不要求跑或跳。",
+      "props": {
+        "goal": "在安全的慢动作游戏中听数词，试着短暂停顿。",
+        "materials": ["平坦防滑空地", "稳固地垫"],
+        "steps": [
+          { "text": "清开玩具，在平地面对宝宝。", "say": { "zh": "我们一起玩。", "en": "Let's play together." } },
+          { "text": "和宝宝慢慢走两三小步。", "say": { "zh": "一、二、三。", "en": "One, two, three." }, "concept": "walk" },
+          { "text": "双脚站稳，示范停一秒。", "say": { "zh": "木头人，停一下。", "en": "Freeze for a moment." } },
+          { "text": "说可以动了，再慢慢走。", "say": { "zh": "现在可以动啦。", "en": "Now we can move." } },
+          { "text": "坐稳后，换成数三下拍手。", "say": { "zh": "拍拍手，再停一下。", "en": "Clap, then pause." }, "concept": "clap" }
+        ],
+        "playMin": 5,
+        "observe": ["宝宝更喜欢看、走还是拍手。", "宝宝是否留意你的停走示范。", "宝宝怎样表示想继续或休息。"],
+        "safety": "成人贴近看护，慢走不跑。不闭眼走、不旋转、不屏息。不拉手臂或按住身体。远离台阶、湿地和桌角。先收走小物件，直径小于3.5厘米有窒息风险。"
+      }
+    }
+  ]
+}

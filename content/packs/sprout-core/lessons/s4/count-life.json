@@ -1,0 +1,62 @@
+{
+  "schemaVersion": 1,
+  "id": "core.s4.count-life",
+  "title": { "zh": "生活中数一数", "en": "Counting in Everyday Life" },
+  "summary": { "zh": "数勺子、鞋子和眼前的台阶。", "en": "Count spoons, shoes, and steps you can see." },
+  "themeId": "s4-t3",
+  "ageRange": [18, 23],
+  "domains": ["math", "language"],
+  "audience": "parent",
+  "durationMin": 2,
+  "coView": "required",
+  "objectives": [
+    { "zh": "把一到三的数词连到实物。", "en": "Connect number words from one to three with real objects." },
+    { "zh": "听到数完后的总数。", "en": "Hear how many there are after counting." }
+  ],
+  "cover": { "concept": "spoon", "bg": "room" },
+  "parentGuide": {
+    "intro": "先读再放下屏幕。一天挑一两个自然时刻就好。只点眼前的一到三个物体，点完说总数。台阶先在安全处站稳再数，不一边上下楼一边问问题。",
+    "tips": ["拿着或点着物品，说一个数词。", "数完停一下，补一句总数。", "漏数时大人重示范，不要求纠错。"],
+    "phrases": [
+      { "zh": "一、二，两只鞋子。", "en": "One, two. Two shoes." },
+      { "zh": "一、二、三，三把勺子。", "en": "One, two, three. Three spoons." },
+      { "zh": "眼前有两个台阶。", "en": "There are two steps in front of us." },
+      { "zh": "你把这把递给我了。", "en": "You gave me this spoon." }
+    ],
+    "why": "点眼前实物，示范一一对应和总数。生活中的数字谈话与后续数量理解相关。这里只是经验，不是点数测验。",
+    "refs": ["63", "64", "65", "69"]
+  },
+  "offline": [
+    {
+      "title": "鞋子排好再出门",
+      "minutes": 5,
+      "materials": ["一双鞋", "两把圆头儿童勺"],
+      "steps": ["把一双鞋并排放在地上。", "点一只说一，点另一只说二。", "再说一共两只鞋子。", "把两把勺子放下，再点数说总数。"],
+      "safety": "物品需无可脱落小件和锐边。小物件直径小于3.5厘米有窒息风险。鞋子不入口，接触后洗手。不用小颗食物练数。成人在旁，勺子不含着走。",
+      "domains": ["math", "language"],
+      "question": "你想先数鞋子还是勺子？",
+      "levels": { "easier": "只看一只鞋，家长说一只。", "harder": "再放第三把勺子，家长点数并说三把。" }
+    }
+  ],
+  "steps": [
+    {
+      "type": "guide",
+      "title": { "zh": "点一个，说一个", "en": "One Word for Each Object" },
+      "parentTip": "每次最多三个。台阶只在成人控制的安全位置观察，不练独自爬楼。",
+      "props": {
+        "goal": "在日常场景中点数一到三个实物，并说总数。",
+        "materials": ["一到三把圆头儿童勺", "一双鞋", "安全处可见的一到三个台阶"],
+        "steps": [
+          { "text": "把一把勺子摆下，指着它说一。", "say": { "zh": "一，一把勺子。", "en": "One. One spoon." }, "concept": "spoon" },
+          { "text": "再放两把勺子，逐把点数。", "say": { "zh": "一、二、三，三把勺子。", "en": "One, two, three. Three spoons." } },
+          { "text": "把一双鞋放下，逐只指着数。", "say": { "zh": "一、二，一共两只鞋子。", "en": "One, two. Two shoes in all." }, "concept": "shoes" },
+          { "text": "成人陪宝宝站稳，指两个台阶。", "say": { "zh": "一、二，两个台阶。", "en": "One, two. Two steps." } },
+          { "text": "请宝宝递给你眼前的一把勺子。", "say": { "zh": "这一把给我，好吗？", "en": "May I have this spoon?" } }
+        ],
+        "playMin": 5,
+        "observe": ["宝宝是否把视线移到你点的实物。", "宝宝是否愿意指、拿或递。", "宝宝听到总数时有什么回应。"],
+        "safety": "台阶旁成人贴近看护，牵稳或抱稳。没有安全位置就只数勺子。不把练数变成上下楼任务。小物件直径小于3.5厘米有窒息风险。用大件，无锐边，不含着勺子走。"
+      }
+    }
+  ]
+}

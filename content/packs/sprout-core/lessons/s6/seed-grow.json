@@ -1,0 +1,114 @@
+{
+  "schemaVersion": 1,
+  "id": "core.s6.seed-grow",
+  "title": { "zh": "种子长大了", "en": "A Seed Grows" },
+  "summary": { "zh": "从种子到花，慢慢看变化。", "en": "Watch a flowering plant change from seed to flower." },
+  "ageRange": [30, 36],
+  "domains": ["science"],
+  "themeId": "s6-t6",
+  "tags": ["plant-growth", "sequence", "observation"],
+  "durationMin": 7,
+  "coView": "required",
+  "audience": "child",
+  "objectives": [
+    { "zh": "认识一种开花植物的生长顺序。", "en": "Notice the growth sequence of a flowering plant." },
+    { "zh": "愿意等待，观察真实变化。", "en": "Wait and notice real changes." }
+  ],
+  "cover": { "concept": "seed", "bg": "grass" },
+  "parentGuide": {
+    "intro": "这次看会开花的植物，不代表所有植物。种子在合适条件下才能发芽，成长要等待，不承诺几天开花。小芽和叶子图只是阶段示意，不是同株连续照片。真种子只由成人处理。",
+    "tips": [
+      "每次只问今天有什么不同。",
+      "不用“多浇水就长得快”的说法。",
+      "发芽先需要适宜水分、空气和温度。",
+      "长出后，按所选植物需要照顾光照。"
+    ],
+    "phrases": [
+      { "zh": "这是一颗花种子。", "en": "This is a seed of a flowering plant." },
+      { "zh": "它慢慢发芽了。", "en": "It is sprouting slowly." },
+      { "zh": "我们等一等，再看看。", "en": "Let's wait and look again." },
+      { "zh": "今天哪里不一样？", "en": "What is different today?" }
+    ],
+    "why": "生活中的观察、命名和回顾可引出科学谈话。顺序图只是引子，不把所有植物套进一个模型，也不要求幼儿记住术语或生长天数。",
+    "refs": ["[7]", "[12]", "[80]", "[82]"]
+  },
+  "offline": [
+    {
+      "title": "看一盆真实的小苗",
+      "minutes": 8,
+      "materials": ["成人确认无毒且适合家养的开花植物幼苗", "稳固的花盆", "纸和粗蜡笔"],
+      "steps": [
+        "关屏，成人把花盆放在安全处。",
+        "一起看看小苗和叶子。",
+        "成人按这株植物需要少量浇水。",
+        "孩子画或说今天看见的变化。",
+        "过几天再看，不要求马上开花。"
+      ],
+      "safety": "成人全程陪伴，盆土、种子和肥料不入口。真种子和碎石只由成人管理；直径小于三点五厘米的小物件有窒息风险。确认植物无毒，盆具牢固无锐边，不用玻璃容器，不放在孩子需攀爬的窗台；接触盆土后洗手。",
+      "domains": ["science"],
+      "question": "和上次比，你发现哪一点变了？",
+      "levels": {
+        "easier": "只观察现成幼苗，成人指出一片叶子。",
+        "harder": "成人种下适合的花种子，孩子只观察；用成人画的记录比较变化，不催促开花。"
+      }
+    }
+  ],
+  "steps": [
+    {
+      "type": "sequence",
+      "title": { "zh": "这种植物慢慢长", "en": "How This Plant Grows" },
+      "parentTip": "限定为会开花的植物。小芽、叶子都是示意；不同种类速度不同，不承诺固定天数。",
+      "props": {
+        "mode": "order",
+        "intro": { "zh": "看看一颗花种子怎样长大。", "en": "Look at how a flowering plant grows from a seed." },
+        "steps": [
+          { "concept": "seed", "caption": { "zh": "种子", "en": "Seed" }, "say": { "zh": "先是一颗花种子。", "en": "First, a seed of a flowering plant." } },
+          { "concept": "sprout", "caption": { "zh": "发芽", "en": "Sprouting" }, "say": { "zh": "条件合适，种子发芽了。", "en": "With the right conditions, the seed sprouts." } },
+          { "concept": "leaf", "caption": { "zh": "长出叶子", "en": "Growing Leaves" }, "say": { "zh": "小苗慢慢长出叶子。", "en": "The seedling grows leaves." } },
+          { "concept": "flower", "caption": { "zh": "长大开花", "en": "Growing and Flowering" }, "say": { "zh": "再等一等，这株植物开花了。", "en": "After more time, this plant flowers." } }
+        ]
+      }
+    },
+    {
+      "type": "story",
+      "title": { "zh": "一颗花种子", "en": "A Flowering Plant's Seed" },
+      "parentTip": "每页停一停，聊变化。图片是阶段示意，不同植物不一定同样生长，也不一定都开花。",
+      "props": {
+        "title": { "zh": "一颗花种子", "en": "A Flowering Plant's Seed" },
+        "pages": [
+          {
+            "scene": { "bg": "sky", "ground": "sand", "sprites": [
+              { "concept": "seed", "x": 37, "y": 76, "size": 34, "anim": "none" },
+              { "concept": "droplet", "x": 74, "y": 55, "size": 20, "anim": "none" }
+            ] },
+            "text": { "zh": "这是一颗花种子。大人给它准备合适的土和水。", "en": "This is a seed of a flowering plant. A grown-up prepares suitable soil and water." }
+          },
+          {
+            "scene": { "bg": "sky", "ground": "grass", "sprites": [
+              { "concept": "sprout", "x": 40, "y": 72, "size": 36, "anim": "none" },
+              { "concept": "cloud", "x": 77, "y": 22, "size": 22, "anim": "none" }
+            ] },
+            "text": { "zh": "条件合适，种子发芽了。我们慢慢等。", "en": "With the right conditions, the seed sprouts. We wait patiently." },
+            "prompts": [{ "kind": "open", "zh": "你发现它有什么变化？", "en": "What change do you notice?" }]
+          },
+          {
+            "scene": { "bg": "sky", "ground": "grass", "sprites": [
+              { "concept": "sprout", "x": 38, "y": 72, "size": 38, "anim": "none" },
+              { "concept": "leaf", "x": 75, "y": 65, "size": 22, "anim": "none" },
+              { "concept": "sun", "x": 76, "y": 20, "size": 20, "anim": "none" }
+            ] },
+            "text": { "zh": "小苗长出叶子。大人按它的需要照顾它。", "en": "The seedling grows leaves. A grown-up cares for it according to its needs." }
+          },
+          {
+            "scene": { "bg": "sky", "ground": "grass", "sprites": [
+              { "concept": "flower", "x": 40, "y": 72, "size": 38, "anim": "none" },
+              { "concept": "sun", "x": 76, "y": 20, "size": 20, "anim": "none" }
+            ] },
+            "text": { "zh": "过了些时候，这株植物开花了。每种植物都有自己的样子。", "en": "After some time, this plant flowers. Different plants grow in different ways." },
+            "prompts": [{ "kind": "recall", "zh": "最开始，它是什么样的？", "en": "What was it like at the start?" }]
+          }
+        ]
+      }
+    }
+  ]
+}

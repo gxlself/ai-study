@@ -1,0 +1,103 @@
+{
+  "schemaVersion": 1,
+  "id": "core.s5.how-feel",
+  "title": {"zh": "他觉得怎么样？", "en": "How Does He Feel?"},
+  "summary": {"zh": "先听角色说感受，再找表情。", "en": "Listen to each character's feeling, then find the matching face."},
+  "ageRange": [24, 29],
+  "domains": ["social", "language"],
+  "themeId": "s5-t4",
+  "durationMin": 6,
+  "coView": "required",
+  "audience": "child",
+  "objectives": [
+    {"zh": "听见开心、难过和生气。", "en": "Hear the words happy, sad, and angry."},
+    {"zh": "试着关心故事里朋友的感受。", "en": "Explore caring about a story friend's feelings."}
+  ],
+  "cover": {"concept": "sad", "bg": "paper"},
+  "parentGuide": {
+    "intro": "先看三幅情境图，听角色说自己的感受，再选对应表情。答案只对应这个角色说的话，不规定宝宝遇到同样的事必须怎样。宝宝有别的感受也接住；表情不是读心工具。",
+    "tips": ["一次问一句，允许宝宝指图，不逼说完整句。", "说“他告诉我们他难过”，不用“每个人都会难过”。", "宝宝难过时先陪伴，不打开本课来测试情绪。"],
+    "phrases": [
+      {"zh": "小兔告诉我们他难过。", "en": "Rabbit tells us he feels sad."},
+      {"zh": "生气也可以说出来。", "en": "You can say that you feel angry."},
+      {"zh": "你可能有别的感受。", "en": "You might feel differently."},
+      {"zh": "想让我陪你吗？", "en": "Would you like me to stay with you?"}
+    ],
+    "why": "认可、命名并回应情绪符合回应性照护。幼儿还需要成人帮助；本课只连接角色自述和情绪词，不训练按情境猜唯一感受。",
+    "refs": ["[82]", "[90]", "[91]"]
+  },
+  "offline": [{
+    "title": "玩偶有话说",
+    "minutes": 7,
+    "materials": ["完整大玩偶", "一条小毛巾"],
+    "steps": ["成人用玩偶轻声说“我有点难过”。", "问宝宝想怎样陪它，不要求抱抱。", "按宝宝选择坐在旁边、递毛巾或说句话。", "把话题交给宝宝：“你想让玩偶说什么？”"],
+    "safety": "成人陪同。玩偶无松动小零件；直径小于3.5厘米的小物件有窒息风险。不用真实气球、气球碎片或长绳作教具。不故意夺走宝宝玩具来制造情绪，不强迫抱、亲或微笑。",
+    "domains": ["social", "language"],
+    "question": "你想怎样陪陪这个玩偶？",
+    "levels": {"easier": "宝宝只指玩偶或坐在旁边，成人命名一种感受。", "harder": "宝宝让玩偶说一两个词，成人回应后问它需要什么帮助。"}
+  }],
+  "steps": [
+    {
+      "type": "story",
+      "parentTip": "情境图是本课线索。角色亲口说感受，不要求宝宝作相同反应。",
+      "props": {
+        "title": {"zh": "朋友说感受", "en": "Friends Tell Us How They Feel"},
+        "pages": [
+          {
+            "scene": {"bg": "grass", "ground": "grass", "sprites": [
+              {"concept": "rabbit", "x": 32, "y": 75, "size": 38, "anim": "none"},
+              {"concept": "balloon", "x": 80, "y": 18, "size": 20, "anim": "none"},
+              {"concept": "tree", "x": 69, "y": 73, "size": 23, "anim": "none"}
+            ]},
+            "text": {"zh": "气球飞走了。小兔说：“我难过。”", "en": "The balloon has flown away. Rabbit says, \"I feel sad.\""},
+            "prompts": [{"kind": "open", "zh": "你想对小兔说什么？", "en": "What would you like to say to Rabbit?"}]
+          },
+          {
+            "scene": {"bg": "room", "ground": "floor", "sprites": [
+              {"concept": "bear", "x": 35, "y": 75, "size": 38, "anim": "none"},
+              {"concept": "blocks", "x": 70, "y": 76, "size": 25, "anim": "none"}
+            ]},
+            "text": {"zh": "积木搭好了。小熊说：“我开心。”", "en": "The blocks are stacked. Bear says, \"I feel happy.\""}
+          },
+          {
+            "scene": {"bg": "room", "ground": "floor", "sprites": [
+              {"concept": "cat", "x": 28, "y": 75, "size": 36, "anim": "none"},
+              {"concept": "dog", "x": 75, "y": 74, "size": 32, "anim": "none"},
+              {"concept": "toy-car", "x": 76, "y": 80, "size": 19, "anim": "none", "z": 2}
+            ]},
+            "text": {"zh": "小车被拿走了。小猫说：“我生气。”", "en": "The toy car has been taken away. Cat says, \"I feel angry.\""},
+            "prompts": [{"kind": "wh", "zh": "小猫说了什么感受？", "en": "What feeling did Cat tell us about?"}]
+          }
+        ]
+      }
+    },
+    {
+      "type": "choose",
+      "parentTip": "只找角色自述的表情。宝宝谈自己的感受时，不按选择题答案评价。",
+      "props": {
+        "showLabels": false,
+        "hintAfter": 1,
+        "rounds": [
+          {
+            "prompt": {"zh": "小兔说“我难过”，他感觉怎样？", "en": "Rabbit says, \"I feel sad.\" How does he feel?"},
+            "options": ["happy", "sad", "scared"],
+            "answer": "sad",
+            "explain": {"zh": "他告诉我们他难过。我们陪陪他。", "en": "He told us he feels sad. Let's stay with him."}
+          },
+          {
+            "prompt": {"zh": "小熊说“我开心”，他感觉怎样？", "en": "Bear says, \"I feel happy.\" How does he feel?"},
+            "options": ["happy", "angry", "sad"],
+            "answer": "happy",
+            "explain": {"zh": "他告诉我们他开心。", "en": "He told us he feels happy."}
+          },
+          {
+            "prompt": {"zh": "小猫说“我生气”，他感觉怎样？", "en": "Cat says, \"I feel angry.\" How does he feel?"},
+            "options": ["sad", "happy", "angry"],
+            "answer": "angry",
+            "explain": {"zh": "他告诉我们他生气。可以找大人。", "en": "He told us he feels angry. He can ask a grown-up for help."}
+          }
+        ]
+      }
+    }
+  ]
+}

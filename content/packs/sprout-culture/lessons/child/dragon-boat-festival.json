@@ -1,0 +1,78 @@
+{
+  "schemaVersion": 1,
+  "id": "culture.child.dragon-boat-festival",
+  "title": { "zh": "端午：一起慢慢划", "en": "Dragon Boat Festival: Paddle Together" },
+  "summary": { "zh": "看龙舟、粽子和香囊图片，坐稳空手慢慢划。", "en": "See dragon boat, zongzi, and sachet pictures, then paddle slowly with empty hands while seated." },
+  "ageRange": [24, 36],
+  "audience": "child",
+  "domains": ["motor", "social", "language"],
+  "themeId": "culture.dragon-boat-festival",
+  "tags": ["端午", "亲子共看", "陆地龙舟", "只看图不试吃"],
+  "durationMin": 5,
+  "coView": "required",
+  "objectives": [
+    { "zh": "认一认龙舟、粽子和香囊。", "en": "Notice a dragon boat, zongzi, and a scented sachet." },
+    { "zh": "与家长慢慢划、一起停。", "en": "Paddle slowly and pause with a grown-up." }
+  ],
+  "cover": { "concept": "fest-dragon-boat", "bg": "sky" },
+  "parentGuide": {
+    "intro": "可选五分钟共看，仅供24–36月龄并须成人陪同。慢看端午图片，指认后在干燥防滑地面坐稳，空手做小幅划桨。粽子不试吃，香囊只看图不佩戴。家长随时暂停或跳过动作，结束关屏继续地面游戏。",
+    "tips": ["家长先示范空手伸、收，不使用真桨或棍子。", "动作慢而小，不拉手、不摇晃、不比赛。", "不想共看就只用打印卡；进餐、卧室和睡前一小时不用屏。"],
+    "phrases": [
+      { "zh": "这是龙舟。", "en": "This is a dragon boat." },
+      { "zh": "我们慢慢划。", "en": "Let's paddle slowly." },
+      { "zh": "一起停一停。", "en": "Let's pause together." },
+      { "zh": "想歇就歇。", "en": "Rest whenever you want." }
+    ],
+    "why": "共看与成人回应只是动作游戏的引子。用简单、安全的共同动作表达相伴，不要求节拍准确或完成固定次数。",
+    "refs": ["[3]", "[6]", "[25]", "[80]", "[83]", "[93]"]
+  },
+  "printables": [{ "kind": "cards", "title": "端午大卡", "items": ["fest-dragon-boat", "fest-zongzi", "fest-sachet"], "size": "large", "showText": true, "showEnglish": true }],
+  "offline": [{
+    "title": "关屏陆地小龙舟",
+    "minutes": 8,
+    "materials": ["干燥防滑地垫"],
+    "steps": ["关屏，成人与宝宝并排坐稳在地垫上。", "空手小幅向前伸、向回收，慢慢划两下。", "轻声说停一停，等宝宝选择继续或结束。", "轮流发出停的信号，最后一起休息。"],
+    "question": "你想继续划，还是停一会儿？",
+    "levels": { "easier": "只看成人做一次小幅动作，不要求模仿。", "harder": "宝宝自愿发出停一停的信号，成人跟随宝宝的节奏。" },
+    "safety": "成人全程陪伴，在干燥防滑地面坐稳，远离水边；不用真船、棍、桨、水盆或可倾倒纸箱，不拉拽手臂、不摇晃。粽子黏，有窒息风险，切小压扁也不是安全保证，本课只看图不试吃。香囊只看图不佩戴，不提供草药、绳子和小挂件。",
+    "domains": ["motor", "social"]
+  }],
+  "steps": [
+    {
+      "type": "word-cards",
+      "parentTip": "粽子不试吃，香囊不佩戴；一次一张、手动翻页。",
+      "props": {
+        "items": ["fest-dragon-boat", "fest-zongzi", "fest-sachet"],
+        "show": { "text": true, "english": true, "pinyin": false },
+        "speak": "name+phrase",
+        "autoAdvanceSec": null,
+        "intro": { "zh": "看看端午的图片。", "en": "Let's look at pictures for the Dragon Boat Festival." }
+      }
+    },
+    {
+      "type": "choose",
+      "parentTip": "选项分别是龙舟、灯笼、粽子与布袋，不用颜色猜答案。",
+      "props": {
+        "rounds": [
+          { "prompt": { "zh": "龙舟在哪里？", "en": "Where is the dragon boat?" }, "options": ["fest-lantern", "fest-dragon-boat"], "answer": "fest-dragon-boat", "explain": { "zh": "大家一起划龙舟。", "en": "People paddle a dragon boat together." } },
+          { "prompt": { "zh": "找找香囊小布袋。", "en": "Find the little scented sachet." }, "options": ["fest-sachet", "fest-zongzi"], "answer": "fest-sachet", "explain": { "zh": "香囊是小布袋。", "en": "A scented sachet is a little cloth bag." } }
+        ],
+        "showLabels": false,
+        "hintAfter": 2
+      }
+    },
+    {
+      "type": "movement",
+      "parentTip": "先坐稳再空手小幅动；需要时暂停或跳过。",
+      "props": {
+        "intro": { "zh": "和家长坐稳，空手慢慢划。", "en": "Sit safely with your grown-up and paddle slowly with empty hands." },
+        "moves": [
+          { "concept": "fest-dragon-boat", "name": { "zh": "轻轻伸手", "en": "Reach Gently" }, "say": { "zh": "坐稳，空手轻轻向前伸。", "en": "Stay seated and gently reach forward with empty hands." }, "seconds": 8 },
+          { "concept": "fest-dragon-boat", "name": { "zh": "慢慢收手", "en": "Draw Your Hands Back" }, "say": { "zh": "坐稳，慢慢把手收回来。", "en": "Stay seated and slowly draw your hands back." }, "seconds": 8 },
+          { "concept": "sit-down", "name": { "zh": "停一停", "en": "Pause" }, "say": { "zh": "手放腿上，轻轻停一停。", "en": "Rest your hands on your lap and pause." }, "seconds": 6 }
+        ]
+      }
+    }
+  ]
+}

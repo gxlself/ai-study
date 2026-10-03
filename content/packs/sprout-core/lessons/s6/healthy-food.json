@@ -1,0 +1,79 @@
+{
+  "schemaVersion": 1,
+  "id": "core.s6.healthy-food",
+  "title": { "zh": "每天吃什么", "en": "Food for Our Day" },
+  "summary": { "zh": "日常食物多样，甜点偶尔少量。", "en": "Enjoy varied everyday foods and occasional small sweet treats." },
+  "ageRange": [30, 36],
+  "domains": ["life", "science"],
+  "themeId": "s6-t5",
+  "tags": ["food-variety", "responsive-feeding", "sort"],
+  "durationMin": 6,
+  "coView": "required",
+  "audience": "child",
+  "objectives": [
+    { "zh": "认识一些日常食物和甜点。", "en": "Notice some everyday foods and sweet treats." },
+    { "zh": "听到多样、偶尔和少量。", "en": "Hear about variety and occasional small treats." }
+  ],
+  "cover": { "concept": "rice", "bg": "paper" },
+  "parentGuide": {
+    "intro": "“每天吃”指日常饮食种类，不是必须每天吃齐这些食物。本题的蛋糕和饼干指加糖甜点。食物不分好坏人，也不作奖惩；过敏、特殊饮食或营养疑问按专业建议调整。",
+    "tips": [
+      "先说图中甜点是加糖的，再分类。",
+      "看图在饭前，吃饭时关屏。",
+      "不强迫尝新、清盘或喝奶。",
+      "尊重饥饱信号，不用甜点奖励吃饭。"
+    ],
+    "phrases": [
+      { "zh": "日常食物可以换着吃。", "en": "We can vary our everyday foods." },
+      { "zh": "甜点偶尔吃一点。", "en": "Sweet treats can be occasional and small." },
+      { "zh": "不必每天把这些都吃齐。", "en": "We do not need every one of these foods each day." },
+      { "zh": "吃饱了可以告诉我。", "en": "Tell me when you have had enough." }
+    ],
+    "why": "认识多样食物，配合成人回应饥饱和安全进食。分类只是饮食谈话的引子，不是个体营养处方，也不替代真实、无屏的进餐。",
+    "refs": ["[6]", "[7]", "[12]", "[82]"]
+  },
+  "offline": [
+    {
+      "title": "纸上配一餐",
+      "minutes": 8,
+      "materials": ["纸", "粗蜡笔", "家里常吃食物的包装图片或成人画的图片"],
+      "steps": [
+        "关屏，成人画一个大盘子。",
+        "说说家里常吃的几种食物。",
+        "孩子选图片，排成想象中的一餐。",
+        "聊聊颜色、种类和喜欢的味道。",
+        "收起材料，再无屏吃真实的一餐。"
+      ],
+      "safety": "成人全程陪伴，图片不用小磁铁或小夹子固定，直径小于三点五厘米的小物件有窒息风险。蜡笔、包装和图片不入口。若延伸到真实食物，成人确认过敏与质地，去骨去核、切成适宜小块，孩子坐好进食；不让孩子接触刀具、热食和整颗坚果。",
+      "domains": ["life", "science"],
+      "question": "你想选哪些食物，怎样搭配？",
+      "levels": {
+        "easier": "只聊两种家里已熟悉的食物。",
+        "harder": "孩子从三类熟悉食物中各选一种，说说想法。"
+      }
+    }
+  ],
+  "steps": [
+    {
+      "type": "sort",
+      "title": { "zh": "日常食物和小甜点", "en": "Everyday Foods and Sweet Treats" },
+      "parentTip": "先解释饼干、蛋糕在本题指加糖甜点。每天吃指饮食种类，不是指定食物必须天天吃。",
+      "props": {
+        "prompt": { "zh": "日常食物轮换吃。甜点偶尔少量。", "en": "Vary everyday foods. Sweet treats are occasional and small." },
+        "bins": [
+          { "id": "everyday", "label": { "zh": "每天吃，种类多样", "en": "Everyday Foods, with Variety" }, "concept": "rice", "color": "#e6f4d7" },
+          { "id": "sometimes", "label": { "zh": "偶尔吃，甜点少量", "en": "Occasional Small Sweet Treats" }, "concept": "cake", "color": "#f6e3ed" }
+        ],
+        "items": [
+          { "item": "apple", "bin": "everyday" },
+          { "item": "cake", "bin": "sometimes" },
+          { "item": "carrot", "bin": "everyday" },
+          { "item": "rice", "bin": "everyday" },
+          { "item": "cookie", "bin": "sometimes" },
+          { "item": "egg", "bin": "everyday" },
+          { "item": "milk", "bin": "everyday" }
+        ]
+      }
+    }
+  ]
+}

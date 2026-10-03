@@ -16,6 +16,18 @@ describe('resolveScreenPolicy', () => {
     expect(resolveScreenPolicy(stage, deepFreeze(ChildScreenSettings.parse({})))).toEqual(stage.screen);
   });
 
+  it.each([0, 1, 4])('inherits the child lesson cap %s independently of child duration overrides', (childLessonsPerDay) => {
+    const stage = makeStage();
+    stage.screen.childLessonsPerDay = childLessonsPerDay;
+    expect(resolveScreenPolicy(deepFreeze(stage), ChildScreenSettings.parse({ dailyMaxMin: 60 }), 30))
+      .toMatchObject({ childLessonsPerDay, dailyMaxMin: 60 });
+  });
+
+  it('does not invent a child lesson cap when the stage leaves it unspecified', () => {
+    expect(resolveScreenPolicy(makeStage(), ChildScreenSettings.parse({}))).not.toHaveProperty('childLessonsPerDay');
+    expect(resolveScreenPolicy(null, ChildScreenSettings.parse({}))).not.toHaveProperty('childLessonsPerDay');
+  });
+
   it.each([
     [{ sessionMaxMin: 3 }, { sessionMaxMin: 3, dailyMaxMin: 20 }],
     [{ dailyMaxMin: 7 }, { sessionMaxMin: 10, dailyMaxMin: 7 }],

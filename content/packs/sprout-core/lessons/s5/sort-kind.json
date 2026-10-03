@@ -1,0 +1,58 @@
+{
+  "schemaVersion": 1,
+  "id": "core.s5.sort-kind",
+  "title": {"zh": "动物和水果", "en": "Animals and Fruit"},
+  "summary": {"zh": "这次不看颜色，只看是什么。", "en": "This time, sort by what it is, not its color."},
+  "ageRange": [24, 29],
+  "domains": ["cognition"],
+  "themeId": "s5-t1",
+  "durationMin": 5,
+  "coView": "required",
+  "audience": "child",
+  "objectives": [
+    {"zh": "在帮助下区分动物和水果。", "en": "Tell animals and fruit apart with help."},
+    {"zh": "把同一类的图放一起。", "en": "Group pictures of the same kind."}
+  ],
+  "cover": {"concept": "rabbit", "bg": "paper"},
+  "parentGuide": {
+    "intro": "先指着小狗和苹果说出两类。每次只出现一个物品，宝宝指篮子，你可以代按。分完用纸书里的动物、水果继续找。不用真实动物或小颗水果做教具。",
+    "tips": ["先示范小狗放动物组，苹果放水果组。", "宝宝说叫声也可以，接着说动物名字。", "不按颜色或大小再加一条规则。"],
+    "phrases": [
+      {"zh": "小狗是动物。", "en": "A dog is an animal."},
+      {"zh": "苹果是水果。", "en": "An apple is a fruit."},
+      {"zh": "小兔也放这边。", "en": "The rabbit goes here too."},
+      {"zh": "你把水果放一起了。", "en": "You put the fruit together."}
+    ],
+    "why": "婴幼儿分类活动从熟悉物品和单一规则开始。家长的命名、示范和等待支持探索，不要求一次记住抽象类别词。",
+    "refs": ["[7]", "[69]", "[71]", "[83]"]
+  },
+  "offline": [{
+    "title": "图卡分两家",
+    "minutes": 8,
+    "materials": ["纸书或大图卡", "动物图三张、水果图三张", "两块空地"],
+    "steps": ["先找小狗和苹果，分别放在两边。", "邀请宝宝拿一张图，说名字或指给你看。", "问它想和哪一组放一起，等宝宝摆放。", "一起回看两组，只说这次分组的特点。"],
+    "safety": "成人陪同。图卡要大、边缘平滑，无订书钉、磁铁或可脱落贴片。直径小于3.5厘米的小物件有窒息风险。宝宝咬卡时收起，改看纸书；不把动物当作可搬放的教具。",
+    "domains": ["cognition"],
+    "question": "这张图想和谁放一起？",
+    "levels": {"easier": "只放小狗和苹果，成人帮助配同类图。", "harder": "换两张纸书中的新图，仍只分动物和水果。"}
+  }],
+  "steps": [{
+    "type": "sort",
+    "parentTip": "先示范两件。宝宝指一指，你可以代按。",
+    "props": {
+      "prompt": {"zh": "动物放一起，水果放一起。", "en": "Put animals together and fruit together."},
+      "bins": [
+        {"id": "animals", "label": {"zh": "动物", "en": "Animals"}, "concept": "dog", "color": "#77B77D"},
+        {"id": "fruit", "label": {"zh": "水果", "en": "Fruit"}, "concept": "apple", "color": "#F2A15F"}
+      ],
+      "items": [
+        {"item": "dog", "bin": "animals"},
+        {"item": "apple", "bin": "fruit"},
+        {"item": "banana", "bin": "fruit"},
+        {"item": "rabbit", "bin": "animals"},
+        {"item": "orange", "bin": "fruit"},
+        {"item": "cat", "bin": "animals"}
+      ]
+    }
+  }]
+}

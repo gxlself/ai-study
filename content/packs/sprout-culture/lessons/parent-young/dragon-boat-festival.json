@@ -1,0 +1,58 @@
+{
+  "schemaVersion": 1,
+  "id": "culture.parent-young.dragon-boat-festival",
+  "title": { "zh": "端午：轻轻划呀", "en": "Dragon Boat Festival: Gentle Paddling" },
+  "summary": { "zh": "看龙舟、粽子和香囊大卡，家长示范空手划桨。", "en": "See dragon boat, zongzi, and sachet cards, then watch a grown-up paddle with empty hands." },
+  "ageRange": [6, 17],
+  "audience": "parent",
+  "domains": ["motor", "language", "social"],
+  "themeId": "culture.dragon-boat-festival",
+  "tags": ["端午", "龙舟", "家长指引", "只看图不试吃"],
+  "durationMin": 2,
+  "coView": "required",
+  "objectives": [
+    { "zh": "看看家人的划桨动作。", "en": "Watch a caregiver's paddling motion." },
+    { "zh": "听粽子和龙舟的名字。", "en": "Hear the names zongzi and dragon boat." }
+  ],
+  "cover": { "concept": "fest-dragon-boat", "bg": "sky" },
+  "parentGuide": {
+    "intro": "家长读完关屏。端午时一些家庭吃粽子、看龙舟、做香囊。本课只看大卡；粽子不试吃，香囊不佩戴。在干燥地面上，成人空手慢慢划桨，宝宝看、笑或模仿都可以，不拉手臂、不强迫坐起。",
+    "tips": ["按宝宝已有能力躺、趴或坐，不摆成尚做不到的姿势。", "成人空手示范，动作小而慢，不摇晃宝宝。", "不接近河边，也不播放嘈杂比赛声。"],
+    "phrases": [
+      { "zh": "这是龙舟。", "en": "This is a dragon boat." },
+      { "zh": "轻轻划呀。", "en": "Paddle gently." },
+      { "zh": "这是粽子。", "en": "This is zongzi." },
+      { "zh": "我们停一停。", "en": "Let's stop for a moment." }
+    ],
+    "why": "成人示范、等待和模仿让动作游戏有社会回应。文化认知不依靠冒险体验或吃到特定食物。",
+    "refs": ["[6]", "[8]", "[82]", "[83]"]
+  },
+  "printables": [{ "kind": "cards", "title": "端午大卡", "items": ["fest-dragon-boat", "fest-zongzi", "fest-sachet"], "size": "large", "showText": true, "showEnglish": true }],
+  "offline": [{
+    "title": "空手小龙舟",
+    "minutes": 5,
+    "materials": ["防滑地垫", "端午大卡"],
+    "steps": ["关屏，在干燥地面安顿宝宝。", "成人拿住龙舟大卡，说名称，再把卡收走。", "成人空手向前伸、向回收，慢慢划两次。", "停五秒，回应宝宝的笑、目光或自发动作。"],
+    "question": "你想看看还是一起动？",
+    "levels": { "easier": "成人只做一次小幅动作，宝宝观看成人的脸。", "harder": "已能稳坐的宝宝可自愿空手模仿，不由成人拉拽带动。" },
+    "safety": "成人全程陪伴；只在干燥地面玩，不用真船、桨、棍或水盆。粽子黏性较强，有窒息风险，本课只看图不试吃；切小压扁也不是安全保证。香囊只看图，不提供草药、香料、绳子和小挂饰，不宣称防病功效。",
+    "domains": ["motor", "social"]
+  }],
+  "steps": [{
+    "type": "guide",
+    "parentTip": "空手、慢动作、不拉拽；粽子和香囊只看图。",
+    "props": {
+      "goal": "在干燥地面观察并自愿模仿成人划桨。",
+      "materials": ["防滑地垫", "端午大卡"],
+      "steps": [
+        { "text": "关屏，按宝宝已有能力在地垫上躺、趴或坐。", "concept": "fest-dragon-boat", "say": { "zh": "这是龙舟。", "en": "This is a dragon boat." } },
+        { "text": "成人拿住粽子与香囊大卡各看一次，不提供实物。", "concept": "fest-zongzi", "say": { "zh": "这是粽子。", "en": "This is zongzi." } },
+        { "text": "收卡后成人空手小幅向前伸、向回收，慢慢划两次。", "say": { "zh": "轻轻划呀。", "en": "Paddle gently." } },
+        { "text": "停下来等宝宝回应，接受只看或笑，不拉小手、不晃身体。", "say": { "zh": "我们停一停。", "en": "Let's stop for a moment." } }
+      ],
+      "playMin": 5,
+      "observe": ["是否关注成人动作或大卡。", "是否微笑、发声或自发模仿。", "是否失去兴趣或需要改变姿势。"],
+      "safety": "成人全程陪伴，不强迫坐起、不拉拽或摇晃；在干燥地面空手玩，远离水边。粽子有黏性窒息风险，切小压扁也不是安全保证，本课不试吃。香囊只看图，不给草药、绳子和小物件。"
+    }
+  }]
+}

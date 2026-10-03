@@ -1,0 +1,13 @@
+{
+  "schemaVersion": 1,
+  "items": {
+    "assets/images/festivals/fu.svg": { "source": "custom" },
+    "assets/images/festivals/lantern.svg": { "source": "custom" },
+    "assets/images/festivals/tangyuan.svg": { "source": "custom" },
+    "assets/images/festivals/zongzi.svg": { "source": "custom" },
+    "assets/images/festivals/sachet.svg": { "source": "custom" },
+    "assets/images/festivals/dragon-boat.svg": { "source": "custom" },
+    "assets/images/festivals/mooncake.svg": { "source": "custom" },
+    "assets/images/festivals/festival-cover.svg": { "source": "custom" }
+  }
+}

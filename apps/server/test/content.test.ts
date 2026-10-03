@@ -306,14 +306,26 @@ describe('pack ZIP import and export', () => {
     expect(registry.getPack(info.id)).toBeUndefined();
   });
 
-  it('replaces only with a greater semver and preserves disabled state', () => {
+  it('允许同版本覆盖及升级，拒绝降级并保留启停状态', () => {
     const registry = create();
     registry.importZip(packZip(extra('1.0.0-beta.2')));
     registry.setEnabled('acme.pack', false);
     expect(registry.importZip(packZip(extra('1.0.0-beta.11'))).enabled).toBe(false);
     expect(registry.importZip(packZip(extra('1.0.0'))).version).toBe('1.0.0');
-    expect(() => registry.importZip(packZip(extra()))).toThrow(expect.objectContaining({ statusCode: 409 }));
+    expect(registry.importZip(packZip(extra())).enabled).toBe(false);
     expect(() => registry.importZip(packZip(extra('1.0.0-beta.99')))).toThrow(expect.objectContaining({ statusCode: 409 }));
+  });
+
+  it('同版本导入覆盖内置包且重启后仍优先读取导入版，源码不被覆盖', () => {
+    const registry = create();
+    const exported = registry.exportZip('sprout.core');
+    const files = unzipSync(exported);
+    const source = JSON.parse(new TextDecoder().decode(files['pack.json']));
+    source.name.zh = '同版本重新导入';
+    files['pack.json'] = strToU8(JSON.stringify(source));
+    expect(registry.importZip(zipSync(files))).toMatchObject({ source: 'installed', name: { zh: '同版本重新导入' } });
+    expect(create().getPack('sprout.core')?.manifest.name.zh).toBe('同版本重新导入');
+    expect(JSON.parse(readFileSync(join(content, 'core/pack.json'), 'utf8')).name.zh).not.toBe('同版本重新导入');
   });
 
   it('leaves the old directory and index intact if the new package is invalid', () => {

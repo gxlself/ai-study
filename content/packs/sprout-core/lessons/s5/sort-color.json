@@ -1,0 +1,58 @@
+{
+  "schemaVersion": 1,
+  "id": "core.s5.sort-color",
+  "title": {"zh": "红的和蓝的", "en": "Red and Blue"},
+  "summary": {"zh": "看看主色，把红的和蓝的分开。", "en": "Look at the main color and sort red and blue."},
+  "ageRange": [24, 29],
+  "domains": ["math", "cognition"],
+  "themeId": "s5-t1",
+  "durationMin": 5,
+  "coView": "required",
+  "audience": "child",
+  "objectives": [
+    {"zh": "在帮助下按主色分两组。", "en": "Sort by main color into two groups with help."},
+    {"zh": "用指或短句说相同的颜色。", "en": "Point to or name matching colors."}
+  ],
+  "cover": {"concept": "apple", "bg": "paper"},
+  "parentGuide": {
+    "intro": "先说清这次只看主色。指着红、蓝篮子各示范一件，再等宝宝选。碗和手套选的是现有蓝色图；蓝莓图偏紫，不拿来分蓝色。结束后关屏分家里的大物品。",
+    "tips": ["先说“主要是哪种颜色”，不纠结叶子和边线。", "宝宝按种类分时，认可发现，再示范本次规则。", "可以只玩两件，分不清时一起放。"],
+    "phrases": [
+      {"zh": "苹果主要是红的。", "en": "The apple is mostly red."},
+      {"zh": "碗主要是蓝的。", "en": "The bowl is mostly blue."},
+      {"zh": "放到同色的篮子里。", "en": "Put it in the basket with the same color."},
+      {"zh": "我们一起试试。", "en": "Let's try together."}
+    ],
+    "why": "分类先看一个特点。成人示范并等待回应，让宝宝通过动手探索规则；本课不把独立分类当作两岁必须达到的目标。",
+    "refs": ["[7]", "[69]", "[71]", "[83]"]
+  },
+  "offline": [{
+    "title": "红蓝收收乐",
+    "minutes": 7,
+    "materials": ["两个浅篮子", "主色清楚的红、蓝大积木或大衣物各两件"],
+    "steps": ["把两种颜色的物品放在地垫上。", "每个篮子先放一件作为样本。", "请宝宝选一件，对照样本再放入。", "说出宝宝的做法：“你把蓝的放一起了。”"],
+    "safety": "成人全程陪同。用品选适龄、完整、无脱落零件的。直径小于3.5厘米的小物件有窒息风险；更大的物品也可能入口。不要用扣子、瓶盖、气球或整颗水果作教具。",
+    "domains": ["math", "cognition"],
+    "question": "你想把哪些放在一起？",
+    "levels": {"easier": "只给一件红的、一件蓝的，成人一起放。", "harder": "增加同色不同形状的物品，仍只按颜色分。"}
+  }],
+  "steps": [{
+    "type": "sort",
+    "parentTip": "蓝色物品用碗和手套；只看图的主色。不要求宝宝说出颜色名。",
+    "props": {
+      "prompt": {"zh": "红的放一起，蓝的放一起。", "en": "Put red things together and blue things together."},
+      "bins": [
+        {"id": "red-bin", "label": {"zh": "红色", "en": "Red"}, "concept": "red", "color": "#E86F6B"},
+        {"id": "blue-bin", "label": {"zh": "蓝色", "en": "Blue"}, "concept": "blue", "color": "#5DA9E9"}
+      ],
+      "items": [
+        {"item": "apple", "bin": "red-bin"},
+        {"item": "bowl", "bin": "blue-bin"},
+        {"item": "strawberry", "bin": "red-bin"},
+        {"item": "gloves", "bin": "blue-bin"},
+        {"item": "tomato", "bin": "red-bin"},
+        {"item": "bowl", "bin": "blue-bin"}
+      ]
+    }
+  }]
+}

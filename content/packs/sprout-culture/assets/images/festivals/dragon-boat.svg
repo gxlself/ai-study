@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="0 0 400 280" role="img" aria-labelledby="title">
+  <title id="title">A friendly dragon boat with three paddles</title>
+  <path d="M62 150 Q94 190 201 187 Q306 185 340 146 L333 187 Q305 224 181 224 Q89 219 62 188Z" fill="#79A67B" stroke="#3E7158" stroke-width="7" stroke-linejoin="round"/>
+  <path d="M65 165 Q41 146 44 109 Q45 90 61 84 L69 67 Q73 62 78 70 L90 91 Q111 92 118 109 Q118 125 99 129 L72 129 79 159" fill="#79A67B" stroke="#3E7158" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"/>
+  <circle cx="80" cy="108" r="5" fill="#3B3226"/>
+  <path d="M57 121 Q72 132 87 123" fill="none" stroke="#3E7158" stroke-width="5" stroke-linecap="round"/>
+  <path d="M335 162 Q369 148 367 126 Q367 115 354 120 Q345 126 349 138" fill="none" stroke="#3E7158" stroke-width="8" stroke-linecap="round"/>
+  <path d="M125 126 147 200 M195 126 217 200 M265 126 287 200" stroke="#A37C58" stroke-width="9" stroke-linecap="round"/>
+  <path d="M136 186 155 181 165 216 Q152 228 145 219Z M206 186 225 181 235 216 Q222 228 215 219Z M276 186 295 181 305 216 Q292 228 285 219Z" fill="#E8C58A" stroke="#A37C58" stroke-width="4" stroke-linejoin="round"/>
+  <path d="M38 247 Q63 237 88 247 T138 247 T188 247 T238 247 T288 247 T338 247 T380 247" fill="none" stroke="#83B8C6" stroke-width="7" stroke-linecap="round"/>
+</svg>

@@ -1,0 +1,58 @@
+{
+  "schemaVersion": 1,
+  "id": "culture.parent-toddler.double-ninth",
+  "title": { "zh": "重阳：把问候送给你", "en": "Double Ninth: A Greeting for You" },
+  "summary": { "zh": "看望或问候熟悉长辈，画一张完整的大问候卡。", "en": "Visit or greet a familiar elder and draw a large greeting card." },
+  "ageRange": [18, 36],
+  "audience": "parent",
+  "domains": ["social", "art", "language"],
+  "themeId": "culture.double-ninth",
+  "tags": ["重阳", "敬老", "家长指引", "家庭包容"],
+  "durationMin": 3,
+  "coView": "required",
+  "objectives": [
+    { "zh": "用自愿的方式关心长辈。", "en": "Show care for an elder in a way you choose." },
+    { "zh": "轮流说、听一句问候。", "en": "Take turns giving and hearing a greeting." }
+  ],
+  "cover": { "concept": "grandpa-paternal", "bg": "room" },
+  "parentGuide": {
+    "intro": "先读完关屏。重阳常有敬老、登高等习俗；本课只做平地问候，不登高。爷爷奶奶、外公外婆或任何熟悉长辈都可以。画卡、挥手、说一句话都是关心，不强迫亲吻或拥抱，也不要求家里必须有某位成员。",
+    "tips": ["使用真实称呼，英文里的爷爷外公都可叫Grandpa，奶奶外婆都可叫Grandma。", "见面前问长辈是否方便，身体不适就改期。", "宝宝说一句后等长辈回应，不连续考礼貌用语。"],
+    "phrases": [
+      { "zh": "你好呀！", "en": "Hello!" },
+      { "zh": "这是送给你的画。", "en": "This drawing is for you." },
+      { "zh": "我们坐一起。", "en": "Let's sit together." },
+      { "zh": "下次再来看你。", "en": "We'll visit again another time." }
+    ],
+    "why": "温暖的家庭仪式与相互回应让关心具体可见。让宝宝选择表达方式，不把社交或身体接触变成任务。",
+    "refs": ["[8]", "[44]", "[80]", "[82]", "[93]"]
+  },
+  "printables": [{ "kind": "cards", "title": "长辈称呼参考大卡", "items": ["grandma-paternal", "grandpa-paternal", "grandma-maternal", "grandpa-maternal"], "size": "large", "showText": true, "showEnglish": true }],
+  "offline": [{
+    "title": "一张问候卡",
+    "minutes": 10,
+    "materials": ["完整大纸", "无毒粗蜡笔"],
+    "steps": ["关屏，让宝宝选一位想问候的熟悉长辈。", "宝宝在大纸画线条，成人代写宝宝的一句问候。", "方便见面时成人陪同送画，宝宝选择说话、挥手或只看。", "停下来听长辈回应，疲倦时温和告别。", "不便见面时先收好画，由成人另行转达，不必视频通话。"],
+    "question": "你想用什么方式问候？",
+    "levels": { "easier": "成人画，宝宝添线条或挥手。", "harder": "宝宝说一句自己的问候，再问长辈一个日常问题。" },
+    "safety": "成人全程陪伴，纸和蜡笔不入口；不登高，不让宝宝拿热茶、药物、重物、坚果或小礼物。直径小于3.5厘米的小物件有窒息风险；尊重双方是否愿意见面与身体接触。",
+    "domains": ["social", "art", "language"]
+  }],
+  "steps": [{
+    "type": "guide",
+    "parentTip": "敬老可以是画卡、挥手或聊天，不强求亲吻拥抱。",
+    "props": {
+      "goal": "用宝宝选择的方式问候一位熟悉长辈。",
+      "materials": ["完整大纸", "无毒粗蜡笔"],
+      "steps": [
+        { "text": "关屏，让宝宝选一位熟悉长辈，称呼按自家习惯。", "concept": "grandpa-paternal", "say": { "zh": "你想问候谁？", "en": "Who would you like to say hello to?" } },
+        { "text": "宝宝画线条，成人把宝宝的问候写在完整大纸上。", "concept": "crayon", "say": { "zh": "这是送给你的画。", "en": "This drawing is for you." } },
+        { "text": "长辈方便时成人陪同送画；宝宝可说话、挥手或只看，不强迫。", "concept": "wave", "say": { "zh": "你好呀！", "en": "Hello!" } },
+        { "text": "停下来听长辈回应，累了就告别；不便见面由成人另行转达。", "say": { "zh": "下次再来看你。", "en": "We'll visit again another time." } }
+      ],
+      "playMin": 10,
+      "observe": ["是否愿意选择想问候的人。", "是否用自己的方式表达关心。", "是否注意对方回应或需要休息。"],
+      "safety": "成人全程陪伴，纸与蜡笔不入口，不登高；远离热茶、药品、重物和小礼物，不强迫身体接触，身体不适时改期。"
+    }
+  }]
+}

@@ -1,0 +1,102 @@
+{
+  "schemaVersion": 1,
+  "id": "core.s5.take-turns",
+  "title": {"zh": "轮流玩滑梯", "en": "Taking Turns on the Slide"},
+  "summary": {"zh": "都想先玩，大人陪着轮流。", "en": "Both want to go first. A grown-up helps them take turns."},
+  "ageRange": [24, 29],
+  "domains": ["social"],
+  "themeId": "s5-t4",
+  "durationMin": 6,
+  "coView": "required",
+  "audience": "child",
+  "objectives": [
+    {"zh": "听懂大家都想玩的感受。", "en": "Hear that both friends want to play."},
+    {"zh": "在大人帮助下体验轮流。", "en": "Explore taking turns with adult support."}
+  ],
+  "cover": {"concept": "playground", "bg": "grass"},
+  "parentGuide": {
+    "intro": "小兔和小熊都想先玩。大人先接住愿望，再帮它们排队、短短轮流。宝宝也需要帮助，不要求独立久等或交出心爱玩具。读完关屏从轮流滚一次球开始。",
+    "tips": ["说“你也想玩”，再说“我陪你等”。", "等待太难时，允许先玩别的。", "具体说“你把球滚给我了”，不贴懂事标签。"],
+    "phrases": [
+      {"zh": "你们都想先玩。", "en": "You both want to go first."},
+      {"zh": "我陪你等。", "en": "I'll wait with you."},
+      {"zh": "轮到你啦。", "en": "It's your turn."},
+      {"zh": "也可以先玩别的。", "en": "You can play with something else first."}
+    ],
+    "why": "轮流需要成人示范和支持。回应感受、给出清楚顺序，再在短游戏中练习；不把等待、分享或自我调节当作两岁必须独立完成的能力。",
+    "refs": ["[7]", "[83]", "[91]", "[95]"]
+  },
+  "offline": [{
+    "title": "你滚一次，我滚一次",
+    "minutes": 6,
+    "materials": ["一个适龄大软球", "防滑地垫"],
+    "steps": ["面对面坐稳，大人先轻轻滚球。", "说“轮到你”，等宝宝推回来。", "球到你身边时说“轮到我”，再滚一次。", "宝宝暂时抱着球也可以，等愿意时再邀请。"],
+    "safety": "成人全程陪同，在平整防滑地面坐着滚，不抛向脸、不追到楼梯或道路边。直径小于3.5厘米的小物件有窒息风险，球须足够大且无可拆零件。真实滑梯仅使用适龄设施，由成人在旁看护；不推挤，不从滑道往上爬。",
+    "domains": ["social"],
+    "question": "等的时候，你想在我身边做什么？",
+    "levels": {"easier": "成人只滚一次，宝宝抱住就结束。", "harder": "宝宝愿意时请另一位照护者加入，每人滚一次，成人说清轮到谁。"}
+  }],
+  "steps": [{
+    "type": "story",
+    "parentTip": "接住双方的愿望，再示范顺序；等待可以有陪伴，也可以先玩别的。",
+    "props": {
+      "title": {"zh": "轮流玩滑梯", "en": "Taking Turns on the Slide"},
+      "pages": [
+        {
+          "scene": {"bg": "grass", "ground": "grass", "sprites": [
+            {"concept": "rabbit", "x": 24, "y": 75, "size": 32, "anim": "none"},
+            {"concept": "playground", "x": 52, "y": 68, "size": 44, "anim": "none"},
+            {"concept": "bear", "x": 81, "y": 75, "size": 32, "anim": "none"}
+          ]},
+          "text": {"zh": "小兔和小熊来到滑梯边。", "en": "Rabbit and Bear come to the slide."}
+        },
+        {
+          "scene": {"bg": "grass", "ground": "grass", "sprites": [
+            {"concept": "rabbit", "x": 26, "y": 74, "size": 34, "anim": "none"},
+            {"concept": "playground", "x": 52, "y": 68, "size": 42, "anim": "none"},
+            {"concept": "bear", "x": 78, "y": 74, "size": 34, "anim": "none"}
+          ]},
+          "text": {"zh": "小兔说：“我先！”小熊也想先。", "en": "Rabbit says, \"Me first!\" Bear wants to go first too."},
+          "prompts": [{"kind": "wh", "zh": "两位朋友都想做什么？", "en": "What do both friends want to do?"}]
+        },
+        {
+          "scene": {"bg": "grass", "ground": "grass", "sprites": [
+            {"concept": "rabbit", "x": 20, "y": 75, "size": 31, "anim": "none"},
+            {"concept": "bear", "x": 49, "y": 75, "size": 31, "anim": "none"},
+            {"concept": "dad", "x": 77, "y": 73, "size": 24, "anim": "none"},
+            {"concept": "playground", "x": 90, "y": 75, "size": 20, "anim": "none"}
+          ]},
+          "text": {"zh": "大人说：“都想玩呀。我们轮流。”", "en": "A grown-up says, \"You both want to play. Let's take turns.\""}
+        },
+        {
+          "scene": {"bg": "grass", "ground": "grass", "sprites": [
+            {"concept": "bear", "x": 23, "y": 76, "size": 32, "anim": "none"},
+            {"concept": "dad", "x": 45, "y": 76, "size": 23, "anim": "none"},
+            {"concept": "playground", "x": 68, "y": 72, "size": 43, "anim": "none"},
+            {"concept": "rabbit", "x": 88, "y": 76, "size": 30, "anim": "none"}
+          ]},
+          "text": {"zh": "小兔先玩。大人陪小熊在旁边等。", "en": "Rabbit goes first. The grown-up waits beside the slide with Bear."},
+          "prompts": [{"kind": "point", "zh": "谁在等？指给我看。", "en": "Who is waiting? Show me."}]
+        },
+        {
+          "scene": {"bg": "grass", "ground": "grass", "sprites": [
+            {"concept": "playground", "x": 23, "y": 72, "size": 43, "anim": "none"},
+            {"concept": "bear", "x": 43, "y": 76, "size": 30, "anim": "none"},
+            {"concept": "rabbit", "x": 69, "y": 77, "size": 32, "anim": "none"},
+            {"concept": "dad", "x": 88, "y": 76, "size": 23, "anim": "none"}
+          ]},
+          "text": {"zh": "小兔离开滑道。现在轮到小熊。", "en": "Rabbit moves clear of the slide. Now it is Bear's turn."}
+        },
+        {
+          "scene": {"bg": "grass", "ground": "grass", "sprites": [
+            {"concept": "rabbit", "x": 25, "y": 76, "size": 34, "anim": "none"},
+            {"concept": "bear", "x": 66, "y": 76, "size": 34, "anim": "none"},
+            {"concept": "playground", "x": 87, "y": 75, "size": 22, "anim": "none"}
+          ]},
+          "text": {"zh": "两位朋友都玩到了，开心地笑。", "en": "Both friends have had a turn. They smile happily."},
+          "prompts": [{"kind": "distancing", "zh": "等的时候，你想做什么？", "en": "What would you like to do while waiting?"}]
+        }
+      ]
+    }
+  }]
+}

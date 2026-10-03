@@ -321,7 +321,7 @@ export class PackRegistry {
           const pack = this.readPack(dir, source);
           const previous = packs.get(pack.manifest.id);
           if (!previous || source === 'custom' ||
-              (source === 'installed' && compareVersions(pack.manifest.version, previous.manifest.version) > 0)) {
+              (source === 'installed' && compareVersions(pack.manifest.version, previous.manifest.version) >= 0)) {
             packs.set(pack.manifest.id, pack);
           } else previous.issues.push({ path: 'pack.json.id', level: 'warning', message: '忽略重复或非更高版本的内容包' });
         }
@@ -434,8 +434,8 @@ export class PackRegistry {
         const candidate = this.readPack(stage, 'installed');
         if (hasErrors(candidate.issues)) validationError(candidate.issues);
         const existing = this.packs.get(candidate.manifest.id);
-        if (existing && compareVersions(candidate.manifest.version, existing.manifest.version) <= 0) {
-          throw new RegistryError(409, 'VERSION_CONFLICT', '只允许导入更高版本的内容包');
+        if (existing && compareVersions(candidate.manifest.version, existing.manifest.version) < 0) {
+          throw new RegistryError(409, 'VERSION_CONFLICT', '不能导入低于当前版本的内容包');
         }
         const other = new Map([...this.packs].filter(([id]) => id !== candidate.manifest.id));
         for (const source of candidate.sources) if (object(source.input) && typeof source.input.id === 'string') {

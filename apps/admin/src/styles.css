@@ -105,5 +105,6 @@ p { line-height: 1.8; }
   .ant-tabs-nav-wrap { min-width: 0; }
 }
 @media (prefers-reduced-motion: reduce) {
-  *, *::before, *::after { scroll-behavior: auto !important; animation-duration: 1ms !important; transition-duration: 1ms !important; }
+  /* 1ms 的全局过渡会影响弹层 left/top 的同步测量。 */
+  *, *::before, *::after { scroll-behavior: auto !important; animation: none !important; transition: none !important; }
 }

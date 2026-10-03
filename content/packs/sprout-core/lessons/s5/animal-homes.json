@@ -1,0 +1,56 @@
+{
+  "schemaVersion": 1,
+  "id": "core.s5.animal-homes",
+  "title": {"zh": "谁住在哪里", "en": "Where Do Animals Live?"},
+  "summary": {"zh": "看看水里游和空中飞的动物。", "en": "Look at animals swimming in water or flying in the air."},
+  "ageRange": [24, 29],
+  "domains": ["science", "cognition"],
+  "themeId": "s5-t3",
+  "durationMin": 5,
+  "coView": "required",
+  "audience": "child",
+  "objectives": [
+    {"zh": "认识水里游和空中飞的动物。", "en": "Notice animals that swim in water or fly in the air."},
+    {"zh": "把活动地方相同的图放一起。", "en": "Group pictures by where the animals move."}
+  ],
+  "cover": {"concept": "fish", "bg": "sea"},
+  "parentGuide": {
+    "intro": "“天上”在这次分组里指空中飞行，不是说鸟一直住在天上。小鱼和鲸在水里；图中的小鸟和蝴蝶会飞，也会落下休息。只用这四种清楚的例子，不放会游也会飞的鸭。",
+    "tips": ["先做一个游泳手势，再做一个轻轻飞的手势。", "宝宝说“鸟在树上”时认可，再解释这次看在哪里移动。", "说明鲸住在水里，但不是鱼。"],
+    "phrases": [
+      {"zh": "小鱼在水里游。", "en": "The fish swims in water."},
+      {"zh": "鲸在海里游。", "en": "The whale swims in the sea."},
+      {"zh": "小鸟飞到空中。", "en": "The bird flies into the air."},
+      {"zh": "蝴蝶也会落下来。", "en": "The butterfly lands too."}
+    ],
+    "why": "清楚说明分类依据，能让宝宝把动物名称和具体动作联系起来。成人接住不同观察，避免把简化分组误讲成动物只有一种生活地点。",
+    "refs": ["[7]", "[71]", "[82]", "[83]"]
+  },
+  "offline": [{
+    "title": "手势里的水和天",
+    "minutes": 7,
+    "materials": ["动物纸书或四张大图卡", "两块地垫"],
+    "steps": ["把两块地垫分别当作水里和空中。", "用手在胸前摆一摆表示游，用手臂轻摆表示飞。", "宝宝选图，你说它怎样移动，再一起放卡。", "读到小鸟时，把卡落回地面，说“还会休息”。"],
+    "safety": "全程在干燥地面假装，不用水桶、鱼缸或池塘作教具。卡片大、边缘平滑，无小贴片。直径小于3.5厘米的小物件有窒息风险。不捉昆虫，不接触野生动物；摆臂不碰到他人。",
+    "domains": ["science", "cognition"],
+    "question": "你想用什么动作表示它在移动？",
+    "levels": {"easier": "只用小鱼和小鸟两张图，成人先做动作。", "harder": "加入鲸和蝴蝶，讨论飞过以后也会停下来。"}
+  }],
+  "steps": [{
+    "type": "sort",
+    "parentTip": "天上组指飞行，不指永久的家。不加入鸭、企鹅或两栖动物。",
+    "props": {
+      "prompt": {"zh": "水里游，还是天上飞？", "en": "Swimming in water or flying in the air?"},
+      "bins": [
+        {"id": "water", "label": {"zh": "水里游", "en": "Swimming in water"}, "concept": "sea", "color": "#5DA9E9"},
+        {"id": "sky", "label": {"zh": "天上飞", "en": "Flying in the air"}, "concept": "cloud", "color": "#F3CE58"}
+      ],
+      "items": [
+        {"item": "fish", "bin": "water"},
+        {"item": "bird", "bin": "sky"},
+        {"item": "whale", "bin": "water"},
+        {"item": "butterfly", "bin": "sky"}
+      ]
+    }
+  }]
+}

@@ -319,7 +319,8 @@ describe('六类活动生命周期与资源', () => {
     expect(storyActivity.speeches?.(storyProps)).toContainEqual(PHRASES.storyEnd);
     expect(sequenceActivity.speeches?.({ ...sequenceProps, mode: 'order' })).toContainEqual(PHRASES.whatToDoNext);
     expect(movementActivity.speeches?.(movementProps)).toContainEqual(PHRASES.moveDone);
-    expect(songActivity.speeches?.(songProps)).toContainEqual({ en: 'Sing softly' });
+    expect(songActivity.speeches?.(songProps)).toContainEqual(songProps.title);
+    expect(songActivity.speeches?.(songProps)).not.toContainEqual({ en: 'Sing softly' });
   });
 });
 

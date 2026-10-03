@@ -1,0 +1,83 @@
+{
+  "schemaVersion": 1,
+  "id": "core.s5.thank-you",
+  "title": {"zh": "请和谢谢", "en": "Please and Thank You"},
+  "summary": {"zh": "请求、感谢、修复，在生活里说。", "en": "Ask, thank, and make things right in everyday life."},
+  "ageRange": [24, 29],
+  "domains": ["social", "english"],
+  "themeId": "s5-t4",
+  "durationMin": 5,
+  "coView": "required",
+  "audience": "child",
+  "objectives": [
+    {"zh": "听请求和感谢的简单短句。", "en": "Hear short phrases for asking and thanking."},
+    {"zh": "知道道歉后可以帮忙修复。", "en": "Notice that saying sorry can go with making things right."}
+  ],
+  "cover": {"concept": "book", "bg": "room"},
+  "parentGuide": {
+    "intro": "跟故事听please、thank you、sorry和you're welcome。重在真实请求、回应和修复，不是背四个词。成人先示范，宝宝点头或递物也算参与。不以说“请”“谢谢”作为得到帮助的条件。",
+    "tips": ["先接住请求，再自然示范礼貌短句。", "别人也可以暂时不借，礼貌不是必须答应。", "道歉连接捡起、归还或帮忙，不强迫重复和亲抱。"],
+    "phrases": [
+      {"zh": "请帮我拿书。", "en": "Please help me with the book."},
+      {"zh": "谢谢你。", "en": "Thank you."},
+      {"zh": "对不起，我帮你搭。", "en": "I'm sorry. I'll help you stack them."},
+      {"zh": "不客气。", "en": "You're welcome."}
+    ],
+    "why": "礼貌短句放在真人互动和可见行动里更有意义。成人示范请求、感谢和修复，允许语言和手势回应，不把英语或礼貌当作服从测试。",
+    "refs": ["[7]", "[50]", "[53]", "[82]"]
+  },
+  "offline": [{
+    "title": "请帮我递一本书",
+    "minutes": 6,
+    "materials": ["宝宝喜欢的纸书", "地垫"],
+    "steps": ["坐在宝宝旁边，指着手边的书提出请求。", "宝宝愿意递书时，成人说“谢谢你”。", "邀请宝宝用指、手势或短句请你帮忙。", "成人及时回应，再说一句“不客气”。", "生活里有小失误时，成人说“对不起”并实际整理或归还。"],
+    "safety": "成人陪同。书放在手边，不让宝宝攀高拿书；边缘平滑、无可拆小零件。直径小于3.5厘米的小物件有窒息风险。不故意毁坏作品、夺走玩具或延迟基本照护来要求道歉、感谢。",
+    "domains": ["social", "english"],
+    "question": "你想请我帮什么忙？",
+    "levels": {"easier": "宝宝只指书，成人示范一句请求并帮忙。", "harder": "宝宝愿意时说一个中文或英文短句，再交换请求者和帮助者。"}
+  }],
+  "steps": [{
+    "type": "story",
+    "parentTip": "先回应宝宝，再示范短句。“对不起”配实际修复，不配强迫原谅。",
+    "props": {
+      "title": {"zh": "请和谢谢", "en": "Please and Thank You"},
+      "pages": [
+        {
+          "scene": {"bg": "room", "ground": "floor", "sprites": [
+            {"concept": "rabbit", "x": 25, "y": 75, "size": 34, "anim": "none"},
+            {"concept": "bear", "x": 70, "y": 75, "size": 34, "anim": "none"},
+            {"concept": "book", "x": 70, "y": 84, "size": 18, "anim": "none", "z": 2}
+          ]},
+          "text": {"zh": "小兔说：“请帮我拿书。”", "en": "Rabbit says, \"Please help me with the book.\""},
+          "prompts": [{"kind": "point", "zh": "小兔想要什么？", "en": "What does Rabbit want?"}]
+        },
+        {
+          "scene": {"bg": "room", "ground": "floor", "sprites": [
+            {"concept": "rabbit", "x": 30, "y": 75, "size": 34, "anim": "none"},
+            {"concept": "book", "x": 48, "y": 76, "size": 20, "anim": "none", "z": 2},
+            {"concept": "bear", "x": 73, "y": 75, "size": 34, "anim": "none"}
+          ]},
+          "text": {"zh": "小熊递来书。小兔说：“谢谢你。”", "en": "Bear passes the book. Rabbit says, \"Thank you.\""}
+        },
+        {
+          "scene": {"bg": "room", "ground": "floor", "sprites": [
+            {"concept": "rabbit", "x": 25, "y": 75, "size": 34, "anim": "none"},
+            {"concept": "blocks", "x": 49, "y": 82, "size": 20, "anim": "none"},
+            {"concept": "bear", "x": 76, "y": 75, "size": 34, "anim": "none"}
+          ]},
+          "text": {"zh": "积木碰倒了。小兔说：“对不起，我帮你搭。”", "en": "Rabbit bumps the blocks over. \"I'm sorry. I'll help you stack them,\" says Rabbit."},
+          "prompts": [{"kind": "wh", "zh": "小兔可以怎样帮忙？", "en": "How can Rabbit help?"}]
+        },
+        {
+          "scene": {"bg": "room", "ground": "floor", "sprites": [
+            {"concept": "rabbit", "x": 23, "y": 75, "size": 34, "anim": "none"},
+            {"concept": "blocks", "x": 49, "y": 72, "size": 25, "anim": "none"},
+            {"concept": "bear", "x": 77, "y": 75, "size": 34, "anim": "none"}
+          ]},
+          "text": {"zh": "小熊说：“谢谢你帮忙。”小兔说：“不客气。”", "en": "Bear says, \"Thank you for helping.\" Rabbit says, \"You're welcome.\""},
+          "prompts": [{"kind": "distancing", "zh": "今天谁帮过你？", "en": "Who helped you today?"}]
+        }
+      ]
+    }
+  }]
+}

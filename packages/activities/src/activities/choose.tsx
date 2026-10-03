@@ -3,7 +3,7 @@ import { PHRASES, type ChooseOption, type ChooseProps } from '@sprout/schema';
 import { chooseOptions, type ActivityContext } from '@sprout/plugin-sdk';
 import {
   Action, ConceptImage, conceptSpeech, defineBuiltin, InputHint, Stage, Text,
-  useBusy, useNav, useSession, useTask,
+  speechForConcept, useBusy, useNav, useSession, useTask,
 } from '../shared';
 
 function ChooseActivity({ ctx }: { ctx: ActivityContext<ChooseProps> }) {
@@ -64,7 +64,10 @@ function ChooseActivity({ ctx }: { ctx: ActivityContext<ChooseProps> }) {
 
   useNav(ctx, (key) => {
     if (key === 'left' || key === 'right') {
-      const index = (focusIndex + (key === 'right' ? 1 : options.length - 1)) % options.length;
+      const focused = ctx.focus.current();
+      const focusedIndex = focused ? buttons.current.indexOf(focused as HTMLButtonElement) : -1;
+      const currentIndex = focusedIndex >= 0 ? focusedIndex : focusIndex;
+      const index = (currentIndex + (key === 'right' ? 1 : options.length - 1)) % options.length;
       setFocusIndex(index);
       ctx.focus.focus(buttons.current[index]);
       return true;
@@ -82,7 +85,7 @@ function ChooseActivity({ ctx }: { ctx: ActivityContext<ChooseProps> }) {
 
   return <Stage ctx={ctx} className="spa-choose">
     <Text ctx={ctx} text={round.prompt} className="spa-question" />
-    <div className="spa-choose-options">
+    <div className="spa-choose-options" data-round-index={roundIndex}>
       {options.map((option, index) => {
         const concept = option.concept ? ctx.concept(option.concept) : undefined;
         const label = option.label ?? concept ?? { zh: option.id };
@@ -109,4 +112,14 @@ function ChooseActivity({ ctx }: { ctx: ActivityContext<ChooseProps> }) {
   </Stage>;
 }
 
-export const chooseActivity = defineBuiltin<ChooseProps>('choose', ChooseActivity, () => [PHRASES.tryAgain]);
+export const chooseActivity = defineBuiltin<ChooseProps>('choose', ChooseActivity, (props) => [
+  PHRASES.tryAgain,
+  ...props.rounds.flatMap((round) => [
+    round.prompt, ...(round.explain ? [round.explain] : []),
+    ...round.options.flatMap((option) => {
+      if (typeof option === 'string') return [];
+      const speech = speechForConcept(option.concept) ?? option.label;
+      return speech ? [speech] : [];
+    }),
+  ]),
+]);

@@ -1,0 +1,71 @@
+{
+  "schemaVersion": 1,
+  "id": "culture.parent-toddler.dragon-boat-festival",
+  "title": { "zh": "端午：陆地小龙舟", "en": "Dragon Boat Festival: Paddle on Dry Land" },
+  "summary": { "zh": "看粽子和香囊大卡，在干燥地面空手划桨、停一停。", "en": "See zongzi and sachet cards, then paddle with empty hands and pause on dry land." },
+  "ageRange": [18, 36],
+  "audience": "parent",
+  "domains": ["motor", "social", "language", "art"],
+  "themeId": "culture.dragon-boat-festival",
+  "tags": ["端午", "家长指引", "龙舟", "香囊", "只看图不试吃"],
+  "durationMin": 3,
+  "coView": "required",
+  "objectives": [
+    { "zh": "和家人慢慢划、一起停。", "en": "Paddle slowly and pause together." },
+    { "zh": "认识粽子和香囊的图片。", "en": "Notice pictures of zongzi and a scented sachet." }
+  ],
+  "cover": { "concept": "fest-dragon-boat", "bg": "sky" },
+  "parentGuide": {
+    "intro": "先读完关屏。端午有吃粽子、划龙舟、佩戴香囊等习俗；各地做法不同。本课粽子不试吃、香囊只看图，随后在干燥地面空手划桨。坐稳慢慢伸手收手，不用棍子、真船或水盆，不比赛谁快。",
+    "tips": ["成人先示范一次，宝宝可以只看或自愿模仿。", "划两下停一下，等待宝宝决定是否继续。", "香囊不提供驱病、驱虫等功效承诺，不给宝宝佩戴。"],
+    "phrases": [
+      { "zh": "这是龙舟。", "en": "This is a dragon boat." },
+      { "zh": "我们慢慢划。", "en": "Let's paddle slowly." },
+      { "zh": "一起停一停。", "en": "Let's pause together." },
+      { "zh": "香囊是小布袋。", "en": "A scented sachet is a little cloth bag." }
+    ],
+    "why": "共同动作和轮流交流让节日贴近真实相伴。给宝宝继续或停止的选择，不把动作完成量当成绩。",
+    "refs": ["[8]", "[80]", "[82]", "[83]", "[93]"]
+  },
+  "printables": [{ "kind": "cards", "title": "端午习俗大卡", "items": ["fest-dragon-boat", "fest-zongzi", "fest-sachet"], "size": "large", "showText": true, "showEnglish": true }],
+  "offline": [
+    {
+      "title": "干地划龙舟",
+      "minutes": 8,
+      "materials": ["防滑地垫", "龙舟大卡"],
+      "steps": ["关屏，在干燥防滑地面并排坐稳。", "看一眼龙舟卡，成人收好后空手示范伸手、收手。", "一起慢慢划两下，再说停一停。", "让宝宝选择继续或结束，不加速、不竞争。"],
+      "question": "你想再划一下，还是停下来？",
+      "levels": { "easier": "只做一次空手伸和收，成人描述。", "harder": "轮流由成人或宝宝发出轻声的停一停信号。" },
+      "safety": "成人全程陪伴，在干燥防滑地面坐稳；不用棍、桨、真船、水盆或可倾倒的纸箱，不拉拽手臂、不大幅摇晃。远离水边，不把龙舟比赛场地当幼儿活动场所。",
+      "domains": ["motor", "social"]
+    },
+    {
+      "title": "纸上香囊",
+      "minutes": 5,
+      "materials": ["完整大纸", "无毒粗蜡笔", "香囊大卡"],
+      "steps": ["成人展示香囊大卡，说明是小布袋。", "成人在大纸画布袋轮廓，让宝宝添颜色或线条。", "说说宝宝的图案，收好纸和蜡笔。"],
+      "question": "你的香囊画上想放什么颜色？",
+      "levels": { "easier": "只看大卡，成人描述颜色。", "harder": "宝宝说说想画的线条，成人按口述添画。" },
+      "safety": "成人全程陪伴，纸和蜡笔不入口；香囊只看图，不提供草药、香料、精油、绳子或小挂件，不佩戴、不塞入口鼻。粽子黏，有窒息风险，切小压扁也不是安全保证，本课不试吃。",
+      "domains": ["art", "language"]
+    }
+  ],
+  "steps": [{
+    "type": "guide",
+    "parentTip": "全程空手坐稳划，香囊只看图，不佩戴。",
+    "props": {
+      "goal": "认识端午图片，在干燥地面一起慢划和暂停。",
+      "materials": ["端午大卡", "防滑地垫", "完整大纸", "无毒粗蜡笔"],
+      "steps": [
+        { "text": "关屏，看龙舟和粽子大卡各一次，不拿真食物试吃。", "concept": "fest-zongzi", "say": { "zh": "这是粽子。", "en": "This is zongzi." } },
+        { "text": "看香囊卡，说明是小布袋；有兴趣时画轮廓添线条，不制作佩戴物。", "concept": "fest-sachet", "say": { "zh": "香囊是小布袋。", "en": "A scented sachet is a little cloth bag." } },
+        { "text": "收好蜡笔，和宝宝并排坐稳，成人空手慢慢伸手、收手。", "concept": "fest-dragon-boat", "say": { "zh": "我们慢慢划。", "en": "Let's paddle slowly." } },
+        { "text": "划两下停一下，等待宝宝选择继续、只看或结束。", "say": { "zh": "一起停一停。", "en": "Let's pause together." } },
+        { "text": "轻声回应宝宝的选择，一起收好材料，不比赛谁做得多。", "say": { "zh": "你想休息啦。", "en": "You want a rest." } }
+      ],
+      "playMin": 10,
+      "observe": ["是否愿意关注端午图片。", "是否尝试小幅伸手、收手或停一下。", "是否能表达继续或停止，不要求同步准确。"],
+      "safety": "成人全程陪伴，在干燥地面空手坐稳，不拉手、不用棍或水盆。粽子有黏性窒息风险，切小压扁也不是安全保证，不试吃。香囊只看图，不佩戴，不给草药、绳子、小物件；纸和蜡笔不入口。"
+    }
+  }]
+}

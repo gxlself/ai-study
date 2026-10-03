@@ -1,0 +1,88 @@
+{
+  "id": "s5",
+  "title": {"zh": "小小思考者", "en": "Little Thinker"},
+  "subtitle": {"zh": "一起分、数、找，再去生活里玩", "en": "Sort, count, and find together, then play offline"},
+  "ageRange": [24, 29],
+  "focus": [
+    {"zh": "在帮助下按一个特点分类。", "en": "Sort by one feature with adult help."},
+    {"zh": "一起点数，数完说出总数。", "en": "Count together and name the total."},
+    {"zh": "慢慢看一到三个，不急着回答。", "en": "Explore groups of one to three without rushing."},
+    {"zh": "用短句说位置、动物和天气。", "en": "Use short phrases for positions, animals, and weather."},
+    {"zh": "在陪伴中练习轮流和表达感受。", "en": "Practice taking turns and sharing feelings with support."},
+    {"zh": "一起唱、动、读，再关屏去玩。", "en": "Sing, move, and read together, then turn off the screen."}
+  ],
+  "screen": {
+    "sessionMaxMin": 10,
+    "dailyMaxMin": 20,
+    "lessonsPerDay": 2,
+    "coView": "required",
+    "childScreen": "default"
+  },
+  "themes": [
+    {
+      "id": "s5-t1",
+      "title": {"zh": "分一分", "en": "Sorting"},
+      "description": {"zh": "看看颜色和种类，把相似的放一起。", "en": "Notice colors and kinds, and group similar things."},
+      "weeks": 4,
+      "domains": ["math", "cognition"],
+      "lessons": ["core.s5.sort-color", "core.s5.sort-kind", "core.s5.odd-one"],
+      "offlineFocus": ["用主色清楚的大物品分红、蓝。", "先示范一件，再等宝宝尝试。", "说清这次按什么分，不求全对。"]
+    },
+    {
+      "id": "s5-t2",
+      "title": {"zh": "数到五", "en": "Count to 5"},
+      "description": {"zh": "点一个说一个，体验小数量的变化。", "en": "Touch one as you say one number and explore small groups."},
+      "weeks": 4,
+      "domains": ["math", "music"],
+      "lessons": ["core.s5.count-five", "core.s5.quick-look", "core.s5.five-ducks"],
+      "offlineFocus": ["从一两个大物品开始点数。", "数完再说总数，不考认数字。", "儿歌里的倒数只作共同游戏。"]
+    },
+    {
+      "id": "s5-t3",
+      "title": {"zh": "动物的家", "en": "Animal Homes"},
+      "description": {"zh": "看动物的特点，听熊猫吃、爬和睡。", "en": "Notice animal features and read about a panda eating, climbing, and resting."},
+      "weeks": 4,
+      "domains": ["science", "cognition", "english", "language"],
+      "lessons": ["core.s5.animal-homes", "core.s5.wild-animals", "core.s5.panda-story"],
+      "offlineFocus": ["说水里游、空中飞，不说鸟住在天上。", "共读动物书，不靠近或喂野生动物。", "熊猫会爬树，宝宝只在地面假装。"]
+    },
+    {
+      "id": "s5-t4",
+      "title": {"zh": "轮流与分享", "en": "Taking Turns"},
+      "description": {"zh": "听见彼此的感受，练习短短的轮流。", "en": "Listen to each other's feelings and practice brief turns."},
+      "weeks": 4,
+      "domains": ["social", "language", "english"],
+      "lessons": ["core.s5.take-turns", "core.s5.how-feel", "core.s5.thank-you"],
+      "offlineFocus": ["成人先示范，不强迫交出心爱玩具。", "问宝宝怎么想，不把感受分对错。", "礼貌用语放在真实帮助和修复里。"]
+    },
+    {
+      "id": "s5-t5",
+      "title": {"zh": "上下里外", "en": "Where Is It?"},
+      "description": {"zh": "跟着小猫找位置，用动作说上和下。", "en": "Find the cat's position and explore up and down through movement."},
+      "weeks": 4,
+      "domains": ["math", "language", "motor", "music", "english"],
+      "lessons": ["core.s5.where-cat", "core.s5.up-down", "core.s5.itsy-spider"],
+      "offlineFocus": ["用玩偶和开口纸盒说里、外、上、下。", "先做一步，再邀请宝宝给大人指令。", "不上家具，不钻封闭箱，不模仿攀高。"]
+    },
+    {
+      "id": "s5-t6",
+      "title": {"zh": "天气", "en": "Weather"},
+      "description": {"zh": "看看窗外的天气，商量出门带什么。", "en": "Notice the weather outside and choose what to take along."},
+      "weeks": 6,
+      "domains": ["science", "english", "life", "music"],
+      "lessons": ["core.s5.weather", "core.s5.what-to-wear", "core.s5.rain-song"],
+      "offlineFocus": ["观察本地天气，没有雪也能看书。", "衣物按实际冷热选，不只看天气图标。", "下雨唱歌是愿望，不会把雨唱停。"]
+    }
+  ],
+  "dailyRhythm": [
+    "起床后从关好的窗边看天气。说一句“今天有云”。等宝宝指、看或说，不直视太阳。",
+    "穿衣时给两个合适的选择。宝宝挑一件，大人按实际冷热帮助调整。",
+    "收衣物时选红、蓝两种。先按颜色分，另一次再按种类分，不同时加两条规则。",
+    "准备餐具时一起点数一到三把勺子。点一个说一个，数完说“一共三把”。进餐时不用屏。",
+    "地板游戏时把玩偶放在盒子里或旁边。说出位置，再邀请宝宝摆给你看。",
+    "户外玩耍时由成人看护。轮流滚球或玩适龄滑梯，等待时可以先玩别的。",
+    "白天共读几页书。宝宝说“熊猫吃”，你接“熊猫吃竹子”，停下来等下一次回应。",
+    "睡前关好设备。用纸书和真人哼唱收尾，睡前一小时不看屏，也不背景播放。"
+  ],
+  "milestonesAt": [24, 30]
+}

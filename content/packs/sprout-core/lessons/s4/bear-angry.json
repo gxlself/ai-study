@@ -1,0 +1,133 @@
+{
+  "schemaVersion": 1,
+  "id": "core.s4.bear-angry",
+  "title": { "zh": "小熊生气了", "en": "Bear Feels Angry" },
+  "summary": { "zh": "积木倒了，妈妈陪小熊再试。", "en": "The blocks fall, and Mama Bear stays close." },
+  "themeId": "s4-t4",
+  "ageRange": [18, 23],
+  "domains": ["social"],
+  "audience": "child",
+  "durationMin": 6,
+  "coView": "required",
+  "objectives": [
+    { "zh": "听见生气时可以找大人。", "en": "Hear that a grown-up can help when we feel angry." },
+    { "zh": "看看陪伴、休息和再试。", "en": "Notice staying close, resting, and trying again." }
+  ],
+  "cover": { "concept": "bear", "bg": "room" },
+  "printables": [
+    { "kind": "cards", "title": "小熊与心情故事卡", "items": ["bear", "blocks", "angry", "hug", "calm"], "size": "large", "showText": true, "showEnglish": true }
+  ],
+  "parentGuide": {
+    "intro": "共看默认关闭，也能用卡讲故事。只在平静时共读，不为止哭开屏。较大的熊是熊妈妈。可换成家中照护者的称呼。呼吸只由大人示范，宝宝不必跟拍。",
+    "tips": ["生气是可以有的，不是坏宝宝。", "心情脸是提示图，不要求认出表情。", "不想抱或呼吸，就安静陪着。", "收尾气球只是动画，不拿真气球练呼吸。"],
+    "phrases": [
+      { "zh": "积木倒了，你生气了。", "en": "The blocks fell. You're angry." },
+      { "zh": "我在这里陪着你。", "en": "I'm here with you." },
+      { "zh": "想抱抱吗？", "en": "Would you like a hug?" },
+      { "zh": "想再搭，还是先休息？", "en": "Build again, or rest first?" }
+    ],
+    "why": "故事示范接纳情绪和成人陪伴。幼儿的调节仍需要照护者帮助。呼吸不是必做任务，也不保证立即平静。",
+    "refs": ["3", "6", "8", "82", "90", "91"]
+  },
+  "offline": [
+    {
+      "title": "陪小熊再搭一次",
+      "minutes": 6,
+      "materials": ["安全大毛绒熊", "两三块轻质大积木"],
+      "steps": ["关屏，把毛绒熊放在身边。", "大人用两块积木搭低塔。", "塔自然倒时，说它倒了。", "问宝宝想再搭还是先休息。", "按宝宝的选择陪着做。"],
+      "safety": "不故意推倒宝宝的作品诱发情绪。玩具无松脱眼睛、纽扣或磁铁。小物件直径小于3.5厘米有窒息风险。低塔远离脸和手脚，不向人扔。",
+      "domains": ["social"],
+      "question": "小熊想让我们怎么陪它？",
+      "levels": { "easier": "抱着玩具听大人讲，不搭塔。", "harder": "请宝宝用指或动作选再搭、休息或请你帮忙。" }
+    },
+    {
+      "title": "平静时练一句求助",
+      "minutes": 3,
+      "materials": ["一个宝宝喜欢的大玩具"],
+      "steps": ["大人拿玩具，示范说帮帮我。", "宝宝看或伸手时，及时回应。", "让宝宝选择自己试或一起做。"],
+      "safety": "不扣住玩具逼宝宝开口。不把求助练习放在激烈哭闹时。成人在旁，无小零件。不用真气球、吸管或纸屑练呼吸。",
+      "domains": ["social"],
+      "question": "你想让我怎么帮你？",
+      "levels": { "easier": "宝宝伸手或看你，大人就提供帮助。", "harder": "在宝宝愿意时，示范帮帮我或Help me，不要求重复。" }
+    }
+  ],
+  "steps": [
+    {
+      "type": "story",
+      "title": { "zh": "妈妈陪着小熊", "en": "Mama Bear Stays Close" },
+      "parentTip": "较大的熊代表熊妈妈，小脸卡代表心情；积木画面为示意。",
+      "props": {
+        "title": { "zh": "小熊生气了", "en": "Bear Feels Angry" },
+        "pages": [
+          {
+            "scene": { "bg": "room", "ground": "floor", "sprites": [
+              { "concept": "bear", "x": 25, "y": 74, "size": 35, "anim": "none" },
+              { "concept": "square", "x": 67, "y": 50, "size": 15, "anim": "none" },
+              { "concept": "square", "x": 67, "y": 65, "size": 15, "anim": "none" },
+              { "concept": "square", "x": 67, "y": 80, "size": 15, "anim": "none" }
+            ] },
+            "text": { "zh": "小熊搭了一座小塔。", "en": "Bear builds a little tower." }
+          },
+          {
+            "scene": { "bg": "room", "ground": "floor", "sprites": [
+              { "concept": "bear", "x": 25, "y": 74, "size": 35, "anim": "none" },
+              { "concept": "square", "x": 53, "y": 80, "size": 15, "anim": "none" },
+              { "concept": "square", "x": 70, "y": 80, "size": 15, "anim": "none" },
+              { "concept": "square", "x": 87, "y": 80, "size": 15, "anim": "none" },
+              { "concept": "angry", "x": 25, "y": 25, "size": 18, "anim": "none" }
+            ] },
+            "text": { "zh": "积木倒了。小熊生气了。", "en": "The blocks fall. Bear feels angry." },
+            "prompts": [{ "kind": "wh", "zh": "积木怎么了？", "en": "What happened to the blocks?" }]
+          },
+          {
+            "scene": { "bg": "room", "ground": "floor", "sprites": [
+              { "concept": "bear", "x": 26, "y": 74, "size": 32, "anim": "none" },
+              { "concept": "bear", "x": 65, "y": 72, "size": 42, "flip": true, "anim": "none" },
+              { "concept": "angry", "x": 26, "y": 25, "size": 18, "anim": "none" }
+            ] },
+            "text": { "zh": "妈妈说：“你生气了。我在这里。”", "en": "Mama Bear says, \"You're angry. I'm here.\""}
+          },
+          {
+            "scene": { "bg": "room", "ground": "floor", "sprites": [
+              { "concept": "bear", "x": 32, "y": 74, "size": 32, "anim": "none" },
+              { "concept": "bear", "x": 64, "y": 72, "size": 42, "flip": true, "anim": "none" },
+              { "concept": "hug", "x": 49, "y": 25, "size": 18, "anim": "none" }
+            ] },
+            "text": { "zh": "小熊说：“抱抱我。”妈妈陪着它。", "en": "Bear says, \"Hug me.\" Mama Bear stays close." },
+            "prompts": [{ "kind": "wh", "zh": "小熊想要什么？", "en": "What does Bear want?" }]
+          },
+          {
+            "scene": { "bg": "room", "ground": "floor", "sprites": [
+              { "concept": "bear", "x": 30, "y": 74, "size": 32, "anim": "none" },
+              { "concept": "bear", "x": 67, "y": 72, "size": 42, "flip": true, "anim": "none" }
+            ] },
+            "text": { "zh": "它们轻轻吸气，再慢慢呼气。", "en": "They breathe in gently, then breathe out slowly." }
+          },
+          {
+            "scene": { "bg": "room", "ground": "floor", "sprites": [
+              { "concept": "bear", "x": 21, "y": 74, "size": 32, "anim": "none" },
+              { "concept": "bear", "x": 80, "y": 72, "size": 42, "flip": true, "anim": "none" },
+              { "concept": "square", "x": 50, "y": 65, "size": 15, "anim": "none" },
+              { "concept": "square", "x": 50, "y": 80, "size": 15, "anim": "none" },
+              { "concept": "calm", "x": 21, "y": 25, "size": 18, "anim": "none" }
+            ] },
+            "text": { "zh": "歇了一会儿，小熊想再搭。妈妈陪它。", "en": "After a rest, Bear wants to build again. Mama Bear helps." },
+            "prompts": [{ "kind": "point", "zh": "小熊把积木放在哪里？", "en": "Where is Bear putting the blocks?" }]
+          }
+        ]
+      }
+    },
+    {
+      "type": "calm",
+      "title": { "zh": "慢慢收尾", "en": "A Gentle Ending" },
+      "parentTip": "家长轻柔示范即可，宝宝照常呼吸。不屏息、不强求吸气深或跟拍。",
+      "props": {
+        "visual": "balloon",
+        "cycles": 2,
+        "inhaleSec": 2,
+        "exhaleSec": 2,
+        "say": { "zh": "我陪着你。然后去玩真的积木。", "en": "I'm with you. Then we'll play with real blocks." }
+      }
+    }
+  ]
+}

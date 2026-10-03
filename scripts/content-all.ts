@@ -20,6 +20,7 @@ export async function main(args = process.argv.slice(2)): Promise<void> {
     return value ? [`--${key}`, value] : [];
   });
   const stages: [string, string[]][] = [
+    ['merge-route', common],
     ['fetch-assets', [...common, ...values.force ? ['--force'] : []]],
     ['gen-audio', [...common, ...audio, ...values.prune ? ['--prune'] : []]],
     ['validate-content', [...common, ...values.strict ? ['--strict'] : []]],

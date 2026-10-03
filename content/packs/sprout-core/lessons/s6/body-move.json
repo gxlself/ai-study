@@ -1,0 +1,85 @@
+{
+  "schemaVersion": 1,
+  "id": "core.s6.body-move",
+  "title": { "zh": "身体动起来", "en": "Let's Move Our Bodies" },
+  "summary": { "zh": "舒服地动一动，再坐下歇一歇。", "en": "Move comfortably, then sit and rest." },
+  "ageRange": [30, 36],
+  "domains": ["motor"],
+  "themeId": "s6-t5",
+  "tags": ["safe-movement", "adaptable", "calm-ending"],
+  "durationMin": 5,
+  "coView": "required",
+  "audience": "child",
+  "objectives": [
+    { "zh": "尝试几种安全的小动作。", "en": "Try several small, safe movements." },
+    { "zh": "感觉累了就停下休息。", "en": "Stop and rest when you feel tired." }
+  ],
+  "cover": { "concept": "jump", "bg": "grass" },
+  "parentGuide": {
+    "intro": "先清出防滑空地，成人贴近照看。原地跑可改踏步，跳可改踮脚，单脚站先扶稳，只抬一下就放下。不强压拉伸，不追求站几秒。星星只作收尾，孩子自然呼吸即可。",
+    "tips": [
+      "先看成人示范，动作时看脚边。",
+      "摸不到脚尖也可以，只弯一点。",
+      "转圈只慢慢一圈，头晕就停。",
+      "任何动作都能跳过或坐着替代。"
+    ],
+    "phrases": [
+      { "zh": "在原地，轻轻动。", "en": "Move gently in one spot." },
+      { "zh": "我在旁边扶着你。", "en": "I am beside you to help you stay steady." },
+      { "zh": "够不到也没关系。", "en": "It is okay if you cannot reach." },
+      { "zh": "坐下休息，自然呼吸。", "en": "Sit and rest. Breathe naturally." }
+    ],
+    "why": "短动作只是日常活动的引子，不替代户外和自由玩耍。能力与兴趣不同，提供替代动作；呼吸收尾不是治疗或耐力训练。",
+    "refs": ["[1]", "[6]", "[7]", "[83]"]
+  },
+  "offline": [
+    {
+      "title": "选两个动作去玩",
+      "minutes": 8,
+      "materials": ["平整防滑的空地", "必要时使用固定扶手或稳固座位"],
+      "steps": [
+        "关屏，检查脚边没有障碍。",
+        "让孩子选两个舒服的动作。",
+        "成人示范，孩子按自己的速度做。",
+        "做一小会儿，就停下听听身体感觉。",
+        "坐稳休息，需要时小口喝水。"
+      ],
+      "safety": "成人近距离照看，远离楼梯、玻璃、湿地和尖角。单脚抬脚先扶牢固定支撑，不用带轮椅或会滑的家具。不拉拽手臂，不跳下高处，不强压腰腿，不连续转圈；疼痛、头晕、气喘不适或不愿继续时停止。喝水时坐稳，不边跑边喝。",
+      "domains": ["motor"],
+      "question": "你的身体现在想动一动，还是歇一歇？",
+      "levels": {
+        "easier": "坐稳做拍手、抬手，不做跳跃和转圈。",
+        "harder": "孩子选两个已能安全完成的动作，按顺序各做一次；不增加难度或强度。"
+      }
+    }
+  ],
+  "steps": [
+    {
+      "type": "movement",
+      "title": { "zh": "跟着家长慢慢动", "en": "Move Gently with Your Grown-up" },
+      "parentTip": "看成人示范，动作时不盯屏。扶稳抬脚，不考单脚站；可踏步、踮脚或坐姿替代。",
+      "props": {
+        "intro": { "zh": "腾出安全空地，舒服地动一动。", "en": "Make a safe space and move comfortably." },
+        "moves": [
+          { "concept": "run", "name": { "zh": "原地轻跑", "en": "Gentle Jog in Place" }, "say": { "zh": "原地轻跑，也可以踏步。", "en": "Jog gently in place, or march instead." }, "seconds": 8 },
+          { "concept": "jump", "name": { "zh": "轻轻跳", "en": "A Gentle Jump" }, "say": { "zh": "轻跳一下，稳稳落地。", "en": "Try one small jump and land steadily." }, "seconds": 6 },
+          { "concept": "foot", "name": { "zh": "扶稳抬一脚", "en": "Lift One Foot with Support" }, "say": { "zh": "扶稳，抬一只脚。放下休息。", "en": "Hold steady support, lift one foot briefly, then put it down." }, "seconds": 6 },
+          { "concept": "foot", "name": { "zh": "轻弯腰摸脚尖", "en": "A Gentle Reach toward Your Toes" }, "say": { "zh": "轻弯腰，试摸脚尖。够不到也没关系。", "en": "Bend gently toward your toes. It is okay if you cannot reach." }, "seconds": 6 },
+          { "concept": "dance", "name": { "zh": "慢慢转一圈", "en": "One Slow Turn" }, "say": { "zh": "慢慢转一圈，再站稳。", "en": "Turn slowly once, then stand still." }, "seconds": 6 }
+        ]
+      }
+    },
+    {
+      "type": "calm",
+      "title": { "zh": "星星陪我们收尾", "en": "A Quiet Star to Finish" },
+      "parentTip": "先坐稳；孩子按平时自然呼吸，不屏气、不追随节拍。结束后关屏，离线休息。",
+      "props": {
+        "visual": "star",
+        "cycles": 2,
+        "inhaleSec": 2,
+        "exhaleSec": 3,
+        "say": { "zh": "坐下歇一歇，自然呼吸。", "en": "Sit down for a rest and breathe naturally." }
+      }
+    }
+  ]
+}

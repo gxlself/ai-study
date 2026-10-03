@@ -72,9 +72,9 @@
 ## 6. 文档索引
 
 - `docs/dev/api.md` — REST API 契约
-- `docs/dev/player-spec.md` — 播放端交互规格
-- `docs/dev/activities-spec.md` — 16 个内置活动行为规格
-- `docs/dev/admin-spec.md` — 后台规格
+- `docs/dev/player.md` — 播放端交互规格
+- `docs/dev/activities.md` — 17 个内置活动行为规格
+- `docs/dev/admin.md` — 后台规格
 - `docs/dev/content-pipeline.md` — 素材 / 音频 / 校验流水线
 - `docs/dev/plugin-guide.md` — 第三方插件开发指南（T-activities 产出）
 - `docs/dev/content-pack-guide.md` — 内容包制作指南（T-content 产出）

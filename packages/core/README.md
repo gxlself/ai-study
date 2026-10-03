@@ -18,10 +18,11 @@ pnpm --filter @sprout/core test
 - 月龄、日龄直接使用 schema 的 `ageOf`。主题起算日为生日加阶段起始月数，目标月没有对应日号时夹到月末。主题周序号从 0 起，以本地日历日计算，不用经过的小时数除以 24。
 - 阶段年龄范围为闭区间；重叠时取路线顺序中的第一个匹配阶段。未覆盖的中间月龄返回 `null`，低于/高于整条路线范围则取首/末阶段。
 - 主题轮换按主题原始索引及原始长度计算 `(index + localDay) mod length` 并升序排列，不因缺失或跳过课程重新编号。完成次数只计 `completed=true`；无效时间或计划日期之后的记录忽略。调用者负责提供近 60 天的历史。
-- 严格按 pinned、当前主题、review、balance、当前主题余课的顺序填位。当前主题可占满全部名额，不预留 review。所有来源统一去重、排除 skipped、只选可用索引中的自有条目；skipped 也排除 pinned。
-- review 只取上一主题的一课。“近 7 天”指今天及之前 6 个本地日，有任何 session 都算做过，包括未完成记录。第一主题不在本阶段内首尾回绕；手动主题的上一主题按该主题实际所属阶段定位。balance 仍只从年龄所属阶段中取主领域匹配的课，按路线顺序填剩余空位。
-- 未满 18 月龄强制 parent-only；18 月龄以上显式 mode 优先，auto/缺省跟随阶段 childScreen。parent-only 所有来源包括 pinned 都只取 parent 指引课。共看模式允许两类课程。
-- 预算使用 `dailyMaxMin`，不减去 `usedSec`；只尾删 child 共看课，parent 不占孩子预算，超过预算的单课也不例外保留。已用时间及窗口限制通过 `screen` 表达，禁用孩子屏幕时仍返回家长课程计划。
+- 常规排课按 pinned、当前主题、review、balance、当前主题余课的顺序填位。当前主题可占满全部名额，不预留 review。所有来源统一去重、排除 skipped、只选可用索引中的自有条目；skipped 也排除 pinned。
+- review 只取上一主题的一课。“近 7 天”指今天及之前 6 个本地日，有任何 session 都算做过，包括未完成记录。第一主题不在本阶段内首尾回绕；手动主题的上一主题按该主题实际所属阶段定位。常规 balance 只从年龄所属阶段中取主领域匹配的课，按路线顺序填剩余空位；parent-only 额外的阶段补位也记为 balance，不要求匹配 focusDomains。
+- 未满 18 月龄强制 parent-only；18 月龄以上显式 mode 优先，auto/缺省跟随阶段 childScreen。parent-only 所有来源包括 pinned 都检查月龄，先按原有顺序取 parent 指引课，再补本阶段其它适龄 parent。不足 `lessonsPerDay` 时只用本阶段适龄 child（缺省 audience 也算 child）补线下版，标记 `offlineOnly: true`；有效 pinned 仍优先，非置顶候选先按当前主题完成次数与日轮换排序，再取本阶段其它主题。线下版保留原课程摘要与 audience，不修改内容索引。共看模式允许两类课程，保持原有排课优先级。
+- `stage.screen.childLessonsPerDay` 限制当日 child 共看课数，缺省不限、0 禁止；所有来源包括 pinned、review、balance 共用该上限。parent 指引与线下版不占共看课名额，但仍受 `lessonsPerDay` 总数限制。
+- 预算使用 `dailyMaxMin`，不减去 `usedSec`；只尾删 child 共看课，parent 与线下版不占孩子预算，超过预算的共看单课也不例外保留。已用时间及窗口限制通过 `screen` 表达，禁用孩子屏幕时仍返回家长课程计划。
 - `resolveScreenPolicy` 保持二参兼容，可选第三参数传实际月龄：18–23 月龄单次 ≤8 分钟，24+ ≤20 分钟且必须共看陪同。route 跨龄阶段应传实际月龄，二参时仅根据阶段下界计算。
 - 屏幕窗口采用本地墙钟时间 `[start, end)`，支持跨午夜。空数组表示全天，起止相同表示零长度窗口；非法 HH:mm 和零长度窗口不开放时段。达到每日上限即禁止，优先返回 `daily-limit`。窗口外返回下一次有效开始时间的 HH:mm，可以是次日。
 - 课程摘要包含 audience（缺省 child）与 hasPrintables。保留原始 cover 字段，包内图片默认映射为 `/packs/<packId>/<path>`，已有绝对路径或 URL 原样保留；传入的图片 resolver 优先。纯 concept 封面不猜测词库图片。`stepTypes` 按首次出现顺序去重。

@@ -40,7 +40,7 @@ export function contrastSvg(
   palette: 'bw' | 'bwr',
   opts?: { invert?: boolean; size?: number },
 ): string {
-  if (typeof pattern !== 'string' || !Object.hasOwn(drawings, pattern)) {
+  if (typeof pattern !== 'string' || !Object.prototype.hasOwnProperty.call(drawings, pattern)) {
     throw new RangeError('Unknown contrast pattern');
   }
   if (palette !== 'bw' && palette !== 'bwr') throw new RangeError('Unknown contrast palette');

@@ -1,0 +1,58 @@
+{
+  "schemaVersion": 1,
+  "id": "culture.parent-toddler.winter-solstice",
+  "title": { "zh": "冬至：家里的节日", "en": "Winter Solstice: Our Family's Customs" },
+  "summary": { "zh": "饺子和汤圆只看图，摆大卡、说说自家过节习惯。", "en": "Arrange large dumpling and tangyuan cards and talk about family customs without tasting." },
+  "ageRange": [18, 36],
+  "audience": "parent",
+  "domains": ["social", "math", "language"],
+  "themeId": "culture.winter-solstice",
+  "tags": ["冬至", "家庭习俗", "家长指引", "只看图不试吃"],
+  "durationMin": 3,
+  "coView": "required",
+  "objectives": [
+    { "zh": "知道家庭习俗可以不同。", "en": "Notice that family customs can be different." },
+    { "zh": "点一下大卡，说一个或两个。", "en": "Touch each large card and hear one or two." }
+  ],
+  "cover": { "concept": "dumpling", "bg": "room" },
+  "parentGuide": {
+    "intro": "先读完关屏。冬至有些家庭吃饺子，有些吃汤圆，也有别的习惯；不用全都做。本课只看图，宝宝选择大卡，家长点一下说一个、两个，最后说总数。准备真实节日餐是成人的事，不用恐吓式俗语要求吃食物。",
+    "tips": ["宝宝可选择任意卡，不必选与成人一样的习俗。", "先只放一到两张卡，点一张说一个数，不考数数。", "实际进餐不用屏幕，不用圆形黏食作数学材料。"],
+    "phrases": [
+      { "zh": "这是饺子。", "en": "This is a dumpling." },
+      { "zh": "这是汤圆。", "en": "These are tangyuan." },
+      { "zh": "一张、两张，两张卡。", "en": "One, two. Two cards." },
+      { "zh": "我们家怎么过节？", "en": "How does our family celebrate?" }
+    ],
+    "why": "给眼前物件点数并说总数，是生活里的数学对话。节日习俗保持包容，回应宝宝比答对知识题更重要。",
+    "refs": ["[8]", "[64]", "[69]", "[82]", "[93]"]
+  },
+  "printables": [{ "kind": "cards", "title": "冬至家庭大卡", "items": ["dumpling", "fest-tangyuan", "home"], "size": "large", "showText": true, "showEnglish": true }],
+  "offline": [{
+    "title": "冬至大卡摆一摆",
+    "minutes": 8,
+    "materials": ["完整饺子和汤圆大卡", "安全平整桌面"],
+    "steps": ["关屏，在桌面放饺子和汤圆大卡，不放食物。", "宝宝选一张，成人说说家里的一项节日习惯。", "成人逐张点卡说一、二，再说两张卡，不要求宝宝复述。", "轮流讲想和谁一起过节，收好大卡。"],
+    "question": "你想怎么和家人一起过节？",
+    "levels": { "easier": "只看一张卡，成人说一句名称。", "harder": "多打印一张卡，让宝宝把一样的两张摆到一起；成人点数并说总数。" },
+    "safety": "成人全程陪伴，卡片不入口。汤圆圆形且黏，有窒息风险，3岁以下不建议整颗吃；切小压扁仍不能消除黏性风险，本课不试吃。真实饺子须在正常进餐时按已有能力切碎软烂、去硬馅并坐稳看护；本课不涉及喂食。远离热汤、生面团和灶具。",
+    "domains": ["math", "social", "language"]
+  }],
+  "steps": [{
+    "type": "guide",
+    "parentTip": "大卡替代食物做数学游戏，各家习俗都可以。",
+    "props": {
+      "goal": "说说家庭习俗，用一到两张大卡做点数对话。",
+      "materials": ["完整饺子大卡", "完整汤圆大卡", "安全平整桌面"],
+      "steps": [
+        { "text": "关屏，把两张完整大卡放桌面，宝宝选一张，成人命名。", "concept": "dumpling", "say": { "zh": "这是饺子。", "en": "This is a dumpling." } },
+        { "text": "说说家里吃饺子、汤圆或其他食物的习惯，不要求照做。", "concept": "fest-tangyuan", "say": { "zh": "我们家怎么过节？", "en": "How does our family celebrate?" } },
+        { "text": "点一张说一个数，数两张后再说总数，不考宝宝。", "say": { "zh": "一张、两张，两张卡。", "en": "One, two. Two cards." } },
+        { "text": "听宝宝说想相伴的人，接受手势或只看，一起收卡。", "concept": "home", "say": { "zh": "我们在一起。", "en": "We're together." } }
+      ],
+      "playMin": 8,
+      "observe": ["是否愿意选卡或分享自家习惯。", "是否注意成人逐张点数，不要求理解基数。", "是否愿意说、指或听家人的回应。"],
+      "safety": "卡片不入口，不用食物当道具。汤圆只看图不试吃；3岁以下不建议整颗吃，切小压扁仍有黏性窒息风险。不喂整颗饺子、不用生面团，远离热汤与灶具。"
+    }
+  }]
+}

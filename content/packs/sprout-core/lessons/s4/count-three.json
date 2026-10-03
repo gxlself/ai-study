@@ -1,0 +1,78 @@
+{
+  "schemaVersion": 1,
+  "id": "core.s4.count-three",
+  "title": { "zh": "数到三", "en": "Count to Three" },
+  "summary": { "zh": "点一个，说一个，再说总数。", "en": "Point to each one, count, then say how many." },
+  "themeId": "s4-t3",
+  "ageRange": [18, 23],
+  "domains": ["math"],
+  "audience": "child",
+  "durationMin": 5,
+  "coView": "required",
+  "objectives": [
+    { "zh": "看家长点数一到三个物体。", "en": "Watch a grown-up count one to three objects." },
+    { "zh": "留意一和三两组的多少。", "en": "Notice the difference between groups of one and three." }
+  ],
+  "cover": { "concept": "apple", "bg": "paper" },
+  "parentGuide": {
+    "intro": "共看默认关闭，也可只数实物。若开启，每点一个才说一个数。数完补上总数。宝宝看、指或跟着说都可以。三不是本月龄必须掌握的数量。",
+    "tips": ["不要只背数字，要指眼前的物体。", "唱数说二，数量说两条小鱼。", "哪边多只做一起观察，不做考试。"],
+    "phrases": [
+      { "zh": "一，一共一只小鸟。", "en": "One. One bird in all." },
+      { "zh": "一、二，一共两条小鱼。", "en": "One, two. Two fish in all." },
+      { "zh": "一、二、三，三个苹果。", "en": "One, two, three. Three apples." },
+      { "zh": "这边多一些。", "en": "There are more on this side." }
+    ],
+    "why": "点一个说一个，再说总数。数字谈话证据主要来自相关研究。不把跟说一二三等同于理解数量。",
+    "refs": ["3", "6", "8", "63", "64", "65", "69"]
+  },
+  "offline": [
+    {
+      "title": "三把勺子排排队",
+      "minutes": 5,
+      "materials": ["三把大小相近的圆头儿童勺"],
+      "steps": ["关屏，先放一把勺子。", "点它说一，再说一把勺子。", "逐次加到两把和三把。", "每次点数后再说总数。", "让宝宝拿走一把，再一起看看。"],
+      "safety": "勺子无锐边、无可脱落小件。小物件直径小于3.5厘米有窒息风险。成人全程看护。不拿豆子、硬糖或坚果练点数。不含着勺子走动。",
+      "domains": ["math"],
+      "question": "你想把勺子排在哪里？",
+      "levels": { "easier": "只放一把或两把，由家长点数。", "harder": "排三把，再换个位置，家长示范重新数。" }
+    }
+  ],
+  "steps": [
+    {
+      "type": "count",
+      "title": { "zh": "一起点点数", "en": "Point and Count Together" },
+      "parentTip": "每次按键只点数一个；每轮结束说总数，不要求宝宝独立数。",
+      "props": {
+        "rounds": [
+          { "item": "bird", "count": 1, "layout": "row" },
+          { "item": "fish", "count": 2, "layout": "row" },
+          { "item": "apple", "count": 3, "layout": "row" }
+        ],
+        "mode": "guided",
+        "showNumeral": false,
+        "cardinality": true
+      }
+    },
+    {
+      "type": "choose",
+      "title": { "zh": "哪边多一些", "en": "Which Side Has More?" },
+      "parentTip": "两边都是同样的苹果，每个同样大小。可先分别点数再比较。",
+      "props": {
+        "rounds": [
+          {
+            "prompt": { "zh": "哪边苹果多一些？", "en": "Which side has more apples?" },
+            "options": [
+              { "id": "one-apple", "concept": "apple", "count": 1 },
+              { "id": "three-apples", "concept": "apple", "count": 3 }
+            ],
+            "answer": "three-apples",
+            "explain": { "zh": "这边三个，比一个多。", "en": "Three apples on this side. More than one." }
+          }
+        ],
+        "showLabels": false,
+        "hintAfter": 1
+      }
+    }
+  ]
+}

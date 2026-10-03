@@ -582,7 +582,7 @@ pnpm content:validate --pack content/examples/hello-pack --strict
 pnpm content:zip content/examples/hello-pack --out release/
 ```
 
-`content:all` 的独立 runner 把 `--pack` 传给 assets → audio → validate → bundle，不包含 zip。它也把 `--force`、声音/语速/`--prune`、`--strict` 分别传给 assets、audio、validate；不接受 `--dry-run`。默认 validate 不是严格模式，发布时传 `--strict` 或像上例单独严格检查。需要逐步运行或自选声音时：
+`content:all` 的独立 runner 把 `--pack` 传给 route → assets → audio → validate → bundle，不包含 zip。route 仅为核心包合并六个源阶段，独立包保持自己的路线。它也把 `--force`、声音/语速/`--prune`、`--strict` 分别传给 assets、audio、validate；不接受 `--dry-run`。默认 validate 不是严格模式，发布时传 `--strict` 或像上例单独严格检查。需要逐步运行或自选声音时：
 
 ```sh
 pnpm content:assets --pack content/examples/hello-pack
@@ -604,7 +604,7 @@ bundle 只包含校验通过的课程，props 已补默认值。坏课会被跳�
 4. 为孩子选择 `sprout.hello.route`，而不是保持默认的 `sprout.core.route`。本例覆盖 `[18,26]`：18–23为家长课，24–26为亲子共看课，其他年龄不会自动排入。
 5. 在播放端查看封面、词卡、数量句，分别试听中文和英文；测试暂停、退出以及结束后的线下提示。确认无自动连播。
 
-服务器把导入包放在 `data/packs/<id>/`。源码包仍由原目录维护，不通过修改 `data/packs/` 来替代可复现的版本构建。只有 `content/examples/hello-pack` 源码存在时，后台不会自动列出它。
+服务器把导入包放在 `data/packs/<id>/`。同 ID 同版本可覆盖（用于备份回导），也可升级，不能降级；导入版优先于同版本内置包，保留启停状态。源码包仍由原目录维护，不通过修改 `data/packs/` 来替代可复现的版本构建。只有 `content/examples/hello-pack` 源码存在时，后台不会自动列出它。
 
 ## 10. 升级与发布检查
 

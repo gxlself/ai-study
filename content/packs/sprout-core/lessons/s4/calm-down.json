@@ -1,0 +1,63 @@
+{
+  "schemaVersion": 1,
+  "id": "core.s4.calm-down",
+  "title": { "zh": "情绪来了怎么办", "en": "When Big Feelings Come" },
+  "summary": { "zh": "先陪着，再一起想办法。", "en": "Stay close first, then find a way together." },
+  "themeId": "s4-t4",
+  "ageRange": [18, 23],
+  "domains": ["social"],
+  "audience": "parent",
+  "durationMin": 3,
+  "coView": "required",
+  "objectives": [
+    { "zh": "大人练习接纳并命名情绪。", "en": "Grown-ups practice accepting and naming feelings." },
+    { "zh": "在陪伴中提供合适的选择。", "en": "Offer suitable choices while staying close." }
+  ],
+  "cover": { "concept": "hug", "bg": "room" },
+  "parentGuide": {
+    "intro": "请在宝宝平静时先读，记住顺序。真实哭闹时放下设备。先保护安全，再命名、陪伴。愿意时可抱抱或示范轻柔呼吸。等能回应了，再给两个可行选择。",
+    "tips": ["先看看是否饿、累、痛或不舒服。", "不想抱就坐近，不强迫深呼吸。", "两个选择都要是你能接受的。", "情绪可以有，伤人动作仍要挡住。"],
+    "phrases": [
+      { "zh": "你生气了，我在这里。", "en": "You're angry. I'm here." },
+      { "zh": "我会挡住打人的手。", "en": "I'll stop your hand from hitting." },
+      { "zh": "想抱抱，还是我坐旁边？", "en": "A hug, or shall I sit beside you?" },
+      { "zh": "想再试，还是先休息？", "en": "Try again, or rest first?" }
+    ],
+    "why": "回应性照护重视成人陪伴与支持。情绪辅导有幼儿家长干预研究。短句和选择只是帮助，不保证马上停止哭闹。",
+    "refs": ["12", "82", "90", "91"]
+  },
+  "offline": [
+    {
+      "title": "平静时预演陪伴",
+      "minutes": 5,
+      "materials": ["一个安全大毛绒玩具"],
+      "steps": ["在平静时让玩具坐在旁边。", "大人示范说你难过了，我在。", "提供抱抱或坐旁边两个选择。", "宝宝愿意时，示范轻柔呼吸一次。", "再问想一起玩还是先休息。"],
+      "safety": "不故意拿走玩具诱发哭闹。不强抱、不按住身体、不要求屏息。自然呼吸即可，不用真气球。玩具无松脱小件。小物件直径小于3.5厘米有窒息风险。",
+      "domains": ["social"],
+      "question": "你想让我怎样陪着你？",
+      "levels": { "easier": "只示范一句我陪着你，安静坐近。", "harder": "宝宝愿意时用看、指或短词选择抱抱、休息或再玩。" }
+    }
+  ],
+  "steps": [
+    {
+      "type": "guide",
+      "title": { "zh": "大人先练，再陪宝宝", "en": "Practice First, Then Support Your Child" },
+      "parentTip": "计时用于平静时预演。真正哭闹时不用屏幕或计时催平静。",
+      "props": {
+        "goal": "练习安全保护、情绪命名、陪伴和两个可行选择。",
+        "materials": ["安全大毛绒玩具", "安静且安全的一角"],
+        "steps": [
+          { "text": "把危险物移开，放慢自己的声音。", "say": { "zh": "我在这里。", "en": "I'm here." } },
+          { "text": "坐近，先说发生的事和心情。", "say": { "zh": "积木倒了，你生气了。", "en": "The blocks fell. You're angry." }, "concept": "angry" },
+          { "text": "张开双臂，等待宝宝愿意靠近。", "say": { "zh": "想抱抱吗？", "en": "Would you like a hug?" }, "concept": "hug" },
+          { "text": "宝宝愿意时，示范轻柔呼吸。", "say": { "zh": "你可以看我慢慢呼吸。", "en": "You can watch me breathe gently." }, "concept": "calm" },
+          { "text": "能回应后，给两个可行选择。", "say": { "zh": "想再搭，还是先休息？", "en": "Build again, or rest first?" } },
+          { "text": "按宝宝的选择陪着做一点。", "say": { "zh": "好，我们一起。", "en": "Okay, let's do it together." } }
+        ],
+        "playMin": 5,
+        "observe": ["宝宝如何表达靠近、拒绝或求助。", "什么陪伴方式让宝宝更舒服。", "宝宝准备好回应时有什么信号。"],
+        "safety": "先排除疼痛和不适。及时挡住伤人动作，移开危险物。不体罚、不隔离恐吓、不强抱。不强迫深呼吸或屏息，不用真气球。持续不适或担忧请咨询医生。"
+      }
+    }
+  ]
+}

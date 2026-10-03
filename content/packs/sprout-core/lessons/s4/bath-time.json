@@ -1,0 +1,73 @@
+{
+  "schemaVersion": 1,
+  "id": "core.s4.bath-time",
+  "title": { "zh": "洗澡玩水", "en": "Bath-Time Water Play" },
+  "summary": { "zh": "看看沉浮，洗洗小手小脚。", "en": "Notice floating and sinking, and name hands and feet." },
+  "themeId": "s4-t5",
+  "ageRange": [18, 23],
+  "domains": ["life", "science"],
+  "audience": "parent",
+  "durationMin": 3,
+  "coView": "required",
+  "objectives": [
+    { "zh": "观察物品在水中的位置。", "en": "Notice where objects sit in water." },
+    { "zh": "在照护时听身体部位名字。", "en": "Hear body-part names during care." }
+  ],
+  "cover": { "concept": "bathtub", "bg": "room" },
+  "parentGuide": {
+    "intro": "洗澡前在浴室外读完，设备留在外面。成人始终手臂可及，专心看护。先观察一个物品，再说小手、小脚。沉浮只看这次结果，不总结所有大物都沉。",
+    "tips": ["毛巾和用品提前放在手边。", "先调好温水，确认温热不烫。", "按本次结果说沉或浮，不向脸泼水。", "冷了、累了或拒绝时就结束。"],
+    "phrases": [
+      { "zh": "它浮在水面上。", "en": "It's floating on the water." },
+      { "zh": "它沉下去了。", "en": "It sank down." },
+      { "zh": "这是小手，这是小脚。", "en": "Here are your hands. Here are your feet." },
+      { "zh": "我一直在你旁边。", "en": "I'm right beside you." }
+    ],
+    "why": "真实照护提供语言和观察机会。沉浮依材料、形状等而变，只描述结果。全程近距离看护是首要条件。",
+    "refs": ["6", "12", "47"]
+  },
+  "offline": [
+    {
+      "title": "洗澡时看看沉和浮",
+      "minutes": 5,
+      "materials": ["适龄大漂浮洗澡玩具", "一把无锐边的大不锈钢勺", "毛巾"],
+      "steps": ["成人先备齐用品，调好并试温。", "成人贴近扶稳宝宝，放下大玩具。", "说这次它在水面上还是水下面。", "成人把大勺放入水中，再取出。", "照护时命名手和脚，结束擦干。"],
+      "safety": "浅水也会溺水。专一成人始终手臂可及，片刻也不离开。要离开先抱出并带走宝宝。先试温，入水后不再加热水。用完倒空水。防滑，电器远离。小物件直径小于3.5厘米有窒息风险。大勺仅由成人操作。",
+      "domains": ["life", "science"],
+      "question": "你想先看看哪一个？",
+      "levels": { "easier": "只观察一个大玩具，宝宝不必抓取。", "harder": "宝宝愿意时，再看另一个物品，成人描述两次不同的结果。" }
+    },
+    {
+      "title": "擦干后找小手小脚",
+      "minutes": 3,
+      "materials": ["干净干毛巾"],
+      "steps": ["离开水边，和宝宝在干燥处坐稳。", "轻轻擦手，说小手。", "再擦脚，说小脚。", "让宝宝指想擦的部位。"],
+      "safety": "离开水边再玩，身体保持温暖。毛巾不盖口鼻、不绑身。不强迫触摸私密部位。地面防滑，成人在旁。",
+      "domains": ["life", "science"],
+      "question": "你想先擦哪里？",
+      "levels": { "easier": "成人只擦一只手并命名。", "harder": "宝宝愿意时自己擦手，成人继续帮助和看护。" }
+    }
+  ],
+  "steps": [
+    {
+      "type": "guide",
+      "title": { "zh": "水边全程陪伴", "en": "Stay Close Around Water" },
+      "parentTip": "洗澡前读完，设备留在浴室外。不看倒计时，冷了累了就结束。",
+      "props": {
+        "goal": "在持续近距离看护下观察沉浮，并命名身体部位。",
+        "materials": ["适龄大漂浮洗澡玩具", "无锐边的大不锈钢勺", "毛巾", "防滑垫"],
+        "steps": [
+          { "text": "备齐用品，设备留在浴室外。", "say": { "zh": "我来陪你洗澡。", "en": "I'll stay with you at bath time." }, "concept": "bathtub" },
+          { "text": "先调温水，用手腕内侧试温。", "say": { "zh": "先试试水，温温的。", "en": "Let's check the water. Warm, not hot." } },
+          { "text": "贴近扶稳宝宝，把大玩具放水中。", "say": { "zh": "看看它在水里哪里。", "en": "Look where it is in the water." }, "concept": "boat" },
+          { "text": "成人放入大勺，观察后立即取出。", "say": { "zh": "看看它沉还是浮。", "en": "See whether it sinks or floats." }, "concept": "spoon" },
+          { "text": "温和洗手和脚，逐一命名。", "say": { "zh": "洗洗小手，再洗小脚。", "en": "Wash your hands, then your feet." }, "concept": "hand" },
+          { "text": "抱出擦干，再把水倒空。", "say": { "zh": "洗好啦，我们擦干。", "en": "All done. Let's dry off." }, "concept": "towel" }
+        ],
+        "playMin": 5,
+        "observe": ["宝宝是否注视物品在水中的位置。", "宝宝是否看或指手、脚。", "宝宝是否表示冷、累或不想玩。"],
+        "safety": "浅水也会溺水。专一成人始终手臂可及，不接电话、不离开。要离开先抱出并带走宝宝。先试温，入水后不加热水。防滑，电器远离，用完倒空水。大勺成人操作，物品不入口。小物件直径小于3.5厘米有窒息风险。"
+      }
+    }
+  ]
+}

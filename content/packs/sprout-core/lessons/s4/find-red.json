@@ -1,0 +1,72 @@
+{
+  "schemaVersion": 1,
+  "id": "core.s4.find-red",
+  "title": { "zh": "红色在哪里？", "en": "Where Is Red?" },
+  "summary": { "zh": "慢慢看，再去找真的红色。", "en": "Look slowly, then find something red nearby." },
+  "themeId": "s4-t1",
+  "ageRange": [18, 23],
+  "domains": ["cognition", "language"],
+  "audience": "child",
+  "durationMin": 4,
+  "coView": "required",
+  "objectives": [
+    { "zh": "在三种颜色里留意红色。", "en": "Notice red among three colors." },
+    { "zh": "把画面颜色联系到实物。", "en": "Connect the colors on screen with real objects." }
+  ],
+  "cover": { "concept": "red", "bg": "paper" },
+  "printables": [
+    { "kind": "cards", "title": "线下颜色卡", "items": ["red", "yellow", "blue"], "size": "large", "showText": true, "showEnglish": true }
+  ],
+  "parentGuide": {
+    "intro": "共看默认关闭，不看也可以。若已选择开启，请坐在宝宝旁边。每次只说一个颜色，等宝宝看或指。你可以帮忙操作。看完就关屏找实物，不再加一节。",
+    "tips": ["手动翻卡，不快闪。", "宝宝暂时不选，就一起指给他看。", "不把猜对当作学会颜色。"],
+    "phrases": [
+      { "zh": "这是红色。", "en": "This is red." },
+      { "zh": "红色在哪里？", "en": "Where is red?" },
+      { "zh": "我们一起看看。", "en": "Let's look together." },
+      { "zh": "现在去找红色袜子吧。", "en": "Let's find a red sock now." }
+    ],
+    "why": "共看不能代替真实互动。指认后找实物，帮助连接画面与生活。本月龄不要求会说颜色名称。",
+    "refs": ["3", "6", "8", "15", "27", "71"]
+  },
+  "offline": [
+    {
+      "title": "红色在哪里",
+      "minutes": 5,
+      "materials": ["红色打印卡", "一件红色衣物"],
+      "steps": ["关屏，把红色卡放在地上。", "把红色衣物放在卡旁。", "沿着衣物指一指，再说红色。", "跟随宝宝的目光找另一个安全物品。"],
+      "safety": "衣物不能有松脱的小装饰。小物件直径小于3.5厘米有窒息风险。不拿药品、插座或热物找颜色。成人全程在旁。",
+      "domains": ["cognition", "language"],
+      "question": "你想把红色卡放在哪里？",
+      "levels": { "easier": "只看红色卡和一件红色衣物。", "harder": "再放一件蓝色衣物，邀请宝宝找与卡同色的。" }
+    }
+  ],
+  "steps": [
+    {
+      "type": "word-cards",
+      "title": { "zh": "红黄蓝", "en": "Red, Yellow, Blue" },
+      "parentTip": "宝宝指或看就回应；不要求读字，也不要求每张卡跟读。",
+      "props": {
+        "items": ["red", "yellow", "blue"],
+        "show": { "text": true, "english": true, "pinyin": false },
+        "speak": "name",
+        "autoAdvanceSec": null,
+        "intro": { "zh": "一起看看这三种颜色。", "en": "Let's look at these three colors." }
+      }
+    },
+    {
+      "type": "choose",
+      "title": { "zh": "一起找红色", "en": "Find Red Together" },
+      "parentTip": "三个选项都是纯色卡。等几秒，可由家长示范或代按。",
+      "props": {
+        "rounds": [
+          { "prompt": { "zh": "红色在哪里？", "en": "Where is red?" }, "options": ["red", "yellow", "blue"], "answer": "red", "explain": { "zh": "这是红色。", "en": "This is red." } },
+          { "prompt": { "zh": "一起找找红色。", "en": "Let's find red together." }, "options": ["blue", "red", "yellow"], "answer": "red", "explain": { "zh": "红色，在这里。", "en": "Red, right here." } },
+          { "prompt": { "zh": "哪张卡是红色的？", "en": "Which card is red?" }, "options": ["yellow", "blue", "red"], "answer": "red", "explain": { "zh": "找到啦，去找真的红色吧。", "en": "Here it is. Let's find something red nearby." } }
+        ],
+        "showLabels": false,
+        "hintAfter": 1
+      }
+    }
+  ]
+}

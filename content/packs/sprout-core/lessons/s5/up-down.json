@@ -1,0 +1,52 @@
+{
+  "schemaVersion": 1,
+  "id": "core.s5.up-down",
+  "title": {"zh": "上和下", "en": "Up and Down"},
+  "summary": {"zh": "举手、放下，在地面慢慢动。", "en": "Raise and lower your hands, and move slowly on the floor."},
+  "ageRange": [24, 29],
+  "domains": ["math", "motor"],
+  "themeId": "s5-t5",
+  "durationMin": 4,
+  "coView": "required",
+  "audience": "child",
+  "objectives": [
+    {"zh": "把上、下和身体动作连起来。", "en": "Connect up and down with body movements."},
+    {"zh": "跟着大人慢做一串简单动作。", "en": "Explore a short sequence of slow movements with an adult."}
+  ],
+  "cover": {"concept": "raise-hands", "bg": "paper"},
+  "parentGuide": {
+    "intro": "先暂停准备安全空地。大人示范举手、放下，再慢转一圈。最后只从大人举起的手臂下钻过，不钻家具。一次只做一个动作，倒计时不是完成期限；宝宝可坐着做前两项。",
+    "tips": ["确认地面防滑，移开桌角和散落玩具。", "转圈只慢转一圈，站不稳就跳过。", "手臂留足头顶空间，不压头、不拉手。"],
+    "phrases": [
+      {"zh": "把小手举上去。", "en": "Put your hands up."},
+      {"zh": "小手慢慢放下来。", "en": "Bring your hands down slowly."},
+      {"zh": "慢慢转一圈就停。", "en": "Turn slowly once, then stop."},
+      {"zh": "想停就停，我陪着你。", "en": "You can stop. I'm here with you."}
+    ],
+    "why": "位置词连接实际动作，支持空间语言经验。成人示范、照看和调整难度，把活动当共同游戏，不用速度、平衡或完成全部动作来评宝宝。",
+    "refs": ["[6]", "[67]", "[71]", "[83]"]
+  },
+  "offline": [{
+    "title": "小手上，小手下",
+    "minutes": 7,
+    "materials": ["平整防滑地垫", "成人陪伴"],
+    "steps": ["和宝宝坐稳或站稳，说“上”，慢慢举手。", "说“下”，把手放回腿边。", "宝宝愿意时，大人示范慢转一圈后停。", "大人跪稳，抬起一条手臂留足空间，宝宝自愿低头钻过。", "换宝宝说上或下，大人来做动作。"],
+    "safety": "成人近旁看护，地面防滑，避开桌角和楼梯。只慢转一圈，头晕或不稳就停；不拉拽手臂，不让宝宝站在家具上。手臂不压头颈，不用桌椅、绳圈、布罩或封闭箱做通道。宝宝拒绝或不舒服立即结束。",
+    "domains": ["math", "motor"],
+    "question": "你想让我把手放在哪里？",
+    "levels": {"easier": "坐稳只举手、放下，跳过转圈和钻过。", "harder": "宝宝愿意时说两个熟悉动作，大人先做，宝宝只模仿想做的一项。"}
+  }],
+  "steps": [{
+    "type": "movement",
+    "parentTip": "先准备空地。倒计时不是任务期限。转圈和钻过可跳过，不看屏幕走动。",
+    "props": {
+      "intro": {"zh": "和大人一起，慢慢动。", "en": "Move slowly with your grown-up."},
+      "moves": [
+        {"concept": "raise-hands", "name": {"zh": "小手向上", "en": "Hands up"}, "say": {"zh": "把小手慢慢举上去。", "en": "Raise your hands slowly."}, "seconds": 8},
+        {"concept": "hand", "name": {"zh": "小手向下", "en": "Hands down"}, "say": {"zh": "把小手慢慢放下来。", "en": "Bring your hands down slowly."}, "seconds": 8},
+        {"concept": "dance", "name": {"zh": "慢转一圈", "en": "One slow turn"}, "say": {"zh": "慢慢转一圈，停稳。", "en": "Turn slowly once, then stop steadily."}, "seconds": 12},
+        {"concept": "head", "name": {"zh": "钻过手臂下面", "en": "Duck under an arm"}, "say": {"zh": "大人举好手臂，低头慢慢钻过。", "en": "Duck slowly under your grown-up's raised arm."}, "seconds": 12}
+      ]
+    }
+  }]
+}

@@ -1,0 +1,73 @@
+{
+  "schemaVersion": 1,
+  "id": "english.child.move-together",
+  "title": {"zh": "和家长一起动", "en": "Move Together"},
+  "summary": {"zh": "可选短共看，成人示范六个动作，然后离屏玩。", "en": "An optional short action lesson with a grown-up, followed by real play."},
+  "ageRange": [24, 36],
+  "audience": "child",
+  "domains": ["english", "motor", "social"],
+  "tags": ["tpr", "co-view", "daytime"],
+  "durationMin": 3,
+  "coView": "required",
+  "objectives": [
+    {"zh": "看真人示范一个动作。", "en": "Watch a grown-up demonstrate an action."},
+    {"zh": "自愿跟做，随时休息。", "en": "Join in by choice and rest whenever needed."}
+  ],
+  "cover": {"concept": "english.stand-up", "bg": "grass"},
+  "parentGuide": {
+    "intro": "仅供家长已选择共看的家庭白天使用，成人全程陪同。先清空平地，宝宝看你的真人示范，可跳过不会的动作；结束就关屏，继续面对面玩。",
+    "tips": [
+      "音频用慢读语速；家长先听一句再配动作，不要求孩子照读或跟上倒计时。",
+      "站和坐由家长示范；不会轻跳就轻抬脚跟或坐着拍手，不能拉拽孩子。",
+      "不用共看也可以直接做线下活动；不在吃饭、睡前或情绪激动时播放。"
+    ],
+    "phrases": [
+      {"zh": "站起来。", "en": "Stand up."},
+      {"zh": "坐下来。", "en": "Sit down."},
+      {"zh": "胳膊举起来。", "en": "Arms up."},
+      {"zh": "摸摸你的鼻子。", "en": "Touch your nose."},
+      {"zh": "拍拍你的手。", "en": "Clap your hands."},
+      {"zh": "轻轻跳一下。", "en": "Jump gently."}
+    ],
+    "why": "共看时成人的及时回应才是关键；屏幕只引出真人动作。本课不是英语测评，不保证语言效果，选择全程线下同样完整。",
+    "refs": ["[16]", "[25]", "[27]", "[54]"]
+  },
+  "offline": [
+    {
+      "title": "关屏后你来带动作",
+      "minutes": 5,
+      "materials": ["防滑平地"],
+      "steps": [
+        "关屏，成人先慢慢拍手，再等待宝宝回应。",
+        "让宝宝选择一个会做的动作，家长用相应短句并跟做。",
+        "一人一次，不会站或跳就改成坐稳拍手，不要求速度。",
+        "宝宝不想继续时结束，回到自由玩耍。"
+      ],
+      "question": "接下来你想带我做什么呀？",
+      "levels": {
+        "easier": "只轮流拍手，宝宝可以只看成人。",
+        "harder": "宝宝选择两种动作轮流示范，家长仍一次说一个短句。"
+      },
+      "safety": "成人近距离陪伴，平地防滑、无障碍，远离楼梯和家具尖角；不拉手、不强迫跳跃、不攀高，不设限时。",
+      "domains": ["english", "motor", "social"]
+    }
+  ],
+  "steps": [
+    {
+      "type": "movement",
+      "parentTip": "每个动作可暂停或跳过；先看家长，不会跳就抬脚跟或坐着拍手。",
+      "props": {
+        "intro": {"zh": "和家长一起慢慢做。", "en": "Move slowly with your grown-up."},
+        "bpm": 60,
+        "moves": [
+          {"concept": "english.stand-up", "name": {"zh": "站起来", "en": "Stand up"}, "say": {"zh": "慢慢站起来。", "en": "Stand up slowly."}, "seconds": 15},
+          {"concept": "sit-down", "name": {"zh": "坐下来", "en": "Sit down"}, "say": {"zh": "慢慢坐下来。", "en": "Sit down slowly."}, "seconds": 15},
+          {"concept": "raise-hands", "name": {"zh": "举胳膊", "en": "Arms up"}, "say": {"zh": "胳膊举起来。", "en": "Arms up."}, "seconds": 15},
+          {"concept": "nose", "name": {"zh": "摸鼻子", "en": "Touch your nose"}, "say": {"zh": "轻轻摸摸你的鼻子。", "en": "Touch your nose gently."}, "seconds": 15},
+          {"concept": "clap", "name": {"zh": "拍手", "en": "Clap your hands"}, "say": {"zh": "轻轻拍拍手。", "en": "Clap your hands gently."}, "seconds": 15},
+          {"concept": "jump", "name": {"zh": "轻轻跳", "en": "Jump gently"}, "say": {"zh": "轻轻跳，或抬抬脚跟。", "en": "Jump gently, or lift your heels."}, "seconds": 15}
+        ]
+      }
+    }
+  ]
+}

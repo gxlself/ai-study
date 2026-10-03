@@ -1,0 +1,98 @@
+{
+  "schemaVersion": 1,
+  "id": "core.s5.where-cat",
+  "title": {"zh": "小猫在哪里？", "en": "Where Is the Cat?"},
+  "summary": {"zh": "跟小猫听里、上、下、后和外。", "en": "Follow the cat and hear in, on, under, behind, and outside."},
+  "ageRange": [24, 29],
+  "domains": ["math", "language"],
+  "themeId": "s5-t5",
+  "durationMin": 6,
+  "coView": "required",
+  "audience": "child",
+  "objectives": [
+    {"zh": "指小猫，听位置词和参照物。", "en": "Point to the cat and hear its position relative to an object."},
+    {"zh": "用玩偶体验里、外和旁边。", "en": "Explore in, outside, and beside with a toy."}
+  ],
+  "cover": {"concept": "cat", "bg": "room"},
+  "parentGuide": {
+    "intro": "每页指着小猫和参照物说一句：“小猫在桌子下面。”先玩里、外，再慢慢加上下和后面。图中有遮挡也不催答。故事是小猫的位置，宝宝只搬玩偶，不爬桌子或钻封闭箱。",
+    "tips": ["位置词要连着参照物说，不只说“这里”。", "宝宝只指猫时，你补一句位置。", "看不清时关屏用真实玩偶和开口纸盒摆。"],
+    "phrases": [
+      {"zh": "小猫在箱子里面。", "en": "The cat is in the box."},
+      {"zh": "小猫在箱子上面。", "en": "The cat is on the box."},
+      {"zh": "小猫在桌子下面。", "en": "The cat is under the table."},
+      {"zh": "小猫在门后面。", "en": "The cat is behind the door."},
+      {"zh": "小猫在箱子外面。", "en": "The cat is outside the box."}
+    ],
+    "why": "把位置词和眼前物体、动作联系起来，提供空间语言经验。家长按宝宝兴趣重复和扩展，不一次考完全部方位词。",
+    "refs": ["[48]", "[67]", "[71]", "[82]"]
+  },
+  "offline": [{
+    "title": "玩偶在哪里",
+    "minutes": 8,
+    "materials": ["完整大玩偶", "无盖开口纸盒", "地垫"],
+    "steps": ["把纸盒放在地面，成人放玩偶进去。", "说“玩偶在盒子里面”，等宝宝看或指。", "请宝宝把玩偶拿出来，再说“在外面”。", "放到旁边，让宝宝决定下一次位置。"],
+    "safety": "成人全程陪同。纸盒去掉订书钉、绳带和锐边，保持敞口。直径小于3.5厘米的小物件有窒息风险，玩偶无脱落零件。只让玩偶进盒，不让宝宝进箱、合盖或攀上盒子、桌子；不在活动门后藏人，避免夹伤。",
+    "domains": ["math", "language"],
+    "question": "你想把玩偶放在哪里？",
+    "levels": {"easier": "成人只示范里和外，宝宝用手指出来。", "harder": "宝宝说一个位置词让成人摆，再一起确认参照的是哪个盒子。"}
+  }],
+  "steps": [{
+    "type": "story",
+    "parentTip": "说“小猫在……的……”；遮挡表示里面、后面。仅搬玩偶，不让宝宝攀高。",
+    "props": {
+      "title": {"zh": "小猫在哪里？", "en": "Where Is the Cat?"},
+      "pages": [
+        {
+          "scene": {"bg": "room", "ground": "floor", "sprites": [
+            {"concept": "cat", "x": 50, "y": 69, "size": 30, "anim": "none", "z": 1},
+            {"concept": "box", "x": 50, "y": 76, "size": 45, "anim": "none", "z": 2},
+            {"concept": "ball", "x": 81, "y": 79, "size": 18, "anim": "none"}
+          ]},
+          "text": {"zh": "小猫在箱子里面，探出来看。", "en": "The cat is in the box, peeking out."},
+          "prompts": [{"kind": "point", "zh": "小猫在哪里？指给我看。", "en": "Where is the cat? Show me."}]
+        },
+        {
+          "scene": {"bg": "room", "ground": "floor", "sprites": [
+            {"concept": "box", "x": 50, "y": 76, "size": 44, "anim": "none", "z": 1},
+            {"concept": "cat", "x": 50, "y": 54, "size": 32, "anim": "none", "z": 2},
+            {"concept": "ball", "x": 81, "y": 79, "size": 18, "anim": "none"}
+          ]},
+          "text": {"zh": "现在，小猫在箱子上面。", "en": "Now the cat is on the box."}
+        },
+        {
+          "scene": {"bg": "room", "ground": "floor", "sprites": [
+            {"concept": "cat", "x": 53, "y": 78, "size": 30, "anim": "none", "z": 2},
+            {"concept": "table", "x": 50, "y": 70, "size": 44, "anim": "none", "z": 1},
+            {"concept": "ball", "x": 81, "y": 79, "size": 18, "anim": "none"}
+          ]},
+          "text": {"zh": "小猫在桌子下面。", "en": "The cat is under the table."},
+          "prompts": [{"kind": "point", "zh": "桌子下面是谁？", "en": "Who is under the table?"}]
+        },
+        {
+          "scene": {"bg": "room", "ground": "floor", "sprites": [
+            {"concept": "cat", "x": 54, "y": 73, "size": 30, "anim": "none", "flip": true, "z": 1},
+            {"concept": "door", "x": 49, "y": 68, "size": 44, "anim": "none", "z": 2},
+            {"concept": "ball", "x": 82, "y": 79, "size": 18, "anim": "none"}
+          ]},
+          "text": {"zh": "小猫在门后面，探出一点点。", "en": "The cat is behind the door, peeking out a little."}
+        },
+        {
+          "scene": {"bg": "room", "ground": "floor", "sprites": [
+            {"concept": "box", "x": 29, "y": 75, "size": 40, "anim": "none"},
+            {"concept": "cat", "x": 75, "y": 75, "size": 36, "anim": "none"}
+          ]},
+          "text": {"zh": "小猫出来了，它在箱子外面。", "en": "The cat has come out. It is outside the box."}
+        },
+        {
+          "scene": {"bg": "room", "ground": "floor", "sprites": [
+            {"concept": "cat", "x": 35, "y": 75, "size": 36, "anim": "none"},
+            {"concept": "box", "x": 62, "y": 76, "size": 40, "anim": "none"}
+          ]},
+          "text": {"zh": "小猫在箱子旁边。你找到它啦！", "en": "The cat is beside the box. You found it!"},
+          "prompts": [{"kind": "distancing", "zh": "你的玩偶想放在哪里？", "en": "Where would you like to put your toy?"}]
+        }
+      ]
+    }
+  }]
+}

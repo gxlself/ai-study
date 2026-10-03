@@ -1,0 +1,53 @@
+{
+  "schemaVersion": 1,
+  "id": "core.s5.quick-look",
+  "title": {"zh": "一眼看出几个", "en": "A Quick Look"},
+  "summary": {"zh": "慢慢看一到三个，还能再数数。", "en": "Look at groups of one to three, then count again."},
+  "ageRange": [24, 29],
+  "domains": ["math"],
+  "themeId": "s5-t2",
+  "durationMin": 4,
+  "coView": "required",
+  "audience": "child",
+  "objectives": [
+    {"zh": "看看一、二、三的小数量。", "en": "Explore small groups of one, two, and three."},
+    {"zh": "用手指、语言或点数回应。", "en": "Respond with fingers, words, or counting."}
+  ],
+  "cover": {"concept": "apple", "bg": "paper"},
+  "parentGuide": {
+    "intro": "每组苹果停五秒，不是快闪。宝宝可以看、伸手指或一起数。这里关闭数字选项，画面会重现再点数；不要求背住图，也不要求立即说数量。",
+    "tips": ["先说“慢慢看”，不说“快点”。", "宝宝想点数就点数，不坚持必须一眼认出。", "停顿时接住手势，不考认一、二、三的字形。"],
+    "phrases": [
+      {"zh": "先慢慢看看。", "en": "Take a moment to look."},
+      {"zh": "你看到了几个？", "en": "How many did you see?"},
+      {"zh": "可以用手指告诉我。", "en": "You can show me with your fingers."},
+      {"zh": "我们再一起数数。", "en": "Let's count them together again."}
+    ],
+    "why": "小数量整体感知逐步发展。两岁时用一到三个作探索，不要求快速准确；允许点数，也不把记忆或认数字当作感数。",
+    "refs": ["[63]", "[69]", "[71]", "[81]"]
+  },
+  "offline": [{
+    "title": "小数量慢慢看",
+    "minutes": 6,
+    "materials": ["三只相同的大号完整玩具", "地垫"],
+    "steps": ["先放一只玩具，邀请宝宝看。", "换成两只，问“你看到了几个”。", "宝宝可用手指表示，也可一起点数。", "愿意时摆三只，再换回两只，物品一直可见。"],
+    "safety": "成人陪同。不用骰子、豆子、珠子或整颗食物。直径小于3.5厘米的小物件有窒息风险；大玩具也应完整、适龄、无可拆小零件。不盖脸、不限制回答时间。",
+    "domains": ["math"],
+    "question": "你想怎么告诉我这里有几个？",
+    "levels": {"easier": "只玩一只和两只，边指边数。", "harder": "试着摆三只成三角形或一排，再一起点数确认。"}
+  }],
+  "steps": [{
+    "type": "subitize",
+    "parentTip": "五秒是观看时间，不是回答期限。关闭数字选项，允许一起点数。",
+    "props": {
+      "rounds": [
+        {"count": 1, "item": "apple", "arrangement": "dice"},
+        {"count": 2, "item": "apple", "arrangement": "dice"},
+        {"count": 3, "item": "apple", "arrangement": "dice"},
+        {"count": 2, "item": "apple", "arrangement": "dice"}
+      ],
+      "showSec": 5,
+      "choices": false
+    }
+  }]
+}

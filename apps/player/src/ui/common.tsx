@@ -56,7 +56,7 @@ export function Problem({ message, retry }: { message: string; retry?: () => voi
   return <div className="problem" role="alert"><h2>稍等一下</h2><p>{message}</p>{retry && <button className="primary" data-focusable onClick={retry}>再试一次</button>}</div>;
 }
 
-export function LessonCard({ lesson, compact = false, adult = lesson.audience === 'parent' }: { lesson: LessonSummary; compact?: boolean; adult?: boolean }) {
+export function LessonCard({ lesson, compact = false, offlineOnly = false, adult = offlineOnly || lesson.audience === 'parent' }: { lesson: LessonSummary; compact?: boolean; adult?: boolean; offlineOnly?: boolean }) {
   const { source, concepts } = useApp();
   const navigate = useNavigate();
   const resources = createResources({ packId: lesson.packId, concepts, resolveAsset: (packId, path) => source?.resolveAsset(packId, path) ?? path });
@@ -66,11 +66,12 @@ export function LessonCard({ lesson, compact = false, adult = lesson.audience ==
       : lesson.cover?.concept ? resources.concept(lesson.cover.concept)?.imageUrl : undefined;
   const domain = DOMAIN_LABELS[lesson.domains[0]];
   return <button
-    className={`lesson-card ${compact ? 'compact' : ''} ${adult ? 'adult-card' : ''}`} data-focusable data-lesson-id={lesson.id} onClick={() => navigate(`/lesson/${encodeURIComponent(lesson.id)}`)}
+    className={`lesson-card ${compact ? 'compact' : ''} ${adult ? 'adult-card' : ''}`} data-focusable data-lesson-id={lesson.id} onClick={() => navigate(`/lesson/${encodeURIComponent(lesson.id)}`, { state: { offlineOnly } })}
     style={{ '--domain-color': domain.color } as React.CSSProperties}
   >
     <div className="lesson-picture">{image ? <img src={image} alt="" /> : <Leaf aria-hidden="true" />}<span className="domain-label">{domain.zh}</span></div>
     <div className="lesson-caption"><h3>{lesson.title.zh}</h3>{adult && lesson.summary ? <p>{lesson.summary.zh}</p> : lesson.title.en && <p lang="en">{lesson.title.en}</p>}<small>{adult ? `家长阅读 · ${lesson.durationMin} 分钟` : `${lesson.durationMin} 分钟`}</small>
+      {offlineOnly && <span className="offline-badge"><Leaf aria-hidden="true" />线下版</span>}
       {lesson.hasPrintables && <span className="printable-note"><Printer aria-hidden="true" />可在后台打印卡片</span>}
     </div>
   </button>;

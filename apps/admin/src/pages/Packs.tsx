@@ -281,7 +281,7 @@ export default function Packs() {
           <Popconfirm
             key="import"
             title="确认导入此内容包？"
-            description={<div className="system-confirm-copy">若包 ID 相同，更高版本会覆盖原内容。请确认已保留需要的旧版本。</div>}
+            description={<div className="system-confirm-copy">若包 ID 相同，同版本或更高版本会覆盖原内容，不能降级。请确认已保留需要的旧版本。</div>}
             okText="确认导入"
             cancelText="再检查一下"
             okButtonProps={{ loading: action.pending === 'import' }}
@@ -298,7 +298,7 @@ export default function Packs() {
           <Alert
             type="warning"
             showIcon
-            title="同 ID 的高版本内容包会覆盖旧版本"
+            title="同 ID 的同版本或高版本内容包会覆盖旧内容"
             description="ZIP 根目录或单一子目录中需包含 pack.json。仅导入来源可信且拥有使用许可的内容。"
           />
           <FilePicker file={file} extension="zip" onChange={setFile} disabled={action.busy} />

@@ -5,6 +5,7 @@ import { useApp } from '../state/AppContext';
 import { BackButton, Brand, Loading, Page } from '../ui/common';
 import { ChildForm } from '../ui/ChildForm';
 import { normalizeServer } from '../data';
+import { requestDeadline } from '../compat';
 
 interface Pairing { pairingId: string; code: string; expiresAt: string }
 export function Setup() {
@@ -41,8 +42,9 @@ export function Setup() {
       if (!alive) return;
       setClock(Date.now());
       if (Date.now() >= new Date(pair!.expiresAt).getTime()) { setError('配对码已过期，请重新获取'); return; }
+      const deadline = requestDeadline(abort.signal, 8000);
       try {
-        const response = await fetch(`${server}/api/pair/${encodeURIComponent(pair!.pairingId)}`, { signal: AbortSignal.any([abort.signal, AbortSignal.timeout(8000)]), cache: 'no-store' });
+        const response = await fetch(`${server}/api/pair/${encodeURIComponent(pair!.pairingId)}`, { signal: deadline.signal, cache: 'no-store' });
         if (!response.ok) throw new Error('暂时连接不上家庭服务器');
         const result = await response.json() as { status: string; deviceToken?: string };
         if (!alive) return;
@@ -56,6 +58,8 @@ export function Setup() {
         setError('');
       } catch (e) {
         if (alive) setError(e instanceof Error ? e.message : '等待连接恢复');
+      } finally {
+        deadline.dispose();
       }
       if (alive) timer = setTimeout(() => void poll(), 2000);
     }
@@ -68,10 +72,11 @@ export function Setup() {
     const abort = new AbortController();
     request.current = abort;
     setBusy(true); setError(''); setPair(null);
+    const deadline = requestDeadline(abort.signal, 10_000);
     try {
       const address = normalizeServer(server || `http://${host}:${port}`);
       setServer(address);
-      const signal = AbortSignal.any([abort.signal, AbortSignal.timeout(10_000)]);
+      const signal = deadline.signal;
       const health = await fetch(`${address}/api/health`, { signal, cache: 'no-store' });
       if (!health.ok || !(await health.json() as { ok?: boolean }).ok) throw new Error('未找到家庭服务器，请检查地址和网络');
       const response = await fetch(`${address}/api/pair/start`, { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ name: '芽芽播放端', kind: /iPad|Tablet/i.test(navigator.userAgent) ? 'tablet' : 'tv' }), signal });
@@ -81,7 +86,7 @@ export function Setup() {
       setClock(Date.now()); setPair(result);
     } catch (e) {
       if (!abort.signal.aborted) setError(e instanceof Error ? e.message : '连接失败');
-    } finally { if (!abort.signal.aborted) setBusy(false); }
+    } finally { deadline.dispose(); if (!abort.signal.aborted) setBusy(false); }
   }
   function digit(value: string) {
     setServer('');

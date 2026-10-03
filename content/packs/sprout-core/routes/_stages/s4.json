@@ -1,0 +1,89 @@
+{
+  "id": "s4",
+  "title": { "zh": "语言爆发", "en": "Word Explosion" },
+  "subtitle": { "zh": "听、指、说，在生活里慢慢长大", "en": "Listen, point, and talk while growing at your own pace" },
+  "ageRange": [18, 23],
+  "focus": [
+    { "zh": "用词语和短组合表达日常需要。", "en": "Use words and short combinations to express everyday needs." },
+    { "zh": "在实物旁听颜色、形状和大小。", "en": "Hear color, shape, and size words beside real objects." },
+    { "zh": "点数一到三，听数完后的总数。", "en": "Count one to three objects and hear the total." },
+    { "zh": "命名情绪，依靠成人的温和陪伴。", "en": "Name feelings with a grown-up's gentle support." },
+    { "zh": "参与洗手、刷牙和洗澡常规。", "en": "Join handwashing, toothbrushing, and bath-time routines." },
+    { "zh": "用涂鸦、搭建和慢动作自主探索。", "en": "Explore through scribbling, building, and slow movement." }
+  ],
+  "screen": {
+    "sessionMaxMin": 8,
+    "dailyMaxMin": 10,
+    "lessonsPerDay": 2,
+    "childLessonsPerDay": 1,
+    "coView": "required",
+    "childScreen": "optional"
+  },
+  "themes": [
+    {
+      "id": "s4-t1",
+      "title": { "zh": "颜色", "en": "Colors" },
+      "description": { "zh": "用衣物、颜色卡和涂鸦，听红黄蓝。", "en": "Hear red, yellow, and blue with clothes, printed cards, and scribbles." },
+      "weeks": 4,
+      "domains": ["cognition", "english", "language", "art"],
+      "lessons": ["core.s4.color-hunt", "core.s4.find-red", "core.s4.scribble"],
+      "offlineFocus": ["先在家里找一种颜色。", "把同色袜子放在一起。", "自由涂鸦，不要求认色或画彩虹。"]
+    },
+    {
+      "id": "s4-t2",
+      "title": { "zh": "形状", "en": "Shapes" },
+      "description": { "zh": "找圆边、配形状，再搭一座低塔。", "en": "Find round edges, match shapes, and build a low tower." },
+      "weeks": 4,
+      "domains": ["math", "language", "motor"],
+      "lessons": ["core.s4.shape-hunt", "core.s4.circle-friends", "core.s4.blocks"],
+      "offlineFocus": ["用圆盘和形状卡看轮廓。", "配形玩具先示范，不硬压。", "地上搭低塔，倒了再试，不追求高度。"]
+    },
+    {
+      "id": "s4-t3",
+      "title": { "zh": "数一数", "en": "1-2-3" },
+      "description": { "zh": "数眼前一到三个物品，再说总数。", "en": "Count one to three visible objects, then say how many." },
+      "weeks": 4,
+      "domains": ["math", "language", "motor"],
+      "lessons": ["core.s4.count-three", "core.s4.count-life", "core.s4.one-two-three"],
+      "offlineFocus": ["点一个说一个，数完说总数。", "数勺子和鞋，不拿小颗食物练数。", "停走游戏轻松玩，不淘汰、不屏息。"]
+    },
+    {
+      "id": "s4-t4",
+      "title": { "zh": "我的心情", "en": "Feelings" },
+      "description": { "zh": "听心情名字，体验陪伴和求助。", "en": "Hear feeling words and experience support and asking for help." },
+      "weeks": 4,
+      "domains": ["social", "language"],
+      "lessons": ["core.s4.feelings", "core.s4.bear-angry", "core.s4.calm-down"],
+      "offlineFocus": ["在平静时看情绪卡和练求助。", "真实情绪来时放下设备，先保安全。", "尊重抱抱和呼吸的意愿，成人持续陪伴。"]
+    },
+    {
+      "id": "s4-t5",
+      "title": { "zh": "洗洗刷刷", "en": "Clean & Healthy" },
+      "description": { "zh": "宝宝参与照护，成人负责清洁和安全。", "en": "Children join care routines while grown-ups handle hygiene and safety." },
+      "weeks": 4,
+      "domains": ["life", "science", "music"],
+      "lessons": ["core.s4.brush-teeth", "core.s4.bath-time", "core.s4.wash-song"],
+      "offlineFocus": ["成人每天帮刷两次，控制米粒牙膏量。", "水边专一看护，始终手臂可及。", "洗手涂皂搓至少20秒，再冲净擦干。", "儿歌不是清洁计时，真实照护时关屏。"]
+    },
+    {
+      "id": "s4-t6",
+      "title": { "zh": "大和小", "en": "Big & Small" },
+      "description": { "zh": "比同类物品，套杯子，伸伸小手。", "en": "Compare matching objects, nest cups, and gently reach." },
+      "weeks": 6,
+      "domains": ["math", "language", "motor"],
+      "lessons": ["core.s4.big-small", "core.s4.nesting", "core.s4.grow-big"],
+      "offlineFocus": ["一次比较两个同类物品。", "先套两个大杯，感兴趣再加第三个。", "蹲低站高可换坐姿，不要求跳或踮脚。"]
+    }
+  ],
+  "dailyRhythm": [
+    "起床穿衣时指一件单色衣物，说颜色和名称，再等宝宝看或指。",
+    "摆餐具时点数一到三把儿童勺，数完说总数；进餐时不用屏幕。",
+    "整理玩具时放一块大积木到上面，说高了，再邀请宝宝试一块。",
+    "散步时在安全处指圆钟或轮子图片，不直视太阳、不靠近行驶车辆。",
+    "收袜子或空碗时比两个同类物品，说同色、大一些、小一些。",
+    "情绪来时放下设备，先保护安全、回应需要，再命名并陪伴。",
+    "洗手和洗澡时说小手、小脚；水边专一看护，不读设备或看倒计时。",
+    "刷牙安排每天两次，睡前那次不开屏；白天可轻唱熟悉歌，再由成人帮刷。"
+  ],
+  "milestonesAt": [18, 24]
+}

@@ -183,5 +183,4 @@ function SongActivity({ ctx }: { ctx: ActivityContext<SongProps> }) {
 
 export const songActivity = defineBuiltin<SongProps>('song', SongActivity, (props) => [
   props.title, PHRASES.singTogether,
-  ...props.lines.map((line) => ({ [line.lang]: line.text })),
 ]);

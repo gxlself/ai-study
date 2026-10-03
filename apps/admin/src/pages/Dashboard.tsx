@@ -144,7 +144,7 @@ function DashboardContent({ child }: { child: ChildProfile }) {
                         <Tag color={REASONS[item.reason].color}>{REASONS[item.reason].label}</Tag>
                       </div>
                       <DomainTags domains={item.lesson.domains} />
-                      <LessonTypeTags audience={item.lesson.audience} hasPrintables={item.lesson.hasPrintables} />
+                      <LessonTypeTags audience={item.lesson.audience} hasPrintables={item.lesson.hasPrintables} offlineOnly={item.offlineOnly} />
                       {item.lesson.hasPrintables && <Link to={`/print/lesson/${encodeURIComponent(item.lessonId)}`}><PrinterOutlined /> 打印实体卡片</Link>}
                       {item.lesson.summary && <p>{item.lesson.summary.zh}</p>}
                     </article>

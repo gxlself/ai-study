@@ -1,0 +1,58 @@
+{
+  "schemaVersion": 1,
+  "id": "culture.parent-young.mid-autumn",
+  "title": { "zh": "中秋：一起看月亮", "en": "Mid-Autumn: The Moon and Family" },
+  "summary": { "zh": "白天看月亮大卡，和家人说话，不为赏月延迟睡觉。", "en": "Share a moon card in daylight and talk with family without delaying sleep." },
+  "ageRange": [6, 17],
+  "audience": "parent",
+  "domains": ["social", "language", "science"],
+  "themeId": "culture.mid-autumn",
+  "tags": ["中秋", "团圆", "家长指引"],
+  "durationMin": 2,
+  "coView": "required",
+  "objectives": [
+    { "zh": "听月亮和家人的词。", "en": "Hear words about the moon and family." },
+    { "zh": "和熟悉的人轮流说话。", "en": "Take turns communicating with familiar people." }
+  ],
+  "cover": { "concept": "moon", "bg": "sky" },
+  "parentGuide": {
+    "intro": "先读完关屏，白天用月亮和月饼大卡陪宝宝。中秋有赏月、团圆的习俗，不要求月亮一定可见，也不让宝宝熬夜。团圆可以是与身边照护者相伴、说说远方亲人的名字；月饼只看图，不安排试吃。",
+    "tips": ["睡前一小时不开屏，赏月不打乱睡眠。", "可说身边或牵挂的任何家人，不规定家庭成员。", "不要求宝宝说名字或亲吻、拥抱亲人。"],
+    "phrases": [
+      { "zh": "你看，月亮。", "en": "Look, the moon." },
+      { "zh": "这是月饼。", "en": "This is a mooncake." },
+      { "zh": "我们在一起。", "en": "We're together." },
+      { "zh": "我陪着你。", "en": "I'm here with you." }
+    ],
+    "why": "节日仪式提供温暖的交流情境。面对面回应和规律作息比必须完成赏月、进食或认词更重要。",
+    "refs": ["[8]", "[47]", "[82]", "[92]", "[93]"]
+  },
+  "printables": [{ "kind": "cards", "title": "中秋团圆大卡", "items": ["moon", "fest-mooncake", "home"], "size": "large", "showText": true, "showEnglish": true }],
+  "offline": [{
+    "title": "月亮大卡和家人",
+    "minutes": 5,
+    "materials": ["月亮大卡", "家里已有的大绘本"],
+    "steps": ["白天关屏，成人拿住月亮大卡。", "宝宝看向月亮时说名称，停下来回应声音。", "提到一位熟悉的家人，说我们在一起。", "收卡，和宝宝一起翻纸质绘本。"],
+    "question": "你想和谁一起看？",
+    "levels": { "easier": "只看照护者的脸，成人说一句我们在一起。", "harder": "十二月龄后可在月亮卡与月饼卡间指认，不要求记住名称。" },
+    "safety": "成人全程陪伴，卡片不入口。月饼只看图，不提供硬皮、大块、整粒坚果或未经确认的过敏原。赏月如不影响作息可在安全地面由成人陪同；不靠窗攀爬、不去阳台边沿，纱窗不能防坠。",
+    "domains": ["social", "language"]
+  }],
+  "steps": [{
+    "type": "guide",
+    "parentTip": "白天看实体卡；没有月亮也能团圆，不延迟睡觉。",
+    "props": {
+      "goal": "借月亮大卡，与熟悉照护者轮流交流。",
+      "materials": ["月亮大卡", "月饼大卡"],
+      "steps": [
+        { "text": "白天读完关屏，成人拿住月亮大卡，与宝宝面对面。", "concept": "moon", "say": { "zh": "你看，月亮。", "en": "Look, the moon." } },
+        { "text": "宝宝感兴趣才换月饼大卡，命名后停五秒，不拿食物来试吃。", "concept": "fest-mooncake", "say": { "zh": "这是月饼。", "en": "This is a mooncake." } },
+        { "text": "说一位熟悉家人的称呼，回应宝宝的声音，不考称呼。", "concept": "home", "say": { "zh": "我们在一起。", "en": "We're together." } },
+        { "text": "收好卡片，继续纸质绘本或普通陪伴，不为赏月熬夜。", "say": { "zh": "我陪着你。", "en": "I'm here with you." } }
+      ],
+      "playMin": 5,
+      "observe": ["是否注意月亮卡或照护者的脸。", "是否与成人轮流发声。", "是否疲倦、转头或需要结束。"],
+      "safety": "卡片不入口，月饼只看图不试吃，不提供硬块、坚果和未知过敏原。睡前一小时不开屏，不为赏月延迟睡眠；远离窗边、阳台和高处。"
+    }
+  }]
+}

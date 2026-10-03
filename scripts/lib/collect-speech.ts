@@ -163,6 +163,8 @@ export function collectSpeech(input: {
         add(props.say ?? PHRASES.breatheIntro);
         break;
       case 'video':
+        add(props.title);
+        break;
       case 'web':
       case 'guide':
         break;

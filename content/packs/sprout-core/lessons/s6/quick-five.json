@@ -1,0 +1,74 @@
+{
+  "schemaVersion": 1,
+  "id": "core.s6.quick-five",
+  "title": { "zh": "一眼看出 1-5", "en": "A Quick Look at One to Five" },
+  "summary": { "zh": "先看看，再一起慢慢数。", "en": "Look first, then count together." },
+  "ageRange": [30, 36],
+  "domains": ["math"],
+  "themeId": "s6-t2",
+  "tags": ["subitize", "small-groups", "optional-challenge"],
+  "durationMin": 5,
+  "coView": "required",
+  "audience": "child",
+  "objectives": [
+    { "zh": "注意小数量怎样摆在一起。", "en": "Notice how a small set is arranged." },
+    { "zh": "看不出时，和家长点数。", "en": "Count with your grown-up when you are unsure." }
+  ],
+  "cover": { "concept": "ball", "bg": "paper" },
+  "parentGuide": {
+    "intro": "四个、五个是可选挑战。画面停留六秒，不是比快。先听孩子说看到什么，再重现点数。本课不设选择题，不考认数字。线下从一到三个开始。",
+    "tips": [
+      "不要求一眼说对四个或五个。",
+      "孩子可以指，也可以分成小组说。",
+      "看不清或不想猜时，直接重现。",
+      "不要自行缩短显示时间。"
+    ],
+    "phrases": [
+      { "zh": "你看见了什么？", "en": "What did you see?" },
+      { "zh": "可以慢慢想。", "en": "Take your time." },
+      { "zh": "我们再看，再数一数。", "en": "Let's look again and count." },
+      { "zh": "两个和两个，一起看看。", "en": "Two here and two there. Let's look together." }
+    ],
+    "why": "小数量整体感知与逐个点数并不相同。四、五个不是本月龄达标要求；先观察排列，再用实物核对，避免快速闪卡和限时测验。",
+    "refs": ["[63]", "[69]", "[71]", "[80]"]
+  },
+  "offline": [
+    {
+      "title": "一眼看看小袜子",
+      "minutes": 6,
+      "materials": ["五只干净袜子", "地垫"],
+      "steps": [
+        "关屏，先放一只或两只袜子。",
+        "请孩子看看，说或指都可以。",
+        "袜子一直留着，再一起点数。",
+        "愿意时换成三只，慢慢比较。",
+        "成人可把四只摆成两只一组。"
+      ],
+      "safety": "成人全程陪伴，不盖住孩子口鼻。袜子不缠绕颈部，不用小袜夹。直径小于三点五厘米的小物件有窒息风险，不用豆子、珠子或硬币替代。",
+      "domains": ["math"],
+      "question": "你是怎样看出这些袜子的？",
+      "levels": {
+        "easier": "只放一只或两只，不遮挡。",
+        "harder": "把五只摆成两只和三只，再一起核对总数。"
+      }
+    }
+  ],
+  "steps": [
+    {
+      "type": "subitize",
+      "title": { "zh": "看看小球的队伍", "en": "Look at the Small Sets of Balls" },
+      "parentTip": "四、五个只作共同探索。显示后会自动重现点数；孩子可口答或指示，不做速度考核。",
+      "props": {
+        "rounds": [
+          { "count": 4, "item": "ball", "arrangement": "dice" },
+          { "count": 5, "item": "ball", "arrangement": "dice" },
+          { "count": 3, "item": "ball", "arrangement": "line" },
+          { "count": 5, "item": "ball", "arrangement": "dice" },
+          { "count": 4, "item": "ball", "arrangement": "dice" }
+        ],
+        "showSec": 6,
+        "choices": false
+      }
+    }
+  ]
+}

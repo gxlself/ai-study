@@ -15,7 +15,7 @@ import { resolveChildMode, resolveScreenPolicy, screenStatus } from './screen';
 
 export function findStage(route: Route, ageMonths: number): Stage | null {
   const first = route.stages[0];
-  const last = route.stages.at(-1);
+  const last = route.stages[route.stages.length - 1];
   if (!first || !last) return null;
   if (ageMonths < first.ageRange[0]) return first;
   if (ageMonths > last.ageRange[1]) return last;
@@ -53,7 +53,8 @@ function previousTheme(route: Route, theme: Theme): Theme | null {
     const themeIndex = stage.themes.findIndex((candidate) => candidate.id === theme.id);
     if (themeIndex < 0) continue;
     if (themeIndex > 0) return stage.themes[themeIndex - 1];
-    return route.stages[stageIndex - 1]?.themes.at(-1) ?? null;
+    const previous = route.stages[stageIndex - 1]?.themes;
+    return previous?.[previous.length - 1] ?? null;
   }
   return null;
 }
@@ -87,17 +88,27 @@ export function planToday(args: {
   const items: TodayPlanItem[] = [];
   const selected = new Set<string>();
   const skipped = new Set(child.plan.skipped);
-  const add = (lessonId: string, reason: TodayPlanItem['reason']): boolean => {
+  const stageLessonIds = new Set(stage?.themes.flatMap((theme) => theme.lessons) ?? []);
+  let childLessonCount = 0;
+  const add = (lessonId: string, reason: TodayPlanItem['reason'], offlineOnly = false): boolean => {
     if (
       items.length >= policy.lessonsPerDay ||
       selected.has(lessonId) ||
       skipped.has(lessonId) ||
-      !Object.hasOwn(lessons, lessonId) ||
-      !lessons[lessonId] ||
-      (mode === 'parent-only' && lessons[lessonId].audience !== 'parent')
+      !Object.prototype.hasOwnProperty.call(lessons, lessonId) ||
+      !lessons[lessonId]
     ) return false;
+    const lesson = lessons[lessonId];
+    const isChild = lesson.audience !== 'parent';
+    if (
+      mode === 'parent-only' &&
+      (age.months < lesson.ageRange[0] || age.months > lesson.ageRange[1] || (isChild && !offlineOnly))
+    ) return false;
+    if (offlineOnly && (mode !== 'parent-only' || !isChild || !stageLessonIds.has(lessonId))) return false;
+    if (isChild && !offlineOnly && childLessonCount >= (policy.childLessonsPerDay ?? Infinity)) return false;
     selected.add(lessonId);
-    items.push({ lessonId, reason, lesson: lessons[lessonId] });
+    items.push({ lessonId, reason, lesson, ...(offlineOnly ? { offlineOnly: true } : {}) });
+    if (isChild && !offlineOnly) childLessonCount += 1;
     return true;
   };
 
@@ -106,8 +117,10 @@ export function planToday(args: {
   const themeLessons = current?.theme.lessons ?? [];
   const rotation = (index: number) => ((index + day) % themeLessons.length + themeLessons.length) % themeLessons.length;
   const ranked = themeLessons.map((lessonId, index) => ({ lessonId, rotation: rotation(index) }));
+  const preferChild = mode === 'co-view' && policy.childLessonsPerDay !== undefined && policy.childLessonsPerDay > 0;
   ranked.sort((a, b) =>
     (completedCounts.get(a.lessonId) ?? 0) - (completedCounts.get(b.lessonId) ?? 0) ||
+    (preferChild ? Number(lessons[a.lessonId]?.audience === 'parent') - Number(lessons[b.lessonId]?.audience === 'parent') : 0) ||
     a.rotation - b.rotation,
   );
   for (const { lessonId } of ranked) add(lessonId, 'theme');
@@ -123,7 +136,7 @@ export function planToday(args: {
     const focus = new Set(child.plan.focusDomains);
     for (const theme of stage.themes) {
       for (const lessonId of theme.lessons) {
-        if (Object.hasOwn(lessons, lessonId) && focus.has(lessons[lessonId]?.domains[0])) {
+        if (Object.prototype.hasOwnProperty.call(lessons, lessonId) && focus.has(lessons[lessonId]?.domains[0])) {
           add(lessonId, 'balance');
         }
       }
@@ -132,12 +145,25 @@ export function planToday(args: {
 
   for (const lessonId of themeLessons) add(lessonId, 'theme');
 
-  let totalMin = items.reduce((total, item) => total + (item.lesson.audience === 'parent' ? 0 : item.lesson.durationMin), 0);
+  if (mode === 'parent-only' && stage && items.length < policy.lessonsPerDay) {
+    // 先选完本阶段适龄家长课，置顶 child 也只能在剩余名额中以线下版补位。
+    for (const theme of stage.themes) {
+      for (const lessonId of theme.lessons) add(lessonId, 'balance');
+    }
+    for (const lessonId of child.plan.pinned) add(lessonId, 'pinned', true);
+    for (const { lessonId } of ranked) add(lessonId, 'theme', true);
+    for (const theme of stage.themes) {
+      for (const lessonId of theme.lessons) add(lessonId, 'balance', true);
+    }
+  }
+
+  let totalMin = items.reduce((total, item) => total +
+    (item.lesson.audience === 'parent' || item.offlineOnly ? 0 : item.lesson.durationMin), 0);
   // 容忍浮点求和的舍入误差，避免恰好达标的小数分钟课程被误删。
   const tolerance = Number.EPSILON * Math.max(totalMin, policy.dailyMaxMin) * items.length;
-  // 只从尾部删共看课；家长指引不占孩子预算，单课超额也不能例外保留。
+  // 只从尾部删共看课；家长指引和线下版不占孩子预算，单课超额也不能例外保留。
   for (let index = items.length - 1; index >= 0 && totalMin - policy.dailyMaxMin > tolerance; index--) {
-    if (items[index].lesson.audience === 'parent') continue;
+    if (items[index].lesson.audience === 'parent' || items[index].offlineOnly) continue;
     totalMin -= items[index].lesson.durationMin;
     items.splice(index, 1);
   }

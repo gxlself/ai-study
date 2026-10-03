@@ -13,7 +13,7 @@ function StoryActivity({ ctx }: { ctx: ActivityContext<StoryProps> }) {
   const atEnd = index === pages.length;
   const page = index >= 0 && !atEnd ? pages[index] : undefined;
   const prompts = page?.prompts ?? [];
-  const scene = page?.scene ?? (atEnd ? pages.at(-1)!.scene : cover ?? pages[0].scene);
+  const scene = page?.scene ?? (atEnd ? pages[pages.length - 1].scene : cover ?? pages[0].scene);
 
   const turn = (next: number) => {
     if (!s.active() || s.paused) return;

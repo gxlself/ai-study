@@ -1,0 +1,112 @@
+{
+  "schemaVersion": 1,
+  "id": "core.s6.four-seasons",
+  "title": { "zh": "四季", "en": "Four Seasons" },
+  "summary": { "zh": "听一处地方的四季，看看自己的家乡。", "en": "Hear about one place's seasons and notice your own surroundings." },
+  "ageRange": [30, 36],
+  "domains": ["science", "english"],
+  "themeId": "s6-t6",
+  "tags": ["story", "seasons", "regional-differences", "nature-words"],
+  "durationMin": 7,
+  "coView": "required",
+  "audience": "child",
+  "objectives": [
+    { "zh": "听到春、夏、秋、冬的名字。", "en": "Hear the names spring, summer, autumn, and winter." },
+    { "zh": "观察家乡真实的天气与植物。", "en": "Notice real weather and plants where you live." },
+    { "zh": "听花、太阳、叶子和雪花的英文。", "en": "Hear the English names flower, sun, leaf, and snowflake." }
+  ],
+  "cover": { "concept": "tree", "bg": "grass" },
+  "parentGuide": {
+    "intro": "故事只讲一个地方的例子。花不只春天开，雨不只夏天下，树不都在秋天落叶；中国许多地方冬天也不下雪。不考季节特征配对，课后看家门口真实变化。",
+    "tips": [
+      "孩子说当地没有雪时，认可发现。",
+      "太阳全年都可能看见，不归为夏天专属。",
+      "先说今天看到什么，再提季节名称。",
+      "英语只选孩子感兴趣的一两个词。"
+    ],
+    "phrases": [
+      { "zh": "这里的花开了。", "en": "The flowers are blooming here." },
+      { "zh": "今天下雨了。", "en": "It is raining today." },
+      { "zh": "这棵树有叶子落下。", "en": "Some leaves are falling from this tree." },
+      { "zh": "你家冬天会下雪吗？", "en": "Does it snow where you live in winter?" }
+    ],
+    "why": "跟随孩子的发现，连接图画和真实经验。四季图不是全国统一模板，英语名称融入互动，不要求背诵或用季节解释所有天气。",
+    "refs": ["[7]", "[12]", "[53]", "[80]", "[82]"]
+  },
+  "offline": [
+    {
+      "title": "同一棵树，慢慢看",
+      "minutes": 10,
+      "materials": ["安全步行路线", "纸和粗蜡笔", "成人以前画的观察记录"],
+      "steps": [
+        "关屏，和成人去安全处看树。",
+        "请孩子说今天看见什么。",
+        "成人记录叶子、花或天气。",
+        "隔一段时间再看同一处。",
+        "一起比变化，也说说没变的地方。"
+      ],
+      "safety": "成人全程近距离照看，远离车道、水边和高处。不攀树，不采未知植物、果实或蘑菇，不把落叶与小枝放入口。遇雷雨、大风、酷热或严寒，改为安全室内观察；不直视太阳，不为看雪延迟作息。",
+      "domains": ["science", "english"],
+      "question": "这棵树和上次相比，什么变了，什么没变？",
+      "levels": {
+        "easier": "只看今天的树，不要求比较或说季节。",
+        "harder": "比较两张成人观察记录，孩子说一个变化，不要求符合故事。"
+      }
+    }
+  ],
+  "steps": [
+    {
+      "type": "story",
+      "title": { "zh": "一个地方的四季", "en": "Seasons in One Place" },
+      "parentTip": "这些是具体例子，不是固定配对：花、雨、落叶、雪都要看地区和当天情况。",
+      "props": {
+        "title": { "zh": "一个地方的四季", "en": "Seasons in One Place" },
+        "pages": [
+          {
+            "scene": { "bg": "sky", "ground": "grass", "sprites": [
+              { "concept": "flower", "x": 38, "y": 72, "size": 38, "anim": "none" },
+              { "concept": "sun", "x": 77, "y": 20, "size": 22, "anim": "none" }
+            ] },
+            "text": { "zh": "这个地方的春天，有些花开了。", "en": "In spring in this place, some flowers bloom." },
+            "prompts": [{ "kind": "distancing", "zh": "你家附近有什么花？", "en": "What flowers are near your home?" }]
+          },
+          {
+            "scene": { "bg": "sky", "ground": "grass", "sprites": [
+              { "concept": "home", "x": 38, "y": 72, "size": 38, "anim": "none" },
+              { "concept": "rain", "x": 77, "y": 24, "size": 24, "anim": "none" }
+            ] },
+            "text": { "zh": "夏天的这一天，下雨了。我们在屋里听雨。", "en": "On this summer day, it rains. We listen from indoors." }
+          },
+          {
+            "scene": { "bg": "sky", "ground": "grass", "sprites": [
+              { "concept": "tree", "x": 38, "y": 72, "size": 38, "anim": "none" },
+              { "concept": "leaf", "x": 77, "y": 77, "size": 22, "anim": "none" }
+            ] },
+            "text": { "zh": "秋天到了。这棵树有叶子落下。", "en": "Autumn arrives. Some leaves fall from this tree." },
+            "prompts": [{ "kind": "open", "zh": "地上的叶子是什么样的？", "en": "What are the leaves on the ground like?" }]
+          },
+          {
+            "scene": { "bg": "snow", "ground": "snow", "sprites": [
+              { "concept": "home", "x": 38, "y": 72, "size": 38, "anim": "none" },
+              { "concept": "snow", "x": 77, "y": 24, "size": 22, "anim": "none" }
+            ] },
+            "text": { "zh": "冬天，这个地方下雪了。有些地方冬天也不下雪。", "en": "It snows here in winter. Some places have no winter snow." },
+            "prompts": [{ "kind": "distancing", "zh": "你家冬天和这里一样吗？", "en": "Is winter where you live like this?" }]
+          }
+        ]
+      }
+    },
+    {
+      "type": "word-cards",
+      "title": { "zh": "说说身边的自然", "en": "Name Things in Nature" },
+      "parentTip": "雪花对应已有词条 snow。太阳不只属于夏天，四张词卡不是季节配对测验。",
+      "props": {
+        "items": ["flower", "sun", "leaf", "snow"],
+        "show": { "text": true, "english": true, "pinyin": false },
+        "speak": "name",
+        "autoAdvanceSec": null,
+        "intro": { "zh": "看看这些自然里的东西。", "en": "Look at these things in nature." }
+      }
+    }
+  ]
+}

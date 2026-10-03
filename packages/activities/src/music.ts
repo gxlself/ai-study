@@ -30,7 +30,7 @@ export function parseNotes(source: string, bpm = 90): ParsedNote[] {
       throw new RangeError('音符拍数必须为有限正数');
     }
     const midi = pitch === 'R' ? null
-      : (Number(pitch.at(-1)) + 1) * 12 + SEMITONES[pitch[0]]
+      : (Number(pitch[pitch.length - 1]) + 1) * 12 + SEMITONES[pitch[0]]
         + (pitch.includes('#') ? 1 : pitch.includes('b') ? -1 : 0);
     notes.push({
       pitch,

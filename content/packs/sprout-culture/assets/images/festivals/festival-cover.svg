@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="0 0 480 320" role="img" aria-labelledby="title">
+  <title id="title">A paper lantern, moon, and leaf-wrapped zongzi for Chinese festivals</title>
+  <circle cx="347" cy="85" r="55" fill="#EAC778" stroke="#B18C4F" stroke-width="6"/>
+  <circle cx="331" cy="67" r="11" fill="#D5B569"/>
+  <circle cx="364" cy="102" r="15" fill="#D5B569"/>
+  <path d="M121 60 Q121 36 140 36 Q159 36 159 60" fill="none" stroke="#94634D" stroke-width="8" stroke-linecap="round"/>
+  <rect x="92" y="58" width="96" height="23" rx="9" fill="#EAC778"/>
+  <ellipse cx="140" cy="154" rx="86" ry="78" fill="#D85F60" stroke="#9B4148" stroke-width="6"/>
+  <ellipse cx="140" cy="154" rx="48" ry="78" fill="none" stroke="#F4BC83" stroke-width="5"/>
+  <path d="M140 77 V232" stroke="#F4BC83" stroke-width="5"/>
+  <rect x="100" y="228" width="80" height="22" rx="8" fill="#EAC778"/>
+  <path d="M128 258 V280 M140 250 V290 M152 258 V280" stroke="#D85F60" stroke-width="8" stroke-linecap="round"/>
+  <path d="M328 157 Q336 146 344 160 L413 274 Q420 289 404 294 L269 294 Q252 290 261 274Z" fill="#75A574" stroke="#3C7051" stroke-width="6" stroke-linejoin="round"/>
+  <path d="M336 165 V283 M293 215 388 267 M284 234 375 285" fill="none" stroke="#EAD5A3" stroke-width="8" stroke-linecap="round"/>
+</svg>

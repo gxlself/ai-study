@@ -22,7 +22,7 @@ Base：`http://<host>:4310`。JSON 请求/响应；错误统一 `{"error": {"cod
 | GET | `/api/children/:id` | 👤📺 | `ChildProfile`（device 只能读绑定的孩子） |
 | PUT | `/api/children/:id` | 👤 | 部分更新（深合并 screen / plan）；`screen.mode` 支持 auto / parent-only / co-view（18 月龄以下强制 parent-only），默认窗口 08:00–18:30 → `ChildProfile` |
 | DELETE | `/api/children/:id` | 👤 | 删除孩子及其记录 |
-| GET | `/api/children/:id/today?date=YYYY-MM-DD` | 👤📺 | `TodayPlan`（`@sprout/core` scheduler）；`screen.mode` 为生效模式，parent-only 时连 pinned 也只取 parent 课，预算只累计 child 课 |
+| GET | `/api/children/:id/today?date=YYYY-MM-DD` | 👤📺 | `TodayPlan`（`@sprout/core` scheduler）；`screen.mode` 为生效模式；parent-only 优先适龄 parent 课，不足时以本阶段 child 课的 `offlineOnly` 线下版补足；预算只累计实际共看 child 课，并遵守阶段 `childLessonsPerDay` |
 | GET | `/api/children/:id/screen` | 👤📺 | `ScreenStatus`（含 mode；今日已用仅累计 child sessions，缺 audience 时查课程，未知课保守视为 child）；`allowedNow` 只限制 child 课，不阻拦家长指引 |
 | GET | `/api/children/:id/stats?days=7` | 👤 | `{days:[{date, screenSec, lessons, completed}], domains:{[domain]: seconds}, totalSec, streakDays}`；屏幕秒数/领域秒数/totalSec 排除 parent，课次数仍包含家长课；不用于打卡或奖励 |
 | GET | `/api/children/:id/milestones` | 👤 | `{items: MilestoneItem[], observations: MilestoneObservation[], disclaimer}` |
@@ -32,7 +32,7 @@ Base：`http://<host>:4310`。JSON 请求/响应；错误统一 `{"error": {"cod
 ## 内容：内容包 / 词库 / 课程 / 路线
 | GET | `/api/packs` | 👤📺 | `PackInfo[]` |
 |---|---|---|---|
-| POST | `/api/packs/import` | 👤 | multipart `file`=zip（根含 pack.json 或单一子目录含 pack.json）；校验后解压到 `data/packs/<id>/`；同 id 高版本覆盖 → `PackInfo`；返回校验 issues |
+| POST | `/api/packs/import` | 👤 | multipart `file`=zip（根含 pack.json 或单一子目录含 pack.json）；校验后解压到 `data/packs/<id>/`；同 id 同版本或高版本覆盖，拒绝降级，保留启停状态 → `PackInfo`；返回校验 issues |
 | PUT | `/api/packs/:id` | 👤 | `{enabled:boolean}` |
 | DELETE | `/api/packs/:id` | 👤 | 仅 installed 可删 |
 | GET | `/api/packs/:id/export` | 👤 | 下载 zip |

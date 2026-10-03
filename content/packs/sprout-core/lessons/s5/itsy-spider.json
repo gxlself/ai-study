@@ -1,0 +1,70 @@
+{
+  "schemaVersion": 1,
+  "id": "core.s5.itsy-spider",
+  "title": {"zh": "小蜘蛛", "en": "Itsy Bitsy Spider"},
+  "summary": {"zh": "手指慢慢向上，再慢慢向下。", "en": "Move your fingers slowly up, then slowly down."},
+  "ageRange": [24, 29],
+  "domains": ["music", "english"],
+  "themeId": "s5-t5",
+  "durationMin": 5,
+  "coView": "required",
+  "audience": "child",
+  "objectives": [
+    {"zh": "用手指参与上和下的动作歌。", "en": "Join an up-and-down song with finger movements."},
+    {"zh": "听水、太阳和蜘蛛的短句。", "en": "Hear short phrases about water, sunshine, and a spider."}
+  ],
+  "cover": {"concept": "spider", "bg": "sky"},
+  "parentGuide": {
+    "intro": "用传统小蜘蛛旋律唱原创中英词。手指在胸前向上走，雨来时再向下。故事只是一段天气变化，不代表雨后一定晴。宝宝可以只看你的手；不摸真蜘蛛，不去爬水管。",
+    "tips": ["先用一种语言唱一遍，重复留到关屏以后。", "动作放在胸前，不快速挥舞或抬高宝宝。", "手势不必按复杂指法，轻轻移动一只手就够。"],
+    "phrases": [
+      {"zh": "小蜘蛛向上爬。", "en": "The spider climbs up."},
+      {"zh": "雨水把它冲下来了。", "en": "The rain washes it down."},
+      {"zh": "太阳把雨滴晒干了。", "en": "The sun dries the drops."},
+      {"zh": "手指慢慢往上走。", "en": "Move your fingers slowly up."}
+    ],
+    "why": "亲子主动歌唱和动作提供共同参与的机会。空间词跟手势相连，英语跟真人回应相连；不把背景播放当学习，不要求完整跟唱。",
+    "refs": ["[53]", "[67]", "[87]", "[88]"]
+  },
+  "offline": [{
+    "title": "手指小蜘蛛",
+    "minutes": 6,
+    "materials": ["成人陪伴", "稳固坐处或防滑地垫"],
+    "steps": ["和宝宝坐稳，把一只手放在胸前。", "边唱边用手指缓慢向上移动。", "唱雨水时缓慢放下手，太阳时展开手掌。", "唱完停下来，宝宝愿意时让他给你做一个动作。"],
+    "safety": "成人陪同。只移动手指，不让宝宝攀爬水管、家具或窗台。不摸、捕捉或喂蜘蛛，不玩真实排水口。不要强拉宝宝手指、手臂或屏息；不想做就停。",
+    "domains": ["music", "english"],
+    "question": "你想让手指往哪里走？",
+    "levels": {"easier": "只唱第一句，成人做一次向上手势。", "harder": "宝宝愿意时选择向上或向下，成人跟随他的手势接一句短词。"}
+  }],
+  "steps": [{
+    "type": "song",
+    "parentTip": "传统6/8旋律由G调移至C调；中英原创改编各四句，音符与字、音节对齐。",
+    "props": {
+      "title": {"zh": "小蜘蛛", "en": "Itsy Bitsy Spider"},
+      "credit": "旋律：传统（公有领域）；中文词：芽芽成长原创；英文词：芽芽成长原创改编。采用6/8记谱版本，移调至C大调。",
+      "bpm": 84,
+      "instrument": "musicbox",
+      "repeat": 1,
+      "lines": [
+        {"lang": "zh", "text": "小小蜘蛛慢慢爬上那个水管口", "notes": "G3/0.5 C4/1 C4/0.5 C4/1 D4/0.5 E4/1.5 E4/1 E4/0.5 D4/1 C4/0.5 D4/1 E4/0.5 C4/3"},
+        {"lang": "zh", "text": "雨水落下冲下小蜘蛛呀", "notes": "E4/1.5 E4/1 F4/0.5 G4/1.5 G4/1.5 F4/1 E4/0.5 F4/1 G4/0.5 E4/3"},
+        {"lang": "zh", "text": "太阳暖暖晒干水管雨滴", "notes": "C4/1.5 C4/1 D4/0.5 E4/1.5 E4/1.5 D4/1 C4/0.5 D4/1 E4/0.5 C4/1.5"},
+        {"lang": "zh", "text": "小小蜘蛛又沿着水管慢慢爬上去", "notes": "B3/1 B3/0.5 C4/1 C4/0.5 C4/1 D4/0.5 E4/1.5 E4/1 E4/0.5 D4/1 C4/0.5 D4/1 E4/0.5 C4/2.5"},
+        {"lang": "en", "text": "The tiny little spider climbed up the water spout", "notes": "G3/0.5 C4/1 C4/0.5 C4/1 D4/0.5 E4/1.5 E4/1 E4/0.5 D4/1 C4/0.5 D4/1 E4/0.5 C4/3"},
+        {"lang": "en", "text": "Rain washed the tiny spider down and out", "notes": "E4/1.5 E4/1 F4/0.5 G4/1.5 G4/1.5 F4/1 E4/0.5 F4/1 G4/0.5 E4/3"},
+        {"lang": "en", "text": "Sun warmed the pipe and dried the drops away", "notes": "C4/1.5 C4/1 D4/0.5 E4/1.5 E4/1.5 D4/1 C4/0.5 D4/1 E4/0.5 C4/1.5"},
+        {"lang": "en", "text": "The tiny little spider climbed the water spout once more", "notes": "B3/1 B3/0.5 C4/1 C4/0.5 C4/1 D4/0.5 E4/1.5 E4/1 E4/0.5 D4/1 C4/0.5 D4/1 E4/0.5 C4/2.5"}
+      ],
+      "scene": {"bg": "sky", "ground": "none", "sprites": [
+        {"concept": "spider", "x": 50, "y": 61, "size": 35, "anim": "none"},
+        {"concept": "rain", "x": 22, "y": 25, "size": 20, "anim": "none"},
+        {"concept": "sun", "x": 78, "y": 23, "size": 20, "anim": "none"}
+      ]},
+      "actions": [
+        {"zh": "手指在胸前向上走。", "en": "Move your fingers up in front of your chest."},
+        {"zh": "小手慢慢放下来。", "en": "Bring your hand down slowly."},
+        {"zh": "展开手掌像太阳。", "en": "Open your hand like the sun."}
+      ]
+    }
+  }]
+}

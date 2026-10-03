@@ -1,0 +1,27 @@
+{
+  "schemaVersion": 1,
+  "id": "sprout.culture",
+  "version": "1.0.0",
+  "name": { "zh": "中国传统节日", "en": "Chinese Festivals" },
+  "description": {
+    "zh": "八个节日主题，分龄家长指引与可选短共看；把节日变成屏幕外的亲子相伴。",
+    "en": "Eight festival themes with age-specific parent guides and optional short co-viewing lessons, followed by real-world family play."
+  },
+  "author": "芽芽成长",
+  "license": "CC0-1.0",
+  "ageRange": [6, 36],
+  "lexicon": "lexicon.json",
+  "routes": [],
+  "lessonsDir": "lessons",
+  "requires": { "sdk": "^1.0.0" },
+  "credits": [
+    {
+      "name": "芽芽成长原创节日课程与插画",
+      "url": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "license": "CC0-1.0",
+      "note": "原创文字、七个节日词条与八幅静态 SVG。核心词条仅引用，不复制素材；系统合成音频的使用条件另见 LICENSES.md。"
+    }
+  ],
+  "cover": "assets/images/festivals/festival-cover.svg",
+  "tags": ["中国传统节日", "家长指引", "亲子共看", "线下游戏"]
+}

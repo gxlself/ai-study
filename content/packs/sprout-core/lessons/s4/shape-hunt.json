@@ -1,0 +1,66 @@
+{
+  "schemaVersion": 1,
+  "id": "core.s4.shape-hunt",
+  "title": { "zh": "找圆形", "en": "Find Something Round" },
+  "summary": { "zh": "看看圆边，再配配形状。", "en": "Notice round edges and match simple shapes." },
+  "themeId": "s4-t2",
+  "ageRange": [18, 23],
+  "domains": ["math"],
+  "audience": "parent",
+  "durationMin": 2,
+  "coView": "required",
+  "objectives": [
+    { "zh": "留意身边圆圆的轮廓。", "en": "Notice round outlines nearby." },
+    { "zh": "试着把相同形状配一起。", "en": "Try matching identical shapes." }
+  ],
+  "cover": { "concept": "circle", "bg": "paper" },
+  "printables": [
+    { "kind": "cards", "title": "圆方三角形状卡", "items": ["circle", "square", "triangle"], "size": "large", "showText": true, "showEnglish": true }
+  ],
+  "parentGuide": {
+    "intro": "读完关屏，先看圆形卡。再看圆盘的边、圆钟的面和皮球。球是立体的，只说它看起来圆圆的。不要求记住形状名字。配对先用两张完全相同的卡。",
+    "tips": ["只选确实圆的盘子和钟面。", "大人用手指沿着圆边慢慢走。", "配形玩具先示范一次，不硬压进去。"],
+    "phrases": [
+      { "zh": "圆圆的，没有角。", "en": "Round, with no corners." },
+      { "zh": "这只盘子的边圆圆的。", "en": "This plate has a round edge." },
+      { "zh": "球看起来圆圆的。", "en": "The ball looks round." },
+      { "zh": "这两张形状一样。", "en": "These two shapes match." }
+    ],
+    "why": "在实物旁说形状与空间词。配对时提供一点帮助，再让宝宝试。相关研究不是本月龄的达标要求。",
+    "refs": ["67", "71", "81"]
+  },
+  "offline": [
+    {
+      "title": "圆形卡找朋友",
+      "minutes": 6,
+      "materials": ["两张相同圆形卡", "一张正方形卡", "圆形不易碎盘"],
+      "steps": ["把圆形卡放在盘子旁。", "沿着盘子的圆边慢慢指。", "把另一张圆形卡和方形卡放下。", "邀请宝宝给第一张卡找朋友。"],
+      "safety": "用不易碎、无缺口的盘子。成人剪裁大卡，防止入口与纸边划伤。小物件直径小于3.5厘米有窒息风险。只指高处的钟，不攀爬摘取。",
+      "domains": ["math"],
+      "question": "圆形卡想和谁放在一起？",
+      "levels": { "easier": "只放两张相同圆形卡，一起合拢。", "harder": "加正方形卡，让宝宝试着找相同形状。" }
+    }
+  ],
+  "steps": [
+    {
+      "type": "guide",
+      "title": { "zh": "看圆边，配形状", "en": "Look at Edges and Match Shapes" },
+      "parentTip": "认识圆圆的样子，不把球说成平面的圆形。",
+      "props": {
+        "goal": "在家里找圆轮廓，并尝试相同形状配对。",
+        "materials": ["圆方三角打印卡", "圆形不易碎盘", "圆钟或其打印图片", "大皮球", "适龄大块配形玩具"],
+        "steps": [
+          { "text": "把圆形卡放下，沿边指一圈。", "say": { "zh": "圆圆的，没有角。", "en": "Round, with no corners." }, "concept": "circle" },
+          { "text": "把圆盘放旁边，指盘子的边。", "say": { "zh": "盘子的边也圆圆的。", "en": "The plate has a round edge too." } },
+          { "text": "在安全处指圆钟的钟面。", "say": { "zh": "钟的面圆圆的。", "en": "The clock face is round." }, "concept": "clock" },
+          { "text": "把大皮球放下，让宝宝摸摸。", "say": { "zh": "球看起来圆圆的。", "en": "The ball looks round." }, "concept": "ball" },
+          { "text": "示范把大圆块放进配形孔。", "say": { "zh": "一样的形状，放进去。", "en": "The same shape. In it goes." }, "concept": "puzzle" },
+          { "text": "把另一个大形块递给宝宝试。", "say": { "zh": "你想试试这个吗？", "en": "Would you like to try this one?" } }
+        ],
+        "playMin": 8,
+        "observe": ["宝宝是否看向你指的边。", "宝宝是否留意相同的形状。", "宝宝是否试着转动大形块。"],
+        "safety": "配形玩具需适龄，无松脱小零件。小物件直径小于3.5厘米有窒息风险。不用玻璃盘或锐利边缘。不爬家具找钟，不强压形块或宝宝的手。"
+      }
+    }
+  ]
+}

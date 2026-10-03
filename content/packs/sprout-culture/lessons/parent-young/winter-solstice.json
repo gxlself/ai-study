@@ -1,0 +1,58 @@
+{
+  "schemaVersion": 1,
+  "id": "culture.parent-young.winter-solstice",
+  "title": { "zh": "冬至：家人坐一起", "en": "Winter Solstice: Together at Home" },
+  "summary": { "zh": "看饺子或汤圆大卡，听家里不同的冬至习惯。", "en": "See dumpling or tangyuan cards and hear about your family's Winter Solstice customs." },
+  "ageRange": [6, 17],
+  "audience": "parent",
+  "domains": ["social", "language", "life"],
+  "themeId": "culture.winter-solstice",
+  "tags": ["冬至", "家庭习俗", "家长指引", "只看图不试吃"],
+  "durationMin": 2,
+  "coView": "required",
+  "objectives": [
+    { "zh": "听一项家庭节日习惯。", "en": "Hear about one family festival custom." },
+    { "zh": "一起看图、轮流回应。", "en": "Share pictures and take turns responding." }
+  ],
+  "cover": { "concept": "dumpling", "bg": "room" },
+  "parentGuide": {
+    "intro": "先读完关屏。冬至时有些家庭吃饺子，有些吃汤圆，也有别的习惯。选家里熟悉的一张大卡说话，不试吃、不做生面团游戏。节日重点是相伴，不说不吃某食物会生病或受伤。",
+    "tips": ["不同地区和家庭习俗都可以，不规定必须吃什么。", "看图与进餐分开，实际进餐不用屏幕。", "宝宝看、笑或发声即可，不问知识题。"],
+    "phrases": [
+      { "zh": "这是饺子。", "en": "This is a dumpling." },
+      { "zh": "这是汤圆。", "en": "These are tangyuan." },
+      { "zh": "我们在一起。", "en": "We're together." },
+      { "zh": "你想看哪张？", "en": "Which card would you like to see?" }
+    ],
+    "why": "温暖、可预测的家庭仪式给交流提供机会。真人回应才是重点，不以食物或节日知识要求宝宝。",
+    "refs": ["[6]", "[8]", "[47]", "[82]", "[93]"]
+  },
+  "printables": [{ "kind": "cards", "title": "冬至家庭大卡", "items": ["dumpling", "fest-tangyuan", "home"], "size": "large", "showText": true, "showEnglish": true }],
+  "offline": [{
+    "title": "家里的冬至小聊天",
+    "minutes": 5,
+    "materials": ["完整的饺子或汤圆大卡"],
+    "steps": ["关屏，在安静处与宝宝面对面。", "拿住家里熟悉的食物大卡，慢慢说名称。", "说一句我们在一起，停下来回应宝宝。", "收走大卡，回到日常游戏，实际进餐另行安排。"],
+    "question": "你想再看看什么？",
+    "levels": { "easier": "只看一张大卡，听成人一句话。", "harder": "十二月龄后并排展示饺子卡与汤圆卡，接受手势选择。" },
+    "safety": "成人全程陪伴，卡片不入口；汤圆圆形且黏，有窒息风险，3岁以下不建议整颗吃，切小压扁也不能消除黏性风险，本课不试吃。饺子不用整颗喂，正常进餐需按已有能力去硬馅、切碎软烂并坐稳看护；本课不涉及烹饪或喂食。远离热汤、生面团和灶具。",
+    "domains": ["social", "language"]
+  }],
+  "steps": [{
+    "type": "guide",
+    "parentTip": "各地习俗都可以；食物只看图，不说恐吓式俗语。",
+    "props": {
+      "goal": "介绍家里的一项冬至习惯，回应宝宝。",
+      "materials": ["饺子大卡", "汤圆大卡"],
+      "steps": [
+        { "text": "读完关屏，选家里熟悉的饺子或汤圆大卡，不拿真食物。", "concept": "dumpling", "say": { "zh": "这是饺子。", "en": "This is a dumpling." } },
+        { "text": "成人拿住大卡，说完停五秒；宝宝想换才换另一张。", "concept": "fest-tangyuan", "say": { "zh": "你想看哪张？", "en": "Which card would you like to see?" } },
+        { "text": "说家里一起过节的习惯，不讲不吃某食物会受伤。", "concept": "home", "say": { "zh": "我们在一起。", "en": "We're together." } },
+        { "text": "回应宝宝目光和发声，收卡后继续普通亲子游戏。", "say": { "zh": "你在看呀。", "en": "You're looking." } }
+      ],
+      "playMin": 5,
+      "observe": ["是否注意卡片与照护者。", "是否用目光、发声或手势选择。", "是否愿意继续交流或需要结束。"],
+      "safety": "汤圆只看图不试吃；3岁以下不建议整颗吃，切小压扁仍有黏性窒息风险。本课不喂饺子、不用生面团；远离热汤和灶具，卡片不入口。"
+    }
+  }]
+}

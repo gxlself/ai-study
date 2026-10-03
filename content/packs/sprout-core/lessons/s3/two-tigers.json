@@ -6,7 +6,7 @@
     "en": "Two Tigers"
   },
   "summary": {
-    "zh": "家长慢唱熟悉旋律，和宝宝做轻柔动作。",
+    "zh": "慢慢唱熟悉旋律。一起轻轻拍拍手。",
     "en": "Sing the familiar melody slowly with gentle shared movements."
   },
   "ageRange": [12, 17],
@@ -18,11 +18,11 @@
   "audience": "parent",
   "objectives": [
     {
-      "zh": "宝宝在重复旋律中听一和二。",
-      "en": "Your baby hears one and two in a repeated melody."
+      "zh": "听重复的歌声。",
+      "en": "Your baby hears a repeated melody."
     },
     {
-      "zh": "宝宝用看、拍手或发声参与。",
+      "zh": "用看、拍手或发声参与。",
       "en": "Your baby joins with a look, clap, or sound."
     }
   ],
@@ -31,11 +31,11 @@
     "bg": "grass"
   },
   "parentGuide": {
-    "intro": "这首歌的重点是共享节奏，不是教宝宝认数字。家长慢慢唱、轻轻拍手或摇摆；宝宝只听和看也算参与。",
+    "intro": "先由家长单独学唱。关屏后面对面唱。中文换成温和原创词。两只老虎慢慢走。不唱身体残缺很奇怪。宝宝看、笑或轻轻动都好。",
     "tips": [
       "不使用吓人的老虎叫声。",
       "每句唱完停一停，等宝宝反应。",
-      "宝宝不想拍手时，家长自己做即可。"
+      "宝宝不想拍手时。家长自己做即可。"
     ],
     "phrases": [
       {
@@ -43,8 +43,8 @@
         "en": "Two little tigers."
       },
       {
-        "zh": "跑得快呀。",
-        "en": "They run so fast."
+        "zh": "慢慢走。",
+        "en": "Walk slowly."
       },
       {
         "zh": "和宝宝一起唱。",
@@ -55,8 +55,8 @@
         "en": "Let's take a break."
       }
     ],
-    "why": "亲子主动歌唱和同步动作能创造来回互动。儿歌用于节奏、模仿和亲密时刻，不把幼儿的歌唱当作数字测验。",
-    "refs": ["R50", "R54", "R87", "R88"]
+    "why": "真人一起唱，能留出交流。主动音乐研究支持亲子参与。不等于本课已证明有效。不用歌曲测试数量。",
+    "refs": ["[82]", "[87]"]
   },
   "offline": [
     {
@@ -64,17 +64,17 @@
       "minutes": 8,
       "materials": ["成人稳固的椅子或软垫"],
       "steps": [
-        "家长坐稳，让宝宝以舒服姿势坐在身边或腿上。",
-        "先唱一段，只做轻轻拍腿或拍手。",
-        "唱完停下来，观察宝宝是否看你、笑或发声。",
-        "宝宝愿意时再唱一遍，不想继续就结束。"
+        "家长坐稳。宝宝舒适地坐在身边。不必坐成人腿上。",
+        "先唱一段。只做轻轻拍腿或拍手。",
+        "唱完停下来。观察宝宝是否看你、笑或发声。",
+        "宝宝愿意时再唱一遍。不想继续就结束。"
       ],
-      "safety": "成人保持坐稳，不快速摇晃、抛接或抱着转圈；不强迫宝宝拍手，不使用高音量或惊吓音效。",
+      "safety": "成人保持坐稳。不快速摇晃、抛接或抱着转圈。不强迫宝宝拍手。不使用高音量或惊吓音效。",
       "domains": ["music", "english"],
       "question": "你想再听哪一句？",
       "levels": {
-        "easier": "只唱“两只老虎”两句。",
-        "harder": "每句唱完停五秒，等宝宝用动作或声音回应。"
+        "easier": "只唱开头两句。宝宝看你就好。",
+        "harder": "唱完一段再停顿。等宝宝用动作回应。"
       }
     }
   ],
@@ -83,11 +83,11 @@
       "type": "guide",
       "parentTip": "慢唱、轻动作，宝宝不必跟唱。",
       "props": {
-        "goal": "用重复旋律共享节奏和亲密时刻。",
+        "goal": "一起听重复旋律和节奏。",
         "materials": ["成人稳固的椅子或软垫"],
         "steps": [
           {
-            "text": "家长坐稳，先唱两句并轻轻拍腿。",
+            "text": "家长坐稳。先唱两句并轻轻拍腿。",
             "concept": "tiger",
             "say": {
               "zh": "两只老虎。",
@@ -95,11 +95,11 @@
             }
           },
           {
-            "text": "唱到跑得快时，手臂慢慢向前动。",
+            "text": "唱到慢慢走。家长让手指慢慢走动。",
             "concept": "walk",
             "say": {
-              "zh": "跑得快呀。",
-              "en": "They run so fast."
+              "zh": "慢慢走。",
+              "en": "Walk slowly."
             }
           },
           {
@@ -113,11 +113,11 @@
         ],
         "playMin": 8,
         "observe": [
-          "宝宝是否看向家长的脸。",
-          "宝宝是否对旋律有微笑、拍手或发声。",
-          "宝宝是否在停顿时期待下一句。"
+          "是否看向家长的脸。",
+          "是否跟着歌声笑或轻动。",
+          "是否在停顿时期待下一句。"
         ],
-        "safety": "动作轻柔、节奏慢。保持宝宝头颈和身体稳定，不做快速摇晃或高处动作。"
+        "safety": "动作轻柔、节奏慢。保持宝宝头颈和身体稳定。不做快速摇晃或高处动作。"
       }
     },
     {
@@ -128,7 +128,7 @@
           "zh": "两只老虎",
           "en": "Are You Sleeping"
         },
-        "credit": "旋律：传统（公有领域）；中文词：传统；English lyrics: traditional public-domain melody adaptation",
+        "credit": "旋律：传统（公有领域）；中文词：芽芽成长原创；英文词：传统；旋律名：Frère Jacques",
         "bpm": 76,
         "instrument": "musicbox",
         "lines": [
@@ -144,32 +144,32 @@
           },
           {
             "lang": "zh",
-            "text": "跑得快呀",
+            "text": "慢慢走",
             "notes": "E4/1 F4/1 G4/2"
           },
           {
             "lang": "zh",
-            "text": "跑得快呀",
+            "text": "慢慢走",
             "notes": "E4/1 F4/1 G4/2"
           },
           {
             "lang": "zh",
-            "text": "一只没有耳朵",
-            "notes": "G4/1 A4/1 G4/1 F4/1 E4/1 C4/2"
+            "text": "一起抬头看看",
+            "notes": "G4/0.5 A4/0.5 G4/0.5 F4/0.5 E4/1 C4/1"
           },
           {
             "lang": "zh",
-            "text": "一只没有尾巴",
-            "notes": "G4/1 A4/1 G4/1 F4/1 E4/1 C4/2"
+            "text": "一起摇摇尾巴",
+            "notes": "G4/0.5 A4/0.5 G4/0.5 F4/0.5 E4/1 C4/1"
           },
           {
             "lang": "zh",
-            "text": "真奇怪呀",
+            "text": "你好呀",
             "notes": "C4/1 G3/1 C4/2"
           },
           {
             "lang": "zh",
-            "text": "真奇怪呀",
+            "text": "你好呀",
             "notes": "C4/1 G3/1 C4/2"
           },
           {
@@ -184,23 +184,23 @@
           },
           {
             "lang": "en",
-            "text": "Little one",
+            "text": "Brother John",
             "notes": "E4/1 F4/1 G4/2"
           },
           {
             "lang": "en",
-            "text": "Little one",
+            "text": "Brother John",
             "notes": "E4/1 F4/1 G4/2"
           },
           {
             "lang": "en",
             "text": "Morning bells are ringing",
-            "notes": "G4/1 A4/1 G4/1 F4/1 E4/1 C4/2"
+            "notes": "G4/0.5 A4/0.5 G4/0.5 F4/0.5 E4/1 C4/1"
           },
           {
             "lang": "en",
             "text": "Morning bells are ringing",
-            "notes": "G4/1 A4/1 G4/1 F4/1 E4/1 C4/2"
+            "notes": "G4/0.5 A4/0.5 G4/0.5 F4/0.5 E4/1 C4/1"
           },
           {
             "lang": "en",

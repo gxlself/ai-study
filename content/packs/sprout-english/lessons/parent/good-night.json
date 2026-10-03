@@ -1,0 +1,79 @@
+{
+  "schemaVersion": 1,
+  "id": "english.parent.good-night",
+  "title": {"zh": "关屏说晚安", "en": "Good Night, Screen Off"},
+  "summary": {"zh": "白天学六句，睡前只和真人、纸书在一起。", "en": "Learn six phrases in the daytime and keep bedtime screen-free."},
+  "ageRange": [6, 24],
+  "audience": "parent",
+  "domains": ["english", "life", "social"],
+  "tags": ["bedtime", "parent-led", "tpr", "screen-free"],
+  "durationMin": 3,
+  "coView": "required",
+  "objectives": [
+    {"zh": "晚安短句配纸书。", "en": "Use bedtime phrases with a real book."},
+    {"zh": "睡前不看屏幕。", "en": "Keep screens out of bedtime."}
+  ],
+  "cover": {"concept": "book", "bg": "night"},
+  "parentGuide": {
+    "intro": "家长白天独自学六句，不在睡前打开本课。晚上放下设备，用纸书和轻声交流完成家里原有的睡前流程；不播放音频哄睡，也不要求宝宝复读。",
+    "tips": [
+      "每步附美式音标，白天慢读练习，睡前只用你已熟悉的一两句。",
+      "动作游戏在白天做翻书、挥手示范；睡前不跳跃、不兴奋表演。",
+      "宝宝不想读就结束，英语不替代安静中文交流和宝宝的休息需要。"
+    ],
+    "phrases": [
+      {"zh": "我们读本书吧。", "en": "Let's read a book."},
+      {"zh": "再看一页。", "en": "One more page."},
+      {"zh": "该休息啦。", "en": "Time to rest."},
+      {"zh": "晚安。", "en": "Good night."},
+      {"zh": "我爱你。", "en": "I love you."},
+      {"zh": "睡个好觉。", "en": "Sleep well."}
+    ],
+    "why": "固定、温暖的交流属于真实生活，不是睡眠训练。睡前不用屏，家长真人回应；几句英文不保证语言或睡眠改善。",
+    "refs": ["[3]", "[16]", "[47]", "[93]"]
+  },
+  "printables": [
+    {"kind": "cards", "title": "白天读的晚安实物卡", "items": ["book", "moon", "star"], "size": "large", "showText": true, "showEnglish": true}
+  ],
+  "offline": [
+    {
+      "title": "白天练，晚上轻声说",
+      "minutes": 5,
+      "materials": ["平日共读的纸书"],
+      "steps": [
+        "白天关屏后，成人拿纸书示范慢慢翻一页，宝宝可看真人。",
+        "看宝宝的兴趣，指一幅图说一句，再等一个目光或声音。",
+        "白天以挥手和晚安短句结束练习，不要求闭眼装睡。",
+        "晚上不用设备，按家里原有流程轻声说一两句，困倦就结束。"
+      ],
+      "question": "这页你想看看哪里呀？",
+      "levels": {
+        "easier": "只指一幅图，再用晚安结束。",
+        "harder": "白天由宝宝选择最后一页，家长接着宝宝的指认说短句。"
+      },
+      "safety": "成人陪伴，不用屏幕或背景音哄睡；遵循家庭已有的安全睡眠安排，不把打印卡、纸书、玩具或绳带留在宝宝睡眠空间。",
+      "domains": ["english", "social", "life"]
+    }
+  ],
+  "steps": [
+    {
+      "type": "guide",
+      "parentTip": "这页只在白天给家长看，睡前关屏，不播放课程。",
+      "props": {
+        "goal": "家长白天学六句，睡前只保留温暖真人交流。",
+        "materials": ["一册纸书", "白天的安静练习时间"],
+        "steps": [
+          {"text": "白天关屏后，拿纸书坐在宝宝身边。美式 /lɛts rid ə bʊk/。", "concept": "book", "say": {"zh": "我们读本书吧。", "en": "Let's read a book."}},
+          {"text": "宝宝仍有兴趣时，慢慢翻最后一页。美式 /wʌn mɔr peɪdʒ/。", "concept": "book", "say": {"zh": "再看一页。", "en": "One more page."}},
+          {"text": "合上书，示范安静收尾，不要求装睡。美式 /taɪm tə rɛst/。", "say": {"zh": "该休息啦。", "en": "Time to rest."}},
+          {"text": "挥挥自己的手，轻声示范晚安。美式 /ɡʊd naɪt/。", "concept": "wave", "say": {"zh": "晚安。", "en": "Good night."}},
+          {"text": "看向宝宝，用温柔声音表达关爱。美式 /aɪ lʌv ju/。", "say": {"zh": "我爱你。", "en": "I love you."}},
+          {"text": "白天练完就结束；晚上不用设备说熟悉短句。美式 /slip wɛl/。", "say": {"zh": "睡个好觉。", "en": "Sleep well."}}
+        ],
+        "playMin": 5,
+        "observe": ["宝宝是否愿意看纸书或你的脸。", "家长能否跟随困倦信号而结束。", "晚上的交流是否保持安静、无设备。"],
+        "safety": "不把本课放在睡前播放，不用屏幕哄睡，不强迫闭眼或憋气；睡眠空间不留课程材料。"
+      }
+    }
+  ]
+}

@@ -10,5 +10,8 @@ export default defineConfig({
     strictPort: true,
     proxy: Object.fromEntries(['/api', '/packs', '/plugins'].map((path) => [path, 'http://localhost:4310'])),
   },
-  build: { target: 'es2022' },
+  build: {
+    target: ['chrome70', 'safari14'],
+    cssTarget: ['chrome70', 'safari14'],
+  },
 });

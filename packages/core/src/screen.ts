@@ -19,6 +19,7 @@ export function resolveScreenPolicy(stage: Stage | null, screen: ChildScreenSett
     lessonsPerDay: stage?.screen.lessonsPerDay ?? 2,
     coView: age !== undefined && age >= 18 ? 'required' : stage?.screen.coView ?? 'recommended',
     ...(stage?.screen.childScreen === undefined ? {} : { childScreen: stage.screen.childScreen }),
+    ...(stage?.screen.childLessonsPerDay === undefined ? {} : { childLessonsPerDay: stage.screen.childLessonsPerDay }),
   };
 }
 

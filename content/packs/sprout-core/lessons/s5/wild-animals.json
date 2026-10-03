@@ -1,0 +1,50 @@
+{
+  "schemaVersion": 1,
+  "id": "core.s5.wild-animals",
+  "title": {"zh": "动物园", "en": "At the Zoo"},
+  "summary": {"zh": "看六种动物，听名字和特点。", "en": "Look at six animals and hear their names and features."},
+  "ageRange": [24, 29],
+  "domains": ["science", "english"],
+  "themeId": "s5-t3",
+  "durationMin": 5,
+  "coView": "required",
+  "audience": "child",
+  "objectives": [
+    {"zh": "指认熟悉的动物和身体特点。", "en": "Point to familiar animals and their body features."},
+    {"zh": "听一个英文名或简单短句。", "en": "Hear an English name or a short phrase."}
+  ],
+  "cover": {"concept": "elephant", "bg": "grass"},
+  "parentGuide": {
+    "intro": "手动翻看六种动物。跟着宝宝的兴趣停在一两张就够：指长鼻子、长脖子或条纹，再说一句。英文可以只听名，不要求跟读。关屏看纸书，不必为了课程安排动物园出行。",
+    "tips": ["宝宝指哪里，就先命名那个特点。", "不用突然的大声吼叫，也不模仿追赶。", "图是简化插图，可用可靠纸书补充真实样子。"],
+    "phrases": [
+      {"zh": "大象有长鼻子。", "en": "The elephant has a long trunk."},
+      {"zh": "长颈鹿的脖子长。", "en": "The giraffe has a long neck."},
+      {"zh": "斑马有黑白条纹。", "en": "The zebra has black and white stripes."},
+      {"zh": "你想再看哪只？", "en": "Which animal would you like to see again?"}
+    ],
+    "why": "语言输入要连接宝宝正在关注的事物。用简短命名、等待和回应，把英语放进真人交流，不期待看词卡本身带来语言能力。",
+    "refs": ["[25]", "[50]", "[53]", "[82]"]
+  },
+  "offline": [{
+    "title": "纸书里的动物朋友",
+    "minutes": 8,
+    "materials": ["有真实动物照片的幼儿纸书"],
+    "steps": ["和宝宝坐稳，只翻开一页。", "顺着宝宝的手指说一种动物名。", "一起找它的鼻子、脖子或条纹。", "宝宝愿意时加一句英语，再让宝宝选下一页。"],
+    "safety": "成人陪同，书边缘平滑，无可脱落小配件。若外出观察动物，遵守围栏和场馆规定，不伸手、不喂食、不逗弄；不让宝宝把脸贴近动物。不用攀高够书或模仿爬树。",
+    "domains": ["science", "english"],
+    "question": "这只动物身上，你看到了什么？",
+    "levels": {"easier": "只看一只动物，指一个熟悉特点。", "harder": "对照两张图，说一句“这个脖子长”，不要求讲出科学分类。"}
+  }],
+  "steps": [{
+    "type": "word-cards",
+    "parentTip": "手动翻页，只读名字和特点；不播放狮子叫声，不要求六张全记住。",
+    "props": {
+      "items": ["elephant", "lion", "giraffe", "monkey", "panda", "zebra"],
+      "show": {"text": true, "english": true, "pinyin": false},
+      "speak": "name+phrase",
+      "autoAdvanceSec": null,
+      "intro": {"zh": "一起看看动物朋友。", "en": "Let's look at our animal friends."}
+    }
+  }]
+}

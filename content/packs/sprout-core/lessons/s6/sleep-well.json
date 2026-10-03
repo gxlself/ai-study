@@ -1,0 +1,141 @@
+{
+  "schemaVersion": 1,
+  "id": "core.s6.sleep-well",
+  "title": { "zh": "好好睡觉", "en": "A Gentle Bedtime Routine" },
+  "summary": { "zh": "白天听故事，晚上关屏说晚安。", "en": "Hear the story by day and say goodnight without screens at bedtime." },
+  "ageRange": [30, 36],
+  "domains": ["life"],
+  "themeId": "s6-t5",
+  "tags": ["story", "bedtime-routine", "brahms-lullaby", "no-screens-before-bed"],
+  "durationMin": 8,
+  "coView": "required",
+  "audience": "child",
+  "objectives": [
+    { "zh": "认识一个温和的晚安流程。", "en": "Notice a gentle bedtime routine." },
+    { "zh": "白天学歌，晚上听家长轻唱。", "en": "Learn the song by day and hear your grown-up sing softly at night." }
+  ],
+  "cover": { "concept": "bed", "bg": "room" },
+  "parentGuide": {
+    "intro": "本课只在白天共看，不用屏幕哄睡。故事流程可按家庭习惯调整，不要求每天洗澡。睡前一小时关屏；晚上真人讲书、轻唱即可。睡眠常规不是治疗，也不保证孩子马上睡着。",
+    "tips": [
+      "保持相近顺序，不机械卡时间。",
+      "睡前需要帮助时先回应。",
+      "刷牙由成人帮助，不边走边刷。",
+      "摇篮曲唱一小段即可，不循环播放。"
+    ],
+    "phrases": [
+      { "zh": "现在慢慢收尾啦。", "en": "We are winding down now." },
+      { "zh": "想听哪本书？", "en": "Which book would you like to hear?" },
+      { "zh": "我在这里，需要时叫我。", "en": "I am here. Call me if you need me." },
+      { "zh": "晚安，明天再玩。", "en": "Goodnight. We can play again tomorrow." }
+    ],
+    "why": "规律睡前流程与较好的睡眠相关，但多为观察性证据，不承诺疗效。故事和人声可放进无屏常规，屏幕只供白天认识流程。",
+    "refs": ["[3]", "[6]", "[92]", "[93]"]
+  },
+  "offline": [
+    {
+      "title": "无屏晚安小仪式",
+      "minutes": 10,
+      "materials": ["当天需要的清洁用品", "儿童牙刷", "一本纸质图画书"],
+      "steps": [
+        "白天关屏，约定晚上看哪本书。",
+        "晚上按需要清洁，成人帮助刷牙。",
+        "坐在一起读几页纸质书。",
+        "放好书，调暗灯光，轻声唱。",
+        "说晚安，回应孩子的需要。"
+      ],
+      "safety": "睡前一小时不用屏，不把本课当哄睡播放。洗澡水边成人始终近距离看护，水温由成人检查，地面防滑。牙膏与清洁剂由成人管理，刷牙时不走动。灯具、电线和小夜灯由成人操作；睡眠处防坠落、无缠绕绳带，有持续睡眠困扰咨询医生。",
+      "domains": ["life"],
+      "question": "你想把哪件安静的事放进晚安流程？",
+      "levels": {
+        "easier": "只选一本书，成人完成清洁和收尾。",
+        "harder": "白天让孩子回顾三步流程，晚上照真实需要进行，不增加入睡任务。"
+      }
+    }
+  ],
+  "steps": [
+    {
+      "type": "story",
+      "title": { "zh": "小熊的晚安时间", "en": "Bear's Bedtime" },
+      "parentTip": "白天共读流程，睡前不播放。故事中的洗澡只是这一天的安排，真实清洁按需要。",
+      "props": {
+        "title": { "zh": "小熊的晚安时间", "en": "Bear's Bedtime" },
+        "pages": [
+          {
+            "scene": { "bg": "room", "ground": "floor", "sprites": [
+              { "concept": "bear", "x": 25, "y": 72, "size": 36, "anim": "none" },
+              { "concept": "bathtub", "x": 58, "y": 78, "size": 25, "anim": "none" },
+              { "concept": "dad", "x": 82, "y": 75, "size": 24, "anim": "none" }
+            ] },
+            "text": { "zh": "今晚要洗澡。爸爸一直在小熊身边。", "en": "Tonight is bath time. Dad stays beside Bear the whole time." }
+          },
+          {
+            "scene": { "bg": "room", "ground": "floor", "sprites": [
+              { "concept": "bear", "x": 27, "y": 72, "size": 36, "anim": "none" },
+              { "concept": "toothbrush", "x": 59, "y": 76, "size": 22, "anim": "none" },
+              { "concept": "dad", "x": 82, "y": 75, "size": 24, "anim": "none" }
+            ] },
+            "text": { "zh": "小熊站稳了。爸爸帮它刷牙。", "en": "Bear stands safely. Dad helps Bear brush teeth." },
+            "prompts": [{ "kind": "point", "zh": "指一指刷牙要用什么。", "en": "Point to what we use to brush teeth." }]
+          },
+          {
+            "scene": { "bg": "room", "ground": "floor", "sprites": [
+              { "concept": "bear", "x": 27, "y": 72, "size": 36, "anim": "none" },
+              { "concept": "book", "x": 59, "y": 78, "size": 22, "anim": "none" },
+              { "concept": "dad", "x": 82, "y": 75, "size": 24, "anim": "none" }
+            ] },
+            "text": { "zh": "小熊选一本书。爸爸轻轻读。", "en": "Bear chooses a book. Dad reads softly." },
+            "prompts": [{ "kind": "distancing", "zh": "你想听哪本书？", "en": "Which book would you like to hear?" }]
+          },
+          {
+            "scene": { "bg": "room", "ground": "floor", "sprites": [
+              { "concept": "bear", "x": 27, "y": 72, "size": 36, "anim": "none" },
+              { "concept": "lamp", "x": 60, "y": 76, "size": 22, "anim": "none" },
+              { "concept": "dad", "x": 82, "y": 75, "size": 24, "anim": "none" }
+            ] },
+            "text": { "zh": "爸爸关好大灯。小熊说：“还想听你唱。”", "en": "Dad turns off the main light. Bear says, \"Please sing to me.\"" }
+          },
+          {
+            "scene": { "bg": "room", "ground": "floor", "sprites": [
+              { "concept": "bear", "x": 27, "y": 72, "size": 36, "anim": "none" },
+              { "concept": "bed", "x": 60, "y": 78, "size": 25, "anim": "none" },
+              { "concept": "dad", "x": 83, "y": 75, "size": 24, "anim": "none" }
+            ] },
+            "text": { "zh": "爸爸轻声唱。“晚安，需要时叫我。”", "en": "Dad sings softly. \"Goodnight. Call me if you need me.\"" },
+            "prompts": [{ "kind": "recall", "zh": "读完书后，小熊做了什么？", "en": "What did Bear do after reading?" }]
+          }
+        ]
+      }
+    },
+    {
+      "type": "song",
+      "title": { "zh": "白天学晚安歌", "en": "Learn Our Lullaby by Day" },
+      "parentTip": "Brahms 摇篮曲开头四句，C 大调、60 拍。白天学唱；睡前关屏后只用家长人声。",
+      "props": {
+        "title": { "zh": "晚安，我在这里", "en": "Goodnight, I Am Here" },
+        "credit": "旋律：Johannes Brahms《Wiegenlied》Op.49 No.4（1868，公有领域），开头四个乐句移至 C 大调，不含钢琴前奏与伴奏；中文词、英文词：芽芽成长原创",
+        "bpm": 60,
+        "instrument": "musicbox",
+        "repeat": 1,
+        "lines": [
+          { "lang": "zh", "text": "晚安，我在这里", "notes": "E4/0.5 E4/0.5 G4/1.5 E4/0.5 E4/1 G4/1 R/1" },
+          { "lang": "zh", "text": "轻轻唱呀慢慢听", "notes": "E4/0.5 G4/0.5 C5/1 B4/1.5 A4/0.5 A4/1 G4/1" },
+          { "lang": "zh", "text": "小手小脚歇一歇", "notes": "D4/0.5 E4/0.5 F4/1 D4/1 D4/0.5 E4/0.5 F4/1 R/1" },
+          { "lang": "zh", "text": "晚安我会陪着你", "notes": "D4/0.5 F4/0.5 B4/0.5 A4/0.5 G4/1 B4/1 C5/1 R/1" },
+          { "lang": "en", "text": "Goodnight, I am right here", "notes": "E4/0.5 E4/0.5 G4/1.5 E4/0.5 E4/1 G4/1 R/1" },
+          { "lang": "en", "text": "Hear my song, so soft and slow", "notes": "E4/0.5 G4/0.5 C5/1 B4/1.5 A4/0.5 A4/1 G4/1" },
+          { "lang": "en", "text": "Hands and feet can rest a while", "notes": "D4/0.5 E4/0.5 F4/1 D4/1 D4/0.5 E4/0.5 F4/1 R/1" },
+          { "lang": "en", "text": "Goodnight, I will stay with you", "notes": "D4/0.5 F4/0.5 B4/0.5 A4/0.5 G4/1 B4/1 C5/1 R/1" }
+        ],
+        "scene": { "bg": "night", "ground": "none", "sprites": [
+          { "concept": "moon", "x": 43, "y": 25, "size": 34, "anim": "none" },
+          { "concept": "star", "x": 74, "y": 20, "size": 18, "anim": "none" }
+        ] },
+        "actions": [
+          { "zh": "白天一起轻声唱。", "en": "Sing softly together during the day." },
+          { "zh": "睡前关屏，再轻声哼。", "en": "Turn screens off before bedtime, then hum softly." }
+        ]
+      }
+    }
+  ]
+}

@@ -1,0 +1,74 @@
+{
+  "schemaVersion": 1,
+  "id": "core.s6.morning-routine",
+  "title": { "zh": "早上的事情", "en": "Our Morning Routine" },
+  "summary": { "zh": "说说早上先做什么、再做什么。", "en": "Talk about the first and next parts of the morning." },
+  "ageRange": [30, 36],
+  "domains": ["life"],
+  "themeId": "s6-t3",
+  "tags": ["sequence", "morning-routine", "no-toilet-pressure"],
+  "durationMin": 6,
+  "coView": "required",
+  "audience": "child",
+  "objectives": [
+    { "zh": "和家长回顾熟悉的早晨。", "en": "Recall a familiar morning with your grown-up." },
+    { "zh": "用先和再说一个小计划。", "en": "Make a small plan using first and then." }
+  ],
+  "cover": { "concept": "bed", "bg": "room" },
+  "parentGuide": {
+    "intro": "这是一个家庭的早晨例子，不是统一作息。先回顾孩子今天做过什么。需要尿布照护时，替换上厕所这步，随后清洁和洗手；不要求如厕成功。五步困难时，只看相邻两步。",
+    "tips": [
+      "上厕所后洗手，不漏卫生步骤。",
+      "洗脸图暂借毛巾，刷牙由成人帮助。",
+      "需要穿衣时，在出门前补好。",
+      "用餐不开屏，线下计划在饭前说。"
+    ],
+    "phrases": [
+      { "zh": "你醒啦，我们慢慢来。", "en": "You're awake. Let's take our time." },
+      { "zh": "上完厕所，再洗手。", "en": "Wash your hands after using the toilet." },
+      { "zh": "先做好这一件事。", "en": "Let's do this one thing first." },
+      { "zh": "下一步你想怎么做？", "en": "How would you like to do the next part?" }
+    ],
+    "why": "固定而灵活的常规可提供安全感和行动线索。让孩子参与小步骤，比催促完成整套流程更适合日常练习。",
+    "refs": ["[6]", "[7]", "[81]", "[93]"]
+  },
+  "offline": [
+    {
+      "title": "明早的两步计划",
+      "minutes": 8,
+      "materials": ["纸", "粗蜡笔", "家里常用的毛巾和牙刷"],
+      "steps": [
+        "白天关屏，聊聊今天早晨。",
+        "成人画两件相邻的早晨事情。",
+        "一起说先做什么，再做什么。",
+        "第二天由成人提醒、帮助完成。",
+        "完成后聊一聊，不发奖励贴纸。"
+      ],
+      "safety": "如厕和清洁全程有成人照看，不逼坐、不憋尿，不用成败羞辱。水龙头与水温由成人控制，地面防滑；牙刷不边走边用。蜡笔不入口，远离热水、药品、清洁剂和门缝。",
+      "domains": ["life"],
+      "question": "明早哪件事想请我一起做？",
+      "levels": {
+        "easier": "只说起床和清洁两件事。",
+        "harder": "按家庭真实作息画三步，孩子说说需要什么帮助。"
+      }
+    }
+  ],
+  "steps": [
+    {
+      "type": "sequence",
+      "title": { "zh": "一个早晨的顺序", "en": "One Family's Morning" },
+      "parentTip": "这是示例顺序，可按家庭调整。如厕未准备好就替换为尿布照护；出门前穿好衣物。",
+      "props": {
+        "mode": "order",
+        "intro": { "zh": "看看这家的早晨。", "en": "Let's look at this family's morning." },
+        "steps": [
+          { "concept": "bed", "caption": { "zh": "起床", "en": "Wake up." }, "say": { "zh": "醒来，慢慢起床。", "en": "Wake up and get out of bed slowly." } },
+          { "concept": "toilet", "caption": { "zh": "上厕所，再洗手", "en": "Use the toilet, then wash hands." }, "say": { "zh": "需要时上厕所，随后洗手。", "en": "Use the toilet if you need to, then wash your hands." } },
+          { "concept": "brush-teeth", "caption": { "zh": "洗脸刷牙", "en": "Wash your face and brush your teeth." }, "say": { "zh": "和大人洗脸刷牙。", "en": "Wash your face and brush your teeth with a grown-up." } },
+          { "concept": "eat", "caption": { "zh": "吃早饭", "en": "Eat breakfast." }, "say": { "zh": "坐好，吃早饭。", "en": "Sit safely and eat breakfast." } },
+          { "concept": "door", "caption": { "zh": "准备好，出门", "en": "Get ready and go out." }, "say": { "zh": "穿戴好，和大人出门。", "en": "Get dressed and go out with a grown-up." } }
+        ]
+      }
+    }
+  ]
+}

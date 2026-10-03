@@ -1,0 +1,50 @@
+{
+  "schemaVersion": 1,
+  "id": "core.s5.weather",
+  "title": {"zh": "晴天雨天", "en": "Sunshine and Rain"},
+  "summary": {"zh": "看天气图，再看看今天的窗外。", "en": "Look at weather pictures, then notice today's weather outside."},
+  "ageRange": [24, 29],
+  "domains": ["science", "english"],
+  "themeId": "s5-t6",
+  "durationMin": 5,
+  "coView": "required",
+  "audience": "child",
+  "objectives": [
+    {"zh": "把天气词和眼前的现象联系。", "en": "Connect weather words with things you can observe."},
+    {"zh": "听一个英文名或简单天气短句。", "en": "Hear an English name or a short weather phrase."}
+  ],
+  "cover": {"concept": "cloud", "bg": "sky"},
+  "parentGuide": {
+    "intro": "手动看太阳、云、雨、雪花、风和彩虹。风的图是符号；真实的风可以让树叶动。雪花没有在本地出现，也可看书认识。雨后不一定有彩虹。关屏去安全窗边，只说今天看到的。",
+    "tips": ["跟着宝宝指的图说一句，不要求记完六种。", "太阳、云可能同时出现，不把天气分成绝对两类。", "雪图按词库读“雪花／snowflake”，不混成雪人的名字。"],
+    "phrases": [
+      {"zh": "今天有云。", "en": "There are clouds today."},
+      {"zh": "雨滴落下来了。", "en": "Raindrops are falling."},
+      {"zh": "风让树叶动了。", "en": "The wind moves the leaves."},
+      {"zh": "今天你看到了什么？", "en": "What did you see today?"}
+    ],
+    "why": "跟随宝宝关注的自然现象，命名、停顿、回应，再去生活里观察。天气图只作交流起点，不用符号替代体验，不承诺一次认识全部天气词。",
+    "refs": ["[6]", "[25]", "[53]", "[82]"]
+  },
+  "offline": [{
+    "title": "窗边的天气话",
+    "minutes": 6,
+    "materials": ["关好且有防护的窗", "可选天气纸书"],
+    "steps": ["和宝宝站在安全位置，看窗外的云或雨。", "宝宝指到哪里，你说那个现象。", "看树叶是否动，说“可能有风”，不把树叶动当唯一证据。", "没有雪或彩虹时，翻纸书看，不要求等到真实出现。"],
+    "safety": "成人全程在旁。窗保持关好，宝宝不靠窗台、不攀爬、不推窗纱；不直视太阳。雷电、强风、积水或恶劣空气条件下留在室内。不捡小石子、树籽作教具，直径小于3.5厘米的小物件有窒息风险。",
+    "domains": ["science", "english"],
+    "question": "你发现窗外有什么在动？",
+    "levels": {"easier": "只看一种真实现象，大人说一个中文词。", "harder": "宝宝愿意时把一种天气图和窗外现象对照，说一个中文或英文短句。"}
+  }],
+  "steps": [{
+    "type": "word-cards",
+    "parentTip": "手动翻页。风图是示意符号，雪图叫雪花；雨后不一定出现彩虹。",
+    "props": {
+      "items": ["sun", "cloud", "rain", "snow", "wind", "rainbow"],
+      "show": {"text": true, "english": true, "pinyin": false},
+      "speak": "name+phrase",
+      "autoAdvanceSec": null,
+      "intro": {"zh": "看看天气，再看窗外。", "en": "Look at the weather pictures, then look outside."}
+    }
+  }]
+}

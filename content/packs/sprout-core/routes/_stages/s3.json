@@ -50,7 +50,7 @@
         "en": "Use animal cards and short stories for names, sounds, and turn-taking."
       },
       "weeks": 4,
-      "domains": ["language", "science", "social"],
+      "domains": ["language", "science", "cognition", "social"],
       "lessons": [
         "core.s3.farm-animals",
         "core.s3.find-animal",
@@ -73,7 +73,7 @@
         "en": "Name body parts during care and songs while respecting body boundaries."
       },
       "weeks": 4,
-      "domains": ["language", "science", "motor", "music"],
+      "domains": ["language", "science", "motor", "music", "english"],
       "lessons": [
         "core.s3.body-parts",
         "core.s3.touch-nose",
@@ -96,7 +96,7 @@
         "en": "Notice vehicles safely and explore rolling and speed with a toy."
       },
       "weeks": 4,
-      "domains": ["language", "science", "math", "music"],
+      "domains": ["language", "science", "math", "music", "english"],
       "lessons": [
         "core.s3.vehicles",
         "core.s3.roll-car",
@@ -105,7 +105,7 @@
       "offlineFocus": [
         "远离道路、车轮和车门看真实车辆。",
         "用低而稳的斜坡玩大号玩具车。",
-        "把汽车歌唱给宝宝听，再关屏推真实玩具车。"
+        "家长提前学唱，关屏后唱歌并推真实玩具车。"
       ]
     },
     {
@@ -119,7 +119,7 @@
         "en": "Talk about one, many, one, and two with visible everyday objects."
       },
       "weeks": 4,
-      "domains": ["math", "language", "music"],
+      "domains": ["math", "language", "music", "english"],
       "lessons": [
         "core.s3.one-many",
         "core.s3.count-two",
@@ -173,7 +173,7 @@
       ],
       "offlineFocus": [
         "跟随宝宝的目光命名树、花、鸟和云。",
-        "雨天先在室内听雨，出门前检查防滑、防雷和积水。",
+        "雨天先在室内听雨，不踩真实积水坑；可穿雨靴轻踩自家薄清水迹。",
         "模仿小树、小鸟和小兔时不要求跳跃或站稳。"
       ]
     }
@@ -181,11 +181,11 @@
   "dailyRhythm": [
     "穿衣时拿起一件衣物，先让宝宝看，再说“上衣”“袜子”或“鞋子”。",
     "洗澡和换衣时说一个身体部位，停下来等宝宝看、指或触摸。",
-    "吃饭时对安全的大物品说“一个”和“很多”，不拿小颗食物做测验。",
+    "吃饭时指着成人摆好的碗和勺说“一个”“两个”；按安全进食要求喂养，不拿食物做测验。",
     "收玩具时说“一个放进去”，再说“这里有很多”，全程由成人管理小物件。",
     "出门时用固定短句预告“先穿袜子，再穿鞋子”，顺序按家庭和天气调整。",
     "窗边或散步时跟随宝宝的目光，说眼前的一种树、花、鸟、车或云。",
-    "在洗手、等车和收拾前唱一小段熟悉儿歌，唱完就关屏做真实动作。"
+    "成人提前学唱，关屏后在洗手和收拾时唱熟悉的小段；不为完成计时反复洗手。"
   ],
-  "milestonesAt": [12, 15, 18]
+  "milestonesAt": [12, 15]
 }

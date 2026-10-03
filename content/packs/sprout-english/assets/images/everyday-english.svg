@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="0 0 512 512" role="img" aria-label="Everyday English">
+  <title id="title">Everyday English</title>
+  <desc id="desc">A cup, an open book, and a waving hand for everyday conversations.</desc>
+  <rect x="16" y="16" width="480" height="480" rx="40" fill="#dff1fb"/>
+  <circle cx="115" cy="112" r="40" fill="#ffc93c"/>
+  <path d="M177 112h56m-42-32 28-21m-26 86 26 20" stroke="#f2b134" stroke-width="12" stroke-linecap="round"/>
+  <path d="M81 301h116v60c0 33-25 58-58 58s-58-25-58-58z" fill="#5da9e9" stroke="#3d8fb8" stroke-width="10" stroke-linejoin="round"/>
+  <path d="M198 317h18c35 0 35 50 0 50h-18" fill="none" stroke="#3d8fb8" stroke-width="14"/>
+  <path d="M276 331c34-18 59-18 89-1 30-17 55-17 88 1v97c-32-15-57-17-88-1-31-16-56-14-89 1z" fill="#fffaf2" stroke="#6c9a3b" stroke-width="9" stroke-linejoin="round"/>
+  <path d="M365 332v94m-66-66h39m-39 23h39m54-23h39m-39 23h39" stroke="#6c9a3b" stroke-width="7" stroke-linecap="round"/>
+  <path d="M306 271c-19-23-42-58-33-69 10-12 22 7 34 21v-79c0-20 24-20 24 0v50-76c0-20 24-20 24 0v76-61c0-20 24-20 24 0v61-41c0-20 24-20 24 0v69c0 36-20 66-50 66h-18c-11 0-21-8-29-17z" fill="#f6d2bc" stroke="#7a6a55" stroke-width="8" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M276 153l-19-12m158-4 19-16m-79-42V63" stroke="#5da9e9" stroke-width="8" stroke-linecap="round"/>
+</svg>

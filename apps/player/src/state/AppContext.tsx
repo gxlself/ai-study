@@ -6,6 +6,7 @@ import type { ChildInput, DeviceBootstrap, LessonSummary, ResolvedConcept, Today
 import { LocalSource, RemoteSource, readConnection, saveConnection, type DataSource } from '../data';
 import { ActivityRegistry, NavigationManager, SpeechEngine } from '../host';
 import { ParentGate } from '../ui/ParentGate';
+import { observeMediaQuery } from '../compat';
 
 export interface Preferences { parentHints: boolean; reducedMotion: boolean; volume: number }
 function loadPreferences(): Preferences {
@@ -104,8 +105,7 @@ export function AppProvider({ children }: { children: ReactNode }) {
   useEffect(() => {
     const query = matchMedia('(prefers-reduced-motion: reduce)');
     const change = () => setSystemReduced(query.matches);
-    query.addEventListener('change', change);
-    return () => query.removeEventListener('change', change);
+    return observeMediaQuery(query, change);
   }, []);
   useEffect(() => {
     speech.setVolume(prefs.volume);

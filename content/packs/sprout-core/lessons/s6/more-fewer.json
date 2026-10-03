@@ -1,0 +1,105 @@
+{
+  "schemaVersion": 1,
+  "id": "core.s6.more-fewer",
+  "title": { "zh": "多一些还是少一些", "en": "More or Fewer?" },
+  "summary": { "zh": "把一样大的东西排好，再比一比。", "en": "Line up matching objects and compare the sets." },
+  "ageRange": [30, 36],
+  "domains": ["math"],
+  "themeId": "s6-t2",
+  "tags": ["compare-sets", "one-to-one"],
+  "durationMin": 6,
+  "coView": "required",
+  "audience": "child",
+  "objectives": [
+    { "zh": "一起比较哪一堆多、哪一堆少。", "en": "Compare which set has more and which has fewer." },
+    { "zh": "试着一对一摆好再看。", "en": "Try matching the objects one to one." }
+  ],
+  "cover": { "concept": "duck", "bg": "paper" },
+  "parentGuide": {
+    "intro": "每轮只比较同一种、同样大小的图。先听清是找多还是找少，再一起点数。屏幕排列不能代替实物比较；看完用两排大物品，一对一摆齐。",
+    "tips": [
+      "每轮先重复“找多”或“找少”。",
+      "指着物体数，不凭选项框大小判断。",
+      "先配一对，看看哪排还有剩。",
+      "比较困难时只用两件和四件。"
+    ],
+    "phrases": [
+      { "zh": "这次找少一些的。", "en": "This time, find the set with fewer." },
+      { "zh": "一个对一个，摆一摆。", "en": "Match them one to one." },
+      { "zh": "这一排还有剩，更多一些。", "en": "This row has some left over. It has more." },
+      { "zh": "你想怎样比一比？", "en": "How would you compare them?" }
+    ],
+    "why": "数量比较可从明显差异和一对一配对开始。数字谈话与数量理解相关，但不能把四轮选择当作孩子已掌握比较的证明。",
+    "refs": ["[63]", "[64]", "[69]", "[71]"]
+  },
+  "offline": [
+    {
+      "title": "两排袜子比一比",
+      "minutes": 8,
+      "materials": ["六只大小相近的干净袜子", "地垫"],
+      "steps": [
+        "关屏，把两只和四只袜子分两堆。",
+        "两排从同一端开始摆。",
+        "请孩子一个对一个配好。",
+        "看看哪排还有没有配对的。",
+        "一起说多和少，再交换两排。"
+      ],
+      "safety": "成人全程陪伴，袜子不遮口鼻或缠绕颈部。不用夹子固定，不提供小配件；直径小于三点五厘米的小物件有窒息风险。",
+      "domains": ["math"],
+      "question": "怎样摆，能看清哪排多一些？",
+      "levels": {
+        "easier": "比较一只和三只，成人帮助配对。",
+        "harder": "比较三只和五只，换位置后再配对。"
+      }
+    }
+  ],
+  "steps": [
+    {
+      "type": "choose",
+      "title": { "zh": "哪边多，哪边少", "en": "Which Set Has More or Fewer?" },
+      "parentTip": "读清本轮是找多还是找少。两边物体大小相同；可由成人点数并说出总数。",
+      "props": {
+        "rounds": [
+          {
+            "prompt": { "zh": "哪边苹果少一些？", "en": "Which set has fewer apples?" },
+            "options": [
+              { "id": "three-apples", "concept": "apple", "count": 3, "scale": 1 },
+              { "id": "five-apples", "concept": "apple", "count": 5, "scale": 1 }
+            ],
+            "answer": "three-apples",
+            "explain": { "zh": "三个比五个少。", "en": "Three is fewer than five." }
+          },
+          {
+            "prompt": { "zh": "哪边小球多一些？", "en": "Which set has more balls?" },
+            "options": [
+              { "id": "four-balls", "concept": "ball", "count": 4, "scale": 1 },
+              { "id": "six-balls", "concept": "ball", "count": 6, "scale": 1 }
+            ],
+            "answer": "six-balls",
+            "explain": { "zh": "六个比四个多。", "en": "Six is more than four." }
+          },
+          {
+            "prompt": { "zh": "哪边小鸭子多一些？", "en": "Which set has more ducks?" },
+            "options": [
+              { "id": "five-ducks", "concept": "duck", "count": 5, "scale": 1 },
+              { "id": "three-ducks", "concept": "duck", "count": 3, "scale": 1 }
+            ],
+            "answer": "five-ducks",
+            "explain": { "zh": "五只比三只多。", "en": "Five is more than three." }
+          },
+          {
+            "prompt": { "zh": "哪边小花少一些？", "en": "Which set has fewer flowers?" },
+            "options": [
+              { "id": "six-flowers", "concept": "flower", "count": 6, "scale": 1 },
+              { "id": "four-flowers", "concept": "flower", "count": 4, "scale": 1 }
+            ],
+            "answer": "four-flowers",
+            "explain": { "zh": "四朵比六朵少。", "en": "Four is fewer than six." }
+          }
+        ],
+        "showLabels": false,
+        "hintAfter": 2
+      }
+    }
+  ]
+}

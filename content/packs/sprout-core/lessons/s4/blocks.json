@@ -1,0 +1,63 @@
+{
+  "schemaVersion": 1,
+  "id": "core.s4.blocks",
+  "title": { "zh": "搭积木", "en": "Stacking Blocks" },
+  "summary": { "zh": "一块放上去，倒了再试试。", "en": "Put a block on top. If it falls, try again." },
+  "themeId": "s4-t2",
+  "ageRange": [18, 23],
+  "domains": ["math", "motor"],
+  "audience": "parent",
+  "durationMin": 2,
+  "coView": "required",
+  "objectives": [
+    { "zh": "尝试把大积木叠在上面。", "en": "Try putting a large block on top." },
+    { "zh": "在搭与倒中听高和低。", "en": "Hear high and low while stacking and rebuilding." }
+  ],
+  "cover": { "concept": "blocks", "bg": "room" },
+  "parentGuide": {
+    "intro": "先读再关屏，在地上玩大积木。你可以示范叠三到四块。宝宝只叠一两块也可以。想推倒时先清开手脚，再轻轻推。倒了不等于失败。",
+    "tips": ["先用宽底大块，不追求塔高。", "放一块就停一下，轮到宝宝试。", "说放得稳或又试了，不夸聪明。"],
+    "phrases": [
+      { "zh": "这块放在上面。", "en": "This block goes on top." },
+      { "zh": "高了一点。", "en": "A little higher." },
+      { "zh": "倒了，我们再搭。", "en": "It fell. Let's build again." },
+      { "zh": "你又试了一次。", "en": "You tried again." }
+    ],
+    "why": "实物搭建提供空间词和动手经验。家长示范后给宝宝尝试的机会。三到四块是示范量，不是能力门槛。",
+    "refs": ["67", "71", "81", "95"]
+  },
+  "offline": [
+    {
+      "title": "两座低低的塔",
+      "minutes": 8,
+      "materials": ["三四块适龄大积木", "稳固地垫"],
+      "steps": ["把两块大积木叠在地上。", "邀请宝宝放上一块。", "指塔顶说高了一点。", "轻轻推倒，成人挡住散开的积木。", "让宝宝选一块重新开始。"],
+      "safety": "用轻质大块积木，不用重块或磁力小件。小物件直径小于3.5厘米有窒息风险。只在地上搭低塔。推倒前移开脸、手和脚，不向人扔。",
+      "domains": ["math", "motor"],
+      "question": "你想把下一块放在哪里？",
+      "levels": { "easier": "成人放底座，宝宝只加一块。", "harder": "宝宝愿意时试叠三到四块，倒了随时重来。" }
+    }
+  ],
+  "steps": [
+    {
+      "type": "guide",
+      "title": { "zh": "搭了，倒了，再搭", "en": "Build, Tumble, and Rebuild" },
+      "parentTip": "只数真实的单块积木。词库积木图是示意，不用于点数。",
+      "props": {
+        "goal": "用低塔体验上面、高低和推倒再搭。",
+        "materials": ["三四块轻质大积木", "稳固地垫"],
+        "steps": [
+          { "text": "把一块宽底积木放在地垫上。", "say": { "zh": "先放这一块。", "en": "This one goes first." }, "concept": "blocks" },
+          { "text": "慢慢把第二块放在上面。", "say": { "zh": "放上面，高了一点。", "en": "On top. A little higher." } },
+          { "text": "递给宝宝一块，请他试着叠。", "say": { "zh": "你想放在哪里？", "en": "Where would you like to put it?" } },
+          { "text": "宝宝愿意时，再示范加第四块。", "say": { "zh": "我们慢慢放。", "en": "Let's put it down slowly." } },
+          { "text": "移开手脚，再轻轻推倒低塔。", "say": { "zh": "倒了，变低了。", "en": "It fell. Now it's lower." } },
+          { "text": "把积木归拢，让宝宝选一块。", "say": { "zh": "还想再搭一次吗？", "en": "Would you like to build again?" } }
+        ],
+        "playMin": 10,
+        "observe": ["宝宝怎样把一块放到另一块上。", "塔倒了后，宝宝想继续还是停？", "宝宝是否用目光或动作请你帮忙。"],
+        "safety": "轻质大块、圆滑边缘，无可拆小件。小物件直径小于3.5厘米有窒息风险。地上搭低塔，避开脸和手脚。成人在旁，不向人扔积木。"
+      }
+    }
+  ]
+}

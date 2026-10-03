@@ -1,0 +1,59 @@
+{
+  "schemaVersion": 1,
+  "id": "culture.parent-toddler.family-celebration",
+  "title": { "zh": "生日：我们的祝福卡", "en": "Birthdays: Our Good-Wishes Card" },
+  "summary": { "zh": "为生日或自家纪念日画大卡，自愿分享一句祝福。", "en": "Draw a large card and choose a greeting for a birthday or a family celebration." },
+  "ageRange": [18, 36],
+  "audience": "parent",
+  "domains": ["social", "art", "language", "english"],
+  "themeId": "culture.family-celebration",
+  "tags": ["生日", "家庭节日", "家长指引"],
+  "durationMin": 3,
+  "coView": "required",
+  "objectives": [
+    { "zh": "用画或短句表达祝福。", "en": "Share good wishes through a drawing or a short phrase." },
+    { "zh": "轮流选择庆祝方式。", "en": "Take turns choosing how to celebrate." }
+  ],
+  "cover": { "concept": "cake", "bg": "room" },
+  "parentGuide": {
+    "intro": "先读完关屏。生日、团聚日或自家的纪念日，都可以画一张大卡庆祝。宝宝决定画什么、向谁祝福，成人代写一句话。不用气球、蜡烛或爆响玩具；蛋糕只看图，活动与进餐分开，不要求所有家人到场。",
+    "tips": ["十八月龄可只涂画；会说话后再邀请口述祝福。", "每人轮流说一句或挥手，不逼表演。", "普通问候也可以，生日快乐不是必须学会的口令。"],
+    "phrases": [
+      { "zh": "生日快乐！", "en": "Happy birthday!" },
+      { "zh": "这张画送给你。", "en": "This drawing is for you." },
+      { "zh": "你想怎么庆祝？", "en": "How would you like to celebrate?" },
+      { "zh": "谢谢你的祝福。", "en": "Thank you for your good wishes." }
+    ],
+    "why": "家长回应宝宝的选择，让家庭仪式成为有意义的交流。重在表达和相伴，不用奖品、声光或食物维持参与。",
+    "refs": ["[8]", "[44]", "[80]", "[82]", "[93]"]
+  },
+  "printables": [{ "kind": "cards", "title": "家庭庆祝大卡", "items": ["cake", "clap", "home"], "size": "large", "showText": true, "showEnglish": true }],
+  "offline": [{
+    "title": "我们的祝福卡",
+    "minutes": 10,
+    "materials": ["完整大纸", "无毒粗蜡笔"],
+    "steps": ["关屏，让宝宝选择要庆祝的生日或家庭日子。", "宝宝画线条，成人描述而不纠正。", "邀请宝宝说一句祝福，成人代写；只指或看也可以。", "向身边家人分享画，轮流说话或轻轻拍手。", "收好材料，按日常作息休息。"],
+    "question": "你想把什么祝福送给家人？",
+    "levels": { "easier": "成人写祝福，宝宝添一条线或挥手。", "harder": "宝宝选择一句中文或英文祝福，成人回应其意思，不要求复述。" },
+    "safety": "成人全程陪伴，纸和蜡笔不入口；不用气球、气球碎片、明火蜡烛、爆响玩具、小装饰或彩纸碎屑，直径小于3.5厘米的小物件有窒息风险。蛋糕只看图，不提供糖果、坚果或未确认过敏原，不延迟睡眠，不强迫身体接触。",
+    "domains": ["social", "art", "language"]
+  }],
+  "steps": [{
+    "type": "guide",
+    "parentTip": "任何家庭纪念日都可以，安静庆祝，尊重选择。",
+    "props": {
+      "goal": "用宝宝自己的图画和短句，分享一份祝福。",
+      "materials": ["完整大纸", "无毒粗蜡笔", "家庭庆祝大卡"],
+      "steps": [
+        { "text": "关屏，让宝宝选要庆祝的生日或家庭纪念日，不要求家人齐全。", "concept": "home", "say": { "zh": "你想怎么庆祝？", "en": "How would you like to celebrate?" } },
+        { "text": "宝宝在完整大纸上画，成人描述线条，不要求画蛋糕或人物。", "concept": "crayon", "say": { "zh": "这张画送给你。", "en": "This drawing is for you." } },
+        { "text": "宝宝愿意时说一句祝福，成人帮写；接受挥手、点头或只看。", "concept": "cake", "say": { "zh": "生日快乐！", "en": "Happy birthday!" } },
+        { "text": "和家人轮流看画或轻轻拍手，回应宝宝的意思。", "concept": "clap", "say": { "zh": "谢谢你的祝福。", "en": "Thank you for your good wishes." } },
+        { "text": "收好材料，结束庆祝，不用奖品挽留宝宝。", "say": { "zh": "我们一起收好。", "en": "Let's put everything away together." } }
+      ],
+      "playMin": 10,
+      "observe": ["是否愿意选择庆祝方式或相伴的人。", "是否用图画、手势或短句表达。", "是否接受轮流，不要求演出或说标准句。"],
+      "safety": "成人陪伴，纸和蜡笔不入口；不用气球、明火、爆响和小碎物，蛋糕只看图，不提供糖果、坚果或未知过敏原；尊重身体接触意愿，庆祝不打乱睡眠。"
+    }
+  }]
+}

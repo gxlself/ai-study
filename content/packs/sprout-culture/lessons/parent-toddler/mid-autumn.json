@@ -1,0 +1,71 @@
+{
+  "schemaVersion": 1,
+  "id": "culture.parent-toddler.mid-autumn",
+  "title": { "zh": "中秋：月亮和团圆", "en": "Mid-Autumn: The Moon and Togetherness" },
+  "summary": { "zh": "白天画月亮、送问候，合适时在安全地面赏月。", "en": "Draw a moon and share greetings in daylight; notice the moon safely when it fits your routine." },
+  "ageRange": [18, 36],
+  "audience": "parent",
+  "domains": ["social", "science", "art", "language"],
+  "themeId": "culture.mid-autumn",
+  "tags": ["中秋", "月饼", "赏月", "团圆", "家长指引"],
+  "durationMin": 3,
+  "coView": "required",
+  "objectives": [
+    { "zh": "说说想一起过节的人。", "en": "Talk about someone you would like to celebrate with." },
+    { "zh": "画出自己喜欢的月亮。", "en": "Draw a moon in your own way." }
+  ],
+  "cover": { "concept": "fest-mooncake", "bg": "sky" },
+  "parentGuide": {
+    "intro": "读完关屏，白天看月亮与月饼大卡、画月亮。中秋常与赏月、团圆相连，但月亮有时圆、有时弯，也可能被云遮住。可给身边或远方亲人送一句问候，不要求全家到场。赏月不延迟睡眠，月饼只看图不试吃。",
+    "tips": ["接住宝宝关于家人的话，不规定一定有谁。", "接纳圆、弯或随意线条，不考画得像不像。", "月亮在正常清醒时间可见才在安全地面看；看不到就用大卡。"],
+    "phrases": [
+      { "zh": "月亮有时圆，有时弯。", "en": "Sometimes the moon looks round, and sometimes it looks curved." },
+      { "zh": "我们在一起。", "en": "We're together." },
+      { "zh": "你想问候谁？", "en": "Who would you like to say hello to?" },
+      { "zh": "看不到也没关系。", "en": "It's okay if we can't see it." }
+    ],
+    "why": "用生活里的自然观察和家庭对话连接图画。团圆重在关系，不能挤占睡眠，也不要求完成特定食品或仪式。",
+    "refs": ["[6]", "[8]", "[80]", "[82]", "[92]", "[93]"]
+  },
+  "printables": [{ "kind": "cards", "title": "中秋月亮大卡", "items": ["moon", "fest-mooncake", "circle", "home"], "size": "large", "showText": true, "showEnglish": true }],
+  "offline": [
+    {
+      "title": "把月亮画给家人",
+      "minutes": 10,
+      "materials": ["完整大纸", "无毒粗蜡笔", "月亮与月饼大卡"],
+      "steps": ["白天关屏，慢慢看月亮和月饼大卡。", "让宝宝画喜欢的月亮形状，成人描述线条。", "问想把画送给谁，接受任何熟悉的人。", "宝宝口述一句问候，成人帮写，收好蜡笔。"],
+      "question": "你想和谁一起看你的月亮？",
+      "levels": { "easier": "成人画月亮，宝宝添一条线。", "harder": "宝宝说说圆月和弯月的不同，用自己的线条表达。" },
+      "safety": "成人全程陪伴，纸和蜡笔不入口；月饼只看图不试吃，正常进餐不提供硬块、整粒坚果或未确认过敏原。用画表达，不拍摄或上传家人照片。",
+      "domains": ["art", "social"]
+    },
+    {
+      "title": "可选的安全赏月",
+      "minutes": 5,
+      "materials": ["月亮大卡作为替代"],
+      "steps": ["只有月亮在正常清醒时段可见且天气适合时才出门。", "成人牵护，在平坦安全地面停一下，指向月亮。", "说一说看到了什么，不要求月亮一定圆或可见。", "看不到就回家看实体卡，按原作息休息。"],
+      "question": "你看到的月亮像什么？",
+      "levels": { "easier": "白天只看月亮大卡，不出门。", "harder": "以后另一天在合适时段再看，说说外观有没有变化。" },
+      "safety": "成人全程牵护，远离道路、水边和高处；不攀窗、不靠阳台边沿，纱窗不能防坠。不用激光笔或光学器材，不直视太阳；睡前一小时不开屏，不熬夜等待月亮。",
+      "domains": ["science", "language"]
+    }
+  ],
+  "steps": [{
+    "type": "guide",
+    "parentTip": "先白天关屏画画；赏月可跳过，睡眠不让步。",
+    "props": {
+      "goal": "画月亮、送问候，让团圆成为真实相伴。",
+      "materials": ["月亮与月饼大卡", "完整大纸", "无毒粗蜡笔"],
+      "steps": [
+        { "text": "白天读完关屏，看月亮和月饼大卡，说明食品只看图。", "concept": "moon", "say": { "zh": "月亮有时圆，有时弯。", "en": "Sometimes the moon looks round, and sometimes it looks curved." } },
+        { "text": "宝宝用自己的线条画月亮，成人描述，不纠正作品。", "concept": "crayon", "say": { "zh": "你画了弯弯的线。", "en": "You drew a curved line." } },
+        { "text": "问想把画或问候送给谁，接受不同家庭成员。", "concept": "home", "say": { "zh": "你想问候谁？", "en": "Who would you like to say hello to?" } },
+        { "text": "若月亮在正常清醒时段可见，可由成人牵护在安全地面看一会儿。", "say": { "zh": "我们在一起。", "en": "We're together." } },
+        { "text": "天气不好或看不到就用实体卡，收材料，按原作息休息。", "say": { "zh": "看不到也没关系。", "en": "It's okay if we can't see it." } }
+      ],
+      "playMin": 10,
+      "observe": ["是否愿意说或指想相伴的人。", "是否用线条表达自己的月亮。", "是否需要休息，不要求看到真实月亮。"],
+      "safety": "成人陪伴，纸和蜡笔不入口；月饼只看图，不提供坚果硬块或未知过敏原。赏月远离窗边、阳台、道路、水边和高处，不直视太阳，睡前一小时不开屏，不熬夜。"
+    }
+  }]
+}

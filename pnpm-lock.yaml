@@ -29,6 +29,12 @@ importers:
       '@ant-design/icons':
         specifier: ^6.3.4
         version: 6.3.4(react-dom@19.3.0(react@19.3.0))(react@19.3.0)
+      '@sprout/activities':
+        specifier: workspace:*
+        version: link:../../packages/activities
+      '@sprout/plugin-sdk':
+        specifier: workspace:*
+        version: link:../../packages/plugin-sdk
       '@sprout/schema':
         specifier: workspace:*
         version: link:../../packages/schema
@@ -93,6 +99,9 @@ importers:
       '@sprout/schema':
         specifier: workspace:*
         version: link:../../packages/schema
+      core-js:
+        specifier: ^3.50.0
+        version: 3.50.0
       lucide-react:
         specifier: ^1.49.0
         version: 1.49.0(@types/react@19.3.0)(react@19.3.0)
@@ -121,9 +130,15 @@ importers:
       '@vitejs/plugin-react':
         specifier: ^6.1.1
         version: 6.1.1(vite@8.3.2(@types/node@22.20.4)(esbuild@0.28.2)(tsx@4.23.15)(yaml@2.9.1))
+      acorn:
+        specifier: ^8.18.0
+        version: 8.18.0
       jsdom:
         specifier: '*'
         version: 30.1.1
+      postcss:
+        specifier: ^8.5.28
+        version: 8.5.28
       typescript:
         specifier: ^5.9.0
         version: 5.9.2
@@ -1571,6 +1586,9 @@ packages:
   cookie@1.0.1:
     resolution: {integrity: sha512-Xd8lFX4LM9QEEwxQpF9J9NTUh8pmdJO0cyRJhFiDoLTk2eH8FXlRv2IFGYVadZpqI3j8fhNrSdKCeYPxiAhLXw==}
     engines: {node: '>=18'}
+
+  core-js@3.50.0:
+    resolution: {integrity: sha512-BRWgOLKkFeCgRudR6zrs8p9XJZcE14grzKMMssoYrk6krtuEZ7MTKPIY5RzOnqsEKIR9kst7wNzphttraT+Yqw==}
 
   cross-spawn@7.0.6:
     resolution: {integrity: sha512-uV2QOWP2nWzsy2aMp8aRibhi9dlzF5Hgh5SHaB9OiTGEyDTiJJyx0uy51QXdyWbtAHNua4XJzUKca3OzKUd3vA==}
@@ -3706,6 +3724,8 @@ snapshots:
   cookie-es@3.1.1: {}
 
   cookie@1.0.1: {}
+
+  core-js@3.50.0: {}
 
   cross-spawn@7.0.6:
     dependencies:

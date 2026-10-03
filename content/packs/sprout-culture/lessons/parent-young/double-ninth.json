@@ -1,0 +1,58 @@
+{
+  "schemaVersion": 1,
+  "id": "culture.parent-young.double-ninth",
+  "title": { "zh": "重阳：向长辈问好", "en": "Double Ninth: Say Hello to an Elder" },
+  "summary": { "zh": "向熟悉长辈问好，尊重宝宝的亲近意愿。", "en": "Greet a familiar elder while respecting your baby's comfort." },
+  "ageRange": [6, 17],
+  "audience": "parent",
+  "domains": ["social", "language"],
+  "themeId": "culture.double-ninth",
+  "tags": ["重阳", "敬老", "家长指引"],
+  "durationMin": 2,
+  "coView": "required",
+  "objectives": [
+    { "zh": "和熟悉长辈打招呼。", "en": "Greet a familiar elder." },
+    { "zh": "用目光或手势回应。", "en": "Respond with a look or a gesture." }
+  ],
+  "cover": { "concept": "grandma-paternal", "bg": "room" },
+  "parentGuide": {
+    "intro": "家长先读完关屏。重阳可以关心、看望爷爷奶奶、外公外婆或熟悉的长辈。选宝宝熟悉且方便见面的人，先由照护者问好；不想抱或亲就挥手、看看。长辈不在身边时，说说名字也可以，不必视频通话。",
+    "tips": ["用自家的真实称呼，不要求同时认识所有长辈。", "宝宝怕生时留在熟悉照护者怀里，距离由宝宝决定。", "不将亲吻、拥抱、作揖或说话作为礼貌考核。"],
+    "phrases": [
+      { "zh": "你好呀！", "en": "Hello!" },
+      { "zh": "我们挥挥手。", "en": "Let's wave." },
+      { "zh": "你想靠近吗？", "en": "Would you like to come closer?" },
+      { "zh": "我陪着你。", "en": "I'm here with you." }
+    ],
+    "why": "熟悉关系里的回应与安全感是互动基础。用温暖的问候表达关心，不让宝宝承担成人社交期待。",
+    "refs": ["[8]", "[47]", "[82]", "[93]"]
+  },
+  "printables": [{ "kind": "cards", "title": "长辈称呼参考大卡", "items": ["grandma-paternal", "grandpa-paternal", "grandma-maternal", "grandpa-maternal"], "size": "large", "showText": true, "showEnglish": true }],
+  "offline": [{
+    "title": "温柔问好",
+    "minutes": 5,
+    "materials": ["安静的见面空间"],
+    "steps": ["关屏，选熟悉长辈方便休息的时段见面。", "照护者先问好，让宝宝从舒适距离看。", "宝宝愿意时轻轻挥手，停下来等长辈回应。", "宝宝累了就离开，改天再见。"],
+    "question": "你想在这里看，还是靠近一点？",
+    "levels": { "easier": "在熟悉照护者怀里看长辈，不要求动作。", "harder": "十二月龄后可自愿挥手或递一张完整大卡，不强求。" },
+    "safety": "成人全程抱稳或牵护，不强迫身体接触；不爬高、不把重阳登高作为婴儿动作任务。不提供热茶、药品、坚果或小礼物，直径小于3.5厘米的物件有窒息风险。长辈或宝宝不舒服时改期。",
+    "domains": ["social", "language"]
+  }],
+  "steps": [{
+    "type": "guide",
+    "parentTip": "任何熟悉长辈都可以；宝宝只看也算参与。",
+    "props": {
+      "goal": "尊重宝宝意愿，向一位熟悉长辈问好。",
+      "materials": ["安静的见面空间"],
+      "steps": [
+        { "text": "读完关屏，按自家习惯选一位熟悉长辈，不要求家人齐全。", "concept": "grandma-paternal", "say": { "zh": "你好呀！", "en": "Hello!" } },
+        { "text": "照护者先挥手示范，宝宝留在舒适距离，不交给陌生怀抱。", "concept": "wave", "say": { "zh": "我们挥挥手。", "en": "Let's wave." } },
+        { "text": "看宝宝是否主动靠近或伸手，不愿意就继续陪着。", "say": { "zh": "你想靠近吗？", "en": "Would you like to come closer?" } },
+        { "text": "宝宝转头或疲倦就温和告别，不让长辈反复逗弄。", "say": { "zh": "我陪着你。", "en": "I'm here with you." } }
+      ],
+      "playMin": 5,
+      "observe": ["是否在熟悉照护者身边感到舒适。", "是否自愿看、笑、挥手或发声。", "是否需要退远一点或休息。"],
+      "safety": "不强迫亲吻或拥抱，不登高；成人抱稳或牵护，远离热茶、药物、坚果和小物件。"
+    }
+  }]
+}

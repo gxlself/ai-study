@@ -8,6 +8,7 @@ import { api } from '../lib/api';
 import { formatAge } from '../lib/format';
 import { useResource } from '../lib/hooks';
 import ChildEditor from '../features/family/ChildEditor';
+import CoViewNotice from '../features/family/CoViewNotice';
 import { ChildAvatar, FetchWarning, MutationError, RefreshButton } from '../features/family/components';
 import { LANGUAGE_OPTIONS, SCREEN_MODE_LABELS } from '../features/family/model';
 import '../features/family/family.css';
@@ -79,6 +80,7 @@ export default function Children() {
                   <div className="muted">生日：{child.birthday}</div>
                   <div>{LANGUAGE_OPTIONS.find((mode) => mode.value === child.languageMode)?.label}</div>
                   <Tag color={child.screen.mode === 'co-view' ? 'blue' : 'gold'}>屏幕模式：{SCREEN_MODE_LABELS[child.screen.mode ?? 'auto']}</Tag>
+                  <CoViewNotice key={`${child.updatedAt}:${ageOf(child.birthday).months}`} child={child} />
                   <div className="toolbar">
                     <Button icon={<CheckOutlined />} disabled={family.childId === child.id || !!deleting}
                       onClick={() => family.selectChild(child.id)}>

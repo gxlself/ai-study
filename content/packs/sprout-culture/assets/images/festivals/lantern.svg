@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="0 0 320 320" role="img" aria-labelledby="title">
+  <title id="title">An unlit red paper lantern</title>
+  <path d="M136 48 Q136 21 160 21 Q184 21 184 48" fill="none" stroke="#94634D" stroke-width="9" stroke-linecap="round"/>
+  <rect x="103" y="47" width="114" height="27" rx="11" fill="#EAC778" stroke="#A27842" stroke-width="5"/>
+  <ellipse cx="160" cy="151" rx="109" ry="83" fill="#D85F60" stroke="#9B4148" stroke-width="7"/>
+  <ellipse cx="160" cy="151" rx="68" ry="82" fill="none" stroke="#F4BC83" stroke-width="5"/>
+  <ellipse cx="160" cy="151" rx="25" ry="82" fill="none" stroke="#F4BC83" stroke-width="5"/>
+  <rect x="107" y="229" width="106" height="25" rx="10" fill="#EAC778" stroke="#A27842" stroke-width="5"/>
+  <path d="M160 254 V284 M143 268 V298 M160 276 V302 M177 268 V298" stroke="#D85F60" stroke-width="9" stroke-linecap="round"/>
+</svg>

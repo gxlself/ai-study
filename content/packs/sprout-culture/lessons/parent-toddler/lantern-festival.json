@@ -1,0 +1,59 @@
+{
+  "schemaVersion": 1,
+  "id": "culture.parent-toddler.lantern-festival",
+  "title": { "zh": "元宵：画个纸灯笼", "en": "Lantern Festival: Draw a Paper Lantern" },
+  "summary": { "zh": "画灯笼、看汤圆卡、用大形状卡配对，不试吃。", "en": "Draw a lantern and match large shape cards; tangyuan stay in pictures." },
+  "ageRange": [18, 36],
+  "audience": "parent",
+  "domains": ["art", "math", "language"],
+  "themeId": "culture.lantern-festival",
+  "tags": ["元宵", "家长指引", "灯笼", "圆形", "只看图不试吃"],
+  "durationMin": 3,
+  "coView": "required",
+  "objectives": [
+    { "zh": "用自己的线条画灯笼。", "en": "Draw a lantern with your own marks." },
+    { "zh": "把两张相同圆形卡配对。", "en": "Match two identical circle cards." }
+  ],
+  "cover": { "concept": "fest-lantern", "bg": "paper" },
+  "parentGuide": {
+    "intro": "先读完关屏，再用大纸和粗蜡笔画灯笼。元宵时许多家庭看灯笼、吃汤圆，本课只看汤圆卡，不试吃。灯笼有不同形状，不把所有灯笼说成圆形；用两张相同圆形卡玩配对。没有灯会也能在家庆祝。",
+    "tips": ["成人画大轮廓，宝宝任意加线，不纠正作品。", "只用无火纸画，不挂长绳、不装电池。", "圆形配对先示范一组，等待宝宝尝试，不考识字。"],
+    "phrases": [
+      { "zh": "这是灯笼。", "en": "This is a lantern." },
+      { "zh": "你想画什么？", "en": "What would you like to draw?" },
+      { "zh": "这两个一样。", "en": "These two match." },
+      { "zh": "汤圆只看图。", "en": "We'll only look at pictures of tangyuan." }
+    ],
+    "why": "成人给简单材料和开放选择，让宝宝主导涂画与配对。真实动手和对话是重点，不靠闪灯或食物奖励。",
+    "refs": ["[8]", "[67]", "[80]", "[82]"]
+  },
+  "printables": [{ "kind": "cards", "title": "灯笼与形状大卡", "items": ["fest-lantern", "fest-tangyuan", "circle", "square"], "size": "large", "showText": true, "showEnglish": true }],
+  "offline": [{
+    "title": "我的纸灯笼",
+    "minutes": 10,
+    "materials": ["大张完整纸", "无毒粗蜡笔", "两张圆形大卡"],
+    "steps": ["关屏，成人在完整大纸上画一个灯笼轮廓。", "宝宝用粗蜡笔加线条，成人描述正在画的动作。", "放下蜡笔，看一次汤圆大卡，说明只看图。", "成人放两张相同圆形大卡，陪宝宝把它们放到一起。", "收好画纸、大卡和蜡笔。"],
+    "question": "你的灯笼还想添什么？",
+    "levels": { "easier": "只涂一张大纸，成人描述线条。", "harder": "加入一张方形大卡，让宝宝把两张圆形卡配到一起。" },
+    "safety": "成人全程陪伴，纸和蜡笔不入口；不用剪刀、订书钉、长绳、明火或可拆纽扣电池。汤圆圆形且黏，有窒息风险，3岁以下不建议整颗吃；切小或压扁也不能消除黏性风险，本活动不试吃。",
+    "domains": ["art", "math", "language"]
+  }],
+  "steps": [{
+    "type": "guide",
+    "parentTip": "灯笼只是纸上的画；汤圆只看图，蜡笔不入口。",
+    "props": {
+      "goal": "画一幅纸灯笼，再配对两张相同圆形大卡。",
+      "materials": ["完整大纸", "无毒粗蜡笔", "灯笼与汤圆大卡", "两张圆形大卡"],
+      "steps": [
+        { "text": "关屏后成人画大灯笼轮廓，宝宝坐稳用粗蜡笔添线条。", "concept": "fest-lantern", "say": { "zh": "你想画什么？", "en": "What would you like to draw?" } },
+        { "text": "跟着宝宝的线条说颜色或动作，不要求画得像。", "concept": "crayon", "say": { "zh": "你画了长长的线。", "en": "You drew a long line." } },
+        { "text": "收好蜡笔，成人展示汤圆大卡；不拿食物试吃。", "concept": "fest-tangyuan", "say": { "zh": "汤圆只看图。", "en": "We'll only look at pictures of tangyuan." } },
+        { "text": "放两张相同圆形大卡，示范移到一起，再等宝宝试试。", "concept": "circle", "say": { "zh": "这两个一样。", "en": "These two match." } },
+        { "text": "宝宝累了随时停，收好大卡、纸和蜡笔。", "say": { "zh": "我们一起收好。", "en": "Let's put everything away together." } }
+      ],
+      "playMin": 10,
+      "observe": ["是否用自己的线条表达。", "是否注意两张相同卡片。", "是否需要减少材料或结束。"],
+      "safety": "成人陪伴，纸与蜡笔不入口；不用剪刀、订书钉、绳子、火或小电池。汤圆只看图不试吃；3岁以下不建议整颗吃，切小压扁仍有黏性窒息风险。"
+    }
+  }]
+}

@@ -1,0 +1,137 @@
+{
+  "schemaVersion": 1,
+  "id": "core.s6.polite-words",
+  "title": { "zh": "你好、谢谢、再见", "en": "Hello, Thank You, Goodbye" },
+  "summary": { "zh": "在真实情境里，听听温柔的话。", "en": "Hear kind words in familiar situations." },
+  "ageRange": [30, 36],
+  "domains": ["social", "english"],
+  "themeId": "s6-t4",
+  "tags": ["polite-words", "song", "frere-jacques"],
+  "durationMin": 7,
+  "coView": "required",
+  "audience": "child",
+  "objectives": [
+    { "zh": "在情境中听问好、感谢和道别。", "en": "Hear greetings, thanks, and goodbyes in context." },
+    { "zh": "用话语或手势参与交流。", "en": "Join in with words or gestures." }
+  ],
+  "cover": { "concept": "wave", "bg": "room" },
+  "parentGuide": {
+    "intro": "每轮由成人读出三个短句，孩子指选、点头或说话都可以。图标只作提示，不要求认字。家长在生活中自然示范，不逼孩子当众说英语、拥抱或亲吻，也不把礼貌当交换条件。",
+    "tips": [
+      "先演清情境，再读选项。",
+      "问好和再见都能挥手，靠情境区分。",
+      "孩子沉默时，成人可以代为表达。",
+      "唱完关屏，用玩偶轮流问好。"
+    ],
+    "phrases": [
+      { "zh": "你好！", "en": "Hello!" },
+      { "zh": "谢谢你！", "en": "Thank you!" },
+      { "zh": "再见啦！", "en": "Bye for now!" },
+      { "zh": "请帮帮我。", "en": "Please help me." }
+    ],
+    "why": "熟悉情境中的真人交流比背词更有意义。家长示范、等待和回应，保留孩子的表达与身体界限；不承诺歌曲带来英语能力。",
+    "refs": ["[7]", "[50]", "[53]", "[82]", "[87]"]
+  },
+  "offline": [
+    {
+      "title": "玩偶来做客",
+      "minutes": 8,
+      "materials": ["两个牢固的大玩偶", "一本书"],
+      "steps": [
+        "关屏，让玩偶相遇并问好。",
+        "一个玩偶把书递给另一个。",
+        "成人示范谢谢，等待孩子回应。",
+        "让玩偶离开，挥手说再见。",
+        "交换角色，孩子也可以只做手势。"
+      ],
+      "safety": "成人全程陪伴，玩偶无可拆小眼睛等小件；直径小于三点五厘米的小物件有窒息风险。不强迫拥抱、亲吻或触碰他人；真实交往中，感谢不代表必须接受礼物或接触。",
+      "domains": ["social", "english"],
+      "question": "不想说话时，你想怎样表达？",
+      "levels": {
+        "easier": "只演见面和离开，用挥手回应。",
+        "harder": "加入借书情境，让孩子选用请和谢谢。"
+      }
+    }
+  ],
+  "steps": [
+    {
+      "type": "choose",
+      "title": { "zh": "这时可以说什么", "en": "What Could We Say?" },
+      "parentTip": "成人朗读全部选项，再等孩子回应。挥手可表示问好或道别；爱心只提示感谢，不要求认图标。",
+      "props": {
+        "rounds": [
+          {
+            "prompt": { "zh": "收到礼物，怎样表示感谢？", "en": "You receive a gift. How could you say thanks?" },
+            "options": [
+              { "id": "hello", "image": "assets/images/actions/wave.svg", "label": { "zh": "你好！", "en": "Hello!" } },
+              { "id": "thank-you", "image": "assets/images/emotions/love.svg", "label": { "zh": "谢谢你！", "en": "Thank you!" } },
+              { "id": "bye", "image": "assets/images/actions/wave.svg", "label": { "zh": "再见啦！", "en": "Bye-bye!" } }
+            ],
+            "answer": "thank-you",
+            "explain": { "zh": "说谢谢，可以表达感谢。", "en": "Thank you is one way to show thanks." }
+          },
+          {
+            "prompt": { "zh": "早上见到老师，怎么问好？", "en": "You meet your teacher in the morning. How could you greet them?" },
+            "options": [
+              { "id": "bye", "image": "assets/images/actions/wave.svg", "label": { "zh": "再见啦！", "en": "Bye-bye!" } },
+              { "id": "hello", "image": "assets/images/actions/wave.svg", "label": { "zh": "你好！", "en": "Hello!" } },
+              { "id": "thank-you", "image": "assets/images/emotions/love.svg", "label": { "zh": "谢谢你！", "en": "Thank you!" } }
+            ],
+            "answer": "hello",
+            "explain": { "zh": "见面时，可以说你好。", "en": "You can say hello when you meet." }
+          },
+          {
+            "prompt": { "zh": "离开幼儿园，怎么道别？", "en": "You are leaving preschool. How could you say goodbye?" },
+            "options": [
+              { "id": "thank-you", "image": "assets/images/emotions/love.svg", "label": { "zh": "谢谢你！", "en": "Thank you!" } },
+              { "id": "hello", "image": "assets/images/actions/wave.svg", "label": { "zh": "你好！", "en": "Hello!" } },
+              { "id": "bye", "image": "assets/images/actions/wave.svg", "label": { "zh": "再见啦！", "en": "Bye-bye!" } }
+            ],
+            "answer": "bye",
+            "explain": { "zh": "离开时，可以说再见。", "en": "You can say goodbye when you leave." }
+          }
+        ],
+        "showLabels": true,
+        "hintAfter": 2
+      }
+    },
+    {
+      "type": "song",
+      "title": { "zh": "一起问好", "en": "Sing a Greeting" },
+      "parentTip": "两只老虎／Frère Jacques 旋律，C 大调。家长唱、孩子回应，挥手即可。",
+      "props": {
+        "title": { "zh": "一起问好歌", "en": "Our Greeting Song" },
+        "credit": "旋律：传统（公有领域）；中文词：芽芽成长原创；英文词：芽芽成长原创；采用 Frère Jacques（两只老虎）C 大调旋律",
+        "bpm": 80,
+        "instrument": "marimba",
+        "repeat": 1,
+        "lines": [
+          { "lang": "zh", "text": "你好你好", "notes": "C4/1 D4/1 E4/1 C4/1" },
+          { "lang": "zh", "text": "你好你好", "notes": "C4/1 D4/1 E4/1 C4/1" },
+          { "lang": "zh", "text": "挥挥手", "notes": "E4/1 F4/1 G4/2" },
+          { "lang": "zh", "text": "挥挥手", "notes": "E4/1 F4/1 G4/2" },
+          { "lang": "zh", "text": "请帮我穿鞋吧", "notes": "G4/0.5 A4/0.5 G4/0.5 F4/0.5 E4/1 C4/1" },
+          { "lang": "zh", "text": "谢谢你帮助我", "notes": "G4/0.5 A4/0.5 G4/0.5 F4/0.5 E4/1 C4/1" },
+          { "lang": "zh", "text": "再见啦", "notes": "C4/1 G3/1 C4/2" },
+          { "lang": "zh", "text": "再见啦", "notes": "C4/1 G3/1 C4/2" },
+          { "lang": "en", "text": "Hello, hello", "notes": "C4/1 D4/1 E4/1 C4/1" },
+          { "lang": "en", "text": "Hello, hello", "notes": "C4/1 D4/1 E4/1 C4/1" },
+          { "lang": "en", "text": "Wave your hand", "notes": "E4/1 F4/1 G4/2" },
+          { "lang": "en", "text": "Wave your hand", "notes": "E4/1 F4/1 G4/2" },
+          { "lang": "en", "text": "Please help me with my shoes", "notes": "G4/0.5 A4/0.5 G4/0.5 F4/0.5 E4/1 C4/1" },
+          { "lang": "en", "text": "Thank you for your kind help", "notes": "G4/0.5 A4/0.5 G4/0.5 F4/0.5 E4/1 C4/1" },
+          { "lang": "en", "text": "Bye for now", "notes": "C4/1 G3/1 C4/2" },
+          { "lang": "en", "text": "Bye for now", "notes": "C4/1 G3/1 C4/2" }
+        ],
+        "scene": { "bg": "room", "ground": "floor", "sprites": [
+          { "concept": "bear", "x": 32, "y": 72, "size": 36, "anim": "none" },
+          { "concept": "rabbit", "x": 72, "y": 76, "size": 24, "anim": "none" }
+        ] },
+        "actions": [
+          { "zh": "舒服地挥挥手。", "en": "Wave comfortably." },
+          { "zh": "唱完关屏，再去玩。", "en": "Turn the screen off and play after singing." }
+        ]
+      }
+    }
+  ]
+}

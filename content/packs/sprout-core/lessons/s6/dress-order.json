@@ -1,0 +1,73 @@
+{
+  "schemaVersion": 1,
+  "id": "core.s6.dress-order",
+  "title": { "zh": "穿衣服的顺序", "en": "Getting Dressed in Order" },
+  "summary": { "zh": "先穿好衣服，再穿袜子和鞋。", "en": "Put on clothes, then socks and shoes." },
+  "ageRange": [30, 36],
+  "domains": ["life", "math"],
+  "themeId": "s6-t3",
+  "tags": ["sequence", "getting-dressed", "ask-for-help"],
+  "durationMin": 5,
+  "coView": "required",
+  "audience": "child",
+  "objectives": [
+    { "zh": "一起说说先做什么、再做什么。", "en": "Talk about what comes first and next." },
+    { "zh": "尝试穿衣中的一小步。", "en": "Try one small part of getting dressed." }
+  ],
+  "cover": { "concept": "shirt", "bg": "room" },
+  "parentGuide": {
+    "intro": "先说清这次出门的约定：贴身上衣、裤子、袜子、鞋。上衣图只示意贴身上衣。衣物与顺序可按家庭需要调整；不要求全程独立，更不要求按一种顺序穿所有衣服。",
+    "tips": [
+      "上衣图不是内裤图，不混教名称。",
+      "先穿袜子再穿鞋，方便操作。",
+      "穿裤子和鞋时让孩子坐稳。",
+      "遇到困难，问需要哪一点帮助。"
+    ],
+    "phrases": [
+      { "zh": "先穿贴身上衣。", "en": "Put on your undershirt first." },
+      { "zh": "袜子穿好，再穿鞋。", "en": "Socks on, then shoes." },
+      { "zh": "你想试哪一步？", "en": "Which part would you like to try?" },
+      { "zh": "需要帮忙可以告诉我。", "en": "Tell me if you need help." }
+    ],
+    "why": "可预期的常规给孩子行动线索。成人拆成小步，再逐步减少帮助；穿衣练习不是三岁前独立自理的考核。",
+    "refs": ["[7]", "[81]", "[93]", "[95]"]
+  },
+  "offline": [
+    {
+      "title": "穿衣小计划",
+      "minutes": 10,
+      "materials": ["当天的贴身上衣、宽松裤子、袜子和鞋", "稳固座位"],
+      "steps": [
+        "关屏，把衣物按这次的顺序放好。",
+        "请孩子选一步自己试。",
+        "成人协助穿好贴身上衣和裤子。",
+        "坐稳后，试着穿袜子，再穿鞋。",
+        "成人检查衣物和鞋子是否合适。"
+      ],
+      "safety": "成人全程陪伴，在稳固低座位或地垫上穿衣。远离楼梯和门缝。检查纽扣等小配件牢固；直径小于三点五厘米的小物件有窒息风险。不拉扯四肢，不用长绳衣物。",
+      "domains": ["life", "math"],
+      "question": "你想先准备好哪件衣服，为什么？",
+      "levels": {
+        "easier": "只做袜子、鞋子两步，成人协助。",
+        "harder": "孩子先摆出四件衣物，再做自己能完成的步骤。"
+      }
+    }
+  ],
+  "steps": [
+    {
+      "type": "sequence",
+      "title": { "zh": "这次怎样穿", "en": "Our Plan for Today" },
+      "parentTip": "上衣图示意贴身上衣。说明这是本次约定，裤子与上衣可换序；袜子在鞋子前。",
+      "props": {
+        "mode": "order",
+        "intro": { "zh": "这次按这个顺序穿。", "en": "Here is our plan for getting dressed today." },
+        "steps": [
+          { "concept": "shirt", "caption": { "zh": "穿贴身上衣", "en": "Put on your undershirt." }, "say": { "zh": "先穿贴身上衣。", "en": "Put on your undershirt first." } },
+          { "concept": "pants", "caption": { "zh": "穿裤子", "en": "Put on your pants." }, "say": { "zh": "坐稳，穿好裤子。", "en": "Sit safely and put on your pants." } },
+          { "concept": "socks", "caption": { "zh": "穿袜子", "en": "Put on your socks." }, "say": { "zh": "接着穿袜子。", "en": "Next, put on your socks." } },
+          { "concept": "shoes", "caption": { "zh": "穿鞋子", "en": "Put on your shoes." }, "say": { "zh": "最后穿鞋子。", "en": "Put on your shoes last." } }
+        ]
+      }
+    }
+  ]
+}

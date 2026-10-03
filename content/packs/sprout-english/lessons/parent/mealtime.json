@@ -1,0 +1,79 @@
+{
+  "schemaVersion": 1,
+  "id": "english.parent.mealtime",
+  "title": {"zh": "还要和吃好啦", "en": "More, Please and All Done"},
+  "summary": {"zh": "回应饥饿和吃饱的信号，不让进餐变测验。", "en": "Respond to hunger and fullness with six useful phrases."},
+  "ageRange": [6, 24],
+  "audience": "parent",
+  "domains": ["english", "life", "social"],
+  "tags": ["mealtime", "parent-led", "tpr"],
+  "durationMin": 3,
+  "coView": "required",
+  "objectives": [
+    {"zh": "看见还要与吃饱。", "en": "Notice requests for more and signs of fullness."},
+    {"zh": "先回应，再示范。", "en": "Respond first, then model a short phrase."}
+  ],
+  "cover": {"concept": "spoon", "bg": "room"},
+  "parentGuide": {
+    "intro": "家长在饭前学六句，吃饭时关屏。看到宝宝伸手要更多或转头不想吃，立即回应；英文只是示范，不要求说出来才给食物。",
+    "tips": [
+      "每步附美式音标，慢说一整句即可，不教宝宝念音标或模仿口型考试。",
+      "还要和吃好都可以用手势表达；闭嘴、转头或推开也要尊重。",
+      "动作游戏只在开餐前做举手示范；嘴里有食物时不玩跳跃、拍手或追跑。"
+    ],
+    "phrases": [
+      {"zh": "吃饭时间到啦。", "en": "Time to eat."},
+      {"zh": "这是你的勺子。", "en": "Here's your spoon."},
+      {"zh": "还想要一些吗？", "en": "Would you like more?"},
+      {"zh": "我还要，请给我。", "en": "More, please."},
+      {"zh": "吃好啦。", "en": "All done."},
+      {"zh": "谢谢你。", "en": "Thank you."}
+    ],
+    "why": "真人在宝宝请求时及时回应，比背景视频更贴近日常学习。手势和声音都是交流，不以英语表现换取食物，也不承诺启蒙效果。",
+    "refs": ["[16]", "[47]", "[54]", "[59]"]
+  },
+  "printables": [
+    {"kind": "cards", "title": "餐具实物对照卡", "items": ["spoon", "bowl", "cup"], "size": "large", "showText": true, "showEnglish": true}
+  ],
+  "offline": [
+    {
+      "title": "没有屏幕的进餐对话",
+      "minutes": 5,
+      "materials": ["宝宝平日使用的安全餐具"],
+      "steps": [
+        "饭前关屏，把餐具放好，成人用举自己的手做一次轻柔动作示范。",
+        "按宝宝平常的适龄进餐方式进行，指着勺子说一句短语。",
+        "宝宝请求更多时先满足合理需要，再用短句示范，不等待复读。",
+        "宝宝表示吃饱时停止劝吃，回应吃好啦并收好餐具。"
+      ],
+      "question": "你想告诉我什么呀？",
+      "levels": {
+        "easier": "只示范还要或吃好，接受目光、声音和手势。",
+        "harder": "在真实需要发生时，让宝宝主动指餐具或用自己的语言表达。"
+      },
+      "safety": "全程近距离看护，坐稳进食；只用适龄、安全且平日可吃的食物，不提供整颗圆形硬食物或小零件，不追喂、不强喂，不用吃东西做奖励。",
+      "domains": ["english", "life"]
+    }
+  ],
+  "steps": [
+    {
+      "type": "guide",
+      "parentTip": "饭前学，饭时关屏；语言示范不替代及时喂养和回应。",
+      "props": {
+        "goal": "把六句英文放进真实进餐，用回应而非考问支持交流。",
+        "materials": ["安全餐具", "宝宝已有的适龄进餐安排"],
+        "steps": [
+          {"text": "饭前关屏，指一指准备好的餐具。美式 /taɪm tə it/。", "concept": "bowl", "say": {"zh": "吃饭时间到啦。", "en": "Time to eat."}},
+          {"text": "把安全勺子放在宝宝可见处。美式 /hɪrz jər spun/。", "concept": "spoon", "say": {"zh": "这是你的勺子。", "en": "Here's your spoon."}},
+          {"text": "观察需要再询问，不打断正在吞咽的宝宝。美式 /wʊd ju laɪk mɔr/。", "say": {"zh": "还想要一些吗？", "en": "Would you like more?"}},
+          {"text": "宝宝要更多时先回应，再示范请求，不等复读。美式 /mɔr pliz/。", "say": {"zh": "我还要，请给我。", "en": "More, please."}},
+          {"text": "宝宝转头或推开时尊重吃饱信号。美式 /ɔl dʌn/。", "say": {"zh": "吃好啦。", "en": "All done."}},
+          {"text": "进餐结束，成人收餐具并示范感谢。美式 /θæŋk ju/。", "concept": "cup", "say": {"zh": "谢谢你。", "en": "Thank you."}}
+        ],
+        "playMin": 5,
+        "observe": ["宝宝如何表示想要或不想要。", "家长有没有先回应再示范，而不是反复考问。", "嘴里有食物时保持安静、安全进餐。"],
+        "safety": "坐稳吃饭并全程看护，不喂食小硬物，不把英语、手势或动作当进食条件。"
+      }
+    }
+  ]
+}

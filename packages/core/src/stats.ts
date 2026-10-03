@@ -40,7 +40,7 @@ export function computeStats(
     bucket.screenSec += session.durationSec;
     result.totalSec += session.durationSec;
 
-    const domain = Object.hasOwn(lessons, session.lessonId) ? lessons[session.lessonId]?.domains[0] : undefined;
+    const domain = Object.prototype.hasOwnProperty.call(lessons, session.lessonId) ? lessons[session.lessonId]?.domains[0] : undefined;
     if (domain) result.domains[domain] = (result.domains[domain] ?? 0) + session.durationSec;
   }
 

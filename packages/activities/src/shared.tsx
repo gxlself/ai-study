@@ -69,7 +69,7 @@ export function defineBuiltin<P>(
     type, version: '1.0.0', name: { zh: meta.zh, en: meta.en }, ageRange: meta.ageRange,
     React, ReactDOMClient, Component,
     preload: collectAssets,
-    speeches: (props) => [...collectSpeeches(props), ...(speeches?.(props) ?? [])],
+    speeches: (props) => speeches?.(props) ?? [],
   });
 }
 

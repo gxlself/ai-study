@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="0 0 320 320" role="img" aria-labelledby="title">
+  <title id="title">A decorated cloth sachet, shown as a picture only</title>
+  <path d="M127 55 Q127 24 160 24 Q193 24 193 55" fill="none" stroke="#557F87" stroke-width="8" stroke-linecap="round"/>
+  <path d="M121 59 Q160 83 199 59 L224 109 Q252 143 238 206 Q225 255 160 260 Q95 255 82 206 Q68 143 96 109Z" fill="#84B9BC" stroke="#416E7C" stroke-width="7" stroke-linejoin="round"/>
+  <path d="M102 98 Q160 115 218 98" fill="none" stroke="#EAC778" stroke-width="9" stroke-linecap="round"/>
+  <path d="M160 138 Q189 111 197 141 Q225 146 201 170 Q213 199 183 197 Q162 225 143 198 Q110 201 119 171 Q93 151 125 140 Q133 115 160 138Z" fill="#E9BDC2" stroke="#9F6278" stroke-width="5" stroke-linejoin="round"/>
+  <circle cx="160" cy="167" r="17" fill="#EAC778"/>
+  <path d="M160 263 V284 M145 282 V301 M160 282 V303 M175 282 V301" stroke="#557F87" stroke-width="8" stroke-linecap="round"/>
+</svg>

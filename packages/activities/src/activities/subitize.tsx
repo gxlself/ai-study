@@ -69,14 +69,21 @@ function SubitizeActivity({ ctx }: { ctx: ActivityContext<SubitizeProps> }) {
   }
   useNav(ctx, (key) => {
     if (key === 'left' || key === 'right') {
-      const index = (focusIndex + (key === 'right' ? 1 : 2)) % choices.length;
+      const focused = ctx.focus.current();
+      const focusedIndex = focused ? buttons.current.indexOf(focused as HTMLButtonElement) : -1;
+      const currentIndex = focusedIndex >= 0 ? focusedIndex : focusIndex;
+      const index = (currentIndex + (key === 'right' ? 1 : choices.length - 1)) % choices.length;
       setFocusIndex(index);
       ctx.focus.focus(buttons.current[index]);
       return true;
     }
     if (key === 'ok') {
       if (phase === 'done') next();
-      else if (props.choices) pick(choices[focusIndex]);
+      else if (props.choices) {
+        const focused = ctx.focus.current();
+        const index = focused ? buttons.current.indexOf(focused as HTMLButtonElement) : -1;
+        pick(choices[index >= 0 ? index : focusIndex]);
+      }
       return true;
     }
     return false;
@@ -89,7 +96,7 @@ function SubitizeActivity({ ctx }: { ctx: ActivityContext<SubitizeProps> }) {
       <QuantityField ctx={ctx} count={round.count} item={round.item} layout={round.arrangement} activeCount={counted} numbered />
     </div>
     <Text ctx={ctx} text={wrong ? PHRASES.lookAgain : PHRASES.howMany} className={`spa-question ${phase === 'show' ? 'spa-invisible' : ''}`} />
-    <div className="spa-subitize-choices">
+    <div className="spa-subitize-choices" data-round-index={roundIndex}>
       {phase === 'question' && props.choices && choices.map((value, index) =>
         <button key={value} ref={(el) => { buttons.current[index] = el; }} type="button" data-focusable
           className="spa-number-choice" disabled={busy.busy} onClick={() => pick(value)} aria-label={String(value)}>

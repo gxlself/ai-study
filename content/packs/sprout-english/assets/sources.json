@@ -1,0 +1,11 @@
+{
+  "schemaVersion": 1,
+  "items": {
+    "assets/images/everyday-english.svg": {
+      "source": "custom"
+    },
+    "assets/images/actions/stand-up.svg": {
+      "source": "custom"
+    }
+  }
+}

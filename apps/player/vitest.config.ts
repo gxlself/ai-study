@@ -6,7 +6,7 @@ export default defineConfig({
     include: ['src/**/*.test.ts', 'src/**/*.test.tsx'],
     restoreMocks: true,
     pool: 'threads',
-    isolate: false,
+    isolate: true,
     maxWorkers: 1,
     fileParallelism: false,
     testTimeout: 60_000,

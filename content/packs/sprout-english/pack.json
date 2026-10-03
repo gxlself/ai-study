@@ -1,0 +1,46 @@
+{
+  "schemaVersion": 1,
+  "id": "sprout.english",
+  "version": "1.0.0",
+  "name": {
+    "zh": "英语日常",
+    "en": "Everyday English"
+  },
+  "description": {
+    "zh": "家长先学几句，再放下屏幕，在起床、穿衣、吃饭和玩耍中真人互动。九节家长指引与三节可选亲子共看，不承诺英语学习效果。",
+    "en": "Learn a few phrases, put the screen away, and use them in real conversations. Nine parent guides and three optional co-viewing lessons, without promises of language gains."
+  },
+  "author": "芽芽成长 Sprout",
+  "license": "CC0-1.0",
+  "ageRange": [6, 36],
+  "lexicon": "lexicon.json",
+  "routes": [],
+  "lessonsDir": "lessons",
+  "requires": {
+    "sdk": "^1.0.0"
+  },
+  "cover": "assets/images/everyday-english.svg",
+  "tags": ["english", "daily-routines", "parent-led", "co-view"],
+  "credits": [
+    {
+      "name": "芽芽成长原创课程、英文歌词与自绘插画",
+      "license": "CC0-1.0",
+      "note": "许可限本包原创文字、词条、插画和测试源码，不覆盖核心包素材或系统语音。"
+    },
+    {
+      "name": "Frère Jacques 传统旋律",
+      "license": "Public domain",
+      "note": "只使用传统旋律；中英文歌词为本包原创，播放时由活动合成，无第三方录音。"
+    },
+    {
+      "name": "sprout.core 词库与图片",
+      "license": "按核心包 LICENSES.md",
+      "note": "通过概念标识符引用，不复制、不改写；导入时须保留已启用的 sprout.core。"
+    },
+    {
+      "name": "macOS 系统合成语音",
+      "license": "受适用的系统软件及声音使用条款约束",
+      "note": "音频用于家庭使用和内部验收，不宣称为 CC0；对外分发前另行核对声音授权。"
+    }
+  ]
+}

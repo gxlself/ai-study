@@ -36,6 +36,7 @@ pnpm --filter @sprout/player build
 | `sprout.remote:*` | 按服务器和设备身份隔离的本机历史及待补传队列 |
 | `sprout.preferences` | 家长提示条、减少动画、音量 |
 | `sprout.timeGrants` | 本设备按孩子和本地日期保存的临时授权日志 |
+| `sprout.coViewNotice:<childId>` | 该孩子在本设备已阅读共看知情提示 |
 
 `src/data` 提供同一 `DataSource` 的 `LocalSource` 和 `RemoteSource`。本地排课、阶段、摘要、时间策略均调用 `@sprout/core`，不维护第二套排课算法。远程 session 先持久化、再发送；上传失败保留队列，启动、恢复联网、周期性重试及后续数据请求时补传，`clientId` 去重。远程“再玩一次”来自本设备历史，因为 device token 没有 `GET /api/sessions` 权限。家长记录带 `audience: "parent"`，保留实际可见活动时长，但不增加孩子已用屏幕秒数；旧记录缺省按 `child` 处理，核心已知家长课程也能识别旧记录。
 
@@ -65,6 +66,8 @@ pnpm --filter @sprout/player build
 ## 家长模式
 
 首页依照 `today.screen.mode` 分为家长模式和亲子共看。缺省模式按月龄保守处理；十八月龄以下始终家长模式，十八至二十三月龄默认关闭共看，家长可在设置中开启；远程设置由后台管理。本地可用时段默认 08:00–18:30。
+
+每日计划遵守路线的 `childLessonsPerDay`，s4 最多一节共看课。仅家长模式下，本阶段适龄家长课程不足时以 child 课程的“线下版”补足；卡片有明确徽标，打开后只显示家长导语、短语与线下玩法，不预加载或挂载活动步骤，记录的 audience 为 parent、步骤数为 0，不计孩子屏幕时间。首次进入共看模式时显示可用遥控器关闭的知情说明，按孩子在本机记已读。
 
 离线表单只提供出生年月，新档案按该月最后一个不晚于今天的日期保守计算月龄，不把不确定的生日默认为月初而提前开启共看。已有档案的年月未改变时保留原完整生日。后台可填写精确生日。
 

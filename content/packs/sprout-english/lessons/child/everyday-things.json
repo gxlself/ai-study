@@ -1,0 +1,94 @@
+{
+  "schemaVersion": 1,
+  "id": "english.child.everyday-things",
+  "title": {"zh": "找找身边的东西", "en": "Things Around Us"},
+  "summary": {"zh": "四张手动词卡、两次指认，然后去找真实物品。", "en": "Four manual word cards and two choices, followed by a real-object game."},
+  "ageRange": [24, 36],
+  "audience": "child",
+  "domains": ["english", "language", "cognition"],
+  "tags": ["word-cards", "co-view", "daytime"],
+  "durationMin": 3,
+  "coView": "required",
+  "objectives": [
+    {"zh": "把图片和实物连起来。", "en": "Connect pictures with familiar real objects."},
+    {"zh": "指认或递给家长。", "en": "Point to an object or offer it to a grown-up."}
+  ],
+  "cover": {"concept": "cup", "bg": "sky"},
+  "parentGuide": {
+    "intro": "仅供家长已选择共看的家庭白天使用，成人全程陪同。一次慢看一张，用指认或目光回应即可；两轮找一找后关屏，拿真实杯子、书和球一起玩。",
+    "tips": [
+      "名称和短句配慢读音频，家长听一遍再自然说，不要求复读。",
+      "cup /kʌp/，spoon /spun/，book /bʊk/，ball /bɔl/；音标只给家长参考。",
+      "词卡不自动翻页，宝宝不想看时直接结束，未选中就和家长一起找。",
+      "不看屏幕也可以直接用安全实物玩；指、看、递出或中文回答都可以。"
+    ],
+    "phrases": [
+      {"zh": "这是你的杯子。", "en": "Here's your cup."},
+      {"zh": "这是你的勺子。", "en": "Here's your spoon."},
+      {"zh": "我们读本书吧。", "en": "Let's read a book."},
+      {"zh": "把球滚过来。", "en": "Roll the ball to me."},
+      {"zh": "杯子在哪里？", "en": "Where is the cup?"},
+      {"zh": "书在哪里？", "en": "Where is the book?"}
+    ],
+    "why": "图片之后马上转到真实物品，由家长及时回应；指认服务共同关注而非考试。短共看不能替代丰富的日常中文对话。",
+    "refs": ["[16]", "[24]", "[25]", "[53]"]
+  },
+  "printables": [
+    {"kind": "cards", "title": "日常物品实物对照卡", "items": ["cup", "spoon", "book", "ball"], "size": "large", "showText": true, "showEnglish": true}
+  ],
+  "offline": [
+    {
+      "title": "关屏找实物",
+      "minutes": 5,
+      "materials": ["空的安全杯子", "安全勺子", "纸书", "大软球"],
+      "steps": [
+        "关屏，成人放好两个安全实物，不给整屋搜寻任务。",
+        "成人指着杯子说一句，等宝宝看、指或递给你。",
+        "换成纸书或球，边做翻页、递出或轻轻滚球动作边说短句。",
+        "宝宝选择一个想玩的物品，成人回应，回到自由游戏。"
+      ],
+      "question": "你想拿哪一样和我玩呀？",
+      "levels": {
+        "easier": "只放一个物品，成人命名，宝宝可以只看。",
+        "harder": "用两张实体卡配两个实物，宝宝自己选择配对，不要求说英文。"
+      },
+      "safety": "成人全程陪伴；杯子为空且不易碎，勺子无锐边，球大于三点五厘米；不提供小零件或热饮，不在进食时玩，不追跑、不攀高。",
+      "domains": ["english", "language", "cognition"]
+    }
+  ],
+  "steps": [
+    {
+      "type": "word-cards",
+      "parentTip": "慢看一张，指一指再等回应；不自动翻页，不要求读字。",
+      "props": {
+        "items": ["cup", "spoon", "book", "ball"],
+        "show": {"text": true, "english": true, "pinyin": false},
+        "speak": "name+phrase",
+        "autoAdvanceSec": null,
+        "intro": {"zh": "一起看看身边的东西。", "en": "Let's look at things around us."}
+      }
+    },
+    {
+      "type": "choose",
+      "parentTip": "宝宝可指图，让家长操作；找完就关屏，去玩真实物品。",
+      "props": {
+        "rounds": [
+          {
+            "prompt": {"zh": "杯子在哪里？", "en": "Where is the cup?"},
+            "options": ["cup", "book"],
+            "answer": "cup",
+            "explain": {"zh": "这是杯子。", "en": "Here is the cup."}
+          },
+          {
+            "prompt": {"zh": "书在哪里？", "en": "Where is the book?"},
+            "options": ["ball", "book"],
+            "answer": "book",
+            "explain": {"zh": "这是书。", "en": "Here is the book."}
+          }
+        ],
+        "showLabels": false,
+        "hintAfter": 1
+      }
+    }
+  ]
+}

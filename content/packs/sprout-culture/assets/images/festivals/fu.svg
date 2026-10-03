@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="0 0 320 320" role="img" aria-labelledby="title">
+  <title id="title">A red fu decoration carrying good wishes</title>
+  <path d="M160 26 Q165 26 172 33 L287 148 Q299 160 287 172 L172 287 Q160 299 148 287 L33 172 Q21 160 33 148 L148 33 Q155 26 160 26Z" fill="#D85F60" stroke="#9B4148" stroke-width="7"/>
+  <path d="M160 47 273 160 160 273 47 160Z" fill="none" stroke="#F7D990" stroke-width="5" stroke-linejoin="round"/>
+  <text x="160" y="203" text-anchor="middle" fill="#FFF1CF" font-size="128" font-weight="600" font-family="PingFang SC, Noto Sans SC, sans-serif">&#31119;</text>
+</svg>

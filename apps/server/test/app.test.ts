@@ -251,7 +251,7 @@ describe('Sprout API 集成', () => {
     expect((await request('DELETE', '/api/lexicon/square')).statusCode).toBe(200);
   });
 
-  it('内容包 ZIP 导入、相同版本拒绝、启停、校验、导出和删除', async () => {
+  it('内容包 ZIP 导入、同版本覆盖、拒绝降级、启停、校验、导出和删除', async () => {
     const zip = (version: string, bad = false) => zipSync({
       'example/pack.json': strToU8(JSON.stringify({ schemaVersion: 1, id: 'example.pack', version, name: { zh: '测试包' }, ageRange: [6, 36] })),
       'example/lessons/one.json': strToU8(JSON.stringify({ ...exampleLesson, id: 'example.lesson',
@@ -262,7 +262,9 @@ describe('Sprout API 集成', () => {
     expect(imported.statusCode, imported.body).toBe(201);
     expect(imported.json().lessonCount).toBe(1);
     const same = multipart(zip('1.0.0'), 'same.zip');
-    expect((await app.inject({ method: 'POST', url: '/api/packs/import', ...same, headers: { ...same.headers, authorization: `Bearer ${token}` } })).statusCode).toBe(409);
+    expect((await app.inject({ method: 'POST', url: '/api/packs/import', ...same, headers: { ...same.headers, authorization: `Bearer ${token}` } })).statusCode).toBe(201);
+    const lower = multipart(zip('0.9.0'), 'lower.zip');
+    expect((await app.inject({ method: 'POST', url: '/api/packs/import', ...lower, headers: { ...lower.headers, authorization: `Bearer ${token}` } })).statusCode).toBe(409);
     const bad = multipart(zip('2.0.0', true), 'bad.zip');
     expect((await app.inject({ method: 'POST', url: '/api/packs/import', ...bad, headers: { ...bad.headers, authorization: `Bearer ${token}` } })).statusCode).toBe(400);
     expect((await request('GET', '/api/lessons/example.lesson')).statusCode).toBe(200);
@@ -385,11 +387,22 @@ describe('Sprout API 集成', () => {
     const dist = join(paths.directory, 'player');
     mkdirSync(dist);
     writeFileSync(join(dist, 'index.html'), '<!doctype html><title>SPROUT_APP</title>');
-    app = await buildApp({ ...paths, playerDist: dist, reloadIntervalMs: 0 });
+    writeFileSync(join(dist, 'favicon.png'), readFileSync(new URL('../../player/public/favicon.png', import.meta.url)));
+    app = await buildApp({ ...paths, playerDist: dist, adminDist: dist, reloadIntervalMs: 0 });
     expect((await request('GET', '/api/children')).json()[0].id).toBe(childId);
     expect((await request('GET', '/api/packs')).json().find((p: { id: string }) => p.id === 'sprout.core').enabled).toBe(false);
     expect((await request('GET', '/settings/profile', undefined, '')).body).toContain('SPROUT_APP');
     expect((await request('GET', '/missing.js', undefined, '')).statusCode).toBe(404);
+    for (const path of ['/admin/print/lesson/core.s3.find-animal', '/admin/print/theme/example.theme']) {
+      const print = await request('GET', path, undefined, '');
+      expect(print.statusCode).toBe(200);
+      expect(print.headers['content-type']).toContain('text/html');
+      expect(print.body).toContain('SPROUT_APP');
+    }
+    expect((await request('GET', '/admin/assets/missing.js', undefined, '')).statusCode).toBe(404);
+    const favicon = await request('GET', '/favicon.ico', undefined, '');
+    expect(favicon.statusCode).toBe(200);
+    expect(favicon.headers['content-type']).toContain('image/png');
     expect(readFileSync(join(paths.dataDir, 'custom', 'pack.json'), 'utf8')).toContain('sprout.custom');
   });
 });

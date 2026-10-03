@@ -1,0 +1,65 @@
+{
+  "schemaVersion": 1,
+  "id": "core.s4.feelings",
+  "title": { "zh": "开心和难过", "en": "Happy and Sad" },
+  "summary": { "zh": "听听心情名字，大人陪着你。", "en": "Hear feeling words with a grown-up nearby." },
+  "themeId": "s4-t4",
+  "ageRange": [18, 23],
+  "domains": ["social", "language"],
+  "audience": "parent",
+  "durationMin": 2,
+  "coView": "required",
+  "objectives": [
+    { "zh": "在生活里听开心和难过。", "en": "Hear happy and sad in everyday moments." },
+    { "zh": "用看、指或动作表达需要。", "en": "Express a need by looking, pointing, or moving." }
+  ],
+  "cover": { "concept": "happy", "bg": "room" },
+  "printables": [
+    { "kind": "cards", "title": "心情名字卡", "items": ["happy", "sad", "angry", "scared"], "size": "large", "showText": true, "showEnglish": true }
+  ],
+  "parentGuide": {
+    "intro": "先读再关屏，在平静时看心情卡。镜子前先做笑脸，再做轻轻皱眉的脸。日常先描述发生的事，再试着命名心情。不故意弄哭或吓宝宝来教情绪。",
+    "tips": ["一次只看一两张卡。", "表情只是线索，不代表唯一心情。", "宝宝不想照镜子，就陪着说话。"],
+    "phrases": [
+      { "zh": "你在笑，好像很开心。", "en": "You're smiling. You seem happy." },
+      { "zh": "玩具倒了，你有点难过吗？", "en": "The toy fell. Are you feeling sad?" },
+      { "zh": "难过也可以，我陪着你。", "en": "It's okay to feel sad. I'm here." },
+      { "zh": "想抱抱还是坐在旁边？", "en": "A hug, or shall I sit beside you?" }
+    ],
+    "why": "命名与接纳情绪符合回应性照护。幼儿仍需要成人一起调节。现有证据不支持靠认脸卡快速学会自我安抚。",
+    "refs": ["12", "82", "90", "91"]
+  },
+  "offline": [
+    {
+      "title": "镜子里的小表情",
+      "minutes": 5,
+      "materials": ["稳固防碎镜", "开心和难过大卡"],
+      "steps": ["在宝宝平静时一起看安全镜子。", "大人微笑，说我现在很开心。", "再轻轻皱眉，说有时也会难过。", "让宝宝选择想看哪张心情卡。"],
+      "safety": "镜子防碎、无锐边并固定好。不诱发害怕或难过来练习。宝宝拒绝就停。大卡由成人剪裁，不入口。小物件直径小于3.5厘米有窒息风险。",
+      "domains": ["social", "language"],
+      "question": "你想让我坐在哪里陪你？",
+      "levels": { "easier": "只照镜子微笑，成人说开心。", "harder": "宝宝愿意时，指一张卡或做一个表情；不要求说出情绪。" }
+    }
+  ],
+  "steps": [
+    {
+      "type": "guide",
+      "title": { "zh": "听听心情的名字", "en": "Hear the Names of Feelings" },
+      "parentTip": "先回应宝宝当下需要。心情卡在平静时看，不是考题。",
+      "props": {
+        "goal": "在温和互动和真实生活中命名情绪。",
+        "materials": ["开心、难过、生气、害怕大卡", "稳固防碎镜"],
+        "steps": [
+          { "text": "平静时把开心卡放在镜子旁。", "say": { "zh": "这是开心的脸。", "en": "This face looks happy." }, "concept": "happy" },
+          { "text": "面对镜子微笑，等宝宝回应。", "say": { "zh": "和你一起玩，我很开心。", "en": "I'm happy playing with you." } },
+          { "text": "换难过卡，轻轻皱一皱眉。", "say": { "zh": "有时我们也会难过。", "en": "Sometimes we feel sad too." }, "concept": "sad" },
+          { "text": "放下卡片，听宝宝的声音。", "say": { "zh": "你想告诉我什么？", "en": "What would you like to tell me?" } },
+          { "text": "日常遇到情绪时，坐近陪伴。", "say": { "zh": "你有点难过吗？我在。", "en": "Are you feeling sad? I'm here." }, "concept": "hug" }
+        ],
+        "playMin": 5,
+        "observe": ["宝宝是否看、指或模仿表情。", "宝宝怎样表示靠近或拒绝。", "你回应后，宝宝是否愿意继续互动。"],
+        "safety": "镜子固定、防碎、无锐边。情绪卡不用于逗哭或吓唬。不给情绪贴好坏标签，不强迫拥抱。先顾安全和需要。小物件直径小于3.5厘米有窒息风险，及时收走。"
+      }
+    }
+  ]
+}

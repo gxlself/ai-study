@@ -1,0 +1,70 @@
+{
+  "schemaVersion": 1,
+  "id": "culture.parent-toddler.qingming",
+  "title": { "zh": "清明：踏青和种子", "en": "Qingming: A Walk and a Seed" },
+  "summary": { "zh": "看看春天，成人种下种子，宝宝在看护下浇一勺水。", "en": "Notice spring; an adult plants a seed while the child may help water with supervision." },
+  "ageRange": [18, 36],
+  "audience": "parent",
+  "domains": ["science", "language", "motor"],
+  "themeId": "culture.qingming",
+  "tags": ["清明", "踏青", "种子", "家长指引"],
+  "durationMin": 3,
+  "coView": "required",
+  "objectives": [
+    { "zh": "说说春天里自己的发现。", "en": "Share a discovery from a spring walk." },
+    { "zh": "在成人帮助下照看植物。", "en": "Help care for a plant with an adult." }
+  ],
+  "cover": { "concept": "seed", "bg": "grass" },
+  "parentGuide": {
+    "intro": "先读完关屏，再到安全平坦处踏青。清明也有思念亲人的习俗，可按家庭需要温和提及，不讲恐吓故事。回家由成人种一颗适合本地种植的种子，宝宝看种子大卡、在帮助下浇一勺水，不抓种子和泥土。",
+    "tips": ["户外跟着宝宝的发现说，不摘不明花叶。", "种子、泥土和工具都由成人操作并收好。", "发芽需要等待，不能承诺每颗种子明天都会长出来。"],
+    "phrases": [
+      { "zh": "你发现了什么？", "en": "What did you notice?" },
+      { "zh": "这是种子。", "en": "This is a seed." },
+      { "zh": "一点点水。", "en": "A little water." },
+      { "zh": "过几天再看看。", "en": "Let's check again in a few days." }
+    ],
+    "why": "把名称连到真实观察，允许宝宝选择和表达。照料植物提供共同注意的机会，不当作发育测验。",
+    "refs": ["[6]", "[8]", "[59]", "[80]", "[82]"]
+  },
+  "printables": [{ "kind": "cards", "title": "春天与生长大卡", "items": ["seed", "sprout", "leaf", "flower"], "size": "large", "showText": true, "showEnglish": true }],
+  "offline": [
+    {
+      "title": "春天慢慢走",
+      "minutes": 10,
+      "materials": ["日常出行用品"],
+      "steps": ["关屏，成人牵护到安全平坦处。", "宝宝指向树或花时，成人描述看到的东西。", "停下来问还发现什么，接受指、说或只看。", "回家一起洗手。"],
+      "question": "你还发现了什么？",
+      "levels": { "easier": "只观察一棵树，不要求说名称。", "harder": "对比两片仍在树上的叶子，说说大小或颜色。" },
+      "safety": "成人全程牵护，远离道路、水边、高处和烟火，不直视太阳；不采不明花叶，不接触动物排泄物。看天气安排防晒，回家洗手。",
+      "domains": ["science", "language"]
+    },
+    {
+      "title": "大人种、宝宝看",
+      "minutes": 8,
+      "materials": ["无裂纹的安全花盆", "由成人管理的种子和土", "少量清水", "不易碎小杯"],
+      "steps": ["成人先独自种好种子，收走种子、土袋和工具。", "拿种子与小芽大卡说说可能的生长变化。", "宝宝坐稳后，成人扶住小杯与花盆，宝宝自愿浇一勺水。", "将花盆放到宝宝够不到处，擦干地面并洗手。", "以后白天由成人拿稳花盆一起观察，不要求马上发芽。"],
+      "question": "你想先看大卡，还是帮我浇一点水？",
+      "levels": { "easier": "只看大卡，成人完成所有种植和浇水。", "harder": "宝宝说说下一次想观察叶子还是芽，成人记录口述，不拍儿童照片。" },
+      "safety": "成人全程陪伴；直径小于3.5厘米的种子有窒息风险，种子与土不交给宝宝、不入口，工具和肥料收好。成人扶杯，只用一勺清水，不玩水盆；花盆防倾倒，洒水立即擦干，操作后洗手。",
+      "domains": ["science", "motor"]
+    }
+  ],
+  "steps": [{
+    "type": "guide",
+    "parentTip": "种子与土只由大人操作，宝宝看卡或自愿帮浇水。",
+    "props": {
+      "goal": "安全观察春天，和成人一起等待植物变化。",
+      "materials": ["自然大卡", "成人种好的安全花盆", "不易碎小杯", "一勺清水"],
+      "steps": [
+        { "text": "读完关屏，成人牵护到安全平坦处，跟随宝宝注意树和花。", "concept": "flower", "say": { "zh": "你发现了什么？", "en": "What did you notice?" } },
+        { "text": "回家成人独自种好种子并收走材料，宝宝只看大卡。", "concept": "seed", "say": { "zh": "这是种子。", "en": "This is a seed." } },
+        { "text": "宝宝坐稳，成人扶杯和花盆，愿意就一起浇一勺水；否则成人代做。", "concept": "water", "say": { "zh": "一点点水。", "en": "A little water." } },
+        { "text": "收好花盆、擦干地面、洗手，约定以后白天再观察。", "concept": "sprout", "say": { "zh": "过几天再看看。", "en": "Let's check again in a few days." } }
+      ],
+      "playMin": 10,
+      "observe": ["是否分享眼前自然物的发现。", "是否愿意看大卡或帮浇一点水。", "是否需要成人代做，不要求会种植。"],
+      "safety": "成人牵护远离水边和道路，不直视太阳；小种子有窒息风险，种子、泥土、肥料与工具只由成人管理。扶杯只用一勺水，洒水擦干，花盆放稳且放在宝宝够不到处，结束洗手。"
+    }
+  }]
+}

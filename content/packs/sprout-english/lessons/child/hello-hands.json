@@ -1,0 +1,100 @@
+{
+  "schemaVersion": 1,
+  "id": "english.child.hello-hands",
+  "title": {"zh": "小手问好歌", "en": "Hello, Hands"},
+  "summary": {"zh": "原创双语歌词配传统旋律，和家长挥手拍手。", "en": "Original bilingual words to a traditional tune, sung with a grown-up."},
+  "ageRange": [24, 36],
+  "audience": "child",
+  "domains": ["english", "music", "motor"],
+  "tags": ["song", "co-view", "daytime"],
+  "durationMin": 2,
+  "coView": "required",
+  "objectives": [
+    {"zh": "和家长轻声唱。", "en": "Sing softly with a grown-up."},
+    {"zh": "挥手拍手后休息。", "en": "Wave, clap, and then rest."}
+  ],
+  "cover": {"concept": "wave", "bg": "sky"},
+  "parentGuide": {
+    "intro": "仅供自愿选择短共看的家庭白天使用，成人全程陪同。先听慢读标题，成人带着挥手、拍手并自己唱，宝宝可只看你；唱一遍后关屏去玩。",
+    "tips": [
+      "标题有慢读音频，歌词不自动朗读；家长按画面歌词跟合成旋律唱，不把音乐当背景。",
+      "副词 together 重读第二音节；wave /weɪv/，clap /klæp/，rest /rɛst/。",
+      "先唱英文一遍，再唱同义中文一遍；六句参考短语无需一次教完。",
+      "孩子坐稳也可以挥手拍手，不要求站立、唱准或及时完成动作。"
+    ],
+    "phrases": [
+      {"zh": "你好，你好。", "en": "Hello, hello."},
+      {"zh": "挥挥你的手。", "en": "Wave your hands."},
+      {"zh": "我们一起拍手。", "en": "Clap your hands together."},
+      {"zh": "小手歇一歇。", "en": "Rest your hands."},
+      {"zh": "现在玩好啦。", "en": "All done now."},
+      {"zh": "我们一起唱吧。", "en": "Let's sing together."}
+    ],
+    "why": "主动亲子音乐活动不同于背景播放；家长的歌声、动作与回应才是重点。本课不承诺英语学习或发展效果。",
+    "refs": ["[16]", "[47]", "[54]", "[87]"]
+  },
+  "offline": [
+    {
+      "title": "不看屏幕的问好歌",
+      "minutes": 5,
+      "materials": ["家长的歌声和双手"],
+      "steps": [
+        "关屏，成人面对宝宝轻声唱问好，不继续播放音频。",
+        "唱到挥手时挥自己的手，等宝宝自愿回应。",
+        "轻轻拍手，唱到休息时把自己的手放下。",
+        "宝宝愿意时换宝宝带动作，成人跟着唱；几轮后自然结束。"
+      ],
+      "question": "你想让小手做什么呀？",
+      "levels": {
+        "easier": "只唱问好，宝宝看成人挥手。",
+        "harder": "宝宝选挥手或拍手，成人先等待，再用对应短句回应。"
+      },
+      "safety": "成人陪伴，动作轻柔，不拉宝宝手臂，不要求站立或跳跃；音量低，不用背景播放，不在嘴里有食物时玩动作。",
+      "domains": ["english", "music", "motor"]
+    }
+  ],
+  "steps": [
+    {
+      "type": "song",
+      "parentTip": "英文与中文各一段，同一旋律；家长自己唱，休息句时放下手。",
+      "props": {
+        "title": {"zh": "小手问好歌", "en": "Hello, Hands"},
+        "credit": "旋律：Frère Jacques 传统旋律（公有领域）；中英文歌词：芽芽成长原创，CC0-1.0；无第三方录音。",
+        "bpm": 70,
+        "instrument": "musicbox",
+        "repeat": 1,
+        "lines": [
+          {"lang": "en", "text": "Hello, hello.", "notes": "C4/1 D4/1 E4/1 C4/1"},
+          {"lang": "en", "text": "Hello, hello.", "notes": "C4/1 D4/1 E4/1 C4/1"},
+          {"lang": "en", "text": "Wave your hands.", "notes": "E4/1 F4/1 G4/2"},
+          {"lang": "en", "text": "Wave your hands.", "notes": "E4/1 F4/1 G4/2"},
+          {"lang": "en", "text": "Clap your hands together.", "notes": "G4/0.5 A4/0.5 G4/0.5 F4/0.5 E4/1 C4/1"},
+          {"lang": "en", "text": "Clap your hands together.", "notes": "G4/0.5 A4/0.5 G4/0.5 F4/0.5 E4/1 C4/1"},
+          {"lang": "en", "text": "Rest your hands.", "notes": "C4/1 G3/1 C4/2"},
+          {"lang": "en", "text": "All done now.", "notes": "C4/1 G3/1 C4/2"},
+          {"lang": "zh", "text": "你好你好", "notes": "C4/1 D4/1 E4/1 C4/1"},
+          {"lang": "zh", "text": "你好你好", "notes": "C4/1 D4/1 E4/1 C4/1"},
+          {"lang": "zh", "text": "挥挥手", "notes": "E4/1 F4/1 G4/2"},
+          {"lang": "zh", "text": "挥挥手", "notes": "E4/1 F4/1 G4/2"},
+          {"lang": "zh", "text": "我们一起拍手", "notes": "G4/0.5 A4/0.5 G4/0.5 F4/0.5 E4/1 C4/1"},
+          {"lang": "zh", "text": "我们一起拍手", "notes": "G4/0.5 A4/0.5 G4/0.5 F4/0.5 E4/1 C4/1"},
+          {"lang": "zh", "text": "歇歇手", "notes": "C4/1 G3/1 C4/2"},
+          {"lang": "zh", "text": "玩好啦", "notes": "C4/1 G3/1 C4/2"}
+        ],
+        "scene": {
+          "bg": "sky",
+          "ground": "none",
+          "sprites": [
+            {"concept": "wave", "x": 32, "y": 42, "size": 30, "anim": "none"},
+            {"concept": "clap", "x": 68, "y": 42, "size": 30, "anim": "none"}
+          ]
+        },
+        "actions": [
+          {"zh": "轻轻挥手。", "en": "Wave gently."},
+          {"zh": "轻轻拍手。", "en": "Clap gently."},
+          {"zh": "小手歇一歇。", "en": "Rest your hands."}
+        ]
+      }
+    }
+  ]
+}

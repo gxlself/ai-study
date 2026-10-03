@@ -14,9 +14,15 @@ export function DomainTags({ domains }: { domains: Domain[] }) {
   })}</span>;
 }
 
-export function LessonTypeTags({ audience, hasPrintables = false }: { audience?: Audience; hasPrintables?: boolean }) {
+export function LessonTypeTags({ audience, hasPrintables = false, offlineOnly = false }: {
+  audience?: Audience;
+  hasPrintables?: boolean;
+  offlineOnly?: boolean;
+}) {
   return <span className="lesson-type-tags">
-    <Tag color={audience === 'parent' ? 'gold' : 'blue'}>{audience === 'parent' ? '家长指引课' : '亲子共看课'}</Tag>
+    <Tag color={offlineOnly || audience === 'parent' ? 'gold' : 'blue'}>
+      {offlineOnly ? '线下版' : audience === 'parent' ? '家长指引课' : '亲子共看课'}
+    </Tag>
     {hasPrintables && <Tag color="green">可打印</Tag>}
   </span>;
 }

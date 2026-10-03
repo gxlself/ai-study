@@ -1,3 +1,4 @@
+import './polyfills';
 import ReactDOM from 'react-dom/client';
 import { HashRouter } from 'react-router';
 import { Capacitor } from '@capacitor/core';

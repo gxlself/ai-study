@@ -44,17 +44,17 @@ describe('家长指引与亲子共看模式', () => {
 describe('不同 audience 的候选与预算', () => {
   const date = localDate('2026-10-02');
   const lessons = makeIndex(
-    makeSummary('parent', { audience: 'parent', durationMin: 20 }),
+    makeSummary('parent', { audience: 'parent', ageRange: [6, 36], durationMin: 20 }),
     makeSummary('child', { audience: 'child', durationMin: 4 }),
     makeSummary('legacy', { durationMin: 4 }),
-    makeSummary('parent2', { audience: 'parent', durationMin: 20 }),
+    makeSummary('parent2', { audience: 'parent', ageRange: [6, 36], durationMin: 20 }),
   );
   const route = makeRoute([makeStage({
     screen: { sessionMaxMin: 10, dailyMaxMin: 5, lessonsPerDay: 4, coView: 'required', childScreen: 'optional' },
     themes: [makeTheme('current', Object.keys(lessons))],
   })]);
 
-  it('parent-only 包括 pinned 在内都不能夹带 child 或缺省 audience 的课', () => {
+  it('18 月龄以下 parent-only 包括 pinned 在内都不能夹带不适龄 child 或缺省 audience 的课', () => {
     const child = makeChild({ birthday: '2025-05-03', plan: makePlan({ pinned: ['child', 'legacy', 'parent'] }) });
     child.screen.mode = 'co-view';
     const plan = planToday({ route, lessons, child, history: [], date, usedSec: 5000 });
@@ -63,12 +63,16 @@ describe('不同 audience 的候选与预算', () => {
     expect(plan.screen).toMatchObject({ allowedNow: false, reason: 'daily-limit' });
   });
 
-  it('18–23 月龄 optional 默认仅家长课，显式 co-view 后允许两类', () => {
+  it('18–23 月龄 optional 默认家长课与线下版，显式 co-view 后允许共看', () => {
     const child = makeChild({ birthday: '2025-03-02', plan: makePlan({ pinned: ['parent', 'child'] }) });
     const input = { route, lessons, child, history: [], date, usedSec: 0 };
-    expect(planToday(input).items.every((item) => item.lesson.audience === 'parent')).toBe(true);
+    const parentOnly = planToday(input);
+    expect(parentOnly.items).toHaveLength(4);
+    expect(parentOnly.items.every((item) => item.lesson.audience === 'parent' || item.offlineOnly === true)).toBe(true);
+    expect(parentOnly.items.filter((item) => item.offlineOnly).map((item) => item.lessonId).sort()).toEqual(['child', 'legacy']);
     child.screen.mode = 'co-view';
     expect(planToday(input).items.map((item) => item.lessonId)).toContain('child');
+    expect(planToday(input).items.every((item) => item.offlineOnly === undefined)).toBe(true);
     expect(planToday(input).screen).toMatchObject({ mode: 'co-view', sessionMaxSec: 480, coView: 'required' });
   });
 

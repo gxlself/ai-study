@@ -1,0 +1,69 @@
+{
+  "schemaVersion": 1,
+  "id": "core.s5.rain-song",
+  "title": {"zh": "小雨快走开", "en": "Rain, Rain, Go Away"},
+  "summary": {"zh": "唱唱想出门的愿望，雨天也能玩。", "en": "Sing about wanting to go outside. Rainy days can be playful too."},
+  "ageRange": [24, 29],
+  "domains": ["music", "english"],
+  "themeId": "s5-t6",
+  "durationMin": 4,
+  "coView": "required",
+  "audience": "child",
+  "objectives": [
+    {"zh": "和大人一起唱一小段。", "en": "Sing a short song with an adult."},
+    {"zh": "用拍腿或手势参与雨天歌。", "en": "Join a rainy-day song with gentle pats or gestures."}
+  ],
+  "cover": {"concept": "rain", "bg": "sky"},
+  "parentGuide": {
+    "intro": "借传统旋律唱原创中英词，表达想去外面玩的愿望。歌不会把雨唱停，雨也不是坏事。下雨时可以在屋里唱；是否出门由成人看天气和地面。唱完关屏，面对面做一次小雨手势。",
+    "tips": ["用舒服音量唱，不让音频一直背景播放。", "宝宝只拍一次或看着你，也算一起参与。", "没下雨也能唱歌，不为了课程去淋雨。"],
+    "phrases": [
+      {"zh": "我想出去玩。", "en": "I'd like to play outside."},
+      {"zh": "雨天也可以在屋里玩。", "en": "We can play indoors on a rainy day too."},
+      {"zh": "歌声不会把雨唱停。", "en": "Singing does not stop the rain."},
+      {"zh": "关屏，我们一起唱。", "en": "Let's turn off the screen and sing together."}
+    ],
+    "why": "主动参与式亲子音乐强调一起唱、做动作和回应。英文短句连接共同活动；屏幕只作短引子，结束后转到真人交流，不承诺歌唱改变天气。",
+    "refs": ["[53]", "[87]", "[88]", "[101]"]
+  },
+  "offline": [{
+    "title": "手指小雨，屋里唱",
+    "minutes": 6,
+    "materials": ["防滑地垫或稳固坐处"],
+    "steps": ["和宝宝坐稳，成人轻唱第一句。", "手指在自己的腿上轻点，假装小雨滴。", "唱到屋里唱歌时，轻轻拍一下手。", "停下来等宝宝回应，再由他选一个想做的动作。"],
+    "safety": "成人陪同。不用真水、细绳或小物件做雨滴，不拉扯宝宝手臂。用舒服音量，不在耳边敲打。若外出，先确认无雷电、强风和危险积水，注意防滑；不为了把歌唱完或试效果而淋雨。",
+    "domains": ["music", "english"],
+    "question": "你想用什么声音表示小雨？",
+    "levels": {"easier": "只唱一句，成人轻点自己的腿，宝宝看就可以。", "harder": "宝宝愿意时自选轻拍或手指动作，成人跟着做，换他带领。"}
+  }],
+  "steps": [{
+    "type": "song",
+    "parentTip": "传统旋律，C大调；中英词为原创改编。歌词是愿望，不是天气规律。",
+    "props": {
+      "title": {"zh": "小雨快走开", "en": "Rain, Rain, Go Away"},
+      "credit": "旋律：传统（公有领域）；中文词：芽芽成长原创；英文词：芽芽成长原创改编。C大调4/4拍，一字或一音节对应一音符。",
+      "bpm": 80,
+      "instrument": "musicbox",
+      "repeat": 1,
+      "lines": [
+        {"lang": "zh", "text": "小雨快走开", "notes": "G4/1 E4/1 G4/0.5 G4/0.5 E4/1"},
+        {"lang": "zh", "text": "等到改天再来吧", "notes": "G4/0.5 G4/0.5 E4/0.5 A4/0.5 G4/0.5 G4/0.5 E4/1"},
+        {"lang": "zh", "text": "我们屋里唱唱歌", "notes": "F4/0.5 F4/0.5 D4/0.5 D4/0.5 F4/0.5 F4/0.5 D4/1"},
+        {"lang": "zh", "text": "地面干了再去玩", "notes": "G4/0.5 F4/0.5 E4/0.5 D4/0.5 E4/0.5 C4/0.5 C4/1"},
+        {"lang": "en", "text": "Rain, please, go away", "notes": "G4/1 E4/1 G4/0.5 G4/0.5 E4/1"},
+        {"lang": "en", "text": "Please come back another day", "notes": "G4/0.5 G4/0.5 E4/0.5 A4/0.5 G4/0.5 G4/0.5 E4/1"},
+        {"lang": "en", "text": "We can sing inside today", "notes": "F4/0.5 F4/0.5 D4/0.5 D4/0.5 F4/0.5 F4/0.5 D4/1"},
+        {"lang": "en", "text": "When it's dry, we'll go and play", "notes": "G4/0.5 F4/0.5 E4/0.5 D4/0.5 E4/0.5 C4/0.5 C4/1"}
+      ],
+      "scene": {"bg": "sky", "ground": "grass", "sprites": [
+        {"concept": "rain", "x": 50, "y": 25, "size": 35, "anim": "none"},
+        {"concept": "home", "x": 50, "y": 76, "size": 40, "anim": "none"}
+      ]},
+      "actions": [
+        {"zh": "手指轻点自己的腿。", "en": "Tap your own lap gently with your fingers."},
+        {"zh": "轻轻拍一下手。", "en": "Clap once gently."},
+        {"zh": "停一停，等宝宝回应。", "en": "Pause and wait for your child's response."}
+      ]
+    }
+  }]
+}

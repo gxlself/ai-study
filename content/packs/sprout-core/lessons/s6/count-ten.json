@@ -1,0 +1,73 @@
+{
+  "schemaVersion": 1,
+  "id": "core.s6.count-ten",
+  "title": { "zh": "数到十", "en": "Count to Ten" },
+  "summary": { "zh": "点一个，数一个，听听一共有几个。", "en": "Touch one, count one, and hear how many there are." },
+  "ageRange": [30, 36],
+  "domains": ["math"],
+  "themeId": "s6-t2",
+  "tags": ["one-to-one", "cardinality", "ten-frame"],
+  "durationMin": 8,
+  "coView": "required",
+  "audience": "child",
+  "objectives": [
+    { "zh": "和家长一起点一个、数一个。", "en": "Count one object at a time with your grown-up." },
+    { "zh": "数完听听这一堆的总数。", "en": "Hear the total after counting the set." }
+  ],
+  "cover": { "concept": "apple", "bg": "paper" },
+  "parentGuide": {
+    "intro": "六、八、十由家长带着点数，不要求孩子独立数到十。每点一个再说一个数，最后重复总数。孩子只参与前一到三个也很好；看完先数家里两三样东西。",
+    "tips": [
+      "从同一端开始，慢慢点。",
+      "每个物体只点一次。",
+      "说完十个，不再追加测验。",
+      "孩子说的数和手指不同步时，成人示范。"
+    ],
+    "phrases": [
+      { "zh": "点一个，数一个。", "en": "Touch one, count one." },
+      { "zh": "这里一共六个苹果。", "en": "There are six apples altogether." },
+      { "zh": "最后数到八，一共八个。", "en": "The last number is eight. Eight altogether." },
+      { "zh": "你想数家里的什么？", "en": "What would you like to count at home?" }
+    ],
+    "why": "对眼前物体的数字谈话与后续数量理解相关。唱数不等于懂总数，数到十只是共同体验，不提前要求三岁后的点数目标。",
+    "refs": ["[63]", "[64]", "[65]", "[69]", "[72]"]
+  },
+  "offline": [
+    {
+      "title": "小毛巾一条条",
+      "minutes": 8,
+      "materials": ["二至五条小毛巾", "两张纸", "粗蜡笔"],
+      "steps": [
+        "关屏，成人在纸上画两排五格。",
+        "先拿两条毛巾，逐条放进格子。",
+        "点一条说一个数，再说总数。",
+        "孩子愿意时逐条增加，最多五条。",
+        "让孩子选两条，放回篮子。"
+      ],
+      "safety": "成人全程陪伴。蜡笔无毒且不入口，纸张无尖角。毛巾不遮口鼻，不缠绕颈部；不用豆子、硬币等小物件数数，直径小于三点五厘米的小物件有窒息风险。",
+      "domains": ["math"],
+      "question": "你想怎样放，才不容易漏掉一条？",
+      "levels": {
+        "easier": "只点两条，成人数完说“两条”。",
+        "harder": "数五条后换个排法，再一起数总数。"
+      }
+    }
+  ],
+  "steps": [
+    {
+      "type": "count",
+      "title": { "zh": "慢慢点着数", "en": "Count Slowly Together" },
+      "parentTip": "六、八、十均由成人带数。用十格框看排列；不要求孩子认数字或独立说总数。",
+      "props": {
+        "rounds": [
+          { "item": "apple", "count": 6, "layout": "ten-frame" },
+          { "item": "ball", "count": 8, "layout": "ten-frame" },
+          { "item": "duck", "count": 10, "layout": "ten-frame" }
+        ],
+        "mode": "guided",
+        "showNumeral": false,
+        "cardinality": true
+      }
+    }
+  ]
+}

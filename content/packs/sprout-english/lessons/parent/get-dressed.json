@@ -1,0 +1,79 @@
+{
+  "schemaVersion": 1,
+  "id": "english.parent.get-dressed",
+  "title": {"zh": "穿衣伸伸手", "en": "Getting Dressed"},
+  "summary": {"zh": "穿衣时先说再做，让宝宝自愿参与。", "en": "Use six short phrases while helping your child get dressed."},
+  "ageRange": [18, 36],
+  "audience": "parent",
+  "domains": ["english", "life", "motor"],
+  "tags": ["clothes", "parent-led", "tpr"],
+  "durationMin": 3,
+  "coView": "required",
+  "objectives": [
+    {"zh": "穿衣时先说再做。", "en": "Say what you will do before helping with clothes."},
+    {"zh": "伸手配合，不强迫。", "en": "Invite participation without forcing a movement."}
+  ],
+  "cover": {"concept": "shirt", "bg": "room"},
+  "parentGuide": {
+    "intro": "家长先读六句，穿衣时关屏。把衣服放在眼前，说一句、做一步；宝宝可以伸手、抬脚或只看，不用背单词。",
+    "tips": [
+      "每步附美式音标，先慢读，再自然连成短句；不用中文谐音。",
+      "动作游戏先由家长举自己的手示范，等宝宝自愿配合，不拉手臂。",
+      "袜子和鞋子在坐稳时穿，先做一侧，再做另一侧。"
+    ],
+    "phrases": [
+      {"zh": "胳膊举起来。", "en": "Arms up."},
+      {"zh": "一只胳膊伸进来。", "en": "One arm in."},
+      {"zh": "另一只胳膊伸进来。", "en": "Other arm in."},
+      {"zh": "我们穿上袜子吧。", "en": "Let's put your socks on."},
+      {"zh": "穿上鞋子。", "en": "Shoes on."},
+      {"zh": "穿好啦。", "en": "All dressed."}
+    ],
+    "why": "把语言放在真实照护中，先告知、等待、回应；保留丰富中文对话，不用不熟练英语替代交流，也不以说英文为穿衣条件。",
+    "refs": ["[47]", "[53]", "[54]", "[82]"]
+  },
+  "printables": [
+    {"kind": "cards", "title": "穿衣实物对照卡", "items": ["shirt", "socks", "shoes"], "size": "large", "showText": true, "showEnglish": true}
+  ],
+  "offline": [
+    {
+      "title": "坐稳穿衣小游戏",
+      "minutes": 5,
+      "materials": ["宽松上衣", "袜子", "鞋子"],
+      "steps": [
+        "关屏，拿出宝宝要穿的衣服，先让宝宝看看。",
+        "家长举起自己的胳膊示范，再等宝宝自愿伸手。",
+        "一侧一侧穿袖子，说一句就停一停。",
+        "坐稳后穿袜子和鞋子，宝宝愿意时自己试，家长再帮助。"
+      ],
+      "question": "你想先拿哪一件呀？",
+      "levels": {
+        "easier": "家长只说举胳膊，示范一次，宝宝可只看。",
+        "harder": "让宝宝选择袜子或上衣，再用两句熟悉短语配合穿衣。"
+      },
+      "safety": "成人陪伴，不拉拽关节，不勒住颈部，不用绳带或脱落小扣子做教具；穿鞋袜时坐稳，不站在椅子上。",
+      "domains": ["english", "life", "motor"]
+    }
+  ],
+  "steps": [
+    {
+      "type": "guide",
+      "parentTip": "先告知，等宝宝配合；不为学英语反复穿脱。",
+      "props": {
+        "goal": "用六句穿衣短语邀请宝宝参与真实照护。",
+        "materials": ["宝宝平日穿的宽松衣物"],
+        "steps": [
+          {"text": "家长举起自己的胳膊，等待宝宝自愿跟做。美式 /ɑrmz ʌp/。", "concept": "raise-hands", "say": {"zh": "胳膊举起来。", "en": "Arms up."}},
+          {"text": "展开一只袖口，等宝宝伸一只胳膊。美式 /wʌn ɑrm ɪn/。", "concept": "arm", "say": {"zh": "一只胳膊伸进来。", "en": "One arm in."}},
+          {"text": "再展开另一只袖口，不拉扯宝宝。美式 /ˈʌðər ɑrm ɪn/。", "concept": "shirt", "say": {"zh": "另一只胳膊伸进来。", "en": "Other arm in."}},
+          {"text": "让宝宝坐稳，拿袜子给宝宝看。美式 /lɛts pʊt jər sɑks ɑn/。", "concept": "socks", "say": {"zh": "我们穿上袜子吧。", "en": "Let's put your socks on."}},
+          {"text": "坐稳穿鞋，宝宝能做的部分留给宝宝。美式 /ʃuz ɑn/。", "concept": "shoes", "say": {"zh": "穿上鞋子。", "en": "Shoes on."}},
+          {"text": "穿好就结束，用挥手或笑容回应配合。美式 /ɔl drɛst/。", "concept": "wave", "say": {"zh": "穿好啦。", "en": "All dressed."}}
+        ],
+        "playMin": 5,
+        "observe": ["宝宝是否看向所指衣物。", "有没有自愿伸手、抬脚或尝试自己穿。", "出现抗拒时是否减少语言并给予帮助。"],
+        "safety": "只做宝宝已能自主完成的动作；不拉拽，不攀高，不将小配件交给宝宝。"
+      }
+    }
+  ]
+}

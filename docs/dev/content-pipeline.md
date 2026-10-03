@@ -29,6 +29,7 @@ pnpm 11 在工作区依赖状态变化时可能先自动运行全工作区安装
 
 | 命令 | 脚本 | 接受的参数 |
 | --- | --- | --- |
+| `pnpm content:route` | `scripts/merge-route.ts` | `--pack <dir>` |
 | `pnpm content:assets` | `scripts/fetch-assets.ts` | `--pack <dir>`、`--force` |
 | `pnpm content:audio` | `scripts/gen-audio.ts` | `--pack <dir>`、`--voice-zh Tingting`、`--voice-en Samantha`、`--rate 165`、`--dry-run`、`--prune` |
 | `pnpm content:validate` | `scripts/validate-content.ts` | `--pack <dir>`、`--strict` |
@@ -36,7 +37,7 @@ pnpm 11 在工作区依赖状态变化时可能先自动运行全工作区安装
 | `pnpm content:zip <packDir>` | `scripts/pack-zip.ts` | `--out release/` |
 | `pnpm content:all` | `scripts/content-all.ts` 独立 runner | `--pack <dir>`、`--force`、`--prune`、`--strict`、`--voice-zh <name>`、`--voice-en <name>`、`--rate 165` |
 
-`content:all` 顺序固定为 **assets → audio → validate → bundle**，不是 zip 发布命令。它通过独立 runner 把包参数交给每一个子命令，不依赖 shell 串联后只让最后一条命令收到参数。专用参数分别分发：`--force` 给 assets，声音、语速和 `--prune` 给 audio，`--strict` 给 validate。任一步非零退出即停止后续步骤。all 不接受 `--dry-run`，只预览音频计划时单独运行 audio。
+`content:all` 顺序固定为 **route → assets → audio → validate → bundle**，不是 zip 发布命令。route 只合并 `sprout.core` 的 `routes/_stages/s1..s6.json`，按月龄排序并检查 6–36 月龄无缺口、无重叠；其它包跳过该步骤。它通过独立 runner 把包参数交给每一个子命令，不依赖 shell 串联后只让最后一条命令收到参数。专用参数分别分发：`--force` 给 assets，声音、语速和 `--prune` 给 audio，`--strict` 给 validate。任一步非零退出即停止后续步骤。all 不接受 `--dry-run`，只预览音频计划时单独运行 audio。
 
 ### hello-pack 完整流程
 
@@ -156,7 +157,8 @@ https://raw.githubusercontent.com/microsoft/fluentui-emoji/main/<path>
 | `song` | `title`，不生成歌词的 TTS，歌词由家长跟唱 |
 | `movement` | `intro`、每个动作的 `say` 与 `name` |
 | `calm` | `say`；内置呼吸提示来自固定语料 |
-| `video`、`web` | 不抓取视频声音或网页内容来生成朗读 |
+| `video` | 只收集实际朗读的 `title`，不抓取视频声音 |
+| `web` | 不抓取网页内容来生成朗读 |
 | `guide` | 不产生任何朗读；`steps[].say` 仅显示给家长参考 |
 
 上述开关只影响课程引用的收集，本包词库仍全量收集名字、拟声与短句。`parentGuide` 不朗读，`parentTip` 与绘本家长提问也不是孩子的 TTS 语料。短课也会带上全部固定语料，因此“只有几张词卡”并不意味着只生成几条音频。
@@ -296,6 +298,6 @@ curl --fail-with-body \
 | bundle 生成了但命令失败 | 检查被跳过的无效课程或其他 error，不能直接发布残缺课程集 |
 | 本地能读，电视离线不发声 | 核对音频文件、manifest、最新 bundle，不能依赖本机 Web Speech 回退 |
 | hello-pack 没出现在后台 | `content/examples/` 不自动扫描，需打包导入或由维护者复制到正式内容目录 |
-| 同 ID 新包导入失败 | API 契约要求更高版本；保持 ID，递增 `version`，不要更改 `schemaVersion` 冒充升级 |
+| 同 ID 新包导入失败 | 可同版本覆盖或升级，不能降级；不要更改 `schemaVersion` 冒充升级 |
 
 发布前至少确认：严格校验无 issues、zip 内容完整、许可声明齐全、导入后路线可选、中文和英文各试听一次、课程结束后确实转向线下互动而非自动连播。

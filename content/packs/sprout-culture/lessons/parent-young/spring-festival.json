@@ -1,0 +1,58 @@
+{
+  "schemaVersion": 1,
+  "id": "culture.parent-young.spring-festival",
+  "title": { "zh": "春节：看福字", "en": "Spring Festival: Good Wishes" },
+  "summary": { "zh": "家长读完关屏，陪宝宝看福字大卡、挥手拜年。", "en": "Read, put the screen away, then share a fu card and a New Year greeting." },
+  "ageRange": [6, 17],
+  "audience": "parent",
+  "domains": ["social", "language", "english"],
+  "themeId": "culture.spring-festival",
+  "tags": ["春节", "家长指引", "6–17月"],
+  "durationMin": 2,
+  "coView": "required",
+  "objectives": [
+    { "zh": "听家人的新年问候。", "en": "Hear a New Year greeting from family." },
+    { "zh": "轮流看、挥手或发声。", "en": "Take turns looking, waving, or making sounds." }
+  ],
+  "cover": { "concept": "fest-fu", "bg": "paper" },
+  "parentGuide": {
+    "intro": "屏幕只给家长看。先读完、准备大卡，再关屏陪宝宝。春节是许多家庭互送祝福的日子。看福字、说新年好，宝宝看看或挥手就好。不考识字，不强迫亲吻、拥抱或拜年。",
+    "tips": ["卡片由成人拿住，一次只看一张。", "说一句后等五秒，回应宝宝的目光和声音。", "家人称呼按自家习惯，任何照护者都能参与。"],
+    "phrases": [
+      { "zh": "新年好！", "en": "Happy New Year!" },
+      { "zh": "这是福字。", "en": "This is a fu decoration." },
+      { "zh": "我们挥挥手。", "en": "Let's wave." },
+      { "zh": "我在这里。", "en": "I'm right here." }
+    ],
+    "why": "面对面的等待与回应比屏幕认字更重要。节日问候是一起交流的机会，不把宝宝的反应当考试。",
+    "refs": ["[8]", "[21]", "[47]", "[82]", "[93]"]
+  },
+  "printables": [{ "kind": "cards", "title": "春节祝福大卡", "items": ["fest-fu", "fest-lantern", "dumpling"], "size": "large", "showText": true, "showEnglish": true }],
+  "offline": [{
+    "title": "面对面拜年",
+    "minutes": 5,
+    "materials": ["完整的福字大卡", "安静地垫"],
+    "steps": ["关屏，和清醒的宝宝面对面。", "拿住福字大卡，说一句新年好。", "轻轻挥手，等宝宝看、笑或发声，再回应。", "宝宝转开头或累了就收卡休息。"],
+    "question": "你想看哪一张？",
+    "levels": { "easier": "只说一句问候，让宝宝看家人的脸。", "harder": "十二月龄后可拿两张大卡，让宝宝指或看向喜欢的一张。" },
+    "safety": "成人全程陪伴；卡片边缘光滑、不入口。直径小于3.5厘米的小物件有窒息风险，不给硬币、红包内钱币或小饰物。鞭炮和烟花不参与本活动；遇到燃放声由成人带宝宝远离，必要时轻护耳朵。照护者不在抱宝宝时贴高处装饰。",
+    "domains": ["social", "language"]
+  }],
+  "steps": [{
+    "type": "guide",
+    "parentTip": "先关屏，再面对面问好；不要求宝宝说话。",
+    "props": {
+      "goal": "用一个新年问候，等待并回应宝宝。",
+      "materials": ["福字大卡", "安静地垫"],
+      "steps": [
+        { "text": "准备一张完整的大卡，关屏后坐在宝宝面前。", "concept": "fest-fu", "say": { "zh": "这是福字。", "en": "This is a fu decoration." } },
+        { "text": "微笑说新年好，停五秒等目光、笑容或发声。", "say": { "zh": "新年好！", "en": "Happy New Year!" } },
+        { "text": "轻轻挥手，宝宝回应后模仿一次，不拉着小手挥。", "concept": "wave", "say": { "zh": "我们挥挥手。", "en": "Let's wave." } },
+        { "text": "把卡收起，抱抱须先看宝宝意愿；不想玩就结束。", "say": { "zh": "我在这里。", "en": "I'm right here." } }
+      ],
+      "playMin": 5,
+      "observe": ["是否注意家人的脸或卡片。", "是否用目光、声音或手势回应。", "是否转头、烦躁或需要休息。"],
+      "safety": "不提供小物件和食物，不强迫社交；远离烟花鞭炮及拥挤场所，卡片不入口。"
+    }
+  }]
+}

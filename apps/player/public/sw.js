@@ -53,10 +53,10 @@ function cacheable(request, response) {
       !response.ok || response.status === 206 || response.redirected || response.type === 'opaque') return false;
   const url = new URL(request.url);
   if (url.origin !== BASE.origin || (response.url && new URL(response.url).origin !== BASE.origin)) return false;
-  if (/(?:^|,)\s*(?:no-store|private)(?:\s|=|,|$)/i.test(response.headers.get('Cache-Control') ?? '')) return false;
-  const vary = (response.headers.get('Vary') ?? '').toLowerCase().split(',').map((part) => part.trim());
+  if (/(?:^|,)\s*(?:no-store|private)(?:\s|=|,|$)/i.test(response.headers.get('Cache-Control') || '')) return false;
+  const vary = (response.headers.get('Vary') || '').toLowerCase().split(',').map((part) => part.trim());
   if (vary.some((part) => ['*', 'authorization', 'cookie'].includes(part))) return false;
-  const type = response.headers.get('Content-Type') ?? '';
+  const type = response.headers.get('Content-Type') || '';
   if (/text\/html/i.test(type) && url.href !== INDEX_URL) return false;
   if (url.pathname.endsWith('.json') || isApi(url)) return /(?:application\/json|\+json)(?:;|$)/i.test(type);
   return true;
@@ -98,7 +98,7 @@ async function publicApiNetworkFirst(event) {
     const response = await fetch(request);
     if (response.ok) event.waitUntil(remember(PUBLIC_API_CACHE, request, response.clone()));
     // 不把 401/403/404 等客户端错误替换成以前的成功响应。
-    if (response.status >= 500) return (await readCached(PUBLIC_API_CACHE, request)) ?? response;
+    if (response.status >= 500) return (await readCached(PUBLIC_API_CACHE, request)) || response;
     return response;
   } catch (error) {
     const cached = await readCached(PUBLIC_API_CACHE, request);

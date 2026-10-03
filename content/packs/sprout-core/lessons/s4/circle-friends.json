@@ -1,0 +1,110 @@
+{
+  "schemaVersion": 1,
+  "id": "core.s4.circle-friends",
+  "title": { "zh": "圆圆找朋友", "en": "Circle Finds Friends" },
+  "summary": { "zh": "看看图里圆圆的朋友。", "en": "Find round-looking friends in the pictures." },
+  "themeId": "s4-t2",
+  "ageRange": [18, 23],
+  "domains": ["math", "language"],
+  "audience": "child",
+  "durationMin": 6,
+  "coView": "required",
+  "objectives": [
+    { "zh": "留意图中圆圆的轮廓。", "en": "Notice round outlines in the pictures." },
+    { "zh": "用看或指参与短故事。", "en": "Join the short story by looking or pointing." }
+  ],
+  "cover": { "concept": "circle", "bg": "sky" },
+  "printables": [
+    { "kind": "cards", "title": "圆圆的朋友卡", "items": ["circle", "sun", "ball", "cookie", "bicycle"], "size": "large", "showText": true, "showEnglish": true }
+  ],
+  "parentGuide": {
+    "intro": "共看默认关闭，可只拿打印卡讲。若开启，读一页就停一下。圆圆是故事里的圆形卡。只比较图中轮廓，不说球就是圆形。讲完关屏，找家里的圆边。",
+    "tips": ["只在有提示的页提一个问题。", "宝宝看或指，就说出他关注的物品。", "饼干只说这块，不说所有饼干都圆。"],
+    "phrases": [
+      { "zh": "图里的太阳圆圆的。", "en": "The sun in the picture looks round." },
+      { "zh": "这块饼干也是圆圆的。", "en": "This cookie looks round too." },
+      { "zh": "轮子的外边圆圆的。", "en": "The outside of the wheel is round." },
+      { "zh": "我们去找一个圆边吧。", "en": "Let's find a round edge nearby." }
+    ],
+    "why": "简化共读为指认、命名和回应。用眼前圆边连接故事与生活。不把屏幕表现当作形状掌握。",
+    "refs": ["3", "6", "8", "15", "48", "67", "71"]
+  },
+  "offline": [
+    {
+      "title": "盘子的圆边",
+      "minutes": 5,
+      "materials": ["圆形不易碎盘", "圆形打印卡", "大皮球"],
+      "steps": ["关屏，把盘子和圆形卡放在地上。", "沿盘边慢慢指一圈。", "把卡放在盘旁，比比轮廓。", "摸摸皮球，说它看起来圆圆的。"],
+      "safety": "盘子需不易碎、无裂口。大球不能有可脱落小件。小物件直径小于3.5厘米有窒息风险。找轮子用图片，不碰行驶车辆。不直视真实太阳。",
+      "domains": ["math", "language"],
+      "question": "你想先摸摸哪个圆边？",
+      "levels": { "easier": "只看一只圆盘，成人沿边指。", "harder": "加一张方形卡，邀请宝宝给圆卡找相像的轮廓。" }
+    }
+  ],
+  "steps": [
+    {
+      "type": "story",
+      "title": { "zh": "圆圆找朋友", "en": "Circle Finds Friends" },
+      "parentTip": "用卡片角色讲轮廓故事；太阳只看图，不带宝宝直视太阳。",
+      "props": {
+        "title": { "zh": "圆圆找朋友", "en": "Circle Finds Friends" },
+        "pages": [
+          {
+            "scene": { "bg": "sky", "ground": "grass", "sprites": [
+              { "concept": "circle", "x": 28, "y": 74, "size": 35, "anim": "none" },
+              { "concept": "sun", "x": 70, "y": 23, "size": 25, "anim": "none" }
+            ] },
+            "text": { "zh": "圆圆看到太阳。图里的太阳圆圆的。", "en": "Circle sees the sun. The sun in the picture looks round." }
+          },
+          {
+            "scene": { "bg": "room", "ground": "floor", "sprites": [
+              { "concept": "circle", "x": 26, "y": 74, "size": 32, "anim": "none" },
+              { "concept": "ball", "x": 67, "y": 75, "size": 40, "anim": "none" }
+            ] },
+            "text": { "zh": "圆圆看到皮球。皮球看起来圆圆的。", "en": "Circle sees a ball. The ball looks round." },
+            "prompts": [{ "kind": "point", "zh": "皮球在哪里？", "en": "Where is the ball?" }]
+          },
+          {
+            "scene": { "bg": "paper", "ground": "none", "sprites": [
+              { "concept": "circle", "x": 27, "y": 72, "size": 32, "anim": "none" },
+              { "concept": "cookie", "x": 67, "y": 72, "size": 40, "anim": "none" }
+            ] },
+            "text": { "zh": "圆圆看到一块饼干。这块饼干圆圆的。", "en": "Circle sees a cookie. This cookie looks round." }
+          },
+          {
+            "scene": { "bg": "sky", "ground": "grass", "sprites": [
+              { "concept": "circle", "x": 23, "y": 74, "size": 32, "anim": "none" },
+              { "concept": "bicycle", "x": 66, "y": 74, "size": 43, "anim": "none" }
+            ] },
+            "text": { "zh": "圆圆看到自行车。轮子的外边圆圆的。", "en": "Circle sees a bicycle. The outside of each wheel is round." },
+            "prompts": [{ "kind": "point", "zh": "指指圆圆的轮子。", "en": "Point to a round wheel." }]
+          },
+          {
+            "scene": { "bg": "sky", "ground": "grass", "sprites": [
+              { "concept": "circle", "x": 13, "y": 74, "size": 30, "anim": "none" },
+              { "concept": "ball", "x": 35, "y": 78, "size": 20, "anim": "none" },
+              { "concept": "cookie", "x": 54, "y": 78, "size": 20, "anim": "none" },
+              { "concept": "bicycle", "x": 80, "y": 75, "size": 25, "anim": "none" },
+              { "concept": "sun", "x": 70, "y": 22, "size": 20, "anim": "none" }
+            ] },
+            "text": { "zh": "圆圆找到朋友啦。它们看起来都圆圆的。", "en": "Circle has found friends. The sun, ball, cookie, and wheels look round." },
+            "prompts": [{ "kind": "point", "zh": "你想指哪个朋友？", "en": "Which friend would you like to point to?" }]
+          }
+        ]
+      }
+    },
+    {
+      "type": "choose",
+      "title": { "zh": "找找圆形", "en": "Find the Circle" },
+      "parentTip": "指给宝宝看也是参与；不需要答对两轮才结束。",
+      "props": {
+        "rounds": [
+          { "prompt": { "zh": "圆形在哪里？", "en": "Where is the circle?" }, "options": ["circle", "square"], "answer": "circle", "explain": { "zh": "圆形没有角。", "en": "A circle has no corners." } },
+          { "prompt": { "zh": "一起找找圆形。", "en": "Let's find the circle together." }, "options": ["triangle", "circle"], "answer": "circle", "explain": { "zh": "圆圆在这里，去找圆边吧。", "en": "Here is Circle. Let's find a round edge nearby." } }
+        ],
+        "showLabels": false,
+        "hintAfter": 1
+      }
+    }
+  ]
+}

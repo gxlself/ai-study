@@ -1,0 +1,97 @@
+{
+  "schemaVersion": 1,
+  "id": "core.s5.five-ducks",
+  "title": {"zh": "五只小鸭子", "en": "Five Little Ducks"},
+  "summary": {"zh": "小鸭一只只回家，一起唱和数。", "en": "Ducks go home one by one. Sing and count together."},
+  "ageRange": [24, 29],
+  "domains": ["math", "music"],
+  "themeId": "s5-t2",
+  "durationMin": 6,
+  "coView": "required",
+  "audience": "child",
+  "objectives": [
+    {"zh": "听五到一，看看数量变化。", "en": "Hear five down to one and notice the changing group."},
+    {"zh": "一起点数回到家的五只鸭。", "en": "Count the five ducks that are home together."}
+  ],
+  "cover": {"concept": "duck", "bg": "grass"},
+  "printables": [{"kind": "cards", "title": "五只小鸭大卡", "items": ["duck", "duck", "duck", "duck", "duck"], "size": "large", "showText": false, "showEnglish": false}],
+  "parentGuide": {
+    "intro": "这是原创手指歌，不是算术题。五只鸭去游泳，每段一只回家，最后都在家。屏幕画面不演数量变化；家长可用五张大卡演一遍。唱完再一起点数五只鸭，关屏继续玩。",
+    "tips": ["先唱一种语言即可，不用同次唱完两遍。", "每唱“一只回家”，把一张卡移到家的位置。", "允许宝宝只移动一张，不要求倒数或做减法。"],
+    "phrases": [
+      {"zh": "五只小鸭去游泳。", "en": "Five little ducks go for a swim."},
+      {"zh": "一只回家，还有四只。", "en": "One goes home. Four are still swimming."},
+      {"zh": "最后一只也回家了。", "en": "The last duck is home too."},
+      {"zh": "五只小鸭都到家了。", "en": "All five ducks are home."}
+    ],
+    "why": "共同歌唱让数量变化可听、可做。用卡片配合一一对应，再说总数；不把儿歌中的倒数当作两岁应掌握的减法。",
+    "refs": ["[63]", "[64]", "[69]", "[87]"]
+  },
+  "offline": [{
+    "title": "小鸭慢慢回家",
+    "minutes": 8,
+    "materials": ["五张大鸭子图卡或五个完整大玩具", "两块地垫作池塘和家"],
+    "steps": ["把五张卡放在池塘地垫上，一起点数。", "唱一小段，让一张卡慢慢移到家。", "指着留下的卡，大人说总数。", "每段移动一张，最后一起数家的五张卡。"],
+    "safety": "全程在干燥地面假装，不用真水，不带宝宝到池塘边演出。卡片大、边缘平滑，不带订书钉。直径小于3.5厘米的小物件有窒息风险；玩具无可拆小零件，不入口。",
+    "domains": ["math", "music"],
+    "question": "你想让哪只小鸭先回家？",
+    "levels": {"easier": "只用两张卡，一张移动一次，成人唱和说数量。", "harder": "用五张卡完成全歌，每次共同点数剩下的和回家的鸭，不做减法问答。"}
+  }],
+  "steps": [
+    {
+      "type": "song",
+      "parentTip": "原创简单旋律，C大调、每段两句。画面只作家的背景；数量用大卡片演。",
+      "props": {
+        "title": {"zh": "五只小鸭子", "en": "Five Little Ducks"},
+        "credit": "旋律：芽芽成长原创简单旋律（以CC0-1.0贡献公有领域）；中文词：芽芽成长原创；英文词：芽芽成长原创。按路线“数鸭子”可用自编简单旋律。",
+        "bpm": 84,
+        "instrument": "marimba",
+        "repeat": 1,
+        "lines": [
+          {"lang": "zh", "text": "五只小鸭子去游泳呀", "notes": "C4/0.5 C4/0.5 D4/1 E4/1 G4/1 E4/1 D4/1 C4/1 C4/1"},
+          {"lang": "zh", "text": "一只回家剩四只", "notes": "G4/1 G4/1 E4/1 E4/1 D4/1 C4/1 C4/2"},
+          {"lang": "zh", "text": "四只小鸭子去游泳呀", "notes": "C4/0.5 C4/0.5 D4/1 E4/1 G4/1 E4/1 D4/1 C4/1 C4/1"},
+          {"lang": "zh", "text": "一只回家剩三只", "notes": "G4/1 G4/1 E4/1 E4/1 D4/1 C4/1 C4/2"},
+          {"lang": "zh", "text": "三只小鸭子去游泳呀", "notes": "C4/0.5 C4/0.5 D4/1 E4/1 G4/1 E4/1 D4/1 C4/1 C4/1"},
+          {"lang": "zh", "text": "一只回家剩两只", "notes": "G4/1 G4/1 E4/1 E4/1 D4/1 C4/1 C4/2"},
+          {"lang": "zh", "text": "两只小鸭子去游泳呀", "notes": "C4/0.5 C4/0.5 D4/1 E4/1 G4/1 E4/1 D4/1 C4/1 C4/1"},
+          {"lang": "zh", "text": "一只回家剩一只", "notes": "G4/1 G4/1 E4/1 E4/1 D4/1 C4/1 C4/2"},
+          {"lang": "zh", "text": "一只小鸭子去游泳呀", "notes": "C4/0.5 C4/0.5 D4/1 E4/1 G4/1 E4/1 D4/1 C4/1 C4/1"},
+          {"lang": "zh", "text": "最后一只回家啦", "notes": "G4/1 G4/1 E4/1 E4/1 D4/1 C4/1 C4/2"},
+          {"lang": "en", "text": "Five little ducks go out for a swim", "notes": "C4/0.5 C4/0.5 D4/1 E4/1 G4/1 E4/1 D4/1 C4/1 C4/1"},
+          {"lang": "en", "text": "One goes home and four still swim", "notes": "G4/1 G4/1 E4/1 E4/1 D4/1 C4/1 C4/2"},
+          {"lang": "en", "text": "Four little ducks go out for a swim", "notes": "C4/0.5 C4/0.5 D4/1 E4/1 G4/1 E4/1 D4/1 C4/1 C4/1"},
+          {"lang": "en", "text": "One goes home and three still swim", "notes": "G4/1 G4/1 E4/1 E4/1 D4/1 C4/1 C4/2"},
+          {"lang": "en", "text": "Three little ducks go out for a swim", "notes": "C4/0.5 C4/0.5 D4/1 E4/1 G4/1 E4/1 D4/1 C4/1 C4/1"},
+          {"lang": "en", "text": "One goes home and two still swim", "notes": "G4/1 G4/1 E4/1 E4/1 D4/1 C4/1 C4/2"},
+          {"lang": "en", "text": "Two little ducks go out for a swim", "notes": "C4/0.5 C4/0.5 D4/1 E4/1 G4/1 E4/1 D4/1 C4/1 C4/1"},
+          {"lang": "en", "text": "One goes home and one still swims", "notes": "G4/1 G4/1 E4/1 E4/1 D4/1 C4/1 C4/2"},
+          {"lang": "en", "text": "One little duck goes out for a swim", "notes": "C4/0.5 C4/0.5 D4/1 E4/1 G4/1 E4/1 D4/1 C4/1 C4/1"},
+          {"lang": "en", "text": "Now all five are home at last", "notes": "G4/1 G4/1 E4/1 E4/1 D4/1 C4/1 C4/2"}
+        ],
+        "scene": {
+          "bg": "grass",
+          "ground": "grass",
+          "sprites": [
+            {"concept": "home", "x": 50, "y": 70, "size": 40, "anim": "none"},
+            {"concept": "sun", "x": 78, "y": 20, "size": 18, "anim": "none"}
+          ]
+        },
+        "actions": [
+          {"zh": "一张大卡慢慢回家。", "en": "Move one large card home slowly."},
+          {"zh": "卡片移动后停一下。", "en": "Pause after moving the card."}
+        ]
+      }
+    },
+    {
+      "type": "count",
+      "parentTip": "五只都回家了。一起点数并说总数，不要求宝宝独立数五个。",
+      "props": {
+        "rounds": [{"item": "duck", "count": 5, "layout": "row"}],
+        "showNumeral": false,
+        "cardinality": true,
+        "mode": "guided"
+      }
+    }
+  ]
+}

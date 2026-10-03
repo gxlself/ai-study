@@ -1,0 +1,88 @@
+{
+  "schemaVersion": 1,
+  "id": "core.s6.day-night",
+  "title": { "zh": "白天和黑夜", "en": "Day and Night" },
+  "summary": { "zh": "看生活的时段，也看看天空。", "en": "Notice times in our day and look at the sky." },
+  "ageRange": [30, 36],
+  "domains": ["science"],
+  "themeId": "s6-t6",
+  "tags": ["day-night", "contextual-sort", "daytime-moon"],
+  "durationMin": 6,
+  "coView": "required",
+  "audience": "child",
+  "objectives": [
+    { "zh": "按明确时段分生活安排。", "en": "Sort daily events by their stated times." },
+    { "zh": "知道白天有时也能看见月亮。", "en": "Know that the Moon can sometimes be seen in the daytime." }
+  ],
+  "cover": { "concept": "sun", "bg": "sky" },
+  "parentGuide": {
+    "intro": "先读清图卡里的早上、白天、晚上，再分类这一天的安排。月亮白天也可能看见，云和星星并非只属于一个时段，因此不把天体或一般活动硬分昼夜。篮子太阳、月亮只是时段提示。",
+    "tips": [
+      "书和散步可在不同时间出现。",
+      "本题只按卡片明确说出的时段分。",
+      "看不到月亮时，不承诺晚上一定有。",
+      "观察天空不直视太阳，也不延迟睡觉。"
+    ],
+    "phrases": [
+      { "zh": "这张写的是早上吃早饭。", "en": "This card is about breakfast in the morning." },
+      { "zh": "读书不只在晚上。", "en": "We can read at other times too." },
+      { "zh": "白天有时也能看见月亮。", "en": "Sometimes we can see the Moon in the daytime too." },
+      { "zh": "窗外什么变了？", "en": "What has changed outside?" }
+    ],
+    "why": "先观察真实变化，再用明确生活情境谈时段。分类服务于讨论，不把太阳、月亮图标当自然规律；成人回应孩子发现的例外。",
+    "refs": ["[7]", "[12]", "[80]", "[82]"]
+  },
+  "offline": [
+    {
+      "title": "窗边看两次",
+      "minutes": 6,
+      "materials": ["安全的室内观察位置", "纸和粗蜡笔"],
+      "steps": [
+        "白天关屏，在安全室内看窗外。",
+        "成人画或记孩子说的天空样子。",
+        "晚上睡前无屏，再看一小会儿。",
+        "比比亮暗，听听有什么声音。",
+        "有月亮就看看，没有也没关系。"
+      ],
+      "safety": "成人全程近距离照看，不让孩子爬窗台、探出窗外或靠近阳台边。不直视太阳，不用望远镜看太阳。夜间不为找月亮外出到道路、水边或高处，不延迟睡觉；蜡笔不入口。",
+      "domains": ["science"],
+      "question": "白天和晚上，窗外有什么不一样？",
+      "levels": {
+        "easier": "只比较同一扇窗外的亮和暗。",
+        "harder": "加上声音和家里的生活安排，允许说相同之处。"
+      }
+    }
+  ],
+  "steps": [
+    {
+      "type": "sort",
+      "title": { "zh": "按这一天的安排分", "en": "Sort This Day's Plans" },
+      "parentTip": "先读出完整时段名称。卡片借用现有动作图，不表示读书、散步或睡觉只能在某一时段。",
+      "props": {
+        "prompt": { "zh": "按卡片说出的时段分一分。", "en": "Sort the cards by the times they name." },
+        "bins": [
+          { "id": "day", "label": { "zh": "白天", "en": "Daytime" }, "concept": "sun", "color": "#dff1fb" },
+          { "id": "night", "label": { "zh": "晚上", "en": "Nighttime" }, "concept": "moon", "color": "#e9e3f3" }
+        ],
+        "items": [
+          { "item": { "zh": "早上吃早饭", "en": "Breakfast in the Morning", "image": "assets/images/actions/eat.svg" }, "bin": "day" },
+          { "item": { "zh": "晚上说晚安", "en": "Goodnight at Night", "image": "assets/images/actions/sleep.svg" }, "bin": "night" },
+          { "item": { "zh": "白天散步", "en": "A Daytime Walk", "image": "assets/images/actions/walk.svg" }, "bin": "day" },
+          { "item": { "zh": "晚上睡前读书", "en": "Reading before Bed at Night", "image": "assets/images/home/book.svg" }, "bin": "night" }
+        ]
+      }
+    },
+    {
+      "type": "word-cards",
+      "title": { "zh": "天空里的朋友", "en": "Things in the Sky" },
+      "parentTip": "图卡只命名，不把月亮判为只在晚上。可聊白天见过的月亮，不要求每天都看得到。",
+      "props": {
+        "items": ["sun", "moon", "star"],
+        "show": { "text": true, "english": true, "pinyin": false },
+        "speak": "name",
+        "autoAdvanceSec": null,
+        "intro": { "zh": "白天有时也能看见月亮。", "en": "Sometimes we can see the Moon in the daytime too." }
+      }
+    }
+  ]
+}

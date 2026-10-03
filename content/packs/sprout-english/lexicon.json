@@ -1,0 +1,18 @@
+{
+  "schemaVersion": 1,
+  "concepts": [
+    {
+      "id": "english.stand-up",
+      "category": "actions",
+      "zh": "站起来",
+      "en": "stand up",
+      "image": "assets/images/actions/stand-up.svg",
+      "phrase": {
+        "zh": "慢慢站起来。",
+        "en": "Stand up slowly."
+      },
+      "ageRange": [18, 36],
+      "tags": ["action", "non-count", "adult-supervision"]
+    }
+  ]
+}

@@ -1,0 +1,70 @@
+{
+  "schemaVersion": 1,
+  "id": "core.s6.school-things",
+  "title": { "zh": "幼儿园里有什么", "en": "Things at Preschool" },
+  "summary": { "zh": "看熟悉的物品，说说怎样一起玩。", "en": "Name familiar things and talk about playing together." },
+  "ageRange": [30, 36],
+  "domains": ["language", "english"],
+  "themeId": "s6-t4",
+  "tags": ["word-cards", "preschool-preparation", "real-objects"],
+  "durationMin": 5,
+  "coView": "required",
+  "audience": "child",
+  "objectives": [
+    { "zh": "把图卡和真实物品连起来。", "en": "Connect pictures with real objects." },
+    { "zh": "在互动中听熟悉的中英文名。", "en": "Hear familiar Chinese and English names during play." }
+  ],
+  "cover": { "concept": "school", "bg": "sky" },
+  "parentGuide": {
+    "intro": "一张一张手动翻，指图、说名字，再听孩子说。幼儿园的物品与规定会不同；书包是否携带以园所为准。老师没有词条，课后用真实介绍，不把家人图片当老师。",
+    "tips": [
+      "看到熟悉的东西，问在哪儿用过。",
+      "孩子说一个词，成人扩展成短句。",
+      "英语先选一个熟悉的名字。",
+      "不要求读字、背单词或跟读每张。"
+    ],
+    "phrases": [
+      { "zh": "我们一起看书。", "en": "Let's read a book together." },
+      { "zh": "你想搭什么？", "en": "What would you like to build?" },
+      { "zh": "这是你的书包。", "en": "This is your backpack." },
+      { "zh": "幼儿园也可能有小球。", "en": "Your preschool may have balls too." }
+    ],
+    "why": "指认后等待、回应和扩展，可增加来回对话。英语名称只是互动素材，不替代中文交流，也不承诺看图卡能学会英语。",
+    "refs": ["[44]", "[48]", "[50]", "[53]", "[82]"]
+  },
+  "offline": [
+    {
+      "title": "看看我的小书包",
+      "minutes": 8,
+      "materials": ["书包或布袋", "一本书", "大积木", "一支粗蜡笔"],
+      "steps": [
+        "关屏，把三样物品放在地垫上。",
+        "跟着孩子的手指说物品名字。",
+        "请孩子选一样，讲怎样玩。",
+        "轮流把书放进袋子，再拿出来。",
+        "说说哪些物品能带去幼儿园。"
+      ],
+      "safety": "成人全程陪伴。背带不套住颈部，袋子不盖脸；不装重物。积木无可拆小件，直径小于三点五厘米的小物件有窒息风险。粗蜡笔无毒且不入口，真实携带物品遵守园所规定。",
+      "domains": ["language", "english"],
+      "question": "你想怎样用这件东西和朋友一起玩？",
+      "levels": {
+        "easier": "只拿一本书，成人说名字和用途。",
+        "harder": "孩子选两件物品，分别说一句用途或请求。"
+      }
+    }
+  ],
+  "steps": [
+    {
+      "type": "word-cards",
+      "title": { "zh": "慢慢认识它们", "en": "Meet the Familiar Things" },
+      "parentTip": "用球替代尚无词条的滑梯，不借家人词条当老师。指图后等孩子回应，再手动翻页。",
+      "props": {
+        "items": ["school", "book", "blocks", "crayon", "ball", "backpack"],
+        "show": { "text": true, "english": true, "pinyin": false },
+        "speak": "name+phrase",
+        "autoAdvanceSec": null,
+        "intro": { "zh": "看看幼儿园可能有的东西。", "en": "Look at some things you may find at preschool." }
+      }
+    }
+  ]
+}

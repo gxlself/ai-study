@@ -1,0 +1,63 @@
+{
+  "schemaVersion": 1,
+  "id": "core.s4.nesting",
+  "title": { "zh": "套杯子", "en": "Nesting Cups" },
+  "summary": { "zh": "大杯小杯，放进拿出。", "en": "Big and small cups, in and out." },
+  "themeId": "s4-t6",
+  "ageRange": [18, 23],
+  "domains": ["math"],
+  "audience": "parent",
+  "durationMin": 2,
+  "coView": "required",
+  "objectives": [
+    { "zh": "试着把小杯放进大杯。", "en": "Try putting a smaller cup inside a bigger one." },
+    { "zh": "听大、小和更小的比较词。", "en": "Hear big, small, and smaller." }
+  ],
+  "cover": { "concept": "cup", "bg": "room" },
+  "parentGuide": {
+    "intro": "先读再关屏，从两个大套杯开始。让宝宝放进去、拿出来。卡住时不硬推，换个方向或换杯。感兴趣再加第三只。比较眼前大小，不要求独立排序。",
+    "tips": ["选尺寸差明显的同形套杯。", "先让宝宝摸、摆，成人少接管。", "说比这个更小，保持比较对象清楚。"],
+    "phrases": [
+      { "zh": "这只大，这只小。", "en": "This one is big. This one is small." },
+      { "zh": "小杯放进大杯。", "en": "The small cup goes inside the big cup." },
+      { "zh": "这只比刚才的更小。", "en": "This one is smaller than the last one." },
+      { "zh": "放不进，换一个试试。", "en": "It doesn't fit. Let's try another one." }
+    ],
+    "why": "实物套放让大小与里外词有意义。成人示范、等待，再给一点帮助。不把三个大小排序当成本月龄门槛。",
+    "refs": ["67", "71", "81"]
+  },
+  "offline": [
+    {
+      "title": "大小碗住一起",
+      "minutes": 6,
+      "materials": ["两三只同形、可套放的不易碎大碗"],
+      "steps": ["把两只大小不同的空碗放下。", "指着说大的和小的。", "示范把小碗套入大碗。", "让宝宝取出再放回。", "宝宝感兴趣时，再加更小的碗。"],
+      "safety": "每只碗都足够大，无缺口、不易碎。小物件直径小于3.5厘米有窒息风险。不装热水、不扣头脸。不硬压套放，防夹手。成人在旁。",
+      "domains": ["math"],
+      "question": "你想让哪只碗住进去？",
+      "levels": { "easier": "只用两个大碗，由成人扶住外碗。", "harder": "增加第三只大碗，成人陪着试从大到小摆一排。" }
+    }
+  ],
+  "steps": [
+    {
+      "type": "guide",
+      "title": { "zh": "小杯进大杯", "en": "A Small Cup Inside a Big Cup" },
+      "parentTip": "只用足够大的适龄套杯。先两个，再按兴趣加第三个。",
+      "props": {
+        "goal": "用真实套杯体验大小比较、里外和简单配合。",
+        "materials": ["两三只适龄大套杯", "平坦地垫"],
+        "steps": [
+          { "text": "把大杯和小杯并排放在地垫上。", "say": { "zh": "这只大，这只小。", "en": "This one is big. This one is small." }, "concept": "cup" },
+          { "text": "拿小杯慢慢放进大杯。", "say": { "zh": "小杯进到大杯里面。", "en": "The small cup goes inside the big cup." } },
+          { "text": "把小杯取出，再递给宝宝试。", "say": { "zh": "出来啦，你想试吗？", "en": "Out it comes. Would you like to try?" } },
+          { "text": "放不进时，示范换一只杯。", "say": { "zh": "换一个，慢慢试。", "en": "Try another one, slowly." } },
+          { "text": "感兴趣时，再拿一只更小的杯。", "say": { "zh": "这只比刚才的更小。", "en": "This one is smaller than the last one." } },
+          { "text": "陪宝宝把杯子按大小摆一排。", "say": { "zh": "大的，小的，更小的。", "en": "Big, small, and smaller." } }
+        ],
+        "playMin": 8,
+        "observe": ["宝宝如何尝试放进与拿出。", "放不进时，宝宝是否换杯或求助。", "宝宝是否留意两个杯子的大小差。"],
+        "safety": "套杯适龄、圆滑、不易碎，无松脱小件。每只杯都要足够大。小物件直径小于3.5厘米有窒息风险。空杯不扣口鼻，不装热水，不硬压，防夹手。成人全程看护。"
+      }
+    }
+  ]
+}

@@ -1,0 +1,62 @@
+{
+  "schemaVersion": 1,
+  "id": "core.s4.scribble",
+  "title": { "zh": "涂鸦彩虹", "en": "Rainbow Scribbles" },
+  "summary": { "zh": "画自己的线，听颜色名字。", "en": "Make your own marks and hear color names." },
+  "themeId": "s4-t1",
+  "ageRange": [18, 23],
+  "domains": ["art", "cognition"],
+  "audience": "parent",
+  "durationMin": 2,
+  "coView": "required",
+  "objectives": [
+    { "zh": "自由试试点、线和色块。", "en": "Explore dots, lines, and patches of color freely." },
+    { "zh": "在涂鸦时听颜色的名字。", "en": "Hear color names while scribbling." }
+  ],
+  "cover": { "concept": "crayon", "bg": "paper" },
+  "parentGuide": {
+    "intro": "先读指引，再关屏。把纸铺好，给宝宝两支粗蜡笔。让他自由画，你只说眼前的颜色和动作。彩虹是作品的昵称，不必画出弧线或七种颜色。",
+    "tips": ["不握着宝宝的手替他画。", "先给两支笔，想换时再给。", "颜色范句按眼前的笔替换。", "描述痕迹，不比较谁画得好。"],
+    "phrases": [
+      { "zh": "你在画蓝色的线。", "en": "You're making a blue line." },
+      { "zh": "一点，再一点。", "en": "One dot, then another." },
+      { "zh": "你想换哪支笔？", "en": "Which crayon would you like next?" },
+      { "zh": "这张是你画的。", "en": "You made this picture." }
+    ],
+    "why": "涂鸦是18月龄的观察项目。成人描述并等待回应，支持来回交流。不要求本月龄会画圆或标准图形。",
+    "refs": ["47", "82"]
+  },
+  "offline": [
+    {
+      "title": "一张自己的画",
+      "minutes": 8,
+      "materials": ["大张纸", "两支适龄无毒粗蜡笔", "胶带"],
+      "steps": ["家长把纸边贴牢在桌上。", "让宝宝选一支蜡笔。", "等他留下痕迹，再说颜色。", "宝宝停笔时，请他指喜欢的地方。", "让宝宝决定要继续还是收笔。"],
+      "safety": "选标明适龄、无毒的粗蜡笔。无毒不代表可食用。成人全程看护，防止入口。立即收走断笔和碎屑。小物件直径小于3.5厘米有窒息风险。胶带由成人操作。",
+      "domains": ["art", "cognition"],
+      "question": "你想在纸的哪一块画？",
+      "levels": { "easier": "只给一支粗蜡笔和大张纸。", "harder": "提供第二种颜色，让宝宝自己换笔画。" }
+    }
+  ],
+  "steps": [
+    {
+      "type": "guide",
+      "title": { "zh": "自由画一画", "en": "Make Your Own Marks" },
+      "parentTip": "屏幕给家长看。宝宝不必照着图片画，也不必画出彩虹。",
+      "props": {
+        "goal": "让宝宝自主涂鸦，成人描述颜色与动作。",
+        "materials": ["大张纸", "两支适龄无毒粗蜡笔", "胶带"],
+        "steps": [
+          { "text": "把大张纸固定在稳固桌面。", "say": { "zh": "纸在这里。", "en": "Here is the paper." } },
+          { "text": "把两支粗蜡笔摆在宝宝面前。", "say": { "zh": "你想用哪支？", "en": "Which one would you like?" }, "concept": "crayon" },
+          { "text": "在自己的纸上画一条短线。", "say": { "zh": "我画了一条线。", "en": "I made a line." } },
+          { "text": "等宝宝画，再描述眼前的痕迹。", "say": { "zh": "你的红色线在这里。", "en": "Here is your red line." }, "concept": "red" },
+          { "text": "让宝宝把蜡笔交给你收好。", "say": { "zh": "今天先画到这里。", "en": "We're done for now." } }
+        ],
+        "playMin": 10,
+        "observe": ["宝宝是否愿意拿笔留下痕迹。", "宝宝喜欢点、线还是来回涂？", "宝宝如何表示换笔或结束。"],
+        "safety": "选择适龄无毒粗蜡笔，无毒不等于可吃。看护勿入口，及时清除断笔和碎屑。小物件直径小于3.5厘米有窒息风险。不强扳手指，不要求固定握笔姿势。"
+      }
+    }
+  ]
+}

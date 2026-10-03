@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="0 0 320 320" role="img" aria-labelledby="title">
+  <title id="title">A round mooncake with a flower pattern, for looking only</title>
+  <path d="M159 44 Q187 29 204 50 Q235 48 244 76 Q274 86 273 116 Q296 135 283 161 Q296 188 275 205 Q275 236 245 246 Q235 276 204 274 Q186 296 160 282 Q133 296 115 274 Q85 276 74 246 Q44 237 45 205 Q24 187 37 160 Q24 133 46 115 Q45 84 75 74 Q85 45 115 47 Q133 27 159 44Z" fill="#DFB26D" stroke="#9F7648" stroke-width="7" stroke-linejoin="round"/>
+  <circle cx="160" cy="160" r="92" fill="#EAC88A" stroke="#AE8450" stroke-width="5"/>
+  <path d="M160 120 Q186 84 201 113 Q235 116 214 147 Q248 170 216 185 Q215 221 182 202 Q160 237 138 203 Q103 221 105 185 Q73 168 106 147 Q84 115 119 113 Q134 83 160 120Z" fill="#DFB26D" stroke="#AE8450" stroke-width="5" stroke-linejoin="round"/>
+  <circle cx="160" cy="160" r="25" fill="#F1D8A7" stroke="#AE8450" stroke-width="5"/>
+</svg>

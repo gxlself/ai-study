@@ -2,7 +2,7 @@
   "id": "s2",
   "title": {
     "zh": "互动探索",
-    "en": "Interacting and Exploring"
+    "en": "Interacting"
   },
   "subtitle": {
     "zh": "9–11 月：在来回互动中发现因果",
@@ -43,14 +43,14 @@
       "id": "s2-t1",
       "title": {
         "zh": "因果与藏找",
-        "en": "Cause and Find"
+        "en": "Cause & Effect"
       },
       "description": {
         "zh": "用泡泡、盒子和杯子，把出现、消失、进去和出来变成真实游戏。",
         "en": "Use bubbles, boxes, and cups to explore appearing, disappearing, in, and out."
       },
       "weeks": 3,
-      "domains": ["cognition", "math"],
+      "domains": ["cognition", "math", "motor"],
       "lessons": [
         "core.s2.real-bubbles",
         "core.s2.in-and-out",
@@ -58,7 +58,7 @@
       ],
       "offlineFocus": [
         "用真实泡泡和大块玩具观察动作带来的变化。",
-        "用大卡片和宽口杯玩藏起来、找出来。",
+        "用能罩住大玩具的套杯玩藏找，不移动杯子；大打印卡只供命名。",
         "所有物品都由成人准备和看护。"
       ]
     },
@@ -73,7 +73,7 @@
         "en": "Practice imitation, gestures, and waiting through face-to-face play and songs."
       },
       "weeks": 3,
-      "domains": ["motor", "social", "music"],
+      "domains": ["motor", "social", "music", "english"],
       "lessons": [
         "core.s2.clap-wave",
         "core.s2.if-happy",
@@ -82,7 +82,7 @@
       "offlineFocus": [
         "先示范，再停下来等宝宝自然回应。",
         "把你好、拜拜放进每天的迎送仪式。",
-        "儿歌唱完就转入抱抱、说话或地面游戏。"
+        "先关屏玩动作，旋律仅给家长学唱；学会后关屏唱，随时结束。"
       ]
     },
     {
@@ -96,7 +96,7 @@
         "en": "Hear food names, more, all gone, and simple number talk during safe meals."
       },
       "weeks": 3,
-      "domains": ["language", "math", "life"],
+      "domains": ["language", "english", "math", "life"],
       "lessons": [
         "core.s2.fruits",
         "core.s2.more-all-gone",
@@ -104,7 +104,7 @@
       ],
       "offlineFocus": [
         "以宝宝平时吃的食物为素材，不额外延长进餐。",
-        "只谈眼前的一两块食物，数完说总数。",
+        "只有同时可见才谈“两块”，餐盘真空了才说“没有了”。",
         "尊重闭嘴、转头、推开等停止信号。"
       ]
     },
@@ -119,7 +119,7 @@
         "en": "Follow your baby's attention and connect home objects, cards, and songs to daily life."
       },
       "weeks": 3,
-      "domains": ["language", "life", "music"],
+      "domains": ["language", "life", "music", "english", "motor"],
       "lessons": [
         "core.s2.home-things",
         "core.s2.goodnight",
@@ -138,7 +138,7 @@
     "吃饭时只谈眼前的一两块食物，说“还要吗”“没有了”，尊重闭嘴和转头。",
     "家人进门、离开时用同样的“你好”“拜拜”，停下来等回应。",
     "读纸卡或小书时跟随宝宝的目光，一页只说一个词。",
-    "唱歌时抱稳宝宝，做小幅度拍手或挥手，唱完就关屏。",
+    "家长学会后先关屏再给宝宝唱；安全抱稳或示范拍手，不一边双手抱持一边拍手。",
     "每天安排地面自由活动和户外看一看，不把手机当作陪伴。"
   ],
   "milestonesAt": [9]

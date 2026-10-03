@@ -1,0 +1,80 @@
+{
+  "schemaVersion": 1,
+  "id": "english.parent.action-game",
+  "title": {"zh": "真人动作小游戏", "en": "An Off-Screen Action Game"},
+  "summary": {"zh": "家长学六句动作短语，关屏后一起做。", "en": "Learn six action phrases and play face to face, without a screen."},
+  "ageRange": [18, 36],
+  "audience": "parent",
+  "domains": ["english", "motor", "social"],
+  "tags": ["tpr", "parent-led", "screen-free"],
+  "durationMin": 3,
+  "coView": "required",
+  "objectives": [
+    {"zh": "短句对应一个动作。", "en": "Connect each short phrase with one action."},
+    {"zh": "轮流示范，不催促。", "en": "Take turns demonstrating without rushing."}
+  ],
+  "cover": {"concept": "english.stand-up", "bg": "grass"},
+  "parentGuide": {
+    "intro": "家长先学六句，再关屏到安全平地玩。一次只说一个动作，成人先示范，等宝宝自愿参加；不会站或跳就只看、坐着拍手或轻抬脚跟。",
+    "tips": [
+      "每步附美式音标，先慢读，不用中文谐音，也不要求宝宝模仿音标。",
+      "TPR 是短语配动作，不是反应速度训练；一个动作后停五秒。",
+      "站坐用地面或稳固低座，跳只做宝宝已会的轻跳；不拉手臂、不追跑。"
+    ],
+    "phrases": [
+      {"zh": "站起来。", "en": "Stand up."},
+      {"zh": "坐下来。", "en": "Sit down."},
+      {"zh": "胳膊举起来。", "en": "Arms up."},
+      {"zh": "摸摸你的鼻子。", "en": "Touch your nose."},
+      {"zh": "拍拍你的手。", "en": "Clap your hands."},
+      {"zh": "跳一下。", "en": "Jump."}
+    ],
+    "why": "外语与真人、手势和眼前动作相连，成人等待并回应。动作游戏只是互动方式，不声称几分钟可以复制研究中的英语干预效果。",
+    "refs": ["[16]", "[47]", "[54]", "[83]"]
+  },
+  "printables": [
+    {"kind": "cards", "title": "真人动作示意卡", "items": ["english.stand-up", "sit-down", "raise-hands", "nose", "clap", "jump"], "size": "large", "showText": true, "showEnglish": true}
+  ],
+  "offline": [
+    {
+      "title": "你做一个，我说一句",
+      "minutes": 5,
+      "materials": ["安全平地", "可选的稳固低座"],
+      "steps": [
+        "关屏，清空脚边障碍，成人面对宝宝。",
+        "成人从拍手或举手中选一个，边说边慢慢示范。",
+        "等待宝宝用动作、手势或目光回应，再接着回应宝宝。",
+        "已能安全完成时才玩站坐和轻跳；不会跳可轻抬脚跟或坐着拍手。",
+        "让宝宝选择一个已会的动作，成人跟做，几轮后自然结束。"
+      ],
+      "question": "你想让我跟你做什么呀？",
+      "levels": {
+        "easier": "宝宝坐稳，只玩拍手或看成人挥手。",
+        "harder": "宝宝选择两个熟悉动作，成人仍一次说一个，轮流示范。"
+      },
+      "safety": "成人全程近距离陪伴，平地防滑，避开楼梯、家具尖角和热物；只做宝宝已会的动作，不拉拽、不强迫站立或跳跃，不设限时。",
+      "domains": ["english", "motor", "social"]
+    }
+  ],
+  "steps": [
+    {
+      "type": "guide",
+      "parentTip": "看真人，不看屏幕；一个动作一停顿，不会的动作跳过。",
+      "props": {
+        "goal": "家长用六个动作短句和宝宝轮流互动。",
+        "materials": ["安全平地", "可选的稳固低座"],
+        "steps": [
+          {"text": "成人慢慢站起，宝宝已会且愿意时才跟做。美式 /stænd ʌp/。", "concept": "english.stand-up", "say": {"zh": "站起来。", "en": "Stand up."}},
+          {"text": "成人慢慢坐在地面或稳固低座上示范。美式 /sɪt daʊn/。", "concept": "sit-down", "say": {"zh": "坐下来。", "en": "Sit down."}},
+          {"text": "举起自己的双臂，等宝宝自愿模仿。美式 /ɑrmz ʌp/。", "concept": "raise-hands", "say": {"zh": "胳膊举起来。", "en": "Arms up."}},
+          {"text": "成人轻触自己的鼻子，不戳眼睛或鼻孔。美式 /tʌtʃ jər noʊz/。", "concept": "nose", "say": {"zh": "摸摸你的鼻子。", "en": "Touch your nose."}},
+          {"text": "轻轻拍自己的手，留一次停顿等宝宝。美式 /klæp jər hændz/。", "concept": "clap", "say": {"zh": "拍拍你的手。", "en": "Clap your hands."}},
+          {"text": "已会才轻跳一下；不会就抬脚跟或坐着拍手。美式 /dʒʌmp/。", "concept": "jump", "say": {"zh": "跳一下。", "en": "Jump."}}
+        ],
+        "playMin": 5,
+        "observe": ["宝宝有没有看向成人的示范。", "有没有自愿做一个已会的动作。", "成人能否接受只看、休息或跳过动作。"],
+        "safety": "只在防滑平地进行，宝宝不会的动作不要求；不拉拽、不追跑、不攀高，不设速度要求。"
+      }
+    }
+  ]
+}

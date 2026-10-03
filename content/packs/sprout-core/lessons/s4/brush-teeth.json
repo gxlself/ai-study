@@ -1,0 +1,62 @@
+{
+  "schemaVersion": 1,
+  "id": "core.s4.brush-teeth",
+  "title": { "zh": "刷牙", "en": "Brush Our Teeth" },
+  "summary": { "zh": "宝宝参与，大人帮忙刷干净。", "en": "Your child joins in, and a grown-up does the brushing." },
+  "themeId": "s4-t5",
+  "ageRange": [18, 23],
+  "domains": ["life"],
+  "audience": "parent",
+  "durationMin": 3,
+  "coView": "required",
+  "objectives": [
+    { "zh": "参与每天两次的刷牙常规。", "en": "Join a twice-daily toothbrushing routine." },
+    { "zh": "由大人控制牙膏并帮助刷牙。", "en": "Have a grown-up measure toothpaste and brush the teeth." }
+  ],
+  "cover": { "concept": "toothbrush", "bg": "room" },
+  "parentGuide": {
+    "intro": "先自己读，刷牙时不开屏。乳牙萌出后每天刷两次。三岁以下用米粒大小含氟牙膏。牙膏由成人挤，刷牙由成人完成。宝宝可选牙刷、拿毛巾，不要求自己刷干净。",
+    "tips": ["用适龄小头软毛牙刷。", "给两个可行选择，如哪把牙刷。", "先告知再刷，不撬嘴、不恐吓。", "五分钟是准备和照护提示，不是刷牙时长。"],
+    "phrases": [
+      { "zh": "你想用哪把牙刷？", "en": "Which toothbrush would you like?" },
+      { "zh": "一点点牙膏就够了。", "en": "Just a tiny smear of toothpaste." },
+      { "zh": "我帮你轻轻刷。", "en": "I'll brush gently for you." },
+      { "zh": "里外都刷到了。", "en": "We've brushed the inside and outside." }
+    ],
+    "why": "可预测的照护常规帮助宝宝参与。口腔要点依据儿科口腔指南。米粒用量与成人帮刷的来源见阶段指南补充资料。",
+    "refs": ["6", "93"]
+  },
+  "offline": [
+    {
+      "title": "刷牙前的两个选择",
+      "minutes": 5,
+      "materials": ["适龄小头软毛牙刷", "含氟牙膏", "干净毛巾"],
+      "steps": ["关屏，让宝宝选择牙刷或毛巾。", "成人挤米粒大小含氟牙膏。", "让宝宝坐稳，先告知再帮刷。", "轻柔清洁牙齿里、外和咬合面。", "能吐就吐出多余牙膏，再收好用品。"],
+      "safety": "三岁以下只用米粒大小含氟牙膏。成人控制用量并全程帮刷。不把牙膏当食物，不让宝宝自行挤。不会吐时不强迫漱口。不含牙刷走跑，不撬嘴。明显疼痛或持续困难请咨询牙医。",
+      "domains": ["life"],
+      "question": "你想拿毛巾，还是选牙刷？",
+      "levels": { "easier": "成人先介绍牙刷，再帮助完成清洁。", "harder": "宝宝愿意时自己递牙刷、拿毛巾，清洁仍由成人完成。" }
+    }
+  ],
+  "steps": [
+    {
+      "type": "guide",
+      "title": { "zh": "家长帮助刷牙", "en": "A Grown-Up Helps Brush" },
+      "parentTip": "先读再关屏。每天两次；三岁以下米粒大小含氟牙膏。用量由成人控制。",
+      "props": {
+        "goal": "建立每天两次的成人帮刷常规，让宝宝参与准备。",
+        "materials": ["适龄小头软毛牙刷", "含氟牙膏", "干净毛巾"],
+        "steps": [
+          { "text": "每天安排两次刷牙，一次在睡前。", "say": { "zh": "刷牙时间到啦。", "en": "It's time to brush." }, "concept": "brush-teeth" },
+          { "text": "成人挤米粒大小的含氟牙膏。", "say": { "zh": "只用这么一点点。", "en": "Just a tiny smear." }, "concept": "toothbrush" },
+          { "text": "让宝宝坐稳，先告知再开始。", "say": { "zh": "我来帮你轻轻刷。", "en": "I'll brush gently for you." } },
+          { "text": "轻柔刷牙齿的里、外和咬合面。", "say": { "zh": "里面，外面，再刷上面。", "en": "Inside, outside, and the chewing surfaces." }, "concept": "tooth" },
+          { "text": "能吐就吐，再把刷牙用品收好。", "say": { "zh": "刷好啦，谢谢你一起做。", "en": "All done. Thank you for joining in." }, "concept": "towel" }
+        ],
+        "playMin": 5,
+        "observe": ["宝宝愿意参与哪项准备。", "哪些预告或姿势让宝宝更舒服。", "是否有疼痛或持续刷牙困难。"],
+        "safety": "成人帮刷，三岁以下用米粒大小含氟牙膏。不吞吃，成人收好牙膏。不会吐时不强迫漱口。不含牙刷走跑，不强行撬嘴。明显疼痛、出血或持续困难请咨询牙医。计时不表示连续刷五分钟。"
+      }
+    }
+  ]
+}
