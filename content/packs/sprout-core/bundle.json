@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "builtAt": "2026-10-04T03:47:56.142Z",
+  "builtAt": "2026-10-04T05:00:51.504Z",
   "manifest": {
     "schemaVersion": 1,
     "id": "sprout.core",
@@ -5500,7 +5500,7 @@
                   "zh": "卡片在这里。",
                   "en": "Here is the card."
                 },
-                "concept": "circle"
+                "concept": "contrast-card"
               },
               {
                 "text": "等宝宝看向卡片，再缓慢向左移一小段。",
@@ -7443,7 +7443,7 @@
                   "zh": "看看这张卡。",
                   "en": "Look at this card."
                 },
-                "concept": "circle"
+                "concept": "contrast-card-red"
               },
               {
                 "text": "家长趴下来，与宝宝平视。",
