@@ -1,0 +1,1074 @@
+<title>芽芽成长家长手册</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;500;700&family=Noto+Serif+SC:wght@400;600&display=swap" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;500;700&family=Noto+Serif+SC:wght@400;600&display=swap"></noscript>
+<style>
+:root {
+  --bg: #f7faf5;
+  --surface: #ffffff;
+  --surface-soft: #edf5eb;
+  --surface-blue: #edf6fb;
+  --surface-apricot: #fff3e9;
+  --line: #d7e4d4;
+  --line-strong: #b8ceb3;
+  --fg: #193024;
+  --muted: #5e7066;
+  --faint: #82928a;
+  --green: #2d7a49;
+  --green-strong: #1f6539;
+  --green-soft: #dcefdc;
+  --blue: #267399;
+  --blue-soft: #dceff7;
+  --apricot: #9c5428;
+  --apricot-soft: #ffe3cf;
+  --warning: #805e1f;
+  --warning-soft: #fff5d9;
+  --shadow: 0 18px 45px rgba(35, 72, 45, .08);
+  --code: #e8f0e6;
+  --on-green: #ffffff;
+  --fg-on-stage: #173021;
+  --stage-1: #b5d98c;
+  --stage-2: #91ca7c;
+  --stage-3: #6fba72;
+  --stage-4: #58aa70;
+  --stage-5: #3f9869;
+  --stage-6: #2d7a49;
+  --flower-pink: #d8a4b4;
+  --flower-yellow: #f0c96b;
+  color-scheme: light;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #15221b;
+    --surface: #1d2d24;
+    --surface-soft: #233a2b;
+    --surface-blue: #203945;
+    --surface-apricot: #433126;
+    --line: #385244;
+    --line-strong: #557461;
+    --fg: #edf5ec;
+    --muted: #b2c5b7;
+    --faint: #8da394;
+    --green: #8bd092;
+    --green-strong: #a2e1a7;
+    --green-soft: #2a4b34;
+    --blue: #8bd0e8;
+    --blue-soft: #244756;
+    --apricot: #ffc095;
+    --apricot-soft: #583b2a;
+    --warning: #f5d38a;
+    --warning-soft: #4e4123;
+    --shadow: 0 18px 45px rgba(0, 0, 0, .2);
+    --code: #243a2b;
+    --on-green: #15221b;
+    --fg-on-stage: #15221b;
+    --stage-1: #b5d98c;
+    --stage-2: #91ca7c;
+    --stage-3: #6fba72;
+    --stage-4: #58aa70;
+    --stage-5: #3f9869;
+    --stage-6: #8bd092;
+    --flower-pink: #e8b7c7;
+    --flower-yellow: #f5d38a;
+    color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --bg: #15221b;
+  --surface: #1d2d24;
+  --surface-soft: #233a2b;
+  --surface-blue: #203945;
+  --surface-apricot: #433126;
+  --line: #385244;
+  --line-strong: #557461;
+  --fg: #edf5ec;
+  --muted: #b2c5b7;
+  --faint: #8da394;
+  --green: #8bd092;
+  --green-strong: #a2e1a7;
+  --green-soft: #2a4b34;
+  --blue: #8bd0e8;
+  --blue-soft: #244756;
+  --apricot: #ffc095;
+  --apricot-soft: #583b2a;
+  --warning: #f5d38a;
+  --warning-soft: #4e4123;
+  --shadow: 0 18px 45px rgba(0, 0, 0, .2);
+  --code: #243a2b;
+  --on-green: #15221b;
+  --fg-on-stage: #15221b;
+  --stage-1: #b5d98c;
+  --stage-2: #91ca7c;
+  --stage-3: #6fba72;
+  --stage-4: #58aa70;
+  --stage-5: #3f9869;
+  --stage-6: #8bd092;
+  --flower-pink: #e8b7c7;
+  --flower-yellow: #f5d38a;
+  color-scheme: dark;
+}
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--fg);
+  font-family: "Noto Sans SC", "PingFang SC", "Microsoft YaHei", sans-serif;
+  font-size: 16px;
+  line-height: 1.75;
+  -webkit-font-smoothing: antialiased;
+}
+button, input { font: inherit; }
+button { color: inherit; }
+a { color: var(--green-strong); }
+a:hover { color: var(--green); }
+:focus-visible {
+  outline: 3px solid var(--blue);
+  outline-offset: 3px;
+}
+.topbar {
+  position: sticky;
+  top: env(safe-area-inset-top, 0px);
+  z-index: 20;
+  border-bottom: 1px solid var(--line);
+  background: color-mix(in srgb, var(--bg) 92%, transparent);
+  backdrop-filter: blur(14px);
+}
+.topbar-inner {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  max-width: 1220px;
+  margin: 0 auto;
+  padding: 13px 20px;
+}
+.brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  color: var(--fg);
+  font-weight: 800;
+  text-decoration: none;
+  white-space: nowrap;
+}
+.brand-mark { width: 28px; height: 28px; flex: 0 0 auto; }
+.top-links {
+  display: flex;
+  gap: 14px;
+  min-width: 0;
+  overflow-x: auto;
+  scrollbar-width: none;
+}
+.top-links::-webkit-scrollbar { display: none; }
+.top-links a {
+  color: var(--muted);
+  font-size: 13px;
+  text-decoration: none;
+  white-space: nowrap;
+}
+.top-links a:hover { color: var(--green-strong); }
+.theme-switch {
+  margin-left: auto;
+  flex: 0 0 auto;
+  border: 1px solid var(--line-strong);
+  border-radius: 999px;
+  background: var(--surface);
+  color: var(--muted);
+  padding: 5px 10px;
+  cursor: pointer;
+  font-size: 13px;
+}
+.page-shell {
+  max-width: 1220px;
+  margin: 0 auto;
+  padding: 0 20px 64px;
+}
+.intro {
+  padding: 54px 0 42px;
+  border-bottom: 1px solid var(--line);
+}
+.eyebrow, .section-kicker {
+  margin: 0 0 9px;
+  color: var(--green-strong);
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: .08em;
+}
+h1, h2, h3, h4 {
+  margin: 0;
+  color: var(--fg);
+  line-height: 1.25;
+  letter-spacing: 0;
+}
+h1, h2 { font-family: "Noto Serif SC", "Songti SC", "STSong", serif; }
+h1 { max-width: 760px; font-size: clamp(34px, 5vw, 62px); font-weight: 700; }
+h2 { font-size: clamp(26px, 3.2vw, 38px); }
+h3 { font-size: 20px; }
+h4 { font-size: 16px; }
+.lead {
+  max-width: 670px;
+  margin: 17px 0 0;
+  color: var(--muted);
+  font-size: 18px;
+}
+.principles {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 12px;
+  margin-top: 34px;
+}
+.principle {
+  min-width: 0;
+  padding: 18px 18px 16px;
+  border-top: 3px solid var(--green);
+  background: var(--surface);
+}
+.principle strong { display: block; font-size: 15px; }
+.principle p { margin: 6px 0 0; color: var(--muted); font-size: 14px; line-height: 1.6; }
+.layout {
+  display: grid;
+  grid-template-columns: 218px minmax(0, 1fr);
+  gap: 42px;
+  align-items: start;
+}
+.toc {
+  position: sticky;
+  top: calc(env(safe-area-inset-top, 0px) + 72px);
+  padding-top: 30px;
+}
+.toc-title { margin: 0 0 11px; color: var(--faint); font-size: 12px; font-weight: 800; }
+.toc a {
+  display: block;
+  padding: 5px 0;
+  color: var(--muted);
+  font-size: 14px;
+  text-decoration: none;
+}
+.toc a:hover { color: var(--green-strong); }
+main { min-width: 0; }
+.section {
+  padding: 62px 0 10px;
+  scroll-margin-top: 72px;
+}
+.section-head {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  align-items: end;
+  margin-bottom: 24px;
+}
+.section-note {
+  max-width: 430px;
+  margin: 0;
+  color: var(--muted);
+  font-size: 14px;
+}
+.lookup-tools {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 245px;
+  gap: 16px;
+  align-items: end;
+  margin: 22px 0 20px;
+}
+.age-ruler {
+  display: grid;
+  grid-template-columns: repeat(6, minmax(0, 1fr));
+  gap: 6px;
+  min-width: 0;
+  padding: 8px;
+  border: 1px solid var(--line);
+  background: var(--surface);
+}
+.age-button {
+  position: relative;
+  min-width: 0;
+  border: 0;
+  border-bottom: 4px solid var(--stage-color, var(--green));
+  background: transparent;
+  color: var(--muted);
+  padding: 10px 4px 8px;
+  cursor: pointer;
+  text-align: center;
+}
+.age-button::before {
+  content: "";
+  display: block;
+  width: 9px;
+  height: 9px;
+  margin: 0 auto 7px;
+  border: 2px solid var(--stage-color, var(--green));
+  border-radius: 50%;
+  background: var(--surface);
+}
+.age-button[aria-selected="true"] {
+  background: var(--stage-color);
+  color: var(--fg-on-stage);
+  font-weight: 800;
+}
+.age-button[aria-selected="true"]::before { background: currentColor; border-color: currentColor; }
+.age-button span { display: block; font-variant-numeric: tabular-nums; font-size: 13px; line-height: 1.35; }
+.age-button small { display: block; margin-top: 2px; font-size: 11px; }
+.birthday {
+  display: grid;
+  gap: 7px;
+  color: var(--muted);
+  font-size: 13px;
+}
+.birthday input {
+  width: 100%;
+  border: 1px solid var(--line-strong);
+  border-radius: 6px;
+  background: var(--surface);
+  color: var(--fg);
+  padding: 10px 11px;
+}
+.birthday-hint { margin: 0; font-size: 12px; line-height: 1.5; }
+.stage-panel {
+  border-top: 4px solid var(--stage-color, var(--green));
+  background: var(--surface);
+  box-shadow: var(--shadow);
+}
+.stage-header {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 170px;
+  gap: 24px;
+  padding: 25px 26px 22px;
+  border-bottom: 1px solid var(--line);
+}
+.stage-age {
+  margin: 0 0 5px;
+  color: var(--stage-color, var(--green));
+  font-size: 14px;
+  font-weight: 800;
+  font-variant-numeric: tabular-nums;
+}
+.stage-subtitle { margin: 8px 0 0; color: var(--muted); }
+.stage-illustration {
+  display: grid;
+  place-items: center;
+  min-height: 112px;
+  background: var(--surface-soft);
+}
+.stage-illustration svg { width: 92px; height: 92px; }
+.stage-body { padding: 22px 26px 30px; }
+.stage-grid {
+  display: grid;
+  grid-template-columns: minmax(0, .86fr) minmax(0, 1.14fr);
+  gap: 26px;
+}
+.stage-grid + .stage-grid { margin-top: 30px; }
+.subhead {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 14px;
+  padding-bottom: 9px;
+  border-bottom: 1px solid var(--line);
+}
+.subhead h3 { font-family: "Noto Serif SC", "Songti SC", "STSong", serif; }
+.subhead span { color: var(--faint); font-size: 12px; }
+.focus-list, .rhythm-list, .milestone-list, .doctor-list { margin: 13px 0 0; padding: 0; list-style: none; }
+.focus-list li, .rhythm-list li {
+  position: relative;
+  padding: 8px 0 8px 18px;
+  border-bottom: 1px solid color-mix(in srgb, var(--line) 65%, transparent);
+  color: var(--muted);
+  font-size: 14px;
+}
+.focus-list li::before, .rhythm-list li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 17px;
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: var(--stage-color, var(--green));
+}
+.screen-box {
+  padding: 17px;
+  background: var(--surface-soft);
+}
+.screen-box p { margin: 0; color: var(--fg); font-size: 14px; }
+.screen-box strong { color: var(--green-strong); }
+.screen-facts {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 8px;
+  margin-top: 15px;
+}
+.fact {
+  min-width: 0;
+  padding: 10px;
+  background: var(--surface);
+  border: 1px solid var(--line);
+}
+.fact b { display: block; color: var(--green-strong); font-size: 21px; font-variant-numeric: tabular-nums; line-height: 1.1; }
+.fact span { display: block; margin-top: 4px; color: var(--muted); font-size: 11px; line-height: 1.35; }
+.theme-list { margin-top: 25px; }
+.theme-list > details {
+  border-top: 1px solid var(--line);
+}
+.theme-list > details:last-child { border-bottom: 1px solid var(--line); }
+.theme-list summary {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  align-items: center;
+  padding: 15px 0;
+  cursor: pointer;
+  list-style: none;
+}
+.theme-list summary::-webkit-details-marker { display: none; }
+.theme-list summary::after { content: "+"; color: var(--green); font-size: 22px; font-weight: 300; }
+.theme-list details[open] summary::after { content: "−"; }
+.theme-title { display: flex; gap: 10px; align-items: baseline; min-width: 0; }
+.theme-title strong { min-width: 0; font-size: 16px; }
+.theme-title span { flex: 0 0 auto; color: var(--faint); font-size: 12px; }
+.theme-description { margin: 0 0 15px; color: var(--muted); font-size: 14px; }
+.lesson-list { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 9px; padding-bottom: 15px; }
+.lesson {
+  min-width: 0;
+  padding: 13px;
+  border: 1px solid var(--line);
+  background: var(--bg);
+}
+.lesson h4 { overflow-wrap: anywhere; }
+.lesson-summary { min-height: 46px; margin: 6px 0 10px; color: var(--muted); font-size: 12px; line-height: 1.5; }
+.lesson-meta { display: flex; flex-wrap: wrap; gap: 5px; align-items: center; color: var(--faint); font-size: 11px; }
+.badge {
+  display: inline-flex;
+  align-items: center;
+  border-radius: 999px;
+  padding: 2px 7px;
+  font-size: 11px;
+  line-height: 1.4;
+}
+.badge.parent { background: var(--apricot-soft); color: var(--apricot); }
+.badge.child { background: var(--blue-soft); color: var(--blue); }
+.offline {
+  margin: 11px 0 0;
+  padding-top: 9px;
+  border-top: 1px solid var(--line);
+  color: var(--green-strong);
+  font-size: 12px;
+  line-height: 1.45;
+}
+.offline::before { content: "线下 · "; color: var(--faint); }
+.milestone-wrap { margin-top: 25px; }
+.milestone-intro { margin: 0 0 14px; color: var(--muted); font-size: 14px; }
+.milestone-groups { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 9px; }
+.milestone-group {
+  min-width: 0;
+  padding: 13px;
+  border-top: 3px solid var(--stage-color, var(--green));
+  background: var(--surface-soft);
+}
+.milestone-group h4 { font-size: 14px; }
+.milestone-group ul { margin: 8px 0 0; padding-left: 17px; color: var(--muted); font-size: 12px; line-height: 1.55; }
+.doctor {
+  margin-top: 25px;
+  padding: 17px 18px;
+  border-left: 4px solid var(--warning);
+  background: var(--warning-soft);
+}
+.doctor h3 { color: var(--warning); font-size: 17px; }
+.doctor p { margin: 8px 0 0; color: var(--fg); font-size: 14px; }
+.doctor ul { margin: 9px 0 0; padding-left: 20px; color: var(--fg); font-size: 14px; }
+.age-flow, .compare-grid, .setup-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 12px; }
+.flow-card, .compare-card {
+  min-width: 0;
+  border-top: 3px solid var(--green);
+  background: var(--surface);
+  padding: 18px;
+}
+.flow-card:nth-child(2) { border-color: var(--blue); }
+.flow-card:nth-child(3) { border-color: var(--apricot); }
+.flow-card h3, .compare-card h3 { font-size: 17px; }
+.flow-card p, .compare-card p { margin: 7px 0 0; color: var(--muted); font-size: 14px; }
+.flow-card ol { margin: 12px 0 0; padding-left: 20px; color: var(--muted); font-size: 14px; }
+.split {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 30px;
+}
+.copy-block {
+  border-top: 1px solid var(--line);
+  padding-top: 17px;
+}
+.copy-block h3 { font-family: "Noto Serif SC", "Songti SC", "STSong", serif; }
+.copy-block p { margin: 9px 0 0; color: var(--muted); }
+.copy-block ul { margin: 11px 0 0; padding-left: 21px; color: var(--muted); }
+.screen-table-wrap { overflow-x: auto; border: 1px solid var(--line); background: var(--surface); }
+table { width: 100%; border-collapse: collapse; min-width: 670px; }
+th, td { padding: 13px 14px; border-bottom: 1px solid var(--line); text-align: left; vertical-align: top; }
+th { background: var(--surface-soft); color: var(--green-strong); font-size: 13px; }
+td { color: var(--muted); font-size: 14px; }
+tr:last-child td { border-bottom: 0; }
+.callout {
+  margin: 19px 0 0;
+  padding: 16px 18px;
+  border: 1px solid var(--line-strong);
+  background: var(--surface-soft);
+  color: var(--fg);
+}
+.callout strong { color: var(--green-strong); }
+.setup-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+.setup-step {
+  min-width: 0;
+  padding: 18px;
+  border: 1px solid var(--line);
+  background: var(--surface);
+}
+.step-number {
+  display: inline-grid;
+  place-items: center;
+  width: 28px;
+  height: 28px;
+  margin-bottom: 10px;
+  border-radius: 50%;
+  background: var(--green);
+  color: var(--on-green);
+  font-variant-numeric: tabular-nums;
+  font-weight: 800;
+}
+.setup-step h3 { font-size: 17px; }
+.setup-step p, .setup-step li { color: var(--muted); font-size: 14px; }
+.setup-step p { margin: 8px 0 0; }
+.setup-step ul { margin: 8px 0 0; padding-left: 19px; }
+.code-line {
+  position: relative;
+  margin-top: 12px;
+  padding: 12px 44px 12px 13px;
+  overflow-x: auto;
+  border: 1px solid var(--line);
+  background: var(--code);
+  color: var(--fg);
+  font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  font-size: 12px;
+  line-height: 1.5;
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+}
+.copy-button {
+  position: absolute;
+  top: 7px;
+  right: 7px;
+  border: 1px solid var(--line-strong);
+  border-radius: 4px;
+  background: var(--surface);
+  color: var(--green-strong);
+  padding: 3px 7px;
+  cursor: pointer;
+  font-size: 11px;
+}
+.faq { border-top: 1px solid var(--line); }
+.faq details { border-bottom: 1px solid var(--line); }
+.faq summary { padding: 15px 0; cursor: pointer; font-weight: 700; list-style: none; }
+.faq summary::-webkit-details-marker { display: none; }
+.faq summary::after { content: "+"; float: right; color: var(--green); font-size: 22px; font-weight: 300; }
+.faq details[open] summary::after { content: "−"; }
+.faq p { margin: 0 32px 17px 0; color: var(--muted); font-size: 14px; }
+.footer {
+  margin-top: 66px;
+  padding-top: 24px;
+  border-top: 1px solid var(--line);
+  color: var(--faint);
+  font-size: 12px;
+}
+.footer p { max-width: 760px; margin: 8px 0; }
+.empty { color: var(--muted); }
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+@media (max-width: 900px) {
+  .layout { display: block; }
+  .toc {
+    position: sticky;
+    top: calc(env(safe-area-inset-top, 0px) + 57px);
+    z-index: 10;
+    display: flex;
+    gap: 13px;
+    overflow-x: auto;
+    padding: 9px 0;
+    border-bottom: 1px solid var(--line);
+    background: color-mix(in srgb, var(--bg) 95%, transparent);
+    scrollbar-width: none;
+  }
+  .toc::-webkit-scrollbar { display: none; }
+  .toc-title { display: none; }
+  .toc a { flex: 0 0 auto; padding: 2px 0; font-size: 12px; }
+  .section { padding-top: 44px; }
+}
+@media (max-width: 650px) {
+  .topbar-inner { padding-inline: 16px; gap: 11px; }
+  .top-links { gap: 10px; }
+  .top-links a:nth-child(n+4) { display: none; }
+  .page-shell { padding-inline: 16px; }
+  .intro { padding-top: 35px; }
+  h1 { font-size: 35px; }
+  .lead { font-size: 16px; }
+  .principles, .split, .setup-grid, .age-flow, .compare-grid { grid-template-columns: 1fr; }
+  .lookup-tools { grid-template-columns: 1fr; }
+  .age-ruler { gap: 2px; padding: 5px; }
+  .age-button { padding-inline: 1px; }
+  .age-button span { font-size: 11px; }
+  .age-button small { font-size: 9px; }
+  .stage-header { grid-template-columns: 1fr; padding: 20px 17px 17px; }
+  .stage-illustration { min-height: 82px; }
+  .stage-illustration svg { width: 68px; height: 68px; }
+  .stage-body { padding: 18px 17px 23px; }
+  .stage-grid { grid-template-columns: 1fr; gap: 23px; }
+  .screen-facts { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+  .fact { padding: 8px 6px; }
+  .fact b { font-size: 17px; }
+  .fact span { font-size: 10px; }
+  .lesson-list { grid-template-columns: 1fr; }
+  .lesson-summary { min-height: 0; }
+  .milestone-groups { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .section-head { display: block; }
+  .section-note { margin-top: 9px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+}
+</style>
+
+<header class="topbar">
+  <div class="topbar-inner">
+    <a class="brand" href="#top" aria-label="回到芽芽成长家长手册开头">
+      <svg class="brand-mark" viewBox="0 0 64 64" role="img" aria-label="嫩芽">
+        <path d="M32 54C31 43 32 35 36 27" fill="none" stroke="currentColor" stroke-width="4" stroke-linecap="round"/>
+        <path d="M31 36C20 37 11 23 12 15c11-3 22 7 19 21Z" fill="var(--green-soft)" stroke="currentColor" stroke-width="2.5"/>
+        <path d="M34 33C33 20 42 10 54 11c2 12-8 23-20 22Z" fill="var(--green)" opacity=".82" stroke="currentColor" stroke-width="2.5"/>
+      </svg>
+      芽芽成长
+    </a>
+    <nav class="top-links" aria-label="页面导航">
+      <a href="#lookup">按月龄查</a>
+      <a href="#daily">每天怎么用</a>
+      <a href="#screen">屏幕时间</a>
+      <a href="#setup">第一次设置</a>
+      <a href="#faq">常见问题</a>
+    </nav>
+    <button class="theme-switch" id="themeToggle" type="button" aria-pressed="false">深色</button>
+  </div>
+</header>
+
+<div class="page-shell" id="top">
+  <section class="intro" aria-labelledby="pageTitle">
+    <p class="eyebrow">Sprout · 家长与照护者手册</p>
+    <h1 id="pageTitle">芽芽成长 · 家长手册</h1>
+    <p class="lead">屏幕只是引子，学习发生在屏幕外的陪伴里。按宝宝月龄，看看这段时间怎么陪、屏幕怎么用、可以观察什么。</p>
+    <div class="principles">
+      <div class="principle"><strong>真人互动优先</strong><p>看见宝宝正在关注的东西，命名，停一下，接住目光、动作或声音。</p></div>
+      <div class="principle"><strong>6–17 月屏幕只给家长看</strong><p>家长读完提示就放下设备，宝宝用打印卡、纸书、真实物品和真人互动。</p></div>
+      <div class="principle"><strong>生活里学中文、英语和数学</strong><p>从吃饭、穿衣、收拾、散步和共读里说话、点数、比较和发现规律。</p></div>
+    </div>
+  </section>
+
+  <div class="layout">
+    <aside class="toc" aria-label="手册目录">
+      <p class="toc-title">这本手册</p>
+      <a href="#lookup">按月龄查</a>
+      <a href="#daily">每天怎么用</a>
+      <a href="#language">语言与数学</a>
+      <a href="#screen">屏幕时间</a>
+      <a href="#setup">第一次设置</a>
+      <a href="#faq">常见问题</a>
+    </aside>
+
+    <main>
+      <section class="section" id="lookup" aria-labelledby="lookupTitle">
+        <div class="section-head">
+          <div>
+            <p class="section-kicker">核心入口</p>
+            <h2 id="lookupTitle">按月龄查</h2>
+          </div>
+          <p class="section-note">选一个阶段，先看屏幕边界，再挑一个生活里的小玩法。阶段是参考，不是需要赶上的进度。</p>
+        </div>
+        <div class="lookup-tools">
+          <div class="age-ruler" id="ageRuler" role="tablist" aria-label="选择成长阶段"></div>
+          <label class="birthday">知道出生年月时，可以自动选择当前阶段
+            <input id="birthday" type="month" aria-label="宝宝出生年月" aria-describedby="birthdayHint">
+            <span class="birthday-hint" id="birthdayHint">只在本机按出生年月计算月龄，结果会保存在本机浏览器。</span>
+          </label>
+        </div>
+        <div id="stagePanel" aria-live="polite"></div>
+      </section>
+
+      <section class="section" id="daily" aria-labelledby="dailyTitle">
+        <div class="section-head">
+          <div><p class="section-kicker">把课放回生活</p><h2 id="dailyTitle">每天怎么用</h2></div>
+          <p class="section-note">一次只记住一个动作也很好。孩子转头、推开、揉眼、困了、饿了或不想继续时，随时结束。</p>
+        </div>
+        <div class="age-flow">
+          <article class="flow-card">
+            <h3>6–17 月龄</h3>
+            <p>看指引，放下屏幕，陪玩。</p>
+            <ol><li>先读家长导语，记住一个小玩法。</li><li>把手机放到宝宝看不到、够不到的地方。</li><li>用真人、纸书、打印卡和大而安全的真实物品一起做。</li><li>宝宝累了或转开目光，就停下来休息。</li></ol>
+          </article>
+          <article class="flow-card">
+            <h3>18–23 月龄</h3>
+            <p>共看可选，默认先不看。</p>
+            <ol><li>可以只用家长指引和线下版活动。</li><li>若主动开启共看，每次最多 8 分钟、每天最多 1 节。</li><li>家长坐在旁边，看一页做一次互动。</li><li>看完马上回到真实物品、歌声或动作。</li></ol>
+          </article>
+          <article class="flow-card">
+            <h3>24–36 月龄</h3>
+            <p>短时共看，然后线下做。</p>
+            <ol><li>家长全程在场，提问、等待、回应。</li><li>s5 每次最多 10 分钟、每天最多 20 分钟；s6 每次最多 15 分钟、每天最多 30 分钟。</li><li>屏幕结束后分类、点数、摆放、唱歌、阅读或动作。</li><li>全部设备的观看时间要一起考虑，越少越好。</li></ol>
+          </article>
+        </div>
+      </section>
+
+      <section class="section" id="language" aria-labelledby="languageTitle">
+        <div class="section-head">
+          <div><p class="section-kicker">生活里的对话</p><h2 id="languageTitle">中文、英语和数学</h2></div>
+          <p class="section-note">语言模式是显示和朗读顺序，不是考试等级。孩子用手势、沉默或混用语言回应，也算参与。</p>
+        </div>
+        <div class="split">
+          <article class="copy-block">
+            <h3>中文和英语怎么带</h3>
+            <p>用最熟悉、最自然的语言和孩子交流。推荐“看见—命名—等待—回应”：看孩子正在看的东西，用短句命名，停几秒，接住孩子的表达。</p>
+            <ul>
+              <li>中文 + 英文：先中文，再补一句熟悉英文。</li>
+              <li>英文 + 中文：先英文，再用中文确认意思。</li>
+              <li>家长英语不熟时，不要让机械播放代替丰富中文对话。</li>
+              <li>孩子不跟读、只看或只用手势回应，都不需要纠正。</li>
+            </ul>
+          </article>
+          <article class="copy-block">
+            <h3>生活里的数学</h3>
+            <p>一次只选一个小目标。把数字、空间和规律放进正在发生的事情里，不把课程正确率当成能力诊断。</p>
+            <ul>
+              <li>6–17 月：说“一个、很多、进去、出来”，用大而安全的物品。</li>
+              <li>18–23 月：数一到三个勺子、鞋或积木，数完说总数。</li>
+              <li>24–36 月：按一个特点分类，比较多和少，试试袜子—毛巾的交替规律。</li>
+              <li>不使用数字闪卡，不要求会数到十，也不因为一次答错反复练习。</li>
+            </ul>
+          </article>
+        </div>
+      </section>
+
+      <section class="section" id="screen" aria-labelledby="screenTitle">
+        <div class="section-head">
+          <div><p class="section-kicker">家庭媒体边界</p><h2 id="screenTitle">屏幕时间</h2></div>
+          <p class="section-note">产品里的时长是工具上限和提醒，不是健康建议，也不代表需要用满。</p>
+        </div>
+        <div class="screen-table-wrap">
+          <table>
+            <thead><tr><th>月龄</th><th>产品里的安排</th><th>家长要做什么</th></tr></thead>
+            <tbody>
+              <tr><td>6–17 月</td><td>宝宝不看孩子侧课程。家长预习提示每次约 3 分钟、每天约 10 分钟。</td><td>读完关屏，给宝宝真实材料和真人回应。屏幕只给家长看。</td></tr>
+              <tr><td>18–23 月</td><td>共看默认关闭。主动开启时每次最多 8 分钟、每天最多 1 节。</td><td>必须全程陪同。只看一小段，马上回到线下活动。</td></tr>
+              <tr><td>24–29 月</td><td>每次最多 10 分钟、每天最多 20 分钟。每节建议 4–6 分钟。</td><td>共看、提问、等待、回应。其他手机、电视、视频通话也要计入家庭总量。</td></tr>
+              <tr><td>30–36 月</td><td>每次最多 15 分钟、每天最多 30 分钟。每节建议 4–8 分钟。</td><td>屏幕结束后马上做线下活动。完全使用家长指引也可以。</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="callout"><strong>为什么这样设置：</strong> WHO、美国儿科学会（AAP）和中国国家卫生健康委都把睡眠、户外、游戏、纸书和亲子对话放在屏幕之前。中国国家卫健委关于 0–3 岁的近年文件口径最严，项目默认采用“越少越好、家长陪同、优先线下”的保守方式。这里的 24–36 月龄短共看，是产品边界，不是医疗建议。</div>
+        <div class="compare-grid" style="margin-top:12px">
+          <article class="compare-card"><h3>这些场景不用屏</h3><p>吃饭和喂养、睡前 1 小时、卧室、孩子哭闹时、家长需要双手照护时。背景电视和一边看手机一边照护，也会减少互动。</p></article>
+          <article class="compare-card"><h3>产品里刻意没有</h3><p>自动连播、无限滚动、广告、积分、排名、抽奖、连续打卡、间歇性奖励、安抚入口和“再看一节”的挽留设计。</p></article>
+          <article class="compare-card"><h3>依据与阅读</h3><p><a href="https://www.who.int/publications/i/item/9789241550536" target="_blank" rel="noreferrer">WHO 5 岁以下指南</a> · <a href="https://publications.aap.org/pediatrics/article/138/5/e20162591/60503/Media-and-Young-Minds" target="_blank" rel="noreferrer">AAP Media and Young Minds</a> · <a href="https://www.gov.cn/zhengce/zhengceku/2022-11/29/content_5729421.htm" target="_blank" rel="noreferrer">国家卫健委 2022 指南</a></p></article>
+        </div>
+      </section>
+
+      <section class="section" id="setup" aria-labelledby="setupTitle">
+        <div class="section-head">
+          <div><p class="section-kicker">第一次使用</p><h2 id="setupTitle">第一次设置</h2></div>
+          <p class="section-note">这些步骤来自项目的部署与设备安装说明。命令和地址可以点复制。</p>
+        </div>
+        <div class="setup-grid">
+          <article class="setup-step">
+            <span class="step-number">1</span>
+            <h3>启动家庭服务器</h3>
+            <p>让 Mac、NAS 或小主机运行服务端。首次使用时，维护者在仓库根依次构建服务端、播放端和后台，再启动服务（之后每次只需 <code>pnpm start</code>）。</p>
+            <div class="code-line"><code>pnpm --filter @sprout/server build
+pnpm --filter @sprout/player build
+pnpm --filter @sprout/admin build
+pnpm start</code><button class="copy-button" type="button" data-copy>复制</button></div>
+            <p>然后打开：</p>
+            <div class="code-line"><code>http://家庭服务器地址:4310/admin/</code><button class="copy-button" type="button" data-copy>复制</button></div>
+          </article>
+          <article class="setup-step">
+            <span class="step-number">2</span>
+            <h3>后台添加孩子</h3>
+            <ul><li>填写家庭名，设置至少 6 位管理员密码。</li><li>填写孩子名字和生日，选择语言模式。</li><li>在“孩子档案”里调整语言、拼音、屏幕模式、上下限和可用时段。</li><li>孩子未满 18 个月时，后台不会允许开启亲子共看。</li></ul>
+          </article>
+          <article class="setup-step">
+            <span class="step-number">3</span>
+            <h3>电视安装 APK，或打开浏览器</h3>
+            <p>电视和服务器在同一家庭网络。可用 U 盘安装 release APK，或直接在电视浏览器打开播放地址。电视不要填写服务器的 <code>localhost</code>。</p>
+            <div class="code-line"><code>http://家庭服务器地址:4310/</code><button class="copy-button" type="button" data-copy>复制</button></div>
+            <p>iPad 用 Safari 打开同一个地址，也可以添加到主屏幕；需要可靠离线时使用内置 App。</p>
+          </article>
+          <article class="setup-step">
+            <span class="step-number">4</span>
+            <h3>配对播放设备</h3>
+            <ul><li>播放端选择“连接家庭服务器”，输入局域网地址。</li><li>播放端显示 6 位数字配对码。</li><li>回到后台“播放设备”页，点击“添加设备”，输入配对码，命名并绑定孩子。</li><li>配对码 10 分钟有效，只显示一次设备 token。失败或丢失时重新申请。</li></ul>
+          </article>
+          <article class="setup-step">
+            <span class="step-number">5</span>
+            <h3>打印卡片，回到真实活动</h3>
+            <p>课程详情或主题页打开“打印”。选择 A4 纵向、实际大小。大卡每页 2 张，中卡每页 4 张，小卡每页 8 张，高对比卡每页 1 张。</p>
+            <ul><li>确认图片已经加载完成。</li><li>剪圆边角，收好碎纸。</li><li>不用订书钉、小夹子、小磁铁或绳子。</li><li>卡片由成人拿取和收纳，宝宝探索时全程看护。</li></ul>
+          </article>
+          <article class="setup-step">
+            <span class="step-number">6</span>
+            <h3>没有服务器时</h3>
+            <p>播放端可以选择“先离线体验”。离线档案和记录只保存在这台设备，不能自动合并到服务器。长期使用前，先确认自己选择的是离线还是远程模式。</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="section" id="faq" aria-labelledby="faqTitle">
+        <div class="section-head">
+          <div><p class="section-kicker">需要时再看</p><h2 id="faqTitle">常见问题</h2></div>
+          <p class="section-note">答案只保留家庭真正需要的边界，遇到持续发育担忧请把具体观察带给医生。</p>
+        </div>
+        <div class="faq">
+          <details><summary>一定要让孩子看屏幕吗？</summary><p>不用。6–17 月龄本来就只提供家长指引；18–36 月龄也可以选择“仅家长指引”，使用线下版、打印卡和真实活动。课程不是必须完成的作业。</p></details>
+          <details><summary>6 个月宝宝可以看播放端里的高对比卡吗？</summary><p>不要把电子高对比卡给宝宝看。家长可以阅读指引并打印实体高对比卡，或直接用家长的脸、真实照片和安全物品陪看。</p></details>
+          <details><summary>18–23 月龄为什么默认关闭共看？</summary><p>这个年龄段仍应谨慎使用屏幕。项目保留家长主动选择的短共看入口，但默认让家庭先用家长指引和线下活动；开启时必须全程陪同，每次最多 8 分钟。</p></details>
+          <details><summary>可以把儿歌一直放着吗？</summary><p>不建议。课程中的歌曲是一起唱、一起做动作或给家长学唱的短活动，不是背景播放器。学会后关屏，用真人声音唱；睡前尽量只用纸书和人声。</p></details>
+          <details><summary>可以让祖辈使用吗？</summary><p>可以。这里的“家长”包括爸爸、妈妈、祖辈和其他熟悉的照护者。先让陪伴者读懂安全提示，之后放下设备，用孩子熟悉的称呼和语言陪玩。</p></details>
+          <details><summary>孩子哭闹时可以打开课程安抚吗？</summary><p>不建议把屏幕作为唯一安抚方式。先检查饥饿、疼痛、困倦、冷热和安全，抱住、回应或请另一位照护者帮忙。课程可以等孩子平静、愿意参与时再使用。</p></details>
+          <details><summary>配对码过期或电视连不上怎么办？</summary><p>确认设备与服务器在同一网络，电视使用局域网地址而不是 <code>localhost</code>。回到播放端重新申请配对码；后台设备页输入新码。配对码只有 10 分钟有效。</p></details>
+          <details><summary>我担心孩子的发育，应该多看课程吗？</summary><p>不应该用课程量替代评估。如果出现能力倒退，或你对听力、视力、语言、动作、交流等有持续担心，请及时咨询儿科或儿保医生，并带上具体观察记录。里程碑页面只是记录工具，不是诊断。</p></details>
+        </div>
+      </section>
+
+      <footer class="footer">
+        <p>免责声明：芽芽成长是亲子共学和家庭活动安排工具，不是医疗设备、治疗工具或发育诊断工具。里程碑用于日常观察和与专业人员沟通，不用于给孩子打分、排名或下诊断。发现能力倒退或持续担忧时，请及时咨询儿科或儿保医生。</p>
+        <p>素材许可：页面点缀图形来自项目内容包；Fluent Emoji 适用 MIT 许可。内置音频仅限家庭个人使用，不用于公开再分发。</p>
+      </footer>
+    </main>
+  </div>
+</div>
+
+<script type="application/json" id="sproutData">
+{"stages":[
+{"id":"s1","t":"感知世界","sub":"6～8个月，面对面慢慢玩","age":[6,8],"f":["熟悉面孔与温柔回应","你来我往的小声音","实体卡的慢慢陪看","短暂遮住与再出现","真人歌声与重复节奏","清醒俯卧与自主够取"],"screen":{"sessionMaxMin":3,"dailyMaxMin":10,"lessonsPerDay":2,"coView":"required","childScreen":"none"},"themes":[{"t":"黑白红的世界","w":3,"d":"用实体卡、熟悉的脸和地垫陪看陪玩。不快速闪卡，不考形状，不要求趴满一次计时。","l":[{"t":"黑白卡片追视","a":"parent","m":2,"o":"看看熟悉的脸","p":true,"s":"慢慢移，停下来。"},{"t":"看看脸，说说话","a":"parent","m":2,"o":"穿衣时应一声","p":true,"s":"你呀一声，我来应。"},{"t":"趴一趴，看一看","a":"parent","m":3,"o":"够够大玩具","p":true,"s":"清醒时，陪着趴。"}],"o":["拿一张实体卡缓慢移动，停下来观察宝宝。","回应宝宝的目光、笑容和声音，不强求模仿。","清醒时分次陪趴；未会移动时，每天累计至少30分钟。累了就停。"]},{"t":"你好，宝宝","w":3,"d":"用真实家人照片、真人五官和轻声儿歌认识熟悉的生活。按家中实际成员与称呼替换，不要求说词或稳定叫名反应。","l":[{"t":"爸爸妈妈和宝宝","a":"parent","m":2,"o":"家人来问好","p":true,"s":"看看家人，听听名字。"},{"t":"眼睛鼻子嘴巴","a":"parent","m":2,"o":"穿衣说说脸","p":true,"s":"看看脸，听听名字。"},{"t":"小星星","a":"parent","m":3,"o":"一闪一停","p":false,"s":"轻轻唱，停停听。"}],"o":["优先看真实照片或真人，只说熟悉家人的称呼。","换衣时先告知，指着自己的五官慢慢命名。","家长白天学唱，关屏后用人声唱一句、停一下。"]},{"t":"躲猫猫","w":3,"d":"先遮一点，再一起发现。用手遮家长的脸、半藏大玩具、看安全镜子。不会找、没有笑都不作为失败。","l":[{"t":"躲猫猫","a":"parent","m":2,"o":"从手后面问好","p":false,"s":"躲一下，再见面。"},{"t":"玩具藏起来","a":"parent","m":2,"o":"卡片露个角","p":true,"s":"露一点，一起找。"},{"t":"镜子里的宝宝","a":"parent","m":2,"o":"没有镜子也能笑","p":false,"s":"看看笑脸，来回应。"}],"o":["只遮家长自己的脸，宝宝口鼻始终露着。","从露出一部分的玩具开始，家长可以帮着揭开。","用防碎圆角婴儿镜共同看脸，不测试认出自己。"]},{"t":"动物的声音","w":4,"d":"用动物实体卡和家长的人声轮流聊、轮流唱。重复熟悉的短歌，并把无屏轻哼融入温柔的晚安流程。","l":[{"t":"小动物怎么叫","a":"parent","m":2,"o":"一个玩具聊一聊","p":true,"s":"学一声，等一等。"},{"t":"王老先生有块地","a":"parent","m":3,"o":"换一张，换一声","p":true,"s":"唱到谁，看看谁。"},{"t":"摇篮曲","a":"parent","m":3,"o":"晚安小仪式","p":false,"s":"轻轻唱，慢慢歇。"}],"o":["一次一张卡，轻声命名和学叫，停下来接宝宝的声音。","唱到哪只动物就举起哪张实体卡，不背景播放。","摇篮曲只在白天给家长学，睡前关屏轻哼。睡眠时仰卧放置在安全婴儿睡眠面。"]}],"rh":["起床：面对面问好，叫一次宝宝名字，等目光、声音或动作回应，不反复催。","换尿布或穿衣：先说要做什么，再轻柔操作。一次说一个五官，眼睛只指不碰。","喂养：说说眼前正在发生的事；宝宝闭唇、转头时尊重停下的信号。用餐不用屏。","清醒地板游戏：分次陪趴与自主够玩具；未会移动时俯卧每天累计至少30分钟，累了就休息。","短段陪看：选一张实体卡或真实照片，慢慢看、停一下；不快速闪卡，不考名字。","散步或窗边：顺着宝宝正在看的东西，轻声说一个名字。家长全程照看，不用手机吸引目光。","家人相处：接住一声咿呀，轻声模仿，再等一回合。按家中实际照护者和称呼来玩。","睡前：白天已熟悉的短歌由家长轻哼，按需要换尿布、穿睡衣、说晚安；睡前不用屏，不要求唱完才睡。"],"ms":[6]},
+{"id":"s2","t":"互动探索","sub":"9–11 月：在来回互动中发现因果","age":[9,11],"f":["在安全陪伴中发现放入、拿出和藏起再出现。","用拍手、挥手、声音和目光参与来回互动。","把还要、没有了和简单数量词放进进餐。","跟随宝宝的注意，在家中真实物品上扩展词语。","让宝宝在可预测的日常节奏里尝试和回应。"],"screen":{"sessionMaxMin":3,"dailyMaxMin":10,"lessonsPerDay":2,"coView":"required","childScreen":"none"},"themes":[{"t":"因果与藏找","w":3,"d":"用泡泡、盒子和杯子，把出现、消失、进去和出来变成真实游戏。","l":[{"t":"吹泡泡","a":"parent","m":2,"o":"泡泡看一看","p":false,"s":"看泡泡出现、飘走和消失，和宝宝来回回应。"},{"t":"放进去，拿出来","a":"parent","m":2,"o":"盒子进出游戏","p":false,"s":"用大块玩具体验进去、出来和再来一次。"},{"t":"杯子下面有什么","a":"parent","m":2,"o":"玩具藏一藏","p":true,"s":"看着玩具藏在一个杯子下，再从两个杯子里找一找。"}],"o":["用真实泡泡和大块玩具观察动作带来的变化。","用能罩住大玩具的套杯玩藏找，不移动杯子；大打印卡只供命名。","所有物品都由成人准备和看护。"]},{"t":"拍拍手挥挥手","w":3,"d":"在面对面游戏、问候和儿歌中练习模仿、手势和等待。","l":[{"t":"拍手和挥手","a":"parent","m":2,"o":"拍手挥手轮流玩","p":false,"s":"家长示范拍拍手、挥挥手，留出时间等宝宝回应。"},{"t":"如果感到幸福你就拍拍手","a":"parent","m":3,"o":"慢慢唱，轻轻动","p":false,"s":"家长学会慢速儿歌，关屏后抱着或面对面和宝宝做动作。"},{"t":"你好和拜拜","a":"parent","m":2,"o":"门口你好拜拜","p":false,"s":"把迎接和道别变成短短的家庭互动仪式。"}],"o":["先示范，再停下来等宝宝自然回应。","把你好、拜拜放进每天的迎送仪式。","先关屏玩动作，旋律仅给家长学唱；学会后关屏唱，随时结束。"]},{"t":"好吃的","w":3,"d":"在安全进餐中听见食物名称、还要、没有了和简单数字话。","l":[{"t":"认识水果","a":"parent","m":3,"o":"水果看一看","p":true,"s":"在真实吃饭时摸、闻、看和尝水果，慢慢说出名字。"},{"t":"还要和没有了","a":"parent","m":2,"o":"餐桌数字话","p":false,"s":"在进餐中听见还要、没有了和一块、两块。"},{"t":"吃饭啦","a":"parent","m":3,"o":"餐前二选一","p":true,"s":"命名碗、勺、杯和食物，让宝宝在安全进餐中参与选择。"}],"o":["以宝宝平时吃的食物为素材，不额外延长进餐。","只有同时可见才谈“两块”，餐盘真空了才说“没有了”。","尊重闭嘴、转头、推开等停止信号。"]},{"t":"家里的东西","w":3,"d":"跟随宝宝的目光，把家里的物品、晚安卡和歌声连到日常生活。","l":[{"t":"这是什么","a":"parent","m":2,"o":"家里找一找","p":true,"s":"跟着宝宝的目光和手势，给家里的东西说出名字。"},{"t":"晚安小书","a":"parent","m":2,"o":"白天读晚安卡书","p":true,"s":"白天把大卡片做成小书，关屏后一起指一指、说一说。"},{"t":"划船歌","a":"parent","m":3,"o":"腿上轻轻摇","p":false,"s":"家长学会轻柔的划船歌，抱稳宝宝或坐在身边小幅律动。"}],"o":["先跟随宝宝的注意，再给真实物品命名。","白天使用晚安卡书，睡前不打开屏幕。","抱唱或律动时托稳身体，动作小而慢。"]}],"rh":["起床和换尿布时叫宝宝名字，等宝宝看过来再继续。","自由游戏时把大块玩具放进盒子再拿出来，说“进去”“出来”。","吃饭时只谈眼前的一两块食物，说“还要吗”“没有了”，尊重闭嘴和转头。","家人进门、离开时用同样的“你好”“拜拜”，停下来等回应。","读纸卡或小书时跟随宝宝的目光，一页只说一个词。","家长学会后先关屏再给宝宝唱；安全抱稳或示范拍手，不一边双手抱持一边拍手。","每天安排地面自由活动和户外看一看，不把手机当作陪伴。"],"ms":[9]},
+{"id":"s3","t":"词语萌芽","sub":"在真实生活里听、看、指和说","age":[12,17],"f":["在共同注意中指认熟悉的动物、身体和物品。","把第一批词放进照护、游戏和出门常规。","用模仿、假装和儿向语言增加来回交流。","在生活中体验一个、很多和一、二。","用安全的动作、儿歌和户外观察连接语言与经验。"],"screen":{"sessionMaxMin":3,"dailyMaxMin":10,"lessonsPerDay":2,"coView":"required","childScreen":"none"},"themes":[{"t":"动物朋友","w":4,"d":"用动物卡和短故事听名称、叫声与轮流回应。","l":[{"t":"农场动物","a":"parent","m":2,"o":"动物叫声轮流说","p":true,"s":"看动物卡。听叫声，等回应。"},{"t":"哪个是小狗？","a":"parent","m":2,"o":"地上找小动物","p":true,"s":"两张卡找一找。听熟悉动物词。"},{"t":"小鸭子找妈妈","a":"parent","m":3,"o":"小鸭子找一找","p":true,"s":"动物卡讲短故事。等宝宝看和回应。"}],"o":["用大卡片或安全玩具指认动物。","模仿叫声后停下来等宝宝回应。","故事只做温和的假装游戏，不制造走失和害怕。"]},{"t":"我的身体","w":4,"d":"在照护和歌唱中认识身体部位，尊重宝宝的身体界限。","l":[{"t":"我的身体","a":"parent","m":2,"o":"穿衣时找身体","p":true,"s":"穿衣时慢慢说。找一找身体部位。"},{"t":"摸摸小鼻子","a":"parent","m":2,"o":"身体动作跟一跟","p":false,"s":"听身体词。坐着看、轻轻动都好。"},{"t":"头、肩膀、膝盖、脚","a":"parent","m":3,"o":"慢慢唱，轻轻碰","p":false,"s":"家长先学唱。关屏后一起轻轻动。"}],"o":["洗澡、穿衣时指一指、说一说。","家长先示范，宝宝可以只看或做一小部分。","用慢歌和轻动作，不拉扯、不强迫触摸。"]},{"t":"车车出发","w":4,"d":"在安全处观察车辆，用玩具体验下滑和快慢。","l":[{"t":"嘀嘀叭叭","a":"parent","m":2,"o":"安全地看车","p":true,"s":"安全处看车。听名字和轻轻嘀嘀。"},{"t":"小车滑下去","a":"parent","m":2,"o":"纸板小斜坡","p":false,"s":"低斜坡滑小车。看看这次怎样走。"},{"t":"汽车开呀开","a":"parent","m":3,"o":"唱歌推小车","p":false,"s":"家长先学唱。关屏后推真实玩具车。"}],"o":["远离道路、车轮和车门看真实车辆。","用低而稳的斜坡玩大号玩具车。","家长提前学唱，关屏后唱歌并推真实玩具车。"]},{"t":"一个和很多","w":4,"d":"用眼前的大物品说一个、很多和一、二。","l":[{"t":"一个和很多","a":"parent","m":2,"o":"一个还是很多","p":false,"s":"拿大积木看一看。听一个和很多。"},{"t":"一、二","a":"parent","m":2,"o":"找两只鞋","p":false,"s":"看看手和鞋。一起慢慢数一、二。"},{"t":"两只老虎","a":"parent","m":3,"o":"膝上慢唱","p":false,"s":"慢慢唱熟悉旋律。一起轻轻拍拍手。"}],"o":["只用足够大的安全物品，不用小颗食物测数。","点一个说一个，数完说总数。","儿歌用来共享节奏，不要求宝宝认数字。"]},{"t":"穿衣服","w":4,"d":"把衣物名称和出门、洗手等生活常规连起来。","l":[{"t":"我的衣服","a":"parent","m":2,"o":"衣服二选一","p":true,"s":"穿衣时说名字。邀请宝宝伸手、抬脚。"},{"t":"出门啦","a":"parent","m":2,"o":"门边流程卡","p":true,"s":"袜子、鞋子和帽子。慢慢准备出门。"},{"t":"洗手歌","a":"parent","m":3,"o":"水池边唱洗手歌","p":false,"s":"家长先学唱。关屏后一起洗小手。"}],"o":["穿衣时给宝宝看衣物，邀请伸手或抬脚。","用流程卡预告袜子、鞋子、帽子等步骤。","洗手歌只给家长学，水边全程看护。"]},{"t":"去户外","w":6,"d":"在安全散步和天气观察中听自然词、做慢动作。","l":[{"t":"外面有什么","a":"parent","m":2,"o":"散步看一看","p":true,"s":"安全处散步。跟着宝宝看自然。"},{"t":"下雨天","a":"parent","m":2,"o":"听雨，雨靴轻轻踩","p":false,"s":"安全处听雨。穿雨靴，慢慢动。"},{"t":"像小树一样","a":"parent","m":2,"o":"自然动作跟一跟","p":false,"s":"像小树，像小鸟。一起轻轻动一动。"}],"o":["跟随宝宝的目光命名树、花、鸟和云。","雨天先在室内听雨，不踩真实积水坑；可穿雨靴轻踩自家薄清水迹。","模仿小树、小鸟和小兔时不要求跳跃或站稳。"]}],"rh":["穿衣时拿起一件衣物，先让宝宝看，再说“上衣”“袜子”或“鞋子”。","洗澡和换衣时说一个身体部位，停下来等宝宝看、指或触摸。","吃饭时指着成人摆好的碗和勺说“一个”“两个”；按安全进食要求喂养，不拿食物做测验。","收玩具时说“一个放进去”，再说“这里有很多”，全程由成人管理小物件。","出门时用固定短句预告“先穿袜子，再穿鞋子”，顺序按家庭和天气调整。","窗边或散步时跟随宝宝的目光，说眼前的一种树、花、鸟、车或云。","成人提前学唱，关屏后在洗手和收拾时唱熟悉的小段；不为完成计时反复洗手。"],"ms":[12,15]},
+{"id":"s4","t":"语言爆发","sub":"听、指、说，在生活里慢慢长大","age":[18,23],"f":["用词语和短组合表达日常需要。","在实物旁听颜色、形状和大小。","点数一到三，听数完后的总数。","命名情绪，依靠成人的温和陪伴。","参与洗手、刷牙和洗澡常规。","用涂鸦、搭建和慢动作自主探索。"],"screen":{"sessionMaxMin":8,"dailyMaxMin":10,"lessonsPerDay":2,"childLessonsPerDay":1,"coView":"required","childScreen":"optional"},"themes":[{"t":"颜色","w":4,"d":"用衣物、颜色卡和涂鸦，听红黄蓝。","l":[{"t":"找颜色","a":"parent","m":2,"o":"袜子找同色朋友","p":true,"s":"找找红色，再收收袜子。"},{"t":"红色在哪里？","a":"child","m":4,"o":"红色在哪里","p":true,"s":"慢慢看，再去找真的红色。"},{"t":"涂鸦彩虹","a":"parent","m":2,"o":"一张自己的画","p":false,"s":"画自己的线，听颜色名字。"}],"o":["先在家里找一种颜色。","把同色袜子放在一起。","自由涂鸦，不要求认色或画彩虹。"]},{"t":"形状","w":4,"d":"找圆边、配形状，再搭一座低塔。","l":[{"t":"找圆形","a":"parent","m":2,"o":"圆形卡找朋友","p":true,"s":"看看圆边，再配配形状。"},{"t":"圆圆找朋友","a":"child","m":6,"o":"盘子的圆边","p":true,"s":"看看图里圆圆的朋友。"},{"t":"搭积木","a":"parent","m":2,"o":"两座低低的塔","p":false,"s":"一块放上去，倒了再试试。"}],"o":["用圆盘和形状卡看轮廓。","配形玩具先示范，不硬压。","地上搭低塔，倒了再试，不追求高度。"]},{"t":"数一数","w":4,"d":"数眼前一到三个物品，再说总数。","l":[{"t":"数到三","a":"child","m":5,"o":"三把勺子排排队","p":false,"s":"点一个，说一个，再说总数。"},{"t":"生活中数一数","a":"parent","m":2,"o":"鞋子排好再出门","p":false,"s":"数勺子、鞋子和眼前的台阶。"},{"t":"一二三，木头人","a":"parent","m":2,"o":"坐着拍手，停一停","p":false,"s":"一起走，数到三，停一下。"}],"o":["点一个说一个，数完说总数。","数勺子和鞋，不拿小颗食物练数。","停走游戏轻松玩，不淘汰、不屏息。"]},{"t":"我的心情","w":4,"d":"听心情名字，体验陪伴和求助。","l":[{"t":"开心和难过","a":"parent","m":2,"o":"镜子里的小表情","p":true,"s":"听听心情名字，大人陪着你。"},{"t":"小熊生气了","a":"child","m":6,"o":"陪小熊再搭一次","p":true,"s":"积木倒了，妈妈陪小熊再试。"},{"t":"情绪来了怎么办","a":"parent","m":3,"o":"平静时预演陪伴","p":false,"s":"先陪着，再一起想办法。"}],"o":["在平静时看情绪卡和练求助。","真实情绪来时放下设备，先保安全。","尊重抱抱和呼吸的意愿，成人持续陪伴。"]},{"t":"洗洗刷刷","w":4,"d":"宝宝参与照护，成人负责清洁和安全。","l":[{"t":"刷牙","a":"parent","m":3,"o":"刷牙前的两个选择","p":false,"s":"宝宝参与，大人帮忙刷干净。"},{"t":"洗澡玩水","a":"parent","m":3,"o":"洗澡时看看沉和浮","p":false,"s":"看看沉浮，洗洗小手小脚。"},{"t":"这样洗洗手","a":"child","m":5,"o":"关屏后一起洗手","p":false,"s":"唱唱洗手、刷牙和梳头。"}],"o":["成人每天帮刷两次，控制米粒牙膏量。","水边专一看护，始终手臂可及。","洗手涂皂搓至少20秒，再冲净擦干。","儿歌不是清洁计时，真实照护时关屏。"]},{"t":"大和小","w":6,"d":"比同类物品，套杯子，伸伸小手。","l":[{"t":"大象和小老鼠","a":"child","m":6,"o":"两只碗比一比","p":true,"s":"看看大小朋友，一起玩玩具。"},{"t":"套杯子","a":"parent","m":2,"o":"大小碗住一起","p":false,"s":"大杯小杯，放进拿出。"},{"t":"变大变小","a":"parent","m":2,"o":"坐着也能变大变小","p":false,"s":"蹲低、站高，轻轻伸伸手。"}],"o":["一次比较两个同类物品。","先套两个大杯，感兴趣再加第三个。","蹲低站高可换坐姿，不要求跳或踮脚。"]}],"rh":["起床穿衣时指一件单色衣物，说颜色和名称，再等宝宝看或指。","摆餐具时点数一到三把儿童勺，数完说总数；进餐时不用屏幕。","整理玩具时放一块大积木到上面，说高了，再邀请宝宝试一块。","散步时在安全处指圆钟或轮子图片，不直视太阳、不靠近行驶车辆。","收袜子或空碗时比两个同类物品，说同色、大一些、小一些。","情绪来时放下设备，先保护安全、回应需要，再命名并陪伴。","洗手和洗澡时说小手、小脚；水边专一看护，不读设备或看倒计时。","刷牙安排每天两次，睡前那次不开屏；白天可轻唱熟悉歌，再由成人帮刷。"],"ms":[18,24]},
+{"id":"s5","t":"小小思考者","sub":"一起分、数、找，再去生活里玩","age":[24,29],"f":["在帮助下按一个特点分类。","一起点数，数完说出总数。","慢慢看一到三个，不急着回答。","用短句说位置、动物和天气。","在陪伴中练习轮流和表达感受。","一起唱、动、读，再关屏去玩。"],"screen":{"sessionMaxMin":10,"dailyMaxMin":20,"lessonsPerDay":2,"coView":"required","childScreen":"default"},"themes":[{"t":"分一分","w":4,"d":"看看颜色和种类，把相似的放一起。","l":[{"t":"红的和蓝的","a":"child","m":5,"o":"红蓝收收乐","p":false,"s":"看看主色，把红的和蓝的分开。"},{"t":"动物和水果","a":"child","m":5,"o":"图卡分两家","p":false,"s":"这次不看颜色，只看是什么。"},{"t":"哪个不一样？","a":"child","m":5,"o":"找一个新朋友","p":false,"s":"先说一组是什么，再找不同类。"}],"o":["用主色清楚的大物品分红、蓝。","先示范一件，再等宝宝尝试。","说清这次按什么分，不求全对。"]},{"t":"数到五","w":4,"d":"点一个说一个，体验小数量的变化。","l":[{"t":"数到五","a":"child","m":5,"o":"给玩偶摆餐具","p":false,"s":"点一个，说一个，最后说总数。"},{"t":"一眼看出几个","a":"child","m":4,"o":"小数量慢慢看","p":false,"s":"慢慢看一到三个，还能再数数。"},{"t":"五只小鸭子","a":"child","m":6,"o":"小鸭慢慢回家","p":true,"s":"小鸭一只只回家，一起唱和数。"}],"o":["从一两个大物品开始点数。","数完再说总数，不考认数字。","儿歌里的倒数只作共同游戏。"]},{"t":"动物的家","w":4,"d":"看动物的特点，听熊猫吃、爬和睡。","l":[{"t":"谁住在哪里","a":"child","m":5,"o":"手势里的水和天","p":false,"s":"看看水里游和空中飞的动物。"},{"t":"动物园","a":"child","m":5,"o":"纸书里的动物朋友","p":false,"s":"看六种动物，听名字和特点。"},{"t":"熊猫的一天","a":"child","m":6,"o":"玩偶吃一口，歇一歇","p":false,"s":"吃竹子、爬树、休息，慢慢读。"}],"o":["说水里游、空中飞，不说鸟住在天上。","共读动物书，不靠近或喂野生动物。","熊猫会爬树，宝宝只在地面假装。"]},{"t":"轮流与分享","w":4,"d":"听见彼此的感受，练习短短的轮流。","l":[{"t":"轮流玩滑梯","a":"child","m":6,"o":"你滚一次，我滚一次","p":false,"s":"都想先玩，大人陪着轮流。"},{"t":"他觉得怎么样？","a":"child","m":6,"o":"玩偶有话说","p":false,"s":"先听角色说感受，再找表情。"},{"t":"请和谢谢","a":"child","m":5,"o":"请帮我递一本书","p":false,"s":"请求、感谢、修复，在生活里说。"}],"o":["成人先示范，不强迫交出心爱玩具。","问宝宝怎么想，不把感受分对错。","礼貌用语放在真实帮助和修复里。"]},{"t":"上下里外","w":4,"d":"跟着小猫找位置，用动作说上和下。","l":[{"t":"小猫在哪里？","a":"child","m":6,"o":"玩偶在哪里","p":false,"s":"跟小猫听里、上、下、后和外。"},{"t":"上和下","a":"child","m":4,"o":"小手上，小手下","p":false,"s":"举手、放下，在地面慢慢动。"},{"t":"小蜘蛛","a":"child","m":5,"o":"手指小蜘蛛","p":false,"s":"手指慢慢向上，再慢慢向下。"}],"o":["用玩偶和开口纸盒说里、外、上、下。","先做一步，再邀请宝宝给大人指令。","不上家具，不钻封闭箱，不模仿攀高。"]},{"t":"天气","w":6,"d":"看看窗外的天气，商量出门带什么。","l":[{"t":"晴天雨天","a":"child","m":5,"o":"窗边的天气话","p":false,"s":"看天气图，再看看今天的窗外。"},{"t":"下雨带什么？","a":"child","m":5,"o":"一起准备出门篮","p":false,"s":"想想遮雨、保暖和遮阳。"},{"t":"小雨快走开","a":"child","m":4,"o":"手指小雨，屋里唱","p":false,"s":"唱唱想出门的愿望，雨天也能玩。"}],"o":["观察本地天气，没有雪也能看书。","衣物按实际冷热选，不只看天气图标。","下雨唱歌是愿望，不会把雨唱停。"]}],"rh":["起床后从关好的窗边看天气。说一句“今天有云”。等宝宝指、看或说，不直视太阳。","穿衣时给两个合适的选择。宝宝挑一件，大人按实际冷热帮助调整。","收衣物时选红、蓝两种。先按颜色分，另一次再按种类分，不同时加两条规则。","准备餐具时一起点数一到三把勺子。点一个说一个，数完说“一共三把”。进餐时不用屏。","地板游戏时把玩偶放在盒子里或旁边。说出位置，再邀请宝宝摆给你看。","户外玩耍时由成人看护。轮流滚球或玩适龄滑梯，等待时可以先玩别的。","白天共读几页书。宝宝说“熊猫吃”，你接“熊猫吃竹子”，停下来等下一次回应。","睡前关好设备。用纸书和真人哼唱收尾，睡前一小时不看屏，也不背景播放。"],"ms":[24,30]},
+{"id":"s6","t":"准备入园","sub":"有人陪着，慢慢试，安心长大","age":[30,36],"f":["在物品和动作中发现重复。","成人带着点数，数完说总数。","参与生活小步骤，遇到困难能求助。","用具体约定准备道别，允许想家。","在生活情境中练习来回对话。","观察植物、昼夜和家乡的变化。"],"screen":{"sessionMaxMin":15,"dailyMaxMin":30,"lessonsPerDay":2,"coView":"required","childScreen":"default"},"themes":[{"t":"找规律","w":4,"d":"先玩两样交替，再共同看看三张一组。","l":[{"t":"水果排排队","a":"child","m":5,"o":"袜子和毛巾排队","p":false,"s":"找找两样东西怎样轮流来。"},{"t":"拍手跺脚","a":"child","m":4,"o":"你来带动作","p":false,"s":"轻轻拍手，轻轻跺脚，轮流来。"},{"t":"动物排队","a":"child","m":5,"o":"布品小队伍","p":false,"s":"和家长找找三张一组的重复。"}],"o":["用袜子、毛巾摆两组完整重复。","拍手、跺脚轻轻轮流来，可坐姿替代。","三张一组只作可选挑战，困惑就回到两样交替。"]},{"t":"数到十","w":4,"d":"成人带数较大集合，孩子从小数量动手。","l":[{"t":"数到十","a":"child","m":8,"o":"小毛巾一条条","p":false,"s":"点一个，数一个，听听一共有几个。"},{"t":"一眼看出 1-5","a":"child","m":5,"o":"一眼看看小袜子","p":false,"s":"先看看，再一起慢慢数。"},{"t":"多一些还是少一些","a":"child","m":6,"o":"两排袜子比一比","p":false,"s":"把一样大的东西排好，再比一比。"}],"o":["点一个数一个，数完说总数，不考数字认读。","先用一至三个大物品，四五个由成人支持。","同样大小的物品一对一摆齐，再说多和少。"]},{"t":"我会自己做","w":4,"d":"把熟悉流程拆成小步，尝试和求助都可以。","l":[{"t":"穿衣服的顺序","a":"child","m":5,"o":"穿衣小计划","p":false,"s":"先穿好衣服，再穿袜子和鞋。"},{"t":"早上的事情","a":"child","m":6,"o":"明早的两步计划","p":false,"s":"说说早上先做什么、再做什么。"},{"t":"我自己穿鞋","a":"child","m":7,"o":"坐稳试穿鞋","p":false,"s":"可以再试，也可以请人帮忙。"}],"o":["坐稳试穿一件衣物，成人检查舒适与安全。","用先、再说两步计划，按家庭需要调整。","如厕不催促，上厕所或尿布照护后做好清洁。","夸具体尝试，需要帮助时及时支持。"]},{"t":"上幼儿园","w":4,"d":"认识生活环节，练习道别、求助和温柔的话。","l":[{"t":"第一天上幼儿园","a":"child","m":8,"o":"玩具的幼儿园一天","p":false,"s":"说好再见，也说好什么时候来接。"},{"t":"幼儿园里有什么","a":"child","m":5,"o":"看看我的小书包","p":false,"s":"看熟悉的物品，说说怎样一起玩。"},{"t":"你好、谢谢、再见","a":"child","m":7,"o":"玩偶来做客","p":false,"s":"在真实情境里，听听温柔的话。"}],"o":["用玩偶演道别和按约定来接，不制造真实分离。","让孩子说担心什么，想家时可以找老师。","用真实物品命名，接送与携带规定以园所为准。","礼貌用语由成人示范，不强迫拥抱或当众说英语。"]},{"t":"健康的我","w":4,"d":"认识多样饮食、安全活动和无屏晚安流程。","l":[{"t":"每天吃什么","a":"child","m":6,"o":"纸上配一餐","p":false,"s":"日常食物多样，甜点偶尔少量。"},{"t":"身体动起来","a":"child","m":5,"o":"选两个动作去玩","p":false,"s":"舒服地动一动，再坐下歇一歇。"},{"t":"好好睡觉","a":"child","m":8,"o":"无屏晚安小仪式","p":false,"s":"白天听故事，晚上关屏说晚安。"}],"o":["日常食物轮换，甜点偶尔少量，不强迫清盘。","动作可降阶，扶稳抬脚，不把平衡当考核。","晚安课与摇篮曲只在白天学，睡前关屏。","进餐不开屏，水边、刷牙与灯具操作有成人照看。"]},{"t":"大自然的变化","w":6,"d":"观察具体植物和当地天气，不用图例替代真实自然。","l":[{"t":"种子长大了","a":"child","m":7,"o":"看一盆真实的小苗","p":false,"s":"从种子到花，慢慢看变化。"},{"t":"白天和黑夜","a":"child","m":6,"o":"窗边看两次","p":false,"s":"看生活的时段，也看看天空。"},{"t":"四季","a":"child","m":7,"o":"同一棵树，慢慢看","p":false,"s":"听一处地方的四季，看看自己的家乡。"}],"o":["成人管理种子和盆土，孩子观察真实幼苗。","昼夜按明确时段聊生活，月亮白天也可能看见。","重复看同一棵树，允许家乡和故事不一样。","不直视太阳，不攀窗台，恶劣天气改室内观察。"]}],"rh":["起床后预告两件事，先清洁，再穿衣。成人及时帮助，不催如厕成功。","穿衣时坐稳，邀请孩子做一小步。试过和求助都得到回应。","饭前聊聊今天的食物种类。用餐关屏，回应饥饱，不用甜点交换清盘。","收拾时点两三件大物品，数完说总数。也可一对一摆齐，看看多和少。","白天空地玩两个安全动作的重复。舒服就做，累了就停，不盯着屏幕跑跳。","出门或接送前明确说再见和来接环节。真实交接遵守园所安排，照护者守约。","散步时看同一棵树或安全处的天空。记录真实变化，不把季节图当标准答案。","睡前一小时不用屏。按家庭需要清洁、刷牙、读纸质书，再用真人轻唱说晚安。"],"ms":[30,36]}],
+"milestones":[{"a":6,"d":"social-emotional","t":"认识熟悉的人"},{"a":6,"d":"social-emotional","t":"喜欢照镜子看自己"},{"a":6,"d":"social-emotional","t":"会笑出声"},{"a":6,"d":"language","t":"会和你轮流发出声音"},{"a":6,"d":"language","t":"会“吹噗噗”（伸出舌头吹气发出噗噗声）"},{"a":6,"d":"language","t":"会发出尖声的叫声"},{"a":6,"d":"cognitive","t":"把东西放进嘴里来探索"},{"a":6,"d":"cognitive","t":"伸手去抓自己想要的玩具"},{"a":6,"d":"cognitive","t":"闭上嘴唇表示不想再吃了"},{"a":6,"d":"motor","t":"能从趴着翻身成仰躺"},{"a":6,"d":"motor","t":"趴着时能用伸直的手臂把上身撑起来"},{"a":6,"d":"motor","t":"坐着时会用手撑着支撑自己"},{"a":9,"d":"social-emotional","t":"在陌生人面前会害羞、黏人或害怕"},{"a":9,"d":"social-emotional","t":"会做出多种面部表情，比如高兴、难过、生气和惊讶"},{"a":9,"d":"social-emotional","t":"你叫名字时会看过来"},{"a":9,"d":"social-emotional","t":"你离开时会有反应（看着你、向你伸手或哭）"},{"a":9,"d":"social-emotional","t":"和你玩躲猫猫时会微笑或大笑"},{"a":9,"d":"language","t":"会发出很多不同的声音，比如“mamamama”和“bababababa”"},{"a":9,"d":"language","t":"举起双臂要人抱"},{"a":9,"d":"cognitive","t":"东西掉到看不见的地方时会去找（比如自己的勺子或玩具）"},{"a":9,"d":"cognitive","t":"会把两样东西互相敲打"},{"a":9,"d":"motor","t":"能自己坐起来"},{"a":9,"d":"motor","t":"能把东西从一只手换到另一只手"},{"a":9,"d":"motor","t":"会用手指把食物“耙”到自己面前"},{"a":9,"d":"motor","t":"不用支撑能独坐"},{"a":12,"d":"social-emotional","t":"会和你玩游戏，比如拍手游戏（pat-a-cake）"},{"a":12,"d":"language","t":"会挥手“拜拜”"},{"a":12,"d":"language","t":"会用“mama”“dada”或其他专门的称呼叫爸爸妈妈"},{"a":12,"d":"language","t":"听得懂“不”（你说“不”时会短暂停顿或停下来）"},{"a":12,"d":"cognitive","t":"会把东西放进容器里，比如把积木放进杯子"},{"a":12,"d":"cognitive","t":"会去找看到你藏起来的东西，比如藏在毯子下的玩具"},{"a":12,"d":"motor","t":"能扶着东西拉起身站起来"},{"a":12,"d":"motor","t":"能扶着家具走"},{"a":12,"d":"motor","t":"在你扶着杯子时，能用无盖杯喝水"},{"a":12,"d":"motor","t":"能用拇指和食指捏起东西，比如小块食物"},{"a":15,"d":"social-emotional","t":"玩耍时会模仿其他孩子，比如别的孩子从容器里往外拿玩具时也跟着拿"},{"a":15,"d":"social-emotional","t":"会把自己喜欢的东西拿给你看"},{"a":15,"d":"social-emotional","t":"兴奋时会拍手"},{"a":15,"d":"social-emotional","t":"会抱毛绒娃娃或其他玩具"},{"a":15,"d":"social-emotional","t":"会向你表达亲昵（抱你、依偎你或亲你）"},{"a":15,"d":"language","t":"除了“mama”“dada”之外，会尝试说一两个词，比如用“ba”表示球（ball）、用“da”表示狗（dog）"},{"a":15,"d":"language","t":"你说出熟悉物品的名称时，会看向那个物品"},{"a":15,"d":"language","t":"能听从同时带手势和话语的指令。例如，你伸出手说“把玩具给我”时，会把玩具递给你"},{"a":15,"d":"language","t":"会用手指着来要东西或求助"},{"a":15,"d":"cognitive","t":"会尝试以正确的方式使用物品，比如电话、杯子或书"},{"a":15,"d":"cognitive","t":"能把至少两个小物件叠起来，比如积木"},{"a":15,"d":"motor","t":"能自己走几步"},{"a":15,"d":"motor","t":"能用手指自己吃一些食物"},{"a":18,"d":"social-emotional","t":"会离开你走开，但会回头看，确认你就在附近"},{"a":18,"d":"social-emotional","t":"会用手指着给你看有趣的东西"},{"a":18,"d":"social-emotional","t":"会伸出手让你给他/她洗手"},{"a":18,"d":"social-emotional","t":"会和你一起看几页书"},{"a":18,"d":"social-emotional","t":"你给他/她穿衣时会配合，比如把胳膊伸进袖子或抬起脚"},{"a":18,"d":"language","t":"除了“mama”“dada”之外，会尝试说三个或更多的词"},{"a":18,"d":"language","t":"能听从不带任何手势的一步指令，比如你说“给我”时会把玩具递给你"},{"a":18,"d":"cognitive","t":"会模仿你做家务，比如用扫帚扫地"},{"a":18,"d":"cognitive","t":"会用简单的方式玩玩具，比如推玩具车"},{"a":18,"d":"motor","t":"不扶任何人或东西能独立行走"},{"a":18,"d":"motor","t":"会涂鸦"},{"a":18,"d":"motor","t":"能用无盖杯喝水，有时可能会洒出来"},{"a":18,"d":"motor","t":"能用手指自己吃东西"},{"a":18,"d":"motor","t":"会尝试使用勺子"},{"a":18,"d":"motor","t":"不需要帮助就能爬上、爬下沙发或椅子"},{"a":24,"d":"social-emotional","t":"能注意到别人受伤或难过，比如有人哭时会停下来或露出难过的样子"},{"a":24,"d":"social-emotional","t":"在新情境中会看你的表情来决定怎么反应"},{"a":24,"d":"language","t":"你问的时候能指出书里的东西，比如“小熊在哪里？”"},{"a":24,"d":"language","t":"能把至少两个词连在一起说，比如“还要奶”（More milk.）"},{"a":24,"d":"language","t":"你让他/她指给你看时，能指出至少两个身体部位"},{"a":24,"d":"language","t":"除了挥手和用手指，还会用更多手势，比如飞吻或点头表示“是”"},{"a":24,"d":"cognitive","t":"能一只手拿着东西、同时用另一只手操作；例如一手拿着容器、另一手把盖子拿掉"},{"a":24,"d":"cognitive","t":"会尝试使用玩具上的开关、旋钮或按钮"},{"a":24,"d":"cognitive","t":"能同时玩不止一个玩具，比如把玩具食物放到玩具盘子上"},{"a":24,"d":"motor","t":"会踢球"},{"a":24,"d":"motor","t":"会跑"},{"a":24,"d":"motor","t":"在有或没有帮助的情况下，能走（不是爬）上几级台阶"},{"a":24,"d":"motor","t":"能用勺子吃饭"},{"a":30,"d":"social-emotional","t":"会在其他孩子旁边玩，有时会和他们一起玩"},{"a":30,"d":"social-emotional","t":"会说“看我！”来向你展示自己会做的事"},{"a":30,"d":"social-emotional","t":"被提醒时能遵循简单的日常程序，比如你说“该收拾啦”时会帮忙捡玩具"},{"a":30,"d":"language","t":"大约会说50个词"},{"a":30,"d":"language","t":"能把两个或更多的词连在一起说，其中包含一个动作词，比如“狗狗跑”（Doggie run）"},{"a":30,"d":"language","t":"你指着书问“这是什么？”时，能说出书中东西的名称"},{"a":30,"d":"language","t":"会说“我”“我们”这类词（原文为 \"I\"、\"me\"、\"we\"）"},{"a":30,"d":"cognitive","t":"会用物品做假装游戏，比如把积木当作食物喂给娃娃"},{"a":30,"d":"cognitive","t":"表现出简单的解决问题能力，比如站到小凳子上去够东西"},{"a":30,"d":"cognitive","t":"能听从两步指令，比如“把玩具放下，然后把门关上。”"},{"a":30,"d":"cognitive","t":"表现出至少认识一种颜色，比如你问“哪个是红色的？”时能指出红色蜡笔"},{"a":30,"d":"motor","t":"会用手拧东西，比如转动门把手或拧开盖子"},{"a":30,"d":"motor","t":"能自己脱下一些衣服，比如宽松的裤子或敞开的外套"},{"a":30,"d":"motor","t":"能双脚同时离地跳起"},{"a":30,"d":"motor","t":"你给他/她读书时，能一次翻一页"},{"a":36,"d":"social-emotional","t":"你离开后能在10分钟内平静下来，比如送去托育机构时"},{"a":36,"d":"social-emotional","t":"会注意到其他孩子，并加入他们一起玩"},{"a":36,"d":"language","t":"能和你对话，至少有两轮来回交流"},{"a":36,"d":"language","t":"会问“谁”“什么”“哪里”或“为什么”的问题，比如“妈妈/爸爸在哪里？”"},{"a":36,"d":"language","t":"被问到时，能说出图片或书里正在发生的动作，比如“跑”“吃”或“玩”"},{"a":36,"d":"language","t":"被问到时能说出自己的名字（first name）"},{"a":36,"d":"language","t":"大多数时候说话清楚到别人能听懂"},{"a":36,"d":"cognitive","t":"你示范之后，能画一个圆"},{"a":36,"d":"cognitive","t":"你提醒之后，会避免碰触烫的东西，比如炉子"},{"a":36,"d":"motor","t":"能把东西串起来，比如大珠子或通心粉"},{"a":36,"d":"motor","t":"能自己穿上一些衣服，比如宽松的裤子或外套"},{"a":36,"d":"motor","t":"会用叉子"}],
+"disclaimer":"里程碑用于日常观察与亲子互动参考，不是诊断工具；如有担心请咨询儿科/儿保医生。"
+}
+</script>
+
+<script>
+(() => {
+  "use strict";
+  const data = JSON.parse(document.getElementById("sproutData").textContent);
+  const stageColors = ["var(--stage-1)", "var(--stage-2)", "var(--stage-3)", "var(--stage-4)", "var(--stage-5)", "var(--stage-6)"];
+  const domainNames = {
+    "social-emotional": "社会情绪",
+    language: "语言",
+    cognitive: "认知",
+    motor: "动作"
+  };
+  const stagePanel = document.getElementById("stagePanel");
+  const ageRuler = document.getElementById("ageRuler");
+  const birthday = document.getElementById("birthday");
+  let selected = 0;
+
+  function escapeHtml(value) {
+    return String(value).replace(/[&<>"']/g, (char) => ({
+      "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;"
+    }[char]));
+  }
+  function stageLabel(stage) {
+    return `${stage.age[0]}–${stage.age[1]} 月`;
+  }
+  function stageIllustration(index) {
+    const colors = ["var(--stage-1)", "var(--stage-2)", "var(--stage-3)", "var(--stage-4)", "var(--stage-5)", "var(--stage-6)"];
+    const flower = index > 2;
+    const bloom = flower
+      ? `<circle cx="68" cy="34" r="7" fill="${index > 4 ? "var(--flower-yellow)" : "var(--flower-pink)"}"/><path d="M68 26v-8M60 31l-6-5M76 31l6-5" stroke="${colors[index]}" stroke-width="3" stroke-linecap="round"/>`
+      : "";
+    return `<svg viewBox="0 0 120 120" role="img" aria-label="成长阶段的嫩芽">
+      <path d="M60 104C58 82 61 67 68 51" fill="none" stroke="${colors[index]}" stroke-width="7" stroke-linecap="round"/>
+      <path d="M61 72C39 75 23 55 24 36c20-4 40 14 37 36Z" fill="${colors[index]}" opacity=".55" stroke="${colors[index]}" stroke-width="3"/>
+      <path d="M66 65C64 40 81 22 103 24c3 22-14 42-37 41Z" fill="${colors[index]}" opacity=".85" stroke="${colors[index]}" stroke-width="3"/>
+      ${bloom}
+    </svg>`;
+  }
+  function renderRuler() {
+    ageRuler.innerHTML = data.stages.map((stage, index) => `
+      <button class="age-button" type="button" role="tab" aria-selected="${index === selected}" aria-controls="stagePanel" data-stage="${index}" style="--stage-color:${stageColors[index]}">
+        <span>${stageLabel(stage)}</span><small>${escapeHtml(stage.t)}</small>
+      </button>`).join("");
+    ageRuler.querySelectorAll("[data-stage]").forEach((button) => {
+      button.addEventListener("click", () => {
+        selected = Number(button.dataset.stage);
+        renderRuler();
+        renderStage();
+        try { history.replaceState(null, "", `#${data.stages[selected].id}`); } catch (_) {}
+      });
+    });
+  }
+  function renderLessons(theme) {
+    return theme.l.map((lesson) => `
+      <article class="lesson">
+        <h4>${escapeHtml(lesson.t)}</h4>
+        <p class="lesson-summary">${escapeHtml(lesson.s)}</p>
+        <div class="lesson-meta">
+          <span class="badge ${lesson.a === "child" ? "child" : "parent"}">${lesson.a === "child" ? "亲子共看" : "家长指引"}</span>
+          <span>${lesson.m} 分钟</span>
+          ${lesson.p ? "<span>可打印</span>" : ""}
+        </div>
+        <p class="offline">${escapeHtml(lesson.o)}</p>
+      </article>`).join("");
+  }
+  function renderMilestones(stage) {
+    const items = data.milestones.filter((item) => stage.ms.includes(item.a));
+    const groups = ["social-emotional", "language", "cognitive", "motor"];
+    return groups.map((domain) => {
+      const entries = items.filter((item) => item.d === domain);
+      if (!entries.length) return "";
+      return `<section class="milestone-group"><h4>${domainNames[domain]}</h4><ul>${entries.map((item) => `<li>${escapeHtml(item.t)}</li>`).join("")}</ul></section>`;
+    }).join("");
+  }
+  const doctorText = {
+    s1: "发现宝宝失去已经掌握的能力，或日常多次观察仍对声音缺少反应，及时与儿科或儿保医生沟通。对交流、动作、视听反应有持续担忧时，带着“什么时候、什么情境、看到什么”的记录去咨询，不用课程完成率替代发育评估。",
+    s2: "如果宝宝失去已经掌握的能力，或家长持续担心听力、视力、动作、进食或交流，请联系儿科或儿保医生。经常对声音或叫名没有反应、很少与人互动、动作明显退步，或你觉得“哪里不对劲”时，记录时间、情境和具体表现带给医生。",
+    s3: "如果宝宝失去已掌握的能力、对声音缺少反应，或家长担心听力、语言、动作、社交及整体发育，应主动联系儿科或儿保医生，带上日常记录。不需要先完成全部课程，筛查、评估和诊断应由专业人员进行。",
+    s4: "失去已经掌握的语言、互动或动作能力，应及时联系儿科或儿保医生。对声音持续没有反应，或对听力、日常理解和交流有担心时，请向医生说明。到对应月龄仍未观察到某些清单项目，或者你有其他担心，可以现在就咨询，不靠增加屏幕或反复训练替代评估。",
+    s5: "如果未达到一个或多个对应月龄里程碑、失去曾经掌握的能力，或家长有其他担心，就向医生说明并询问发育筛查。清醒、安静且熟悉的情境里经常对声音没有反应，或你担心听力、视力、交流或动作时，记录几个真实例子带给医生。",
+    s6: "孩子未达到一个或多个相应月龄里程碑、失去已经掌握的能力，或照护者有其他担心，就及时与儿科或儿保医生沟通，并询问发育筛查和后续评估。把具体情境、持续时间和观察记录带给医生，不要用本课程确诊，也不要通过延长屏幕或增加训练来“补进度”。"
+  };
+  function renderStage() {
+    const stage = data.stages[selected];
+    const screenText = stage.screen.childScreen === "none"
+      ? "本阶段屏幕只给家长看。家长读提示、准备材料，然后放下屏幕；宝宝使用实体卡、纸书、真实物品和真人互动。"
+      : stage.id === "s4"
+        ? "亲子共看默认关闭。家长可主动开启短共看，也可以一直使用家长指引和线下活动。"
+        : "亲子共看需要家长全程在场。屏幕结束后马上回到线下活动，阶段上限是产品护栏，不是必须用满的时间。";
+    const factTwo = stage.id === "s4" ? "默认关闭" : stage.screen.childScreen === "none" ? "不给宝宝看" : "必须共看";
+    stagePanel.innerHTML = `
+      <article class="stage-panel" style="--stage-color:${stageColors[selected]}" id="${stage.id}">
+        <header class="stage-header">
+          <div><p class="stage-age">${stageLabel(stage)}</p><h3>${escapeHtml(stage.t)}</h3><p class="stage-subtitle">${escapeHtml(stage.sub)}</p></div>
+          <div class="stage-illustration">${stageIllustration(selected)}</div>
+        </header>
+        <div class="stage-body">
+          <div class="stage-grid">
+            <section><div class="subhead"><h3>发展重点</h3><span>这段时间可以留意</span></div><ul class="focus-list">${stage.f.map((item) => `<li>${escapeHtml(item)}</li>`).join("")}</ul></section>
+            <section><div class="subhead"><h3>屏幕怎么用</h3><span>先看边界</span></div><div class="screen-box"><p>${screenText}</p><div class="screen-facts"><div class="fact"><b>${stage.screen.sessionMaxMin}′</b><span>阶段单次提示</span></div><div class="fact"><b>${stage.screen.dailyMaxMin}′</b><span>阶段每日提示</span></div><div class="fact"><b>${factTwo}</b><span>孩子侧屏幕</span></div></div></div></section>
+          </div>
+          <section class="theme-list"><div class="subhead"><h3>本阶段主题与课程</h3><span>${stage.themes.length} 个主题 · 展开查看</span></div>${stage.themes.map((theme) => `<details><summary><span class="theme-title"><strong>${escapeHtml(theme.t)}</strong><span>${theme.w} 周</span></span></summary><p class="theme-description">${escapeHtml(theme.d)}</p><div class="lesson-list">${renderLessons(theme)}</div><ul class="rhythm-list">${theme.o.map((item) => `<li>${escapeHtml(item)}</li>`).join("")}</ul></details>`).join("")}</section>
+          <div class="stage-grid">
+            <section><div class="subhead"><h3>生活中的学习</h3><span>daily rhythm</span></div><ul class="rhythm-list">${stage.rh.map((item) => `<li>${escapeHtml(item)}</li>`).join("")}</ul></section>
+            <section class="milestone-wrap"><div class="subhead"><h3>里程碑观察</h3><span>${stage.ms.join("、")} 月龄 CDC 条目</span></div><p class="milestone-intro">在熟悉、舒服的日常里观察即可。一次没有表现出来，不代表孩子不会，也不需要为了“测出来”增加课程。</p><div class="milestone-groups">${renderMilestones(stage)}</div><p class="milestone-intro" style="margin-top:12px">${data.disclaimer}</p></section>
+          </div>
+          <aside class="doctor"><h3>什么时候咨询医生</h3><p>${doctorText[stage.id]}</p></aside>
+        </div>
+      </article>`;
+    }
+  function ageInMonths(date) {
+    const now = new Date();
+    let months = (now.getFullYear() - date.getFullYear()) * 12 + (now.getMonth() - date.getMonth());
+    if (now.getDate() < date.getDate()) months -= 1;
+    return months;
+  }
+  function selectForBirthday(value) {
+    if (!value) return;
+    const match = /^(\d{4})-(\d{2})(?:-\d{2})?$/.exec(value);
+    if (!match) return;
+    const date = new Date(Number(match[1]), Number(match[2]) - 1, 1);
+    if (Number.isNaN(date.getTime())) return;
+    const months = ageInMonths(date);
+    const index = data.stages.findIndex((stage) => months >= stage.age[0] && months <= stage.age[1]);
+    if (index >= 0) {
+      selected = index;
+      renderRuler();
+      renderStage();
+      document.getElementById("birthdayHint").textContent = `现在约 ${months} 月龄，已选中 ${stageLabel(data.stages[index])}。`;
+    } else {
+      document.getElementById("birthdayHint").textContent = months < 6 ? "当前月龄还没到 6 月，本手册从 6 月开始。" : "当前月龄超过 36 月，本手册先显示最后一个阶段。";
+      if (months > 36) {
+        selected = 5;
+        renderRuler();
+        renderStage();
+      }
+    }
+    try { localStorage.setItem("sprout-handbook-birthday", `${match[1]}-${match[2]}`); } catch (_) {}
+  }
+  function initBirthday() {
+    try {
+      const saved = localStorage.getItem("sprout-handbook-birthday");
+      if (saved) {
+        const monthValue = saved.slice(0, 7);
+        birthday.value = monthValue;
+        selectForBirthday(monthValue);
+      }
+    } catch (_) {}
+    birthday.addEventListener("change", () => selectForBirthday(birthday.value));
+  }
+  function initTheme() {
+    const button = document.getElementById("themeToggle");
+    let saved = null;
+    try { saved = localStorage.getItem("sprout-handbook-theme"); } catch (_) {}
+    if (saved === "dark" || saved === "light") document.documentElement.dataset.theme = saved;
+    const isDark = () => document.documentElement.dataset.theme === "dark"
+      || (!document.documentElement.dataset.theme && window.matchMedia("(prefers-color-scheme: dark)").matches);
+    const update = () => {
+      const dark = isDark();
+      button.textContent = dark ? "浅色" : "深色";
+      button.setAttribute("aria-pressed", String(dark));
+    };
+    button.addEventListener("click", () => {
+      const dark = isDark();
+      document.documentElement.dataset.theme = dark ? "light" : "dark";
+      try { localStorage.setItem("sprout-handbook-theme", dark ? "light" : "dark"); } catch (_) {}
+      update();
+    });
+    update();
+  }
+  function initCopy() {
+    document.querySelectorAll("[data-copy]").forEach((button) => {
+      button.addEventListener("click", async () => {
+        const code = button.parentElement.querySelector("code");
+        const text = code.textContent;
+        try {
+          await navigator.clipboard.writeText(text);
+          button.textContent = "已复制";
+          setTimeout(() => { button.textContent = "复制"; }, 1200);
+        } catch (_) {
+          const range = document.createRange();
+          range.selectNodeContents(code);
+          const selection = window.getSelection();
+          selection.removeAllRanges();
+          selection.addRange(range);
+          button.textContent = "已选中";
+          setTimeout(() => { button.textContent = "复制"; }, 1200);
+        }
+      });
+    });
+  }
+  const hash = location.hash.slice(1);
+  const hashIndex = data.stages.findIndex((stage) => stage.id === hash);
+  if (hashIndex >= 0) selected = hashIndex;
+  renderRuler();
+  renderStage();
+  if (hashIndex >= 0) {
+    requestAnimationFrame(() => document.getElementById(hash)?.scrollIntoView({ block: "start" }));
+  }
+  initBirthday();
+  initTheme();
+  initCopy();
+})();
+</script>
