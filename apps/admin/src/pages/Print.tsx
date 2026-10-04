@@ -3,13 +3,12 @@ import { Alert, Button, Empty, Spin } from 'antd';
 import { ArrowLeftOutlined, PrinterOutlined } from '@ant-design/icons';
 import { Link, Route, Routes, useNavigate, useParams, useSearchParams } from 'react-router';
 import { contrastSvg } from '@sprout/activities/contrast-svg';
-import type { Lesson, Printable, ResolvedConcept, Route as GrowthRoute } from '@sprout/schema';
+import type { Printable, ResolvedConcept, Route as GrowthRoute } from '@sprout/schema';
 import { api } from '../lib/api';
 import { useResource } from '../lib/hooks';
 import { buildPrintPages, resolvePrintConcept, type PrintBlock } from '../features/print/model';
+import { useLessonDocuments } from '../features/print/useLessonDocuments';
 import '../features/print/print.css';
-
-interface LessonDocument { lesson: Lesson; packId: string; baseUrl: string; issues: { path: string; message: string; level: 'error' | 'warning' }[] }
 
 function titleFor(printable: Printable) {
   return printable.title || (printable.kind === 'cards' ? '可打印词卡' : '高对比卡片');
@@ -31,7 +30,7 @@ function PrintHeader({ title, subtitle, ready }: { title: string; subtitle?: str
 
 function PrintHelp() {
   return <Alert className="print-help" type="info" showIcon title="使用实体卡片"
-    description="建议使用硬卡纸或过塑，裁剪后把边角剪圆；宝宝啃咬或玩耍时请始终由成人看护。卡片用于屏幕外的亲子互动，不需要播放背景声音。" />;
+    description="选择 A4 纵向、实际大小打印，建议使用厚纸或过塑，裁剪后剪圆角，卡片由成人拿取。6 个月宝宝看卡距离 20–30 厘米，慢慢移动，每次几分钟，跟随宝宝的反应随时停下。宝宝啃咬或玩耍时须成人全程看护；卡片用于屏幕外的亲子互动，不需要播放背景声音。" />;
 }
 
 function PrintableCards({ block, concepts }: { block: PrintBlock; concepts: ResolvedConcept[] }) {
@@ -117,31 +116,22 @@ function ErrorView({ error }: { error: Error }) {
   return <main className="print-page"><div className="print-error"><Alert type="error" showIcon title="打印材料暂时无法打开" description={error.message} /></div></main>;
 }
 
-function useLessonDocuments(ids: string[]) {
-  const [state, setState] = useState<{ data: LessonDocument[]; loading: boolean; error: Error | null }>({ data: [], loading: true, error: null });
-  const key = ids.join('|');
-  useEffect(() => {
-    let active = true;
-    if (!ids.length) { setState({ data: [], loading: false, error: null }); return () => { active = false; }; }
-    setState({ data: [], loading: true, error: null });
-    Promise.all(ids.map((id) => api.get<LessonDocument>(`/api/lessons/${encodeURIComponent(id)}`))).then(
-      (data) => { if (active) setState({ data, loading: false, error: null }); },
-      (error: unknown) => { if (active) setState({ data: [], loading: false, error: error instanceof Error ? error : new Error('课程资料加载失败') }); },
-    );
-    return () => { active = false; };
-  }, [key]);
-  return state;
-}
-
 function LessonPrint() {
   const { id } = useParams<{ id: string }>();
-  const document = useResource<LessonDocument>(id ? `/api/lessons/${encodeURIComponent(id)}` : null);
+  const [params] = useSearchParams();
+  const ids = [...new Set([...(id ? [id] : []), ...params.getAll('lessonId')])];
+  const documents = useLessonDocuments(ids);
   const concepts = useResource<ResolvedConcept[]>('/api/lexicon');
-  if (document.loading || concepts.loading) return <LoadingView />;
-  if (document.error || concepts.error) return <ErrorView error={document.error ?? concepts.error ?? new Error('打印资料加载失败')} />;
-  const lesson = document.data?.lesson;
-  const blocks = lesson?.printables?.map((printable) => ({ lesson, packId: document.data?.packId ?? 'sprout.custom', printable })) ?? [];
-  return <PrintDocument blocks={blocks} concepts={concepts.data ?? []} title={lesson ? `打印：${lesson.title.zh}` : '打印课程'} subtitle={lesson ? `${lesson.audience === 'parent' ? '家长指引课' : '亲子共看课'} · 屏幕外亲子互动材料` : undefined} />;
+  if (documents.loading || concepts.loading) return <LoadingView />;
+  if (documents.error || concepts.error) return <ErrorView error={documents.error ?? concepts.error ?? new Error('打印资料加载失败')} />;
+  const lesson = documents.data[0]?.lesson;
+  const blocks = documents.data.flatMap((document) => document.lesson.printables?.map((printable) => ({
+    lesson: document.lesson, packId: document.packId, printable,
+  })) ?? []);
+  return <PrintDocument blocks={blocks} concepts={concepts.data ?? []}
+    title={ids.length > 1 ? '打印今天的卡片' : lesson ? `打印：${lesson.title.zh}` : '打印课程'}
+    subtitle={ids.length > 1 ? documents.data.map((document) => document.lesson.title.zh).join('、')
+      : lesson ? `${lesson.audience === 'parent' ? '家长指引课' : '亲子共看课'} · 屏幕外亲子互动材料` : undefined} />;
 }
 
 function ThemePrint() {

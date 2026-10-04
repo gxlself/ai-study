@@ -6,6 +6,7 @@ import '../../../packages/plugin-sdk/src/tokens.css';
 import '@sprout/activities/styles.css';
 import './styles.css';
 import './parent-reading.css';
+import './print-cards.css';
 import { App } from './App';
 
 ReactDOM.createRoot(document.getElementById('root')!).render(<HashRouter><App /></HashRouter>);

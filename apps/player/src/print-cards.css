@@ -1,0 +1,39 @@
+.print-cards-prompt {
+  min-width: 0;
+  margin-top: 18px;
+  padding: 16px 20px;
+  border: 1px solid var(--sp-accent-2);
+  border-left-width: 4px;
+  border-radius: 8px;
+  background: var(--sp-bg-sky);
+  color: var(--sp-ink);
+  text-align: left;
+}
+.print-cards-prompt strong { display: flex; align-items: center; font-size: 22px; line-height: 1.4; }
+.print-cards-prompt strong svg { flex: 0 0 26px; width: 26px; height: 26px; margin-right: 10px; color: var(--sp-ok); }
+.print-cards-prompt p { margin-top: 8px; font: 400 19px/1.5 var(--sp-font); }
+.print-cards-address { display: block; margin-top: 10px; font: 600 28px/1.45 var(--sp-font-en); overflow-wrap: anywhere; word-break: break-word; user-select: text; -webkit-user-select: text; }
+.lesson-print-address { display: block; min-width: 0; visibility: hidden; font: 500 20px/1.45 var(--sp-font-en); overflow-wrap: anywhere; word-break: break-word; }
+.lesson-card:focus .lesson-print-address, .lesson-card.sp-focused .lesson-print-address { visibility: visible; }
+.lesson-activity { display: flex; flex-direction: column; align-items: center; justify-content: center; width: 100%; height: 100%; min-height: 0; }
+.guide-with-print { justify-content: flex-start; }
+.guide-with-print > .print-cards-prompt { flex: 0 0 auto; align-self: stretch; margin: 13.5vmin 5vmin 0; }
+.guide-with-print .activity-stage--guide { --spa-stage-height: 100%; flex: 1 1 0; height: 0; min-height: 0; width: 100%; max-width: none; }
+.guide-with-print .spa-guide--read, .guide-with-print .spa-guide--reaction { padding: 20px 5vmin 3vmin; }
+@media (max-height: 760px) {
+  .print-cards-prompt { margin-top: 12px; padding: 10px 14px; }
+  .print-cards-prompt strong { font-size: 18px; }
+  .print-cards-prompt strong svg { flex-basis: 22px; width: 22px; height: 22px; }
+  .print-cards-prompt p { margin-top: 4px; font-size: 16px; line-height: 1.4; }
+  .print-cards-address { margin-top: 6px; font-size: 22px; line-height: 1.35; }
+  .lesson-print-address { font-size: 16px; line-height: 1.4; }
+  .guide-with-print .spa-guide--read, .guide-with-print .spa-guide--reaction { padding-top: 12px; }
+  .guide-with-print > .print-cards-prompt { margin-top: 90px; }
+}
+@media (max-width: 700px) {
+  .print-cards-prompt { padding: 12px 14px; }
+  .print-cards-prompt strong { font-size: 18px; }
+  .print-cards-prompt p { font-size: 16px; }
+  .print-cards-address { font-size: 20px; }
+  .lesson-print-address { font-size: 16px; }
+}

@@ -14,7 +14,7 @@
     { "zh": "一起说说先做什么、再做什么。", "en": "Talk about what comes first and next." },
     { "zh": "尝试穿衣中的一小步。", "en": "Try one small part of getting dressed." }
   ],
-  "cover": { "concept": "underwear", "bg": "room" },
+  "cover": { "concept": "undershirt", "bg": "room" },
   "parentGuide": {
     "intro": "先说清这次出门的约定：贴身上衣、裤子、袜子、鞋。封面的内裤和第一步的贴身上衣是不同衣物，不混教名称。衣物与顺序可按家庭需要调整；不要求全程独立，更不要求按一种顺序穿所有衣服。",
     "tips": [

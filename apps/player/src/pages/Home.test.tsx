@@ -10,7 +10,7 @@ const app = vi.hoisted(() => ({
   plan: null as unknown,
   lessons: [] as unknown[],
   concepts: [],
-  source: { recent: vi.fn(async () => []), resolveAsset: vi.fn((_pack: string, path: string) => path) },
+  source: { kind: 'local', server: 'http://192.168.1.8:4310', recent: vi.fn(async () => []), resolveAsset: vi.fn((_pack: string, path: string) => path) },
   refresh: vi.fn(async () => undefined),
   askParent: vi.fn(async () => true),
   setParentAccess: vi.fn(),
@@ -48,6 +48,7 @@ describe('首页今日卡片布局', () => {
   beforeEach(() => {
     (globalThis as typeof globalThis & { IS_REACT_ACT_ENVIRONMENT?: boolean }).IS_REACT_ACT_ENVIRONMENT = true;
     vi.clearAllMocks();
+    app.source.kind = 'local';
     localStorage.clear();
     container = document.createElement('div');
     document.body.append(container);
@@ -97,8 +98,20 @@ describe('首页今日卡片布局', () => {
     const section = container.querySelector('.parent-guide-section')!;
     expect(section.querySelector('h2')?.textContent).toBe('家长指引');
     expect(section.querySelectorAll('.adult-card[data-focusable]')).toHaveLength(1);
-    expect(section.querySelector('.printable-note')?.textContent).toBe('可在后台打印卡片');
+    expect(section.querySelector('.printable-note')?.textContent).toBe('有卡片可打印');
     expect(section.querySelector('.printable-note svg')).not.toBeNull();
+  });
+
+  it('远程模式的可打印课程卡片保留完整服务器地址和聚焦入口', async () => {
+    const { lessons } = installHome('parent-only', 6, 2);
+    lessons[0].hasPrintables = true;
+    app.source.kind = 'remote';
+    await act(async () => root.render(<MemoryRouter><Home /></MemoryRouter>));
+    const card = container.querySelector<HTMLButtonElement>('.lesson-card')!;
+    expect(card.querySelector('.lesson-print-address')?.textContent).toBe('http://192.168.1.8:4310/admin/print/lesson/t27.lesson-0');
+    await act(async () => card.focus());
+    expect(document.activeElement).toBe(card);
+    expect(container.querySelectorAll('.lesson-print-address')).toHaveLength(1);
   });
 
   it('仅家长首页没有课程时给出说明、课程库入口与家长菜单', async () => {

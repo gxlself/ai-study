@@ -14,7 +14,7 @@
     { "zh": "看看移动的卡片。", "en": "Watch a slowly moving card." },
     { "zh": "想歇时就歇一歇。", "en": "Take a break when needed." }
   ],
-  "cover": { "concept": "circle", "bg": "paper" },
+  "cover": { "concept": "contrast-card", "bg": "paper" },
   "printables": [
     {
       "kind": "contrast",

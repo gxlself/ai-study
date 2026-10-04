@@ -1,6 +1,6 @@
 import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
 import { useLocation, useNavigate, useParams } from 'react-router';
-import { Armchair, ArrowRight, Eye, Leaf, NotebookPen, Pause, Play, Printer, Sparkles, Users, X } from 'lucide-react';
+import { Armchair, ArrowRight, Eye, Leaf, NotebookPen, Pause, Play, Sparkles, Users, X } from 'lucide-react';
 import { ageOf, type ChildProfile, type ResolvedConcept, type ScreenStatus, type SessionInput } from '@sprout/schema';
 import { screenStatus } from '@sprout/core';
 import { ReadingArea, scrollReadingArea } from '@sprout/activities';
@@ -13,6 +13,7 @@ import { effectiveScreen, grantEvents, VisibleClock } from '../state/policy';
 import { InteractionWatch } from '../state/idle';
 import { BackButton, IconButton, Loading, OfflineCards, Page, Problem } from '../ui/common';
 import { ActivityStage } from '../ui/ActivityStage';
+import { PrintCardsPrompt } from '../ui/PrintCardsPrompt';
 import { OfflineLesson } from './OfflineLesson';
 import { tryFullscreen } from '../compat';
 
@@ -106,6 +107,7 @@ export function LessonExperience({ data, initialScreen, preview }: { data: Lesso
     if (parentLesson && lesson.steps[stepIndex]?.type === 'guide') {
       if (type === 'guide:start' && typeof value?.playMin === 'number' && value.playMin > 0) setCompanionPlaying(true);
       if (type === 'guide:play-end') { setCompanionPlaying(false); watch.current.touch(); }
+      if (type === 'guide:review') { setCompanionPlaying(false); watch.current.touch(); }
     }
     if (events.current.length >= 498) return;
     let safeData: unknown;
@@ -293,6 +295,8 @@ export function LessonExperience({ data, initialScreen, preview }: { data: Lesso
   }
 
   const readingEnd = phase === 'ended' || phase === 'rest';
+  const guidePrint = phase === 'playing' && lesson.steps[stepIndex].type === 'guide' &&
+    !!lesson.printables?.length && !companionPlaying;
   return <Page className={`lesson-page phase-${phase} ${parentLesson ? 'audience-parent' : ''} ${companionPlaying ? 'guide-dim' : ''} ${phase === 'playing' && parentLesson && lesson.steps[stepIndex].type === 'guide' ? 'guide-page' : ''} ${readingEnd ? 'parent-reading-page' : ''}`} onBack={() => void exit()}
     onKey={(key) => (phase === 'intro' && (key === 'up' || key === 'down')
       ? scrollReadingArea(introReading.current, key, app.reducedMotion)
@@ -306,7 +310,7 @@ export function LessonExperience({ data, initialScreen, preview }: { data: Lesso
         <div className="intro-copy"><div className="intro-reading" ref={introReading} tabIndex={-1}>
           <span className="eyebrow">{preview ? '课程预览' : parentLesson ? '家长指引' : '家长导语'} · {lesson.durationMin} 分钟</span><h1>{lesson.title.zh}</h1>{lesson.title.en && <p className="english-title" lang="en">{lesson.title.en}</p>}
           {parentLesson && <p className="parent-reading-note">读完放下屏幕，去和宝宝玩真东西。</p>}
-          {!!lesson.printables?.length && <p className="printable-note"><Printer />可在后台打印卡片</p>}
+          {!!lesson.printables?.length && <PrintCardsPrompt source={source} lessonId={lesson.id} />}
           <p className="intro-text">{lesson.parentGuide.intro}</p>
           {lesson.parentGuide.phrases?.length ? <div className="parent-phrases">{lesson.parentGuide.phrases.map((phrase, i) => <p key={i}><strong>{phrase.zh}</strong>{phrase.en && <span lang="en">{phrase.en}</span>}</p>)}</div> : null}
           {startError && <p role="alert" className="form-error">{startError}</p>}
@@ -322,7 +326,10 @@ export function LessonExperience({ data, initialScreen, preview }: { data: Lesso
         <div className="step-dots" aria-label={`第 ${stepIndex + 1} 步，共 ${lesson.steps.length} 步`}>{lesson.steps.map((_, i) => <span key={i} className={i <= stepIndex ? 'active' : ''} />)}</div>
         <IconButton label={manualPause ? '继续课程' : '暂停课程'} onClick={() => setManualPause(!manualPause)}>{manualPause ? <Play /> : <Pause />}</IconButton>
       </div>
-      <ActivityStage key={`${lesson.id}:${stepIndex}`} lesson={lesson} index={stepIndex} child={activityChild} resources={resources} registry={registry} paused={paused} onComplete={complete} onLog={log} onHint={setHint} />
+      <div className={`lesson-activity${guidePrint ? ' guide-with-print' : ''}`}>
+        {guidePrint && <PrintCardsPrompt source={source} lessonId={lesson.id} />}
+        <ActivityStage key={`${lesson.id}:${stepIndex}`} lesson={lesson} index={stepIndex} child={activityChild} resources={resources} registry={registry} paused={paused} onComplete={complete} onLog={log} onHint={setHint} />
+      </div>
       {app.prefs.parentHints && !companionPlaying && !(parentLesson && lesson.steps[stepIndex].type === 'guide') && <aside className="parent-hint"><Users /><span>{hint ?? lesson.steps[stepIndex].parentTip ?? lesson.parentGuide.tips?.[0] ?? '陪在宝宝身边，等一等他的回应。'}</span></aside>}
       {manualPause && <PauseOverlay onResume={() => setManualPause(false)} onExit={() => void exit()} />}
       {idlePaused && <PauseOverlay idle onResume={() => { watch.current.touch(); setIdlePaused(false); }} onExit={() => void exit()} />}

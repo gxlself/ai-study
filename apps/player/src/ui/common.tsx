@@ -6,6 +6,7 @@ import type { NavKey } from '../../../../packages/plugin-sdk/src/types';
 import type { LessonSummary, OfflineActivity, ParentGuide } from '@sprout/schema';
 import { DOMAIN_LABELS } from '@sprout/schema';
 import { createResources } from '../host';
+import { lessonPrintAddress } from './PrintCardsPrompt';
 
 export function useScope(onBack?: () => void, onKey?: (key: NavKey) => boolean) {
   const { navigation } = useApp();
@@ -65,6 +66,7 @@ export function LessonCard({ lesson, compact = false, offlineOnly = false, adult
     : lesson.cover?.image ? resources.resolveAsset(lesson.cover.image)
       : lesson.cover?.concept ? resources.concept(lesson.cover.concept)?.imageUrl : undefined;
   const domain = DOMAIN_LABELS[lesson.domains[0]];
+  const printAddress = lesson.hasPrintables ? lessonPrintAddress(source, lesson.id) : undefined;
   return <button
     className={`lesson-card ${compact ? 'compact' : ''} ${adult ? 'adult-card' : ''}`} data-focusable data-lesson-id={lesson.id} onClick={() => navigate(`/lesson/${encodeURIComponent(lesson.id)}`, { state: { offlineOnly } })}
     style={{ '--domain-color': domain.color, '--domain-tint': `${domain.color}33` } as React.CSSProperties}
@@ -72,7 +74,10 @@ export function LessonCard({ lesson, compact = false, offlineOnly = false, adult
     <div className="lesson-picture">{image ? <img src={image} alt="" /> : <Leaf aria-hidden="true" />}<span className="domain-label">{domain.zh}</span></div>
     <div className="lesson-caption"><h3>{lesson.title.zh}</h3>{adult && lesson.summary ? <p>{lesson.summary.zh}</p> : lesson.title.en && <p lang="en">{lesson.title.en}</p>}<small>{adult ? `家长阅读 · ${lesson.durationMin} 分钟` : `${lesson.durationMin} 分钟`}</small>
       {offlineOnly && <span className="offline-badge"><Leaf aria-hidden="true" />线下版</span>}
-      {lesson.hasPrintables && <span className="printable-note"><Printer aria-hidden="true" />可在后台打印卡片</span>}
+      {lesson.hasPrintables && <>
+        <span className="printable-note"><Printer aria-hidden="true" />有卡片可打印</span>
+        <span className="lesson-print-address">{printAddress ?? '连接家庭服务器后可在后台打印卡片'}</span>
+      </>}
     </div>
   </button>;
 }

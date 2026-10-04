@@ -14,7 +14,7 @@
     { "zh": "趴着抬头看看。", "en": "Look around during tummy time." },
     { "zh": "试着伸手够一够。", "en": "Try reaching for something nearby." }
   ],
-  "cover": { "concept": "baby", "bg": "paper" },
+  "cover": { "concept": "contrast-card-red", "bg": "paper" },
   "printables": [
     {
       "kind": "contrast",

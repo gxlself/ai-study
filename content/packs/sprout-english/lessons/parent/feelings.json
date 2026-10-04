@@ -13,7 +13,7 @@
     {"zh": "看表情，轻声回应。", "en": "Notice expressions and respond gently."},
     {"zh": "尊重抱抱与休息选择。", "en": "Respect choices about hugs and breaks."}
   ],
-  "cover": {"concept": "happy", "bg": "sky"},
+  "cover": {"concept": "hug", "bg": "sky"},
   "parentGuide": {
     "intro": "家长在平静时学六句。真实情绪来了先关屏，用宝宝熟悉的语言陪伴，再自然加入一句英文；不让哭泣的宝宝跟读，也不要求马上开心。",
     "tips": [

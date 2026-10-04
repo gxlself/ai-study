@@ -14,7 +14,7 @@
     { "zh": "看看遮住的玩具。", "en": "Look at a partly covered toy." },
     { "zh": "和家长一起发现。", "en": "Discover it together with a caregiver." }
   ],
-  "cover": { "concept": "dog", "bg": "paper" },
+  "cover": { "concept": "teddy-bear", "bg": "paper" },
   "printables": [
     {
       "kind": "cards",

@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "builtAt": "2026-10-03T07:19:33.391Z",
+  "builtAt": "2026-10-04T03:47:54.319Z",
   "manifest": {
     "schemaVersion": 1,
     "id": "sprout.english",
@@ -1160,7 +1160,7 @@
         }
       ],
       "cover": {
-        "concept": "happy",
+        "concept": "hug",
         "bg": "sky"
       },
       "parentGuide": {

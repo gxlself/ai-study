@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "builtAt": "2026-10-03T07:19:33.396Z",
+  "builtAt": "2026-10-04T03:47:54.448Z",
   "manifest": {
     "schemaVersion": 1,
     "id": "sprout.culture",
@@ -1999,7 +1999,7 @@
         }
       ],
       "cover": {
-        "concept": "fest-mooncake",
+        "concept": "moon",
         "bg": "sky"
       },
       "parentGuide": {

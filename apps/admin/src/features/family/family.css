@@ -395,6 +395,15 @@
   margin-top: 8px;
 }
 
+.family-weekly-cards { margin-top: 20px; padding-top: 20px; border-top: 1px solid #dce6e2; }
+.family-weekly-cards .ant-btn { height: auto; min-height: 36px; white-space: normal; }
+.family-printable-list { display: grid; grid-template-columns: repeat(auto-fill, minmax(160px, 1fr)); gap: 14px 20px; list-style: none; margin: 0; padding: 0; }
+.family-printable-list li { display: flex; align-items: center; gap: 12px; min-width: 0; font-size: 14px; line-height: 1.5; }
+.family-printable-list li > span:last-child { min-width: 0; overflow-wrap: anywhere; }
+.family-printable-list small { display: block; }
+.family-printable-image { display: grid; place-items: center; flex: 0 0 64px; width: 64px; height: 64px; object-fit: contain; background: #fff; border: 1px solid #e4e7e5; border-radius: 4px; overflow: hidden; }
+.family-printable-image svg { display: block; width: 100%; height: 100%; }
+
 @media (max-width: 640px) {
   .family-page .two-column,
   .family-form-grid,

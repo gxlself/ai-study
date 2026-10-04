@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "builtAt": "2026-10-03T07:19:33.611Z",
+  "builtAt": "2026-10-04T03:47:56.142Z",
   "manifest": {
     "schemaVersion": 1,
     "id": "sprout.core",
@@ -3873,6 +3873,32 @@
           "role",
           "family"
         ]
+      },
+      {
+        "id": "contrast-card",
+        "category": "other",
+        "zh": "黑白卡",
+        "en": "black-and-white card",
+        "pinyin": "hēi bái kǎ",
+        "measure": "张",
+        "image": "assets/images/other/contrast-card.svg",
+        "tags": [
+          "high-contrast",
+          "card"
+        ]
+      },
+      {
+        "id": "contrast-card-red",
+        "category": "other",
+        "zh": "黑白红卡",
+        "en": "black, white and red card",
+        "pinyin": "hēi bái hóng kǎ",
+        "measure": "张",
+        "image": "assets/images/other/contrast-card-red.svg",
+        "tags": [
+          "high-contrast",
+          "card"
+        ]
       }
     ]
   },
@@ -5384,7 +5410,7 @@
         }
       ],
       "cover": {
-        "concept": "circle",
+        "concept": "contrast-card",
         "bg": "paper"
       },
       "parentGuide": {
@@ -5957,7 +5983,7 @@
         }
       ],
       "cover": {
-        "concept": "dog",
+        "concept": "teddy-bear",
         "bg": "paper"
       },
       "parentGuide": {
@@ -7325,7 +7351,7 @@
         }
       ],
       "cover": {
-        "concept": "baby",
+        "concept": "contrast-card-red",
         "bg": "paper"
       },
       "parentGuide": {
@@ -9732,7 +9758,7 @@
         }
       ],
       "cover": {
-        "concept": "ball",
+        "concept": "cup",
         "bg": "paper"
       },
       "parentGuide": {
@@ -21787,7 +21813,7 @@
         }
       ],
       "cover": {
-        "concept": "underwear",
+        "concept": "undershirt",
         "bg": "room"
       },
       "parentGuide": {
@@ -26572,7 +26598,11 @@
       "zh:圆圆看到一个轮子。轮子的外边圆圆的。": "audio/tts/zh/c83fa3a94c37db60.m4a",
       "zh:头、肩膀、膝盖、脚": "audio/tts/zh/f4d1340beabae01d.m4a",
       "zh:条件合适，种子发芽，长成幼苗。": "audio/tts/zh/72449a270dcc82b0.m4a",
-      "zh:雨靴能帮脚保持干燥，大人帮忙穿好。": "audio/tts/zh/d6c01230c37f39f3.m4a"
+      "zh:雨靴能帮脚保持干燥，大人帮忙穿好。": "audio/tts/zh/d6c01230c37f39f3.m4a",
+      "en:black, white and red card": "audio/tts/en/872950d73d10f4db.m4a",
+      "en:black-and-white card": "audio/tts/en/c558d065ffb84194.m4a",
+      "zh:黑白卡": "audio/tts/zh/b07fb7ba2b530a53.m4a",
+      "zh:黑白红卡": "audio/tts/zh/99c6ebc2c27ca723.m4a"
     }
   }
 }

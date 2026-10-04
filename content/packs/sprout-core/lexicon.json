@@ -252,6 +252,8 @@
     {"id":"single-block","category":"toys","zh":"单块积木","en":"single block","pinyin":"dān kuài jī mù","measure":"块","image":"assets/images/toys/single-block.svg","phrase":{"zh":"一块积木可以搭起来","en":"One block can be stacked."},"tags":["piece-image"]},
     {"id":"slide","category":"places","zh":"滑梯","en":"slide","pinyin":"huá tī","measure":"架","image":"assets/images/places/slide.svg","phrase":{"zh":"滑梯要和大人一起玩","en":"Use the slide with a grown-up."},"tags":["playground","safety"]},
     {"id":"teacher","category":"other","zh":"老师","en":"teacher","pinyin":"lǎo shī","measure":"位","image":"assets/images/other/teacher.svg","phrase":{"zh":"老师会帮助我们","en":"A teacher can help us."},"tags":["role"]},
-    {"id":"caregiver","category":"other","zh":"照护者","en":"caregiver","pinyin":"zhào hù zhě","measure":"位","image":"assets/images/other/caregiver.svg","phrase":{"zh":"照护者会陪你玩","en":"A caregiver plays with you."},"tags":["role","family"]}
+    {"id":"caregiver","category":"other","zh":"照护者","en":"caregiver","pinyin":"zhào hù zhě","measure":"位","image":"assets/images/other/caregiver.svg","phrase":{"zh":"照护者会陪你玩","en":"A caregiver plays with you."},"tags":["role","family"]},
+    {"id":"contrast-card","category":"other","zh":"黑白卡","en":"black-and-white card","pinyin":"hēi bái kǎ","measure":"张","image":"assets/images/other/contrast-card.svg","tags":["high-contrast","card"]},
+    {"id":"contrast-card-red","category":"other","zh":"黑白红卡","en":"black, white and red card","pinyin":"hēi bái hóng kǎ","measure":"张","image":"assets/images/other/contrast-card-red.svg","tags":["high-contrast","card"]}
   ]
 }

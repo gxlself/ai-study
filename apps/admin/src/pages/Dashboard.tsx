@@ -15,6 +15,7 @@ import {
 } from '../features/family/components';
 import { CO_VIEW_LABELS, milestoneAgeFor, milestoneAges, milestoneProgress } from '../features/family/model';
 import type { FamilyLesson, FamilyMilestones, FamilyStats } from '../features/family/types';
+import WeeklyCards from '../features/print/WeeklyCards';
 import '../features/family/family.css';
 
 const REASONS: Record<TodayPlan['items'][number]['reason'], { label: string; color: string }> = {
@@ -90,16 +91,11 @@ function DashboardContent({ child }: { child: ChildProfile }) {
             {parentMode && <section className="page-section family-parent-today">
               <div className="family-section-heading">
                 <h2>今天陪宝宝玩什么</h2>
-                {today.data.theme && <Link to={`/print/theme/${encodeURIComponent(today.data.theme.id)}?routeId=${encodeURIComponent(today.data.route.id)}`}>
-                  <PrinterOutlined /> 打印本主题卡片
-                </Link>}
               </div>
               <Alert type="info" showIcon title="现在是家长指引模式"
                 description="屏幕给家长看。准备好实体卡片或家里的物品，读完指引就放下设备，面对面陪宝宝玩；家长指引不会计入孩子屏幕时间。" />
-              <div className="toolbar" style={{ marginTop: 16 }}>
-                {today.data.items.filter((item) => item.lesson.hasPrintables).map((item) =>
-                  <Link key={item.lessonId} to={`/print/lesson/${encodeURIComponent(item.lessonId)}`}><PrinterOutlined /> 打印《{item.lesson.title.zh}》</Link>)}
-              </div>
+              <WeeklyCards key={`${today.data.date}:${today.data.theme?.id ?? ''}`} plan={today.data}
+                theme={route.data?.stages.flatMap((stage) => stage.themes).find((theme) => theme.id === today.data?.theme?.id)} />
             </section>}
             <div className="two-column page-section">
               <section>

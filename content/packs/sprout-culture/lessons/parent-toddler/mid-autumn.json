@@ -14,7 +14,7 @@
     { "zh": "说说想一起过节的人。", "en": "Talk about someone you would like to celebrate with." },
     { "zh": "画出自己喜欢的月亮。", "en": "Draw a moon in your own way." }
   ],
-  "cover": { "concept": "fest-mooncake", "bg": "sky" },
+  "cover": { "concept": "moon", "bg": "sky" },
   "parentGuide": {
     "intro": "读完关屏，白天看月亮与月饼大卡、画月亮。中秋常与赏月、团圆相连，但月亮有时圆、有时弯，也可能被云遮住。可给身边或远方亲人送一句问候，不要求全家到场。赏月不延迟睡眠，月饼只看图不试吃。",
     "tips": ["接住宝宝关于家人的话，不规定一定有谁。", "接纳圆、弯或随意线条，不考画得像不像。", "月亮在正常清醒时间可见才在安全地面看；看不到就用大卡。"],

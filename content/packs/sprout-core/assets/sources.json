@@ -252,6 +252,8 @@
     "assets/images/toys/single-block.svg": {"source":"custom"},
     "assets/images/places/slide.svg": {"source":"fluent-emoji","name":"Playground slide","style":"Color"},
     "assets/images/other/teacher.svg": {"source":"fluent-emoji","name":"Teacher","style":"Color","skinTone":"Default"},
-    "assets/images/other/caregiver.svg": {"source":"custom"}
+    "assets/images/other/caregiver.svg": {"source":"custom"},
+    "assets/images/other/contrast-card.svg": {"source":"custom"},
+    "assets/images/other/contrast-card-red.svg": {"source":"custom"}
   }
 }
