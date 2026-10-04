@@ -1,6 +1,6 @@
 import { act } from 'react';
 import { createRoot, type Root } from 'react-dom/client';
-import { MemoryRouter } from 'react-router';
+import { MemoryRouter, Route, Routes, useLocation } from 'react-router';
 import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest';
 import { ChildInput, type LessonSummary, type TodayPlan } from '@sprout/schema';
 import { Home } from './Home';
@@ -12,13 +12,16 @@ const app = vi.hoisted(() => ({
   concepts: [],
   source: { recent: vi.fn(async () => []), resolveAsset: vi.fn((_pack: string, path: string) => path) },
   refresh: vi.fn(async () => undefined),
+  askParent: vi.fn(async () => true),
+  setParentAccess: vi.fn(),
   error: '',
   navigation: { pushScope: vi.fn(() => vi.fn()) },
 }));
 vi.mock('../state/AppContext', () => ({ useApp: () => app }));
 
 function installHome(mode: 'parent-only' | 'co-view', ageMonths: number, count: number) {
-  const birthday = ageMonths === 30 ? '2024-04-03' : '2026-03-03';
+  const born = new Date(2026, 9 - ageMonths, 3);
+  const birthday = `${born.getFullYear()}-${String(born.getMonth() + 1).padStart(2, '0')}-03`;
   const child = { ...ChildInput.parse({ name: '芽芽', birthday, screen: { mode } }), id: 't27-child' };
   const lessons: LessonSummary[] = Array.from({ length: count }, (_, index) => ({
     id: `t27.lesson-${index}`, packId: 'sprout.core', title: { zh: `一起玩 ${index + 1}` },
@@ -98,10 +101,52 @@ describe('首页今日卡片布局', () => {
     expect(section.querySelector('.printable-note svg')).not.toBeNull();
   });
 
-  it('仅家长首页没有课程时保留原有空状态与家长菜单', async () => {
+  it('仅家长首页没有课程时给出说明、课程库入口与家长菜单', async () => {
     installHome('parent-only', 7, 0);
     await act(async () => root.render(<MemoryRouter><Home /></MemoryRouter>));
-    expect(container.querySelector('.parent-journey .empty')?.textContent).toContain('这个阶段的家长指引正在准备');
+    expect(container.querySelector('.parent-journey .today-empty')?.textContent).toContain('今天没有可用的家长指引');
+    expect(container.querySelector('.today-empty button[data-focusable]')?.textContent).toContain('打开课程库');
+    expect(container.textContent).not.toContain('正在准备');
     expect(container.querySelector('.parent-button[data-focusable]')).not.toBeNull();
+  });
+
+  it.each([
+    ['before-first-stage', 0, '宝宝还不到 6 个月', '不需要屏幕'],
+    ['after-last-stage', 40, '已超过 3 岁', '自由选择课程库'],
+  ] as const)('%s 在顶部说明区显示完整温和提示，保留课程', async (notice, ageMonths, text, ending) => {
+    const { plan } = installHome('parent-only', ageMonths, 2);
+    plan.notice = notice;
+    await act(async () => root.render(<MemoryRouter><Home /></MemoryRouter>));
+    const banner = container.querySelector('.home-greeting .plan-range-notice');
+    expect(banner?.textContent).toContain(text);
+    expect(banner?.textContent).toContain(ending);
+    if (notice === 'before-first-stage') {
+      expect(banner?.textContent).toContain('每天分次清醒俯卧');
+      expect(banner?.textContent).toContain('按需喂养和睡眠');
+    }
+    expect(container.querySelectorAll('.parent-journey .lesson-card')).toHaveLength(2);
+  });
+
+  it.each(['parent-only', 'co-view'] as const)('%s 空计划即使屏幕时段关闭也可经家长确认直接打开课程库', async (mode) => {
+    const { plan } = installHome(mode, mode === 'co-view' ? 30 : 0, 0);
+    plan.screen.allowedNow = false;
+    function Library() { return <p className="destination">{useLocation().search}</p>; }
+    await act(async () => root.render(<MemoryRouter><Routes>
+      <Route path="/" element={<Home />} /><Route path="/parent" element={<Library />} />
+    </Routes></MemoryRouter>));
+    expect(container.querySelector('.today-empty')).not.toBeNull();
+    await act(async () => container.querySelector<HTMLButtonElement>('.today-empty button')!.click());
+    expect(app.askParent).toHaveBeenCalledOnce();
+    expect(app.setParentAccess).toHaveBeenCalledWith(true);
+    expect(container.querySelector('.destination')?.textContent).toBe('?tab=library');
+  });
+
+  it('未通过家长门时课程库入口不跳转', async () => {
+    installHome('parent-only', 0, 0);
+    app.askParent.mockResolvedValueOnce(false);
+    await act(async () => root.render(<MemoryRouter><Home /></MemoryRouter>));
+    await act(async () => container.querySelector<HTMLButtonElement>('.today-empty button')!.click());
+    expect(app.setParentAccess).not.toHaveBeenCalled();
+    expect(container.querySelector('.home')).not.toBeNull();
   });
 });

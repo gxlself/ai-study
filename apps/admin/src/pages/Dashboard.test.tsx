@@ -33,6 +33,12 @@ function lessonCards() {
   return [...container.querySelectorAll('article.family-lesson-item')];
 }
 
+function dashboard() {
+  const container = document.createElement('div');
+  container.innerHTML = renderToStaticMarkup(<MemoryRouter><Dashboard /></MemoryRouter>);
+  return container;
+}
+
 beforeEach(() => {
   plan = {
     date: '2026-10-03', child: { id: child.id, name: child.name, ageMonths: 30, ageDays: 913 },
@@ -69,5 +75,25 @@ describe('今日计划课程类型', () => {
     expect(cards[0].querySelector('.lesson-type-tags')?.textContent).toContain('亲子共看课');
     expect(cards[1].querySelector('.lesson-type-tags')?.textContent).toContain('家长指引课');
     expect(cards.every((card) => !card.textContent?.includes('线下版'))).toBe(true);
+  });
+});
+
+describe('路线范围外与空计划', () => {
+  it.each([
+    ['before-first-stage', '宝宝还不到 6 个月', '不需要屏幕'],
+    ['after-last-stage', '已超过 3 岁', '自由选择课程库'],
+  ] as const)('%s 在档案概览处显示说明', (notice, text, ending) => {
+    plan.notice = notice;
+    const banner = dashboard().querySelector('.family-profile-heading')?.parentElement?.querySelector('.plan-range-notice');
+    expect(banner?.textContent).toContain(text);
+    expect(banner?.textContent).toContain(ending);
+  });
+
+  it('范围内不显示横幅，空计划保留检查偏好与课程库入口', () => {
+    const page = dashboard();
+    expect(page.querySelector('.plan-range-notice')).toBeNull();
+    expect(page.textContent).toContain('今天还没有安排课程');
+    expect(page.querySelector('a[href="/lessons"]')).not.toBeNull();
+    expect(page.querySelector('a[href="/children"]')).not.toBeNull();
   });
 });

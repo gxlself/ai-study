@@ -21,6 +21,7 @@ import { formatAge } from '../../lib/format';
 import { pinAgeWarning } from '../../lib/lesson-age';
 import { effectiveScreenMode, sessionHardLimit } from '../../lib/screen-policy';
 import { FetchWarning, MutationError } from './components';
+import { BirthdayWarning, useBirthdayConfirmation } from './BirthdayConfirmation';
 import {
   childFormValues, errorIssues, LANGUAGE_OPTIONS, prepareChildInput, SCREEN_MODE_EXPLANATION,
   SCREEN_MODE_LABELS, stageForAge, timeWindowError,
@@ -47,6 +48,7 @@ export default function ChildEditor({ child, onClose, onSaved }: {
   onSaved: (child: ChildProfile) => Promise<void>;
 }) {
   const { message } = App.useApp();
+  const confirmBirthday = useBirthdayConfirmation();
   const [form] = Form.useForm<ChildFormValues>();
   const [saving, setSaving] = useState(false);
   const [error, setError] = useState<unknown>();
@@ -125,6 +127,7 @@ export default function ChildEditor({ child, onClose, onSaved }: {
     setSaving(true);
     setError(undefined);
     try {
+      if (!await confirmBirthday(values.birthday)) return;
       const saved = child
         ? await api.put<ChildProfile>(`/api/children/${encodeURIComponent(child.id)}`, result.input)
         : await api.post<ChildProfile>('/api/children', result.input);
@@ -182,8 +185,8 @@ export default function ChildEditor({ child, onClose, onSaved }: {
               { required: true, message: '请选择生日' },
               { validator: (_, value) => value?.isAfter(dayjs(), 'day')
                 ? Promise.reject(new Error('生日不能晚于今天')) : Promise.resolve() },
-            ]}>
-              <DatePicker format="YYYY-MM-DD" placeholder="选择生日" disabledDate={(date) => date.isAfter(dayjs(), 'day')} />
+            ]} extra={<BirthdayWarning birthday={birthday} />}>
+              <DatePicker format="YYYY-MM-DD" placeholder="选择宝宝的出生日期" showNow={false} />
             </Form.Item>
             <Form.Item name="avatar" label="头像" extra={animals.data?.length === 0 ? '词库暂时没有动物词条，可稍后再选。' : undefined}>
               <Select

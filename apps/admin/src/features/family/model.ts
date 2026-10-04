@@ -115,6 +115,14 @@ export function childFormValues(child?: ChildProfile): ChildFormValues {
   };
 }
 
+export function birthdayWarning(birthday: Dayjs | null | undefined, today: Dayjs = dayjs()) {
+  if (!birthday?.isValid()) return undefined;
+  const days = today.startOf('day').diff(birthday.startOf('day'), 'day');
+  const future = birthday.isAfter(today, 'day');
+  if (!future && ageOf(birthday.format('YYYY-MM-DD'), today.toDate()).months >= 1) return undefined;
+  return { days, future, message: `请确认宝宝生日（当前为 ${days} 天）` };
+}
+
 export function timeWindowError(windows: TimeWindow[]): string | undefined {
   const clock = /^(?:[01]\d|2[0-3]):[0-5]\d$/;
   const minute = (time: string) => Number(time.slice(0, 2)) * 60 + Number(time.slice(3));

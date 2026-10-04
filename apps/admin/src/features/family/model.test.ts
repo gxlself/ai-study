@@ -4,7 +4,7 @@ import {
 import dayjs from 'dayjs';
 import { describe, expect, it } from 'vitest';
 import {
-  avatarUrl, childFormValues, completionPercent, errorIssues, errorMessage, milestoneAgeFor,
+  avatarUrl, birthdayWarning, childFormValues, completionPercent, errorIssues, errorMessage, milestoneAgeFor,
   milestoneAges, milestoneProgress, prepareChildInput, sessionsPath, stageForAge, timeWindowError,
 } from './model';
 import { formatAge } from '../../lib/format';
@@ -159,6 +159,26 @@ describe('孩子表单与契约', () => {
     values.birthday = today.subtract(26, 'month');
     values.screen.sessionMaxMin = 21;
     expect(prepareChildInput(values, today).issues.some((issue) => issue.path === 'screen.sessionMaxMin')).toBe(true);
+  });
+});
+
+describe('宝宝生日确认提示', () => {
+  it.each([
+    ['2026-10-02', 0, false],
+    ['2026-10-03', -1, true],
+    ['2026-09-03', 29, false],
+    ['2026-09-02', undefined, false],
+  ] as const)('%s 的日龄与是否需要确认准确', (birthday, days, future) => {
+    const warning = birthdayWarning(dayjs(birthday), today);
+    if (days === undefined) expect(warning).toBeUndefined();
+    else expect(warning).toEqual({ days, future, message: `请确认宝宝生日（当前为 ${days} 天）` });
+  });
+
+  it('不以固定 30 天代替整月；无效或未填生日不提示', () => {
+    expect(birthdayWarning(dayjs('2026-02-28'), dayjs('2026-03-27'))?.days).toBe(27);
+    expect(birthdayWarning(dayjs('2026-02-28'), dayjs('2026-03-28'))).toBeUndefined();
+    expect(birthdayWarning(null, today)).toBeUndefined();
+    expect(birthdayWarning(dayjs('invalid'), today)).toBeUndefined();
   });
 });
 

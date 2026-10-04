@@ -69,10 +69,17 @@ export function planToday(args: {
 }): TodayPlan {
   const { route, lessons, child, history, date, usedSec } = args;
   const age = ageOf(child.birthday, date);
+  const first = route.stages[0];
+  const last = route.stages[route.stages.length - 1];
+  const beforeFirst = !!first && age.months < first.ageRange[0];
+  const afterLast = !!last && age.months > last.ageRange[1] + 3;
+  const notice: TodayPlan['notice'] = beforeFirst ? 'before-first-stage' : afterLast ? 'after-last-stage' : undefined;
   const stage = findStage(route, age.months);
   const policy = resolveScreenPolicy(stage, child.screen, age.months);
-  const mode = resolveChildMode(stage, child, age.months);
-  const current = stage ? currentTheme(route, stage, child, date) : null;
+  const mode = beforeFirst ? 'parent-only' : resolveChildMode(stage, child, age.months);
+  const current = beforeFirst && first.themes[0]
+    ? { theme: first.themes[0], weekIndex: 0 }
+    : stage ? currentTheme(route, stage, afterLast ? { ...child, plan: { ...child.plan, themeId: null } } : child, date) : null;
   const day = localDayNumber(date);
   const completedCounts = new Map<string, number>();
   const recentLessons = new Set<string>();
@@ -99,7 +106,10 @@ export function planToday(args: {
       !lessons[lessonId]
     ) return false;
     const lesson = lessons[lessonId];
-    if (age.months < lesson.ageRange[0] || age.months > lesson.ageRange[1] + 3) return false;
+    // 首阶段前仅让家长提前学；末阶段宽限期后仅放宽该阶段课程的上限。
+    if (beforeFirst && (lesson.audience !== 'parent' || !stageLessonIds.has(lessonId))) return false;
+    if ((!beforeFirst && age.months < lesson.ageRange[0]) ||
+      (age.months > lesson.ageRange[1] + 3 && !(afterLast && stageLessonIds.has(lessonId)))) return false;
     const isChild = lesson.audience !== 'parent';
     // 适龄置顶优先保留；路线外的扩展课也可转为线下版。
     const isOffline = offlineOnly || (mode === 'parent-only' && isChild && reason === 'pinned');
@@ -180,5 +190,6 @@ export function planToday(args: {
     } : null,
     items,
     screen: { ...screenStatus({ policy, windows: child.screen.windows, usedSec, now: date }), mode },
+    ...(notice ? { notice } : {}),
   };
 }

@@ -9,8 +9,14 @@ export function ChildForm({ child, onSave, label = '开始小旅程' }: { child?
   const [month, setMonth] = useState(child ? Number(child.birthday.slice(5, 7)) : now.getMonth() + 1);
   const [saving, setSaving] = useState(false);
   const [error, setError] = useState('');
+  const [confirming, setConfirming] = useState(false);
   const maxMonth = year === now.getFullYear() ? now.getMonth() + 1 : 12;
-  async function save() {
+  const needsConfirmation = year > now.getFullYear() || (year === now.getFullYear() && month >= now.getMonth() + 1);
+  const futureMonth = year > now.getFullYear() || (year === now.getFullYear() && month > now.getMonth() + 1);
+  async function save(confirmed = false) {
+    if (needsConfirmation && !confirmed) { setConfirming(true); return; }
+    if (futureMonth) { setError('出生年月晚于当前，请改为宝宝真实的出生年月。'); return; }
+    setConfirming(false);
     setSaving(true);
     setError('');
     try {
@@ -38,6 +44,13 @@ export function ChildForm({ child, onSave, label = '开始小旅程' }: { child?
         <button data-focusable aria-label="出生月减一" disabled={month <= 1} onClick={() => setMonth(month - 1)}><ChevronDown /></button>
       </div>
     </div>
+    {needsConfirmation && <div className="birthday-confirmation" role="alert">
+      <p>请确认宝宝的出生年月：{year} 年 {month} 月。{futureMonth ? '所选年月晚于当前，请返回修改。' : '宝宝还不满 1 个月，课程仅供家长提前学习。'}</p>
+      {confirming && <button className="secondary" data-focusable
+        disabled={futureMonth || saving} onClick={() => void save(true)}>
+        <Check aria-hidden="true" />确认出生年月并保存
+      </button>}
+    </div>}
     {error && <p className="form-error" role="alert">{error}</p>}
     <button className="primary" data-focusable disabled={saving} onClick={() => void save()}><Check />{saving ? '正在准备' : label}</button>
   </div>;

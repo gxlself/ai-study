@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState } from 'react';
-import { useNavigate } from 'react-router';
+import { useNavigate, useSearchParams } from 'react-router';
 import { BookOpen, Check, ChevronDown, Info, Monitor, SlidersHorizontal, Users, Volume2 } from 'lucide-react';
 import { ageOf, DOMAIN_LABELS, DOMAINS, type Domain, type LanguageMode, type Stage } from '@sprout/schema';
 import { useApp } from '../state/AppContext';
@@ -22,7 +22,8 @@ const languages: { value: LanguageMode; label: string }[] = [
 export function Parent() {
   const app = useApp();
   const navigate = useNavigate();
-  const [tab, setTab] = useState<Tab>('children');
+  const [params] = useSearchParams();
+  const [tab, setTab] = useState<Tab>(params.get('tab') === 'library' ? 'library' : 'children');
   const [domain, setDomain] = useState<Domain | ''>('');
   const [stageId, setStageId] = useState('');
   const [stages, setStages] = useState<Stage[]>([]);

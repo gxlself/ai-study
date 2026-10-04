@@ -280,6 +280,14 @@ small { font-size: 18px; }
 .parent-home .home-greeting h1 { font-size: 34px; }
 .parent-mode-label { font-size: 18px; color: var(--sp-ink-2); }
 .parent-mode-notice { border-left: 4px solid var(--sp-ok); padding: 12px 18px; max-width: 940px; line-height: 1.7; }
+.plan-range-notice { display: flex; align-items: flex-start; border-left: 4px solid var(--sp-ok); background: var(--sp-bg-sky); padding: 14px 18px; margin-top: 16px; max-width: 1100px; }
+.plan-range-notice > svg { width: 24px; height: 24px; flex: 0 0 24px; color: var(--sp-ok); margin: 4px 14px 0 0; }
+.home-greeting .plan-range-notice > p { margin: 0; font-size: 18px; line-height: 1.7; overflow-wrap: break-word; }
+.today-empty { padding: 24px 0; max-width: 900px; }
+.today-empty > p { margin: 0 0 20px; color: var(--sp-ink-2); line-height: 1.7; }
+.birthday-confirmation { border-left: 4px solid var(--sp-warn); background: var(--sp-bg-sky); padding: 16px 20px; }
+.birthday-confirmation p { margin-bottom: 14px; line-height: 1.6; }
+.birthday-confirmation .secondary { margin-top: 12px; }
 .parent-journey > h2, .parent-guide-section > h2, .rest-guides > h2 { margin-bottom: 24px; font-size: 27px; }
 .parent-guide-section { margin-top: 38px; }
 .parent-guide-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); grid-gap: 24px; }
@@ -695,6 +703,7 @@ small { font-size: 18px; }
   .home .home-greeting > p { flex: 1; min-width: 0; margin: 0.5vmin 0 0 2vmin; font-size: 2.6vmin; line-height: 1.35; }
   .home .home-greeting h1, .home .home-greeting > p { display: -webkit-box; -webkit-box-orient: vertical; -webkit-line-clamp: 1; overflow: hidden; }
   .home .home-greeting .parent-mode-notice { flex: 0 0 100%; max-width: none; margin: 0.8vmin 0 0; padding: 0.8vmin 1.2vmin; border-left-width: 0.4vmin; line-height: 1.3; }
+  .home .home-greeting .plan-range-notice { flex: 0 0 100%; max-width: none; box-sizing: border-box; }
   .home .section-heading h2, .home .parent-journey > h2 { font-size: 3.6vmin; line-height: 1.25; }
   .home .section-heading > span { font-size: 2.6vmin; }
   .home .section-heading svg { width: 3vmin; height: 3vmin; }

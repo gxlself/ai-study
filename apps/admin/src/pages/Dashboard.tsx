@@ -77,6 +77,10 @@ function DashboardContent({ child }: { child: ChildProfile }) {
           <Link to="/children">管理档案</Link>
           <Link to="/route">成长路线</Link>
         </div>
+        {today.data?.notice && <Alert className="plan-range-notice" type="info" showIcon
+          title={today.data.notice === 'before-first-stage'
+            ? '宝宝还不到 6 个月。下面是 6 个月起的陪伴活动，家长可以先学起来；现在最重要的是面对面说话和回应、每天分次清醒俯卧、按需喂养和睡眠，不需要屏幕。'
+            : '已超过 3 岁，继续使用最后阶段内容，也可以按孩子兴趣自由选择课程库'} />}
         <FetchWarning error={animals.error} retry={animals.reload} />
       </section>
 
