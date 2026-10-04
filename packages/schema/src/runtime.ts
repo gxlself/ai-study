@@ -138,6 +138,11 @@ export interface TodayPlan {
   theme: { id: string; title: LText; weekIndex: number; weeks: number } | null;
   items: TodayPlanItem[];
   screen: ScreenStatus;
+  /**
+   * 月龄超出路线范围时的说明：before-first-stage = 还没到首阶段（如不满 6 个月，计划为首阶段家长指引的"提前学"）；
+   * after-last-stage = 超过末阶段（沿用末阶段内容）。播放端/后台据此显示提示横幅。
+   */
+  notice?: 'before-first-stage' | 'after-last-stage';
 }
 
 // ---------------------------------------------------------------------------
