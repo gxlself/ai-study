@@ -14,8 +14,11 @@ type Phase = 'read' | 'play' | 'reaction';
 
 function timeLabel(ms: number) {
   const seconds = Math.ceil(ms / 1000);
-  return `${Math.floor(seconds / 60)}:${String(seconds % 60).padStart(2, '0')}`;
+  return `${String(Math.floor(seconds / 60)).padStart(2, '0')}:${String(seconds % 60).padStart(2, '0')}`;
 }
+
+const PROGRESS_RADIUS = 43;
+const PROGRESS_LENGTH = 2 * Math.PI * PROGRESS_RADIUS;
 
 function GuideActivity({ ctx }: { ctx: ActivityContext<GuideProps> }) {
   const s = useSession(ctx);
@@ -24,17 +27,16 @@ function GuideActivity({ ctx }: { ctx: ActivityContext<GuideProps> }) {
   const [phase, setPhase] = useState<Phase>('read');
   const phaseRef = useRef<Phase>('read');
   const [remaining, setRemaining] = useState(duration);
-  const [controls, setControls] = useState(false);
-  const controlsRef = useRef(false);
   const [selected, setSelected] = useState(0);
   const readArea = useRef<HTMLDivElement>(null);
   const readFooter = useRef<HTMLElement>(null);
-  const wakeButton = useRef<HTMLButtonElement>(null);
   const endButton = useRef<HTMLButtonElement>(null);
+  const reviewButton = useRef<HTMLButtonElement>(null);
   const reactionButtons = useRef<(HTMLButtonElement | null)[]>([]);
   const elapsed = useRef(0);
   const reason = useRef<'elapsed' | 'manual'>('elapsed');
   const answered = useRef(false);
+  const firstSay = props.steps.find((step) => step.say?.zh || step.say?.en)?.say;
 
   function enter(next: Phase) {
     phaseRef.current = next;
@@ -58,13 +60,10 @@ function GuideActivity({ ctx }: { ctx: ActivityContext<GuideProps> }) {
     if (!manual) s.sfx('chime');
     enter('reaction');
   }
-  function reveal() {
+  function review() {
     if (!s.active() || s.paused || phaseRef.current !== 'play') return;
-    if (!controlsRef.current) {
-      controlsRef.current = true;
-      setControls(true);
-      ctx.log('guide:controls');
-    }
+    ctx.log('guide:review');
+    enter('read');
   }
   function react(value: Reaction) {
     if (!s.active() || s.paused || phaseRef.current !== 'reaction' || answered.current) return;
@@ -91,19 +90,20 @@ function GuideActivity({ ctx }: { ctx: ActivityContext<GuideProps> }) {
   useLayoutEffect(() => {
     ctx.focus.refresh();
     if (phase === 'read') ctx.focus.focus(readFooter.current?.querySelector('.spa-guide-start') ?? null);
-    if (phase === 'play') ctx.focus.focus(controls ? endButton.current : wakeButton.current);
+    if (phase === 'play') ctx.focus.focus(endButton.current);
     if (phase === 'reaction') ctx.focus.focus(reactionButtons.current[0]);
-  }, [ctx, phase, controls]);
+  }, [ctx, phase]);
 
   useActivityKeys((key) => {
-    if (key === 'back') {
-      if (phaseRef.current === 'play') reveal();
-      return false;
-    }
+    if (key === 'back') return false;
     if (!s.active() || s.paused) return true;
     if (phaseRef.current === 'play') {
-      if (!controlsRef.current) reveal();
-      else if (key === 'ok') finish(true);
+      if (key === 'ok') {
+        if (ctx.focus.current() === reviewButton.current) review();
+        else finish(true);
+      } else if (key === 'left' || key === 'right') {
+        ctx.focus.focus(ctx.focus.current() === endButton.current ? reviewButton.current : endButton.current);
+      }
       return true;
     }
     if (phaseRef.current === 'read') {
@@ -125,6 +125,7 @@ function GuideActivity({ ctx }: { ctx: ActivityContext<GuideProps> }) {
   return <Stage ctx={ctx} className={`spa-guide spa-guide--${phase}`}>
     {phase === 'read' && <>
       <header className="spa-guide-goal"><span>给家长的陪玩指引</span><h2>{props.goal}</h2></header>
+      <p className="spa-guide-reading-note">这节是给家长看的：读完点「开始陪玩」，屏幕会调暗，你去和宝宝玩。</p>
       <ReadingArea areaRef={readArea} className="spa-guide-reading" label="家长陪玩指引">
         <div className="spa-guide-columns">
           <section className="spa-guide-section spa-guide-playbook">
@@ -171,13 +172,55 @@ function GuideActivity({ ctx }: { ctx: ActivityContext<GuideProps> }) {
       </footer>
     </>}
     {phase === 'play' && <>
-      <button className="spa-guide-wake" type="button" data-focusable ref={wakeButton}
-        aria-label="显示陪玩选项" onClick={reveal}>
-        <span className="spa-guide-dot" aria-hidden="true" />
-        <span className="spa-guide-timer" role="timer" aria-label="剩余陪玩时间" aria-live="off">{timeLabel(remaining)}</span>
-      </button>
-      {controls && <button type="button" data-focusable className="spa-guide-end" ref={endButton}
-        disabled={s.paused} onClick={() => finish(true)}>结束陪玩</button>}
+      <header className="spa-guide-play-header">
+        <p>陪玩进行中 · 屏幕已调暗，宝宝不用看屏幕</p>
+      </header>
+      <main className="spa-guide-play-main">
+        <section className="spa-guide-play-timer" aria-label="剩余陪玩时间">
+          <div className="spa-guide-timer-ring">
+            <svg className="spa-guide-progress-ring" viewBox="0 0 100 100" aria-hidden="true">
+              <circle className="spa-guide-progress-track" cx="50" cy="50" r={PROGRESS_RADIUS} />
+              <circle
+                className="spa-guide-progress-value"
+                cx="50"
+                cy="50"
+                r={PROGRESS_RADIUS}
+                strokeDasharray={PROGRESS_LENGTH}
+                strokeDashoffset={PROGRESS_LENGTH * (1 - Math.max(0, Math.min(1, remaining / duration)))}
+              />
+            </svg>
+            <div className="spa-guide-timer-copy">
+              <span className="spa-guide-timer-label">剩余时间</span>
+              <span className="spa-guide-timer" role="timer" aria-label="剩余陪玩时间" aria-live="off">{timeLabel(remaining)}</span>
+            </div>
+          </div>
+        </section>
+        <section className="spa-guide-play-summary" aria-label="陪玩要点">
+          <h2>现在和宝宝一起：</h2>
+          <p className="spa-guide-play-goal">{props.goal}</p>
+          <ol className="spa-guide-play-steps">
+            {props.steps.slice(0, 3).map((step, index) => <li key={index}>
+              <span className="spa-guide-play-step-number" aria-hidden="true">{index + 1}</span>
+              <span className="spa-guide-play-step-text" title={step.text}>{step.text}</span>
+            </li>)}
+          </ol>
+          {firstSay && <div className="spa-guide-play-say">
+            <strong>可以这样说</strong>
+            {firstSay.zh && <p lang="zh">{firstSay.zh}</p>}
+            {firstSay.en && <p lang="en">{firstSay.en}</p>}
+          </div>}
+        </section>
+      </main>
+      <footer className="spa-guide-play-footer">
+        <button type="button" data-focusable className="spa-guide-play-action spa-guide-end" ref={endButton}
+          aria-label="结束陪玩" title="结束陪玩" disabled={s.paused} onClick={() => finish(true)}>
+          按 OK / 点一下屏幕：结束陪玩
+        </button>
+        <button type="button" data-focusable className="spa-guide-play-action spa-guide-review" ref={reviewButton}
+          disabled={s.paused} onClick={review}>
+          再看一遍步骤
+        </button>
+      </footer>
     </>}
     {phase === 'reaction' && <div className="spa-guide-reaction">
       <h2>宝宝今天的反应？</h2>

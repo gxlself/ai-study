@@ -46,7 +46,7 @@ describe('家长活动指引', () => {
   it('完整呈现成人阅读分区、中英短句与插图，始终不朗读', async () => {
     const { root, ctx } = await mount();
     expect(root.querySelectorAll('.spa-guide-steps > li')).toHaveLength(1);
-    for (const text of ['准备材料', '可以这样说', '留意宝宝的反应', '安全提醒', sample.steps[0].say!.zh!, sample.steps[0].say!.en!]) {
+    for (const text of ['准备材料', '可以这样说', '留意宝宝的反应', '安全提醒', sample.steps[0].say!.zh!, sample.steps[0].say!.en!, '这节是给家长看的']) {
       expect(root.textContent).toContain(text);
     }
     expect(root.querySelector('img')?.getAttribute('src')).toBe('ball.svg');
@@ -85,15 +85,21 @@ describe('家长活动指引', () => {
     expect(value.ctx.mock.logs.some((event) => event.type === 'reaction')).toBe(false);
     expect(value.ctx.mock.sfx).toEqual([]);
   });
-  it('计时期间只有低亮度圆点和时间；首次按键只显示结束按钮', async () => {
+  it('计时期间显示暖色进度环、陪玩要点与两个可聚焦操作', async () => {
     const value = await mount();
     await press(value.instance, 'ok');
     expect(value.root.querySelector('.spa-guide--play')).not.toBeNull();
-    expect(value.root.querySelector('.spa-guide-end')).toBeNull();
-    expect(value.root.textContent).toBe('0:03');
-    expect(value.root.querySelector('.spa-guide-dot')).not.toBeNull();
+    expect(value.root.querySelector('[role="timer"]')?.textContent).toBe('00:03');
+    expect(value.root.querySelector('.spa-guide-progress-ring')).not.toBeNull();
+    expect(value.root.querySelector('.spa-guide-play-header')?.textContent).toContain('屏幕已调暗');
+    expect(value.root.querySelector('.spa-guide-play-goal')?.textContent).toBe(sample.goal);
+    expect(value.root.querySelectorAll('.spa-guide-play-steps > li')).toHaveLength(1);
+    expect(value.root.querySelectorAll('.spa-guide-play-footer [data-focusable]')).toHaveLength(2);
+    expect(value.ctx.focus.current()).toBe(value.root.querySelector('.spa-guide-end'));
     await press(value.instance, 'right');
-    expect(value.root.querySelector('.spa-guide-end')?.textContent).toBe('结束陪玩');
+    expect(value.ctx.focus.current()).toBe(value.root.querySelector('.spa-guide-review'));
+    await press(value.instance, 'left');
+    expect(value.ctx.focus.current()).toBe(value.root.querySelector('.spa-guide-end'));
     expect(value.root.querySelector('.spa-guide--play')).not.toBeNull();
     await press(value.instance, 'ok');
     expect(value.root.textContent).toContain('宝宝今天的反应？');
@@ -103,6 +109,20 @@ describe('家长活动指引', () => {
     expect(value.ctx.mock.logs).toContainEqual({ type: 'reaction', data: { value: 'neutral' } });
     expect(value.ctx.mock.completions).toEqual([{ data: { reaction: 'neutral', playMin: 0.05, playedSec: 0, reason: 'manual' } }]);
     expect(value.ctx.mock.speeches).toEqual([]);
+  });
+  it('再看一遍步骤会暂停并保留剩余时间，重新开始后继续计时', async () => {
+    const value = await mount();
+    await press(value.instance, 'ok');
+    await tick(1000);
+    expect(value.root.querySelector('[role="timer"]')?.textContent).toBe('00:02');
+    await click(value.root.querySelector('.spa-guide-review'));
+    expect(value.root.querySelector('.spa-guide--read')).not.toBeNull();
+    expect(value.root.querySelector('.spa-guide-reading-note')?.textContent).toContain('屏幕会调暗');
+    await click(value.root.querySelector('.spa-guide-start'));
+    expect(value.root.querySelector('[role="timer"]')?.textContent).toBe('00:02');
+    await tick(1000);
+    expect(value.root.querySelector('[role="timer"]')?.textContent).toBe('00:01');
+    expect(value.ctx.mock.completions).toHaveLength(0);
   });
   it('到时只响一次 chime，点击反应后只记录一次再结束', async () => {
     const value = await mount();
@@ -124,11 +144,11 @@ describe('家长活动指引', () => {
     await tick(1000);
     await act(async () => { value.instance.pause?.(); });
     await tick(10_000);
-    expect(value.root.querySelector('[role="timer"]')?.textContent).toBe('0:02');
+    expect(value.root.querySelector('[role="timer"]')?.textContent).toBe('00:02');
     expect(value.ctx.mock.sfx).toEqual([]);
     await act(async () => { value.instance.resume?.(); });
     await tick(1000);
-    expect(value.root.querySelector('[role="timer"]')?.textContent).toBe('0:01');
+    expect(value.root.querySelector('[role="timer"]')?.textContent).toBe('00:01');
     await act(async () => { value.ctx.mock.abort(); });
     await tick(10_000);
     expect(value.root.childElementCount).toBe(0);
@@ -140,7 +160,6 @@ describe('家长活动指引', () => {
     const value = await mount();
     expect(await press(value.instance, 'back')).toBe(false);
     await click(value.root.querySelector('.spa-guide-start'));
-    await click(value.root.querySelector('.spa-guide-wake'));
     expect(value.root.querySelector('.spa-guide-end')).not.toBeNull();
     expect(await press(value.instance, 'back')).toBe(false);
     await click(value.root.querySelector('.spa-guide-end'));
