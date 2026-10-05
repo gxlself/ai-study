@@ -1,5 +1,5 @@
 import { cp, mkdir, mkdtemp, rm, readFile, writeFile } from 'node:fs/promises';
-import { join } from 'node:path';
+import { dirname, join, resolve } from 'node:path';
 import { existsSync } from 'node:fs';
 import { checkContent } from '../../../deploy/check-content.mjs';
 import { REPO_ROOT, RESOURCE_ROOT, PLAYER_ROOT, run } from './native-utils.mjs';
@@ -27,12 +27,22 @@ export async function installStagedContent(platform, staged) {
   const destination = join(PLAYER_ROOT, publicRoot, 'bundled/packs/sprout.core');
   await rm(destination, { recursive: true, force: true });
   await mkdir(destination, { recursive: true });
-  for (const name of ['bundle.json', 'assets', 'audio']) {
-    if (existsSync(join(staged.pack, name))) await cp(join(staged.pack, name), join(destination, name), { recursive: true });
+  for (const name of ['bundle.json', 'assets', 'audio/manifest.json']) {
+    if (existsSync(join(staged.pack, name))) {
+      const target = join(destination, name);
+      await mkdir(dirname(target), { recursive: true });
+      await cp(join(staged.pack, name), target, { recursive: true });
+    }
   }
   const installed = JSON.parse(await readFile(join(destination, 'bundle.json'), 'utf8'));
   if (installed.lessons.length !== staged.summary.lessons || !installed.routes.length) throw new Error('原生内置包复制不完整。');
-  await mkdir(join(REPO_ROOT, 'release'), { recursive: true });
-  await writeFile(join(REPO_ROOT, `release/${platform}-content.json`), JSON.stringify(staged.summary, null, 2) + '\n');
+  for (const file of new Set(Object.values(installed.audio?.entries ?? {}))) {
+    const target = join(destination, file);
+    await mkdir(dirname(target), { recursive: true });
+    await cp(join(staged.pack, file), target);
+  }
+  const releaseRoot = resolve(process.env.SPROUT_RELEASE_DIR || join(REPO_ROOT, 'release'));
+  await mkdir(releaseRoot, { recursive: true });
+  await writeFile(join(releaseRoot, `${platform}-content.json`), JSON.stringify(staged.summary, null, 2) + '\n');
   console.info(`原生内置包：${staged.summary.lessons} 课 / ${staged.summary.concepts} 词 / ${staged.summary.audio} 条音频。`);
 }

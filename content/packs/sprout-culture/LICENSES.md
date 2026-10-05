@@ -1,10 +1,14 @@
 # 素材许可与来源
 
+## 原创课程内容
+
+原创课程文字、路线、词库文本、歌词、打印卡文案和家长指引适用仓库根目录 `CONTENT-LICENSE.md`（CC BY-NC 4.0；商业使用须另行授权）。本包自绘 SVG 的 CC0 范围只覆盖实际标注的图形文件。
+
 ## 原创内容
 
 作者：芽芽成长 Sprout。
 
-本包原创的课程JSON、词库JSON、说明文字，以及`assets/images/festivals/`中的七幅词条SVG和一幅包封面，以**CC0 1.0 Universal（CC0-1.0）**公共领域贡献方式提供。作者在法律允许的范围内放弃其对这些原创内容的版权及相关权利；不提供质量、适用性或无侵权保证。不以此声明覆盖第三方权利。
+本包原创的课程 JSON、词库 JSON 和说明文字按仓库根目录 `CONTENT-LICENSE.md` 提供。`assets/images/festivals/` 中的七幅词条 SVG和一幅包封面按本包实际来源以 CC0 提供；该图形许可不扩展到课程文字或第三方权利。
 
 许可文本：
 
@@ -23,7 +27,7 @@ https://creativecommons.org/publicdomain/zero/1.0/legalcode
 
 ## 系统合成音频
 
-`audio/tts/`由项目流水线调用macOS系统`say`与`afconvert`实际生成。声音及语速以`audio/manifest.json`与生成设置为准；课程正文、固定提示语和引用概念的词名按项目契约收集。
+公开包的`audio/manifest.json`为空且不含录音。个人在macOS上运行流水线时，系统`say`生成的`audio/tts/`与`audio/manifest.local.json`留在本地忽略路径；课程正文、固定提示语和引用概念的词名仍按项目契约收集。
 
 本包未引入第三方真人录音、第三方歌曲、歌词或旋律。家长指引只显示给成人阅读，不把guide内容朗读给宝宝。
 

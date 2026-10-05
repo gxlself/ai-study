@@ -1,7 +1,8 @@
 {
   "name": "sprout",
   "private": true,
-  "version": "0.1.0",
+  "version": "0.0.1",
+  "license": "MIT",
   "description": "芽芽成长 Sprout — 6 个月到 3 岁的亲子共学大屏课程（电视 / iPad 播放端 + 后台管理 + 插件化内容）",
   "type": "module",
   "packageManager": "pnpm@11.1.0",
@@ -23,6 +24,7 @@
     "content:all": "tsx scripts/content-all.ts",
     "content:typecheck": "pnpm --dir scripts typecheck",
     "content:test": "pnpm --dir scripts test",
+    "qa:license": "node scripts/check-redistributable.mjs",
     "qa:integration": "node scripts/qa-integration.mjs",
     "qa:verify": "node scripts/qa-verify.mjs",
     "qa:report": "node scripts/qa-report.mjs"

@@ -7,6 +7,7 @@
     "en": "Sprout Core"
   },
   "author": "芽芽成长",
+  "license": "CC BY-NC 4.0; commercial license required",
   "ageRange": [6, 36],
   "lexicon": "lexicon.json",
   "routes": ["routes/sprout-core-route.json"],

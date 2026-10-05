@@ -7,6 +7,7 @@ import type { LessonSummary, OfflineActivity, ParentGuide } from '@sprout/schema
 import { DOMAIN_LABELS } from '@sprout/schema';
 import { createResources } from '../host';
 import { lessonPrintAddress } from './PrintCardsPrompt';
+import { demoLabel, IS_DEMO } from '../demo';
 
 export function useScope(onBack?: () => void, onKey?: (key: NavKey) => boolean) {
   const { navigation } = useApp();
@@ -30,6 +31,10 @@ export function Page({ children, className = '', onBack, onKey }: { children: Re
 
 export function Brand() {
   return <div className="brand"><Leaf aria-hidden="true" /><span>芽芽成长<small>SPROUT</small></span></div>;
+}
+
+export function DemoBadge() {
+  return IS_DEMO ? <div className="demo-badge" role="status">{demoLabel()}</div> : null;
 }
 
 export function IconButton({ label, children, onClick, className = '' }: { label: string; children: ReactNode; onClick(): void; className?: string }) {

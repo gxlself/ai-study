@@ -6,6 +6,7 @@ import { useApp } from '../state/AppContext';
 import { LocalSource } from '../data';
 import { BackButton, Brand, LessonCard, Loading, Page } from '../ui/common';
 import { ChildForm } from '../ui/ChildForm';
+import { IS_DEMO } from '../demo';
 
 type Tab = 'children' | 'library' | 'settings' | 'about';
 const tabs = [
@@ -93,11 +94,11 @@ export function Parent() {
             <label className="volume-row"><span><Volume2 />朗读与提示音</span><input data-focusable type="range" min="0" max="1" step="0.05" aria-label="音量" value={app.prefs.volume} onChange={(e) => app.setPrefs({ volume: Number(e.target.value) })} /><output>{Math.round(app.prefs.volume * 100)}%</output></label>
           </section>
           <section className="settings-section"><h3>家庭服务器</h3><p className="connection-address">{local ? '离线模式 · 数据保存在这台设备' : localStorage.getItem('sprout.server')}</p>
-            <div className="settings-actions"><button data-focusable className="secondary" onClick={() => navigate('/setup?connect=1')}><Monitor />{local ? '连接家庭服务器' : '更换服务器 / 重新配对'}</button>
-              {!local && <button data-focusable className="secondary" onClick={() => navigate('/setup?offline=1')}>切换离线模式</button>}</div>
+            {IS_DEMO ? <p className="muted">演示版不可用 · Demo build unavailable</p> : <div className="settings-actions"><button data-focusable className="secondary" onClick={() => navigate('/setup?connect=1')}><Monitor />{local ? '连接家庭服务器' : '更换服务器 / 重新配对'}</button>
+              {!local && <button data-focusable className="secondary" onClick={() => navigate('/setup?offline=1')}>切换离线模式</button>}</div>}
           </section>
         </>}
-        {tab === 'about' && <><h2>芽芽成长 Sprout</h2><p>播放端 1.0.0 · 亲子共学</p><section className="settings-section"><h3>内容与素材许可</h3>
+        {tab === 'about' && <><h2>芽芽成长 Sprout</h2><p>播放端 0.0.1 · 亲子共学</p><section className="settings-section"><h3>内容与素材许可</h3>
           {app.bootstrap?.packs.map((pack) => <article className="pack-credit" key={pack.id}><h4>{pack.name.zh} <small>{pack.version}</small></h4><p>{pack.author} {pack.license}</p><ul>{pack.credits.map((credit, i) => <li key={i}>{credit.name} · {credit.license}{credit.note && <p>{credit.note}</p>}{credit.url && /^https?:\/\//.test(credit.url) && <a data-focusable href={credit.url} target="_blank" rel="noopener noreferrer">来源</a>}</li>)}</ul></article>)}
           <p className="muted">界面图标：Lucide，ISC 许可。</p>
         </section></>}

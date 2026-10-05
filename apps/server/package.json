@@ -1,5 +1,5 @@
 {
-  "name": "@sprout/server", "version": "1.0.0", "private": true, "type": "module",
+  "name": "@sprout/server", "version": "0.0.1", "license": "MIT", "private": true, "type": "module",
   "scripts": {
     "dev": "tsx watch src/index.ts", "build": "tsup", "start": "node --disable-warning=ExperimentalWarning dist/index.js",
     "typecheck": "tsc -p tsconfig.json", "test": "vitest run --maxWorkers=1 --no-file-parallelism --no-isolate --testTimeout=120000 --hookTimeout=120000"

@@ -139,7 +139,7 @@ Android TV/Google TV、小米/红米、海信、TCL 等**支持安卓 APK 安装
 ```sh
 adb connect <电视IP>:<调试端口>
 adb devices
-adb -s <设备序列号> install -r release/sprout-player-1.0.0-release.apk
+adb -s <设备序列号> install -r release/sprout-player-0.0.1-release.apk
 adb -s <设备序列号> shell am start -n com.sprout.growth/.MainActivity
 ```
 

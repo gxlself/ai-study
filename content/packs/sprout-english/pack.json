@@ -11,7 +11,7 @@
     "en": "Learn a few phrases, put the screen away, and use them in real conversations. Nine parent guides and three optional co-viewing lessons, without promises of language gains."
   },
   "author": "芽芽成长 Sprout",
-  "license": "CC0-1.0",
+  "license": "CC BY-NC 4.0; commercial license required",
   "ageRange": [6, 36],
   "lexicon": "lexicon.json",
   "routes": [],
@@ -24,8 +24,8 @@
   "credits": [
     {
       "name": "芽芽成长原创课程、英文歌词与自绘插画",
-      "license": "CC0-1.0",
-      "note": "许可限本包原创文字、词条、插画和测试源码，不覆盖核心包素材或系统语音。"
+      "license": "CC BY-NC 4.0; commercial license required",
+      "note": "原创课程文字与歌词按 CONTENT-LICENSE 提供；自绘插画另按本包 LICENSES.md 的 CC0 说明，不覆盖核心包素材或本地系统语音。"
     },
     {
       "name": "Frère Jacques 传统旋律",

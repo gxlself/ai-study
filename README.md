@@ -1,5 +1,11 @@
 # 芽芽成长 Sprout
 
+> A gentle, parent-led learning companion for ages 6 months to 3 years.
+
+[![License: MIT](https://img.shields.io/badge/code-MIT-green.svg)](LICENSE) [![Content: CC BY-NC 4.0](https://img.shields.io/badge/content-CC%20BY--NC%204.0-orange.svg)](CONTENT-LICENSE.md) [![Release v0.0.1](https://img.shields.io/badge/release-v0.0.1-blue.svg)](https://github.com/gxlself/ai-study/releases/tag/v0.0.1) [![CI](https://github.com/gxlself/ai-study/actions/workflows/ci.yml/badge.svg)](https://github.com/gxlself/ai-study/actions/workflows/ci.yml)
+
+[官网](https://gxlself.github.io/ai-study/) · [在线演示](https://gxlself.github.io/ai-study/demo/) · [English README](README.en.md)
+
 芽芽成长是面向 6 个月–3 岁家庭的亲子共学工具：屏幕只做一个慢慢的引子，真正的学习发生在家长的回应、真实物品、游戏、阅读、歌唱和户外活动里。它不是电子保姆，也不以延长观看时长为目标。
 
 项目适合在家庭局域网运行：一台 Mac、NAS 或小主机运行服务端，电视、iPad 或浏览器打开播放端，手机和电脑打开家长后台。没有服务器时，也可以使用播放端内置内容包离线体验。
@@ -20,7 +26,7 @@
 | --- | --- |
 | 播放端 | 电视/iPad/浏览器播放课程；支持遥控器 D-pad、键盘和触屏；支持远程服务器与离线内置内容；按月龄提供家长模式、亲子共看、暂停、家长门和自然结束点。 |
 | 家长后台 | 首次设置、孩子档案、语言模式、屏幕时段、今日计划、成长路线、课程库、打印实体卡、里程碑观察、设备配对、备份恢复。 |
-| 内容包 | `sprout.core` 内置 6 个阶段、96 节课程和 220 个词条；课程含家长导语、慢节奏步骤和线下延伸活动；内容可打包、校验、导入和升级。 |
+| 内容包 | `sprout.core` 内置 6 个阶段、96 节课程和 254 个词条；课程含家长导语、慢节奏步骤和线下延伸活动；内容可打包、校验、导入和升级。 |
 | 活动插件 | 17 个内置活动，另支持带命名空间的第三方活动插件；插件必须遵守生命周期、焦点导航、资源、音频、权限和婴幼儿内容安全约定。 |
 
 ## 架构
@@ -105,6 +111,15 @@ pnpm content:all --pack content/packs/sprout-core
 export pnpm_config_verify_deps_before_run=false
 pnpm build
 ```
+
+构建不含预录音频的 GitHub Pages 演示站：
+
+```sh
+export pnpm_config_verify_deps_before_run=false
+pnpm --filter @sprout/player build:demo
+```
+
+输出目录为 `apps/player/dist-demo/`，部署前缀为 `/ai-study/demo/`。演示版只使用内置 `sprout.core` 和浏览器本地存储，不连接家庭服务器。
 
 ### 启动已构建版本
 
@@ -197,17 +212,19 @@ pnpm --filter @sprout/player build
 
 ## 许可与素材署名
 
-本仓库的内容、代码和第三方素材按各自目录的声明使用，不能把整个仓库笼统地标成同一种许可证。内置核心包的主要素材包括：
+本仓库分为代码、原创内容和第三方素材三类许可，不能把整个仓库笼统地标成同一种许可证。
 
-- Fluent Emoji：Microsoft，MIT；适用范围和完整许可见 [`content/packs/sprout-core/LICENSES.md`](content/packs/sprout-core/LICENSES.md)。
-- 芽芽成长自绘图形：CC0-1.0；对应来源见 `content/packs/sprout-core/assets/sources.json`。
-- 内置内容包、旋律、歌词和音频：以课程与内容包中的真实署名为准；传统旋律、公有领域和原创歌词不能互相替代。
-- macOS 系统合成音频（Tingting、Samantha 等）：**仅限个人非商业使用，不可公开再分发**，不属于课程或图片的 CC0/MIT 授权。公开仓库、下载 ZIP、CDN、应用安装包及商业产品不得附带这些录音，免费或非营利发布也不例外；须改用明确允许相应用途与再分发的可商用 TTS 或获授权真人录音，重新生成整个目标包的 `audio/`、bundle 与 ZIP。
-- 播放端界面图标使用 Lucide，播放端关于页和对应包信息会显示署名。
+**代码：** `apps/`、`packages/`、`scripts/`、`plugins/`、`deploy/`、构建配置和 schema 代码按根目录 [`LICENSE`](LICENSE) 采用 MIT。
+
+**内容：** `content/packs/**` 中的原创课程、路线、词库文本、原创歌词、打印卡文案、家长指引，以及 `docs/curriculum`、`docs/guide`、`docs/research` 等原创文字按 [`CONTENT-LICENSE.md`](CONTENT-LICENSE.md) 提供：个人、家庭、非商业教育使用免费并须署名；商业使用须事先取得书面授权。各内容包 manifest 的 `license` 字段与此保持一致。公开仓库、发布 ZIP、APK 和演示站均**不含任何预录音频**。
+
+**第三方：** Fluent Emoji 按 Microsoft 的 MIT 许可，Lucide 按 ISC 许可，CDC 里程碑整理数据按其来源与仓库现有说明使用，自绘图形的 CC0 范围以各包 `assets/sources.json` 为准。完整汇总见 [`THIRD_PARTY_NOTICES.md`](THIRD_PARTY_NOTICES.md) 和各包的 `LICENSES.md`。
+
+在 macOS 上运行 `pnpm content:audio` 只供个人非商业使用：生成文件和 `audio/manifest.local.json` 写入本地忽略路径，不进入公开 bundle、ZIP 或应用。公开发布应接入已获音频再分发授权的 `TtsProvider` 或真人录音，并按内容流水线文档补齐来源与许可。
 
 新增图片、录音、视频、旋律或插件时，请同时更新内容包的 `credits`、`LICENSES.md` 或插件清单，不要把 `custom` 当作自动获得许可。
 
-音频条款依据 Apple macOS Tahoe 26 许可第 2.F 节（2026-10-03 核对，以实际安装版本为准）。服务端可通过现有 `TtsProvider` 接口接入获授权声音，`audio/manifest.json` 的结构与文本 key 不变；详细接入、全量重配音及发布检查见[内容流水线](docs/dev/content-pipeline.md#音频授权与公开发布)。后台切换设置不会自动替换内置或扩展包音频。
+服务端可通过现有 `TtsProvider` 接入获授权声音；`audio/manifest.json` 的结构与文本 key 不变。详细接入、全量重配音及发布检查见[内容流水线](docs/dev/content-pipeline.md#音频授权与公开发布)。
 
 ## 免责声明
 

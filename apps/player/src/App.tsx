@@ -1,7 +1,7 @@
 import { Navigate, Route, Routes, useLocation, useNavigate } from 'react-router';
 import { useEffect } from 'react';
 import { AppProvider, useApp } from './state/AppContext';
-import { Loading, Page, Problem } from './ui/common';
+import { DemoBadge, Loading, Page, Problem } from './ui/common';
 import { Setup } from './pages/Setup';
 import { Home } from './pages/Home';
 import { LessonPlayer } from './pages/LessonPlayer';
@@ -9,6 +9,7 @@ import { Parent } from './pages/Parent';
 import { Rest } from './pages/Rest';
 import { Preview } from './pages/Preview';
 import { isPreviewPath } from './security/preview';
+import { IS_DEMO } from './demo';
 
 function MainRoutes() {
   const app = useApp();
@@ -20,7 +21,7 @@ function MainRoutes() {
     if (app.loading) return <Page><Loading /></Page>;
     if (!app.source) return <Navigate to="/setup" replace />;
     if (app.error && !app.bootstrap) return <Page><Problem message={app.error} retry={() => void app.refresh().catch(() => undefined)} /><button data-focusable onClick={() => navigate('/setup')}>连接设置</button></Page>;
-    if (!app.bootstrap?.child) return <Navigate to="/setup?children=1" replace />;
+    if (!app.bootstrap?.child) return <Navigate to={IS_DEMO ? '/setup?offline=1' : '/setup?children=1'} replace />;
   }
   return <Routes>
     <Route path="/setup" element={<Setup />} />
@@ -34,5 +35,5 @@ function MainRoutes() {
 }
 
 export function App() {
-  return <AppProvider><MainRoutes /></AppProvider>;
+  return <AppProvider><DemoBadge /><MainRoutes /></AppProvider>;
 }

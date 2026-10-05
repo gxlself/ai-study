@@ -19,12 +19,20 @@ beforeEach(async () => {
 afterEach(async () => { await rm(root, { recursive: true, force: true }); vi.restoreAllMocks(); });
 
 describe('内容包检查', () => {
-  it('应用活动默认值并将缺音频作为非严格模式警告', async () => {
+  it('应用活动默认值并允许公开包使用空音频清单', async () => {
     const result = await inspectPack(root);
     expect(failure(result.issues)).toBe(false);
-    expect(failure(result.issues, true)).toBe(true);
+    expect(failure(result.issues, true)).toBe(false);
     expect(result.validLessons[0].steps[0].props).toMatchObject({ speak: 'name', autoAdvanceSec: null });
     expect(result.audioCoverage.missing.some((entry) => entry.key === 'zh:圆形')).toBe(true);
+    expect(result.issues.some((entry) => entry.message.includes('缺少') && entry.path === 'audio/manifest.json')).toBe(false);
+  });
+
+  it('部分音频清单仍提示真实覆盖率缺口', async () => {
+    await writeJson(root, 'audio/manifest.json', { schemaVersion: 1, voices: { zh: 'licensed-zh' }, entries: { 'zh:圆形': 'audio/missing.m4a' } });
+    const result = await inspectPack(root);
+    expect(result.issues.some((entry) => entry.message.includes('音频文件缺失'))).toBe(true);
+    expect(result.issues.some((entry) => entry.message.includes('缺少'))).toBe(true);
   });
 
   it('缺失和损坏文件生成报告而不抛异常', async () => {
@@ -139,9 +147,10 @@ describe('路线一致性', () => {
       title: { zh: '你好,' }, coView: 'optional', cover: { image: 'assets/missing.svg' },
     });
     const result = await inspectPack(root);
-    for (const text of ['coView', '不存在概念', '资源缺失', '半角标点', '缺少']) {
+    for (const text of ['coView', '不存在概念', '资源缺失', '半角标点']) {
       expect(result.issues.some((entry) => entry.message.includes(text)), text).toBe(true);
     }
+    expect(result.issues.some((entry) => entry.message.includes('缺少'))).toBe(false);
     expect(result.issues.some((entry) => entry.message.includes('在主题中出现'))).toBe(false);
     expect(result.validLessons).toEqual([]);
     expect(failure(result.issues, true)).toBe(true);

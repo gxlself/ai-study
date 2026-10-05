@@ -35,6 +35,7 @@ small { font-size: 18px; }
 .icon-button { width: 72px; height: 72px; min-height: 72px; padding: 16px; border-radius: 50%; flex: 0 0 auto; }
 .icon-button svg { width: 32px; height: 32px; }
 .parent-button { position: fixed; bottom: var(--sp-safe); right: var(--sp-safe); z-index: 8; box-shadow: var(--sp-shadow); }
+.demo-badge { position: fixed; top: 10px; right: 10px; z-index: 40; width: 460px; max-width: 90vw; padding: 7px 10px; border: 1px solid rgba(76, 111, 57, .28); border-radius: 6px; background: rgba(245, 251, 236, .94); color: var(--sp-ink-2); font-size: 13px; line-height: 1.35; text-align: right; pointer-events: none; }
 .loading { display: flex; min-height: 50vh; flex-direction: column; align-items: center; justify-content: center; --sp-layout-loading: 22px; color: var(--sp-ink-2); grid-gap: 0; }
 .loading > * + * { margin-top: var(--sp-layout-loading); margin-left: 0; }
 .loading svg { width: 68px; height: 68px; color: var(--sp-ok); animation: slow-spin 4s linear infinite; }
@@ -55,6 +56,7 @@ small { font-size: 18px; }
 .setup-option > svg:first-child { width: 50px; height: 50px; }
 .setup-option.remote { background: var(--sp-surface); }
 .setup-option.local { background: var(--sp-bg-grass); }
+.setup-options.demo-only { grid-template-columns: minmax(0, 1fr); max-width: 640px; }
 .setup-form { width: 100%; max-width: 690px; margin: 40px auto; }
 .setup-form h1 { margin-bottom: 32px; text-align: center; }
 .child-form { display: flex; flex-direction: column; --sp-layout-child-form: 22px; grid-gap: 0; }

@@ -1,0 +1,37 @@
+name: Content suggestion or safety concern
+description: Suggest curriculum content or report a child-safety concern.
+title: "[content] "
+labels: ["content"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Safety concerns receive priority. Do not include real child names, photos, recordings, or private family details.
+  - type: dropdown
+    id: type
+    attributes:
+      label: Type
+      options:
+        - Safety concern
+        - Curriculum or lesson suggestion
+        - Content correction
+        - Asset or license question
+    validations:
+      required: true
+  - type: textarea
+    id: concern
+    attributes:
+      label: Details
+      description: Explain the content, age range, and concrete concern or suggestion.
+    validations:
+      required: true
+  - type: textarea
+    id: safety
+    attributes:
+      label: Safety impact
+      description: If this is a safety concern, explain why it could harm or mislead a child or caregiver.
+  - type: textarea
+    id: sources
+    attributes:
+      label: Sources or license information
+      description: Include public references only. Do not attach unlicensed media.

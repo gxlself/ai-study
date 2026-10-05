@@ -13,7 +13,7 @@ export function registerAuth(app: FastifyInstance, context: AppContext): void {
   const route = (scope: 'admin' | 'public', summary: string, resource?: ResourceKind) =>
     options(context, scope, '初始化与认证', summary, resource);
   app.get('/api/health', route('public', '服务状态'), async () => ({
-    ok: true, version: '1.0.0', time: new Date().toISOString(),
+    ok: true, version: '0.0.1', time: new Date().toISOString(),
   }));
   app.get('/api/setup/status', route('public', '是否已初始化'), async () => ({ initialized: !!passwordHash(store) }));
   app.post('/api/setup', route('public', '设置家庭与管理员密码', 'password'), async (request) => {

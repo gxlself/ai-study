@@ -12,6 +12,7 @@ export async function buildNative(platform, variant = 'debug') {
     throw new Error('用法：build-native.mjs android [debug|release|all] 或 ios');
   }
   if (process.env.SPROUT_BUNDLED_FIXTURE === '1') throw new Error('原生发布不能使用开发夹具。');
+  if (process.env.SPROUT_LOCAL_AUDIO === '1') throw new Error('原生发布不能打入个人系统语音，请取消 SPROUT_LOCAL_AUDIO。');
   if (!existsSync(join(REPO_ROOT, 'content/packs/sprout-core/pack.json'))) throw new Error('请先由内容任务交付正式内容源包。');
   const staged = await stageContent();
   try {
@@ -48,7 +49,7 @@ export async function buildNative(platform, variant = 'debug') {
     env: { ...process.env, JAVA_HOME: home, ANDROID_HOME: sdk },
   });
   const { version } = JSON.parse(await readFile(join(PLAYER_ROOT, 'package.json'), 'utf8'));
-  const releaseRoot = join(REPO_ROOT, 'release');
+  const releaseRoot = resolve(process.env.SPROUT_RELEASE_DIR || join(REPO_ROOT, 'release'));
   await mkdir(releaseRoot, { recursive: true });
   for (const name of variants) {
     const filename = `sprout-player-${version}-${name}.apk`;

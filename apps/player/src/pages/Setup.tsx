@@ -6,13 +6,16 @@ import { BackButton, Brand, Loading, Page } from '../ui/common';
 import { ChildForm } from '../ui/ChildForm';
 import { normalizeServer } from '../data';
 import { requestDeadline } from '../compat';
+import { IS_DEMO } from '../demo';
 
 interface Pairing { pairingId: string; code: string; expiresAt: string }
 export function Setup() {
   const app = useApp();
   const navigate = useNavigate();
   const [params] = useSearchParams();
-  const [mode, setMode] = useState<'choose' | 'remote' | 'local' | 'children'>(params.has('children') ? 'children' : params.has('connect') ? 'remote' : params.has('offline') ? 'local' : 'choose');
+  const [mode, setMode] = useState<'choose' | 'remote' | 'local' | 'children'>(
+    params.has('children') ? 'children' : params.has('connect') && !IS_DEMO ? 'remote' : params.has('offline') || IS_DEMO ? 'local' : 'choose',
+  );
   const [server, setServer] = useState(() => {
     const saved = localStorage.getItem('sprout.server');
     return saved || (/^https?:$/.test(location.protocol) ? location.origin : '');
@@ -104,8 +107,8 @@ export function Setup() {
     {mode === 'choose' && <main className="setup-welcome">
       <div className="welcome-art" aria-hidden="true"><Leaf /><span className="seed-line" /></div>
       <h1>一起，慢慢长大</h1>
-      <div className="setup-options">
-        <button data-focusable className="setup-option remote" onClick={() => setMode('remote')}><Monitor /><span>连接家庭服务器</span><ArrowRight /></button>
+      <div className={`setup-options${IS_DEMO ? ' demo-only' : ''}`}>
+        {!IS_DEMO && <button data-focusable className="setup-option remote" onClick={() => setMode('remote')}><Monitor /><span>连接家庭服务器</span><ArrowRight /></button>}
         <button data-focusable className="setup-option local" onClick={() => setMode('local')}><Leaf /><span>先离线体验</span><ArrowRight /></button>
       </div>
     </main>}

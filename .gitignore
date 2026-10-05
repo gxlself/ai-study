@@ -19,4 +19,7 @@ release/
 apps/player/public/bundled/
 scripts/.cache/
 content/**/audio/.tts-*
+content/**/audio/manifest.local.json
+content/**/audio/tts/
 /qa-artifacts/
+apps/player/dist-demo/

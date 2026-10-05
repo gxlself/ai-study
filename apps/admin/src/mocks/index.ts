@@ -32,7 +32,7 @@ export function installMock() {
     const path = url.pathname;
     const parts = path.split('/').filter(Boolean).map(decodeURIComponent);
     const body = typeof raw === 'string' ? JSON.parse(raw) as Record<string, unknown> : {};
-    if (path === '/api/health') return reply({ ok: true, version: '1.0.0-dev', time: now() });
+    if (path === '/api/health') return reply({ ok: true, version: '0.0.1-dev', time: now() });
     if (path === '/api/setup/status') return reply({ initialized });
     if (path === '/api/setup') {
       if (initialized) return failed('家庭已经初始化');

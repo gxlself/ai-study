@@ -1,6 +1,7 @@
 {
   "name": "@sprout-example/hello-plugin",
-  "version": "1.0.0",
+  "version": "0.0.1",
+  "license": "MIT",
   "private": true,
   "type": "module",
   "description": "Sprout 原生 DOM 活动插件示例",

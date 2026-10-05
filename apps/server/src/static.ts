@@ -1,7 +1,8 @@
-import { existsSync, lstatSync, realpathSync } from 'node:fs';
+import { existsSync, lstatSync, readFileSync, realpathSync } from 'node:fs';
 import { extname, isAbsolute, join, relative, resolve, sep } from 'node:path';
 import type { FastifyInstance, FastifyReply } from 'fastify';
 import fastifyStatic from '@fastify/static';
+import { AudioManifest } from '@sprout/schema';
 import { ApiError } from './errors';
 import type { AppContext } from './context';
 
@@ -61,6 +62,25 @@ function send(reply: FastifyReply, root: string, path: string, mutable = false, 
   });
 }
 
+function mergedAudioManifest(root: string): unknown {
+  const read = (relativePath: string) => {
+    try {
+      const parsed = AudioManifest.safeParse(JSON.parse(readFileSync(join(root, relativePath), 'utf8')));
+      return parsed.success ? parsed.data : undefined;
+    } catch {
+      return undefined;
+    }
+  };
+  const publicManifest = read('audio/manifest.json') ?? { schemaVersion: 1 as const, voices: {}, entries: {} };
+  const localManifest = read('audio/manifest.local.json');
+  if (!localManifest) return publicManifest;
+  return {
+    schemaVersion: 1,
+    voices: { ...localManifest.voices, ...publicManifest.voices },
+    entries: { ...localManifest.entries, ...publicManifest.entries },
+  };
+}
+
 export async function registerStatic(app: FastifyInstance, context: AppContext): Promise<void> {
   await app.register(fastifyStatic, { root: context.config.rootDir, serve: false });
   const hidden = { schema: { hide: true } };
@@ -68,6 +88,11 @@ export async function registerStatic(app: FastifyInstance, context: AppContext):
     const { id, '*': path } = request.params as { id: string; '*': string };
     const pack = context.packs.getPack(id);
     if (!pack?.info.enabled) throw new ApiError(404, 'PACK_NOT_FOUND', '内容包不存在或已停用');
+    if (path === 'audio/manifest.json') {
+      return reply.type('application/json; charset=utf-8').header('Cache-Control', 'no-store').send(
+        JSON.stringify(mergedAudioManifest(pack.dir)),
+      );
+    }
     return send(reply, pack.dir, path, pack.info.source === 'custom', true);
   });
   app.get('/plugins/:id/*', hidden, async (request, reply) => {

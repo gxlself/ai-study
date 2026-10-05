@@ -62,7 +62,7 @@
 - **内容包**：见 `packages/schema/src/pack.ts`。内置包 id `sprout.core`，路线 id `sprout.core.route`，课程 id `core.<stage>.<slug>`（如 `core.s3.animal-sounds`）。
 - **自定义内容包**：家长在后台建的课/词/上传素材写入 `data/custom/`（包 id `sprout.custom`），与其它包同等加载。
 - **资源 URL**：`/packs/<packId>/<packPath>`；词库图片 `concept.image` 为包内相对路径。跨包引用词条：课程用 concept id 引用，解析顺序 = 本包 → `sprout.core` → 其它启用包。
-- **朗读**：内容只写文字。`audio/manifest.json` 的 key = `speechKey(lang, text)`（`packages/schema/src/utils.ts`）。播放端：清单命中 → 播放音频；未命中 → Web Speech API（有则用）→ 都没有则只显示文字。服务端在 macOS 上可用 `say` 为自定义课程即时生成（TTS provider 可插拔）。
+- **朗读**：内容只写文字。公开 `audio/manifest.json` 的 key = `speechKey(lang, text)`（`packages/schema/src/utils.ts`），可以是空清单。个人本地 `content:audio` 生成的 `audio/manifest.local.json` 与 `audio/tts/` 被忽略，服务端和显式本地音频开发构建才会合并它们；bundle、ZIP、演示和原生发布默认不带录音。播放端：清单命中 → 播放音频；未命中 → Web Speech API（有则用）→ 都没有则只显示文字。服务端在 macOS 上可用 `say` 为自定义课程即时生成（TTS provider 可插拔）。
 - **数据目录**：`SPROUT_DATA_DIR`（默认仓库根 `data/`，已 gitignore）：`sprout.db`、`packs/`（导入的包）、`custom/`、`plugins/`、`tts/`。
 - **鉴权**：后台 `POST /api/auth/login` 得 admin token；播放端配对得 device token；均用 `Authorization: Bearer <token>`，服务端区分 scope。
 - **插件**：第三方活动 type 必须带点号（`vendor.name`）；插件包 `plugin.json` 见 `packages/schema/src/plugin.ts`；运行时契约见 `packages/plugin-sdk/src/types.ts`。

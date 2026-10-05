@@ -88,7 +88,7 @@ export async function buildApp(overrides: Partial<ServerConfig> = {}): Promise<F
     await app.register(swagger, {
       transform: ({ schema, url, route }) => ({ schema: documentSchema(schema, route.method, url), url }),
       openapi: {
-        info: { title: '芽芽成长 Sprout API', version: '1.0.0', description: '家庭局域网亲子共学服务。管理员令牌或配对设备令牌通过 Bearer 传递。' },
+        info: { title: '芽芽成长 Sprout API', version: '0.0.1', description: '家庭局域网亲子共学服务。管理员令牌或配对设备令牌通过 Bearer 传递。' },
         components: { securitySchemes: { bearerAuth: { type: 'http', scheme: 'bearer' } } },
       },
     });

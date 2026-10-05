@@ -3,7 +3,7 @@ import { execFile } from 'node:child_process';
 import { mkdir, mkdtemp, rename, rm, writeFile } from 'node:fs/promises';
 import path from 'node:path';
 import { parseArgs, promisify } from 'node:util';
-import { type AudioManifest, type Lang } from '@sprout/schema';
+import { AudioManifest, type Lang } from '@sprout/schema';
 import { failure, isMain, printIssues, runCli } from './lib/cli';
 import type { SpeechEntry } from './lib/collect-speech';
 import { errorMessage, fileExists, isMissing, packDirectories, readJson, safePath, walkFiles, writeJson } from './lib/io';
@@ -29,6 +29,9 @@ export interface AudioResult {
 }
 
 export type SpeechRenderer = (entry: SpeechEntry, voice: string, rate: number, target: string) => Promise<void>;
+
+const LOCAL_AUDIO_MANIFEST = 'audio/manifest.local.json';
+const LOCAL_TTS_SETTINGS = 'audio/.tts-settings.local.json';
 
 export function audioRelativePath(entry: Pick<SpeechEntry, 'key' | 'lang'>): string {
   return `audio/tts/${entry.lang}/${createHash('sha1').update(entry.key).digest('hex').slice(0, 16)}.m4a`;
@@ -66,13 +69,20 @@ export async function generateAudio(
   const inspected = await inspectPack(directory, { checkAudio: false });
   printIssues(inspected.issues);
   if (!inspected.manifest || failure(inspected.issues)) throw new Error('内容包存在错误，请先修复上述报告后生成音频');
-  const oldManifest = inspected.audio ?? { schemaVersion: 1 as const, voices: {}, entries: {} };
+  let oldManifest = inspected.audio ?? { schemaVersion: 1 as const, voices: {}, entries: {} };
+  try {
+    const local = AudioManifest.safeParse(await readJson(directory, LOCAL_AUDIO_MANIFEST));
+    if (!local.success) throw new Error('本地音频清单结构无效');
+    oldManifest = local.data;
+  } catch (error) {
+    if (!isMissing(error)) throw new Error(`本地音频清单无效：${errorMessage(error)}`);
+  }
   const manifest: AudioManifest = {
     schemaVersion: 1, voices: { ...oldManifest.voices }, entries: { ...oldManifest.entries },
   };
   let previousRate: number | undefined;
   try {
-    const settings = await readJson(directory, 'audio/.tts-settings.json') as { rate?: unknown };
+    const settings = await readJson(directory, LOCAL_TTS_SETTINGS) as { rate?: unknown };
     if (typeof settings?.rate === 'number') previousRate = settings.rate;
   } catch (error) {
     if (!isMissing(error)) throw new Error(`音频生成缓存无效：${errorMessage(error)}`);
@@ -155,8 +165,9 @@ export async function generateAudio(
       await mkdir(path.dirname(target), { recursive: true });
       await rename(staged, target);
     }
-    await writeJson(directory, 'audio/manifest.json', manifest);
-    await writeJson(directory, 'audio/.tts-settings.json', { rate });
+    // 系统 say 生成的个人音频只写入被忽略的本地清单；公开 manifest/bundle 始终保持可再分发内容。
+    await writeJson(directory, LOCAL_AUDIO_MANIFEST, manifest);
+    await writeJson(directory, LOCAL_TTS_SETTINGS, { rate });
     for (const file of obsoleteFiles) {
       await rm(await safePath(directory, file), { force: true });
       result.pruned++;

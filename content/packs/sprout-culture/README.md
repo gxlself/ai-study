@@ -46,7 +46,7 @@
 
 本包没有`route`，`pack.json.routes`固定为空；不创建节日日历，不修改核心成长路线。家长从课程库浏览、筛选月龄、选择并置顶。家长课不包含歌曲，共看也不含歌曲，因此没有引入任何第三方歌词、旋律或录音。
 
-原创JSON、文字与SVG为CC0-1.0；核心词库素材按核心包声明使用。**macOS系统合成音频仅限个人非商业使用，不可公开再分发**，不属于CC0；公开仓库、下载ZIP、CDN、安装包及商业产品都须先改用有相应用途与再分发许可的可商用TTS或获授权真人录音，重建整个`audio/`、bundle和ZIP，免费或非营利也不例外。
+原创课程文字按仓库根目录`CONTENT-LICENSE.md`提供，自绘SVG的范围按本包`LICENSES.md`的CC0说明；核心词库素材按核心包声明使用。公开包的音频清单为空且不含录音；个人在macOS上生成的系统音频只写本地忽略路径，不得公开再分发。
 
 完整条款及Apple许可来源见`LICENSES.md`；服务端`TtsProvider`接入与清单保持不变的重建流程见`docs/dev/content-pipeline.md`。只切换后台设置不会替换本包系统录音，也不代表已经获得公开发布授权。
 
@@ -85,7 +85,7 @@ node content/packs/sprout-culture/.qa/check-assets.mjs
 | `content:audio` | 首轮4次系统语音超时；串行真实生成163条后，标准命令增量跳过163条并退出0 |
 | 每课契约与本包测试 | 20课均0 error、0 warning；`.qa/culture.test.ts`共37项全部通过 |
 | `content:validate --strict` | 0 error、20 warning，退出1；全部为下述无路线归属问题，音频163/163 |
-| `content:bundle`与`content:zip` | 均退出0；20节有效课，zip共198个文件，含真实音频，不含`.qa/`和生成缓存 |
+| `content:bundle`与`content:zip` | 均退出0；20节有效课，zip不含预录音频、`.qa/`或生成缓存 |
 | `.qa/import-smoke.ts` | 隔离HTTP导入20课、7词条、0路线、0 issues；分龄筛选、家长置顶、开启共看通过 |
 | `parent-only`置顶共看 | 不播放孩子屏幕步骤；无路线的共看置顶课未进入今日计划，限制如后文说明 |
 | `.qa/age-guard.ts` | 失败：18、23月的co-view档案可排入本包起始24月的置顶课；6、17月被全局门槛拦截，24、36月可正常置顶 |

@@ -1,0 +1,8 @@
+blank_issues_enabled: false
+contact_links:
+  - name: Documentation
+    url: https://gxlself.github.io/ai-study/
+    about: Read the website and documentation before opening a question.
+  - name: Security
+    url: https://github.com/gxlself/ai-study/security
+    about: Report vulnerabilities privately through GitHub Security.

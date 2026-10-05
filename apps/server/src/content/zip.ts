@@ -1,6 +1,7 @@
 import { lstatSync, mkdirSync, readFileSync, writeFileSync } from 'node:fs';
 import { dirname } from 'node:path';
 import { crc32, inflateRawSync } from 'node:zlib';
+import { AudioManifest } from '@sprout/schema';
 import { zipSync } from 'fflate';
 import { RegistryError, safePath, safeRelativePath, walkFiles } from './files';
 
@@ -118,7 +119,19 @@ export function extractFiles(files: Map<string, Uint8Array>, directory: string):
 }
 
 export function exportDirectory(directory: string): Uint8Array {
-  const paths = walkFiles(directory);
+  let publicAudio = new Set<string>();
+  try {
+    const parsed = AudioManifest.safeParse(JSON.parse(readFileSync(safePath(directory, 'audio/manifest.json'), 'utf8')));
+    if (parsed.success) publicAudio = new Set(Object.values(parsed.data.entries));
+  } catch {
+    // 内容校验在导出前负责报告坏清单；这里宁可不带入未确认的音频文件。
+  }
+  const paths = walkFiles(directory).filter((path) =>
+    path !== 'audio/manifest.local.json' &&
+    path !== 'audio/.tts-settings.local.json' &&
+    path !== 'audio/.tts-settings.json' &&
+    (!path.startsWith('audio/tts/') || publicAudio.has(path)),
+  );
   if (paths.length > ZIP_LIMITS.entries) tooLarge();
   let total = 0;
   const files: Record<string, Uint8Array> = Object.create(null);

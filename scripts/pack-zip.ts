@@ -20,6 +20,9 @@ export async function packZip(directory: string, outputDirectory = 'release'): P
   for (const file of await walkFiles(root)) {
     const absolute = await safePath(root, file);
     if (absolute === archive || (outputInsidePack && absolute.startsWith(`${output}${path.sep}`))) continue;
+    if (file === 'audio/manifest.local.json' || file === 'audio/.tts-settings.local.json' ||
+        file === 'audio/.tts-settings.json' ||
+        file.startsWith('audio/tts/')) continue;
     files[file] = await readFile(absolute);
   }
   if (!files['pack.json'] || !files['bundle.json']) throw new Error('归档缺少 pack.json 或 bundle.json，未写出 zip');

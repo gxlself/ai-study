@@ -61,11 +61,12 @@ describe('TTS 流水线', () => {
     const second = await generateAudio(root, {}, { platform: 'darwin', render });
     expect(second.generated).toBe(0);
     expect(second.skipped).toBe(first.generated);
-    const manifest = await readJson(root, 'audio/manifest.json') as { voices: Record<string, string> };
+    const manifest = await readJson(root, 'audio/manifest.local.json') as { voices: Record<string, string> };
     expect(manifest.voices).toEqual({ zh: 'Tingting', en: 'Samantha' });
+    expect((await readJson(root, 'audio/manifest.json').catch(() => undefined))).toBeUndefined();
     const coverage = (await inspectPack(root)).audioCoverage;
-    expect(coverage.present).toBe(AUDIO_TEST_KEYS.length);
-    expect(coverage.missing.some((entry) => AUDIO_TEST_KEYS.includes(entry.key))).toBe(false);
+    expect(coverage.present).toBe(0);
+    expect(coverage.missing.some((entry) => AUDIO_TEST_KEYS.includes(entry.key))).toBe(true);
   });
 
   it('dry-run 与非macOS均不创建文件，dry-run --prune 不删除', async () => {
@@ -87,7 +88,7 @@ describe('TTS 流水线', () => {
 
   it('旧文件缺少生成参数记录时重配音，不猜测其声音来源', async () => {
     await generateAudio(root, {}, { platform: 'darwin', render });
-    await rm(path.join(root, 'audio/.tts-settings.json'));
+    await rm(path.join(root, 'audio/.tts-settings.local.json'));
     const result = await generateAudio(root, {}, { platform: 'darwin', render });
     expect(result.generated).toBe(result.planned);
     expect(result.skipped).toBe(0);
@@ -98,27 +99,27 @@ describe('TTS 流水线', () => {
     const orphan = 'audio/tts/zh/0123456789abcdef.m4a';
     await writeFile(path.join(root, orphan), 'orphan');
     await writeFile(path.join(root, 'audio/tts/zh/family-recording.m4a'), 'recording');
-    const manifest = await readJson(root, 'audio/manifest.json') as { entries: Record<string, string> };
+    const manifest = await readJson(root, 'audio/manifest.local.json') as { entries: Record<string, string> };
     manifest.entries['zh:旧句子'] = orphan;
     manifest.entries['zh:旧录音'] = 'audio/tts/zh/family-recording.m4a';
-    await writeJson(root, 'audio/manifest.json', manifest);
+    await writeJson(root, 'audio/manifest.local.json', manifest);
     await generateAudio(root, { dryRun: true, prune: true }, { platform: 'darwin', render });
     expect(await fileExists(root, orphan)).toBe(true);
     const result = await generateAudio(root, { prune: true }, { platform: 'darwin', render });
     expect(result.pruned).toBe(1);
     expect(await fileExists(root, orphan)).toBe(false);
     expect(await fileExists(root, 'audio/tts/zh/family-recording.m4a')).toBe(true);
-    expect((await readJson(root, 'audio/manifest.json') as typeof manifest).entries['zh:旧句子']).toBeUndefined();
+    expect((await readJson(root, 'audio/manifest.local.json') as typeof manifest).entries['zh:旧句子']).toBeUndefined();
   });
 
   it('生成失败不覆盖原有清单也不执行清理', async () => {
     await generateAudio(root, {}, { platform: 'darwin', render });
-    const before = await readFile(path.join(root, 'audio/manifest.json'), 'utf8');
+    const before = await readFile(path.join(root, 'audio/manifest.local.json'), 'utf8');
     const result = await generateAudio(root, { rate: 140, prune: true }, {
       platform: 'darwin', render: async () => { throw new Error('voice unavailable'); },
     });
     expect(result.failed).toBe(result.planned);
-    expect(await readFile(path.join(root, 'audio/manifest.json'), 'utf8')).toBe(before);
+    expect(await readFile(path.join(root, 'audio/manifest.local.json'), 'utf8')).toBe(before);
   });
 
   it('部分合成失败不会覆盖成功条目对应的旧文件，暂存音频不进入发布内容', async () => {

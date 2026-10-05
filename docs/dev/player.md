@@ -11,7 +11,21 @@ pnpm --filter @sprout/player dev
 pnpm --filter @sprout/player typecheck
 pnpm --filter @sprout/player test
 pnpm --filter @sprout/player build
+pnpm --filter @sprout/player test:demo
 ```
+
+### GitHub Pages 演示构建
+
+演示构建使用 `VITE_SPROUT_DEMO=1`、内置 `sprout.core` 和 `LocalSource`：
+
+```sh
+export pnpm_config_verify_deps_before_run=false
+pnpm --filter @sprout/player build:demo
+```
+
+产物写入 `apps/player/dist-demo/`，Vite base 和 Service Worker 作用域固定为 `/ai-study/demo/`。演示模式隐藏家庭服务器入口，数据只存当前浏览器，并显示“演示版 / Demo、无预录音频”角标。默认 `build` 不读取这个开关，也不改变家庭服务器或 Capacitor 行为。
+
+`test:demo` 用本地静态服务器和 headless Chrome 覆盖桌面、移动和 iframe 视口，验证首次建档、课程结束、Web Speech 回退、无破图/溢出、无外部请求，以及 Service Worker 只使用演示子路径缓存。
 
 5310 已占用时使用 `pnpm --filter @sprout/player dev --port 5410`。Vite 对 `/api`、`/packs`、`/plugins` 代理到 `http://localhost:4310`。服务器也可直接托管 `apps/player/dist`。验证结束后停止开发服务器。
 

@@ -303,7 +303,11 @@ export async function inspectPack(
     }
     const missing = result.speech.filter((entry) => !existing.has(entry.key));
     result.audioCoverage = { total: result.speech.length, present: result.speech.length - missing.length, missing };
-    if (missing.length) issues.push(issue('audio/manifest.json', `缺少 ${missing.length}/${result.speech.length} 条朗读音频；可运行 content:audio，播放端可回退系统朗读`, 'warning'));
+    // 空清单是公开包的合法状态：播放端会回退到 Web Speech API 或只显示文字。
+    // 只有包作者实际声明了部分音频时，缺失项才代表覆盖率警告。
+    if (missing.length && Object.keys(result.audio?.entries ?? {}).length > 0) {
+      issues.push(issue('audio/manifest.json', `缺少 ${missing.length}/${result.speech.length} 条朗读音频；可运行 content:audio，播放端可回退系统朗读`, 'warning'));
+    }
   } else result.audioCoverage.total = result.speech.length;
   return result;
 }

@@ -2,9 +2,10 @@
 
 创作者：芽芽成长。
 
-本目录内原创的课程、词库、路线、说明文字及两个简单 SVG 图形，以 CC0 1.0 Universal 公共领域贡献方式提供，标识符为 `CC0-1.0`。
+本目录内原创的课程、词库、路线和说明文字按仓库根目录 `CONTENT-LICENSE.md` 提供；两个简单 SVG 图形按本文件下方说明以 CC0 提供。
 
-- 许可说明：`https://creativecommons.org/publicdomain/zero/1.0/`。
+- 内容许可：`https://creativecommons.org/licenses/by-nc/4.0/`。
+- 图形许可：`https://creativecommons.org/publicdomain/zero/1.0/`。
 - 完整法律文本：`https://creativecommons.org/publicdomain/zero/1.0/legalcode`。
 - 自绘图形：`assets/images/shapes/circle.svg`、`assets/images/shapes/square.svg`。
 - 素材索引：`assets/sources.json`，全部为 `source: "custom"`。

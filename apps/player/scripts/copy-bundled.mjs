@@ -1,5 +1,6 @@
-import { cp, lstat, mkdir, mkdtemp, readFile, rename, rm } from 'node:fs/promises';
-import { join } from 'node:path';
+import { cp, lstat, mkdir, mkdtemp, readFile, rename, rm, writeFile } from 'node:fs/promises';
+import { dirname, join } from 'node:path';
+import { audioIssues } from '../../../scripts/check-redistributable.mjs';
 import {
   assertNoSymlinkAncestors, assertPackFile, FIXTURE_ROOT, isMain, listFiles,
   PLAYER_ROOT, REPO_ROOT, statIfExists,
@@ -28,8 +29,33 @@ export async function copyBundled({
       !Array.isArray(bundle.lessons) || !Array.isArray(bundle.routes)) {
     throw new Error(`不是 sprout.core 的 PackBundle：${bundleFile}`);
   }
+  const licensing = audioIssues(bundle.audio, bundleFile);
+  if (licensing.length) throw new Error(licensing.join('\n'));
+  const localAudio = process.env.SPROUT_LOCAL_AUDIO === '1';
+  let activeBundle = bundle;
+  if (localAudio) {
+    const localManifestPath = join(source, 'audio/manifest.local.json');
+    try {
+      const localManifest = JSON.parse(await readFile(localManifestPath, 'utf8'));
+      if (localManifest?.schemaVersion !== 1 || !localManifest.voices || !localManifest.entries) {
+        throw new Error('本地音频清单结构无效');
+      }
+      const publicAudio = bundle.audio ?? { schemaVersion: 1, voices: {}, entries: {} };
+      activeBundle = {
+        ...bundle,
+        audio: {
+          schemaVersion: 1,
+          voices: { ...localManifest.voices, ...publicAudio.voices },
+          entries: { ...localManifest.entries, ...publicAudio.entries },
+        },
+      };
+    } catch (error) {
+      if (error?.code !== 'ENOENT') throw error;
+      logger.warn('[copy-bundled] 未找到本地音频清单，继续使用公开音频清单。');
+    }
+  }
   const parts = ['bundle.json'];
-  for (const name of ['assets', 'audio']) {
+  for (const name of ['assets']) {
     const path = join(source, name);
     if (await statIfExists(path)) {
       await listFiles(path);
@@ -37,11 +63,12 @@ export async function copyBundled({
     }
   }
   const references = [
-    bundle.manifest.cover,
-    ...(bundle.lexicon?.concepts ?? []).map((concept) => concept.image),
-    ...Object.values(bundle.audio?.entries ?? {}),
+    activeBundle.manifest.cover,
+    ...(activeBundle.lexicon?.concepts ?? []).map((concept) => concept.image),
+    ...Object.values(activeBundle.audio?.entries ?? {}),
   ].filter(Boolean);
   for (const path of references) await assertPackFile(source, path);
+  if (await statIfExists(join(source, 'audio/manifest.json'))) parts.push('audio/manifest.json');
 
   const destination = join(packsDir, 'sprout.core');
   await assertNoSymlinkAncestors(destination);
@@ -56,7 +83,18 @@ export async function copyBundled({
   try {
     await mkdir(staged);
     for (const name of parts) {
-      await cp(join(source, name), join(staged, name), { recursive: true, force: false, errorOnExist: true });
+      const target = join(staged, name);
+      await mkdir(dirname(target), { recursive: true });
+      if (name === 'bundle.json' && activeBundle !== bundle) {
+        await writeFile(target, `${JSON.stringify(activeBundle, null, 2)}\n`, { flag: 'wx' });
+      } else {
+        await cp(join(source, name), target, { recursive: true, force: false, errorOnExist: true });
+      }
+    }
+    for (const file of new Set(Object.values(activeBundle.audio?.entries ?? {}))) {
+      const target = join(staged, file);
+      await mkdir(dirname(target), { recursive: true });
+      await cp(join(source, file), target, { force: false, errorOnExist: true });
     }
     // 全部复制完成后才交换当前包；不清理 bundled 根目录或相邻包。
     if (previous) {

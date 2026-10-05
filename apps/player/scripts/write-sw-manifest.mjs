@@ -59,7 +59,12 @@ export async function writeSwManifest({
 }
 
 if (isMain(import.meta.url)) {
-  writeSwManifest().catch((error) => {
+  const index = process.argv.indexOf('--dist');
+  const distDir = index >= 0 ? process.argv[index + 1] : undefined;
+  if (index >= 0 && !distDir) {
+    console.error('[write-sw-manifest] --dist 需要目录参数');
+    process.exitCode = 1;
+  } else writeSwManifest({ distDir: distDir ? join(PLAYER_ROOT, distDir) : undefined }).catch((error) => {
     console.error(`[write-sw-manifest] ${error.message}`);
     process.exitCode = 1;
   });

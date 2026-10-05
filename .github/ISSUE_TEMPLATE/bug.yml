@@ -1,0 +1,58 @@
+name: Bug report
+description: Report a reproducible problem in Sprout.
+title: "[bug] "
+labels: ["bug"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Do not include passwords, tokens, household data, or child-identifying information. For security vulnerabilities, use the private report flow in SECURITY.md.
+  - type: input
+    id: version
+    attributes:
+      label: Sprout version
+      placeholder: "0.0.1"
+    validations:
+      required: true
+  - type: input
+    id: device
+    attributes:
+      label: Device and OS
+      placeholder: "Android TV, iPadOS, macOS, Windows"
+    validations:
+      required: true
+  - type: input
+    id: browser
+    attributes:
+      label: Browser or WebView
+      placeholder: "Safari 18, Chrome 140, Android System WebView"
+  - type: dropdown
+    id: deployment
+    attributes:
+      label: Deployment
+      options:
+        - Local browser / offline
+        - Family server
+        - Android TV APK
+        - GitHub Pages demo
+    validations:
+      required: true
+  - type: textarea
+    id: reproduction
+    attributes:
+      label: Steps to reproduce
+      description: Include the smallest reliable reproduction.
+    validations:
+      required: true
+  - type: textarea
+    id: expected
+    attributes:
+      label: Expected behavior
+    validations:
+      required: true
+  - type: textarea
+    id: actual
+    attributes:
+      label: Actual behavior
+    validations:
+      required: true

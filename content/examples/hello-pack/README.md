@@ -2,7 +2,7 @@
 
 一个不依赖 `sprout.core` 的完整示例：包 ID 为 `sprout.hello`，内含两个自绘形状词条、两节课和一条连续月龄路线。18–23 月龄的 `hello.parent.shape-hunt` 为家长指引课，屏幕只给家长看，配套实体打印卡；24–26 月龄的 `hello.s1.shapes` 为必须陪同的亲子共看课。每课恰属于一个独立主题，包月龄为 `[18, 26]`。
 
-源码为 JSON、原创 SVG 和说明文件；验收时已生成真实音频和 `bundle.json`，需要时可重新构建，zip 位于流水线缓存输出目录。素材全部为 `custom`，无需下载 Fluent Emoji。原创文件以 CC0 提供，见 `LICENSES.md`。
+源码为 JSON、原创 SVG 和说明文件；公开包的音频清单为空，播放端会使用 Web Speech API 或文字回退；需要时可在本机按内容流水线生成个人音频。bundle 可重新构建，zip 位于流水线输出目录。素材全部为 `custom`，无需下载 Fluent Emoji。原创课程内容按根目录 `CONTENT-LICENSE.md`，自绘图形的范围见 `LICENSES.md`。
 
 ## 安装与源码检查
 

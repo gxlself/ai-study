@@ -1,6 +1,7 @@
 {
   "name": "@sprout/player",
-  "version": "1.0.0",
+  "version": "0.0.1",
+  "license": "MIT",
   "private": true,
   "type": "module",
   "scripts": {
@@ -8,10 +9,14 @@
     "dev": "vite --port 5310",
     "prebuild": "node scripts/copy-bundled.mjs",
     "build": "tsc -p tsconfig.json && vite build",
+    "prebuild:demo": "SPROUT_LOCAL_AUDIO=0 node scripts/copy-bundled.mjs",
+    "build:demo": "tsc -p tsconfig.json && VITE_SPROUT_DEMO=1 vite build --mode demo --outDir dist-demo",
     "postbuild": "node scripts/write-sw-manifest.mjs && node scripts/check-compat.mjs",
+    "postbuild:demo": "node scripts/write-sw-manifest.mjs --dist dist-demo && node scripts/check-compat.mjs dist-demo",
     "preview": "vite preview",
     "typecheck": "tsc -p tsconfig.json",
     "test": "vitest run && node --test --test-concurrency=1 scripts/check-compat.test.mjs",
+    "test:demo": "node scripts/browser-demo.mjs",
     "check:compat": "node scripts/check-compat.mjs",
     "test:tvcompat": "node scripts/browser-tvcompat.mjs",
     "cap:sync": "cap sync",

@@ -2,6 +2,10 @@
 
 本文件分别记录 Fluent Emoji 与芽芽成长自绘图形的许可，不把本包所有内容统一声明为 MIT 或 CC0。具体素材对应关系见 `assets/sources.json`。
 
+## 原创课程内容
+
+课程、路线、词库文本、原创歌词、打印卡文案和家长指引适用仓库根目录的 `CONTENT-LICENSE.md`（CC BY-NC 4.0；商业使用须另行授权）。本包的自绘 SVG 图形仍按下方 CC0 范围提供；两者不能互相替代。
+
 ## Fluent Emoji
 
 - 项目：Microsoft Fluent Emoji。
@@ -50,7 +54,7 @@
 
 ## macOS 系统合成音频
 
-`audio/tts/` 由内容流水线调用 macOS `say` 与 `afconvert` 生成，实际声音见 `audio/manifest.json.voices`。这些系统声音及合成录音不属于上述 MIT 或 CC0 素材。
+公开包的 `audio/manifest.json` 保持空清单，发布物不包含录音。维护者在 macOS 上运行内容流水线时，个人生成的 `audio/tts/` 与 `audio/manifest.local.json` 只存在于本地忽略路径；这些系统声音及合成录音不属于上述 MIT 或 CC0 素材。
 
 **系统合成音频仅限个人非商业使用，不可公开再分发。** 不得附带在公开仓库、下载 ZIP、网站、CDN、应用安装包或商业产品中；免费、非营利或加署名也不获得分发许可。不能把家庭自用的录音作为公开发布产物。
 

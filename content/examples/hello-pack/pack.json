@@ -11,7 +11,7 @@
     "en": "Read a parent guide and print real cards, then explore shapes together."
   },
   "author": "芽芽成长",
-  "license": "CC0-1.0",
+  "license": "CC BY-NC 4.0; commercial license required",
   "ageRange": [18, 26],
   "lexicon": "lexicon.json",
   "routes": ["routes/hello-route.json"],
@@ -22,9 +22,9 @@
   "credits": [
     {
       "name": "你好，形状原创示例",
-      "url": "https://creativecommons.org/publicdomain/zero/1.0/",
-      "license": "CC0-1.0",
-      "note": "芽芽成长原创课程、词库、路线与简单 SVG 图形；不含 Fluent Emoji 或其他第三方素材。"
+      "url": "https://creativecommons.org/licenses/by-nc/4.0/",
+      "license": "CC BY-NC 4.0; commercial license required",
+      "note": "原创课程、词库和路线按 CONTENT-LICENSE 提供；简单 SVG 图形另按本包 LICENSES.md 的 CC0 说明。不含 Fluent Emoji 或其他第三方素材。"
     }
   ],
   "cover": "assets/images/shapes/circle.svg",

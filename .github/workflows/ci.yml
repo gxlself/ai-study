@@ -1,0 +1,55 @@
+name: CI
+
+on:
+  push:
+    branches: ["main"]
+  pull_request:
+
+concurrency:
+  group: ci-${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+permissions:
+  contents: read
+
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      - name: Set up Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22.x
+      - name: Enable pnpm
+        run: |
+          corepack enable
+          corepack prepare pnpm@11.1.0 --activate
+      - name: Install
+        env:
+          pnpm_config_verify_deps_before_run: false
+        run: |
+          pnpm install --frozen-lockfile
+          pnpm --dir scripts install --ignore-workspace --frozen-lockfile
+      - name: Typecheck
+        env:
+          pnpm_config_verify_deps_before_run: false
+        run: pnpm typecheck
+      - name: Test
+        env:
+          pnpm_config_verify_deps_before_run: false
+        run: pnpm test
+      - name: Content typecheck
+        env:
+          pnpm_config_verify_deps_before_run: false
+        run: pnpm content:typecheck
+      - name: Content tests
+        env:
+          pnpm_config_verify_deps_before_run: false
+        run: pnpm content:test
+      - name: Redistributable license guard
+        env:
+          pnpm_config_verify_deps_before_run: false
+        run: pnpm qa:license

@@ -8,6 +8,7 @@ import { ActivityRegistry, NavigationManager, SpeechEngine } from '../host';
 import { ParentGate } from '../ui/ParentGate';
 import { observeMediaQuery } from '../compat';
 import { isPreviewPath } from '../security/preview';
+import { IS_DEMO } from '../demo';
 
 export interface Preferences { parentHints: boolean; reducedMotion: boolean; volume: number }
 function loadPreferences(): Preferences {
@@ -18,6 +19,7 @@ function loadPreferences(): Preferences {
 }
 
 function initialSource(): DataSource | null {
+  if (IS_DEMO) return new LocalSource();
   const saved = readConnection();
   if (!saved) return null;
   return saved.kind === 'remote' && saved.server && saved.token ? new RemoteSource(saved.server, saved.token) : new LocalSource();
@@ -154,6 +156,7 @@ export function AppProvider({ children }: { children: ReactNode }) {
     });
   }, []);
   const useRemote = useCallback(async (server: string, token: string) => {
+    if (IS_DEMO) return;
     const next = new RemoteSource(server, token);
     saveConnection({ kind: 'remote', server, token });
     if (document.querySelector('meta[data-sprout-csp]')) {

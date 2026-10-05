@@ -8,7 +8,7 @@
     "en": "Eight festival themes with age-specific parent guides and optional short co-viewing lessons, followed by real-world family play."
   },
   "author": "芽芽成长",
-  "license": "CC0-1.0",
+  "license": "CC BY-NC 4.0; commercial license required",
   "ageRange": [6, 36],
   "lexicon": "lexicon.json",
   "routes": [],
@@ -17,9 +17,9 @@
   "credits": [
     {
       "name": "芽芽成长原创节日课程与插画",
-      "url": "https://creativecommons.org/publicdomain/zero/1.0/",
-      "license": "CC0-1.0",
-      "note": "原创文字、七个节日词条与八幅静态 SVG。核心词条仅引用，不复制素材；系统合成音频的使用条件另见 LICENSES.md。"
+      "url": "https://creativecommons.org/licenses/by-nc/4.0/",
+      "license": "CC BY-NC 4.0; commercial license required",
+      "note": "原创文字按 CONTENT-LICENSE 提供；八幅静态 SVG 另按本包 LICENSES.md 的 CC0 说明。核心词条仅引用，不复制素材；本地系统音频不属于发布物。"
     }
   ],
   "cover": "assets/images/festivals/festival-cover.svg",

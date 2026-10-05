@@ -3,10 +3,17 @@ import type { PackBundle } from '@sprout/schema';
 import { failure, isMain, printIssues, runCli } from './lib/cli';
 import { packDirectories, writeJson } from './lib/io';
 import { inspectPack } from './lib/validate-pack';
+import { audioIssues } from './check-redistributable.mjs';
 
 export async function bundlePack(directory: string): Promise<{ bundle: PackBundle | null; issues: Awaited<ReturnType<typeof inspectPack>>['issues'] }> {
   const inspected = await inspectPack(directory);
   if (!inspected.manifest) return { bundle: null, issues: inspected.issues };
+  const licensing = audioIssues(inspected.audio, 'audio/manifest.json');
+  if (licensing.length) {
+    return { bundle: null, issues: [...inspected.issues, ...licensing.map((message) => ({
+      path: 'audio/manifest.json', message, level: 'error' as const,
+    }))] };
+  }
   if ([inspected.manifest.lexicon, ...inspected.manifest.routes, inspected.manifest.cover].includes('bundle.json')) {
     return { bundle: null, issues: [...inspected.issues, {
       path: 'pack.json', message: 'bundle.json 是生成文件，不能作为词库、路线或封面源文件；未覆盖原文件', level: 'error',

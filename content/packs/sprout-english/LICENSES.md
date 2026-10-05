@@ -1,10 +1,14 @@
 # 英语日常素材与内容许可
 
+## 原创课程内容
+
+原创课程文字、词条、歌词、打印卡文案和家长指引适用仓库根目录 `CONTENT-LICENSE.md`（CC BY-NC 4.0；商业使用须另行授权）。本包自绘插画的 CC0 范围只覆盖实际标注的图形文件。
+
 ## 原创内容
 
 创作者：芽芽成长 Sprout。
 
-本包原创课程文字、词条 `english.stand-up`、中英文歌曲改编词、说明及测试源码，以 **CC0 1.0 Universal** 公共领域贡献方式提供，标识符 `CC0-1.0`。
+本包原创课程文字、词条 `english.stand-up`、中英文歌曲改编词和说明按仓库根目录 `CONTENT-LICENSE.md` 提供。测试源码按根目录 `LICENSE` 采用 MIT。
 
 原创静态插画：
 
@@ -13,14 +17,14 @@
 
 素材均由本包提供，无外链、脚本、第三方字体或孩子的个人照片；`assets/sources.json` 中的 `custom` 对应上述真实文件，不意味着任意加入的素材自动获授权。
 
-CC0 说明：`https://creativecommons.org/publicdomain/zero/1.0/`。
-CC0 法律文本：`https://creativecommons.org/publicdomain/zero/1.0/legalcode`。
+自绘插画的 CC0 说明：`https://creativecommons.org/publicdomain/zero/1.0/`。
+内容许可：`https://creativecommons.org/licenses/by-nc/4.0/`。
 
 ## 传统旋律与原创歌词
 
 《小手问好歌》的旋律采用 `docs/curriculum/route-plan.md` 已认可的 **Frère Jacques** 传统旋律（公有领域），C 大调。英文及中文歌词都是本包原创，不复制现代儿歌的受保护歌词、编曲或录音。
 
-旋律通过 `song.props.lines[].notes` 与宿主 WebAudio 合成，70 BPM，音乐盒音色，没有下载或附带任何第三方演奏录音。旋律的公共领域状态与原创歌词的 CC0 声明分别列在 `pack.json.credits`。
+旋律通过 `song.props.lines[].notes` 与宿主 WebAudio 合成，70 BPM，音乐盒音色，没有下载或附带任何第三方演奏录音。旋律的公共领域状态与原创歌词的内容许可分别列在 `pack.json.credits`。
 
 ## 核心词库引用
 
@@ -30,7 +34,7 @@ CC0 法律文本：`https://creativecommons.org/publicdomain/zero/1.0/legalcode`
 
 ## 系统合成语音
 
-`audio/manifest.json` 与 `audio/tts/**` 由 macOS `say` 和 `afconvert` 生成，实际声音由 manifest 记录；当前采用中文 Tingting 与英文 Samantha，语速每分钟 125 词。没有录制、上传或使用孩子的声音。
+公开包的 `audio/manifest.json` 为空且不含录音。个人在 macOS 上运行流水线时，系统 `say` 生成的 `audio/tts/**` 与 `audio/manifest.local.json` 留在本地忽略路径。没有录制、上传或使用孩子的声音。
 
 系统声音及其生成音频**不属于 CC0，仅限个人非商业使用，不可公开再分发**。不得随公开仓库、下载 ZIP、网站、CDN、应用安装包或商业产品发布；免费、非营利或加署名也不获得分发许可，“内部验收”不是额外授权。原创图片和文字的许可不覆盖合成声音。
 
