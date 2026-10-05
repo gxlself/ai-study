@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" role="img" aria-label="Three toy blocks">
+  <g stroke-width="4" stroke-linejoin="round">
+    <g transform="translate(92 44)" stroke="#C96D49">
+      <path d="M36 0 72 18V64L36 82 0 64V18Z" fill="#F08A5D"/>
+      <path d="M36 36 72 18V64L36 82Z" fill="#D97750"/>
+      <path d="M0 18 36 0 72 18 36 36Z" fill="#F6B08E"/>
+      <ellipse cx="18" cy="47" rx="7" ry="9" fill="#FFFDF8" stroke="none" opacity="0.8"/>
+    </g>
+    <g transform="translate(40 125)" stroke="#3F83BE">
+      <path d="M36 0 72 18V64L36 82 0 64V18Z" fill="#5DA9E9"/>
+      <path d="M36 36 72 18V64L36 82Z" fill="#468DC9"/>
+      <path d="M0 18 36 0 72 18 36 36Z" fill="#91C5F0"/>
+      <ellipse cx="18" cy="47" rx="7" ry="9" fill="#FFFDF8" stroke="none" opacity="0.8"/>
+    </g>
+    <g transform="translate(144 120)" stroke="#C5A03E">
+      <path d="M36 0 72 18V64L36 82 0 64V18Z" fill="#F3CE58"/>
+      <path d="M36 36 72 18V64L36 82Z" fill="#DAB344"/>
+      <path d="M0 18 36 0 72 18 36 36Z" fill="#F8E091"/>
+      <ellipse cx="18" cy="47" rx="7" ry="9" fill="#FFFDF8" stroke="none" opacity="0.8"/>
+    </g>
+  </g>
+</svg>

@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" role="img" aria-label="A simple undershirt">
+  <path d="M91 51L128 73L165 51L202 78L181 112L163 101V210H93V101L75 112L54 78Z" fill="#FFF4D8" stroke="#D6A13C" stroke-width="5" stroke-linejoin="round"/>
+  <path d="M108 59Q128 84 148 59" fill="none" stroke="#D6A13C" stroke-width="5" stroke-linecap="round"/>
+  <path d="M93 101H163" stroke="#F08A5D" stroke-width="7" stroke-linecap="round" opacity=".8"/>
+  <path d="M73 83L59 101M183 83L197 101" stroke="#5DA9E9" stroke-width="6" stroke-linecap="round"/>
+</svg>

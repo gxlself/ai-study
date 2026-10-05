@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" role="img" aria-label="A playground with a safe low slide">
+  <path d="M42 213H216" fill="none" stroke="#98C968" stroke-width="7" stroke-linecap="round"/>
+  <path d="M115 119V207" fill="none" stroke="#3F83BE" stroke-width="10" stroke-linecap="round"/>
+  <path d="M50 202V179H65V157H80V135H95V112H119" fill="none" stroke="#2BA88C" stroke-width="12" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M49 183L92 96Q96 88 104 88H121" fill="none" stroke="#5DA9E9" stroke-width="8" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M93 116V90Q93 81 102 81H122Q130 81 130 90V117" fill="none" stroke="#5DA9E9" stroke-width="9" stroke-linecap="round"/>
+  <path d="M108 110H125C141 114 150 146 170 170Q188 191 208 191Q216 191 216 200V205H199C179 205 164 191 150 173L113 128Q103 119 108 110Z" fill="#F08A5D" stroke="#BD674D" stroke-width="4" stroke-linejoin="round"/>
+  <path d="M120 117C140 131 144 155 167 179Q184 197 204 198" fill="none" stroke="#FFD15C" stroke-width="9" stroke-linecap="round"/>
+</svg>

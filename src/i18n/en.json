@@ -1,0 +1,516 @@
+{
+  "lang": "en",
+  "shortLang": "中",
+  "title": "Sprout · A screen can open the door",
+  "description": "An open-source family learning tool for ages 6 months to 3 years. Screens offer a slow prompt; growth happens through responsive care, real objects, play, reading, singing, and outdoor life.",
+  "nav": {
+    "principles": "Principles",
+    "stages": "Stages",
+    "lesson": "One lesson",
+    "activities": "Activities",
+    "home": "At home",
+    "try": "Try it",
+    "dev": "Developers",
+    "language": "中",
+    "theme": "Theme"
+  },
+  "hero": {
+    "eyebrow": "Open-source family learning · 6 months–3 years",
+    "title": "A screen can open the door. Growing happens together.",
+    "lede": "Read a small prompt, put the screen down, and play for a while. Sprout pairs slow parent guidance with printable cards and ordinary moments at home.",
+    "primary": "Try it in the browser",
+    "secondary": "GitHub source",
+    "meta": "v0.0.1 · open source · local network · no ads",
+    "replay": "Play the story again",
+    "sceneLabel": "A small television lights up, a seedling grows from the screen, then the television dims and a family returns to real life.",
+    "screen": "Screen",
+    "outside": "Outside",
+    "ratioNote": "Ratio from the built-in lesson “Beep Beep, Let’s Go”:",
+    "handwritten": "open gently"
+  },
+  "principles": {
+    "eyebrow": "Put the direction on the table",
+    "title": "Five things, tucked into five seed packets",
+    "lede": "Each packet is small: open it, read it, then carry the idea back to objects, sounds, and relationships at home.",
+    "open": "Open",
+    "close": "Close",
+    "evidence": "See evidence",
+    "items": [
+      {
+        "label": "Real people",
+        "title": "Responsive people before passive viewing",
+        "body": "What a baby is already noticing deserves a real person who names it, pauses, waits, and responds. A screen is not a substitute for a relationship.",
+        "evidence": "Evidence review 3.1 · video and transfer deficit"
+      },
+      {
+        "label": "For adults first",
+        "title": "No child-side lessons for 6–17 months",
+        "body": "This stage is for parent guidance: read it, put the device down, and use printed cards, books, and real objects. Co-viewing is off by default at 18–23 months; 24–36 months can also stay screen-free.",
+        "evidence": "Evidence review 9.1 · overall position"
+      },
+      {
+        "label": "Conversation turns",
+        "title": "Back-and-forth matters more than more input",
+        "body": "Notice what the child is attending to, name it, pause, and respond to a look, gesture, movement, or sound. Then return the idea to daily life.",
+        "evidence": "Evidence review 4 · language"
+      },
+      {
+        "label": "Chinese first",
+        "title": "Natural Chinese is the main path; English is optional",
+        "body": "Bilingualism is not a race. Each language needs real, sufficient, natural input; unfamiliar English or recorded audio cannot replace rich conversation.",
+        "evidence": "Evidence review 4 · bilingual language"
+      },
+      {
+        "label": "Everyday math",
+        "title": "Math starts with quantity, space, and patterns in life",
+        "body": "Touch one, say one, then name the total. Put things in, take them out, sort, and arrange. No flashcards and no correctness score.",
+        "evidence": "Evidence review 5 · early math"
+      }
+    ]
+  },
+  "stages": {
+    "eyebrow": "The marks on the doorframe",
+    "title": "Six stages, not a race track",
+    "lede": "Like pencil marks on a doorframe, age is a gentle reference point. Move the paper tag and see what can be brought back into real life.",
+    "screenTitle": "How to use the screen in this stage",
+    "screenStates": {
+      "off": "Screen off",
+      "parent": "For the grown-up",
+      "coView": "Optional co-view"
+    },
+    "screenStateLabels": {
+      "none": "Parent guidance",
+      "optional": "Off by default",
+      "default": "Co-view only"
+    },
+    "session": "Each session ≤",
+    "daily": "Each day ≤",
+    "parentSession": "Parent guide · each ≤",
+    "parentDaily": "Parent guide · each day ≤",
+    "optionalSession": "If co-viewing · each ≤",
+    "optionalDaily": "If co-viewing · each day ≤",
+    "minutes": "min",
+    "dayShape": "The shape of a day",
+    "dayShapeNote": "The full ring is 12 waking hours; screen time uses its real proportion and the remaining life segments are illustrative.",
+    "dayShapeScreen": "Screen ≤",
+    "wakingHours": "12 hours",
+    "focus": "Things to notice",
+    "themes": "Theme index",
+    "showTheme": "Open theme",
+    "offlineFocus": "Offline focus",
+    "postcard": "Sample lesson postcard",
+    "readMore": "See this lesson",
+    "stageLabel": "Stage",
+    "sliderHint": "Use the up and down arrow keys to move the stage marker",
+    "noChildScreen": "No child-side lesson is shown. Read the guide first, then use cards, books, and real objects away from the screen.",
+    "optionalChildScreen": "Co-viewing is off by default. If enabled, keep it short and stay with the child; parent guidance alone is always fine.",
+    "defaultChildScreen": "Short co-viewing is optional and always with a grown-up. A fully offline path is fine too.",
+    "lessons": "lessons",
+    "parentLessons": "parent guidance",
+    "childLessons": "co-viewing",
+    "illustrative": "illustrative"
+  },
+  "lesson": {
+    "eyebrow": "One lesson, mostly outside the screen",
+    "title": "Unfold “Beep Beep, Let’s Go”",
+    "lede": "This parent-guidance lesson starts with a prompt on screen. The real lesson is noticing vehicles from a safe place, looking at cards at home, and leaving room for a response.",
+    "parentFirst": "Read first",
+    "parentFirstNote": "Read it, then turn the screen off.",
+    "phrases": "You could say",
+    "listen": "Listen",
+    "offline": "10 minutes outside the screen",
+    "materials": "Prepare",
+    "steps": "Try this",
+    "safety": "Safety",
+    "levels": "Change the difficulty",
+    "easier": "Easier",
+    "harder": "More challenge",
+    "printables": "Printable cards",
+    "print": "Print this card",
+    "printNote": "Print styles leave only the cards at A4 / A5 scale.",
+    "why": "Why this shape",
+    "references": "Sources",
+    "speechUnavailable": "This browser does not expose system speech.",
+    "selectedSource": "Built-in lesson example",
+    "vehicleCards": "Large vehicle cards"
+  },
+  "activities": {
+    "eyebrow": "Activity plugins",
+    "title": "17 small, finite ways in",
+    "lede": "One activity does one thing: present it slowly inside a 16:9 stage, then hand it back to a grown-up and child. Third-party activities use a namespaced type.",
+    "type": "Type",
+    "age": "Ages",
+    "pluginGuide": "Read the plugin guide",
+    "descriptions": {
+      "contrast": "Slow black, white, and red shapes",
+      "word-cards": "Look at one real word at a time",
+      "peekaboo": "Hide a little, then find it together",
+      "bubbles": "Pop a finite set and see what is inside",
+      "count": "Touch one, say one, name the total",
+      "subitize": "Briefly notice a small quantity",
+      "choose": "Point to one large target",
+      "sort": "Group things by one feature",
+      "sequence": "Lay out a familiar routine",
+      "pattern": "Notice two or three things repeating",
+      "story": "Read one page and leave room to talk",
+      "song": "Learn it for the grown-up, then sing offline",
+      "movement": "Put a word into a body movement",
+      "calm": "Slow down together, with no finish line",
+      "video": "Short, grounded, and never auto-playing",
+      "web": "One task in an isolated external page",
+      "guide": "Read as an adult, then do the real activity"
+    }
+  },
+  "home": {
+    "eyebrow": "Run it at home",
+    "title": "One small server, devices kept in the house",
+    "lede": "The living-room screen does not need to know the wider internet. A Mac, NAS, or small computer serves the player on the home network; a phone opens the parent area only when needed.",
+    "server": "Mac / NAS",
+    "serverDetail": "@sprout/server :4310",
+    "tv": "Living-room TV",
+    "tvDetail": "Player",
+    "tablet": "iPad on the sofa",
+    "tabletDetail": "Safari / Capacitor",
+    "phone": "Parent phone",
+    "phoneDetail": "Parent area",
+    "points": [
+      {
+        "title": "Home network",
+        "body": "The server listens on 4310 by default. The TV, iPad, and parent area use the same family network."
+      },
+      {
+        "title": "Data stays at home",
+        "body": "The server stores family data in local SQLite; offline records stay on the current device."
+      },
+      {
+        "title": "Six-digit pairing",
+        "body": "The player requests a six-digit pairing code that is valid for 10 minutes; the device token is not printed on the page."
+      },
+      {
+        "title": "No server required to start",
+        "body": "The player ships with the sprout.core content pack, so a family can try offline before connecting a home server."
+      }
+    ],
+    "docs": {
+      "docker": "Docker deployment",
+      "macos": "macOS launch",
+      "android": "Android TV",
+      "ipad": "iPad / Safari"
+    }
+  },
+  "try": {
+    "eyebrow": "Try it · The television is off",
+    "title": "Press the power, then decide how long to look",
+    "lede": "Open the television to try a quiet browser demo. Data stays in this browser; there are no pre-recorded voices, so speech uses the browser.",
+    "power": "Turn on",
+    "close": "Turn off",
+    "fullscreen": "Open demo full screen",
+    "tip1": "Arrow keys + Enter = remote",
+    "tip2": "Demo data stays in your browser",
+    "tip3": "No pre-recorded audio; speech uses the browser",
+    "iframeTitle": "Sprout browser demo",
+    "tenMinuteNote": "Time to turn the screen off and play with real things 🌱",
+    "tenMinuteAction": "Okay, turn it off",
+    "offLabel": "Screen off"
+  },
+  "evidence": {
+    "eyebrow": "Every tradeoff has a source",
+    "title": "A library-card wall for the reasons behind the choices",
+    "lede": "These sources appear in the evidence review's reference list. Each sentence is a product shorthand, not a replacement for the study.",
+    "referenceCount": "references",
+    "source": "Source",
+    "tradeoff": "What it changed",
+    "readOriginal": "Read original"
+  },
+  "referenceTitles": {
+    "1": "WHO guidelines on physical activity, sedentary behaviour, and sleep for children under 5",
+    "3": "AAP: Media and Young Minds",
+    "6": "China: Health care and nurturing guidance for children under 3",
+    "8": "China: Early development service guidance for infants and toddlers",
+    "11": "China: Notice on protecting children's farsightedness reserve",
+    "15": "Learning from video: meta-analysis of the video deficit from ages 0 to 6",
+    "25": "Co-viewing supports toddlers' word learning from video",
+    "37": "Screen time and parent-child talk from 12 to 36 months",
+    "47": "Parent coaching increases conversational turns and infant language",
+    "80": "Guidance during play and children's learning: systematic review and meta-analysis",
+    "96": "Putting education in educational apps",
+    "101": "Screen time tantrums and natural stopping points",
+    "105": "Manipulative design in mobile applications used by children"
+  },
+  "dev": {
+    "eyebrow": "For developers",
+    "title": "From one seedling to a runnable monorepo",
+    "lede": "If you want to maintain content or extend an activity, this is the short map of boundaries, startup steps, and minimal examples.",
+    "mapTitle": "Repository map",
+    "tabs": {
+      "quickstart": "Quick start",
+      "content": "Write a content pack",
+      "plugin": "Write an activity plugin"
+    },
+    "copy": "Copy",
+    "copied": "Copied",
+    "release": "Download v0.0.1",
+    "apk": "Android TV APK",
+    "pack": "Content pack ZIP",
+    "releaseNote": "The Android TV package and content pack are both on the Release page.",
+    "license": "Licensing",
+    "licenseBody": "Site code is MIT; course content is free for personal, family, and non-commercial educational use, with written author permission required for commercial use. Fluent Emoji is MIT, Lucide is ISC, and the local fonts are OFL-1.1.",
+    "fontCredit": "Fonts: LXGW WenKai, Fraunces, and Nunito, all shipped as local subsets.",
+    "badges": ["Node 22", "Fastify", "node:sqlite", "React", "Vite", "Ant Design", "Capacitor", "Zod"]
+  },
+  "faq": {
+    "eyebrow": "Questions",
+    "title": "Leave the worry at the door; carry less inside",
+    "items": [
+      {
+        "q": "Will this make children watch more screens?",
+        "a": "It is not designed to extend viewing. Ages 6–17 months get adult guidance only; co-viewing is off by default at 18–23 months; ages 24–36 months can also stay fully offline. Every lesson has a natural ending and an offline next step."
+      },
+      {
+        "q": "What about babies younger than six months?",
+        "a": "The core pack starts at 6 months and has no child-side playback path for younger babies. Face-to-face response, floor play, singing, books, and professional child-health guidance come first."
+      },
+      {
+        "q": "Where does family data live?",
+        "a": "When connected to a server, family data lives in local SQLite on the device running @sprout/server. Offline records stay on the current device."
+      },
+      {
+        "q": "Why are there no narration recordings in the repository?",
+        "a": "The public repository does not ship macOS system voices because their license does not allow public redistribution. Without pre-recorded audio, the page uses the browser Web Speech API; a product build can use local or licensed TTS."
+      },
+      {
+        "q": "Is it free, and can it be used commercially?",
+        "a": "Code is MIT. Course content is for personal, family, and non-commercial use under the repository's CC BY-NC 4.0 terms; commercial use requires written author permission. Third-party assets keep their own licenses."
+      },
+      {
+        "q": "Is this medical advice?",
+        "a": "No. Sprout is not a medical device, treatment tool, or developmental diagnostic. Milestones are for everyday observation and conversations with professionals. Consult a pediatric or child-health professional when concerns persist or skills regress."
+      }
+    ]
+  },
+  "footer": {
+    "disclaimer": "Not a medical device, treatment tool, or developmental diagnostic; milestones are not for scoring, ranking, or diagnosis.",
+    "focus": "The yellow focus ring here is the same shape as a television remote selection.",
+    "credits": "Credits",
+    "license": "License",
+    "github": "GitHub",
+    "release": "Release",
+    "docs": "Docs",
+    "made": "Made for slow mornings.",
+    "themeOptions": {
+      "light": "Light",
+      "dark": "Dark",
+      "system": "System"
+    }
+  },
+  "stagePolicies": {
+    "s1": "The grown-up reads the guide; no child-side lesson is shown. Then use cards, books, and real objects together.",
+    "s2": "The grown-up reads the guide; no child-side lesson is shown. Then return to real objects and face-to-face play.",
+    "s3": "The grown-up reads the guide; no child-side lesson is shown. Then return to real life and outdoor noticing.",
+    "s4": "Co-viewing is off by default. If enabled, keep it short and stay with the child; parent guidance alone is always fine.",
+    "s5": "Short co-viewing is optional and always with a grown-up. A fully offline path is fine too.",
+    "s6": "Short co-viewing is optional and always with a grown-up. A fully offline path is fine too."
+  },
+  "themeOfflineFocus": {
+    "s1-t1": [
+      "Move one printed card slowly and pause to watch the baby's response.",
+      "Respond to a look, smile, or sound without asking the baby to imitate.",
+      "Offer short tummy-time moments while awake; stop when the baby is tired."
+    ],
+    "s1-t2": [
+      "Prefer real faces or family photos and use familiar names.",
+      "Tell the baby what you are doing while dressing and name one feature at a time.",
+      "Learn the song during the day, then sing one line with the screen off."
+    ],
+    "s1-t3": [
+      "Cover only the grown-up's face; keep the baby's nose and mouth clear.",
+      "Begin with a large toy partly visible; the grown-up may help reveal it.",
+      "Share a shatter-resistant rounded baby mirror without testing self-recognition."
+    ],
+    "s1-t4": [
+      "Use one card at a time, name it softly, and pause for a response.",
+      "Lift the matching printed card while you sing; do not play background audio.",
+      "Learn lullabies during the day, then hum with the screen off at bedtime."
+    ],
+    "s2-t1": [
+      "Use real bubbles and large toys to notice changes caused by an action.",
+      "Play hide-and-find with a cup large enough to cover a toy; keep the cup still.",
+      "An adult prepares and watches every object."
+    ],
+    "s2-t2": [
+      "Model the gesture first, then pause for the baby's own response.",
+      "Make hello and goodbye part of the same small family ritual.",
+      "Learn the melody with the screen off, then sing it and stop whenever needed."
+    ],
+    "s2-t3": [
+      "Use foods the baby already eats; do not make the meal longer.",
+      "Say two only when both pieces are visible, and say all gone when the plate is empty.",
+      "Respect a closed mouth, turning away, or pushing away as a stop signal."
+    ],
+    "s2-t4": [
+      "Follow the baby's attention first, then name the real object.",
+      "Use the goodnight card book during the day; keep bedtime screen-free.",
+      "Support the body during rocking or movement and keep the motion small and slow."
+    ],
+    "s3-t1": [
+      "Point to animals with large cards or safe toys.",
+      "After copying a sound, pause and wait for the baby's response.",
+      "Keep stories gentle and pretend-based; do not create fear or separation."
+    ],
+    "s3-t2": [
+      "Name body parts during bathing and dressing.",
+      "Let the grown-up model first; watching or doing one small part is enough.",
+      "Use slow songs and gentle movement without pulling or forcing touch."
+    ],
+    "s3-t3": [
+      "Notice real vehicles from far away, away from roads, wheels, and doors.",
+      "Use a low, steady ramp with a large toy vehicle.",
+      "Learn the song first, then sing and push a real toy with the screen off."
+    ],
+    "s3-t4": [
+      "Use large safe objects, not small foods, to talk about quantity.",
+      "Touch one and say one, then name the total.",
+      "Use songs for shared rhythm, not for testing number recognition."
+    ],
+    "s3-t5": [
+      "Show clothing while dressing and invite a hand or foot movement.",
+      "Use a routine card to preview socks, shoes, and a hat.",
+      "Learn the handwashing song first; stay within reach near water."
+    ],
+    "s3-t6": [
+      "Follow the baby's gaze and name a tree, flower, bird, or cloud.",
+      "Listen to rain indoors first; avoid standing water and unsafe surfaces.",
+      "Imitate a tree, bird, or rabbit without asking for jumping or balance."
+    ],
+    "s4-t1": [
+      "Look for one color at home.",
+      "Put matching-color socks together.",
+      "Offer free scribbling without asking for color naming or a rainbow."
+    ],
+    "s4-t2": [
+      "Notice outlines with round objects and shape cards.",
+      "Model a shape-matching toy without forcing it into place.",
+      "Build a low tower on the floor; try again if it falls."
+    ],
+    "s4-t3": [
+      "Touch one and say one, then name the total.",
+      "Count spoons and shoes, not small foods.",
+      "Play stop-and-go gently, without elimination or breath-holding."
+    ],
+    "s4-t4": [
+      "Look at feeling cards and practise asking for help when calm.",
+      "When a real feeling arrives, put the device down and protect safety first.",
+      "Respect the child's wish for a hug or breathing space while staying close."
+    ],
+    "s4-t5": [
+      "Adults help brush twice a day and use only a rice-sized amount of toothpaste.",
+      "Stay within arm's reach around water.",
+      "Wash with soap for at least 20 seconds, then rinse and dry.",
+      "A song is not a cleaning timer; keep the screen off during care."
+    ],
+    "s4-t6": [
+      "Compare two objects from the same kind at a time.",
+      "Begin by nesting two large cups, then add a third if interested.",
+      "Use sitting or supported standing; do not ask for jumping or tiptoeing."
+    ],
+    "s5-t1": [
+      "Sort large objects with clear main colors into red and blue.",
+      "Model one object, then wait for the child's attempt.",
+      "Say what feature you are sorting by; perfect accuracy is not the goal."
+    ],
+    "s5-t2": [
+      "Begin counting with one or two large objects.",
+      "Name the total after counting; do not test numeral recognition.",
+      "Use counting songs as shared play, not a quiz."
+    ],
+    "s5-t3": [
+      "Say swims in water and flies in the sky; do not say birds live in the sky.",
+      "Read animal books together and never approach or feed wild animals.",
+      "Pandas can climb trees; keep the child's pretend play on the ground."
+    ],
+    "s5-t4": [
+      "Model taking turns without forcing a child to give up a treasured toy.",
+      "Ask how the child feels without sorting feelings into right and wrong.",
+      "Use polite words inside real help and repair."
+    ],
+    "s5-t5": [
+      "Use dolls and open boxes to say in, out, up, and down.",
+      "Do one step first, then invite the child to give the grown-up a direction.",
+      "Stay off furniture, out of closed boxes, and away from climbing play."
+    ],
+    "s5-t6": [
+      "Notice local weather; a book is fine when snow is not part of daily life.",
+      "Choose clothing for the real temperature, not only the weather icon.",
+      "A rain song is a wish, not a way to stop the rain."
+    ],
+    "s6-t1": [
+      "Use socks and towels to make two complete repeats.",
+      "Take turns clapping and stamping softly; sitting is an option.",
+      "A three-part pattern is optional; return to two alternating items if needed."
+    ],
+    "s6-t2": [
+      "Touch one and say one, then name the total; do not test numeral reading.",
+      "Start with one to three large objects; adults can support four or five.",
+      "Line up same-sized objects one-to-one, then talk about more and fewer."
+    ],
+    "s6-t3": [
+      "Sit securely while trying one clothing step; an adult checks comfort and safety.",
+      "Use a two-step plan: first this, then that.",
+      "Do not rush toileting; clean carefully after toilet or diaper care.",
+      "Praise the specific attempt and help promptly when needed."
+    ],
+    "s6-t4": [
+      "Use dolls to practise goodbye and a promised pickup without creating real separation.",
+      "Let the child say what feels worrying and name a trusted teacher for help.",
+      "Name real objects; follow the preschool's own pickup and belongings rules.",
+      "Model polite words without forcing hugs or public English."
+    ],
+    "s6-t5": [
+      "Offer a varied everyday diet; keep sweets occasional and never force a clean plate.",
+      "Lower the movement challenge, steady the body, and do not turn balance into a test.",
+      "Learn bedtime songs during the day and keep bedtime screen-free.",
+      "Keep meals screen-free and supervise water, toothbrushing, and lamps."
+    ],
+    "s6-t6": [
+      "Adults handle seeds and soil while children observe a real seedling.",
+      "Talk about day and night at clear times; the moon can also appear during the day.",
+      "Look at the same tree repeatedly and allow local seasons to differ.",
+      "Do not look at the sun, climb windowsills, or go out in dangerous weather."
+    ]
+  },
+  "lessonVehiclesEn": {
+    "intro": "Read this first. An adult chooses a safe place to notice vehicles. Name one vehicle at a time. When none are nearby, use the large printed cards. There is no need to go to a road or water.",
+    "tips": [
+      "Name one vehicle that is actually in front of you.",
+      "Describe first, then invite your child to look or listen.",
+      "Use English as a short label, never instead of rich conversation."
+    ],
+    "why": "Follow what the child is already noticing. Name it, pause, and wait for a response. Real conversation matters more than vehicle video.",
+    "offlineTitle": "Notice vehicles safely",
+    "materials": ["Large vehicle cards"],
+    "steps": [
+      "Choose a safe place away from traffic and parking entrances.",
+      "Point to one vehicle and say its name slowly.",
+      "Pause for a look, movement, or sound. Keep your voice small.",
+      "At home, choose one printed card at a time."
+    ],
+    "safety": "Stay with the child. Keep away from roads, rails, wheels, doors, and water. Do not use loud recorded vehicle sounds. Close windows and keep away from windowsills and furniture.",
+    "question": "What sound did you hear?",
+    "easier": "Look at one card at home. The adult names it and makes a soft sound.",
+    "harder": "From a safe place, notice two vehicles and name each one.",
+    "phrases": [
+      ["This is a car, beep beep.", "这是汽车，嘀嘀。"],
+      ["The bus is going by.", "公交车开过去了。"],
+      ["Did you hear it?", "你听到了吗？"],
+      ["We stay in a safe place.", "我们站在安全处。"]
+    ]
+  },
+  "rhythmLabels": {
+    "s1": ["Greeting", "Care", "Meals", "Floor play", "Shared look", "Outdoors", "Family time", "Bedtime"],
+    "s2": ["Greeting", "Care", "Free play", "Meals", "Goodbye", "Reading", "Movement", "Bedtime"],
+    "s3": ["Dressing", "Care", "Meals", "Tidy up", "Going out", "Nature", "Songs", "Bedtime"],
+    "s4": ["Colors", "Counting", "Building", "Outdoors", "Compare", "Feelings", "Wash", "Brush teeth"],
+    "s5": ["Weather", "Dress", "Sort", "Count", "Position", "Outside", "Read", "Bedtime"],
+    "s6": ["Routine", "Dress", "Meals", "Count", "Move", "Goodbye", "Nature", "Bedtime"]
+  }
+}

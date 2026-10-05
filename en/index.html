@@ -1,0 +1,1823 @@
+<!doctype html>
+<html lang="en" data-page="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#fdf6ec">
+    <meta name="description" content="An open-source family learning tool for ages 6 months to 3 years. Screens offer a slow prompt; growth happens through responsive care, real objects, play, reading, singing, and outdoor life.">
+    <meta name="robots" content="index,follow">
+    <title>Sprout · A screen can open the door</title>
+    <link rel="canonical" href="https://gxlself.github.io/ai-study/en/">
+    <link rel="alternate" hreflang="zh-CN" href="https://gxlself.github.io/ai-study/">
+    <link rel="alternate" hreflang="en" href="https://gxlself.github.io/ai-study/en/">
+    <link rel="alternate" hreflang="x-default" href="https://gxlself.github.io/ai-study/">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="芽芽成长 Sprout">
+    <meta property="og:locale" content="en_US">
+    <meta property="og:title" content="Sprout · A screen can open the door">
+    <meta property="og:description" content="An open-source family learning tool for ages 6 months to 3 years. Screens offer a slow prompt; growth happens through responsive care, real objects, play, reading, singing, and outdoor life.">
+    <meta property="og:url" content="https://gxlself.github.io/ai-study/en/">
+    <meta property="og:image" content="https://gxlself.github.io/ai-study/assets/og-en.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Sprout · A screen can open the door">
+    <meta name="twitter:description" content="An open-source family learning tool for ages 6 months to 3 years. Screens offer a slow prompt; growth happens through responsive care, real objects, play, reading, singing, and outdoor life.">
+    <meta name="twitter:image" content="https://gxlself.github.io/ai-study/assets/og-en.png">
+    <link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+    <link rel="apple-touch-icon" href="../assets/apple-touch-icon.png" sizes="180x180">
+    <link rel="manifest" href="../assets/site.webmanifest">
+    <link rel="preload" href="../assets/fonts/lxgw-wenkai-subset.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="../assets/fonts/fraunces-soft.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="stylesheet" href="../assets/site.css">
+    <script type="application/ld+json">{"@context":"https://schema.org","@type":"SoftwareApplication","name":"芽芽成长 Sprout","applicationCategory":"EducationalApplication","operatingSystem":"Web, Android, iOS","isAccessibleForFree":true,"offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"description":"An open-source family learning tool for ages 6 months to 3 years. Screens offer a slow prompt; growth happens through responsive care, real objects, play, reading, singing, and outdoor life.","url":"https://gxlself.github.io/ai-study/en/","softwareVersion":"0.0.1","license":"https://github.com/gxlself/ai-study/blob/main/LICENSE"}</script>
+    <script defer src="../assets/site.js"></script>
+  </head>
+  <body>
+    <a class="skip-link" href="#main-content">Skip to main content</a>
+    <div class="page-grain" aria-hidden="true"></div>
+    <header class="site-header" data-header>
+      <div class="header-inner">
+        <a class="brand" href="../" aria-label="芽芽成长 Sprout">
+          <span class="brand-mark" aria-hidden="true">
+            <svg viewBox="0 0 42 42" width="42" height="42">
+              <path d="M21 35c-.8-8 .2-13.7 4-18.8" fill="none" stroke="currentColor" stroke-width="2.8" stroke-linecap="round"/>
+              <path d="M21.2 23.8C14.6 23.8 9.2 19.1 9.5 13c6.7-.9 12.8 3 11.7 10.8Z" fill="#98c968" stroke="currentColor" stroke-width="1.3" stroke-linejoin="round"/>
+              <path d="M23 20.9C22.5 13.4 27.5 8 34.2 8.4c.7 6.4-4.3 12.8-11.2 12.5Z" fill="#77b77d" stroke="currentColor" stroke-width="1.3" stroke-linejoin="round"/>
+            </svg>
+            <span class="brand-leaves" data-brand-leaves aria-hidden="true"></span>
+          </span>
+          <span class="brand-name"><strong>芽芽成长</strong><span>Sprout</span></span>
+        </a>
+        <nav class="desktop-nav" aria-label="Primary navigation">
+          <a href="#principles">Principles</a>
+          <a href="#stages">Stages</a>
+          <a href="#lesson">One lesson</a>
+          <a href="#activities">Activities</a>
+          <a href="#home">At home</a>
+          <a href="#try">Try it</a>
+          <a href="#developers">Developers</a>
+        </nav>
+        <div class="header-actions">
+          <a class="language-switch" href="../" lang="zh-CN" aria-label="切换到中文">中</a>
+          <div class="theme-control">
+            <button class="icon-button" type="button" data-theme-toggle aria-expanded="false" aria-controls="theme-options" aria-label="Theme">
+              <span class="theme-glyph" aria-hidden="true">◐</span>
+            </button>
+            <div class="theme-options" id="theme-options" hidden>
+              <button type="button" data-theme-value="light">Light</button>
+              <button type="button" data-theme-value="dark">Dark</button>
+              <button type="button" data-theme-value="system">System</button>
+            </div>
+          </div>
+          <a class="header-github" href="https://github.com/gxlself/ai-study" target="_blank" rel="noreferrer">
+            <span aria-hidden="true">↗</span><span>GitHub</span>
+          </a>
+          <button class="menu-button" type="button" data-menu-toggle aria-expanded="false" aria-controls="mobile-menu" aria-label="Open menu">
+            <span></span><span></span><span></span>
+          </button>
+        </div>
+      </div>
+      <div class="mobile-menu" id="mobile-menu" data-mobile-menu hidden>
+        <nav aria-label="Primary navigation">
+          <a href="#principles">Principles</a>
+          <a href="#stages">Stages</a>
+          <a href="#lesson">One lesson</a>
+          <a href="#activities">Activities</a>
+          <a href="#home">At home</a>
+          <a href="#try">Try it</a>
+          <a href="#developers">Developers</a>
+        </nav>
+        <div class="mobile-menu-footer">
+          <a href="../" lang="zh-CN">中</a>
+          <a href="https://github.com/gxlself/ai-study" target="_blank" rel="noreferrer">GitHub ↗</a>
+        </div>
+      </div>
+    </header>
+    <main id="main-content">
+      
+    <section class="hero-section section-band" id="top">
+      <div class="hero-inner">
+        <div class="hero-copy">
+          <p class="eyebrow">Open-source family learning · 6 months–3 years</p>
+          <h1 class="balanced-title"><span class="nobr">A screen can open the door.</span><span class="nobr">Growing happens together.</span></h1>
+          <p class="hero-lede">Read a small prompt, put the screen down, and play for a while. Sprout pairs slow parent guidance with printable cards and ordinary moments at home.</p>
+          <div class="hero-actions">
+            <a class="button button-primary" href="#try"><svg class="icon " viewBox="0 0 24 24" aria-hidden="true" focusable="false" ><path d="M5 12h13M13 6l6 6-6 6"/></svg> Try it in the browser</a>
+            <a class="button button-quiet" href="https://github.com/gxlself/ai-study" target="_blank" rel="noreferrer"><svg class="icon " viewBox="0 0 24 24" aria-hidden="true" focusable="false" ><path d="M14 4h6v6M20 4l-9 9"/><path d="M18 14v5H5V6h5"/></svg> GitHub source</a>
+          </div>
+          <p class="hero-meta">v0.0.1 · open source · local network · no ads</p>
+          <div class="hero-stat-line" aria-label="96 lessons, 6 Stage, 17 17 small, finite ways in">
+            <span><strong>96</strong> lessons</span>
+            <span><strong>6</strong> Stage</span>
+            <span><strong>17</strong> activities</span>
+          </div>
+        </div>
+        
+  <div class="hero-art-wrap">
+    <div class="hero-art-note"><span class="dot"></span> A small television lights up, a seedling grows from the screen, then the television dims and a family returns to real life.</div>
+    <div class="hero-scene-frame">
+      <svg class="hero-scene" viewBox="0 0 620 460" role="img" aria-label="A small television lights up, a seedling grows from the screen, then the television dims and a family returns to real life." data-hero-scene>
+        <defs>
+          <linearGradient id="hero-wall" x1="0" x2="0" y1="0" y2="1">
+            <stop offset="0" stop-color="#fffaf2"/>
+            <stop offset="1" stop-color="#f3ead9"/>
+          </linearGradient>
+          <linearGradient id="hero-floor" x1="0" x2="1" y1="0" y2="1">
+            <stop offset="0" stop-color="#eadbc1"/>
+            <stop offset="1" stop-color="#d8c29f"/>
+          </linearGradient>
+          <radialGradient id="hero-glow">
+            <stop offset="0" stop-color="#ffc93c" stop-opacity=".72"/>
+            <stop offset=".7" stop-color="#ffc93c" stop-opacity=".18"/>
+            <stop offset="1" stop-color="#ffc93c" stop-opacity="0"/>
+          </radialGradient>
+          <filter id="hero-soft"><feGaussianBlur stdDeviation="14"/></filter>
+        </defs>
+        <rect class="hero-wall" width="620" height="460" rx="28" fill="url(#hero-wall)"/>
+        <path class="hero-floor" d="M0 352 620 314v146H0Z" fill="url(#hero-floor)"/>
+        <path d="M0 354 620 316" fill="none" stroke="#c9ae83" stroke-width="2" stroke-dasharray="7 12" opacity=".55"/>
+        <circle class="hero-glow" cx="323" cy="260" r="155" fill="url(#hero-glow)" filter="url(#hero-soft)"/>
+        <g class="hero-stars" aria-hidden="true">
+          <circle cx="76" cy="82" r="2.5" fill="#ffc93c"/><circle cx="116" cy="117" r="1.8" fill="#fffaf2"/>
+          <circle cx="571" cy="84" r="2" fill="#ffc93c"/><circle cx="592" cy="126" r="1.6" fill="#fffaf2"/>
+          <path d="m79 147 3 7 7 3-7 3-3 7-3-7-7-3 7-3Z" fill="#ffc93c"/>
+        </g>
+        <g class="hero-lamp" transform="translate(35 0)">
+          <path d="M535 292v-104" fill="none" stroke="#6a5a45" stroke-width="8" stroke-linecap="round"/>
+          <path d="M511 184q24-30 48 0l-8 16h-32Z" fill="#f4c36a" stroke="#6a5a45" stroke-width="4"/>
+          <path d="M520 198h30l17 80h-64Z" fill="#ffdb83" opacity=".65"/>
+          <ellipse cx="535" cy="291" rx="42" ry="8" fill="#6a5a45" opacity=".35"/>
+        </g>
+        <g class="hero-cabinet">
+          <path d="M118 332h282l-14 91H132Z" fill="#8a5f3b" stroke="#67472f" stroke-width="5"/>
+          <path d="M106 332h310l-12 18H114Z" fill="#b47a4c" stroke="#67472f" stroke-width="5"/>
+          <path d="M155 351h210" stroke="#d69c64" stroke-width="4" opacity=".45"/>
+          <circle cx="193" cy="387" r="15" fill="#5b412d"/>
+          <circle cx="335" cy="387" r="15" fill="#5b412d"/>
+        </g>
+        <g class="hero-tv">
+          <rect x="136" y="178" width="246" height="157" rx="28" fill="#66806a" stroke="#3b3226" stroke-width="6"/>
+          <rect x="153" y="195" width="183" height="119" rx="17" class="hero-tv-screen"/>
+          <path d="M173 216q43-20 99 0" fill="none" stroke="#fffaf2" stroke-width="6" opacity=".2" class="screen-reflection"/>
+          <text x="322" y="301" text-anchor="end" class="screen-off-text">Screen off</text>
+          <circle cx="355" cy="240" r="12" fill="#f2b134" stroke="#3b3226" stroke-width="4"/>
+          <path d="M355 232v16" stroke="#3b3226" stroke-width="3" stroke-linecap="round"/>
+          <path d="M350 322h22M354 322v17M368 322v17" fill="none" stroke="#3b3226" stroke-width="5" stroke-linecap="round"/>
+        </g>
+        <g class="hero-sprout">
+          <path d="M296 198C290 168 296 142 315 111c17-28 23-54 14-84" fill="none" stroke="#6c9a3b" stroke-width="8" stroke-linecap="round"/>
+          <path d="M298 177c-29-5-45-27-41-48 25-2 46 17 41 48Z" fill="#98c968" stroke="#548e5b" stroke-width="4"/>
+          <path d="M307 148c4-29 24-47 49-44 2 26-16 46-49 44Z" fill="#77b77d" stroke="#548e5b" stroke-width="4"/>
+          <path d="M267 141c-18-16-19-37-5-50 18 7 22 28 5 50Z" fill="#98c968" stroke="#548e5b" stroke-width="4"/>
+          <path d="M278 91c7-16 22-24 36-18-2 17-15 26-36 18Z" fill="#77b77d" stroke="#548e5b" stroke-width="4"/>
+          <path d="m279 78 7-11 8 11-8 13Z" fill="#f08a5d" stroke="#a45a3e" stroke-width="3"/>
+          <path d="M279 73v-9M275 70l-4-5M284 70l5-5" fill="none" stroke="#f08a5d" stroke-width="2.5" stroke-linecap="round"/>
+        </g>
+        <ellipse class="hero-rug" cx="485" cy="414" rx="124" ry="20" fill="#e6f4d7" opacity=".8"/>
+        <g class="hero-basket" transform="translate(-36 0)">
+          <path d="M438 363q22-39 70 0l-8 42h-54Z" fill="#b47a4c" stroke="#67472f" stroke-width="4"/>
+          <path d="M445 365q29-36 56 0" fill="none" stroke="#67472f" stroke-width="5"/>
+          <circle cx="465" cy="368" r="15" fill="#e85d4d" stroke="#9b3f38" stroke-width="3"/>
+          <circle cx="493" cy="370" r="12" fill="#5da9e9" stroke="#386b9b" stroke-width="3"/>
+          <rect x="460" y="387" width="39" height="11" rx="4" fill="#f5d28a" transform="rotate(9 460 387)"/>
+          <path d="M508 390h18v23h-18z" fill="#e6f4d7" stroke="#6c9a3b" stroke-width="3"/>
+          <path d="m512 395 9 0M512 401h9" stroke="#6c9a3b" stroke-width="2"/>
+        </g>
+        <g class="hero-people" transform="translate(92 0)">
+          <circle cx="383" cy="334" r="20" fill="#f0c6a4" stroke="#3b3226" stroke-width="4"/>
+          <path d="M350 407q6-66 33-66t36 66Z" fill="#f08a5d" stroke="#3b3226" stroke-width="5"/>
+          <circle cx="419" cy="363" r="14" fill="#f0c6a4" stroke="#3b3226" stroke-width="3"/>
+          <path d="M396 420q4-52 24-52t26 52Z" fill="#5da9e9" stroke="#3b3226" stroke-width="4"/>
+          <path d="M355 410q26 18 61 4M406 418q22 10 47 1" fill="none" stroke="#3b3226" stroke-width="4" stroke-linecap="round"/>
+          <circle cx="379" cy="338" r="3" fill="#f08a5d" opacity=".7"/>
+          <circle cx="424" cy="366" r="2.5" fill="#f08a5d" opacity=".7"/>
+        </g>
+      </svg>
+      <button class="art-replay" type="button" data-replay-hero><svg class="icon " viewBox="0 0 24 24" aria-hidden="true" focusable="false" ><path d="m12 3 1.8 5.2L19 10l-5.2 1.8L12 17l-1.8-5.2L5 10l5.2-1.8L12 3Z"/></svg> Play the story again</button>
+    </div>
+  </div>
+      </div>
+      
+    <div class="ratio-block">
+      <div class="ratio-labels"><span><i class="ratio-screen"></i>Screen <b>2 min</b></span><span><i class="ratio-outside"></i>Outside <b>10 min</b></span></div>
+      <div class="ratio-track" role="img" aria-label="Screen 2 min; Outside 10 min">
+        <span class="ratio-fill ratio-fill-screen" style="--ratio:16.7%"></span><span class="ratio-fill ratio-fill-outside"></span>
+      </div>
+      <p class="micro-note">Ratio from the built-in lesson “Beep Beep, Let’s Go”: 2 min Screen / 10 min Outside。</p>
+    </div>
+    </section>
+  
+  <section class="section-band paper-band" id="principles">
+    <div class="content-wrap">
+      
+  <div class="section-heading">
+    <p class="eyebrow">Put the direction on the table</p>
+    <h2 class="section-title balanced-title"><span class="nobr">Five things,</span><span class="nobr">tucked into five seed packets</span></h2>
+    <p class="section-lede">Each packet is small: open it, read it, then carry the idea back to objects, sounds, and relationships at home.</p>
+  </div>
+      <div class="seed-grid">
+        
+              <article class="seed-packet">
+                <button type="button" class="seed-button" aria-expanded="false" aria-controls="seed-panel-0" data-seed-toggle>
+                  <span class="seed-fold" aria-hidden="true"></span>
+                  <span class="seed-number">01</span>
+                  <svg class="seed-art" viewBox="0 0 64 54" aria-hidden="true"><circle cx="24" cy="23" r="10" fill="#f0c6a4" stroke="currentColor" stroke-width="2"/><circle cx="42" cy="27" r="7" fill="#f0c6a4" stroke="currentColor" stroke-width="2"/><path d="M12 47q4-14 16-14t16 14M35 47q3-10 12-10t11 10" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"/></svg>
+                  <span class="seed-label">Real people</span>
+                  <span class="seed-plus" aria-hidden="true">+</span>
+                </button>
+                <div class="seed-panel" id="seed-panel-0" hidden>
+                  <h3>Responsive people before passive viewing</h3>
+                  <p>What a baby is already noticing deserves a real person who names it, pauses, waits, and responds. A screen is not a substitute for a relationship.</p>
+                  <a href="https://github.com/gxlself/ai-study/blob/main/docs/research/evidence-review.md#31-视频缺陷--迁移缺陷强" target="_blank" rel="noreferrer">See evidence <span aria-hidden="true">↗</span></a>
+                </div>
+              </article>
+              <article class="seed-packet">
+                <button type="button" class="seed-button" aria-expanded="false" aria-controls="seed-panel-1" data-seed-toggle>
+                  <span class="seed-fold" aria-hidden="true"></span>
+                  <span class="seed-number">02</span>
+                  <svg class="seed-art" viewBox="0 0 64 54" aria-hidden="true"><path d="M13 12h38v35H13z" fill="#fffaf2" stroke="currentColor" stroke-width="2"/><path d="M20 20h22M20 27h15M20 34h19" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><path d="m44 9 7 7" stroke="#f08a5d" stroke-width="3" stroke-linecap="round"/></svg>
+                  <span class="seed-label">For adults first</span>
+                  <span class="seed-plus" aria-hidden="true">+</span>
+                </button>
+                <div class="seed-panel" id="seed-panel-1" hidden>
+                  <h3>No child-side lessons for 6–17 months</h3>
+                  <p>This stage is for parent guidance: read it, put the device down, and use printed cards, books, and real objects. Co-viewing is off by default at 18–23 months; 24–36 months can also stay screen-free.</p>
+                  <a href="https://github.com/gxlself/ai-study/blob/main/docs/research/evidence-review.md#91-总体定位" target="_blank" rel="noreferrer">See evidence <span aria-hidden="true">↗</span></a>
+                </div>
+              </article>
+              <article class="seed-packet">
+                <button type="button" class="seed-button" aria-expanded="false" aria-controls="seed-panel-2" data-seed-toggle>
+                  <span class="seed-fold" aria-hidden="true"></span>
+                  <span class="seed-number">03</span>
+                  <svg class="seed-art" viewBox="0 0 64 54" aria-hidden="true"><path d="M13 29h14M35 21h15M35 37h13" stroke="currentColor" stroke-width="3" stroke-linecap="round"/><circle cx="10" cy="29" r="4" fill="#f08a5d"/><circle cx="32" cy="21" r="4" fill="#5da9e9"/><circle cx="32" cy="37" r="4" fill="#6c9a3b"/></svg>
+                  <span class="seed-label">Conversation turns</span>
+                  <span class="seed-plus" aria-hidden="true">+</span>
+                </button>
+                <div class="seed-panel" id="seed-panel-2" hidden>
+                  <h3>Back-and-forth matters more than more input</h3>
+                  <p>Notice what the child is attending to, name it, pause, and respond to a look, gesture, movement, or sound. Then return the idea to daily life.</p>
+                  <a href="https://github.com/gxlself/ai-study/blob/main/docs/research/evidence-review.md#4-语言中文母语--英语启蒙" target="_blank" rel="noreferrer">See evidence <span aria-hidden="true">↗</span></a>
+                </div>
+              </article>
+              <article class="seed-packet">
+                <button type="button" class="seed-button" aria-expanded="false" aria-controls="seed-panel-3" data-seed-toggle>
+                  <span class="seed-fold" aria-hidden="true"></span>
+                  <span class="seed-number">04</span>
+                  <svg class="seed-art" viewBox="0 0 64 54" aria-hidden="true"><path d="M25 46c-9-13-18-15-15-25 2-7 11-5 15 2 4-7 13-9 15-2 3 10-6 12-15 25Z" fill="#98c968" stroke="currentColor" stroke-width="2"/><path d="M29 15c6-8 13-6 17-1-5 6-10 7-17 1Z" fill="#77b77d" stroke="currentColor" stroke-width="2"/></svg>
+                  <span class="seed-label">Chinese first</span>
+                  <span class="seed-plus" aria-hidden="true">+</span>
+                </button>
+                <div class="seed-panel" id="seed-panel-3" hidden>
+                  <h3>Natural Chinese is the main path; English is optional</h3>
+                  <p>Bilingualism is not a race. Each language needs real, sufficient, natural input; unfamiliar English or recorded audio cannot replace rich conversation.</p>
+                  <a href="https://github.com/gxlself/ai-study/blob/main/docs/research/evidence-review.md#4-语言中文母语--英语启蒙" target="_blank" rel="noreferrer">See evidence <span aria-hidden="true">↗</span></a>
+                </div>
+              </article>
+              <article class="seed-packet">
+                <button type="button" class="seed-button" aria-expanded="false" aria-controls="seed-panel-4" data-seed-toggle>
+                  <span class="seed-fold" aria-hidden="true"></span>
+                  <span class="seed-number">05</span>
+                  <svg class="seed-art" viewBox="0 0 64 54" aria-hidden="true"><circle cx="17" cy="39" r="6" fill="#d8b07b" stroke="currentColor" stroke-width="2"/><circle cx="32" cy="39" r="6" fill="#d8b07b" stroke="currentColor" stroke-width="2"/><circle cx="47" cy="39" r="6" fill="#d8b07b" stroke="currentColor" stroke-width="2"/><path d="M17 25v9M32 21v13M47 25v9" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+                  <span class="seed-label">Everyday math</span>
+                  <span class="seed-plus" aria-hidden="true">+</span>
+                </button>
+                <div class="seed-panel" id="seed-panel-4" hidden>
+                  <h3>Math starts with quantity, space, and patterns in life</h3>
+                  <p>Touch one, say one, then name the total. Put things in, take them out, sort, and arrange. No flashcards and no correctness score.</p>
+                  <a href="https://github.com/gxlself/ai-study/blob/main/docs/research/evidence-review.md#5-数学启蒙" target="_blank" rel="noreferrer">See evidence <span aria-hidden="true">↗</span></a>
+                </div>
+              </article>
+      </div>
+      <p class="source-note"><span class="source-dot"></span>The built-in pack includes 96 lessons, 6 stages, 17 activities, and 254 word entries.</p>
+    </div>
+  </section>
+  
+  <section class="section-band" id="stages">
+    <div class="content-wrap">
+      
+  <div class="section-heading">
+    <p class="eyebrow">The marks on the doorframe</p>
+    <h2 class="section-title balanced-title"><span class="nobr">Six stages,</span><span class="nobr">not a race track</span></h2>
+    <p class="section-lede">Like pencil marks on a doorframe, age is a gentle reference point. Move the paper tag and see what can be brought back into real life.</p>
+  </div>
+      <div class="stage-browser">
+        
+  <div class="stage-scale" data-stage-scale>
+    <div class="scale-rail" aria-hidden="true"></div>
+    
+          <button class="scale-tick is-current" type="button" data-stage-select="s1" style="--tick-index:0" aria-label="Stage S1 · 6–8 months">
+            <span class="tick-line"></span>
+            <span class="tick-label">6 mo</span>
+            <span class="tick-title">Sensing the World</span>
+          </button>
+          <button class="scale-tick " type="button" data-stage-select="s2" style="--tick-index:1" aria-label="Stage S2 · 9–11 months">
+            <span class="tick-line"></span>
+            <span class="tick-label">9 mo</span>
+            <span class="tick-title">Interacting</span>
+          </button>
+          <button class="scale-tick " type="button" data-stage-select="s3" style="--tick-index:2" aria-label="Stage S3 · 12–17 months">
+            <span class="tick-line"></span>
+            <span class="tick-label">12 mo</span>
+            <span class="tick-title">First Words</span>
+          </button>
+          <button class="scale-tick " type="button" data-stage-select="s4" style="--tick-index:3" aria-label="Stage S4 · 18–23 months">
+            <span class="tick-line"></span>
+            <span class="tick-label">18 mo</span>
+            <span class="tick-title">Word Explosion</span>
+          </button>
+          <button class="scale-tick " type="button" data-stage-select="s5" style="--tick-index:4" aria-label="Stage S5 · 24–29 months">
+            <span class="tick-line"></span>
+            <span class="tick-label">24 mo</span>
+            <span class="tick-title">Little Thinker</span>
+          </button>
+          <button class="scale-tick " type="button" data-stage-select="s6" style="--tick-index:5" aria-label="Stage S6 · 30–36 months">
+            <span class="tick-line"></span>
+            <span class="tick-label">30 mo</span>
+            <span class="tick-title">Ready for Preschool</span>
+          </button>
+    <button
+      class="stage-marker"
+      type="button"
+      role="slider"
+      tabindex="0"
+      data-stage-slider
+      aria-valuemin="0"
+      aria-valuemax="5"
+      aria-valuenow="0"
+      aria-valuetext="Sensing the World · 6–8 months"
+      aria-label="Use the up and down arrow keys to move the stage marker"
+    >
+      <span class="marker-paper"><svg class="icon " viewBox="0 0 24 24" aria-hidden="true" focusable="false" ><path d="m12 3 1.8 5.2L19 10l-5.2 1.8L12 17l-1.8-5.2L5 10l5.2-1.8L12 3Z"/></svg><span aria-hidden="true"></span></span>
+    </button>
+  </div>
+        <div class="stage-panels">
+          
+    <article class="stage-panel is-active" data-stage-panel="s1" >
+      <div class="stage-panel-top">
+        <div>
+          <div class="kicker-row"><span class="stage-pill">S1</span><span>6–8 months</span></div>
+          <h3>Sensing the World</h3>
+          <p class="stage-subtitle">6–8 Months: Gentle Face-to-Face Play</p>
+        </div>
+        <div class="stage-count">
+          <strong>12</strong>
+          <span>lessons</span>
+        </div>
+      </div>
+      <div class="stage-grid">
+        <div class="stage-column">
+          <div class="subsection-label">How to use the screen in this stage</div>
+          
+    <div class="screen-states" aria-label="How to use the screen in this stage">
+      
+            <div class="screen-state is-active">
+              <span class="mini-tv" aria-hidden="true"><span>◌</span></span>
+              <span>Screen off</span>
+            </div>
+            <div class="screen-state ">
+              <span class="mini-tv" aria-hidden="true"><span>◐</span></span>
+              <span>For the grown-up</span>
+            </div>
+            <div class="screen-state ">
+              <span class="mini-tv" aria-hidden="true"><span>◉</span></span>
+              <span>Optional co-view</span>
+            </div>
+    </div>
+          <p class="screen-policy">The grown-up reads the guide; no child-side lesson is shown. Then use cards, books, and real objects together.</p>
+          <div class="limit-row">
+            <span><b>Parent guide · each ≤</b> 3 min</span>
+            <span><b>Parent guide · each day ≤</b> 10 min</span>
+          </div>
+          <div class="audience-counts">
+            <span>12 parent guidance</span>
+            <span>0 co-viewing</span>
+          </div>
+        </div>
+        <div class="stage-column day-shape">
+          <div class="subsection-label">The shape of a day</div>
+          
+    <div class="rhythm-wrap">
+      <figure class="rhythm-figure">
+        <svg class="rhythm-ring" viewBox="0 0 220 236" role="img" aria-label="Illustrative day ring: the full ring is 12 waking hours, screen time is 10 minutes or 1.4%, and the rest is outside the screen.">
+          <circle class="ring-track" cx="110" cy="128" r="78"/>
+          <circle class="ring-seg ring-c0" cx="110" cy="128" r="78" pathLength="360" stroke-dasharray="41.563 360" transform="rotate(-85.000 110 128)"/><circle class="ring-seg ring-c1" cx="110" cy="128" r="78" pathLength="360" stroke-dasharray="41.563 360" transform="rotate(-40.938 110 128)"/><circle class="ring-seg ring-c2" cx="110" cy="128" r="78" pathLength="360" stroke-dasharray="41.563 360" transform="rotate(3.125 110 128)"/><circle class="ring-seg ring-c3" cx="110" cy="128" r="78" pathLength="360" stroke-dasharray="41.563 360" transform="rotate(47.188 110 128)"/><circle class="ring-seg ring-c4" cx="110" cy="128" r="78" pathLength="360" stroke-dasharray="41.563 360" transform="rotate(91.250 110 128)"/><circle class="ring-seg ring-c5" cx="110" cy="128" r="78" pathLength="360" stroke-dasharray="41.563 360" transform="rotate(135.313 110 128)"/><circle class="ring-seg ring-c6" cx="110" cy="128" r="78" pathLength="360" stroke-dasharray="41.563 360" transform="rotate(179.375 110 128)"/><circle class="ring-seg ring-c7" cx="110" cy="128" r="78" pathLength="360" stroke-dasharray="41.563 360" transform="rotate(223.438 110 128)"/>
+          <circle class="ring-screen" cx="110" cy="128" r="78" pathLength="360" stroke-dasharray="5.000 360" transform="rotate(-92.500 110 128)"/>
+          <path class="ring-leader" d="M110 36V20"/>
+          <text class="ring-callout" x="110" y="12" text-anchor="middle">Screen ≤ 10 min</text>
+          <text class="ring-value" x="110" y="134" text-anchor="middle">1.4%</text>
+          <text class="ring-unit" x="110" y="156" text-anchor="middle">10 min / 12 hours</text>
+        </svg>
+      </figure>
+      <ul class="rhythm-legend">
+        <li><i class="ring-c0"></i>Greeting</li><li><i class="ring-c1"></i>Care</li><li><i class="ring-c2"></i>Meals</li><li><i class="ring-c3"></i>Floor play</li><li><i class="ring-c4"></i>Shared look</li><li><i class="ring-c5"></i>Outdoors</li><li><i class="ring-c6"></i>Family time</li><li><i class="ring-c7"></i>Bedtime</li>
+      </ul>
+    </div>
+    <p class="micro-note">The full ring is 12 waking hours; screen time uses its real proportion and the remaining life segments are illustrative.</p>
+        </div>
+      </div>
+      <div class="stage-lower-grid">
+        <div>
+          <div class="subsection-label">Things to notice</div>
+          <ul class="focus-list"><li><span class="check-mark" aria-hidden="true">✓</span><span>Familiar Faces and Warm Responses</span></li><li><span class="check-mark" aria-hidden="true">✓</span><span>Back-and-Forth Little Sounds</span></li><li><span class="check-mark" aria-hidden="true">✓</span><span>Slow, Shared Looking at Printed Cards</span></li><li><span class="check-mark" aria-hidden="true">✓</span><span>Brief Hiding and Reappearing</span></li><li><span class="check-mark" aria-hidden="true">✓</span><span>Live Singing and Repeated Rhythms</span></li><li><span class="check-mark" aria-hidden="true">✓</span><span>Awake Tummy Time and Self-Initiated Reaching</span></li></ul>
+        </div>
+        <div>
+          <div class="subsection-label">Theme index</div>
+          <div class="theme-index">
+            
+                  <details class="theme-item">
+                    <summary><span class="theme-number">01</span><span>Black, White &amp; Red</span><span class="summary-caret" aria-hidden="true">+</span></summary>
+                    <div class="theme-body">
+                      <p>Look and play with printed cards, familiar faces, and a floor mat. No rapid card changes, shape tests, or forced tummy-time sessions.</p>
+                      <ul><li>Move one printed card slowly and pause to watch the baby&#39;s response.</li><li>Respond to a look, smile, or sound without asking the baby to imitate.</li><li>Offer short tummy-time moments while awake; stop when the baby is tired.</li></ul>
+                    </div>
+                  </details>
+                  <details class="theme-item">
+                    <summary><span class="theme-number">02</span><span>Hello, Baby</span><span class="summary-caret" aria-hidden="true">+</span></summary>
+                    <div class="theme-body">
+                      <p>Share real family photos, facial features, and gentle songs. Use the people and names familiar to your family, without expecting words or a consistent response to baby&#39;s name.</p>
+                      <ul><li>Prefer real faces or family photos and use familiar names.</li><li>Tell the baby what you are doing while dressing and name one feature at a time.</li><li>Learn the song during the day, then sing one line with the screen off.</li></ul>
+                    </div>
+                  </details>
+                  <details class="theme-item">
+                    <summary><span class="theme-number">03</span><span>Peekaboo</span><span class="summary-caret" aria-hidden="true">+</span></summary>
+                    <div class="theme-body">
+                      <p>Hide a little and discover together. Briefly cover the caregiver&#39;s face, partly hide a large toy, and share a safe mirror. Looking without searching or smiling is welcome.</p>
+                      <ul><li>Cover only the grown-up&#39;s face; keep the baby&#39;s nose and mouth clear.</li><li>Begin with a large toy partly visible; the grown-up may help reveal it.</li><li>Share a shatter-resistant rounded baby mirror without testing self-recognition.</li></ul>
+                    </div>
+                  </details>
+                  <details class="theme-item">
+                    <summary><span class="theme-number">04</span><span>Animal Sounds</span><span class="summary-caret" aria-hidden="true">+</span></summary>
+                    <div class="theme-body">
+                      <p>Take turns talking and singing with printed animal cards and a caregiver&#39;s voice. Repeat familiar short songs and use screen-free humming in a gentle bedtime routine.</p>
+                      <ul><li>Use one card at a time, name it softly, and pause for a response.</li><li>Lift the matching printed card while you sing; do not play background audio.</li><li>Learn lullabies during the day, then hum with the screen off at bedtime.</li></ul>
+                    </div>
+                  </details>
+          </div>
+        </div>
+      </div>
+      <div class="postcard">
+        <div class="postcard-pin" aria-hidden="true"></div>
+        <div class="postcard-head">
+          <span>Sample lesson postcard</span>
+          <span class="postcard-stamp">S1</span>
+        </div>
+        <div class="postcard-body">
+          <div>
+            <h4>Follow a Black-and-White Card</h4>
+            
+            <p>Move slowly, then pause.</p>
+          </div>
+          <div class="postcard-copy">
+            <span class="small-label">Read first</span>
+            <p>Read the short parent guide, then put the screen down and try it with a real object.</p>
+          </div>
+          <div class="postcard-phrases">
+            <span class="small-label">You could say</span>
+            <p>“Look at this card.”</p><p>“It moves slowly.”</p>
+          </div>
+        </div>
+        <a class="text-link" href="#lesson" data-stage-lesson="core.s1.contrast-shapes">See this lesson <svg class="icon " viewBox="0 0 24 24" aria-hidden="true" focusable="false" ><path d="M5 12h13M13 6l6 6-6 6"/></svg></a>
+      </div>
+    </article>
+    <article class="stage-panel " data-stage-panel="s2" hidden>
+      <div class="stage-panel-top">
+        <div>
+          <div class="kicker-row"><span class="stage-pill">S2</span><span>9–11 months</span></div>
+          <h3>Interacting</h3>
+          <p class="stage-subtitle">9–11 months: Discover cause and effect through back-and-forth play</p>
+        </div>
+        <div class="stage-count">
+          <strong>12</strong>
+          <span>lessons</span>
+        </div>
+      </div>
+      <div class="stage-grid">
+        <div class="stage-column">
+          <div class="subsection-label">How to use the screen in this stage</div>
+          
+    <div class="screen-states" aria-label="How to use the screen in this stage">
+      
+            <div class="screen-state is-active">
+              <span class="mini-tv" aria-hidden="true"><span>◌</span></span>
+              <span>Screen off</span>
+            </div>
+            <div class="screen-state ">
+              <span class="mini-tv" aria-hidden="true"><span>◐</span></span>
+              <span>For the grown-up</span>
+            </div>
+            <div class="screen-state ">
+              <span class="mini-tv" aria-hidden="true"><span>◉</span></span>
+              <span>Optional co-view</span>
+            </div>
+    </div>
+          <p class="screen-policy">The grown-up reads the guide; no child-side lesson is shown. Then return to real objects and face-to-face play.</p>
+          <div class="limit-row">
+            <span><b>Parent guide · each ≤</b> 3 min</span>
+            <span><b>Parent guide · each day ≤</b> 10 min</span>
+          </div>
+          <div class="audience-counts">
+            <span>12 parent guidance</span>
+            <span>0 co-viewing</span>
+          </div>
+        </div>
+        <div class="stage-column day-shape">
+          <div class="subsection-label">The shape of a day</div>
+          
+    <div class="rhythm-wrap">
+      <figure class="rhythm-figure">
+        <svg class="rhythm-ring" viewBox="0 0 220 236" role="img" aria-label="Illustrative day ring: the full ring is 12 waking hours, screen time is 10 minutes or 1.4%, and the rest is outside the screen.">
+          <circle class="ring-track" cx="110" cy="128" r="78"/>
+          <circle class="ring-seg ring-c0" cx="110" cy="128" r="78" pathLength="360" stroke-dasharray="41.563 360" transform="rotate(-85.000 110 128)"/><circle class="ring-seg ring-c1" cx="110" cy="128" r="78" pathLength="360" stroke-dasharray="41.563 360" transform="rotate(-40.938 110 128)"/><circle class="ring-seg ring-c2" cx="110" cy="128" r="78" pathLength="360" stroke-dasharray="41.563 360" transform="rotate(3.125 110 128)"/><circle class="ring-seg ring-c3" cx="110" cy="128" r="78" pathLength="360" stroke-dasharray="41.563 360" transform="rotate(47.188 110 128)"/><circle class="ring-seg ring-c4" cx="110" cy="128" r="78" pathLength="360" stroke-dasharray="41.563 360" transform="rotate(91.250 110 128)"/><circle class="ring-seg ring-c5" cx="110" cy="128" r="78" pathLength="360" stroke-dasharray="41.563 360" transform="rotate(135.313 110 128)"/><circle class="ring-seg ring-c6" cx="110" cy="128" r="78" pathLength="360" stroke-dasharray="41.563 360" transform="rotate(179.375 110 128)"/><circle class="ring-seg ring-c7" cx="110" cy="128" r="78" pathLength="360" stroke-dasharray="41.563 360" transform="rotate(223.438 110 128)"/>
+          <circle class="ring-screen" cx="110" cy="128" r="78" pathLength="360" stroke-dasharray="5.000 360" transform="rotate(-92.500 110 128)"/>
+          <path class="ring-leader" d="M110 36V20"/>
+          <text class="ring-callout" x="110" y="12" text-anchor="middle">Screen ≤ 10 min</text>
+          <text class="ring-value" x="110" y="134" text-anchor="middle">1.4%</text>
+          <text class="ring-unit" x="110" y="156" text-anchor="middle">10 min / 12 hours</text>
+        </svg>
+      </figure>
+      <ul class="rhythm-legend">
+        <li><i class="ring-c0"></i>Greeting</li><li><i class="ring-c1"></i>Care</li><li><i class="ring-c2"></i>Free play</li><li><i class="ring-c3"></i>Meals</li><li><i class="ring-c4"></i>Goodbye</li><li><i class="ring-c5"></i>Reading</li><li><i class="ring-c6"></i>Movement</li><li><i class="ring-c7"></i>Bedtime</li>
+      </ul>
+    </div>
+    <p class="micro-note">The full ring is 12 waking hours; screen time uses its real proportion and the remaining life segments are illustrative.</p>
+        </div>
+      </div>
+      <div class="stage-lower-grid">
+        <div>
+          <div class="subsection-label">Things to notice</div>
+          <ul class="focus-list"><li><span class="check-mark" aria-hidden="true">✓</span><span>Discover in, out, and hidden-and-found play with a caregiver.</span></li><li><span class="check-mark" aria-hidden="true">✓</span><span>Join back-and-forth interaction with claps, waves, sounds, and looks.</span></li><li><span class="check-mark" aria-hidden="true">✓</span><span>Bring more, all gone, and simple number words into meals.</span></li><li><span class="check-mark" aria-hidden="true">✓</span><span>Follow your baby&#39;s attention and add words to real home objects.</span></li><li><span class="check-mark" aria-hidden="true">✓</span><span>Offer predictable routines for trying and responding.</span></li></ul>
+        </div>
+        <div>
+          <div class="subsection-label">Theme index</div>
+          <div class="theme-index">
+            
+                  <details class="theme-item">
+                    <summary><span class="theme-number">01</span><span>Cause &amp; Effect</span><span class="summary-caret" aria-hidden="true">+</span></summary>
+                    <div class="theme-body">
+                      <p>Use bubbles, boxes, and cups to explore appearing, disappearing, in, and out.</p>
+                      <ul><li>Use real bubbles and large toys to notice changes caused by an action.</li><li>Play hide-and-find with a cup large enough to cover a toy; keep the cup still.</li><li>An adult prepares and watches every object.</li></ul>
+                    </div>
+                  </details>
+                  <details class="theme-item">
+                    <summary><span class="theme-number">02</span><span>Clap and Wave</span><span class="summary-caret" aria-hidden="true">+</span></summary>
+                    <div class="theme-body">
+                      <p>Practice imitation, gestures, and waiting through face-to-face play and songs.</p>
+                      <ul><li>Model the gesture first, then pause for the baby&#39;s own response.</li><li>Make hello and goodbye part of the same small family ritual.</li><li>Learn the melody with the screen off, then sing it and stop whenever needed.</li></ul>
+                    </div>
+                  </details>
+                  <details class="theme-item">
+                    <summary><span class="theme-number">03</span><span>Yummy Food</span><span class="summary-caret" aria-hidden="true">+</span></summary>
+                    <div class="theme-body">
+                      <p>Hear food names, more, all gone, and simple number talk during safe meals.</p>
+                      <ul><li>Use foods the baby already eats; do not make the meal longer.</li><li>Say two only when both pieces are visible, and say all gone when the plate is empty.</li><li>Respect a closed mouth, turning away, or pushing away as a stop signal.</li></ul>
+                    </div>
+                  </details>
+                  <details class="theme-item">
+                    <summary><span class="theme-number">04</span><span>Things at Home</span><span class="summary-caret" aria-hidden="true">+</span></summary>
+                    <div class="theme-body">
+                      <p>Follow your baby&#39;s attention and connect home objects, cards, and songs to daily life.</p>
+                      <ul><li>Follow the baby&#39;s attention first, then name the real object.</li><li>Use the goodnight card book during the day; keep bedtime screen-free.</li><li>Support the body during rocking or movement and keep the motion small and slow.</li></ul>
+                    </div>
+                  </details>
+          </div>
+        </div>
+      </div>
+      <div class="postcard">
+        <div class="postcard-pin" aria-hidden="true"></div>
+        <div class="postcard-head">
+          <span>Sample lesson postcard</span>
+          <span class="postcard-stamp">S2</span>
+        </div>
+        <div class="postcard-body">
+          <div>
+            <h4>Bubbles</h4>
+            
+            <p>Watch bubbles appear, float, and pop while taking turns responding.</p>
+          </div>
+          <div class="postcard-copy">
+            <span class="small-label">Read first</span>
+            <p>Read the short parent guide, then put the screen down and try it with a real object.</p>
+          </div>
+          <div class="postcard-phrases">
+            <span class="small-label">You could say</span>
+            <p>“Bubbles!”</p><p>“More?”</p>
+          </div>
+        </div>
+        <a class="text-link" href="#lesson" data-stage-lesson="core.s2.real-bubbles">See this lesson <svg class="icon " viewBox="0 0 24 24" aria-hidden="true" focusable="false" ><path d="M5 12h13M13 6l6 6-6 6"/></svg></a>
+      </div>
+    </article>
+    <article class="stage-panel " data-stage-panel="s3" hidden>
+      <div class="stage-panel-top">
+        <div>
+          <div class="kicker-row"><span class="stage-pill">S3</span><span>12–17 months</span></div>
+          <h3>First Words</h3>
+          <p class="stage-subtitle">Listen, look, point, and talk in everyday life</p>
+        </div>
+        <div class="stage-count">
+          <strong>18</strong>
+          <span>lessons</span>
+        </div>
+      </div>
+      <div class="stage-grid">
+        <div class="stage-column">
+          <div class="subsection-label">How to use the screen in this stage</div>
+          
+    <div class="screen-states" aria-label="How to use the screen in this stage">
+      
+            <div class="screen-state is-active">
+              <span class="mini-tv" aria-hidden="true"><span>◌</span></span>
+              <span>Screen off</span>
+            </div>
+            <div class="screen-state ">
+              <span class="mini-tv" aria-hidden="true"><span>◐</span></span>
+              <span>For the grown-up</span>
+            </div>
+            <div class="screen-state ">
+              <span class="mini-tv" aria-hidden="true"><span>◉</span></span>
+              <span>Optional co-view</span>
+            </div>
+    </div>
+          <p class="screen-policy">The grown-up reads the guide; no child-side lesson is shown. Then return to real life and outdoor noticing.</p>
+          <div class="limit-row">
+            <span><b>Parent guide · each ≤</b> 3 min</span>
+            <span><b>Parent guide · each day ≤</b> 10 min</span>
+          </div>
+          <div class="audience-counts">
+            <span>18 parent guidance</span>
+            <span>0 co-viewing</span>
+          </div>
+        </div>
+        <div class="stage-column day-shape">
+          <div class="subsection-label">The shape of a day</div>
+          
+    <div class="rhythm-wrap">
+      <figure class="rhythm-figure">
+        <svg class="rhythm-ring" viewBox="0 0 220 236" role="img" aria-label="Illustrative day ring: the full ring is 12 waking hours, screen time is 10 minutes or 1.4%, and the rest is outside the screen.">
+          <circle class="ring-track" cx="110" cy="128" r="78"/>
+          <circle class="ring-seg ring-c0" cx="110" cy="128" r="78" pathLength="360" stroke-dasharray="41.563 360" transform="rotate(-85.000 110 128)"/><circle class="ring-seg ring-c1" cx="110" cy="128" r="78" pathLength="360" stroke-dasharray="41.563 360" transform="rotate(-40.938 110 128)"/><circle class="ring-seg ring-c2" cx="110" cy="128" r="78" pathLength="360" stroke-dasharray="41.563 360" transform="rotate(3.125 110 128)"/><circle class="ring-seg ring-c3" cx="110" cy="128" r="78" pathLength="360" stroke-dasharray="41.563 360" transform="rotate(47.188 110 128)"/><circle class="ring-seg ring-c4" cx="110" cy="128" r="78" pathLength="360" stroke-dasharray="41.563 360" transform="rotate(91.250 110 128)"/><circle class="ring-seg ring-c5" cx="110" cy="128" r="78" pathLength="360" stroke-dasharray="41.563 360" transform="rotate(135.313 110 128)"/><circle class="ring-seg ring-c6" cx="110" cy="128" r="78" pathLength="360" stroke-dasharray="41.563 360" transform="rotate(179.375 110 128)"/><circle class="ring-seg ring-c7" cx="110" cy="128" r="78" pathLength="360" stroke-dasharray="41.563 360" transform="rotate(223.438 110 128)"/>
+          <circle class="ring-screen" cx="110" cy="128" r="78" pathLength="360" stroke-dasharray="5.000 360" transform="rotate(-92.500 110 128)"/>
+          <path class="ring-leader" d="M110 36V20"/>
+          <text class="ring-callout" x="110" y="12" text-anchor="middle">Screen ≤ 10 min</text>
+          <text class="ring-value" x="110" y="134" text-anchor="middle">1.4%</text>
+          <text class="ring-unit" x="110" y="156" text-anchor="middle">10 min / 12 hours</text>
+        </svg>
+      </figure>
+      <ul class="rhythm-legend">
+        <li><i class="ring-c0"></i>Dressing</li><li><i class="ring-c1"></i>Care</li><li><i class="ring-c2"></i>Meals</li><li><i class="ring-c3"></i>Tidy up</li><li><i class="ring-c4"></i>Going out</li><li><i class="ring-c5"></i>Nature</li><li><i class="ring-c6"></i>Songs</li><li><i class="ring-c7"></i>Bedtime</li>
+      </ul>
+    </div>
+    <p class="micro-note">The full ring is 12 waking hours; screen time uses its real proportion and the remaining life segments are illustrative.</p>
+        </div>
+      </div>
+      <div class="stage-lower-grid">
+        <div>
+          <div class="subsection-label">Things to notice</div>
+          <ul class="focus-list"><li><span class="check-mark" aria-hidden="true">✓</span><span>Notice familiar animals, body parts, and objects through joint attention.</span></li><li><span class="check-mark" aria-hidden="true">✓</span><span>Place first words in care, play, and going-out routines.</span></li><li><span class="check-mark" aria-hidden="true">✓</span><span>Build back-and-forth interaction through imitation, pretend play, and parentese.</span></li><li><span class="check-mark" aria-hidden="true">✓</span><span>Experience one, many, and one and two in daily life.</span></li><li><span class="check-mark" aria-hidden="true">✓</span><span>Connect language with experience through safe movement, songs, and outdoor noticing.</span></li></ul>
+        </div>
+        <div>
+          <div class="subsection-label">Theme index</div>
+          <div class="theme-index">
+            
+                  <details class="theme-item">
+                    <summary><span class="theme-number">01</span><span>Animal Friends</span><span class="summary-caret" aria-hidden="true">+</span></summary>
+                    <div class="theme-body">
+                      <p>Use animal cards and short stories for names, sounds, and turn-taking.</p>
+                      <ul><li>Point to animals with large cards or safe toys.</li><li>After copying a sound, pause and wait for the baby&#39;s response.</li><li>Keep stories gentle and pretend-based; do not create fear or separation.</li></ul>
+                    </div>
+                  </details>
+                  <details class="theme-item">
+                    <summary><span class="theme-number">02</span><span>My Body</span><span class="summary-caret" aria-hidden="true">+</span></summary>
+                    <div class="theme-body">
+                      <p>Name body parts during care and songs while respecting body boundaries.</p>
+                      <ul><li>Name body parts during bathing and dressing.</li><li>Let the grown-up model first; watching or doing one small part is enough.</li><li>Use slow songs and gentle movement without pulling or forcing touch.</li></ul>
+                    </div>
+                  </details>
+                  <details class="theme-item">
+                    <summary><span class="theme-number">03</span><span>Let&#39;s Go</span><span class="summary-caret" aria-hidden="true">+</span></summary>
+                    <div class="theme-body">
+                      <p>Notice vehicles safely and explore rolling and speed with a toy.</p>
+                      <ul><li>Notice real vehicles from far away, away from roads, wheels, and doors.</li><li>Use a low, steady ramp with a large toy vehicle.</li><li>Learn the song first, then sing and push a real toy with the screen off.</li></ul>
+                    </div>
+                  </details>
+                  <details class="theme-item">
+                    <summary><span class="theme-number">04</span><span>One and Many</span><span class="summary-caret" aria-hidden="true">+</span></summary>
+                    <div class="theme-body">
+                      <p>Talk about one, many, one, and two with visible everyday objects.</p>
+                      <ul><li>Use large safe objects, not small foods, to talk about quantity.</li><li>Touch one and say one, then name the total.</li><li>Use songs for shared rhythm, not for testing number recognition.</li></ul>
+                    </div>
+                  </details>
+                  <details class="theme-item">
+                    <summary><span class="theme-number">05</span><span>Getting Dressed</span><span class="summary-caret" aria-hidden="true">+</span></summary>
+                    <div class="theme-body">
+                      <p>Connect clothing words with going out and hand-washing routines.</p>
+                      <ul><li>Show clothing while dressing and invite a hand or foot movement.</li><li>Use a routine card to preview socks, shoes, and a hat.</li><li>Learn the handwashing song first; stay within reach near water.</li></ul>
+                    </div>
+                  </details>
+                  <details class="theme-item">
+                    <summary><span class="theme-number">06</span><span>Outdoors</span><span class="summary-caret" aria-hidden="true">+</span></summary>
+                    <div class="theme-body">
+                      <p>Hear nature words and move slowly during safe walks and weather noticing.</p>
+                      <ul><li>Follow the baby&#39;s gaze and name a tree, flower, bird, or cloud.</li><li>Listen to rain indoors first; avoid standing water and unsafe surfaces.</li><li>Imitate a tree, bird, or rabbit without asking for jumping or balance.</li></ul>
+                    </div>
+                  </details>
+          </div>
+        </div>
+      </div>
+      <div class="postcard">
+        <div class="postcard-pin" aria-hidden="true"></div>
+        <div class="postcard-head">
+          <span>Sample lesson postcard</span>
+          <span class="postcard-stamp">S3</span>
+        </div>
+        <div class="postcard-body">
+          <div>
+            <h4>Beep Beep, Let&#39;s Go</h4>
+            
+            <p>Notice real vehicles safely and name them slowly.</p>
+          </div>
+          <div class="postcard-copy">
+            <span class="small-label">Read first</span>
+            <p>Read this first. An adult chooses a safe place to notice vehicles. Name one vehicle at a time. When none are nearby, use the large printed cards. There is no need to go to a road or water.</p>
+          </div>
+          <div class="postcard-phrases">
+            <span class="small-label">You could say</span>
+            <p>“This is a car, beep beep.”</p><p>“The bus is going by.”</p><p>“Did you hear it?”</p><p>“We stay in a safe place.”</p>
+          </div>
+        </div>
+        <a class="text-link" href="#lesson" data-stage-lesson="core.s3.vehicles">See this lesson <svg class="icon " viewBox="0 0 24 24" aria-hidden="true" focusable="false" ><path d="M5 12h13M13 6l6 6-6 6"/></svg></a>
+      </div>
+    </article>
+    <article class="stage-panel " data-stage-panel="s4" hidden>
+      <div class="stage-panel-top">
+        <div>
+          <div class="kicker-row"><span class="stage-pill">S4</span><span>18–23 months</span></div>
+          <h3>Word Explosion</h3>
+          <p class="stage-subtitle">Listen, point, and talk while growing at your own pace</p>
+        </div>
+        <div class="stage-count">
+          <strong>18</strong>
+          <span>lessons</span>
+        </div>
+      </div>
+      <div class="stage-grid">
+        <div class="stage-column">
+          <div class="subsection-label">How to use the screen in this stage</div>
+          
+    <div class="screen-states" aria-label="How to use the screen in this stage">
+      
+            <div class="screen-state ">
+              <span class="mini-tv" aria-hidden="true"><span>◌</span></span>
+              <span>Screen off</span>
+            </div>
+            <div class="screen-state is-active">
+              <span class="mini-tv" aria-hidden="true"><span>◐</span></span>
+              <span>For the grown-up</span>
+            </div>
+            <div class="screen-state ">
+              <span class="mini-tv" aria-hidden="true"><span>◉</span></span>
+              <span>Optional co-view</span>
+            </div>
+    </div>
+          <p class="screen-policy">Co-viewing is off by default. If enabled, keep it short and stay with the child; parent guidance alone is always fine.</p>
+          <div class="limit-row">
+            <span><b>If co-viewing · each ≤</b> 8 min</span>
+            <span><b>If co-viewing · each day ≤</b> 10 min</span>
+          </div>
+          <div class="audience-counts">
+            <span>12 parent guidance</span>
+            <span>6 co-viewing</span>
+          </div>
+        </div>
+        <div class="stage-column day-shape">
+          <div class="subsection-label">The shape of a day</div>
+          
+    <div class="rhythm-wrap">
+      <figure class="rhythm-figure">
+        <svg class="rhythm-ring" viewBox="0 0 220 236" role="img" aria-label="Illustrative day ring: the full ring is 12 waking hours, screen time is 10 minutes or 1.4%, and the rest is outside the screen.">
+          <circle class="ring-track" cx="110" cy="128" r="78"/>
+          <circle class="ring-seg ring-c0" cx="110" cy="128" r="78" pathLength="360" stroke-dasharray="41.563 360" transform="rotate(-85.000 110 128)"/><circle class="ring-seg ring-c1" cx="110" cy="128" r="78" pathLength="360" stroke-dasharray="41.563 360" transform="rotate(-40.938 110 128)"/><circle class="ring-seg ring-c2" cx="110" cy="128" r="78" pathLength="360" stroke-dasharray="41.563 360" transform="rotate(3.125 110 128)"/><circle class="ring-seg ring-c3" cx="110" cy="128" r="78" pathLength="360" stroke-dasharray="41.563 360" transform="rotate(47.188 110 128)"/><circle class="ring-seg ring-c4" cx="110" cy="128" r="78" pathLength="360" stroke-dasharray="41.563 360" transform="rotate(91.250 110 128)"/><circle class="ring-seg ring-c5" cx="110" cy="128" r="78" pathLength="360" stroke-dasharray="41.563 360" transform="rotate(135.313 110 128)"/><circle class="ring-seg ring-c6" cx="110" cy="128" r="78" pathLength="360" stroke-dasharray="41.563 360" transform="rotate(179.375 110 128)"/><circle class="ring-seg ring-c7" cx="110" cy="128" r="78" pathLength="360" stroke-dasharray="41.563 360" transform="rotate(223.438 110 128)"/>
+          <circle class="ring-screen" cx="110" cy="128" r="78" pathLength="360" stroke-dasharray="5.000 360" transform="rotate(-92.500 110 128)"/>
+          <path class="ring-leader" d="M110 36V20"/>
+          <text class="ring-callout" x="110" y="12" text-anchor="middle">Screen ≤ 10 min</text>
+          <text class="ring-value" x="110" y="134" text-anchor="middle">1.4%</text>
+          <text class="ring-unit" x="110" y="156" text-anchor="middle">10 min / 12 hours</text>
+        </svg>
+      </figure>
+      <ul class="rhythm-legend">
+        <li><i class="ring-c0"></i>Colors</li><li><i class="ring-c1"></i>Counting</li><li><i class="ring-c2"></i>Building</li><li><i class="ring-c3"></i>Outdoors</li><li><i class="ring-c4"></i>Compare</li><li><i class="ring-c5"></i>Feelings</li><li><i class="ring-c6"></i>Wash</li><li><i class="ring-c7"></i>Brush teeth</li>
+      </ul>
+    </div>
+    <p class="micro-note">The full ring is 12 waking hours; screen time uses its real proportion and the remaining life segments are illustrative.</p>
+        </div>
+      </div>
+      <div class="stage-lower-grid">
+        <div>
+          <div class="subsection-label">Things to notice</div>
+          <ul class="focus-list"><li><span class="check-mark" aria-hidden="true">✓</span><span>Use words and short combinations to express everyday needs.</span></li><li><span class="check-mark" aria-hidden="true">✓</span><span>Hear color, shape, and size words beside real objects.</span></li><li><span class="check-mark" aria-hidden="true">✓</span><span>Count one to three objects and hear the total.</span></li><li><span class="check-mark" aria-hidden="true">✓</span><span>Name feelings with a grown-up&#39;s gentle support.</span></li><li><span class="check-mark" aria-hidden="true">✓</span><span>Join handwashing, toothbrushing, and bath-time routines.</span></li><li><span class="check-mark" aria-hidden="true">✓</span><span>Explore through scribbling, building, and slow movement.</span></li></ul>
+        </div>
+        <div>
+          <div class="subsection-label">Theme index</div>
+          <div class="theme-index">
+            
+                  <details class="theme-item">
+                    <summary><span class="theme-number">01</span><span>Colors</span><span class="summary-caret" aria-hidden="true">+</span></summary>
+                    <div class="theme-body">
+                      <p>Hear red, yellow, and blue with clothes, printed cards, and scribbles.</p>
+                      <ul><li>Look for one color at home.</li><li>Put matching-color socks together.</li><li>Offer free scribbling without asking for color naming or a rainbow.</li></ul>
+                    </div>
+                  </details>
+                  <details class="theme-item">
+                    <summary><span class="theme-number">02</span><span>Shapes</span><span class="summary-caret" aria-hidden="true">+</span></summary>
+                    <div class="theme-body">
+                      <p>Find round edges, match shapes, and build a low tower.</p>
+                      <ul><li>Notice outlines with round objects and shape cards.</li><li>Model a shape-matching toy without forcing it into place.</li><li>Build a low tower on the floor; try again if it falls.</li></ul>
+                    </div>
+                  </details>
+                  <details class="theme-item">
+                    <summary><span class="theme-number">03</span><span>1-2-3</span><span class="summary-caret" aria-hidden="true">+</span></summary>
+                    <div class="theme-body">
+                      <p>Count one to three visible objects, then say how many.</p>
+                      <ul><li>Touch one and say one, then name the total.</li><li>Count spoons and shoes, not small foods.</li><li>Play stop-and-go gently, without elimination or breath-holding.</li></ul>
+                    </div>
+                  </details>
+                  <details class="theme-item">
+                    <summary><span class="theme-number">04</span><span>Feelings</span><span class="summary-caret" aria-hidden="true">+</span></summary>
+                    <div class="theme-body">
+                      <p>Hear feeling words and experience support and asking for help.</p>
+                      <ul><li>Look at feeling cards and practise asking for help when calm.</li><li>When a real feeling arrives, put the device down and protect safety first.</li><li>Respect the child&#39;s wish for a hug or breathing space while staying close.</li></ul>
+                    </div>
+                  </details>
+                  <details class="theme-item">
+                    <summary><span class="theme-number">05</span><span>Clean &amp; Healthy</span><span class="summary-caret" aria-hidden="true">+</span></summary>
+                    <div class="theme-body">
+                      <p>Children join care routines while grown-ups handle hygiene and safety.</p>
+                      <ul><li>Adults help brush twice a day and use only a rice-sized amount of toothpaste.</li><li>Stay within arm&#39;s reach around water.</li><li>Wash with soap for at least 20 seconds, then rinse and dry.</li></ul>
+                    </div>
+                  </details>
+                  <details class="theme-item">
+                    <summary><span class="theme-number">06</span><span>Big &amp; Small</span><span class="summary-caret" aria-hidden="true">+</span></summary>
+                    <div class="theme-body">
+                      <p>Compare matching objects, nest cups, and gently reach.</p>
+                      <ul><li>Compare two objects from the same kind at a time.</li><li>Begin by nesting two large cups, then add a third if interested.</li><li>Use sitting or supported standing; do not ask for jumping or tiptoeing.</li></ul>
+                    </div>
+                  </details>
+          </div>
+        </div>
+      </div>
+      <div class="postcard">
+        <div class="postcard-pin" aria-hidden="true"></div>
+        <div class="postcard-head">
+          <span>Sample lesson postcard</span>
+          <span class="postcard-stamp">S4</span>
+        </div>
+        <div class="postcard-body">
+          <div>
+            <h4>A Color Hunt</h4>
+            
+            <p>Find something red, then sort a few socks.</p>
+          </div>
+          <div class="postcard-copy">
+            <span class="small-label">Read first</span>
+            <p>Read the short parent guide, then put the screen down and try it with a real object.</p>
+          </div>
+          <div class="postcard-phrases">
+            <span class="small-label">You could say</span>
+            <p>“Red, right here.”</p><p>“This sock is red too.”</p>
+          </div>
+        </div>
+        <a class="text-link" href="#lesson" data-stage-lesson="core.s4.color-hunt">See this lesson <svg class="icon " viewBox="0 0 24 24" aria-hidden="true" focusable="false" ><path d="M5 12h13M13 6l6 6-6 6"/></svg></a>
+      </div>
+    </article>
+    <article class="stage-panel " data-stage-panel="s5" hidden>
+      <div class="stage-panel-top">
+        <div>
+          <div class="kicker-row"><span class="stage-pill">S5</span><span>24–29 months</span></div>
+          <h3>Little Thinker</h3>
+          <p class="stage-subtitle">Sort, count, and find together, then play offline</p>
+        </div>
+        <div class="stage-count">
+          <strong>18</strong>
+          <span>lessons</span>
+        </div>
+      </div>
+      <div class="stage-grid">
+        <div class="stage-column">
+          <div class="subsection-label">How to use the screen in this stage</div>
+          
+    <div class="screen-states" aria-label="How to use the screen in this stage">
+      
+            <div class="screen-state ">
+              <span class="mini-tv" aria-hidden="true"><span>◌</span></span>
+              <span>Screen off</span>
+            </div>
+            <div class="screen-state ">
+              <span class="mini-tv" aria-hidden="true"><span>◐</span></span>
+              <span>For the grown-up</span>
+            </div>
+            <div class="screen-state is-active">
+              <span class="mini-tv" aria-hidden="true"><span>◉</span></span>
+              <span>Optional co-view</span>
+            </div>
+    </div>
+          <p class="screen-policy">Short co-viewing is optional and always with a grown-up. A fully offline path is fine too.</p>
+          <div class="limit-row">
+            <span><b>Each session ≤</b> 10 min</span>
+            <span><b>Each day ≤</b> 20 min</span>
+          </div>
+          <div class="audience-counts">
+            <span>0 parent guidance</span>
+            <span>18 co-viewing</span>
+          </div>
+        </div>
+        <div class="stage-column day-shape">
+          <div class="subsection-label">The shape of a day</div>
+          
+    <div class="rhythm-wrap">
+      <figure class="rhythm-figure">
+        <svg class="rhythm-ring" viewBox="0 0 220 236" role="img" aria-label="Illustrative day ring: the full ring is 12 waking hours, screen time is 20 minutes or 2.8%, and the rest is outside the screen.">
+          <circle class="ring-track" cx="110" cy="128" r="78"/>
+          <circle class="ring-seg ring-c0" cx="110" cy="128" r="78" pathLength="360" stroke-dasharray="40.938 360" transform="rotate(-82.500 110 128)"/><circle class="ring-seg ring-c1" cx="110" cy="128" r="78" pathLength="360" stroke-dasharray="40.938 360" transform="rotate(-39.063 110 128)"/><circle class="ring-seg ring-c2" cx="110" cy="128" r="78" pathLength="360" stroke-dasharray="40.938 360" transform="rotate(4.375 110 128)"/><circle class="ring-seg ring-c3" cx="110" cy="128" r="78" pathLength="360" stroke-dasharray="40.938 360" transform="rotate(47.813 110 128)"/><circle class="ring-seg ring-c4" cx="110" cy="128" r="78" pathLength="360" stroke-dasharray="40.938 360" transform="rotate(91.250 110 128)"/><circle class="ring-seg ring-c5" cx="110" cy="128" r="78" pathLength="360" stroke-dasharray="40.938 360" transform="rotate(134.688 110 128)"/><circle class="ring-seg ring-c6" cx="110" cy="128" r="78" pathLength="360" stroke-dasharray="40.938 360" transform="rotate(178.125 110 128)"/><circle class="ring-seg ring-c7" cx="110" cy="128" r="78" pathLength="360" stroke-dasharray="40.938 360" transform="rotate(221.563 110 128)"/>
+          <circle class="ring-screen" cx="110" cy="128" r="78" pathLength="360" stroke-dasharray="10.000 360" transform="rotate(-95.000 110 128)"/>
+          <path class="ring-leader" d="M110 36V20"/>
+          <text class="ring-callout" x="110" y="12" text-anchor="middle">Screen ≤ 20 min</text>
+          <text class="ring-value" x="110" y="134" text-anchor="middle">2.8%</text>
+          <text class="ring-unit" x="110" y="156" text-anchor="middle">20 min / 12 hours</text>
+        </svg>
+      </figure>
+      <ul class="rhythm-legend">
+        <li><i class="ring-c0"></i>Weather</li><li><i class="ring-c1"></i>Dress</li><li><i class="ring-c2"></i>Sort</li><li><i class="ring-c3"></i>Count</li><li><i class="ring-c4"></i>Position</li><li><i class="ring-c5"></i>Outside</li><li><i class="ring-c6"></i>Read</li><li><i class="ring-c7"></i>Bedtime</li>
+      </ul>
+    </div>
+    <p class="micro-note">The full ring is 12 waking hours; screen time uses its real proportion and the remaining life segments are illustrative.</p>
+        </div>
+      </div>
+      <div class="stage-lower-grid">
+        <div>
+          <div class="subsection-label">Things to notice</div>
+          <ul class="focus-list"><li><span class="check-mark" aria-hidden="true">✓</span><span>Sort by one feature with adult help.</span></li><li><span class="check-mark" aria-hidden="true">✓</span><span>Count together and name the total.</span></li><li><span class="check-mark" aria-hidden="true">✓</span><span>Explore groups of one to three without rushing.</span></li><li><span class="check-mark" aria-hidden="true">✓</span><span>Use short phrases for positions, animals, and weather.</span></li><li><span class="check-mark" aria-hidden="true">✓</span><span>Practice taking turns and sharing feelings with support.</span></li><li><span class="check-mark" aria-hidden="true">✓</span><span>Sing, move, and read together, then turn off the screen.</span></li></ul>
+        </div>
+        <div>
+          <div class="subsection-label">Theme index</div>
+          <div class="theme-index">
+            
+                  <details class="theme-item">
+                    <summary><span class="theme-number">01</span><span>Sorting</span><span class="summary-caret" aria-hidden="true">+</span></summary>
+                    <div class="theme-body">
+                      <p>Notice colors and kinds, and group similar things.</p>
+                      <ul><li>Sort large objects with clear main colors into red and blue.</li><li>Model one object, then wait for the child&#39;s attempt.</li><li>Say what feature you are sorting by; perfect accuracy is not the goal.</li></ul>
+                    </div>
+                  </details>
+                  <details class="theme-item">
+                    <summary><span class="theme-number">02</span><span>Count to 5</span><span class="summary-caret" aria-hidden="true">+</span></summary>
+                    <div class="theme-body">
+                      <p>Touch one as you say one number and explore small groups.</p>
+                      <ul><li>Begin counting with one or two large objects.</li><li>Name the total after counting; do not test numeral recognition.</li><li>Use counting songs as shared play, not a quiz.</li></ul>
+                    </div>
+                  </details>
+                  <details class="theme-item">
+                    <summary><span class="theme-number">03</span><span>Animal Homes</span><span class="summary-caret" aria-hidden="true">+</span></summary>
+                    <div class="theme-body">
+                      <p>Notice animal features and read about a panda eating, climbing, and resting.</p>
+                      <ul><li>Say swims in water and flies in the sky; do not say birds live in the sky.</li><li>Read animal books together and never approach or feed wild animals.</li><li>Pandas can climb trees; keep the child&#39;s pretend play on the ground.</li></ul>
+                    </div>
+                  </details>
+                  <details class="theme-item">
+                    <summary><span class="theme-number">04</span><span>Taking Turns</span><span class="summary-caret" aria-hidden="true">+</span></summary>
+                    <div class="theme-body">
+                      <p>Listen to each other&#39;s feelings and practice brief turns.</p>
+                      <ul><li>Model taking turns without forcing a child to give up a treasured toy.</li><li>Ask how the child feels without sorting feelings into right and wrong.</li><li>Use polite words inside real help and repair.</li></ul>
+                    </div>
+                  </details>
+                  <details class="theme-item">
+                    <summary><span class="theme-number">05</span><span>Where Is It?</span><span class="summary-caret" aria-hidden="true">+</span></summary>
+                    <div class="theme-body">
+                      <p>Find the cat&#39;s position and explore up and down through movement.</p>
+                      <ul><li>Use dolls and open boxes to say in, out, up, and down.</li><li>Do one step first, then invite the child to give the grown-up a direction.</li><li>Stay off furniture, out of closed boxes, and away from climbing play.</li></ul>
+                    </div>
+                  </details>
+                  <details class="theme-item">
+                    <summary><span class="theme-number">06</span><span>Weather</span><span class="summary-caret" aria-hidden="true">+</span></summary>
+                    <div class="theme-body">
+                      <p>Notice the weather outside and choose what to take along.</p>
+                      <ul><li>Notice local weather; a book is fine when snow is not part of daily life.</li><li>Choose clothing for the real temperature, not only the weather icon.</li><li>A rain song is a wish, not a way to stop the rain.</li></ul>
+                    </div>
+                  </details>
+          </div>
+        </div>
+      </div>
+      <div class="postcard">
+        <div class="postcard-pin" aria-hidden="true"></div>
+        <div class="postcard-head">
+          <span>Sample lesson postcard</span>
+          <span class="postcard-stamp">S5</span>
+        </div>
+        <div class="postcard-body">
+          <div>
+            <h4>Red and Blue</h4>
+            
+            <p>Look at the main color and sort red and blue.</p>
+          </div>
+          <div class="postcard-copy">
+            <span class="small-label">Read first</span>
+            <p>Read the short parent guide, then put the screen down and try it with a real object.</p>
+          </div>
+          <div class="postcard-phrases">
+            <span class="small-label">You could say</span>
+            <p>“The apple is mostly red.”</p><p>“The bowl is mostly blue.”</p>
+          </div>
+        </div>
+        <a class="text-link" href="#lesson" data-stage-lesson="core.s5.sort-color">See this lesson <svg class="icon " viewBox="0 0 24 24" aria-hidden="true" focusable="false" ><path d="M5 12h13M13 6l6 6-6 6"/></svg></a>
+      </div>
+    </article>
+    <article class="stage-panel " data-stage-panel="s6" hidden>
+      <div class="stage-panel-top">
+        <div>
+          <div class="kicker-row"><span class="stage-pill">S6</span><span>30–36 months</span></div>
+          <h3>Ready for Preschool</h3>
+          <p class="stage-subtitle">Explore with support and grow with reassurance</p>
+        </div>
+        <div class="stage-count">
+          <strong>18</strong>
+          <span>lessons</span>
+        </div>
+      </div>
+      <div class="stage-grid">
+        <div class="stage-column">
+          <div class="subsection-label">How to use the screen in this stage</div>
+          
+    <div class="screen-states" aria-label="How to use the screen in this stage">
+      
+            <div class="screen-state ">
+              <span class="mini-tv" aria-hidden="true"><span>◌</span></span>
+              <span>Screen off</span>
+            </div>
+            <div class="screen-state ">
+              <span class="mini-tv" aria-hidden="true"><span>◐</span></span>
+              <span>For the grown-up</span>
+            </div>
+            <div class="screen-state is-active">
+              <span class="mini-tv" aria-hidden="true"><span>◉</span></span>
+              <span>Optional co-view</span>
+            </div>
+    </div>
+          <p class="screen-policy">Short co-viewing is optional and always with a grown-up. A fully offline path is fine too.</p>
+          <div class="limit-row">
+            <span><b>Each session ≤</b> 15 min</span>
+            <span><b>Each day ≤</b> 30 min</span>
+          </div>
+          <div class="audience-counts">
+            <span>0 parent guidance</span>
+            <span>18 co-viewing</span>
+          </div>
+        </div>
+        <div class="stage-column day-shape">
+          <div class="subsection-label">The shape of a day</div>
+          
+    <div class="rhythm-wrap">
+      <figure class="rhythm-figure">
+        <svg class="rhythm-ring" viewBox="0 0 220 236" role="img" aria-label="Illustrative day ring: the full ring is 12 waking hours, screen time is 30 minutes or 4.2%, and the rest is outside the screen.">
+          <circle class="ring-track" cx="110" cy="128" r="78"/>
+          <circle class="ring-seg ring-c0" cx="110" cy="128" r="78" pathLength="360" stroke-dasharray="40.313 360" transform="rotate(-80.000 110 128)"/><circle class="ring-seg ring-c1" cx="110" cy="128" r="78" pathLength="360" stroke-dasharray="40.313 360" transform="rotate(-37.188 110 128)"/><circle class="ring-seg ring-c2" cx="110" cy="128" r="78" pathLength="360" stroke-dasharray="40.313 360" transform="rotate(5.625 110 128)"/><circle class="ring-seg ring-c3" cx="110" cy="128" r="78" pathLength="360" stroke-dasharray="40.313 360" transform="rotate(48.438 110 128)"/><circle class="ring-seg ring-c4" cx="110" cy="128" r="78" pathLength="360" stroke-dasharray="40.313 360" transform="rotate(91.250 110 128)"/><circle class="ring-seg ring-c5" cx="110" cy="128" r="78" pathLength="360" stroke-dasharray="40.313 360" transform="rotate(134.063 110 128)"/><circle class="ring-seg ring-c6" cx="110" cy="128" r="78" pathLength="360" stroke-dasharray="40.313 360" transform="rotate(176.875 110 128)"/><circle class="ring-seg ring-c7" cx="110" cy="128" r="78" pathLength="360" stroke-dasharray="40.313 360" transform="rotate(219.688 110 128)"/>
+          <circle class="ring-screen" cx="110" cy="128" r="78" pathLength="360" stroke-dasharray="15.000 360" transform="rotate(-97.500 110 128)"/>
+          <path class="ring-leader" d="M110 36V20"/>
+          <text class="ring-callout" x="110" y="12" text-anchor="middle">Screen ≤ 30 min</text>
+          <text class="ring-value" x="110" y="134" text-anchor="middle">4.2%</text>
+          <text class="ring-unit" x="110" y="156" text-anchor="middle">30 min / 12 hours</text>
+        </svg>
+      </figure>
+      <ul class="rhythm-legend">
+        <li><i class="ring-c0"></i>Routine</li><li><i class="ring-c1"></i>Dress</li><li><i class="ring-c2"></i>Meals</li><li><i class="ring-c3"></i>Count</li><li><i class="ring-c4"></i>Move</li><li><i class="ring-c5"></i>Goodbye</li><li><i class="ring-c6"></i>Nature</li><li><i class="ring-c7"></i>Bedtime</li>
+      </ul>
+    </div>
+    <p class="micro-note">The full ring is 12 waking hours; screen time uses its real proportion and the remaining life segments are illustrative.</p>
+        </div>
+      </div>
+      <div class="stage-lower-grid">
+        <div>
+          <div class="subsection-label">Things to notice</div>
+          <ul class="focus-list"><li><span class="check-mark" aria-hidden="true">✓</span><span>Notice repetition in objects and movements.</span></li><li><span class="check-mark" aria-hidden="true">✓</span><span>Count with adult support and hear the total.</span></li><li><span class="check-mark" aria-hidden="true">✓</span><span>Join small daily tasks and ask for help.</span></li><li><span class="check-mark" aria-hidden="true">✓</span><span>Prepare for goodbyes with clear plans and space for feelings.</span></li><li><span class="check-mark" aria-hidden="true">✓</span><span>Practise back-and-forth conversation in everyday situations.</span></li><li><span class="check-mark" aria-hidden="true">✓</span><span>Notice changes in plants, day and night, and local surroundings.</span></li></ul>
+        </div>
+        <div>
+          <div class="subsection-label">Theme index</div>
+          <div class="theme-index">
+            
+                  <details class="theme-item">
+                    <summary><span class="theme-number">01</span><span>Patterns</span><span class="summary-caret" aria-hidden="true">+</span></summary>
+                    <div class="theme-body">
+                      <p>Start with alternating pairs, then explore groups of three together.</p>
+                      <ul><li>Use socks and towels to make two complete repeats.</li><li>Take turns clapping and stamping softly; sitting is an option.</li><li>A three-part pattern is optional; return to two alternating items if needed.</li></ul>
+                    </div>
+                  </details>
+                  <details class="theme-item">
+                    <summary><span class="theme-number">02</span><span>Count to 10</span><span class="summary-caret" aria-hidden="true">+</span></summary>
+                    <div class="theme-body">
+                      <p>Adults model larger sets while children explore small sets hands-on.</p>
+                      <ul><li>Touch one and say one, then name the total; do not test numeral reading.</li><li>Start with one to three large objects; adults can support four or five.</li><li>Line up same-sized objects one-to-one, then talk about more and fewer.</li></ul>
+                    </div>
+                  </details>
+                  <details class="theme-item">
+                    <summary><span class="theme-number">03</span><span>I Can Do It</span><span class="summary-caret" aria-hidden="true">+</span></summary>
+                    <div class="theme-body">
+                      <p>Break familiar routines into small steps, with room to try and ask for help.</p>
+                      <ul><li>Sit securely while trying one clothing step; an adult checks comfort and safety.</li><li>Use a two-step plan: first this, then that.</li><li>Do not rush toileting; clean carefully after toilet or diaper care.</li></ul>
+                    </div>
+                  </details>
+                  <details class="theme-item">
+                    <summary><span class="theme-number">04</span><span>Off to Preschool</span><span class="summary-caret" aria-hidden="true">+</span></summary>
+                    <div class="theme-body">
+                      <p>Explore preschool routines, goodbyes, requests for help, and kind words.</p>
+                      <ul><li>Use dolls to practise goodbye and a promised pickup without creating real separation.</li><li>Let the child say what feels worrying and name a trusted teacher for help.</li><li>Name real objects; follow the preschool&#39;s own pickup and belongings rules.</li></ul>
+                    </div>
+                  </details>
+                  <details class="theme-item">
+                    <summary><span class="theme-number">05</span><span>Healthy Me</span><span class="summary-caret" aria-hidden="true">+</span></summary>
+                    <div class="theme-body">
+                      <p>Explore food variety, safe movement, and screen-free bedtime routines.</p>
+                      <ul><li>Offer a varied everyday diet; keep sweets occasional and never force a clean plate.</li><li>Lower the movement challenge, steady the body, and do not turn balance into a test.</li><li>Learn bedtime songs during the day and keep bedtime screen-free.</li></ul>
+                    </div>
+                  </details>
+                  <details class="theme-item">
+                    <summary><span class="theme-number">06</span><span>Nature Changes</span><span class="summary-caret" aria-hidden="true">+</span></summary>
+                    <div class="theme-body">
+                      <p>Observe specific plants and local weather rather than treating pictures as universal rules.</p>
+                      <ul><li>Adults handle seeds and soil while children observe a real seedling.</li><li>Talk about day and night at clear times; the moon can also appear during the day.</li><li>Look at the same tree repeatedly and allow local seasons to differ.</li></ul>
+                    </div>
+                  </details>
+          </div>
+        </div>
+      </div>
+      <div class="postcard">
+        <div class="postcard-pin" aria-hidden="true"></div>
+        <div class="postcard-head">
+          <span>Sample lesson postcard</span>
+          <span class="postcard-stamp">S6</span>
+        </div>
+        <div class="postcard-body">
+          <div>
+            <h4>Fruit Patterns</h4>
+            
+            <p>Notice how two things take turns in a pattern.</p>
+          </div>
+          <div class="postcard-copy">
+            <span class="small-label">Read first</span>
+            <p>Read the short parent guide, then put the screen down and try it with a real object.</p>
+          </div>
+          <div class="postcard-phrases">
+            <span class="small-label">You could say</span>
+            <p>“Apple, banana. Here is the pair again.”</p><p>“What do you notice?”</p>
+          </div>
+        </div>
+        <a class="text-link" href="#lesson" data-stage-lesson="core.s6.fruit-pattern">See this lesson <svg class="icon " viewBox="0 0 24 24" aria-hidden="true" focusable="false" ><path d="M5 12h13M13 6l6 6-6 6"/></svg></a>
+      </div>
+    </article>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+    <section class="section-band paper-band lesson-band" id="lesson">
+      <div class="content-wrap">
+        
+  <div class="section-heading">
+    <p class="eyebrow">One lesson, mostly outside the screen</p>
+    <h2 class="section-title balanced-title"><span class="nobr">Unfold “Beep Beep, Let’s Go”</span></h2>
+    <p class="section-lede">This parent-guidance lesson starts with a prompt on screen. The real lesson is noticing vehicles from a safe place, looking at cards at home, and leaving room for a response.</p>
+  </div>
+        <div class="lesson-meta-row">
+          <span class="source-chip">Built-in lesson</span>
+          <span>12–17 months</span>
+          <span>2 min</span>
+          <span>parent guidance</span>
+        </div>
+        <div class="lesson-fold">
+          <div class="fold-step fold-step-intro">
+            <div class="fold-index">01</div>
+            <div class="fold-content">
+              <div class="subsection-label">Read first <span class="under-note">Read it, then turn the screen off.</span></div>
+              <p class="large-copy">Read this first. An adult chooses a safe place to notice vehicles. Name one vehicle at a time. When none are nearby, use the large printed cards. There is no need to go to a road or water.</p>
+              <ul class="tip-row"><li><span class="tiny-leaf" aria-hidden="true">⌁</span>Name one vehicle that is actually in front of you.</li><li><span class="tiny-leaf" aria-hidden="true">⌁</span>Describe first, then invite your child to look or listen.</li><li><span class="tiny-leaf" aria-hidden="true">⌁</span>Use English as a short label, never instead of rich conversation.</li></ul>
+            </div>
+          </div>
+          <div class="fold-step">
+            <div class="fold-index">02</div>
+            <div class="fold-content">
+              <div class="subsection-label">You could say</div>
+              <div class="phrase-list">
+                
+                      <div class="phrase-row">
+                        <div><strong>This is a car, beep beep.</strong></div>
+                        <button type="button" class="speak-button" data-speak="This is a car, beep beep." data-speak-lang="en-US" aria-label="Listen: This is a car, beep beep."><svg class="icon " viewBox="0 0 24 24" aria-hidden="true" focusable="false" ><path d="M4 10v4h4l5 4V6l-5 4H4Z"/><path d="M17 9.5a4 4 0 0 1 0 5"/><path d="M19.5 7a7.2 7.2 0 0 1 0 10"/></svg><span>Listen</span></button>
+                      </div>
+                      <div class="phrase-row">
+                        <div><strong>The bus is going by.</strong></div>
+                        <button type="button" class="speak-button" data-speak="The bus is going by." data-speak-lang="en-US" aria-label="Listen: The bus is going by."><svg class="icon " viewBox="0 0 24 24" aria-hidden="true" focusable="false" ><path d="M4 10v4h4l5 4V6l-5 4H4Z"/><path d="M17 9.5a4 4 0 0 1 0 5"/><path d="M19.5 7a7.2 7.2 0 0 1 0 10"/></svg><span>Listen</span></button>
+                      </div>
+                      <div class="phrase-row">
+                        <div><strong>Did you hear it?</strong></div>
+                        <button type="button" class="speak-button" data-speak="Did you hear it?" data-speak-lang="en-US" aria-label="Listen: Did you hear it?"><svg class="icon " viewBox="0 0 24 24" aria-hidden="true" focusable="false" ><path d="M4 10v4h4l5 4V6l-5 4H4Z"/><path d="M17 9.5a4 4 0 0 1 0 5"/><path d="M19.5 7a7.2 7.2 0 0 1 0 10"/></svg><span>Listen</span></button>
+                      </div>
+                      <div class="phrase-row">
+                        <div><strong>We stay in a safe place.</strong></div>
+                        <button type="button" class="speak-button" data-speak="We stay in a safe place." data-speak-lang="en-US" aria-label="Listen: We stay in a safe place."><svg class="icon " viewBox="0 0 24 24" aria-hidden="true" focusable="false" ><path d="M4 10v4h4l5 4V6l-5 4H4Z"/><path d="M17 9.5a4 4 0 0 1 0 5"/><path d="M19.5 7a7.2 7.2 0 0 1 0 10"/></svg><span>Listen</span></button>
+                      </div>
+              </div>
+            </div>
+          </div>
+          <div class="fold-step offline-step">
+            <div class="fold-index">03</div>
+            <div class="fold-content">
+              <div class="subsection-label">10 minutes outside the screen <span class="under-note">Notice vehicles safely</span></div>
+              <div class="offline-grid">
+                <div>
+                  <h3>Prepare</h3>
+                  <ul class="plain-list"><li>Large vehicle cards</li></ul>
+                  <h3>Try this</h3>
+                  <ol class="numbered-list"><li>Choose a safe place away from traffic and parking entrances.</li><li>Point to one vehicle and say its name slowly.</li><li>Pause for a look, movement, or sound. Keep your voice small.</li><li>At home, choose one printed card at a time.</li></ol>
+                </div>
+                <div class="safety-note">
+                  <span class="safety-icon" aria-hidden="true">!</span>
+                  <div><h3>Safety</h3><p>Stay with the child. Keep away from roads, rails, wheels, doors, and water. Do not use loud recorded vehicle sounds. Close windows and keep away from windowsills and furniture.</p></div>
+                </div>
+              </div>
+              <div class="levels-row">
+                <div><span>Easier</span><p>Look at one card at home. The adult names it and makes a soft sound.</p></div>
+                <div><span>More challenge</span><p>From a safe place, notice two vehicles and name each one.</p></div>
+              </div>
+              <p class="question-note"><span>?</span>What sound did you hear?</p>
+            </div>
+          </div>
+          <div class="fold-step print-step">
+            <div class="fold-index">04</div>
+            <div class="fold-content">
+              <div class="subsection-label">Printable cards <span class="under-note">Print styles leave only the cards at A4 / A5 scale.</span></div>
+              <div class="print-card-grid">
+                
+                      <article class="print-card" data-print-card>
+                        <img src="../assets/illustrations/car.svg" alt="car" width="150" height="150">
+                        <div><strong>car</strong></div>
+                        <button type="button" class="print-one" data-print-one><svg class="icon " viewBox="0 0 24 24" aria-hidden="true" focusable="false" ><path d="M6 9V4h12v5"/><path d="M6 17H4a2 2 0 0 1-2-2v-3a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v3a2 2 0 0 1-2 2h-2"/><path d="M6 14h12v7H6z"/></svg><span>Print this card</span></button>
+                      </article>
+                      <article class="print-card" data-print-card>
+                        <img src="../assets/illustrations/bus.svg" alt="bus" width="150" height="150">
+                        <div><strong>bus</strong></div>
+                        <button type="button" class="print-one" data-print-one><svg class="icon " viewBox="0 0 24 24" aria-hidden="true" focusable="false" ><path d="M6 9V4h12v5"/><path d="M6 17H4a2 2 0 0 1-2-2v-3a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v3a2 2 0 0 1-2 2h-2"/><path d="M6 14h12v7H6z"/></svg><span>Print this card</span></button>
+                      </article>
+                      <article class="print-card" data-print-card>
+                        <img src="../assets/illustrations/train.svg" alt="train" width="150" height="150">
+                        <div><strong>train</strong></div>
+                        <button type="button" class="print-one" data-print-one><svg class="icon " viewBox="0 0 24 24" aria-hidden="true" focusable="false" ><path d="M6 9V4h12v5"/><path d="M6 17H4a2 2 0 0 1-2-2v-3a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v3a2 2 0 0 1-2 2h-2"/><path d="M6 14h12v7H6z"/></svg><span>Print this card</span></button>
+                      </article>
+                      <article class="print-card" data-print-card>
+                        <img src="../assets/illustrations/airplane.svg" alt="airplane" width="150" height="150">
+                        <div><strong>airplane</strong></div>
+                        <button type="button" class="print-one" data-print-one><svg class="icon " viewBox="0 0 24 24" aria-hidden="true" focusable="false" ><path d="M6 9V4h12v5"/><path d="M6 17H4a2 2 0 0 1-2-2v-3a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v3a2 2 0 0 1-2 2h-2"/><path d="M6 14h12v7H6z"/></svg><span>Print this card</span></button>
+                      </article>
+                      <article class="print-card" data-print-card>
+                        <img src="../assets/illustrations/boat.svg" alt="boat" width="150" height="150">
+                        <div><strong>boat</strong></div>
+                        <button type="button" class="print-one" data-print-one><svg class="icon " viewBox="0 0 24 24" aria-hidden="true" focusable="false" ><path d="M6 9V4h12v5"/><path d="M6 17H4a2 2 0 0 1-2-2v-3a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v3a2 2 0 0 1-2 2h-2"/><path d="M6 14h12v7H6z"/></svg><span>Print this card</span></button>
+                      </article>
+              </div>
+            </div>
+          </div>
+          <div class="fold-step why-step">
+            <div class="fold-index">05</div>
+            <div class="fold-content">
+              <div class="subsection-label">Why this shape</div>
+              <div class="why-box"><span class="quote-mark" aria-hidden="true">“</span><p>Follow what the child is already noticing. Name it, pause, and wait for a response. Real conversation matters more than vehicle video.</p></div>
+              <div class="ref-chips">
+                <a class="ref-chip" href="https://www.gov.cn/zhengce/zhengceku/2022-11/29/content_5729421.htm" target="_blank" rel="noreferrer" title="国家卫生健康委办公厅. 3岁以下婴幼儿健康养育照护指南（试行）. 国卫办妇幼函〔2022〕409号.">[6]</a><a class="ref-chip" href="https://eric.ed.gov/?id=EJ1043804" target="_blank" rel="noreferrer" title="Ramírez-Esparza N, García-Sierra A, Kuhl PK. Look who&#39;s talking: Speech style and social context in language input to infants are linked to concurrent and future speech development. Developmental Science. 2014;17(6):880–891.">[45]</a><a class="ref-chip" href="https://www.pnas.org/doi/10.1073/pnas.1921653117" target="_blank" rel="noreferrer" title="Ferjan Ramírez N, Lytle SR, Kuhl PK. Parent coaching increases conversational turns and advances infant language development. PNAS. 2020;117(7):3484–3491.">[47]</a><a class="ref-chip" href="https://developingchild.harvard.edu/key-concept/serve-and-return/" target="_blank" rel="noreferrer" title="Center on the Developing Child, Harvard University. Serve and Return.">[82]</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  
+  <section class="section-band" id="activities">
+    <div class="content-wrap">
+      
+  <div class="section-heading">
+    <p class="eyebrow">Activity plugins</p>
+    <h2 class="section-title balanced-title"><span class="nobr">17 small, finite ways in</span></h2>
+    <p class="section-lede">One activity does one thing: present it slowly inside a 16:9 stage, then hand it back to a grown-up and child. Third-party activities use a namespaced type.</p>
+  </div>
+      <div class="activity-grid">
+        
+              <article class="activity-card activity-contrast" style="--activity-index:0">
+                <div class="activity-art"><svg class="activity-svg" viewBox="0 0 80 70" aria-hidden="true"><circle cx="40" cy="36" r="22" fill="#fffaf2"/><circle cx="40" cy="36" r="15" fill="#1f2a44"/><circle cx="40" cy="36" r="7" fill="#f08a5d"/></svg></div>
+                <div class="activity-card-body">
+                  <div class="activity-title-row"><h3>High Contrast</h3><span class="activity-index">01</span></div>
+                  <p>Slow black, white, and red shapes</p>
+                  <div class="activity-meta"><span>Type <code>contrast</code></span><span>Ages 6–12 months</span></div>
+                </div>
+              </article>
+              <article class="activity-card activity-word-cards" style="--activity-index:1">
+                <div class="activity-art"><svg class="activity-svg" viewBox="0 0 80 70" aria-hidden="true"><rect x="13" y="10" width="54" height="47" rx="4" fill="#fffaf2" stroke="#3b3226" stroke-width="2"/><path d="M26 39c-7-10 7-19 14-7 7-12 21-3 14 7-5 8-14 13-14 13S31 47 26 39Z" fill="#f08a5d" stroke="#9b3f38" stroke-width="2"/><path d="M23 18h26" stroke="#5da9e9" stroke-width="3" stroke-linecap="round"/></svg></div>
+                <div class="activity-card-body">
+                  <div class="activity-title-row"><h3>Word Cards</h3><span class="activity-index">02</span></div>
+                  <p>Look at one real word at a time</p>
+                  <div class="activity-meta"><span>Type <code>word-cards</code></span><span>Ages 6–36 months</span></div>
+                </div>
+              </article>
+              <article class="activity-card activity-peekaboo" style="--activity-index:2">
+                <div class="activity-art"><svg class="activity-svg" viewBox="0 0 80 70" aria-hidden="true"><circle cx="41" cy="36" r="17" fill="#f0c6a4" stroke="#3b3226" stroke-width="2"/><circle cx="35" cy="34" r="2" fill="#3b3226"/><circle cx="47" cy="34" r="2" fill="#3b3226"/><path d="M15 16h20v39H15z" fill="#f08a5d" stroke="#9b3f38" stroke-width="2"/><path d="M15 16q12 9 20 0" fill="none" stroke="#fffaf2" stroke-width="2"/></svg></div>
+                <div class="activity-card-body">
+                  <div class="activity-title-row"><h3>Peekaboo</h3><span class="activity-index">03</span></div>
+                  <p>Hide a little, then find it together</p>
+                  <div class="activity-meta"><span>Type <code>peekaboo</code></span><span>Ages 7–18 months</span></div>
+                </div>
+              </article>
+              <article class="activity-card activity-bubbles" style="--activity-index:3">
+                <div class="activity-art"><svg class="activity-svg" viewBox="0 0 80 70" aria-hidden="true"><circle cx="23" cy="38" r="12" fill="#dff1fb" stroke="#5da9e9" stroke-width="3"/><circle cx="47" cy="28" r="9" fill="#e6f4d7" stroke="#6c9a3b" stroke-width="3"/><circle cx="56" cy="47" r="5" fill="#f8e8c7" stroke="#f08a5d" stroke-width="2"/></svg></div>
+                <div class="activity-card-body">
+                  <div class="activity-title-row"><h3>Bubbles</h3><span class="activity-index">04</span></div>
+                  <p>Pop a finite set and see what is inside</p>
+                  <div class="activity-meta"><span>Type <code>bubbles</code></span><span>Ages 9–24 months</span></div>
+                </div>
+              </article>
+              <article class="activity-card activity-count" style="--activity-index:4">
+                <div class="activity-art"><svg class="activity-svg" viewBox="0 0 80 70" aria-hidden="true"><circle cx="23" cy="35" r="7" fill="#f08a5d"/><circle cx="40" cy="35" r="7" fill="#5da9e9"/><circle cx="57" cy="35" r="7" fill="#6c9a3b"/><path d="M13 17q17-12 29-2" fill="none" stroke="#3b3226" stroke-width="3" stroke-linecap="round"/><path d="m39 14 5 2-4 4" fill="none" stroke="#3b3226" stroke-width="2"/></svg></div>
+                <div class="activity-card-body">
+                  <div class="activity-title-row"><h3>Counting</h3><span class="activity-index">05</span></div>
+                  <p>Touch one, say one, name the total</p>
+                  <div class="activity-meta"><span>Type <code>count</code></span><span>Ages 15–36 months</span></div>
+                </div>
+              </article>
+              <article class="activity-card activity-subitize" style="--activity-index:5">
+                <div class="activity-art"><svg class="activity-svg" viewBox="0 0 80 70" aria-hidden="true"><rect x="14" y="12" width="52" height="45" rx="7" fill="#fffaf2" stroke="#3b3226" stroke-width="3"/><circle cx="28" cy="25" r="3" fill="#3b3226"/><circle cx="52" cy="25" r="3" fill="#3b3226"/><circle cx="40" cy="34" r="3" fill="#3b3226"/><circle cx="28" cy="45" r="3" fill="#3b3226"/><circle cx="52" cy="45" r="3" fill="#3b3226"/></svg></div>
+                <div class="activity-card-body">
+                  <div class="activity-title-row"><h3>Quick Look</h3><span class="activity-index">06</span></div>
+                  <p>Briefly notice a small quantity</p>
+                  <div class="activity-meta"><span>Type <code>subitize</code></span><span>Ages 24–36 months</span></div>
+                </div>
+              </article>
+              <article class="activity-card activity-choose" style="--activity-index:6">
+                <div class="activity-art"><svg class="activity-svg" viewBox="0 0 80 70" aria-hidden="true"><circle cx="24" cy="34" r="13" fill="#f08a5d"/><rect x="45" y="22" width="25" height="25" rx="4" fill="#5da9e9"/><path d="M10 12c10 3 18 9 25 18" fill="none" stroke="#3b3226" stroke-width="3" stroke-linecap="round"/><path d="m31 26 5 4-6 1" fill="none" stroke="#3b3226" stroke-width="2"/></svg></div>
+                <div class="activity-card-body">
+                  <div class="activity-title-row"><h3>Find It</h3><span class="activity-index">07</span></div>
+                  <p>Point to one large target</p>
+                  <div class="activity-meta"><span>Type <code>choose</code></span><span>Ages 12–36 months</span></div>
+                </div>
+              </article>
+              <article class="activity-card activity-sort" style="--activity-index:7">
+                <div class="activity-art"><svg class="activity-svg" viewBox="0 0 80 70" aria-hidden="true"><path d="M12 33q14-8 28 0v21H12Z" fill="#d8b07b" stroke="#67472f" stroke-width="2"/><path d="M43 33q13-8 25 0v21H43Z" fill="#d8b07b" stroke="#67472f" stroke-width="2"/><circle cx="25" cy="28" r="7" fill="#f08a5d"/><rect x="50" y="20" width="12" height="12" rx="2" fill="#5da9e9"/></svg></div>
+                <div class="activity-card-body">
+                  <div class="activity-title-row"><h3>Sorting</h3><span class="activity-index">08</span></div>
+                  <p>Group things by one feature</p>
+                  <div class="activity-meta"><span>Type <code>sort</code></span><span>Ages 24–36 months</span></div>
+                </div>
+              </article>
+              <article class="activity-card activity-sequence" style="--activity-index:8">
+                <div class="activity-art"><svg class="activity-svg" viewBox="0 0 80 70" aria-hidden="true"><rect x="10" y="21" width="18" height="25" rx="3" fill="#f8e8c7" stroke="#3b3226" stroke-width="2"/><rect x="35" y="21" width="18" height="25" rx="3" fill="#e6f4d7" stroke="#3b3226" stroke-width="2"/><path d="M28 33h7M32 29l4 4-4 4" fill="none" stroke="#f08a5d" stroke-width="2"/></svg></div>
+                <div class="activity-card-body">
+                  <div class="activity-title-row"><h3>Sequence</h3><span class="activity-index">09</span></div>
+                  <p>Lay out a familiar routine</p>
+                  <div class="activity-meta"><span>Type <code>sequence</code></span><span>Ages 18–36 months</span></div>
+                </div>
+              </article>
+              <article class="activity-card activity-pattern" style="--activity-index:9">
+                <div class="activity-art"><svg class="activity-svg" viewBox="0 0 80 70" aria-hidden="true"><circle cx="17" cy="35" r="9" fill="#f08a5d"/><rect x="31" y="26" width="18" height="18" rx="3" fill="#5da9e9"/><circle cx="61" cy="35" r="9" fill="#f08a5d"/><path d="M5 15h62" stroke="#6c9a3b" stroke-width="3" stroke-dasharray="4 6"/></svg></div>
+                <div class="activity-card-body">
+                  <div class="activity-title-row"><h3>Patterns</h3><span class="activity-index">10</span></div>
+                  <p>Notice two or three things repeating</p>
+                  <div class="activity-meta"><span>Type <code>pattern</code></span><span>Ages 30–36 months</span></div>
+                </div>
+              </article>
+              <article class="activity-card activity-story" style="--activity-index:10">
+                <div class="activity-art"><svg class="activity-svg" viewBox="0 0 80 70" aria-hidden="true"><path d="M12 19q14-7 28 1v35q-14-8-28 0Z" fill="#fffaf2" stroke="#3b3226" stroke-width="2"/><path d="M40 20q13-8 28-1v36q-15-8-28 0Z" fill="#fffaf2" stroke="#3b3226" stroke-width="2"/><path d="M20 29h13M20 36h11M48 29h12M48 36h9" stroke="#5da9e9" stroke-width="2" stroke-linecap="round"/></svg></div>
+                <div class="activity-card-body">
+                  <div class="activity-title-row"><h3>Story</h3><span class="activity-index">11</span></div>
+                  <p>Read one page and leave room to talk</p>
+                  <div class="activity-meta"><span>Type <code>story</code></span><span>Ages 9–36 months</span></div>
+                </div>
+              </article>
+              <article class="activity-card activity-song" style="--activity-index:11">
+                <div class="activity-art"><svg class="activity-svg" viewBox="0 0 80 70" aria-hidden="true"><path d="M28 18v29" stroke="#3b3226" stroke-width="3"/><path d="M28 18q19-7 29 0v9q-10-7-29 0Z" fill="#f08a5d" stroke="#9b3f38" stroke-width="2"/><ellipse cx="21" cy="49" rx="9" ry="6" fill="#5da9e9"/><path d="M52 40q8-8 14-2" fill="none" stroke="#6c9a3b" stroke-width="3" stroke-linecap="round"/></svg></div>
+                <div class="activity-card-body">
+                  <div class="activity-title-row"><h3>Song</h3><span class="activity-index">12</span></div>
+                  <p>Learn it for the grown-up, then sing offline</p>
+                  <div class="activity-meta"><span>Type <code>song</code></span><span>Ages 6–36 months</span></div>
+                </div>
+              </article>
+              <article class="activity-card activity-movement" style="--activity-index:12">
+                <div class="activity-art"><svg class="activity-svg" viewBox="0 0 80 70" aria-hidden="true"><circle cx="41" cy="17" r="7" fill="#f0c6a4" stroke="#3b3226" stroke-width="2"/><path d="M41 25v18M41 30l-15-7M41 30l15-10M41 43l-14 12M41 43l16 10" fill="none" stroke="#3b3226" stroke-width="3" stroke-linecap="round"/><path d="m14 26 7-5M16 42l-7 3" stroke="#f08a5d" stroke-width="3" stroke-linecap="round"/></svg></div>
+                <div class="activity-card-body">
+                  <div class="activity-title-row"><h3>Move</h3><span class="activity-index">13</span></div>
+                  <p>Put a word into a body movement</p>
+                  <div class="activity-meta"><span>Type <code>movement</code></span><span>Ages 9–36 months</span></div>
+                </div>
+              </article>
+              <article class="activity-card activity-calm" style="--activity-index:13">
+                <div class="activity-art"><svg class="activity-svg" viewBox="0 0 80 70" aria-hidden="true"><circle cx="40" cy="35" r="22" fill="none" stroke="#5da9e9" stroke-width="3"/><circle cx="40" cy="35" r="12" fill="none" stroke="#ffc93c" stroke-width="3"/><path d="M40 35 52 23" stroke="#6c9a3b" stroke-width="3" stroke-linecap="round"/></svg></div>
+                <div class="activity-card-body">
+                  <div class="activity-title-row"><h3>Calm</h3><span class="activity-index">14</span></div>
+                  <p>Slow down together, with no finish line</p>
+                  <div class="activity-meta"><span>Type <code>calm</code></span><span>Ages 12–36 months</span></div>
+                </div>
+              </article>
+              <article class="activity-card activity-video" style="--activity-index:14">
+                <div class="activity-art"><svg class="activity-svg" viewBox="0 0 80 70" aria-hidden="true"><rect x="10" y="13" width="60" height="43" rx="5" fill="#1f2a44" stroke="#3b3226" stroke-width="3"/><path d="m34 24 17 10-17 10Z" fill="#ffc93c"/><path d="M20 63h40" stroke="#3b3226" stroke-width="3" stroke-linecap="round"/></svg></div>
+                <div class="activity-card-body">
+                  <div class="activity-title-row"><h3>Video</h3><span class="activity-index">15</span></div>
+                  <p>Short, grounded, and never auto-playing</p>
+                  <div class="activity-meta"><span>Type <code>video</code></span><span>Ages 18–36 months</span></div>
+                </div>
+              </article>
+              <article class="activity-card activity-web" style="--activity-index:15">
+                <div class="activity-art"><svg class="activity-svg" viewBox="0 0 80 70" aria-hidden="true"><rect x="9" y="13" width="62" height="45" rx="5" fill="#fffaf2" stroke="#3b3226" stroke-width="3"/><path d="M10 25h60" stroke="#3b3226" stroke-width="3"/><circle cx="18" cy="19" r="2" fill="#f08a5d"/><circle cx="26" cy="19" r="2" fill="#ffc93c"/><circle cx="34" cy="19" r="2" fill="#6c9a3b"/><path d="M23 40h35M23 47h22" stroke="#5da9e9" stroke-width="3" stroke-linecap="round"/></svg></div>
+                <div class="activity-card-body">
+                  <div class="activity-title-row"><h3>Web</h3><span class="activity-index">16</span></div>
+                  <p>One task in an isolated external page</p>
+                  <div class="activity-meta"><span>Type <code>web</code></span><span>Ages 24–36 months</span></div>
+                </div>
+              </article>
+              <article class="activity-card activity-guide" style="--activity-index:16">
+                <div class="activity-art"><svg class="activity-svg" viewBox="0 0 80 70" aria-hidden="true"><path d="M15 12h50v43H15z" fill="#f8e8c7" stroke="#67472f" stroke-width="2"/><path d="M23 22h30M23 30h24" stroke="#a45a3e" stroke-width="2" stroke-linecap="round"/><path d="m23 42 6 6 14-15" fill="none" stroke="#6c9a3b" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+                <div class="activity-card-body">
+                  <div class="activity-title-row"><h3>Parent Guide</h3><span class="activity-index">17</span></div>
+                  <p>Read as an adult, then do the real activity</p>
+                  <div class="activity-meta"><span>Type <code>guide</code></span><span>Ages 6–36 months</span></div>
+                </div>
+              </article>
+      </div>
+      <div class="plugin-callout">
+        <div><span class="callout-mark" aria-hidden="true">.</span><strong>Third-party activities keep the same boundaries.</strong><p>Types are namespaced, such as example.hello-stars; the host owns focus, timing, the parent gate, and resources.</p></div>
+        <a class="text-link" href="https://github.com/gxlself/ai-study/blob/main/docs/dev/plugin-guide.md" target="_blank" rel="noreferrer">Read the plugin guide <span aria-hidden="true">↗</span></a>
+      </div>
+    </div>
+  </section>
+  
+  <section class="section-band paper-band" id="home">
+    <div class="content-wrap">
+      
+  <div class="section-heading">
+    <p class="eyebrow">Run it at home</p>
+    <h2 class="section-title balanced-title"><span class="nobr">One small server,</span><span class="nobr">devices kept in the house</span></h2>
+    <p class="section-lede">The living-room screen does not need to know the wider internet. A Mac, NAS, or small computer serves the player on the home network; a phone opens the parent area only when needed.</p>
+  </div>
+      <div class="home-layout">
+        <div class="home-illustration">
+  <svg class="home-map" viewBox="0 0 760 380" role="img" aria-labelledby="home-map-title home-map-desc">
+    <title id="home-map-title">One small server, devices kept in the house</title>
+    <desc id="home-map-desc">The living-room screen does not need to know the wider internet. A Mac, NAS, or small computer serves the player on the home network; a phone opens the parent area only when needed.</desc>
+    <path d="M26 315h708" stroke="#c9ae83" stroke-width="3" stroke-linecap="round" stroke-dasharray="2 11"/>
+    <path d="M56 313V122l92-62 92 62v191Z" fill="#fffaf2" stroke="#6f5b45" stroke-width="4"/>
+    <path d="m47 126 101-72 101 72" fill="none" stroke="#6f5b45" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+    <path d="M56 238h184M56 174h184" stroke="#dec9aa" stroke-width="3"/>
+    <path d="M148 122v190" stroke="#dec9aa" stroke-width="3"/>
+    <rect x="72" y="86" width="48" height="34" rx="4" fill="#dff1fb" stroke="#6f5b45" stroke-width="3"/>
+    <path d="M96 86v34M72 103h48" stroke="#6f5b45" stroke-width="2"/>
+    <path d="M162 286q34-15 66 0v18h-66Z" fill="#e6f4d7" stroke="#6c9a3b" stroke-width="2"/>
+    <path d="M169 269h44q7 0 7 8v10h-58v-10q0-8 7-8Z" fill="#f08a5d" stroke="#6f5b45" stroke-width="3"/>
+    <path d="M221 263v-25M211 238h20l-4 9h-12Z" fill="#f4c36a" stroke="#6f5b45" stroke-width="2"/>
+    <rect x="80" y="190" width="67" height="47" rx="7" fill="#1f2a44" stroke="#6f5b45" stroke-width="3"/>
+    <rect x="88" y="198" width="51" height="31" rx="3" fill="#dff1fb"/>
+    <path d="M93 222q15-15 27-3t20-6" fill="none" stroke="#6c9a3b" stroke-width="3"/>
+    <rect x="166" y="201" width="39" height="31" rx="6" fill="#f3ead9" stroke="#6f5b45" stroke-width="3"/>
+    <circle cx="185" cy="214" r="8" fill="#ffc93c"/>
+    <text x="84" y="260" class="map-label">Mac / NAS</text>
+    <text x="84" y="279" class="map-small">@sprout/server :4310</text>
+    <rect x="300" y="159" width="154" height="111" rx="17" fill="#66806a" stroke="#3b3226" stroke-width="5"/>
+    <rect x="317" y="176" width="112" height="68" rx="8" fill="#1f2a44"/>
+    <path d="M347 262h61M359 269h37" stroke="#3b3226" stroke-width="5" stroke-linecap="round"/>
+    <text x="323" y="292" class="map-label">Living-room TV</text>
+    <text x="323" y="311" class="map-small">Player</text>
+    <rect x="493" y="203" width="64" height="91" rx="9" fill="#d7eff5" stroke="#6f5b45" stroke-width="4"/>
+    <circle cx="525" cy="281" r="4" fill="#6f5b45"/>
+    <path d="M508 220h34M508 228h22" stroke="#5da9e9" stroke-width="4" stroke-linecap="round"/>
+    <text x="488" y="318" class="map-label">iPad on the sofa</text>
+    <text x="488" y="337" class="map-small">Safari / Capacitor</text>
+    <rect x="620" y="218" width="52" height="90" rx="10" fill="#f08a5d" stroke="#6f5b45" stroke-width="4"/>
+    <rect x="628" y="230" width="36" height="58" rx="3" fill="#fffaf2"/>
+    <circle cx="646" cy="296" r="4" fill="#fffaf2"/>
+    <text x="604" y="331" class="map-label">Parent phone</text>
+    <text x="604" y="350" class="map-small">Parent area</text>
+    <path class="network-line" d="M211 215C254 196 268 198 302 209"/>
+    <path class="network-line network-line-delay" d="M454 218C475 220 481 235 493 243"/>
+    <path class="network-line network-line-delay-2" d="M557 248C581 241 596 249 621 259"/>
+    <circle class="network-node" cx="256" cy="204" r="5" fill="#ffc93c"/>
+    <circle class="network-node network-node-delay" cx="479" cy="229" r="5" fill="#ffc93c"/>
+    <circle class="network-node network-node-delay-2" cx="588" cy="248" r="5" fill="#ffc93c"/>
+  </svg></div>
+        <div class="home-points">
+          
+                <article class="home-point"><span class="home-point-number">01</span><div><h3>Home network</h3><p>The server listens on 4310 by default. The TV, iPad, and parent area use the same family network.</p></div></article>
+                <article class="home-point"><span class="home-point-number">02</span><div><h3>Data stays at home</h3><p>The server stores family data in local SQLite; offline records stay on the current device.</p></div></article>
+                <article class="home-point"><span class="home-point-number">03</span><div><h3>Six-digit pairing</h3><p>The player requests a six-digit pairing code that is valid for 10 minutes; the device token is not printed on the page.</p></div></article>
+                <article class="home-point"><span class="home-point-number">04</span><div><h3>No server required to start</h3><p>The player ships with the sprout.core content pack, so a family can try offline before connecting a home server.</p></div></article>
+          <div class="home-doc-links">
+            <a class="" href="https://github.com/gxlself/ai-study/blob/main/docs/deploy/README.md" target="_blank" rel="noreferrer">Docker deployment <span aria-hidden="true">↗</span></a>
+            <a class="" href="https://github.com/gxlself/ai-study/blob/main/deploy/macos/install.sh" target="_blank" rel="noreferrer">macOS launch <span aria-hidden="true">↗</span></a>
+            <a class="" href="https://github.com/gxlself/ai-study/blob/main/docs/deploy/README.md#android-tv" target="_blank" rel="noreferrer">Android TV <span aria-hidden="true">↗</span></a>
+            <a class="" href="https://github.com/gxlself/ai-study/blob/main/docs/deploy/README.md#ipad" target="_blank" rel="noreferrer">iPad / Safari <span aria-hidden="true">↗</span></a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  <section class="section-band try-band" id="try">
+    <div class="content-wrap">
+      
+  <div class="section-heading">
+    <p class="eyebrow">Try it · The television is off</p>
+    <h2 class="section-title balanced-title"><span class="nobr">Press the power,</span><span class="nobr">then decide how long to look</span></h2>
+    <p class="section-lede">Open the television to try a quiet browser demo. Data stays in this browser; there are no pre-recorded voices, so speech uses the browser.</p>
+  </div>
+      <div class="try-layout">
+        <div class="try-tv-wrap">
+          <div class="try-tv" data-demo-shell>
+            <div class="try-tv-screen" data-demo-screen>
+              <span class="off-screen-label">Screen off</span>
+              <div class="demo-loading" data-demo-loading hidden><svg class="icon " viewBox="0 0 24 24" aria-hidden="true" focusable="false" ><path d="m12 3 1.8 5.2L19 10l-5.2 1.8L12 17l-1.8-5.2L5 10l5.2-1.8L12 3Z"/></svg><span>...</span></div>
+            </div>
+            <div class="tv-speaker" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i></div>
+            <button class="power-button" type="button" data-demo-power aria-label="Turn on"><span>⏻</span></button>
+          </div>
+          <div class="try-tv-stand" aria-hidden="true"></div>
+          <div class="time-note" data-demo-note hidden>
+            <span class="tape-corner" aria-hidden="true"></span>
+            <p>Time to turn the screen off and play with real things 🌱</p>
+            <button type="button" data-demo-close>Okay, turn it off</button>
+          </div>
+        </div>
+        <div class="try-aside">
+          <div class="try-actions">
+            <button class="button button-primary" type="button" data-demo-open><svg class="icon " viewBox="0 0 24 24" aria-hidden="true" focusable="false" ><path d="M5 12h13M13 6l6 6-6 6"/></svg> Turn on</button>
+            <a class="button button-quiet" href="../demo/?lang=en" target="_blank" rel="noreferrer"><svg class="icon " viewBox="0 0 24 24" aria-hidden="true" focusable="false" ><path d="M14 4h6v6M20 4l-9 9"/><path d="M18 14v5H5V6h5"/></svg> Open demo full screen</a>
+          </div>
+          <ul class="try-tips">
+            <li><span>01</span>Arrow keys + Enter = remote</li>
+            <li><span>02</span>Demo data stays in your browser</li>
+            <li><span>03</span>No pre-recorded audio; speech uses the browser</li>
+          </ul>
+          <p class="demo-availability">This is a small browser demo and does not connect to a family server.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  <section class="section-band" id="evidence">
+    <div class="content-wrap">
+        
+  <div class="section-heading">
+    <p class="eyebrow">Every tradeoff has a source</p>
+    <h2 class="section-title balanced-title"><span class="nobr">A library-card wall</span><span class="nobr">for the reasons behind the choices</span></h2>
+    <p class="section-lede">These sources appear in the evidence review&#39;s reference list. Each sentence is a product shorthand, not a replacement for the study.</p>
+  </div>
+      <div class="evidence-intro"><strong>105</strong> references<span>·</span><span>Reference list count</span></div>
+      <div class="library-grid">
+        
+              <article class="library-card">
+                <div class="library-card-top"><span class="card-number">01</span><span class="card-year">2019</span></div>
+                <h3>WHO guidelines on physical activity, sedentary behaviour, and sleep for children under 5</h3>
+                <p><span>What it changed：</span>Keep screens last in the priority order: under two, protect reading, stories, and shared play.</p>
+                <a class="text-link" href="https://www.who.int/publications/i/item/9789241550536" target="_blank" rel="noreferrer">Read original <span aria-hidden="true">↗</span></a>
+              </article>
+              <article class="library-card">
+                <div class="library-card-top"><span class="card-number">02</span><span class="card-year">2016</span></div>
+                <h3>AAP: Media and Young Minds</h3>
+                <p><span>What it changed：</span>Make under-18-month content an adult tool; if media is introduced, keep it high-quality and shared.</p>
+                <a class="text-link" href="https://publications.aap.org/pediatrics/article/138/5/e20162591/60503/Media-and-Young-Minds" target="_blank" rel="noreferrer">Read original <span aria-hidden="true">↗</span></a>
+              </article>
+              <article class="library-card">
+                <div class="library-card-top"><span class="card-number">03</span><span class="card-year">2022</span></div>
+                <h3>China: Health care and nurturing guidance for children under 3</h3>
+                <p><span>What it changed：</span>Leave screen time empty for the first two years, with boundaries around meals, bedrooms, and session length.</p>
+                <a class="text-link" href="https://www.gov.cn/zhengce/zhengceku/2022-11/29/content_5729421.htm" target="_blank" rel="noreferrer">Read original <span aria-hidden="true">↗</span></a>
+              </article>
+              <article class="library-card">
+                <div class="library-card-top"><span class="card-number">04</span><span class="card-year">2024</span></div>
+                <h3>China: Early development service guidance for infants and toddlers</h3>
+                <p><span>What it changed：</span>Center responsive care and early learning opportunities instead of treating a screen as a playmate.</p>
+                <a class="text-link" href="https://wjw.fujian.gov.cn/xxgk/fgwj/gjwj/202502/t20250211_6713467.htm" target="_blank" rel="noreferrer">Read original <span aria-hidden="true">↗</span></a>
+              </article>
+              <article class="library-card">
+                <div class="library-card-top"><span class="card-number">05</span><span class="card-year">2025</span></div>
+                <h3>China: Notice on protecting children&#39;s farsightedness reserve</h3>
+                <p><span>What it changed：</span>Use the stricter 0–3 default as the starting point, with outdoor time and less parental phone use around children.</p>
+                <a class="text-link" href="http://www.moe.gov.cn/srcsite/A17/moe_943/s3285/202511/t20251107_1419599.html" target="_blank" rel="noreferrer">Read original <span aria-hidden="true">↗</span></a>
+              </article>
+              <article class="library-card">
+                <div class="library-card-top"><span class="card-number">06</span><span class="card-year">2021</span></div>
+                <h3>Learning from video: meta-analysis of the video deficit from ages 0 to 6</h3>
+                <p><span>What it changed：</span>Use video as a prompt, not an answer, and leave younger children room to transfer back to real life.</p>
+                <a class="text-link" href="https://onlinelibrary.wiley.com/doi/abs/10.1111/cdev.13429" target="_blank" rel="noreferrer">Read original <span aria-hidden="true">↗</span></a>
+              </article>
+              <article class="library-card">
+                <div class="library-card-top"><span class="card-number">07</span><span class="card-year">2018</span></div>
+                <h3>Co-viewing supports toddlers&#39; word learning from video</h3>
+                <p><span>What it changed：</span>Put the parent response at the center of co-viewing: pause, notice, then continue.</p>
+                <a class="text-link" href="https://doi.org/10.1016/j.jecp.2017.09.005" target="_blank" rel="noreferrer">Read original <span aria-hidden="true">↗</span></a>
+              </article>
+              <article class="library-card">
+                <div class="library-card-top"><span class="card-number">08</span><span class="card-year">2024</span></div>
+                <h3>Screen time and parent-child talk from 12 to 36 months</h3>
+                <p><span>What it changed：</span>Connect every lesson to real conversation so screens do not crowd out adult words and conversational turns.</p>
+                <a class="text-link" href="https://pmc.ncbi.nlm.nih.gov/articles/PMC10913002/" target="_blank" rel="noreferrer">Read original <span aria-hidden="true">↗</span></a>
+              </article>
+              <article class="library-card">
+                <div class="library-card-top"><span class="card-number">09</span><span class="card-year">2020</span></div>
+                <h3>Parent coaching increases conversational turns and infant language</h3>
+                <p><span>What it changed：</span>Use child-directed speech and more conversational turns as the real language input.</p>
+                <a class="text-link" href="https://www.pnas.org/doi/10.1073/pnas.1921653117" target="_blank" rel="noreferrer">Read original <span aria-hidden="true">↗</span></a>
+              </article>
+              <article class="library-card">
+                <div class="library-card-top"><span class="card-number">10</span><span class="card-year">2022</span></div>
+                <h3>Guidance during play and children&#39;s learning: systematic review and meta-analysis</h3>
+                <p><span>What it changed：</span>Attach each screen prompt to guided play with a goal, support, and child participation.</p>
+                <a class="text-link" href="https://onlinelibrary.wiley.com/doi/10.1111/cdev.13730" target="_blank" rel="noreferrer">Read original <span aria-hidden="true">↗</span></a>
+              </article>
+              <article class="library-card">
+                <div class="library-card-top"><span class="card-number">11</span><span class="card-year">2015</span></div>
+                <h3>Putting education in educational apps</h3>
+                <p><span>What it changed：</span>Make interaction active, engaged, meaningful, and socially interactive.</p>
+                <a class="text-link" href="https://kathyhirshpasek.com/wp-content/uploads/sites/9/2015/09/Psychological-Science-in-the-Public-Interest-2015-Hirsh-Pasek-3-34.pdf" target="_blank" rel="noreferrer">Read original <span aria-hidden="true">↗</span></a>
+              </article>
+              <article class="library-card">
+                <div class="library-card-top"><span class="card-number">12</span><span class="card-year">2016</span></div>
+                <h3>Screen time tantrums and natural stopping points</h3>
+                <p><span>What it changed：</span>Use a natural stopping point so leaving the screen is easier than being pulled into another episode.</p>
+                <a class="text-link" href="https://dl.acm.org/doi/abs/10.1145/2858036.2858278" target="_blank" rel="noreferrer">Read original <span aria-hidden="true">↗</span></a>
+              </article>
+              <article class="library-card">
+                <div class="library-card-top"><span class="card-number">13</span><span class="card-year">2022</span></div>
+                <h3>Manipulative design in mobile applications used by children</h3>
+                <p><span>What it changed：</span>Reject retention tricks, rewards, and exit barriers; leaving should be as easy as entering.</p>
+                <a class="text-link" href="https://jamanetwork.com/journals/jamanetworkopen/fullarticle/2793493" target="_blank" rel="noreferrer">Read original <span aria-hidden="true">↗</span></a>
+              </article>
+      </div>
+    </div>
+  </section>
+  
+  <section class="section-band paper-band" id="developers">
+    <div class="content-wrap">
+      
+  <div class="section-heading">
+    <p class="eyebrow">For developers</p>
+    <h2 class="section-title balanced-title"><span class="nobr">From one seedling,</span><span class="nobr">to a runnable monorepo</span></h2>
+    <p class="section-lede">If you want to maintain content or extend an activity, this is the short map of boundaries, startup steps, and minimal examples.</p>
+  </div>
+      <div class="dev-layout">
+        <div>
+          <div class="subsection-label">Repository map</div>
+          <pre class="repo-map"><code>apps/
+  server/                 Fastify + SQLite
+  admin/                  Parent area · React + Ant Design
+  player/                 TV / iPad player
+packages/
+  schema/                 Zod data contracts
+  core/                   scheduler + screen policy
+  plugin-sdk/             activity contract + tokens
+  activities/             17 built-in activities
+content/packs/             sprout-core
+plugins/examples/          namespaced plugin examples</code></pre>
+          <div class="tech-badges"><span>Node 22</span><span>Fastify</span><span>node:sqlite</span><span>React</span><span>Vite</span><span>Ant Design</span><span>Capacitor</span><span>Zod</span></div>
+        </div>
+        <div class="dev-tabs-wrap">
+          <div class="dev-tabs" role="tablist" aria-label="From one seedling to a runnable monorepo">
+            <button type="button" role="tab" aria-selected="true" aria-controls="dev-panel-quickstart" data-dev-tab="quickstart">Quick start</button><button type="button" role="tab" aria-selected="false" aria-controls="dev-panel-content" data-dev-tab="content">Write a content pack</button><button type="button" role="tab" aria-selected="false" aria-controls="dev-panel-plugin" data-dev-tab="plugin">Write an activity plugin</button>
+          </div>
+          <div class="dev-panels">
+            
+                  <div class="dev-panel" id="dev-panel-quickstart" role="tabpanel" data-dev-panel="quickstart" >
+                    <button type="button" class="copy-button" data-copy-target="dev-code-quickstart"><svg class="icon " viewBox="0 0 24 24" aria-hidden="true" focusable="false" ><rect x="8" y="8" width="12" height="12" rx="2"/><path d="M16 8V6a2 2 0 0 0-2-2H6a2 2 0 0 0-2 2v8a2 2 0 0 0 2 2h2"/></svg><span data-copy-label>Copy</span></button>
+                    <pre><code id="dev-code-quickstart">corepack enable
+export pnpm_config_verify_deps_before_run=false
+pnpm install
+
+pnpm build
+pnpm start</code></pre>
+                  </div>
+                  <div class="dev-panel" id="dev-panel-content" role="tabpanel" data-dev-panel="content" hidden>
+                    <button type="button" class="copy-button" data-copy-target="dev-code-content"><svg class="icon " viewBox="0 0 24 24" aria-hidden="true" focusable="false" ><rect x="8" y="8" width="12" height="12" rx="2"/><path d="M16 8V6a2 2 0 0 0-2-2H6a2 2 0 0 0-2 2v8a2 2 0 0 0 2 2h2"/></svg><span data-copy-label>Copy</span></button>
+                    <pre><code id="dev-code-content">content/examples/hello-pack/
+  pack.json
+  lexicon.json
+  assets/
+  routes/hello-route.json
+  lessons/hello.s1.shapes.json
+
+pnpm content:typecheck
+pnpm content:validate --pack content/examples/hello-pack --strict</code></pre>
+                  </div>
+                  <div class="dev-panel" id="dev-panel-plugin" role="tabpanel" data-dev-panel="plugin" hidden>
+                    <button type="button" class="copy-button" data-copy-target="dev-code-plugin"><svg class="icon " viewBox="0 0 24 24" aria-hidden="true" focusable="false" ><rect x="8" y="8" width="12" height="12" rx="2"/><path d="M16 8V6a2 2 0 0 0-2-2H6a2 2 0 0 0-2 2v8a2 2 0 0 0 2 2h2"/></svg><span data-copy-label>Copy</span></button>
+                    <pre><code id="dev-code-plugin">{
+  &quot;id&quot;: &quot;example.hello&quot;,
+  &quot;entry&quot;: &quot;index.js&quot;,
+  &quot;activities&quot;: [{
+    &quot;type&quot;: &quot;example.hello-stars&quot;
+  }]
+}
+
+// mount(el, ctx) -&gt; ActivityInstance
+// Clean DOM, events, timers, and sound</code></pre>
+                  </div>
+          </div>
+        </div>
+      </div>
+      <div class="release-license-grid">
+        <div class="release-card">
+          <span class="eyebrow">Download v0.0.1</span>
+          <h3>v0.0.1</h3>
+          <p>The Android TV package and content pack are both on the Release page.</p>
+          <div class="release-links">
+            <a class="" href="https://github.com/gxlself/ai-study/releases/tag/v0.0.1" target="_blank" rel="noreferrer">Android TV APK <span aria-hidden="true">↗</span></a>
+            <a class="" href="https://github.com/gxlself/ai-study/releases/tag/v0.0.1" target="_blank" rel="noreferrer">Content pack ZIP <span aria-hidden="true">↗</span></a>
+          </div>
+        </div>
+        <div class="license-card">
+          <span class="eyebrow">Licensing</span>
+          <p>Site code is MIT; course content is free for personal, family, and non-commercial educational use, with written author permission required for commercial use. Fluent Emoji is MIT, Lucide is ISC, and the local fonts are OFL-1.1.</p>
+          <div class="license-links">
+            <a class="" href="https://github.com/gxlself/ai-study/blob/main/LICENSE" target="_blank" rel="noreferrer">LICENSE <span aria-hidden="true">↗</span></a>
+            <a class="" href="https://github.com/gxlself/ai-study/blob/main/CONTENT-LICENSE.md" target="_blank" rel="noreferrer">CONTENT-LICENSE.md <span aria-hidden="true">↗</span></a>
+          </div>
+          <p class="micro-note">Fonts: LXGW WenKai, Fraunces, and Nunito, all shipped as local subsets.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  <section class="section-band" id="faq">
+    <div class="content-wrap narrow-content">
+      
+  <div class="section-heading">
+    <p class="eyebrow">Questions</p>
+    <h2 class="section-title balanced-title"><span class="nobr">Leave the worry at the door;</span><span class="nobr">carry less inside</span></h2>
+    <p class="section-lede"></p>
+  </div>
+      <div class="faq-list">
+        
+              <details class="faq-item" open>
+                <summary><span>Will this make children watch more screens?</span><b aria-hidden="true">+</b></summary>
+                <p>It is not designed to extend viewing. Ages 6–17 months get adult guidance only; co-viewing is off by default at 18–23 months; ages 24–36 months can also stay fully offline. Every lesson has a natural ending and an offline next step.</p>
+              </details>
+              <details class="faq-item" >
+                <summary><span>What about babies younger than six months?</span><b aria-hidden="true">+</b></summary>
+                <p>The core pack starts at 6 months and has no child-side playback path for younger babies. Face-to-face response, floor play, singing, books, and professional child-health guidance come first.</p>
+              </details>
+              <details class="faq-item" >
+                <summary><span>Where does family data live?</span><b aria-hidden="true">+</b></summary>
+                <p>When connected to a server, family data lives in local SQLite on the device running @sprout/server. Offline records stay on the current device.</p>
+              </details>
+              <details class="faq-item" >
+                <summary><span>Why are there no narration recordings in the repository?</span><b aria-hidden="true">+</b></summary>
+                <p>The public repository does not ship macOS system voices because their license does not allow public redistribution. Without pre-recorded audio, the page uses the browser Web Speech API; a product build can use local or licensed TTS.</p>
+              </details>
+              <details class="faq-item" >
+                <summary><span>Is it free, and can it be used commercially?</span><b aria-hidden="true">+</b></summary>
+                <p>Code is MIT. Course content is for personal, family, and non-commercial use under the repository&#39;s CC BY-NC 4.0 terms; commercial use requires written author permission. Third-party assets keep their own licenses.</p>
+              </details>
+              <details class="faq-item" >
+                <summary><span>Is this medical advice?</span><b aria-hidden="true">+</b></summary>
+                <p>No. Sprout is not a medical device, treatment tool, or developmental diagnostic. Milestones are for everyday observation and conversations with professionals. Consult a pediatric or child-health professional when concerns persist or skills regress.</p>
+              </details>
+      </div>
+    </div>
+  </section>
+    </main>
+    <footer class="site-footer">
+      <div class="footer-inner">
+        <div class="footer-brand">
+          <a class="brand" href="../">
+            <span class="brand-mark" aria-hidden="true">
+              <svg viewBox="0 0 42 42" width="42" height="42">
+                <path d="M21 35c-.8-8 .2-13.7 4-18.8" fill="none" stroke="currentColor" stroke-width="2.8" stroke-linecap="round"/>
+                <path d="M21.2 23.8C14.6 23.8 9.2 19.1 9.5 13c6.7-.9 12.8 3 11.7 10.8Z" fill="#98c968" stroke="currentColor" stroke-width="1.3" stroke-linejoin="round"/>
+                <path d="M23 20.9C22.5 13.4 27.5 8 34.2 8.4c.7 6.4-4.3 12.8-11.2 12.5Z" fill="#77b77d" stroke="currentColor" stroke-width="1.3" stroke-linejoin="round"/>
+              </svg>
+            </span>
+            <span class="brand-name"><strong>芽芽成长</strong><span>Sprout</span></span>
+          </a>
+          <p>Not a medical device, treatment tool, or developmental diagnostic; milestones are not for scoring, ranking, or diagnosis.</p>
+          <p class="footer-focus">The yellow focus ring here is the same shape as a television remote selection.</p>
+        </div>
+        <div class="footer-links">
+          <div>
+            <span class="footer-label">Docs</span>
+            <a href="https://github.com/gxlself/ai-study/tree/main/docs" target="_blank" rel="noreferrer">Docs ↗</a>
+            <a href="https://github.com/gxlself/ai-study/blob/main/README.md" target="_blank" rel="noreferrer">Project guide ↗</a>
+          </div>
+          <div>
+            <span class="footer-label">Credits</span>
+            <a href="https://github.com/gxlself/ai-study/blob/main/content/packs/sprout-core/LICENSES.md" target="_blank" rel="noreferrer">Fluent Emoji / CC0</a>
+            <a href="https://scripts.sil.org/OFL" target="_blank" rel="noreferrer">Fonts · OFL-1.1</a>
+          </div>
+          <div>
+            <span class="footer-label">Release</span>
+            <a href="https://github.com/gxlself/ai-study/releases/tag/v0.0.1" target="_blank" rel="noreferrer">v0.0.1 ↗</a>
+            <a href="https://github.com/gxlself/ai-study" target="_blank" rel="noreferrer">GitHub ↗</a>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>Made for slow mornings.</span>
+        <span>© Sprout · v0.0.1</span>
+      </div>
+    </footer>
+  </body>
+</html>

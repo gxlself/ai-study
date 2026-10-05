@@ -1,0 +1,16 @@
+{
+  "name": "芽芽成长 Sprout",
+  "short_name": "Sprout",
+  "start_url": "../",
+  "scope": "../",
+  "display": "standalone",
+  "background_color": "#fdf6ec",
+  "theme_color": "#fdf6ec",
+  "icons": [
+    {
+      "src": "./favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml"
+    }
+  ]
+}

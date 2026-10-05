@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" role="img" aria-label="A child crawling safely on the floor">
+  <circle cx="89" cy="94" r="27" fill="#FFD15C" stroke="#D6A13C" stroke-width="4"/>
+  <path d="M111 108Q142 108 171 137L203 176Q211 188 201 197Q190 207 179 196L148 168L121 159L99 143Z" fill="#5DA9E9" stroke="#3F83BE" stroke-width="5" stroke-linejoin="round"/>
+  <path d="M115 145L86 185M145 159L122 204M178 173L164 207M96 140L62 164" fill="none" stroke="#FFD15C" stroke-width="14" stroke-linecap="round"/>
+  <path d="M50 207H207" stroke="#A67C63" stroke-width="9" stroke-linecap="round"/>
+  <path d="M78 88Q87 80 98 88" fill="none" stroke="#725447" stroke-width="4" stroke-linecap="round"/>
+</svg>

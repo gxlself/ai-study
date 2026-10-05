@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" role="img" aria-label="Hands rinsing under running water">
+  <path d="M185 96V69Q185 60 175 60H127Q117 60 117 72V93" fill="none" stroke="#7F9399" stroke-width="20" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M165 54V35M149 34H181" fill="none" stroke="#7F9399" stroke-width="9" stroke-linecap="round"/>
+  <path d="M122 101L113 142M133 101L130 148M144 101L148 142" stroke="#75BDDA" stroke-width="5" stroke-linecap="round"/>
+  <path d="M211 149L179 155L148 146Q137 143 134 151Q132 158 141 163L158 170L124 165Q113 164 112 172Q112 180 123 182L162 190Q177 193 188 184L220 174Z" fill="#FFD15C" stroke="#D6A13C" stroke-width="4" stroke-linejoin="round"/>
+  <path d="M43 154L74 159L91 149Q99 145 103 152Q106 158 98 164L109 169L137 165Q147 164 149 171Q149 178 140 181L103 194Q90 197 77 188L40 178Z" fill="#FFD15C" stroke="#D6A13C" stroke-width="4" stroke-linejoin="round"/>
+  <path d="M44 211H215" stroke="#DFF1FB" stroke-width="18" stroke-linecap="round"/>
+  <path d="M66 208Q128 225 190 208" fill="none" stroke="#75A9BD" stroke-width="4" stroke-linecap="round"/>
+</svg>

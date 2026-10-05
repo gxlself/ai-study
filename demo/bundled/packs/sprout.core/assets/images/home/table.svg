@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" role="img" aria-label="A table with four legs">
+  <g fill="#B77848" stroke="#925D3B" stroke-width="4" stroke-linejoin="round">
+    <rect x="82" y="108" width="15" height="75" rx="4"/>
+    <rect x="157" y="108" width="15" height="75" rx="4"/>
+    <rect x="53" y="125" width="18" height="82" rx="4"/>
+    <rect x="184" y="125" width="18" height="82" rx="4"/>
+    <path d="M41 103H215V122Q215 130 207 130H49Q41 130 41 122Z" fill="#CA8D59"/>
+    <path d="M47 99L79 75Q82 73 88 73H180Q185 73 188 76L215 102Q218 110 208 112H49Q38 110 47 99Z" fill="#E7B783"/>
+  </g>
+  <path d="M77 99H184" fill="none" stroke="#F1CBA0" stroke-width="5" stroke-linecap="round"/>
+</svg>

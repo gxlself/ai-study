@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" role="img" aria-label="A glass of clear water">
+  <path d="M64 60H192L178 196Q176 212 160 212H96Q80 212 78 196Z" fill="#E6F5FC" fill-opacity=".45" stroke="#75A9BD" stroke-width="4" stroke-linejoin="round"/>
+  <path d="M70 111Q128 131 186 111L178 194Q176 204 161 204H95Q80 204 78 194Z" fill="#9CD9F2" fill-opacity=".8"/>
+  <ellipse cx="128" cy="111" rx="58" ry="13" fill="#C8ECFA" stroke="#75BDDA" stroke-width="3"/>
+  <ellipse cx="128" cy="60" rx="64" ry="14" fill="#F4FBFE" fill-opacity=".65" stroke="#75A9BD" stroke-width="4"/>
+  <path d="M84 86L88 105M91 133L96 182" fill="none" stroke="#FFFDF8" stroke-width="7" stroke-linecap="round"/>
+</svg>

@@ -1,0 +1,140 @@
+<!doctype html>
+<html lang="{{lang}}" data-page="{{pageLang}}">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#fdf6ec">
+    <meta name="description" content="{{description}}">
+    <meta name="robots" content="index,follow">
+    <title>{{title}}</title>
+    <link rel="canonical" href="{{canonical}}">
+    <link rel="alternate" hreflang="zh-CN" href="{{zhUrl}}">
+    <link rel="alternate" hreflang="en" href="{{enUrl}}">
+    <link rel="alternate" hreflang="x-default" href="{{zhUrl}}">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="芽芽成长 Sprout">
+    <meta property="og:locale" content="{{ogLocale}}">
+    <meta property="og:title" content="{{title}}">
+    <meta property="og:description" content="{{description}}">
+    <meta property="og:url" content="{{canonical}}">
+    <meta property="og:image" content="{{ogImage}}">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="{{title}}">
+    <meta name="twitter:description" content="{{description}}">
+    <meta name="twitter:image" content="{{ogImage}}">
+    <link rel="icon" href="{{assetPrefix}}assets/favicon.svg" type="image/svg+xml">
+    <link rel="apple-touch-icon" href="{{assetPrefix}}assets/apple-touch-icon.png" sizes="180x180">
+    <link rel="manifest" href="{{assetPrefix}}assets/site.webmanifest">
+    <link rel="preload" href="{{assetPrefix}}assets/fonts/lxgw-wenkai-subset.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="{{assetPrefix}}assets/fonts/fraunces-soft.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="stylesheet" href="{{assetPrefix}}assets/site.css">
+    <script type="application/ld+json">{{jsonld}}</script>
+    <script defer src="{{assetPrefix}}assets/site.js"></script>
+  </head>
+  <body>
+    <a class="skip-link" href="#main-content">{{skipLabel}}</a>
+    <div class="page-grain" aria-hidden="true"></div>
+    <header class="site-header" data-header>
+      <div class="header-inner">
+        <a class="brand" href="{{homeUrl}}" aria-label="{{brandLabel}}">
+          <span class="brand-mark" aria-hidden="true">
+            <svg viewBox="0 0 42 42" width="42" height="42">
+              <path d="M21 35c-.8-8 .2-13.7 4-18.8" fill="none" stroke="currentColor" stroke-width="2.8" stroke-linecap="round"/>
+              <path d="M21.2 23.8C14.6 23.8 9.2 19.1 9.5 13c6.7-.9 12.8 3 11.7 10.8Z" fill="#98c968" stroke="currentColor" stroke-width="1.3" stroke-linejoin="round"/>
+              <path d="M23 20.9C22.5 13.4 27.5 8 34.2 8.4c.7 6.4-4.3 12.8-11.2 12.5Z" fill="#77b77d" stroke="currentColor" stroke-width="1.3" stroke-linejoin="round"/>
+            </svg>
+            <span class="brand-leaves" data-brand-leaves aria-hidden="true"></span>
+          </span>
+          <span class="brand-name"><strong>芽芽成长</strong><span>Sprout</span></span>
+        </a>
+        <nav class="desktop-nav" aria-label="{{navLabel}}">
+          <a href="#principles">{{navPrinciples}}</a>
+          <a href="#stages">{{navStages}}</a>
+          <a href="#lesson">{{navLesson}}</a>
+          <a href="#activities">{{navActivities}}</a>
+          <a href="#home">{{navHome}}</a>
+          <a href="#try">{{navTry}}</a>
+          <a href="#developers">{{navDev}}</a>
+        </nav>
+        <div class="header-actions">
+          <a class="language-switch" href="{{languageUrl}}" lang="{{switchLang}}" aria-label="{{languageLabel}}">{{languageText}}</a>
+          <div class="theme-control">
+            <button class="icon-button" type="button" data-theme-toggle aria-expanded="false" aria-controls="theme-options" aria-label="{{themeLabel}}">
+              <span class="theme-glyph" aria-hidden="true">◐</span>
+            </button>
+            <div class="theme-options" id="theme-options" hidden>
+              <button type="button" data-theme-value="light">{{themeLight}}</button>
+              <button type="button" data-theme-value="dark">{{themeDark}}</button>
+              <button type="button" data-theme-value="system">{{themeSystem}}</button>
+            </div>
+          </div>
+          <a class="header-github" href="https://github.com/gxlself/ai-study" target="_blank" rel="noreferrer">
+            <span aria-hidden="true">↗</span><span>GitHub</span>
+          </a>
+          <button class="menu-button" type="button" data-menu-toggle aria-expanded="false" aria-controls="mobile-menu" aria-label="{{menuLabel}}">
+            <span></span><span></span><span></span>
+          </button>
+        </div>
+      </div>
+      <div class="mobile-menu" id="mobile-menu" data-mobile-menu hidden>
+        <nav aria-label="{{navLabel}}">
+          <a href="#principles">{{navPrinciples}}</a>
+          <a href="#stages">{{navStages}}</a>
+          <a href="#lesson">{{navLesson}}</a>
+          <a href="#activities">{{navActivities}}</a>
+          <a href="#home">{{navHome}}</a>
+          <a href="#try">{{navTry}}</a>
+          <a href="#developers">{{navDev}}</a>
+        </nav>
+        <div class="mobile-menu-footer">
+          <a href="{{languageUrl}}" lang="{{switchLang}}">{{languageText}}</a>
+          <a href="https://github.com/gxlself/ai-study" target="_blank" rel="noreferrer">GitHub ↗</a>
+        </div>
+      </div>
+    </header>
+    <main id="main-content">
+      {{body}}
+    </main>
+    <footer class="site-footer">
+      <div class="footer-inner">
+        <div class="footer-brand">
+          <a class="brand" href="{{homeUrl}}">
+            <span class="brand-mark" aria-hidden="true">
+              <svg viewBox="0 0 42 42" width="42" height="42">
+                <path d="M21 35c-.8-8 .2-13.7 4-18.8" fill="none" stroke="currentColor" stroke-width="2.8" stroke-linecap="round"/>
+                <path d="M21.2 23.8C14.6 23.8 9.2 19.1 9.5 13c6.7-.9 12.8 3 11.7 10.8Z" fill="#98c968" stroke="currentColor" stroke-width="1.3" stroke-linejoin="round"/>
+                <path d="M23 20.9C22.5 13.4 27.5 8 34.2 8.4c.7 6.4-4.3 12.8-11.2 12.5Z" fill="#77b77d" stroke="currentColor" stroke-width="1.3" stroke-linejoin="round"/>
+              </svg>
+            </span>
+            <span class="brand-name"><strong>芽芽成长</strong><span>Sprout</span></span>
+          </a>
+          <p>{{footerDisclaimer}}</p>
+          <p class="footer-focus">{{footerFocus}}</p>
+        </div>
+        <div class="footer-links">
+          <div>
+            <span class="footer-label">{{footerDocs}}</span>
+            <a href="https://github.com/gxlself/ai-study/tree/main/docs" target="_blank" rel="noreferrer">Docs ↗</a>
+            <a href="https://github.com/gxlself/ai-study/blob/main/README.md" target="_blank" rel="noreferrer">{{projectGuide}} ↗</a>
+          </div>
+          <div>
+            <span class="footer-label">{{footerCredits}}</span>
+            <a href="https://github.com/gxlself/ai-study/blob/main/content/packs/sprout-core/LICENSES.md" target="_blank" rel="noreferrer">Fluent Emoji / CC0</a>
+            <a href="https://scripts.sil.org/OFL" target="_blank" rel="noreferrer">Fonts · OFL-1.1</a>
+          </div>
+          <div>
+            <span class="footer-label">{{footerRelease}}</span>
+            <a href="https://github.com/gxlself/ai-study/releases/tag/v0.0.1" target="_blank" rel="noreferrer">v0.0.1 ↗</a>
+            <a href="https://github.com/gxlself/ai-study" target="_blank" rel="noreferrer">GitHub ↗</a>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>{{footerMade}}</span>
+        <span>© Sprout · v0.0.1</span>
+      </div>
+    </footer>
+  </body>
+</html>

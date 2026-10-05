@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" role="img" aria-label="Reading a book before bedtime">
+  <path d="M190 43Q160 31 128 49Q96 31 66 43V187Q96 175 128 193Q160 175 190 187Z" fill="#DFF1FB" stroke="#5D9FBE" stroke-width="5" stroke-linejoin="round"/>
+  <path d="M128 49V193M82 77Q105 69 119 78M137 78Q151 69 174 77M82 105Q105 97 119 106M137 106Q151 97 174 105" fill="none" stroke="#8CBBCB" stroke-width="4" stroke-linecap="round"/>
+  <path d="M193 57Q226 80 218 116Q212 142 190 153" fill="none" stroke="#8D7B68" stroke-width="9" stroke-linecap="round"/>
+  <circle cx="193" cy="57" r="25" fill="#FFF4D8" stroke="#D6A13C" stroke-width="4"/>
+  <path d="M181 49Q193 39 205 49Q199 64 184 69Q175 60 181 49Z" fill="#DFF1FB"/>
+  <path d="M53 31L61 16M207 31L199 16" stroke="#F2B134" stroke-width="6" stroke-linecap="round"/>
+</svg>

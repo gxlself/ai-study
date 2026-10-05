@@ -1,0 +1,334 @@
+{
+  "lang": "zh-CN",
+  "shortLang": "中",
+  "title": "芽芽成长 Sprout · 屏幕只做引子",
+  "description": "给 6 个月到 3 岁家庭的开源亲子共学工具。屏幕只开个头，成长发生在家长的回应、真实物品、游戏、阅读、歌唱和户外里。",
+  "nav": {
+    "principles": "理念",
+    "stages": "成长阶段",
+    "lesson": "一节课",
+    "activities": "活动",
+    "home": "在家运行",
+    "try": "试一试",
+    "dev": "开发者",
+    "language": "EN",
+    "theme": "主题"
+  },
+  "hero": {
+    "eyebrow": "开源亲子共学工具 · 6 个月–3 岁",
+    "title": "屏幕只做引子，成长发生在你们之间。",
+    "lede": "看一会儿提示，放下屏幕，一起玩一会儿。给家长看的慢课程、可打印的实体卡和真实生活里的小活动，陪你把电视关掉。",
+    "primary": "在浏览器里试试",
+    "secondary": "GitHub 源码",
+    "meta": "v0.0.1 · 开源 · 局域网运行 · 无广告",
+    "replay": "再看一次",
+    "sceneLabel": "一台电视亮起，一颗芽从屏幕里长出来，随后电视关掉，家长和孩子回到生活里。",
+    "screen": "屏幕",
+    "outside": "屏幕外",
+    "ratioNote": "比例取自内置课程《嘀嘀叭叭》：",
+    "handwritten": "慢慢打开"
+  },
+  "principles": {
+    "eyebrow": "先把方向放在桌上",
+    "title": "五件事，装进五袋种子",
+    "lede": "每一袋都很小：打开它，读完，放下屏幕，把话题带回家里的物品、声音和关系。",
+    "open": "打开",
+    "close": "合上",
+    "evidence": "看证据",
+    "items": [
+      {
+        "label": "真人互动",
+        "title": "真人互动优先于被动观看",
+        "body": "宝宝正在看的东西，值得一个真实的人命名、停顿、等待和回应。屏幕不是关系的替身。",
+        "evidence": "循证综述 3.1 · 视频缺陷 / 迁移缺陷"
+      },
+      {
+        "label": "先给大人",
+        "title": "6–17 月龄不给宝宝播放孩子侧课程",
+        "body": "这一段看的是家长指引：读完就放下设备，用打印卡、纸书和真实物品陪玩。18–23 月龄共看默认关闭；24–36 月龄也可以完全不看。",
+        "evidence": "循证综述 9.1 · 总体定位"
+      },
+      {
+        "label": "回合对话",
+        "title": "亲子对话比“听得更多”更重要",
+        "body": "看见孩子正在关注的东西，命名，停一下，接住目光、动作、手势或声音，再把话题放回生活。",
+        "evidence": "循证综述 4 · 语言：中文母语 + 英语启蒙"
+      },
+      {
+        "label": "中文为主",
+        "title": "中文自然交流是主干，英语是可选补充",
+        "body": "双语不是比赛。每种语言都需要真实、足量、自然的输入；不熟练的英语或录播音频不能替代高质量中文交流。",
+        "evidence": "循证综述 4 · 语言与双语"
+      },
+      {
+        "label": "生活数学",
+        "title": "数学从数量、空间和规律的日常对话开始",
+        "body": "点一件，说一个，数完说总数；把物品放进去、拿出来、分一分、摆一摆。不用闪卡，也不把正确率当作能力诊断。",
+        "evidence": "循证综述 5 · 数学启蒙"
+      }
+    ]
+  },
+  "stages": {
+    "eyebrow": "门框上的刻度",
+    "title": "六个阶段，不是一条竞赛跑道",
+    "lede": "像门框上的铅笔线一样，月龄只是一个温柔的参照。拖动纸标签，看看这段时间更适合把什么放回真实生活。",
+    "screenTitle": "这个阶段，屏幕怎么用",
+    "screenStates": {
+      "off": "关屏",
+      "parent": "只给家长看",
+      "coView": "可选共看"
+    },
+    "screenStateLabels": {
+      "none": "家长指引",
+      "optional": "默认关着",
+      "default": "必须共看"
+    },
+    "session": "每次 ≤",
+    "daily": "每天 ≤",
+    "parentSession": "家长看指引 · 每次 ≤",
+    "parentDaily": "家长看指引 · 每天 ≤",
+    "optionalSession": "共看开启时 · 每次 ≤",
+    "optionalDaily": "共看开启时 · 每天 ≤",
+    "minutes": "分钟",
+    "dayShape": "一天的形状",
+    "dayShapeNote": "整圈代表 12 小时清醒时间；屏幕按真实比例画成细弧，其余生活段均分展示，仅作示意。",
+    "dayShapeScreen": "屏幕 ≤",
+    "wakingHours": "12 小时",
+    "focus": "这段时间可以留意",
+    "themes": "主题索引",
+    "showTheme": "展开主题",
+    "offlineFocus": "屏幕外可以做",
+    "postcard": "示例课明信片",
+    "readMore": "看这节课",
+    "stageLabel": "阶段",
+    "sliderHint": "用键盘上下方向键移动阶段标记",
+    "noChildScreen": "宝宝不看孩子侧课程。家长先读，屏幕外使用实体卡、纸书和真实物品。",
+    "optionalChildScreen": "共看默认关闭；如主动开启，每次短一些、家长全程在旁，也可以只用家长指引。",
+    "defaultChildScreen": "可以选短共看，但必须家长陪同；也可以完全不看。看完马上回到线下活动。",
+    "lessons": "节课",
+    "parentLessons": "家长指引",
+    "childLessons": "亲子共看",
+    "illustrative": "示意"
+  },
+  "lesson": {
+    "eyebrow": "一节课，大部分发生在屏幕外",
+    "title": "把「嘀嘀叭叭」展开看看",
+    "lede": "这是一节家长指引课：屏幕上先读懂怎么做，真正的课程发生在安全处看车、回家找卡和说话的停顿里。",
+    "parentFirst": "家长先读",
+    "parentFirstNote": "先读完，再关屏。",
+    "phrases": "可以这样说",
+    "listen": "听一听",
+    "offline": "屏幕外 10 分钟",
+    "materials": "准备",
+    "steps": "做法",
+    "safety": "安全提示",
+    "levels": "换一种难度",
+    "easier": "更容易",
+    "harder": "更有挑战",
+    "printables": "打印卡",
+    "print": "打印这张卡",
+    "printNote": "打印样式会只留下卡片，适合 A4 / A5 实际大小。",
+    "why": "为什么这样做",
+    "references": "出处",
+    "speechUnavailable": "当前浏览器没有可用的系统语音。",
+    "selectedSource": "示例来自内置课程",
+    "vehicleCards": "交通工具大卡"
+  },
+  "activities": {
+    "eyebrow": "活动插件",
+    "title": "17 个小而有限的入口",
+    "lede": "一个活动只做一件事：在 16:9 的舞台里慢慢呈现，交给家长和孩子一起回应。第三方活动使用带命名空间的 type。",
+    "type": "类型",
+    "age": "适用",
+    "pluginGuide": "阅读插件开发指南",
+    "descriptions": {
+      "contrast": "黑白或黑白红的慢慢看",
+      "word-cards": "一张一张看真实词语",
+      "peekaboo": "遮住一点，再一起发现",
+      "bubbles": "点破有限的泡泡，看看里面",
+      "count": "点一个说一个，数完说总数",
+      "subitize": "短暂看一眼小数量",
+      "choose": "在大目标里指认一个",
+      "sort": "按一个特点把东西放一起",
+      "sequence": "把生活步骤慢慢排开",
+      "pattern": "发现重复的两样或三样",
+      "story": "一页一页读，留出提问",
+      "song": "给家长学唱，再关屏唱",
+      "movement": "把一个词放进身体动作",
+      "calm": "一起慢下来，不要求完成",
+      "video": "短、写实、没有自动连播",
+      "web": "在隔离的外部页面里做一件事",
+      "guide": "家长读完，去做真实活动"
+    }
+  },
+  "home": {
+    "eyebrow": "在你家里运行",
+    "title": "一台小服务器，把设备留在家里",
+    "lede": "客厅的大屏不需要认识互联网。Mac、NAS 或小主机在家庭局域网里提供播放端，手机只在家长需要时打开后台。",
+    "server": "Mac / NAS",
+    "serverDetail": "@sprout/server :4310",
+    "tv": "客厅电视",
+    "tvDetail": "播放端",
+    "tablet": "沙发上的 iPad",
+    "tabletDetail": "Safari / Capacitor",
+    "phone": "家长手机",
+    "phoneDetail": "后台",
+    "points": [
+      {
+        "title": "局域网运行",
+        "body": "服务端默认监听 4310，电视、iPad 和后台在同一个家庭网络里使用。"
+      },
+      {
+        "title": "数据留在家里",
+        "body": "服务器用本地 SQLite 保存家庭数据；离线体验的记录留在当前设备。"
+      },
+      {
+        "title": "6 位配对码",
+        "body": "播放端申请 6 位数字配对码，10 分钟有效；设备 token 不放在网页里。"
+      },
+      {
+        "title": "没有服务器也能开始",
+        "body": "播放端内置 sprout.core 内容包，可以先离线体验，再决定是否连接家庭服务器。"
+      }
+    ],
+    "docs": {
+      "docker": "Docker 部署",
+      "macos": "macOS 自启动",
+      "android": "Android TV",
+      "ipad": "iPad / Safari"
+    }
+  },
+  "try": {
+    "eyebrow": "试一试 · 电视是关着的",
+    "title": "先按一下电源，再决定看多久",
+    "lede": "打开电视后，可以在浏览器里试用一段安静的演示。数据只保存在本浏览器；没有预录音频，朗读使用浏览器自带语音。",
+    "power": "打开电视",
+    "close": "关电视",
+    "fullscreen": "全屏打开演示",
+    "tip1": "方向键 + Enter = 遥控器",
+    "tip2": "演示版数据只保存在你的浏览器",
+    "tip3": "没有预录音频，朗读使用浏览器自带语音",
+    "iframeTitle": "芽芽成长 Sprout 浏览器演示",
+    "tenMinuteNote": "该关掉屏幕，去玩真的东西啦 🌱",
+    "tenMinuteAction": "好的，关电视",
+    "offLabel": "已关屏"
+  },
+  "evidence": {
+    "eyebrow": "每个取舍都有出处",
+    "title": "像一面借书卡墙，记下我们为什么这样做",
+    "lede": "下面只列循证综述参考文献里的真实来源。卡片上的一句话是产品取舍的简写，不是研究结论的替代品。",
+    "referenceCount": "条参考文献",
+    "source": "来源",
+    "tradeoff": "它让我们做了什么取舍",
+    "readOriginal": "读原文"
+  },
+  "dev": {
+    "eyebrow": "给开发者",
+    "title": "从一颗芽，到一个可运行的 monorepo",
+    "lede": "如果你想一起维护内容或扩展活动，这里把目录边界、启动方式和最小示例放在一起。",
+    "mapTitle": "目录地图",
+    "tabs": {
+      "quickstart": "快速开始",
+      "content": "写一个内容包",
+      "plugin": "写一个活动插件"
+    },
+    "copy": "复制",
+    "copied": "已复制",
+    "release": "下载 v0.0.1",
+    "apk": "Android TV APK",
+    "pack": "内容包 ZIP",
+    "releaseNote": "Android TV 安装包与内容包都在 Release 页。",
+    "license": "许可证",
+    "licenseBody": "站点代码按 MIT 使用；课程内容提供个人、家庭和非商业教育使用，商业使用需作者书面授权。Fluent Emoji 按 MIT，Lucide 按 ISC，本站字体按 OFL-1.1。",
+    "fontCredit": "字体：LXGW WenKai、Fraunces、Nunito，均为本地子集文件。",
+    "badges": ["Node 22", "Fastify", "node:sqlite", "React", "Vite", "Ant Design", "Capacitor", "Zod"]
+  },
+  "faq": {
+    "eyebrow": "常见问题",
+    "title": "把犹豫留在门口，带轻一点进去",
+    "items": [
+      {
+        "q": "会不会让孩子看更多屏幕？",
+        "a": "产品不以延长观看时长为目标。6–17 月龄只给家长看；18–23 月龄共看默认关闭；24–36 月龄也可以完全不看。每节课都有自然结束点和屏幕外活动。"
+      },
+      {
+        "q": "6 个月以下怎么办？",
+        "a": "核心包从 6 月龄开始，没有为 6 月龄以下宝宝设计孩子侧播放入口。可以使用面对面回应、地板互动、抱唱、纸书和儿保专业人员给出的建议。"
+      },
+      {
+        "q": "家庭数据存在哪里？",
+        "a": "连接服务器时，家庭数据保存在运行 @sprout/server 的设备本地 SQLite；离线体验的记录只在当前设备。"
+      },
+      {
+        "q": "为什么仓库里没有朗读录音？",
+        "a": "公开仓库不附带 macOS 系统合成声音，因为相关许可禁止公开再分发。没有预录音频时，页面使用浏览器自带的 Web Speech API；正式产品可以本地生成或接入获授权的 TTS。"
+      },
+      {
+        "q": "免费吗、能商用吗？",
+        "a": "代码按 MIT；课程内容的个人、家庭、非商业使用按 CC BY-NC 4.0 条款，商业使用需作者书面授权。第三方素材按自己的许可执行。"
+      },
+      {
+        "q": "这是医疗建议吗？",
+        "a": "不是。芽芽成长不是医疗设备、治疗工具或发育诊断工具；里程碑只用于日常观察和与专业人员沟通。持续担忧或出现能力倒退时，请咨询儿科或儿保医生。"
+      }
+    ]
+  },
+  "footer": {
+    "disclaimer": "非医疗设备、治疗工具或发育诊断工具；里程碑不用于给孩子打分、排名或下诊断。",
+    "focus": "本站的黄色焦点框，和电视上遥控器选中的样子一样。",
+    "credits": "第三方署名",
+    "license": "许可证",
+    "github": "GitHub",
+    "release": "Release",
+    "docs": "文档",
+    "made": "为慢慢的早晨而做。",
+    "themeOptions": {
+      "light": "亮",
+      "dark": "暗",
+      "system": "跟随系统"
+    }
+  },
+  "stagePolicies": {
+    "s1": "家长看指引，宝宝不看孩子侧课程；读完就用实体卡、纸书和真实物品陪玩。",
+    "s2": "家长看指引，宝宝不看孩子侧课程；读完就用真实物品和面对面互动陪玩。",
+    "s3": "家长看指引，宝宝不看孩子侧课程；读完就回到真实生活和户外观察。",
+    "s4": "共看默认关闭；如主动开启，每次短一些、家长全程在旁，也可以只用家长指引。",
+    "s5": "可以选短共看，但必须家长陪同；也可以完全不看。看完马上回到线下活动。",
+    "s6": "可以选短共看，但必须家长陪同；也可以完全不看。看完马上回到线下活动。"
+  },
+  "lessonVehiclesEn": {
+    "intro": "Read this first. An adult chooses a safe place to notice vehicles. Name one vehicle at a time. When none are nearby, use the large printed cards. There is no need to go to a road or water.",
+    "tips": [
+      "Name one vehicle that is actually in front of you.",
+      "Describe first, then invite your child to look or listen.",
+      "Use English as a short label, never instead of rich conversation."
+    ],
+    "why": "Follow what the child is already noticing. Name it, pause, and wait for a response. Real conversation matters more than vehicle video.",
+    "offlineTitle": "Notice vehicles safely",
+    "materials": ["Large vehicle cards"],
+    "steps": [
+      "Choose a safe place away from traffic and parking entrances.",
+      "Point to one vehicle and say its name slowly.",
+      "Pause for a look, movement, or sound. Keep your voice small.",
+      "At home, choose one printed card at a time."
+    ],
+    "safety": "Stay with the child. Keep away from roads, rails, wheels, doors, and water. Do not use loud recorded vehicle sounds. Close windows and keep away from windowsills and furniture.",
+    "question": "What sound did you hear?",
+    "easier": "Look at one card at home. The adult names it and makes a soft sound.",
+    "harder": "From a safe place, notice two vehicles and name each one.",
+    "phrases": [
+      ["This is a car, beep beep.", "这是汽车，嘀嘀。"],
+      ["The bus is going by.", "公交车开过去了。"],
+      ["Did you hear it?", "你听到了吗？"],
+      ["We stay in a safe place.", "我们站在安全处。"]
+    ]
+  },
+  "rhythmLabels": {
+    "s1": ["Greeting", "Care", "Meals", "Floor play", "Shared look", "Outdoors", "Family time", "Bedtime"],
+    "s2": ["Greeting", "Care", "Free play", "Meals", "Goodbye", "Reading", "Movement", "Bedtime"],
+    "s3": ["Dressing", "Care", "Meals", "Tidy up", "Going out", "Nature", "Songs", "Bedtime"],
+    "s4": ["Colors", "Counting", "Building", "Outdoors", "Compare", "Feelings", "Wash", "Brush teeth"],
+    "s5": ["Weather", "Dress", "Sort", "Count", "Position", "Outside", "Read", "Bedtime"],
+    "s6": ["Routine", "Dress", "Meals", "Count", "Move", "Goodbye", "Nature", "Bedtime"]
+  }
+}

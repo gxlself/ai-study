@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" role="img" aria-label="Breakfast in the morning">
+  <circle cx="62" cy="62" r="28" fill="#F3CE58" stroke="#C5A03E" stroke-width="4"/>
+  <path d="M62 21V8M62 116V103M21 62H8M116 62H103M33 33L24 24M91 33L100 24" stroke="#F08A5D" stroke-width="6" stroke-linecap="round"/>
+  <path d="M49 145H181V183Q181 211 153 211H77Q49 211 49 183Z" fill="#DFF1FB" stroke="#5D9FBE" stroke-width="5"/>
+  <ellipse cx="115" cy="145" rx="66" ry="22" fill="#FFF4D8" stroke="#5D9FBE" stroke-width="5"/>
+  <path d="M183 151Q214 143 214 166Q214 183 187 181" fill="none" stroke="#5D9FBE" stroke-width="12" stroke-linecap="round"/>
+  <path d="M185 86L146 130" stroke="#F08A5D" stroke-width="10" stroke-linecap="round"/>
+  <path d="M143 128L153 122" stroke="#BD674D" stroke-width="5" stroke-linecap="round"/>
+</svg>

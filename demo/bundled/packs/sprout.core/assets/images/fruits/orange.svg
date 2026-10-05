@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" role="img" aria-label="One round sweet orange">
+  <path d="M128 75Q125 56 138 44" fill="none" stroke="#8B6C3E" stroke-width="7" stroke-linecap="round"/>
+  <path d="M133 58Q149 35 185 44Q179 69 149 68Z" fill="#77B77D" stroke="#548E5B" stroke-width="3" stroke-linejoin="round"/>
+  <path d="M143 59L171 50" fill="none" stroke="#548E5B" stroke-width="3" stroke-linecap="round"/>
+  <circle cx="128" cy="143" r="74" fill="#F6A23B" stroke="#D98529" stroke-width="4"/>
+  <path d="M184 100C216 157 171 217 119 213Q180 214 195 164Q203 130 184 100Z" fill="#ED902F"/>
+  <path d="M77 126Q83 103 108 94" fill="none" stroke="#FFD080" stroke-width="10" stroke-linecap="round"/>
+  <path d="M90 166H91M111 182H112M168 147H169M156 188H157M178 170H179" fill="none" stroke="#DE8A2D" stroke-width="4" stroke-linecap="round"/>
+</svg>

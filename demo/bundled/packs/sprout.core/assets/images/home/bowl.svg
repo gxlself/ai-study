@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" role="img" aria-label="One empty bowl">
+  <rect x="98" y="177" width="60" height="17" rx="8" fill="#3F83BE"/>
+  <path d="M42 101C47 156 81 184 128 184S209 156 214 101Z" fill="#5DA9E9" stroke="#3F83BE" stroke-width="4" stroke-linejoin="round"/>
+  <ellipse cx="128" cy="101" rx="86" ry="24" fill="#D8ECFA" stroke="#3F83BE" stroke-width="4"/>
+  <ellipse cx="128" cy="101" rx="71" ry="15" fill="#73B3DF"/>
+  <path d="M69 106Q128 119 187 106Q171 95 128 95T69 106Z" fill="#A9D4F1"/>
+  <path d="M65 135Q75 153 90 161" fill="none" stroke="#8CC4EC" stroke-width="7" stroke-linecap="round"/>
+</svg>

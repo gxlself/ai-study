@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" role="img" aria-label="Waking up in the morning">
+  <circle cx="191" cy="58" r="27" fill="#F3CE58" stroke="#C5A03E" stroke-width="4"/>
+  <path d="M191 20V8M191 108V96M153 58H141M241 58H229M165 32L156 23M217 32L226 23" stroke="#F08A5D" stroke-width="6" stroke-linecap="round"/>
+  <path d="M39 184H214V211H39Z" fill="#5DA9E9" stroke="#3F83BE" stroke-width="5"/>
+  <path d="M54 178Q83 145 126 157Q150 164 169 184" fill="none" stroke="#FFF4D8" stroke-width="25" stroke-linecap="round"/>
+  <circle cx="92" cy="135" r="25" fill="#FFD15C" stroke="#D6A13C" stroke-width="4"/>
+  <path d="M81 128Q92 119 103 128M83 146Q92 154 101 146" fill="none" stroke="#725447" stroke-width="4" stroke-linecap="round"/>
+  <path d="M116 156L137 128M137 128L139 153" fill="none" stroke="#FFD15C" stroke-width="12" stroke-linecap="round"/>
+</svg>

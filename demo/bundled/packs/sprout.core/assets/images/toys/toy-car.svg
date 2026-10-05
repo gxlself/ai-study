@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" role="img" aria-label="A rounded wooden toy car">
+  <path d="M43 139Q43 130 57 126L80 121L94 91Q98 82 110 82H150Q163 82 171 94L188 121L207 129Q215 132 215 142V166Q215 176 204 176H51Q41 176 41 166Z" fill="#F2A15F" stroke="#B97C45" stroke-width="5" stroke-linejoin="round"/>
+  <path d="M107 98H123V120H95ZM136 98H149Q154 98 158 104L169 120H136Z" fill="#DFF1FB" stroke="#B97C45" stroke-width="4" stroke-linejoin="round"/>
+  <path d="M54 148H201" fill="none" stroke="#F7C788" stroke-width="8" stroke-linecap="round"/>
+  <circle cx="80" cy="172" r="25" fill="#77B77D" stroke="#4E8655" stroke-width="5"/>
+  <circle cx="177" cy="172" r="25" fill="#77B77D" stroke="#4E8655" stroke-width="5"/>
+  <circle cx="80" cy="172" r="8" fill="#FFFDF8"/>
+  <circle cx="177" cy="172" r="8" fill="#FFFDF8"/>
+</svg>

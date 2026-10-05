@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" role="img" aria-label="Two feet gently stamping">
+  <path d="M63 63Q77 49 98 58Q113 65 115 87L111 164Q108 183 88 187L60 187Q46 184 47 169Z" fill="#FFD15C" stroke="#D6A13C" stroke-width="5" stroke-linejoin="round"/>
+  <path d="M148 63Q162 49 183 58Q198 65 200 87L196 164Q193 183 173 187L145 187Q131 184 132 169Z" fill="#F08A5D" stroke="#BD674D" stroke-width="5" stroke-linejoin="round"/>
+  <path d="M39 204L27 217M54 211L48 227M110 211L116 227M217 204L229 217M202 211L208 227M146 211L140 227" stroke="#F2B134" stroke-width="7" stroke-linecap="round"/>
+  <path d="M67 92V151M152 92V151" stroke="#FFF4D8" stroke-width="6" stroke-linecap="round" opacity=".8"/>
+</svg>

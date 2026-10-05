@@ -1,0 +1,1826 @@
+<!doctype html>
+<html lang="zh-CN" data-page="zh">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#fdf6ec">
+    <meta name="description" content="给 6 个月到 3 岁家庭的开源亲子共学工具。屏幕只开个头，成长发生在家长的回应、真实物品、游戏、阅读、歌唱和户外里。">
+    <meta name="robots" content="index,follow">
+    <title>芽芽成长 Sprout · 屏幕只做引子</title>
+    <link rel="canonical" href="https://gxlself.github.io/ai-study/">
+    <link rel="alternate" hreflang="zh-CN" href="https://gxlself.github.io/ai-study/">
+    <link rel="alternate" hreflang="en" href="https://gxlself.github.io/ai-study/en/">
+    <link rel="alternate" hreflang="x-default" href="https://gxlself.github.io/ai-study/">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="芽芽成长 Sprout">
+    <meta property="og:locale" content="zh_CN">
+    <meta property="og:title" content="芽芽成长 Sprout · 屏幕只做引子">
+    <meta property="og:description" content="给 6 个月到 3 岁家庭的开源亲子共学工具。屏幕只开个头，成长发生在家长的回应、真实物品、游戏、阅读、歌唱和户外里。">
+    <meta property="og:url" content="https://gxlself.github.io/ai-study/">
+    <meta property="og:image" content="https://gxlself.github.io/ai-study/assets/og.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="芽芽成长 Sprout · 屏幕只做引子">
+    <meta name="twitter:description" content="给 6 个月到 3 岁家庭的开源亲子共学工具。屏幕只开个头，成长发生在家长的回应、真实物品、游戏、阅读、歌唱和户外里。">
+    <meta name="twitter:image" content="https://gxlself.github.io/ai-study/assets/og.png">
+    <link rel="icon" href="./assets/favicon.svg" type="image/svg+xml">
+    <link rel="apple-touch-icon" href="./assets/apple-touch-icon.png" sizes="180x180">
+    <link rel="manifest" href="./assets/site.webmanifest">
+    <link rel="preload" href="./assets/fonts/lxgw-wenkai-subset.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="./assets/fonts/fraunces-soft.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="stylesheet" href="./assets/site.css">
+    <script type="application/ld+json">{"@context":"https://schema.org","@type":"SoftwareApplication","name":"芽芽成长 Sprout","applicationCategory":"EducationalApplication","operatingSystem":"Web, Android, iOS","isAccessibleForFree":true,"offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"description":"给 6 个月到 3 岁家庭的开源亲子共学工具。屏幕只开个头，成长发生在家长的回应、真实物品、游戏、阅读、歌唱和户外里。","url":"https://gxlself.github.io/ai-study/","softwareVersion":"0.0.1","license":"https://github.com/gxlself/ai-study/blob/main/LICENSE"}</script>
+    <script defer src="./assets/site.js"></script>
+  </head>
+  <body>
+    <a class="skip-link" href="#main-content">跳到主要内容</a>
+    <div class="page-grain" aria-hidden="true"></div>
+    <header class="site-header" data-header>
+      <div class="header-inner">
+        <a class="brand" href="./" aria-label="芽芽成长 Sprout">
+          <span class="brand-mark" aria-hidden="true">
+            <svg viewBox="0 0 42 42" width="42" height="42">
+              <path d="M21 35c-.8-8 .2-13.7 4-18.8" fill="none" stroke="currentColor" stroke-width="2.8" stroke-linecap="round"/>
+              <path d="M21.2 23.8C14.6 23.8 9.2 19.1 9.5 13c6.7-.9 12.8 3 11.7 10.8Z" fill="#98c968" stroke="currentColor" stroke-width="1.3" stroke-linejoin="round"/>
+              <path d="M23 20.9C22.5 13.4 27.5 8 34.2 8.4c.7 6.4-4.3 12.8-11.2 12.5Z" fill="#77b77d" stroke="currentColor" stroke-width="1.3" stroke-linejoin="round"/>
+            </svg>
+            <span class="brand-leaves" data-brand-leaves aria-hidden="true"></span>
+          </span>
+          <span class="brand-name"><strong>芽芽成长</strong><span>Sprout</span></span>
+        </a>
+        <nav class="desktop-nav" aria-label="主导航">
+          <a href="#principles">理念</a>
+          <a href="#stages">成长阶段</a>
+          <a href="#lesson">一节课</a>
+          <a href="#activities">活动</a>
+          <a href="#home">在家运行</a>
+          <a href="#try">试一试</a>
+          <a href="#developers">开发者</a>
+        </nav>
+        <div class="header-actions">
+          <a class="language-switch" href="./en/" lang="en" aria-label="Switch to English">EN</a>
+          <div class="theme-control">
+            <button class="icon-button" type="button" data-theme-toggle aria-expanded="false" aria-controls="theme-options" aria-label="主题">
+              <span class="theme-glyph" aria-hidden="true">◐</span>
+            </button>
+            <div class="theme-options" id="theme-options" hidden>
+              <button type="button" data-theme-value="light">亮</button>
+              <button type="button" data-theme-value="dark">暗</button>
+              <button type="button" data-theme-value="system">跟随系统</button>
+            </div>
+          </div>
+          <a class="header-github" href="https://github.com/gxlself/ai-study" target="_blank" rel="noreferrer">
+            <span aria-hidden="true">↗</span><span>GitHub</span>
+          </a>
+          <button class="menu-button" type="button" data-menu-toggle aria-expanded="false" aria-controls="mobile-menu" aria-label="打开菜单">
+            <span></span><span></span><span></span>
+          </button>
+        </div>
+      </div>
+      <div class="mobile-menu" id="mobile-menu" data-mobile-menu hidden>
+        <nav aria-label="主导航">
+          <a href="#principles">理念</a>
+          <a href="#stages">成长阶段</a>
+          <a href="#lesson">一节课</a>
+          <a href="#activities">活动</a>
+          <a href="#home">在家运行</a>
+          <a href="#try">试一试</a>
+          <a href="#developers">开发者</a>
+        </nav>
+        <div class="mobile-menu-footer">
+          <a href="./en/" lang="en">EN</a>
+          <a href="https://github.com/gxlself/ai-study" target="_blank" rel="noreferrer">GitHub ↗</a>
+        </div>
+      </div>
+    </header>
+    <main id="main-content">
+      
+    <section class="hero-section section-band" id="top">
+      <div class="hero-inner">
+        <div class="hero-copy">
+          <p class="eyebrow">开源亲子共学工具 · 6 个月–3 岁</p>
+          <h1 class="balanced-title"><span class="nobr">屏幕只做引子，</span><span class="nobr">成长发生</span><span class="nobr">在你们之间。</span></h1>
+          <p class="hero-lede">看一会儿提示，放下屏幕，一起玩一会儿。给家长看的慢课程、可打印的实体卡和真实生活里的小活动，陪你把电视关掉。</p>
+          <div class="hero-actions">
+            <a class="button button-primary" href="#try"><svg class="icon " viewBox="0 0 24 24" aria-hidden="true" focusable="false" ><path d="M5 12h13M13 6l6 6-6 6"/></svg> 在浏览器里试试</a>
+            <a class="button button-quiet" href="https://github.com/gxlself/ai-study" target="_blank" rel="noreferrer"><svg class="icon " viewBox="0 0 24 24" aria-hidden="true" focusable="false" ><path d="M14 4h6v6M20 4l-9 9"/><path d="M18 14v5H5V6h5"/></svg> GitHub 源码</a>
+          </div>
+          <p class="hero-meta">v0.0.1 · 开源 · 局域网运行 · 无广告</p>
+          <div class="hero-stat-line" aria-label="96 节课, 6 阶段, 17 17 个小而有限的入口">
+            <span><strong>96</strong> 节课</span>
+            <span><strong>6</strong> 阶段</span>
+            <span><strong>17</strong> 个活动</span>
+          </div>
+        </div>
+        
+  <div class="hero-art-wrap">
+    <div class="hero-art-note"><span class="dot"></span> 一台电视亮起，一颗芽从屏幕里长出来，随后电视关掉，家长和孩子回到生活里。</div>
+    <div class="hero-scene-frame">
+      <svg class="hero-scene" viewBox="0 0 620 460" role="img" aria-label="一台电视亮起，一颗芽从屏幕里长出来，随后电视关掉，家长和孩子回到生活里。" data-hero-scene>
+        <defs>
+          <linearGradient id="hero-wall" x1="0" x2="0" y1="0" y2="1">
+            <stop offset="0" stop-color="#fffaf2"/>
+            <stop offset="1" stop-color="#f3ead9"/>
+          </linearGradient>
+          <linearGradient id="hero-floor" x1="0" x2="1" y1="0" y2="1">
+            <stop offset="0" stop-color="#eadbc1"/>
+            <stop offset="1" stop-color="#d8c29f"/>
+          </linearGradient>
+          <radialGradient id="hero-glow">
+            <stop offset="0" stop-color="#ffc93c" stop-opacity=".72"/>
+            <stop offset=".7" stop-color="#ffc93c" stop-opacity=".18"/>
+            <stop offset="1" stop-color="#ffc93c" stop-opacity="0"/>
+          </radialGradient>
+          <filter id="hero-soft"><feGaussianBlur stdDeviation="14"/></filter>
+        </defs>
+        <rect class="hero-wall" width="620" height="460" rx="28" fill="url(#hero-wall)"/>
+        <path class="hero-floor" d="M0 352 620 314v146H0Z" fill="url(#hero-floor)"/>
+        <path d="M0 354 620 316" fill="none" stroke="#c9ae83" stroke-width="2" stroke-dasharray="7 12" opacity=".55"/>
+        <circle class="hero-glow" cx="323" cy="260" r="155" fill="url(#hero-glow)" filter="url(#hero-soft)"/>
+        <g class="hero-stars" aria-hidden="true">
+          <circle cx="76" cy="82" r="2.5" fill="#ffc93c"/><circle cx="116" cy="117" r="1.8" fill="#fffaf2"/>
+          <circle cx="571" cy="84" r="2" fill="#ffc93c"/><circle cx="592" cy="126" r="1.6" fill="#fffaf2"/>
+          <path d="m79 147 3 7 7 3-7 3-3 7-3-7-7-3 7-3Z" fill="#ffc93c"/>
+        </g>
+        <g class="hero-lamp" transform="translate(35 0)">
+          <path d="M535 292v-104" fill="none" stroke="#6a5a45" stroke-width="8" stroke-linecap="round"/>
+          <path d="M511 184q24-30 48 0l-8 16h-32Z" fill="#f4c36a" stroke="#6a5a45" stroke-width="4"/>
+          <path d="M520 198h30l17 80h-64Z" fill="#ffdb83" opacity=".65"/>
+          <ellipse cx="535" cy="291" rx="42" ry="8" fill="#6a5a45" opacity=".35"/>
+        </g>
+        <g class="hero-cabinet">
+          <path d="M118 332h282l-14 91H132Z" fill="#8a5f3b" stroke="#67472f" stroke-width="5"/>
+          <path d="M106 332h310l-12 18H114Z" fill="#b47a4c" stroke="#67472f" stroke-width="5"/>
+          <path d="M155 351h210" stroke="#d69c64" stroke-width="4" opacity=".45"/>
+          <circle cx="193" cy="387" r="15" fill="#5b412d"/>
+          <circle cx="335" cy="387" r="15" fill="#5b412d"/>
+        </g>
+        <g class="hero-tv">
+          <rect x="136" y="178" width="246" height="157" rx="28" fill="#66806a" stroke="#3b3226" stroke-width="6"/>
+          <rect x="153" y="195" width="183" height="119" rx="17" class="hero-tv-screen"/>
+          <path d="M173 216q43-20 99 0" fill="none" stroke="#fffaf2" stroke-width="6" opacity=".2" class="screen-reflection"/>
+          <text x="322" y="301" text-anchor="end" class="screen-off-text">已关屏</text>
+          <circle cx="355" cy="240" r="12" fill="#f2b134" stroke="#3b3226" stroke-width="4"/>
+          <path d="M355 232v16" stroke="#3b3226" stroke-width="3" stroke-linecap="round"/>
+          <path d="M350 322h22M354 322v17M368 322v17" fill="none" stroke="#3b3226" stroke-width="5" stroke-linecap="round"/>
+        </g>
+        <g class="hero-sprout">
+          <path d="M296 198C290 168 296 142 315 111c17-28 23-54 14-84" fill="none" stroke="#6c9a3b" stroke-width="8" stroke-linecap="round"/>
+          <path d="M298 177c-29-5-45-27-41-48 25-2 46 17 41 48Z" fill="#98c968" stroke="#548e5b" stroke-width="4"/>
+          <path d="M307 148c4-29 24-47 49-44 2 26-16 46-49 44Z" fill="#77b77d" stroke="#548e5b" stroke-width="4"/>
+          <path d="M267 141c-18-16-19-37-5-50 18 7 22 28 5 50Z" fill="#98c968" stroke="#548e5b" stroke-width="4"/>
+          <path d="M278 91c7-16 22-24 36-18-2 17-15 26-36 18Z" fill="#77b77d" stroke="#548e5b" stroke-width="4"/>
+          <path d="m279 78 7-11 8 11-8 13Z" fill="#f08a5d" stroke="#a45a3e" stroke-width="3"/>
+          <path d="M279 73v-9M275 70l-4-5M284 70l5-5" fill="none" stroke="#f08a5d" stroke-width="2.5" stroke-linecap="round"/>
+        </g>
+        <ellipse class="hero-rug" cx="485" cy="414" rx="124" ry="20" fill="#e6f4d7" opacity=".8"/>
+        <g class="hero-basket" transform="translate(-36 0)">
+          <path d="M438 363q22-39 70 0l-8 42h-54Z" fill="#b47a4c" stroke="#67472f" stroke-width="4"/>
+          <path d="M445 365q29-36 56 0" fill="none" stroke="#67472f" stroke-width="5"/>
+          <circle cx="465" cy="368" r="15" fill="#e85d4d" stroke="#9b3f38" stroke-width="3"/>
+          <circle cx="493" cy="370" r="12" fill="#5da9e9" stroke="#386b9b" stroke-width="3"/>
+          <rect x="460" y="387" width="39" height="11" rx="4" fill="#f5d28a" transform="rotate(9 460 387)"/>
+          <path d="M508 390h18v23h-18z" fill="#e6f4d7" stroke="#6c9a3b" stroke-width="3"/>
+          <path d="m512 395 9 0M512 401h9" stroke="#6c9a3b" stroke-width="2"/>
+        </g>
+        <g class="hero-people" transform="translate(92 0)">
+          <circle cx="383" cy="334" r="20" fill="#f0c6a4" stroke="#3b3226" stroke-width="4"/>
+          <path d="M350 407q6-66 33-66t36 66Z" fill="#f08a5d" stroke="#3b3226" stroke-width="5"/>
+          <circle cx="419" cy="363" r="14" fill="#f0c6a4" stroke="#3b3226" stroke-width="3"/>
+          <path d="M396 420q4-52 24-52t26 52Z" fill="#5da9e9" stroke="#3b3226" stroke-width="4"/>
+          <path d="M355 410q26 18 61 4M406 418q22 10 47 1" fill="none" stroke="#3b3226" stroke-width="4" stroke-linecap="round"/>
+          <circle cx="379" cy="338" r="3" fill="#f08a5d" opacity=".7"/>
+          <circle cx="424" cy="366" r="2.5" fill="#f08a5d" opacity=".7"/>
+        </g>
+      </svg>
+      <button class="art-replay" type="button" data-replay-hero><svg class="icon " viewBox="0 0 24 24" aria-hidden="true" focusable="false" ><path d="m12 3 1.8 5.2L19 10l-5.2 1.8L12 17l-1.8-5.2L5 10l5.2-1.8L12 3Z"/></svg> 再看一次</button>
+    </div>
+  </div>
+      </div>
+      
+    <div class="ratio-block">
+      <div class="ratio-labels"><span><i class="ratio-screen"></i>屏幕 <b>2 分钟</b></span><span><i class="ratio-outside"></i>屏幕外 <b>10 分钟</b></span></div>
+      <div class="ratio-track" role="img" aria-label="屏幕 2 分钟; 屏幕外 10 分钟">
+        <span class="ratio-fill ratio-fill-screen" style="--ratio:16.7%"></span><span class="ratio-fill ratio-fill-outside"></span>
+      </div>
+      <p class="micro-note">比例取自内置课程《嘀嘀叭叭》： 2 分钟 屏幕 / 10 分钟 屏幕外。</p>
+    </div>
+    </section>
+  
+  <section class="section-band paper-band" id="principles">
+    <div class="content-wrap">
+      
+  <div class="section-heading">
+    <p class="eyebrow">先把方向放在桌上</p>
+    <h2 class="section-title balanced-title"><span class="nobr">五件事，</span><span class="nobr">装进五袋种子</span></h2>
+    <p class="section-lede">每一袋都很小：打开它，读完，放下屏幕，把话题带回家里的物品、声音和关系。</p>
+  </div>
+      <div class="seed-grid">
+        
+              <article class="seed-packet">
+                <button type="button" class="seed-button" aria-expanded="false" aria-controls="seed-panel-0" data-seed-toggle>
+                  <span class="seed-fold" aria-hidden="true"></span>
+                  <span class="seed-number">01</span>
+                  <svg class="seed-art" viewBox="0 0 64 54" aria-hidden="true"><circle cx="24" cy="23" r="10" fill="#f0c6a4" stroke="currentColor" stroke-width="2"/><circle cx="42" cy="27" r="7" fill="#f0c6a4" stroke="currentColor" stroke-width="2"/><path d="M12 47q4-14 16-14t16 14M35 47q3-10 12-10t11 10" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"/></svg>
+                  <span class="seed-label">真人互动</span>
+                  <span class="seed-plus" aria-hidden="true">+</span>
+                </button>
+                <div class="seed-panel" id="seed-panel-0" hidden>
+                  <h3>真人互动优先于被动观看</h3>
+                  <p>宝宝正在看的东西，值得一个真实的人命名、停顿、等待和回应。屏幕不是关系的替身。</p>
+                  <a href="https://github.com/gxlself/ai-study/blob/main/docs/research/evidence-review.md#31-视频缺陷--迁移缺陷强" target="_blank" rel="noreferrer">看证据 <span aria-hidden="true">↗</span></a>
+                </div>
+              </article>
+              <article class="seed-packet">
+                <button type="button" class="seed-button" aria-expanded="false" aria-controls="seed-panel-1" data-seed-toggle>
+                  <span class="seed-fold" aria-hidden="true"></span>
+                  <span class="seed-number">02</span>
+                  <svg class="seed-art" viewBox="0 0 64 54" aria-hidden="true"><path d="M13 12h38v35H13z" fill="#fffaf2" stroke="currentColor" stroke-width="2"/><path d="M20 20h22M20 27h15M20 34h19" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><path d="m44 9 7 7" stroke="#f08a5d" stroke-width="3" stroke-linecap="round"/></svg>
+                  <span class="seed-label">先给大人</span>
+                  <span class="seed-plus" aria-hidden="true">+</span>
+                </button>
+                <div class="seed-panel" id="seed-panel-1" hidden>
+                  <h3>6–17 月龄不给宝宝播放孩子侧课程</h3>
+                  <p>这一段看的是家长指引：读完就放下设备，用打印卡、纸书和真实物品陪玩。18–23 月龄共看默认关闭；24–36 月龄也可以完全不看。</p>
+                  <a href="https://github.com/gxlself/ai-study/blob/main/docs/research/evidence-review.md#91-总体定位" target="_blank" rel="noreferrer">看证据 <span aria-hidden="true">↗</span></a>
+                </div>
+              </article>
+              <article class="seed-packet">
+                <button type="button" class="seed-button" aria-expanded="false" aria-controls="seed-panel-2" data-seed-toggle>
+                  <span class="seed-fold" aria-hidden="true"></span>
+                  <span class="seed-number">03</span>
+                  <svg class="seed-art" viewBox="0 0 64 54" aria-hidden="true"><path d="M13 29h14M35 21h15M35 37h13" stroke="currentColor" stroke-width="3" stroke-linecap="round"/><circle cx="10" cy="29" r="4" fill="#f08a5d"/><circle cx="32" cy="21" r="4" fill="#5da9e9"/><circle cx="32" cy="37" r="4" fill="#6c9a3b"/></svg>
+                  <span class="seed-label">回合对话</span>
+                  <span class="seed-plus" aria-hidden="true">+</span>
+                </button>
+                <div class="seed-panel" id="seed-panel-2" hidden>
+                  <h3>亲子对话比“听得更多”更重要</h3>
+                  <p>看见孩子正在关注的东西，命名，停一下，接住目光、动作、手势或声音，再把话题放回生活。</p>
+                  <a href="https://github.com/gxlself/ai-study/blob/main/docs/research/evidence-review.md#4-语言中文母语--英语启蒙" target="_blank" rel="noreferrer">看证据 <span aria-hidden="true">↗</span></a>
+                </div>
+              </article>
+              <article class="seed-packet">
+                <button type="button" class="seed-button" aria-expanded="false" aria-controls="seed-panel-3" data-seed-toggle>
+                  <span class="seed-fold" aria-hidden="true"></span>
+                  <span class="seed-number">04</span>
+                  <svg class="seed-art" viewBox="0 0 64 54" aria-hidden="true"><path d="M25 46c-9-13-18-15-15-25 2-7 11-5 15 2 4-7 13-9 15-2 3 10-6 12-15 25Z" fill="#98c968" stroke="currentColor" stroke-width="2"/><path d="M29 15c6-8 13-6 17-1-5 6-10 7-17 1Z" fill="#77b77d" stroke="currentColor" stroke-width="2"/></svg>
+                  <span class="seed-label">中文为主</span>
+                  <span class="seed-plus" aria-hidden="true">+</span>
+                </button>
+                <div class="seed-panel" id="seed-panel-3" hidden>
+                  <h3>中文自然交流是主干，英语是可选补充</h3>
+                  <p>双语不是比赛。每种语言都需要真实、足量、自然的输入；不熟练的英语或录播音频不能替代高质量中文交流。</p>
+                  <a href="https://github.com/gxlself/ai-study/blob/main/docs/research/evidence-review.md#4-语言中文母语--英语启蒙" target="_blank" rel="noreferrer">看证据 <span aria-hidden="true">↗</span></a>
+                </div>
+              </article>
+              <article class="seed-packet">
+                <button type="button" class="seed-button" aria-expanded="false" aria-controls="seed-panel-4" data-seed-toggle>
+                  <span class="seed-fold" aria-hidden="true"></span>
+                  <span class="seed-number">05</span>
+                  <svg class="seed-art" viewBox="0 0 64 54" aria-hidden="true"><circle cx="17" cy="39" r="6" fill="#d8b07b" stroke="currentColor" stroke-width="2"/><circle cx="32" cy="39" r="6" fill="#d8b07b" stroke="currentColor" stroke-width="2"/><circle cx="47" cy="39" r="6" fill="#d8b07b" stroke="currentColor" stroke-width="2"/><path d="M17 25v9M32 21v13M47 25v9" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+                  <span class="seed-label">生活数学</span>
+                  <span class="seed-plus" aria-hidden="true">+</span>
+                </button>
+                <div class="seed-panel" id="seed-panel-4" hidden>
+                  <h3>数学从数量、空间和规律的日常对话开始</h3>
+                  <p>点一件，说一个，数完说总数；把物品放进去、拿出来、分一分、摆一摆。不用闪卡，也不把正确率当作能力诊断。</p>
+                  <a href="https://github.com/gxlself/ai-study/blob/main/docs/research/evidence-review.md#5-数学启蒙" target="_blank" rel="noreferrer">看证据 <span aria-hidden="true">↗</span></a>
+                </div>
+              </article>
+      </div>
+      <p class="source-note"><span class="source-dot"></span>内置内容包含 96 节课、6 个阶段、17 个活动和 254 条词条。</p>
+    </div>
+  </section>
+  
+  <section class="section-band" id="stages">
+    <div class="content-wrap">
+      
+  <div class="section-heading">
+    <p class="eyebrow">门框上的刻度</p>
+    <h2 class="section-title balanced-title"><span class="nobr">六个阶段，</span><span class="nobr">不是一条竞赛跑道</span></h2>
+    <p class="section-lede">像门框上的铅笔线一样，月龄只是一个温柔的参照。拖动纸标签，看看这段时间更适合把什么放回真实生活。</p>
+  </div>
+      <div class="stage-browser">
+        
+  <div class="stage-scale" data-stage-scale>
+    <div class="scale-rail" aria-hidden="true"></div>
+    
+          <button class="scale-tick is-current" type="button" data-stage-select="s1" style="--tick-index:0" aria-label="阶段 S1 · 6–8 月龄">
+            <span class="tick-line"></span>
+            <span class="tick-label">6 月</span>
+            <span class="tick-title">感知世界</span>
+          </button>
+          <button class="scale-tick " type="button" data-stage-select="s2" style="--tick-index:1" aria-label="阶段 S2 · 9–11 月龄">
+            <span class="tick-line"></span>
+            <span class="tick-label">9 月</span>
+            <span class="tick-title">互动探索</span>
+          </button>
+          <button class="scale-tick " type="button" data-stage-select="s3" style="--tick-index:2" aria-label="阶段 S3 · 12–17 月龄">
+            <span class="tick-line"></span>
+            <span class="tick-label">12 月</span>
+            <span class="tick-title">词语萌芽</span>
+          </button>
+          <button class="scale-tick " type="button" data-stage-select="s4" style="--tick-index:3" aria-label="阶段 S4 · 18–23 月龄">
+            <span class="tick-line"></span>
+            <span class="tick-label">18 月</span>
+            <span class="tick-title">语言爆发</span>
+          </button>
+          <button class="scale-tick " type="button" data-stage-select="s5" style="--tick-index:4" aria-label="阶段 S5 · 24–29 月龄">
+            <span class="tick-line"></span>
+            <span class="tick-label">24 月</span>
+            <span class="tick-title">小小思考者</span>
+          </button>
+          <button class="scale-tick " type="button" data-stage-select="s6" style="--tick-index:5" aria-label="阶段 S6 · 30–36 月龄">
+            <span class="tick-line"></span>
+            <span class="tick-label">30 月</span>
+            <span class="tick-title">准备入园</span>
+          </button>
+    <button
+      class="stage-marker"
+      type="button"
+      role="slider"
+      tabindex="0"
+      data-stage-slider
+      aria-valuemin="0"
+      aria-valuemax="5"
+      aria-valuenow="0"
+      aria-valuetext="感知世界 · 6–8 月龄"
+      aria-label="用键盘上下方向键移动阶段标记"
+    >
+      <span class="marker-paper"><svg class="icon " viewBox="0 0 24 24" aria-hidden="true" focusable="false" ><path d="m12 3 1.8 5.2L19 10l-5.2 1.8L12 17l-1.8-5.2L5 10l5.2-1.8L12 3Z"/></svg><span aria-hidden="true"></span></span>
+    </button>
+  </div>
+        <div class="stage-panels">
+          
+    <article class="stage-panel is-active" data-stage-panel="s1" >
+      <div class="stage-panel-top">
+        <div>
+          <div class="kicker-row"><span class="stage-pill">S1</span><span>6–8 月龄</span></div>
+          <h3>感知世界</h3>
+          <p class="stage-subtitle">6～8个月，面对面慢慢玩</p>
+        </div>
+        <div class="stage-count">
+          <strong>12</strong>
+          <span>节课</span>
+        </div>
+      </div>
+      <div class="stage-grid">
+        <div class="stage-column">
+          <div class="subsection-label">这个阶段，屏幕怎么用</div>
+          
+    <div class="screen-states" aria-label="这个阶段，屏幕怎么用">
+      
+            <div class="screen-state is-active">
+              <span class="mini-tv" aria-hidden="true"><span>◌</span></span>
+              <span>关屏</span>
+            </div>
+            <div class="screen-state ">
+              <span class="mini-tv" aria-hidden="true"><span>◐</span></span>
+              <span>只给家长看</span>
+            </div>
+            <div class="screen-state ">
+              <span class="mini-tv" aria-hidden="true"><span>◉</span></span>
+              <span>可选共看</span>
+            </div>
+    </div>
+          <p class="screen-policy">家长看指引，宝宝不看孩子侧课程；读完就用实体卡、纸书和真实物品陪玩。</p>
+          <div class="limit-row">
+            <span><b>家长看指引 · 每次 ≤</b> 3 分钟</span>
+            <span><b>家长看指引 · 每天 ≤</b> 10 分钟</span>
+          </div>
+          <div class="audience-counts">
+            <span>12 家长指引</span>
+            <span>0 亲子共看</span>
+          </div>
+        </div>
+        <div class="stage-column day-shape">
+          <div class="subsection-label">一天的形状</div>
+          
+    <div class="rhythm-wrap">
+      <figure class="rhythm-figure">
+        <svg class="rhythm-ring" viewBox="0 0 220 236" role="img" aria-label="一天的示意环：整圈是 12 小时清醒时间，屏幕上限 10 分钟，占 1.4%，其余是屏幕外生活。">
+          <circle class="ring-track" cx="110" cy="128" r="78"/>
+          <circle class="ring-seg ring-c0" cx="110" cy="128" r="78" pathLength="360" stroke-dasharray="41.563 360" transform="rotate(-85.000 110 128)"/><circle class="ring-seg ring-c1" cx="110" cy="128" r="78" pathLength="360" stroke-dasharray="41.563 360" transform="rotate(-40.938 110 128)"/><circle class="ring-seg ring-c2" cx="110" cy="128" r="78" pathLength="360" stroke-dasharray="41.563 360" transform="rotate(3.125 110 128)"/><circle class="ring-seg ring-c3" cx="110" cy="128" r="78" pathLength="360" stroke-dasharray="41.563 360" transform="rotate(47.188 110 128)"/><circle class="ring-seg ring-c4" cx="110" cy="128" r="78" pathLength="360" stroke-dasharray="41.563 360" transform="rotate(91.250 110 128)"/><circle class="ring-seg ring-c5" cx="110" cy="128" r="78" pathLength="360" stroke-dasharray="41.563 360" transform="rotate(135.313 110 128)"/><circle class="ring-seg ring-c6" cx="110" cy="128" r="78" pathLength="360" stroke-dasharray="41.563 360" transform="rotate(179.375 110 128)"/><circle class="ring-seg ring-c7" cx="110" cy="128" r="78" pathLength="360" stroke-dasharray="41.563 360" transform="rotate(223.438 110 128)"/>
+          <circle class="ring-screen" cx="110" cy="128" r="78" pathLength="360" stroke-dasharray="5.000 360" transform="rotate(-92.500 110 128)"/>
+          <path class="ring-leader" d="M110 36V20"/>
+          <text class="ring-callout" x="110" y="12" text-anchor="middle">屏幕 ≤ 10 分钟</text>
+          <text class="ring-value" x="110" y="134" text-anchor="middle">1.4%</text>
+          <text class="ring-unit" x="110" y="156" text-anchor="middle">10 分钟 / 12 小时</text>
+        </svg>
+      </figure>
+      <ul class="rhythm-legend">
+        <li><i class="ring-c0"></i>起床</li><li><i class="ring-c1"></i>换尿布或穿衣</li><li><i class="ring-c2"></i>喂养</li><li><i class="ring-c3"></i>清醒地板游戏</li><li><i class="ring-c4"></i>短段陪看</li><li><i class="ring-c5"></i>散步或窗边</li><li><i class="ring-c6"></i>家人相处</li><li><i class="ring-c7"></i>睡前</li>
+      </ul>
+    </div>
+    <p class="micro-note">整圈代表 12 小时清醒时间；屏幕按真实比例画成细弧，其余生活段均分展示，仅作示意。</p>
+        </div>
+      </div>
+      <div class="stage-lower-grid">
+        <div>
+          <div class="subsection-label">这段时间可以留意</div>
+          <ul class="focus-list"><li><span class="check-mark" aria-hidden="true">✓</span><span>熟悉面孔与温柔回应</span></li><li><span class="check-mark" aria-hidden="true">✓</span><span>你来我往的小声音</span></li><li><span class="check-mark" aria-hidden="true">✓</span><span>实体卡的慢慢陪看</span></li><li><span class="check-mark" aria-hidden="true">✓</span><span>短暂遮住与再出现</span></li><li><span class="check-mark" aria-hidden="true">✓</span><span>真人歌声与重复节奏</span></li><li><span class="check-mark" aria-hidden="true">✓</span><span>清醒俯卧与自主够取</span></li></ul>
+        </div>
+        <div>
+          <div class="subsection-label">主题索引</div>
+          <div class="theme-index">
+            
+                  <details class="theme-item">
+                    <summary><span class="theme-number">01</span><span>黑白红的世界</span><span class="summary-caret" aria-hidden="true">+</span></summary>
+                    <div class="theme-body">
+                      <p>用实体卡、熟悉的脸和地垫陪看陪玩。不快速闪卡，不考形状，不要求趴满一次计时。</p>
+                      <ul><li>拿一张实体卡缓慢移动，停下来观察宝宝。</li><li>回应宝宝的目光、笑容和声音，不强求模仿。</li><li>清醒时分次陪趴；未会移动时，每天累计至少30分钟。累了就停。</li></ul>
+                    </div>
+                  </details>
+                  <details class="theme-item">
+                    <summary><span class="theme-number">02</span><span>你好，宝宝</span><span class="summary-caret" aria-hidden="true">+</span></summary>
+                    <div class="theme-body">
+                      <p>用真实家人照片、真人五官和轻声儿歌认识熟悉的生活。按家中实际成员与称呼替换，不要求说词或稳定叫名反应。</p>
+                      <ul><li>优先看真实照片或真人，只说熟悉家人的称呼。</li><li>换衣时先告知，指着自己的五官慢慢命名。</li><li>家长白天学唱，关屏后用人声唱一句、停一下。</li></ul>
+                    </div>
+                  </details>
+                  <details class="theme-item">
+                    <summary><span class="theme-number">03</span><span>躲猫猫</span><span class="summary-caret" aria-hidden="true">+</span></summary>
+                    <div class="theme-body">
+                      <p>先遮一点，再一起发现。用手遮家长的脸、半藏大玩具、看安全镜子。不会找、没有笑都不作为失败。</p>
+                      <ul><li>只遮家长自己的脸，宝宝口鼻始终露着。</li><li>从露出一部分的玩具开始，家长可以帮着揭开。</li><li>用防碎圆角婴儿镜共同看脸，不测试认出自己。</li></ul>
+                    </div>
+                  </details>
+                  <details class="theme-item">
+                    <summary><span class="theme-number">04</span><span>动物的声音</span><span class="summary-caret" aria-hidden="true">+</span></summary>
+                    <div class="theme-body">
+                      <p>用动物实体卡和家长的人声轮流聊、轮流唱。重复熟悉的短歌，并把无屏轻哼融入温柔的晚安流程。</p>
+                      <ul><li>一次一张卡，轻声命名和学叫，停下来接宝宝的声音。</li><li>唱到哪只动物就举起哪张实体卡，不背景播放。</li><li>摇篮曲只在白天给家长学，睡前关屏轻哼。睡眠时仰卧放置在安全婴儿睡眠面。</li></ul>
+                    </div>
+                  </details>
+          </div>
+        </div>
+      </div>
+      <div class="postcard">
+        <div class="postcard-pin" aria-hidden="true"></div>
+        <div class="postcard-head">
+          <span>示例课明信片</span>
+          <span class="postcard-stamp">S1</span>
+        </div>
+        <div class="postcard-body">
+          <div>
+            <h4>黑白卡片追视</h4>
+            <p class="english-line">Follow a Black-and-White Card</p>
+            <p>慢慢移，停下来。</p>
+          </div>
+          <div class="postcard-copy">
+            <span class="small-label">家长先读</span>
+            <p>先读完，再关屏。选一张实体卡即可。在宝宝清醒、舒服时陪看。不要求看满五分钟。看向别处、烦躁或困了，就收起卡片。</p>
+          </div>
+          <div class="postcard-phrases">
+            <span class="small-label">可以这样说</span>
+            <p>“看看这张卡。”</p><p>“慢慢移过去。”</p>
+          </div>
+        </div>
+        <a class="text-link" href="#lesson" data-stage-lesson="core.s1.contrast-shapes">看这节课 <svg class="icon " viewBox="0 0 24 24" aria-hidden="true" focusable="false" ><path d="M5 12h13M13 6l6 6-6 6"/></svg></a>
+      </div>
+    </article>
+    <article class="stage-panel " data-stage-panel="s2" hidden>
+      <div class="stage-panel-top">
+        <div>
+          <div class="kicker-row"><span class="stage-pill">S2</span><span>9–11 月龄</span></div>
+          <h3>互动探索</h3>
+          <p class="stage-subtitle">9–11 月：在来回互动中发现因果</p>
+        </div>
+        <div class="stage-count">
+          <strong>12</strong>
+          <span>节课</span>
+        </div>
+      </div>
+      <div class="stage-grid">
+        <div class="stage-column">
+          <div class="subsection-label">这个阶段，屏幕怎么用</div>
+          
+    <div class="screen-states" aria-label="这个阶段，屏幕怎么用">
+      
+            <div class="screen-state is-active">
+              <span class="mini-tv" aria-hidden="true"><span>◌</span></span>
+              <span>关屏</span>
+            </div>
+            <div class="screen-state ">
+              <span class="mini-tv" aria-hidden="true"><span>◐</span></span>
+              <span>只给家长看</span>
+            </div>
+            <div class="screen-state ">
+              <span class="mini-tv" aria-hidden="true"><span>◉</span></span>
+              <span>可选共看</span>
+            </div>
+    </div>
+          <p class="screen-policy">家长看指引，宝宝不看孩子侧课程；读完就用真实物品和面对面互动陪玩。</p>
+          <div class="limit-row">
+            <span><b>家长看指引 · 每次 ≤</b> 3 分钟</span>
+            <span><b>家长看指引 · 每天 ≤</b> 10 分钟</span>
+          </div>
+          <div class="audience-counts">
+            <span>12 家长指引</span>
+            <span>0 亲子共看</span>
+          </div>
+        </div>
+        <div class="stage-column day-shape">
+          <div class="subsection-label">一天的形状</div>
+          
+    <div class="rhythm-wrap">
+      <figure class="rhythm-figure">
+        <svg class="rhythm-ring" viewBox="0 0 220 236" role="img" aria-label="一天的示意环：整圈是 12 小时清醒时间，屏幕上限 10 分钟，占 1.4%，其余是屏幕外生活。">
+          <circle class="ring-track" cx="110" cy="128" r="78"/>
+          <circle class="ring-seg ring-c0" cx="110" cy="128" r="78" pathLength="360" stroke-dasharray="47.857 360" transform="rotate(-85.000 110 128)"/><circle class="ring-seg ring-c1" cx="110" cy="128" r="78" pathLength="360" stroke-dasharray="47.857 360" transform="rotate(-34.643 110 128)"/><circle class="ring-seg ring-c2" cx="110" cy="128" r="78" pathLength="360" stroke-dasharray="47.857 360" transform="rotate(15.714 110 128)"/><circle class="ring-seg ring-c3" cx="110" cy="128" r="78" pathLength="360" stroke-dasharray="47.857 360" transform="rotate(66.071 110 128)"/><circle class="ring-seg ring-c4" cx="110" cy="128" r="78" pathLength="360" stroke-dasharray="47.857 360" transform="rotate(116.429 110 128)"/><circle class="ring-seg ring-c5" cx="110" cy="128" r="78" pathLength="360" stroke-dasharray="47.857 360" transform="rotate(166.786 110 128)"/><circle class="ring-seg ring-c6" cx="110" cy="128" r="78" pathLength="360" stroke-dasharray="47.857 360" transform="rotate(217.143 110 128)"/>
+          <circle class="ring-screen" cx="110" cy="128" r="78" pathLength="360" stroke-dasharray="5.000 360" transform="rotate(-92.500 110 128)"/>
+          <path class="ring-leader" d="M110 36V20"/>
+          <text class="ring-callout" x="110" y="12" text-anchor="middle">屏幕 ≤ 10 分钟</text>
+          <text class="ring-value" x="110" y="134" text-anchor="middle">1.4%</text>
+          <text class="ring-unit" x="110" y="156" text-anchor="middle">10 分钟 / 12 小时</text>
+        </svg>
+      </figure>
+      <ul class="rhythm-legend">
+        <li><i class="ring-c0"></i>起床和换尿布时叫宝宝名字，等宝宝看过来再继续。</li><li><i class="ring-c1"></i>自由游戏时把大块玩具放进盒子再拿出来，说“进去”“出来”。</li><li><i class="ring-c2"></i>吃饭时只谈眼前的一两块食物，说“还要吗”“没有了”，尊重闭嘴和转头。</li><li><i class="ring-c3"></i>家人进门、离开时用同样的“你好”“拜拜”，停下来等回应。</li><li><i class="ring-c4"></i>读纸卡或小书时跟随宝宝的目光，一页只说一个词。</li><li><i class="ring-c5"></i>家长学会后先关屏再给宝宝唱；安全抱稳或示范拍手，不一边双手抱持一边拍手。</li><li><i class="ring-c6"></i>每天安排地面自由活动和户外看一看，不把手机当作陪伴。</li>
+      </ul>
+    </div>
+    <p class="micro-note">整圈代表 12 小时清醒时间；屏幕按真实比例画成细弧，其余生活段均分展示，仅作示意。</p>
+        </div>
+      </div>
+      <div class="stage-lower-grid">
+        <div>
+          <div class="subsection-label">这段时间可以留意</div>
+          <ul class="focus-list"><li><span class="check-mark" aria-hidden="true">✓</span><span>在安全陪伴中发现放入、拿出和藏起再出现。</span></li><li><span class="check-mark" aria-hidden="true">✓</span><span>用拍手、挥手、声音和目光参与来回互动。</span></li><li><span class="check-mark" aria-hidden="true">✓</span><span>把还要、没有了和简单数量词放进进餐。</span></li><li><span class="check-mark" aria-hidden="true">✓</span><span>跟随宝宝的注意，在家中真实物品上扩展词语。</span></li><li><span class="check-mark" aria-hidden="true">✓</span><span>让宝宝在可预测的日常节奏里尝试和回应。</span></li></ul>
+        </div>
+        <div>
+          <div class="subsection-label">主题索引</div>
+          <div class="theme-index">
+            
+                  <details class="theme-item">
+                    <summary><span class="theme-number">01</span><span>因果与藏找</span><span class="summary-caret" aria-hidden="true">+</span></summary>
+                    <div class="theme-body">
+                      <p>用泡泡、盒子和杯子，把出现、消失、进去和出来变成真实游戏。</p>
+                      <ul><li>用真实泡泡和大块玩具观察动作带来的变化。</li><li>用能罩住大玩具的套杯玩藏找，不移动杯子；大打印卡只供命名。</li><li>所有物品都由成人准备和看护。</li></ul>
+                    </div>
+                  </details>
+                  <details class="theme-item">
+                    <summary><span class="theme-number">02</span><span>拍拍手挥挥手</span><span class="summary-caret" aria-hidden="true">+</span></summary>
+                    <div class="theme-body">
+                      <p>在面对面游戏、问候和儿歌中练习模仿、手势和等待。</p>
+                      <ul><li>先示范，再停下来等宝宝自然回应。</li><li>把你好、拜拜放进每天的迎送仪式。</li><li>先关屏玩动作，旋律仅给家长学唱；学会后关屏唱，随时结束。</li></ul>
+                    </div>
+                  </details>
+                  <details class="theme-item">
+                    <summary><span class="theme-number">03</span><span>好吃的</span><span class="summary-caret" aria-hidden="true">+</span></summary>
+                    <div class="theme-body">
+                      <p>在安全进餐中听见食物名称、还要、没有了和简单数字话。</p>
+                      <ul><li>以宝宝平时吃的食物为素材，不额外延长进餐。</li><li>只有同时可见才谈“两块”，餐盘真空了才说“没有了”。</li><li>尊重闭嘴、转头、推开等停止信号。</li></ul>
+                    </div>
+                  </details>
+                  <details class="theme-item">
+                    <summary><span class="theme-number">04</span><span>家里的东西</span><span class="summary-caret" aria-hidden="true">+</span></summary>
+                    <div class="theme-body">
+                      <p>跟随宝宝的目光，把家里的物品、晚安卡和歌声连到日常生活。</p>
+                      <ul><li>先跟随宝宝的注意，再给真实物品命名。</li><li>白天使用晚安卡书，睡前不打开屏幕。</li><li>抱唱或律动时托稳身体，动作小而慢。</li></ul>
+                    </div>
+                  </details>
+          </div>
+        </div>
+      </div>
+      <div class="postcard">
+        <div class="postcard-pin" aria-hidden="true"></div>
+        <div class="postcard-head">
+          <span>示例课明信片</span>
+          <span class="postcard-stamp">S2</span>
+        </div>
+        <div class="postcard-body">
+          <div>
+            <h4>吹泡泡</h4>
+            <p class="english-line">Bubbles</p>
+            <p>看泡泡出现、飘走和消失，和宝宝来回回应。</p>
+          </div>
+          <div class="postcard-copy">
+            <span class="small-label">家长先读</span>
+            <p>先读完指引，再关屏。选宝宝清醒舒适的时间，在安全地面由成人吹一两个真泡泡，停下来等宝宝看、伸手或发声。不让宝宝吹，不用吹泡泡棒碰他的脸。</p>
+          </div>
+          <div class="postcard-phrases">
+            <span class="small-label">可以这样说</span>
+            <p>“泡泡！”</p><p>“还要吗？”</p>
+          </div>
+        </div>
+        <a class="text-link" href="#lesson" data-stage-lesson="core.s2.real-bubbles">看这节课 <svg class="icon " viewBox="0 0 24 24" aria-hidden="true" focusable="false" ><path d="M5 12h13M13 6l6 6-6 6"/></svg></a>
+      </div>
+    </article>
+    <article class="stage-panel " data-stage-panel="s3" hidden>
+      <div class="stage-panel-top">
+        <div>
+          <div class="kicker-row"><span class="stage-pill">S3</span><span>12–17 月龄</span></div>
+          <h3>词语萌芽</h3>
+          <p class="stage-subtitle">在真实生活里听、看、指和说</p>
+        </div>
+        <div class="stage-count">
+          <strong>18</strong>
+          <span>节课</span>
+        </div>
+      </div>
+      <div class="stage-grid">
+        <div class="stage-column">
+          <div class="subsection-label">这个阶段，屏幕怎么用</div>
+          
+    <div class="screen-states" aria-label="这个阶段，屏幕怎么用">
+      
+            <div class="screen-state is-active">
+              <span class="mini-tv" aria-hidden="true"><span>◌</span></span>
+              <span>关屏</span>
+            </div>
+            <div class="screen-state ">
+              <span class="mini-tv" aria-hidden="true"><span>◐</span></span>
+              <span>只给家长看</span>
+            </div>
+            <div class="screen-state ">
+              <span class="mini-tv" aria-hidden="true"><span>◉</span></span>
+              <span>可选共看</span>
+            </div>
+    </div>
+          <p class="screen-policy">家长看指引，宝宝不看孩子侧课程；读完就回到真实生活和户外观察。</p>
+          <div class="limit-row">
+            <span><b>家长看指引 · 每次 ≤</b> 3 分钟</span>
+            <span><b>家长看指引 · 每天 ≤</b> 10 分钟</span>
+          </div>
+          <div class="audience-counts">
+            <span>18 家长指引</span>
+            <span>0 亲子共看</span>
+          </div>
+        </div>
+        <div class="stage-column day-shape">
+          <div class="subsection-label">一天的形状</div>
+          
+    <div class="rhythm-wrap">
+      <figure class="rhythm-figure">
+        <svg class="rhythm-ring" viewBox="0 0 220 236" role="img" aria-label="一天的示意环：整圈是 12 小时清醒时间，屏幕上限 10 分钟，占 1.4%，其余是屏幕外生活。">
+          <circle class="ring-track" cx="110" cy="128" r="78"/>
+          <circle class="ring-seg ring-c0" cx="110" cy="128" r="78" pathLength="360" stroke-dasharray="47.857 360" transform="rotate(-85.000 110 128)"/><circle class="ring-seg ring-c1" cx="110" cy="128" r="78" pathLength="360" stroke-dasharray="47.857 360" transform="rotate(-34.643 110 128)"/><circle class="ring-seg ring-c2" cx="110" cy="128" r="78" pathLength="360" stroke-dasharray="47.857 360" transform="rotate(15.714 110 128)"/><circle class="ring-seg ring-c3" cx="110" cy="128" r="78" pathLength="360" stroke-dasharray="47.857 360" transform="rotate(66.071 110 128)"/><circle class="ring-seg ring-c4" cx="110" cy="128" r="78" pathLength="360" stroke-dasharray="47.857 360" transform="rotate(116.429 110 128)"/><circle class="ring-seg ring-c5" cx="110" cy="128" r="78" pathLength="360" stroke-dasharray="47.857 360" transform="rotate(166.786 110 128)"/><circle class="ring-seg ring-c6" cx="110" cy="128" r="78" pathLength="360" stroke-dasharray="47.857 360" transform="rotate(217.143 110 128)"/>
+          <circle class="ring-screen" cx="110" cy="128" r="78" pathLength="360" stroke-dasharray="5.000 360" transform="rotate(-92.500 110 128)"/>
+          <path class="ring-leader" d="M110 36V20"/>
+          <text class="ring-callout" x="110" y="12" text-anchor="middle">屏幕 ≤ 10 分钟</text>
+          <text class="ring-value" x="110" y="134" text-anchor="middle">1.4%</text>
+          <text class="ring-unit" x="110" y="156" text-anchor="middle">10 分钟 / 12 小时</text>
+        </svg>
+      </figure>
+      <ul class="rhythm-legend">
+        <li><i class="ring-c0"></i>穿衣时拿起一件衣物，先让宝宝看，再说“上衣”“袜子”或“鞋子”。</li><li><i class="ring-c1"></i>洗澡和换衣时说一个身体部位，停下来等宝宝看、指或触摸。</li><li><i class="ring-c2"></i>吃饭时指着成人摆好的碗和勺说“一个”“两个”；按安全进食要求喂养，不拿食物做测验。</li><li><i class="ring-c3"></i>收玩具时说“一个放进去”，再说“这里有很多”，全程由成人管理小物件。</li><li><i class="ring-c4"></i>出门时用固定短句预告“先穿袜子，再穿鞋子”，顺序按家庭和天气调整。</li><li><i class="ring-c5"></i>窗边或散步时跟随宝宝的目光，说眼前的一种树、花、鸟、车或云。</li><li><i class="ring-c6"></i>成人提前学唱，关屏后在洗手和收拾时唱熟悉的小段；不为完成计时反复洗手。</li>
+      </ul>
+    </div>
+    <p class="micro-note">整圈代表 12 小时清醒时间；屏幕按真实比例画成细弧，其余生活段均分展示，仅作示意。</p>
+        </div>
+      </div>
+      <div class="stage-lower-grid">
+        <div>
+          <div class="subsection-label">这段时间可以留意</div>
+          <ul class="focus-list"><li><span class="check-mark" aria-hidden="true">✓</span><span>在共同注意中指认熟悉的动物、身体和物品。</span></li><li><span class="check-mark" aria-hidden="true">✓</span><span>把第一批词放进照护、游戏和出门常规。</span></li><li><span class="check-mark" aria-hidden="true">✓</span><span>用模仿、假装和儿向语言增加来回交流。</span></li><li><span class="check-mark" aria-hidden="true">✓</span><span>在生活中体验一个、很多和一、二。</span></li><li><span class="check-mark" aria-hidden="true">✓</span><span>用安全的动作、儿歌和户外观察连接语言与经验。</span></li></ul>
+        </div>
+        <div>
+          <div class="subsection-label">主题索引</div>
+          <div class="theme-index">
+            
+                  <details class="theme-item">
+                    <summary><span class="theme-number">01</span><span>动物朋友</span><span class="summary-caret" aria-hidden="true">+</span></summary>
+                    <div class="theme-body">
+                      <p>用动物卡和短故事听名称、叫声与轮流回应。</p>
+                      <ul><li>用大卡片或安全玩具指认动物。</li><li>模仿叫声后停下来等宝宝回应。</li><li>故事只做温和的假装游戏，不制造走失和害怕。</li></ul>
+                    </div>
+                  </details>
+                  <details class="theme-item">
+                    <summary><span class="theme-number">02</span><span>我的身体</span><span class="summary-caret" aria-hidden="true">+</span></summary>
+                    <div class="theme-body">
+                      <p>在照护和歌唱中认识身体部位，尊重宝宝的身体界限。</p>
+                      <ul><li>洗澡、穿衣时指一指、说一说。</li><li>家长先示范，宝宝可以只看或做一小部分。</li><li>用慢歌和轻动作，不拉扯、不强迫触摸。</li></ul>
+                    </div>
+                  </details>
+                  <details class="theme-item">
+                    <summary><span class="theme-number">03</span><span>车车出发</span><span class="summary-caret" aria-hidden="true">+</span></summary>
+                    <div class="theme-body">
+                      <p>在安全处观察车辆，用玩具体验下滑和快慢。</p>
+                      <ul><li>远离道路、车轮和车门看真实车辆。</li><li>用低而稳的斜坡玩大号玩具车。</li><li>家长提前学唱，关屏后唱歌并推真实玩具车。</li></ul>
+                    </div>
+                  </details>
+                  <details class="theme-item">
+                    <summary><span class="theme-number">04</span><span>一个和很多</span><span class="summary-caret" aria-hidden="true">+</span></summary>
+                    <div class="theme-body">
+                      <p>用眼前的大物品说一个、很多和一、二。</p>
+                      <ul><li>只用足够大的安全物品，不用小颗食物测数。</li><li>点一个说一个，数完说总数。</li><li>儿歌用来共享节奏，不要求宝宝认数字。</li></ul>
+                    </div>
+                  </details>
+                  <details class="theme-item">
+                    <summary><span class="theme-number">05</span><span>穿衣服</span><span class="summary-caret" aria-hidden="true">+</span></summary>
+                    <div class="theme-body">
+                      <p>把衣物名称和出门、洗手等生活常规连起来。</p>
+                      <ul><li>穿衣时给宝宝看衣物，邀请伸手或抬脚。</li><li>用流程卡预告袜子、鞋子、帽子等步骤。</li><li>洗手歌只给家长学，水边全程看护。</li></ul>
+                    </div>
+                  </details>
+                  <details class="theme-item">
+                    <summary><span class="theme-number">06</span><span>去户外</span><span class="summary-caret" aria-hidden="true">+</span></summary>
+                    <div class="theme-body">
+                      <p>在安全散步和天气观察中听自然词、做慢动作。</p>
+                      <ul><li>跟随宝宝的目光命名树、花、鸟和云。</li><li>雨天先在室内听雨，不踩真实积水坑；可穿雨靴轻踩自家薄清水迹。</li><li>模仿小树、小鸟和小兔时不要求跳跃或站稳。</li></ul>
+                    </div>
+                  </details>
+          </div>
+        </div>
+      </div>
+      <div class="postcard">
+        <div class="postcard-pin" aria-hidden="true"></div>
+        <div class="postcard-head">
+          <span>示例课明信片</span>
+          <span class="postcard-stamp">S3</span>
+        </div>
+        <div class="postcard-body">
+          <div>
+            <h4>嘀嘀叭叭</h4>
+            <p class="english-line">Beep Beep, Let&#39;s Go</p>
+            <p>安全处看车。听名字和轻轻嘀嘀。</p>
+          </div>
+          <div class="postcard-copy">
+            <span class="small-label">家长先读</span>
+            <p>先读完，再关屏。成人选安全位置看车。一次只说眼前一种车。没看到时就用大卡。不需专门去路口或水边。叫声只轻声模仿。</p>
+          </div>
+          <div class="postcard-phrases">
+            <span class="small-label">可以这样说</span>
+            <p>“这是汽车，嘀嘀。”</p><p>“公交车开过去了。”</p>
+          </div>
+        </div>
+        <a class="text-link" href="#lesson" data-stage-lesson="core.s3.vehicles">看这节课 <svg class="icon " viewBox="0 0 24 24" aria-hidden="true" focusable="false" ><path d="M5 12h13M13 6l6 6-6 6"/></svg></a>
+      </div>
+    </article>
+    <article class="stage-panel " data-stage-panel="s4" hidden>
+      <div class="stage-panel-top">
+        <div>
+          <div class="kicker-row"><span class="stage-pill">S4</span><span>18–23 月龄</span></div>
+          <h3>语言爆发</h3>
+          <p class="stage-subtitle">听、指、说，在生活里慢慢长大</p>
+        </div>
+        <div class="stage-count">
+          <strong>18</strong>
+          <span>节课</span>
+        </div>
+      </div>
+      <div class="stage-grid">
+        <div class="stage-column">
+          <div class="subsection-label">这个阶段，屏幕怎么用</div>
+          
+    <div class="screen-states" aria-label="这个阶段，屏幕怎么用">
+      
+            <div class="screen-state ">
+              <span class="mini-tv" aria-hidden="true"><span>◌</span></span>
+              <span>关屏</span>
+            </div>
+            <div class="screen-state is-active">
+              <span class="mini-tv" aria-hidden="true"><span>◐</span></span>
+              <span>只给家长看</span>
+            </div>
+            <div class="screen-state ">
+              <span class="mini-tv" aria-hidden="true"><span>◉</span></span>
+              <span>可选共看</span>
+            </div>
+    </div>
+          <p class="screen-policy">共看默认关闭；如主动开启，每次短一些、家长全程在旁，也可以只用家长指引。</p>
+          <div class="limit-row">
+            <span><b>共看开启时 · 每次 ≤</b> 8 分钟</span>
+            <span><b>共看开启时 · 每天 ≤</b> 10 分钟</span>
+          </div>
+          <div class="audience-counts">
+            <span>12 家长指引</span>
+            <span>6 亲子共看</span>
+          </div>
+        </div>
+        <div class="stage-column day-shape">
+          <div class="subsection-label">一天的形状</div>
+          
+    <div class="rhythm-wrap">
+      <figure class="rhythm-figure">
+        <svg class="rhythm-ring" viewBox="0 0 220 236" role="img" aria-label="一天的示意环：整圈是 12 小时清醒时间，屏幕上限 10 分钟，占 1.4%，其余是屏幕外生活。">
+          <circle class="ring-track" cx="110" cy="128" r="78"/>
+          <circle class="ring-seg ring-c0" cx="110" cy="128" r="78" pathLength="360" stroke-dasharray="41.563 360" transform="rotate(-85.000 110 128)"/><circle class="ring-seg ring-c1" cx="110" cy="128" r="78" pathLength="360" stroke-dasharray="41.563 360" transform="rotate(-40.938 110 128)"/><circle class="ring-seg ring-c2" cx="110" cy="128" r="78" pathLength="360" stroke-dasharray="41.563 360" transform="rotate(3.125 110 128)"/><circle class="ring-seg ring-c3" cx="110" cy="128" r="78" pathLength="360" stroke-dasharray="41.563 360" transform="rotate(47.188 110 128)"/><circle class="ring-seg ring-c4" cx="110" cy="128" r="78" pathLength="360" stroke-dasharray="41.563 360" transform="rotate(91.250 110 128)"/><circle class="ring-seg ring-c5" cx="110" cy="128" r="78" pathLength="360" stroke-dasharray="41.563 360" transform="rotate(135.313 110 128)"/><circle class="ring-seg ring-c6" cx="110" cy="128" r="78" pathLength="360" stroke-dasharray="41.563 360" transform="rotate(179.375 110 128)"/><circle class="ring-seg ring-c7" cx="110" cy="128" r="78" pathLength="360" stroke-dasharray="41.563 360" transform="rotate(223.438 110 128)"/>
+          <circle class="ring-screen" cx="110" cy="128" r="78" pathLength="360" stroke-dasharray="5.000 360" transform="rotate(-92.500 110 128)"/>
+          <path class="ring-leader" d="M110 36V20"/>
+          <text class="ring-callout" x="110" y="12" text-anchor="middle">屏幕 ≤ 10 分钟</text>
+          <text class="ring-value" x="110" y="134" text-anchor="middle">1.4%</text>
+          <text class="ring-unit" x="110" y="156" text-anchor="middle">10 分钟 / 12 小时</text>
+        </svg>
+      </figure>
+      <ul class="rhythm-legend">
+        <li><i class="ring-c0"></i>起床穿衣时指一件单色衣物，说颜色和名称，再等宝宝看或指。</li><li><i class="ring-c1"></i>摆餐具时点数一到三把儿童勺，数完说总数；进餐时不用屏幕。</li><li><i class="ring-c2"></i>整理玩具时放一块大积木到上面，说高了，再邀请宝宝试一块。</li><li><i class="ring-c3"></i>散步时在安全处指圆钟或轮子图片，不直视太阳、不靠近行驶车辆。</li><li><i class="ring-c4"></i>收袜子或空碗时比两个同类物品，说同色、大一些、小一些。</li><li><i class="ring-c5"></i>情绪来时放下设备，先保护安全、回应需要，再命名并陪伴。</li><li><i class="ring-c6"></i>洗手和洗澡时说小手、小脚；水边专一看护，不读设备或看倒计时。</li><li><i class="ring-c7"></i>刷牙安排每天两次，睡前那次不开屏；白天可轻唱熟悉歌，再由成人帮刷。</li>
+      </ul>
+    </div>
+    <p class="micro-note">整圈代表 12 小时清醒时间；屏幕按真实比例画成细弧，其余生活段均分展示，仅作示意。</p>
+        </div>
+      </div>
+      <div class="stage-lower-grid">
+        <div>
+          <div class="subsection-label">这段时间可以留意</div>
+          <ul class="focus-list"><li><span class="check-mark" aria-hidden="true">✓</span><span>用词语和短组合表达日常需要。</span></li><li><span class="check-mark" aria-hidden="true">✓</span><span>在实物旁听颜色、形状和大小。</span></li><li><span class="check-mark" aria-hidden="true">✓</span><span>点数一到三，听数完后的总数。</span></li><li><span class="check-mark" aria-hidden="true">✓</span><span>命名情绪，依靠成人的温和陪伴。</span></li><li><span class="check-mark" aria-hidden="true">✓</span><span>参与洗手、刷牙和洗澡常规。</span></li><li><span class="check-mark" aria-hidden="true">✓</span><span>用涂鸦、搭建和慢动作自主探索。</span></li></ul>
+        </div>
+        <div>
+          <div class="subsection-label">主题索引</div>
+          <div class="theme-index">
+            
+                  <details class="theme-item">
+                    <summary><span class="theme-number">01</span><span>颜色</span><span class="summary-caret" aria-hidden="true">+</span></summary>
+                    <div class="theme-body">
+                      <p>用衣物、颜色卡和涂鸦，听红黄蓝。</p>
+                      <ul><li>先在家里找一种颜色。</li><li>把同色袜子放在一起。</li><li>自由涂鸦，不要求认色或画彩虹。</li></ul>
+                    </div>
+                  </details>
+                  <details class="theme-item">
+                    <summary><span class="theme-number">02</span><span>形状</span><span class="summary-caret" aria-hidden="true">+</span></summary>
+                    <div class="theme-body">
+                      <p>找圆边、配形状，再搭一座低塔。</p>
+                      <ul><li>用圆盘和形状卡看轮廓。</li><li>配形玩具先示范，不硬压。</li><li>地上搭低塔，倒了再试，不追求高度。</li></ul>
+                    </div>
+                  </details>
+                  <details class="theme-item">
+                    <summary><span class="theme-number">03</span><span>数一数</span><span class="summary-caret" aria-hidden="true">+</span></summary>
+                    <div class="theme-body">
+                      <p>数眼前一到三个物品，再说总数。</p>
+                      <ul><li>点一个说一个，数完说总数。</li><li>数勺子和鞋，不拿小颗食物练数。</li><li>停走游戏轻松玩，不淘汰、不屏息。</li></ul>
+                    </div>
+                  </details>
+                  <details class="theme-item">
+                    <summary><span class="theme-number">04</span><span>我的心情</span><span class="summary-caret" aria-hidden="true">+</span></summary>
+                    <div class="theme-body">
+                      <p>听心情名字，体验陪伴和求助。</p>
+                      <ul><li>在平静时看情绪卡和练求助。</li><li>真实情绪来时放下设备，先保安全。</li><li>尊重抱抱和呼吸的意愿，成人持续陪伴。</li></ul>
+                    </div>
+                  </details>
+                  <details class="theme-item">
+                    <summary><span class="theme-number">05</span><span>洗洗刷刷</span><span class="summary-caret" aria-hidden="true">+</span></summary>
+                    <div class="theme-body">
+                      <p>宝宝参与照护，成人负责清洁和安全。</p>
+                      <ul><li>成人每天帮刷两次，控制米粒牙膏量。</li><li>水边专一看护，始终手臂可及。</li><li>洗手涂皂搓至少20秒，再冲净擦干。</li></ul>
+                    </div>
+                  </details>
+                  <details class="theme-item">
+                    <summary><span class="theme-number">06</span><span>大和小</span><span class="summary-caret" aria-hidden="true">+</span></summary>
+                    <div class="theme-body">
+                      <p>比同类物品，套杯子，伸伸小手。</p>
+                      <ul><li>一次比较两个同类物品。</li><li>先套两个大杯，感兴趣再加第三个。</li><li>蹲低站高可换坐姿，不要求跳或踮脚。</li></ul>
+                    </div>
+                  </details>
+          </div>
+        </div>
+      </div>
+      <div class="postcard">
+        <div class="postcard-pin" aria-hidden="true"></div>
+        <div class="postcard-head">
+          <span>示例课明信片</span>
+          <span class="postcard-stamp">S4</span>
+        </div>
+        <div class="postcard-body">
+          <div>
+            <h4>找颜色</h4>
+            <p class="english-line">A Color Hunt</p>
+            <p>找找红色，再收收袜子。</p>
+          </div>
+          <div class="postcard-copy">
+            <span class="small-label">家长先读</span>
+            <p>先自己读，再放下屏幕。拿一张红色卡找家里的同色物品。宝宝看、指或递给你，都算回应。收袜子时再玩一次。今天不必记住三种颜色。</p>
+          </div>
+          <div class="postcard-phrases">
+            <span class="small-label">可以这样说</span>
+            <p>“红色，在这里。”</p><p>“这只袜子也是红色的。”</p>
+          </div>
+        </div>
+        <a class="text-link" href="#lesson" data-stage-lesson="core.s4.color-hunt">看这节课 <svg class="icon " viewBox="0 0 24 24" aria-hidden="true" focusable="false" ><path d="M5 12h13M13 6l6 6-6 6"/></svg></a>
+      </div>
+    </article>
+    <article class="stage-panel " data-stage-panel="s5" hidden>
+      <div class="stage-panel-top">
+        <div>
+          <div class="kicker-row"><span class="stage-pill">S5</span><span>24–29 月龄</span></div>
+          <h3>小小思考者</h3>
+          <p class="stage-subtitle">一起分、数、找，再去生活里玩</p>
+        </div>
+        <div class="stage-count">
+          <strong>18</strong>
+          <span>节课</span>
+        </div>
+      </div>
+      <div class="stage-grid">
+        <div class="stage-column">
+          <div class="subsection-label">这个阶段，屏幕怎么用</div>
+          
+    <div class="screen-states" aria-label="这个阶段，屏幕怎么用">
+      
+            <div class="screen-state ">
+              <span class="mini-tv" aria-hidden="true"><span>◌</span></span>
+              <span>关屏</span>
+            </div>
+            <div class="screen-state ">
+              <span class="mini-tv" aria-hidden="true"><span>◐</span></span>
+              <span>只给家长看</span>
+            </div>
+            <div class="screen-state is-active">
+              <span class="mini-tv" aria-hidden="true"><span>◉</span></span>
+              <span>可选共看</span>
+            </div>
+    </div>
+          <p class="screen-policy">可以选短共看，但必须家长陪同；也可以完全不看。看完马上回到线下活动。</p>
+          <div class="limit-row">
+            <span><b>每次 ≤</b> 10 分钟</span>
+            <span><b>每天 ≤</b> 20 分钟</span>
+          </div>
+          <div class="audience-counts">
+            <span>0 家长指引</span>
+            <span>18 亲子共看</span>
+          </div>
+        </div>
+        <div class="stage-column day-shape">
+          <div class="subsection-label">一天的形状</div>
+          
+    <div class="rhythm-wrap">
+      <figure class="rhythm-figure">
+        <svg class="rhythm-ring" viewBox="0 0 220 236" role="img" aria-label="一天的示意环：整圈是 12 小时清醒时间，屏幕上限 20 分钟，占 2.8%，其余是屏幕外生活。">
+          <circle class="ring-track" cx="110" cy="128" r="78"/>
+          <circle class="ring-seg ring-c0" cx="110" cy="128" r="78" pathLength="360" stroke-dasharray="40.938 360" transform="rotate(-82.500 110 128)"/><circle class="ring-seg ring-c1" cx="110" cy="128" r="78" pathLength="360" stroke-dasharray="40.938 360" transform="rotate(-39.063 110 128)"/><circle class="ring-seg ring-c2" cx="110" cy="128" r="78" pathLength="360" stroke-dasharray="40.938 360" transform="rotate(4.375 110 128)"/><circle class="ring-seg ring-c3" cx="110" cy="128" r="78" pathLength="360" stroke-dasharray="40.938 360" transform="rotate(47.813 110 128)"/><circle class="ring-seg ring-c4" cx="110" cy="128" r="78" pathLength="360" stroke-dasharray="40.938 360" transform="rotate(91.250 110 128)"/><circle class="ring-seg ring-c5" cx="110" cy="128" r="78" pathLength="360" stroke-dasharray="40.938 360" transform="rotate(134.688 110 128)"/><circle class="ring-seg ring-c6" cx="110" cy="128" r="78" pathLength="360" stroke-dasharray="40.938 360" transform="rotate(178.125 110 128)"/><circle class="ring-seg ring-c7" cx="110" cy="128" r="78" pathLength="360" stroke-dasharray="40.938 360" transform="rotate(221.563 110 128)"/>
+          <circle class="ring-screen" cx="110" cy="128" r="78" pathLength="360" stroke-dasharray="10.000 360" transform="rotate(-95.000 110 128)"/>
+          <path class="ring-leader" d="M110 36V20"/>
+          <text class="ring-callout" x="110" y="12" text-anchor="middle">屏幕 ≤ 20 分钟</text>
+          <text class="ring-value" x="110" y="134" text-anchor="middle">2.8%</text>
+          <text class="ring-unit" x="110" y="156" text-anchor="middle">20 分钟 / 12 小时</text>
+        </svg>
+      </figure>
+      <ul class="rhythm-legend">
+        <li><i class="ring-c0"></i>起床后从关好的窗边看天气。说一句“今天有云”。等宝宝指、看或说，不直视太阳。</li><li><i class="ring-c1"></i>穿衣时给两个合适的选择。宝宝挑一件，大人按实际冷热帮助调整。</li><li><i class="ring-c2"></i>收衣物时选红、蓝两种。先按颜色分，另一次再按种类分，不同时加两条规则。</li><li><i class="ring-c3"></i>准备餐具时一起点数一到三把勺子。点一个说一个，数完说“一共三把”。进餐时不用屏。</li><li><i class="ring-c4"></i>地板游戏时把玩偶放在盒子里或旁边。说出位置，再邀请宝宝摆给你看。</li><li><i class="ring-c5"></i>户外玩耍时由成人看护。轮流滚球或玩适龄滑梯，等待时可以先玩别的。</li><li><i class="ring-c6"></i>白天共读几页书。宝宝说“熊猫吃”，你接“熊猫吃竹子”，停下来等下一次回应。</li><li><i class="ring-c7"></i>睡前关好设备。用纸书和真人哼唱收尾，睡前一小时不看屏，也不背景播放。</li>
+      </ul>
+    </div>
+    <p class="micro-note">整圈代表 12 小时清醒时间；屏幕按真实比例画成细弧，其余生活段均分展示，仅作示意。</p>
+        </div>
+      </div>
+      <div class="stage-lower-grid">
+        <div>
+          <div class="subsection-label">这段时间可以留意</div>
+          <ul class="focus-list"><li><span class="check-mark" aria-hidden="true">✓</span><span>在帮助下按一个特点分类。</span></li><li><span class="check-mark" aria-hidden="true">✓</span><span>一起点数，数完说出总数。</span></li><li><span class="check-mark" aria-hidden="true">✓</span><span>慢慢看一到三个，不急着回答。</span></li><li><span class="check-mark" aria-hidden="true">✓</span><span>用短句说位置、动物和天气。</span></li><li><span class="check-mark" aria-hidden="true">✓</span><span>在陪伴中练习轮流和表达感受。</span></li><li><span class="check-mark" aria-hidden="true">✓</span><span>一起唱、动、读，再关屏去玩。</span></li></ul>
+        </div>
+        <div>
+          <div class="subsection-label">主题索引</div>
+          <div class="theme-index">
+            
+                  <details class="theme-item">
+                    <summary><span class="theme-number">01</span><span>分一分</span><span class="summary-caret" aria-hidden="true">+</span></summary>
+                    <div class="theme-body">
+                      <p>看看颜色和种类，把相似的放一起。</p>
+                      <ul><li>用主色清楚的大物品分红、蓝。</li><li>先示范一件，再等宝宝尝试。</li><li>说清这次按什么分，不求全对。</li></ul>
+                    </div>
+                  </details>
+                  <details class="theme-item">
+                    <summary><span class="theme-number">02</span><span>数到五</span><span class="summary-caret" aria-hidden="true">+</span></summary>
+                    <div class="theme-body">
+                      <p>点一个说一个，体验小数量的变化。</p>
+                      <ul><li>从一两个大物品开始点数。</li><li>数完再说总数，不考认数字。</li><li>儿歌里的倒数只作共同游戏。</li></ul>
+                    </div>
+                  </details>
+                  <details class="theme-item">
+                    <summary><span class="theme-number">03</span><span>动物的家</span><span class="summary-caret" aria-hidden="true">+</span></summary>
+                    <div class="theme-body">
+                      <p>看动物的特点，听熊猫吃、爬和睡。</p>
+                      <ul><li>说水里游、空中飞，不说鸟住在天上。</li><li>共读动物书，不靠近或喂野生动物。</li><li>熊猫会爬树，宝宝只在地面假装。</li></ul>
+                    </div>
+                  </details>
+                  <details class="theme-item">
+                    <summary><span class="theme-number">04</span><span>轮流与分享</span><span class="summary-caret" aria-hidden="true">+</span></summary>
+                    <div class="theme-body">
+                      <p>听见彼此的感受，练习短短的轮流。</p>
+                      <ul><li>成人先示范，不强迫交出心爱玩具。</li><li>问宝宝怎么想，不把感受分对错。</li><li>礼貌用语放在真实帮助和修复里。</li></ul>
+                    </div>
+                  </details>
+                  <details class="theme-item">
+                    <summary><span class="theme-number">05</span><span>上下里外</span><span class="summary-caret" aria-hidden="true">+</span></summary>
+                    <div class="theme-body">
+                      <p>跟着小猫找位置，用动作说上和下。</p>
+                      <ul><li>用玩偶和开口纸盒说里、外、上、下。</li><li>先做一步，再邀请宝宝给大人指令。</li><li>不上家具，不钻封闭箱，不模仿攀高。</li></ul>
+                    </div>
+                  </details>
+                  <details class="theme-item">
+                    <summary><span class="theme-number">06</span><span>天气</span><span class="summary-caret" aria-hidden="true">+</span></summary>
+                    <div class="theme-body">
+                      <p>看看窗外的天气，商量出门带什么。</p>
+                      <ul><li>观察本地天气，没有雪也能看书。</li><li>衣物按实际冷热选，不只看天气图标。</li><li>下雨唱歌是愿望，不会把雨唱停。</li></ul>
+                    </div>
+                  </details>
+          </div>
+        </div>
+      </div>
+      <div class="postcard">
+        <div class="postcard-pin" aria-hidden="true"></div>
+        <div class="postcard-head">
+          <span>示例课明信片</span>
+          <span class="postcard-stamp">S5</span>
+        </div>
+        <div class="postcard-body">
+          <div>
+            <h4>红的和蓝的</h4>
+            <p class="english-line">Red and Blue</p>
+            <p>看看主色，把红的和蓝的分开。</p>
+          </div>
+          <div class="postcard-copy">
+            <span class="small-label">家长先读</span>
+            <p>先说清这次只看主色。指着红、蓝篮子各示范一件，再等宝宝选。碗和手套选的是现有蓝色图；蓝莓图偏紫，不拿来分蓝色。结束后关屏分家里的大物品。</p>
+          </div>
+          <div class="postcard-phrases">
+            <span class="small-label">可以这样说</span>
+            <p>“苹果主要是红的。”</p><p>“碗主要是蓝的。”</p>
+          </div>
+        </div>
+        <a class="text-link" href="#lesson" data-stage-lesson="core.s5.sort-color">看这节课 <svg class="icon " viewBox="0 0 24 24" aria-hidden="true" focusable="false" ><path d="M5 12h13M13 6l6 6-6 6"/></svg></a>
+      </div>
+    </article>
+    <article class="stage-panel " data-stage-panel="s6" hidden>
+      <div class="stage-panel-top">
+        <div>
+          <div class="kicker-row"><span class="stage-pill">S6</span><span>30–36 月龄</span></div>
+          <h3>准备入园</h3>
+          <p class="stage-subtitle">有人陪着，慢慢试，安心长大</p>
+        </div>
+        <div class="stage-count">
+          <strong>18</strong>
+          <span>节课</span>
+        </div>
+      </div>
+      <div class="stage-grid">
+        <div class="stage-column">
+          <div class="subsection-label">这个阶段，屏幕怎么用</div>
+          
+    <div class="screen-states" aria-label="这个阶段，屏幕怎么用">
+      
+            <div class="screen-state ">
+              <span class="mini-tv" aria-hidden="true"><span>◌</span></span>
+              <span>关屏</span>
+            </div>
+            <div class="screen-state ">
+              <span class="mini-tv" aria-hidden="true"><span>◐</span></span>
+              <span>只给家长看</span>
+            </div>
+            <div class="screen-state is-active">
+              <span class="mini-tv" aria-hidden="true"><span>◉</span></span>
+              <span>可选共看</span>
+            </div>
+    </div>
+          <p class="screen-policy">可以选短共看，但必须家长陪同；也可以完全不看。看完马上回到线下活动。</p>
+          <div class="limit-row">
+            <span><b>每次 ≤</b> 15 分钟</span>
+            <span><b>每天 ≤</b> 30 分钟</span>
+          </div>
+          <div class="audience-counts">
+            <span>0 家长指引</span>
+            <span>18 亲子共看</span>
+          </div>
+        </div>
+        <div class="stage-column day-shape">
+          <div class="subsection-label">一天的形状</div>
+          
+    <div class="rhythm-wrap">
+      <figure class="rhythm-figure">
+        <svg class="rhythm-ring" viewBox="0 0 220 236" role="img" aria-label="一天的示意环：整圈是 12 小时清醒时间，屏幕上限 30 分钟，占 4.2%，其余是屏幕外生活。">
+          <circle class="ring-track" cx="110" cy="128" r="78"/>
+          <circle class="ring-seg ring-c0" cx="110" cy="128" r="78" pathLength="360" stroke-dasharray="40.313 360" transform="rotate(-80.000 110 128)"/><circle class="ring-seg ring-c1" cx="110" cy="128" r="78" pathLength="360" stroke-dasharray="40.313 360" transform="rotate(-37.188 110 128)"/><circle class="ring-seg ring-c2" cx="110" cy="128" r="78" pathLength="360" stroke-dasharray="40.313 360" transform="rotate(5.625 110 128)"/><circle class="ring-seg ring-c3" cx="110" cy="128" r="78" pathLength="360" stroke-dasharray="40.313 360" transform="rotate(48.438 110 128)"/><circle class="ring-seg ring-c4" cx="110" cy="128" r="78" pathLength="360" stroke-dasharray="40.313 360" transform="rotate(91.250 110 128)"/><circle class="ring-seg ring-c5" cx="110" cy="128" r="78" pathLength="360" stroke-dasharray="40.313 360" transform="rotate(134.063 110 128)"/><circle class="ring-seg ring-c6" cx="110" cy="128" r="78" pathLength="360" stroke-dasharray="40.313 360" transform="rotate(176.875 110 128)"/><circle class="ring-seg ring-c7" cx="110" cy="128" r="78" pathLength="360" stroke-dasharray="40.313 360" transform="rotate(219.688 110 128)"/>
+          <circle class="ring-screen" cx="110" cy="128" r="78" pathLength="360" stroke-dasharray="15.000 360" transform="rotate(-97.500 110 128)"/>
+          <path class="ring-leader" d="M110 36V20"/>
+          <text class="ring-callout" x="110" y="12" text-anchor="middle">屏幕 ≤ 30 分钟</text>
+          <text class="ring-value" x="110" y="134" text-anchor="middle">4.2%</text>
+          <text class="ring-unit" x="110" y="156" text-anchor="middle">30 分钟 / 12 小时</text>
+        </svg>
+      </figure>
+      <ul class="rhythm-legend">
+        <li><i class="ring-c0"></i>起床后预告两件事，先清洁，再穿衣。成人及时帮助，不催如厕成功。</li><li><i class="ring-c1"></i>穿衣时坐稳，邀请孩子做一小步。试过和求助都得到回应。</li><li><i class="ring-c2"></i>饭前聊聊今天的食物种类。用餐关屏，回应饥饱，不用甜点交换清盘。</li><li><i class="ring-c3"></i>收拾时点两三件大物品，数完说总数。也可一对一摆齐，看看多和少。</li><li><i class="ring-c4"></i>白天空地玩两个安全动作的重复。舒服就做，累了就停，不盯着屏幕跑跳。</li><li><i class="ring-c5"></i>出门或接送前明确说再见和来接环节。真实交接遵守园所安排，照护者守约。</li><li><i class="ring-c6"></i>散步时看同一棵树或安全处的天空。记录真实变化，不把季节图当标准答案。</li><li><i class="ring-c7"></i>睡前一小时不用屏。按家庭需要清洁、刷牙、读纸质书，再用真人轻唱说晚安。</li>
+      </ul>
+    </div>
+    <p class="micro-note">整圈代表 12 小时清醒时间；屏幕按真实比例画成细弧，其余生活段均分展示，仅作示意。</p>
+        </div>
+      </div>
+      <div class="stage-lower-grid">
+        <div>
+          <div class="subsection-label">这段时间可以留意</div>
+          <ul class="focus-list"><li><span class="check-mark" aria-hidden="true">✓</span><span>在物品和动作中发现重复。</span></li><li><span class="check-mark" aria-hidden="true">✓</span><span>成人带着点数，数完说总数。</span></li><li><span class="check-mark" aria-hidden="true">✓</span><span>参与生活小步骤，遇到困难能求助。</span></li><li><span class="check-mark" aria-hidden="true">✓</span><span>用具体约定准备道别，允许想家。</span></li><li><span class="check-mark" aria-hidden="true">✓</span><span>在生活情境中练习来回对话。</span></li><li><span class="check-mark" aria-hidden="true">✓</span><span>观察植物、昼夜和家乡的变化。</span></li></ul>
+        </div>
+        <div>
+          <div class="subsection-label">主题索引</div>
+          <div class="theme-index">
+            
+                  <details class="theme-item">
+                    <summary><span class="theme-number">01</span><span>找规律</span><span class="summary-caret" aria-hidden="true">+</span></summary>
+                    <div class="theme-body">
+                      <p>先玩两样交替，再共同看看三张一组。</p>
+                      <ul><li>用袜子、毛巾摆两组完整重复。</li><li>拍手、跺脚轻轻轮流来，可坐姿替代。</li><li>三张一组只作可选挑战，困惑就回到两样交替。</li></ul>
+                    </div>
+                  </details>
+                  <details class="theme-item">
+                    <summary><span class="theme-number">02</span><span>数到十</span><span class="summary-caret" aria-hidden="true">+</span></summary>
+                    <div class="theme-body">
+                      <p>成人带数较大集合，孩子从小数量动手。</p>
+                      <ul><li>点一个数一个，数完说总数，不考数字认读。</li><li>先用一至三个大物品，四五个由成人支持。</li><li>同样大小的物品一对一摆齐，再说多和少。</li></ul>
+                    </div>
+                  </details>
+                  <details class="theme-item">
+                    <summary><span class="theme-number">03</span><span>我会自己做</span><span class="summary-caret" aria-hidden="true">+</span></summary>
+                    <div class="theme-body">
+                      <p>把熟悉流程拆成小步，尝试和求助都可以。</p>
+                      <ul><li>坐稳试穿一件衣物，成人检查舒适与安全。</li><li>用先、再说两步计划，按家庭需要调整。</li><li>如厕不催促，上厕所或尿布照护后做好清洁。</li></ul>
+                    </div>
+                  </details>
+                  <details class="theme-item">
+                    <summary><span class="theme-number">04</span><span>上幼儿园</span><span class="summary-caret" aria-hidden="true">+</span></summary>
+                    <div class="theme-body">
+                      <p>认识生活环节，练习道别、求助和温柔的话。</p>
+                      <ul><li>用玩偶演道别和按约定来接，不制造真实分离。</li><li>让孩子说担心什么，想家时可以找老师。</li><li>用真实物品命名，接送与携带规定以园所为准。</li></ul>
+                    </div>
+                  </details>
+                  <details class="theme-item">
+                    <summary><span class="theme-number">05</span><span>健康的我</span><span class="summary-caret" aria-hidden="true">+</span></summary>
+                    <div class="theme-body">
+                      <p>认识多样饮食、安全活动和无屏晚安流程。</p>
+                      <ul><li>日常食物轮换，甜点偶尔少量，不强迫清盘。</li><li>动作可降阶，扶稳抬脚，不把平衡当考核。</li><li>晚安课与摇篮曲只在白天学，睡前关屏。</li></ul>
+                    </div>
+                  </details>
+                  <details class="theme-item">
+                    <summary><span class="theme-number">06</span><span>大自然的变化</span><span class="summary-caret" aria-hidden="true">+</span></summary>
+                    <div class="theme-body">
+                      <p>观察具体植物和当地天气，不用图例替代真实自然。</p>
+                      <ul><li>成人管理种子和盆土，孩子观察真实幼苗。</li><li>昼夜按明确时段聊生活，月亮白天也可能看见。</li><li>重复看同一棵树，允许家乡和故事不一样。</li></ul>
+                    </div>
+                  </details>
+          </div>
+        </div>
+      </div>
+      <div class="postcard">
+        <div class="postcard-pin" aria-hidden="true"></div>
+        <div class="postcard-head">
+          <span>示例课明信片</span>
+          <span class="postcard-stamp">S6</span>
+        </div>
+        <div class="postcard-body">
+          <div>
+            <h4>水果排排队</h4>
+            <p class="english-line">Fruit Patterns</p>
+            <p>找找两样东西怎样轮流来。</p>
+          </div>
+          <div class="postcard-copy">
+            <span class="small-label">家长先读</span>
+            <p>先和孩子慢慢读两组重复，再一起找下一张。能看、指或摆都算参与。颜色和形状轮可随时跳过。看完关屏，用两样大物品继续玩。</p>
+          </div>
+          <div class="postcard-phrases">
+            <span class="small-label">可以这样说</span>
+            <p>“苹果，香蕉。又来一组。”</p><p>“你发现什么了？”</p>
+          </div>
+        </div>
+        <a class="text-link" href="#lesson" data-stage-lesson="core.s6.fruit-pattern">看这节课 <svg class="icon " viewBox="0 0 24 24" aria-hidden="true" focusable="false" ><path d="M5 12h13M13 6l6 6-6 6"/></svg></a>
+      </div>
+    </article>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+    <section class="section-band paper-band lesson-band" id="lesson">
+      <div class="content-wrap">
+        
+  <div class="section-heading">
+    <p class="eyebrow">一节课，大部分发生在屏幕外</p>
+    <h2 class="section-title balanced-title"><span class="nobr">把「嘀嘀叭叭」</span><span class="nobr">展开看看</span></h2>
+    <p class="section-lede">这是一节家长指引课：屏幕上先读懂怎么做，真正的课程发生在安全处看车、回家找卡和说话的停顿里。</p>
+  </div>
+        <div class="lesson-meta-row">
+          <span class="source-chip">内置课程示例</span>
+          <span>12–17 月龄</span>
+          <span>2 分钟</span>
+          <span>家长指引</span>
+        </div>
+        <div class="lesson-fold">
+          <div class="fold-step fold-step-intro">
+            <div class="fold-index">01</div>
+            <div class="fold-content">
+              <div class="subsection-label">家长先读 <span class="under-note">先读完，再关屏。</span></div>
+              <p class="large-copy">先读完，再关屏。成人选安全位置看车。一次只说眼前一种车。没看到时就用大卡。不需专门去路口或水边。叫声只轻声模仿。</p>
+              <ul class="tip-row"><li><span class="tiny-leaf" aria-hidden="true">⌁</span>一次只说一种眼前的车辆。</li><li><span class="tiny-leaf" aria-hidden="true">⌁</span>先描述，再邀请宝宝看或听。</li><li><span class="tiny-leaf" aria-hidden="true">⌁</span>英语只做短标签。不替代中文对话。</li></ul>
+            </div>
+          </div>
+          <div class="fold-step">
+            <div class="fold-index">02</div>
+            <div class="fold-content">
+              <div class="subsection-label">可以这样说</div>
+              <div class="phrase-list">
+                
+                      <div class="phrase-row">
+                        <div><strong>这是汽车，嘀嘀。</strong><span>This is a car, beep beep.</span></div>
+                        <button type="button" class="speak-button" data-speak="这是汽车，嘀嘀。" data-speak-lang="zh-CN" aria-label="听一听: 这是汽车，嘀嘀。"><svg class="icon " viewBox="0 0 24 24" aria-hidden="true" focusable="false" ><path d="M4 10v4h4l5 4V6l-5 4H4Z"/><path d="M17 9.5a4 4 0 0 1 0 5"/><path d="M19.5 7a7.2 7.2 0 0 1 0 10"/></svg><span>听一听</span></button>
+                      </div>
+                      <div class="phrase-row">
+                        <div><strong>公交车开过去了。</strong><span>The bus is going by.</span></div>
+                        <button type="button" class="speak-button" data-speak="公交车开过去了。" data-speak-lang="zh-CN" aria-label="听一听: 公交车开过去了。"><svg class="icon " viewBox="0 0 24 24" aria-hidden="true" focusable="false" ><path d="M4 10v4h4l5 4V6l-5 4H4Z"/><path d="M17 9.5a4 4 0 0 1 0 5"/><path d="M19.5 7a7.2 7.2 0 0 1 0 10"/></svg><span>听一听</span></button>
+                      </div>
+                      <div class="phrase-row">
+                        <div><strong>你听到了吗？</strong><span>Did you hear it?</span></div>
+                        <button type="button" class="speak-button" data-speak="你听到了吗？" data-speak-lang="zh-CN" aria-label="听一听: 你听到了吗？"><svg class="icon " viewBox="0 0 24 24" aria-hidden="true" focusable="false" ><path d="M4 10v4h4l5 4V6l-5 4H4Z"/><path d="M17 9.5a4 4 0 0 1 0 5"/><path d="M19.5 7a7.2 7.2 0 0 1 0 10"/></svg><span>听一听</span></button>
+                      </div>
+                      <div class="phrase-row">
+                        <div><strong>我们站在安全处。</strong><span>We stay in a safe place.</span></div>
+                        <button type="button" class="speak-button" data-speak="我们站在安全处。" data-speak-lang="zh-CN" aria-label="听一听: 我们站在安全处。"><svg class="icon " viewBox="0 0 24 24" aria-hidden="true" focusable="false" ><path d="M4 10v4h4l5 4V6l-5 4H4Z"/><path d="M17 9.5a4 4 0 0 1 0 5"/><path d="M19.5 7a7.2 7.2 0 0 1 0 10"/></svg><span>听一听</span></button>
+                      </div>
+              </div>
+            </div>
+          </div>
+          <div class="fold-step offline-step">
+            <div class="fold-index">03</div>
+            <div class="fold-content">
+              <div class="subsection-label">屏幕外 10 分钟 <span class="under-note">安全地看车</span></div>
+              <div class="offline-grid">
+                <div>
+                  <h3>准备</h3>
+                  <ul class="plain-list"><li>交通工具大卡</li></ul>
+                  <h3>做法</h3>
+                  <ol class="numbered-list"><li>成人先选安全位置。远离车道和停车场出入口。</li><li>只指眼前的一种车。说“汽车”或“公交车”。</li><li>停下来等宝宝回应。声音小，动作慢。</li><li>回家拿火车、飞机和小船卡。每次只选一张。</li></ol>
+                </div>
+                <div class="safety-note">
+                  <span class="safety-icon" aria-hidden="true">!</span>
+                  <div><h3>安全提示</h3><p>成人全程牵护或抱稳。远离道路和轨道。不靠近车门、车轮和水边。不播放真实大喇叭声。窗边先关好窗户。不爬窗台和家具。纱窗不能防坠。看卡无需靠窗。</p></div>
+                </div>
+              </div>
+              <div class="levels-row">
+                <div><span>更容易</span><p>在家看一张卡。家长说名字和声音。</p></div>
+                <div><span>更有挑战</span><p>在安全位置找两种车辆。分别说名字。</p></div>
+              </div>
+              <p class="question-note"><span>?</span>你听到了什么声音？</p>
+            </div>
+          </div>
+          <div class="fold-step print-step">
+            <div class="fold-index">04</div>
+            <div class="fold-content">
+              <div class="subsection-label">打印卡 <span class="under-note">打印样式会只留下卡片，适合 A4 / A5 实际大小。</span></div>
+              <div class="print-card-grid">
+                
+                      <article class="print-card" data-print-card>
+                        <img src="./assets/illustrations/car.svg" alt="汽车" width="150" height="150">
+                        <div><strong>汽车</strong><span>car</span></div>
+                        <button type="button" class="print-one" data-print-one><svg class="icon " viewBox="0 0 24 24" aria-hidden="true" focusable="false" ><path d="M6 9V4h12v5"/><path d="M6 17H4a2 2 0 0 1-2-2v-3a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v3a2 2 0 0 1-2 2h-2"/><path d="M6 14h12v7H6z"/></svg><span>打印这张卡</span></button>
+                      </article>
+                      <article class="print-card" data-print-card>
+                        <img src="./assets/illustrations/bus.svg" alt="公交车" width="150" height="150">
+                        <div><strong>公交车</strong><span>bus</span></div>
+                        <button type="button" class="print-one" data-print-one><svg class="icon " viewBox="0 0 24 24" aria-hidden="true" focusable="false" ><path d="M6 9V4h12v5"/><path d="M6 17H4a2 2 0 0 1-2-2v-3a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v3a2 2 0 0 1-2 2h-2"/><path d="M6 14h12v7H6z"/></svg><span>打印这张卡</span></button>
+                      </article>
+                      <article class="print-card" data-print-card>
+                        <img src="./assets/illustrations/train.svg" alt="火车" width="150" height="150">
+                        <div><strong>火车</strong><span>train</span></div>
+                        <button type="button" class="print-one" data-print-one><svg class="icon " viewBox="0 0 24 24" aria-hidden="true" focusable="false" ><path d="M6 9V4h12v5"/><path d="M6 17H4a2 2 0 0 1-2-2v-3a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v3a2 2 0 0 1-2 2h-2"/><path d="M6 14h12v7H6z"/></svg><span>打印这张卡</span></button>
+                      </article>
+                      <article class="print-card" data-print-card>
+                        <img src="./assets/illustrations/airplane.svg" alt="飞机" width="150" height="150">
+                        <div><strong>飞机</strong><span>airplane</span></div>
+                        <button type="button" class="print-one" data-print-one><svg class="icon " viewBox="0 0 24 24" aria-hidden="true" focusable="false" ><path d="M6 9V4h12v5"/><path d="M6 17H4a2 2 0 0 1-2-2v-3a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v3a2 2 0 0 1-2 2h-2"/><path d="M6 14h12v7H6z"/></svg><span>打印这张卡</span></button>
+                      </article>
+                      <article class="print-card" data-print-card>
+                        <img src="./assets/illustrations/boat.svg" alt="小船" width="150" height="150">
+                        <div><strong>小船</strong><span>boat</span></div>
+                        <button type="button" class="print-one" data-print-one><svg class="icon " viewBox="0 0 24 24" aria-hidden="true" focusable="false" ><path d="M6 9V4h12v5"/><path d="M6 17H4a2 2 0 0 1-2-2v-3a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v3a2 2 0 0 1-2 2h-2"/><path d="M6 14h12v7H6z"/></svg><span>打印这张卡</span></button>
+                      </article>
+              </div>
+            </div>
+          </div>
+          <div class="fold-step why-step">
+            <div class="fold-index">05</div>
+            <div class="fold-content">
+              <div class="subsection-label">为什么这样做</div>
+              <div class="why-box"><span class="quote-mark" aria-hidden="true">“</span><p>跟着宝宝正在看的东西说。命名后停顿等回应。研究支持真人交流。不用车辆录像代替陪伴。</p></div>
+              <div class="ref-chips">
+                <a class="ref-chip" href="https://www.gov.cn/zhengce/zhengceku/2022-11/29/content_5729421.htm" target="_blank" rel="noreferrer" title="国家卫生健康委办公厅. 3岁以下婴幼儿健康养育照护指南（试行）. 国卫办妇幼函〔2022〕409号.">[6]</a><a class="ref-chip" href="https://eric.ed.gov/?id=EJ1043804" target="_blank" rel="noreferrer" title="Ramírez-Esparza N, García-Sierra A, Kuhl PK. Look who&#39;s talking: Speech style and social context in language input to infants are linked to concurrent and future speech development. Developmental Science. 2014;17(6):880–891.">[45]</a><a class="ref-chip" href="https://www.pnas.org/doi/10.1073/pnas.1921653117" target="_blank" rel="noreferrer" title="Ferjan Ramírez N, Lytle SR, Kuhl PK. Parent coaching increases conversational turns and advances infant language development. PNAS. 2020;117(7):3484–3491.">[47]</a><a class="ref-chip" href="https://developingchild.harvard.edu/key-concept/serve-and-return/" target="_blank" rel="noreferrer" title="Center on the Developing Child, Harvard University. Serve and Return.">[82]</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  
+  <section class="section-band" id="activities">
+    <div class="content-wrap">
+      
+  <div class="section-heading">
+    <p class="eyebrow">活动插件</p>
+    <h2 class="section-title balanced-title"><span class="nobr">17 个小而有限的入口</span></h2>
+    <p class="section-lede">一个活动只做一件事：在 16:9 的舞台里慢慢呈现，交给家长和孩子一起回应。第三方活动使用带命名空间的 type。</p>
+  </div>
+      <div class="activity-grid">
+        
+              <article class="activity-card activity-contrast" style="--activity-index:0">
+                <div class="activity-art"><svg class="activity-svg" viewBox="0 0 80 70" aria-hidden="true"><circle cx="40" cy="36" r="22" fill="#fffaf2"/><circle cx="40" cy="36" r="15" fill="#1f2a44"/><circle cx="40" cy="36" r="7" fill="#f08a5d"/></svg></div>
+                <div class="activity-card-body">
+                  <div class="activity-title-row"><h3>高对比视觉</h3><span class="activity-index">01</span></div>
+                  <p>黑白或黑白红的慢慢看</p>
+                  <div class="activity-meta"><span>类型 <code>contrast</code></span><span>适用 6–12 月龄</span></div>
+                </div>
+              </article>
+              <article class="activity-card activity-word-cards" style="--activity-index:1">
+                <div class="activity-art"><svg class="activity-svg" viewBox="0 0 80 70" aria-hidden="true"><rect x="13" y="10" width="54" height="47" rx="4" fill="#fffaf2" stroke="#3b3226" stroke-width="2"/><path d="M26 39c-7-10 7-19 14-7 7-12 21-3 14 7-5 8-14 13-14 13S31 47 26 39Z" fill="#f08a5d" stroke="#9b3f38" stroke-width="2"/><path d="M23 18h26" stroke="#5da9e9" stroke-width="3" stroke-linecap="round"/></svg></div>
+                <div class="activity-card-body">
+                  <div class="activity-title-row"><h3>图像词卡</h3><span class="activity-index">02</span></div>
+                  <p>一张一张看真实词语</p>
+                  <div class="activity-meta"><span>类型 <code>word-cards</code></span><span>适用 6–36 月龄</span></div>
+                </div>
+              </article>
+              <article class="activity-card activity-peekaboo" style="--activity-index:2">
+                <div class="activity-art"><svg class="activity-svg" viewBox="0 0 80 70" aria-hidden="true"><circle cx="41" cy="36" r="17" fill="#f0c6a4" stroke="#3b3226" stroke-width="2"/><circle cx="35" cy="34" r="2" fill="#3b3226"/><circle cx="47" cy="34" r="2" fill="#3b3226"/><path d="M15 16h20v39H15z" fill="#f08a5d" stroke="#9b3f38" stroke-width="2"/><path d="M15 16q12 9 20 0" fill="none" stroke="#fffaf2" stroke-width="2"/></svg></div>
+                <div class="activity-card-body">
+                  <div class="activity-title-row"><h3>躲猫猫</h3><span class="activity-index">03</span></div>
+                  <p>遮住一点，再一起发现</p>
+                  <div class="activity-meta"><span>类型 <code>peekaboo</code></span><span>适用 7–18 月龄</span></div>
+                </div>
+              </article>
+              <article class="activity-card activity-bubbles" style="--activity-index:3">
+                <div class="activity-art"><svg class="activity-svg" viewBox="0 0 80 70" aria-hidden="true"><circle cx="23" cy="38" r="12" fill="#dff1fb" stroke="#5da9e9" stroke-width="3"/><circle cx="47" cy="28" r="9" fill="#e6f4d7" stroke="#6c9a3b" stroke-width="3"/><circle cx="56" cy="47" r="5" fill="#f8e8c7" stroke="#f08a5d" stroke-width="2"/></svg></div>
+                <div class="activity-card-body">
+                  <div class="activity-title-row"><h3>戳泡泡</h3><span class="activity-index">04</span></div>
+                  <p>点破有限的泡泡，看看里面</p>
+                  <div class="activity-meta"><span>类型 <code>bubbles</code></span><span>适用 9–24 月龄</span></div>
+                </div>
+              </article>
+              <article class="activity-card activity-count" style="--activity-index:4">
+                <div class="activity-art"><svg class="activity-svg" viewBox="0 0 80 70" aria-hidden="true"><circle cx="23" cy="35" r="7" fill="#f08a5d"/><circle cx="40" cy="35" r="7" fill="#5da9e9"/><circle cx="57" cy="35" r="7" fill="#6c9a3b"/><path d="M13 17q17-12 29-2" fill="none" stroke="#3b3226" stroke-width="3" stroke-linecap="round"/><path d="m39 14 5 2-4 4" fill="none" stroke="#3b3226" stroke-width="2"/></svg></div>
+                <div class="activity-card-body">
+                  <div class="activity-title-row"><h3>数一数</h3><span class="activity-index">05</span></div>
+                  <p>点一个说一个，数完说总数</p>
+                  <div class="activity-meta"><span>类型 <code>count</code></span><span>适用 15–36 月龄</span></div>
+                </div>
+              </article>
+              <article class="activity-card activity-subitize" style="--activity-index:5">
+                <div class="activity-art"><svg class="activity-svg" viewBox="0 0 80 70" aria-hidden="true"><rect x="14" y="12" width="52" height="45" rx="7" fill="#fffaf2" stroke="#3b3226" stroke-width="3"/><circle cx="28" cy="25" r="3" fill="#3b3226"/><circle cx="52" cy="25" r="3" fill="#3b3226"/><circle cx="40" cy="34" r="3" fill="#3b3226"/><circle cx="28" cy="45" r="3" fill="#3b3226"/><circle cx="52" cy="45" r="3" fill="#3b3226"/></svg></div>
+                <div class="activity-card-body">
+                  <div class="activity-title-row"><h3>一眼看出几个</h3><span class="activity-index">06</span></div>
+                  <p>短暂看一眼小数量</p>
+                  <div class="activity-meta"><span>类型 <code>subitize</code></span><span>适用 24–36 月龄</span></div>
+                </div>
+              </article>
+              <article class="activity-card activity-choose" style="--activity-index:6">
+                <div class="activity-art"><svg class="activity-svg" viewBox="0 0 80 70" aria-hidden="true"><circle cx="24" cy="34" r="13" fill="#f08a5d"/><rect x="45" y="22" width="25" height="25" rx="4" fill="#5da9e9"/><path d="M10 12c10 3 18 9 25 18" fill="none" stroke="#3b3226" stroke-width="3" stroke-linecap="round"/><path d="m31 26 5 4-6 1" fill="none" stroke="#3b3226" stroke-width="2"/></svg></div>
+                <div class="activity-card-body">
+                  <div class="activity-title-row"><h3>找一找</h3><span class="activity-index">07</span></div>
+                  <p>在大目标里指认一个</p>
+                  <div class="activity-meta"><span>类型 <code>choose</code></span><span>适用 12–36 月龄</span></div>
+                </div>
+              </article>
+              <article class="activity-card activity-sort" style="--activity-index:7">
+                <div class="activity-art"><svg class="activity-svg" viewBox="0 0 80 70" aria-hidden="true"><path d="M12 33q14-8 28 0v21H12Z" fill="#d8b07b" stroke="#67472f" stroke-width="2"/><path d="M43 33q13-8 25 0v21H43Z" fill="#d8b07b" stroke="#67472f" stroke-width="2"/><circle cx="25" cy="28" r="7" fill="#f08a5d"/><rect x="50" y="20" width="12" height="12" rx="2" fill="#5da9e9"/></svg></div>
+                <div class="activity-card-body">
+                  <div class="activity-title-row"><h3>分一分</h3><span class="activity-index">08</span></div>
+                  <p>按一个特点把东西放一起</p>
+                  <div class="activity-meta"><span>类型 <code>sort</code></span><span>适用 24–36 月龄</span></div>
+                </div>
+              </article>
+              <article class="activity-card activity-sequence" style="--activity-index:8">
+                <div class="activity-art"><svg class="activity-svg" viewBox="0 0 80 70" aria-hidden="true"><rect x="10" y="21" width="18" height="25" rx="3" fill="#f8e8c7" stroke="#3b3226" stroke-width="2"/><rect x="35" y="21" width="18" height="25" rx="3" fill="#e6f4d7" stroke="#3b3226" stroke-width="2"/><path d="M28 33h7M32 29l4 4-4 4" fill="none" stroke="#f08a5d" stroke-width="2"/></svg></div>
+                <div class="activity-card-body">
+                  <div class="activity-title-row"><h3>排顺序</h3><span class="activity-index">09</span></div>
+                  <p>把生活步骤慢慢排开</p>
+                  <div class="activity-meta"><span>类型 <code>sequence</code></span><span>适用 18–36 月龄</span></div>
+                </div>
+              </article>
+              <article class="activity-card activity-pattern" style="--activity-index:9">
+                <div class="activity-art"><svg class="activity-svg" viewBox="0 0 80 70" aria-hidden="true"><circle cx="17" cy="35" r="9" fill="#f08a5d"/><rect x="31" y="26" width="18" height="18" rx="3" fill="#5da9e9"/><circle cx="61" cy="35" r="9" fill="#f08a5d"/><path d="M5 15h62" stroke="#6c9a3b" stroke-width="3" stroke-dasharray="4 6"/></svg></div>
+                <div class="activity-card-body">
+                  <div class="activity-title-row"><h3>找规律</h3><span class="activity-index">10</span></div>
+                  <p>发现重复的两样或三样</p>
+                  <div class="activity-meta"><span>类型 <code>pattern</code></span><span>适用 30–36 月龄</span></div>
+                </div>
+              </article>
+              <article class="activity-card activity-story" style="--activity-index:10">
+                <div class="activity-art"><svg class="activity-svg" viewBox="0 0 80 70" aria-hidden="true"><path d="M12 19q14-7 28 1v35q-14-8-28 0Z" fill="#fffaf2" stroke="#3b3226" stroke-width="2"/><path d="M40 20q13-8 28-1v36q-15-8-28 0Z" fill="#fffaf2" stroke="#3b3226" stroke-width="2"/><path d="M20 29h13M20 36h11M48 29h12M48 36h9" stroke="#5da9e9" stroke-width="2" stroke-linecap="round"/></svg></div>
+                <div class="activity-card-body">
+                  <div class="activity-title-row"><h3>绘本故事</h3><span class="activity-index">11</span></div>
+                  <p>一页一页读，留出提问</p>
+                  <div class="activity-meta"><span>类型 <code>story</code></span><span>适用 9–36 月龄</span></div>
+                </div>
+              </article>
+              <article class="activity-card activity-song" style="--activity-index:11">
+                <div class="activity-art"><svg class="activity-svg" viewBox="0 0 80 70" aria-hidden="true"><path d="M28 18v29" stroke="#3b3226" stroke-width="3"/><path d="M28 18q19-7 29 0v9q-10-7-29 0Z" fill="#f08a5d" stroke="#9b3f38" stroke-width="2"/><ellipse cx="21" cy="49" rx="9" ry="6" fill="#5da9e9"/><path d="M52 40q8-8 14-2" fill="none" stroke="#6c9a3b" stroke-width="3" stroke-linecap="round"/></svg></div>
+                <div class="activity-card-body">
+                  <div class="activity-title-row"><h3>儿歌</h3><span class="activity-index">12</span></div>
+                  <p>给家长学唱，再关屏唱</p>
+                  <div class="activity-meta"><span>类型 <code>song</code></span><span>适用 6–36 月龄</span></div>
+                </div>
+              </article>
+              <article class="activity-card activity-movement" style="--activity-index:12">
+                <div class="activity-art"><svg class="activity-svg" viewBox="0 0 80 70" aria-hidden="true"><circle cx="41" cy="17" r="7" fill="#f0c6a4" stroke="#3b3226" stroke-width="2"/><path d="M41 25v18M41 30l-15-7M41 30l15-10M41 43l-14 12M41 43l16 10" fill="none" stroke="#3b3226" stroke-width="3" stroke-linecap="round"/><path d="m14 26 7-5M16 42l-7 3" stroke="#f08a5d" stroke-width="3" stroke-linecap="round"/></svg></div>
+                <div class="activity-card-body">
+                  <div class="activity-title-row"><h3>动一动</h3><span class="activity-index">13</span></div>
+                  <p>把一个词放进身体动作</p>
+                  <div class="activity-meta"><span>类型 <code>movement</code></span><span>适用 9–36 月龄</span></div>
+                </div>
+              </article>
+              <article class="activity-card activity-calm" style="--activity-index:13">
+                <div class="activity-art"><svg class="activity-svg" viewBox="0 0 80 70" aria-hidden="true"><circle cx="40" cy="35" r="22" fill="none" stroke="#5da9e9" stroke-width="3"/><circle cx="40" cy="35" r="12" fill="none" stroke="#ffc93c" stroke-width="3"/><path d="M40 35 52 23" stroke="#6c9a3b" stroke-width="3" stroke-linecap="round"/></svg></div>
+                <div class="activity-card-body">
+                  <div class="activity-title-row"><h3>安静时刻</h3><span class="activity-index">14</span></div>
+                  <p>一起慢下来，不要求完成</p>
+                  <div class="activity-meta"><span>类型 <code>calm</code></span><span>适用 12–36 月龄</span></div>
+                </div>
+              </article>
+              <article class="activity-card activity-video" style="--activity-index:14">
+                <div class="activity-art"><svg class="activity-svg" viewBox="0 0 80 70" aria-hidden="true"><rect x="10" y="13" width="60" height="43" rx="5" fill="#1f2a44" stroke="#3b3226" stroke-width="3"/><path d="m34 24 17 10-17 10Z" fill="#ffc93c"/><path d="M20 63h40" stroke="#3b3226" stroke-width="3" stroke-linecap="round"/></svg></div>
+                <div class="activity-card-body">
+                  <div class="activity-title-row"><h3>视频</h3><span class="activity-index">15</span></div>
+                  <p>短、写实、没有自动连播</p>
+                  <div class="activity-meta"><span>类型 <code>video</code></span><span>适用 18–36 月龄</span></div>
+                </div>
+              </article>
+              <article class="activity-card activity-web" style="--activity-index:15">
+                <div class="activity-art"><svg class="activity-svg" viewBox="0 0 80 70" aria-hidden="true"><rect x="9" y="13" width="62" height="45" rx="5" fill="#fffaf2" stroke="#3b3226" stroke-width="3"/><path d="M10 25h60" stroke="#3b3226" stroke-width="3"/><circle cx="18" cy="19" r="2" fill="#f08a5d"/><circle cx="26" cy="19" r="2" fill="#ffc93c"/><circle cx="34" cy="19" r="2" fill="#6c9a3b"/><path d="M23 40h35M23 47h22" stroke="#5da9e9" stroke-width="3" stroke-linecap="round"/></svg></div>
+                <div class="activity-card-body">
+                  <div class="activity-title-row"><h3>网页互动</h3><span class="activity-index">16</span></div>
+                  <p>在隔离的外部页面里做一件事</p>
+                  <div class="activity-meta"><span>类型 <code>web</code></span><span>适用 24–36 月龄</span></div>
+                </div>
+              </article>
+              <article class="activity-card activity-guide" style="--activity-index:16">
+                <div class="activity-art"><svg class="activity-svg" viewBox="0 0 80 70" aria-hidden="true"><path d="M15 12h50v43H15z" fill="#f8e8c7" stroke="#67472f" stroke-width="2"/><path d="M23 22h30M23 30h24" stroke="#a45a3e" stroke-width="2" stroke-linecap="round"/><path d="m23 42 6 6 14-15" fill="none" stroke="#6c9a3b" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+                <div class="activity-card-body">
+                  <div class="activity-title-row"><h3>亲子活动指引</h3><span class="activity-index">17</span></div>
+                  <p>家长读完，去做真实活动</p>
+                  <div class="activity-meta"><span>类型 <code>guide</code></span><span>适用 6–36 月龄</span></div>
+                </div>
+              </article>
+      </div>
+      <div class="plugin-callout">
+        <div><span class="callout-mark" aria-hidden="true">.</span><strong>第三方活动也要守住边界。</strong><p>type 必须带命名空间，例如 example.hello-stars；宿主负责焦点、计时、家长门和资源。</p></div>
+        <a class="text-link" href="https://github.com/gxlself/ai-study/blob/main/docs/dev/plugin-guide.md" target="_blank" rel="noreferrer">阅读插件开发指南 <span aria-hidden="true">↗</span></a>
+      </div>
+    </div>
+  </section>
+  
+  <section class="section-band paper-band" id="home">
+    <div class="content-wrap">
+      
+  <div class="section-heading">
+    <p class="eyebrow">在你家里运行</p>
+    <h2 class="section-title balanced-title"><span class="nobr">一台小服务器，</span><span class="nobr">把设备留在家里</span></h2>
+    <p class="section-lede">客厅的大屏不需要认识互联网。Mac、NAS 或小主机在家庭局域网里提供播放端，手机只在家长需要时打开后台。</p>
+  </div>
+      <div class="home-layout">
+        <div class="home-illustration">
+  <svg class="home-map" viewBox="0 0 760 380" role="img" aria-labelledby="home-map-title home-map-desc">
+    <title id="home-map-title">一台小服务器，把设备留在家里</title>
+    <desc id="home-map-desc">客厅的大屏不需要认识互联网。Mac、NAS 或小主机在家庭局域网里提供播放端，手机只在家长需要时打开后台。</desc>
+    <path d="M26 315h708" stroke="#c9ae83" stroke-width="3" stroke-linecap="round" stroke-dasharray="2 11"/>
+    <path d="M56 313V122l92-62 92 62v191Z" fill="#fffaf2" stroke="#6f5b45" stroke-width="4"/>
+    <path d="m47 126 101-72 101 72" fill="none" stroke="#6f5b45" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+    <path d="M56 238h184M56 174h184" stroke="#dec9aa" stroke-width="3"/>
+    <path d="M148 122v190" stroke="#dec9aa" stroke-width="3"/>
+    <rect x="72" y="86" width="48" height="34" rx="4" fill="#dff1fb" stroke="#6f5b45" stroke-width="3"/>
+    <path d="M96 86v34M72 103h48" stroke="#6f5b45" stroke-width="2"/>
+    <path d="M162 286q34-15 66 0v18h-66Z" fill="#e6f4d7" stroke="#6c9a3b" stroke-width="2"/>
+    <path d="M169 269h44q7 0 7 8v10h-58v-10q0-8 7-8Z" fill="#f08a5d" stroke="#6f5b45" stroke-width="3"/>
+    <path d="M221 263v-25M211 238h20l-4 9h-12Z" fill="#f4c36a" stroke="#6f5b45" stroke-width="2"/>
+    <rect x="80" y="190" width="67" height="47" rx="7" fill="#1f2a44" stroke="#6f5b45" stroke-width="3"/>
+    <rect x="88" y="198" width="51" height="31" rx="3" fill="#dff1fb"/>
+    <path d="M93 222q15-15 27-3t20-6" fill="none" stroke="#6c9a3b" stroke-width="3"/>
+    <rect x="166" y="201" width="39" height="31" rx="6" fill="#f3ead9" stroke="#6f5b45" stroke-width="3"/>
+    <circle cx="185" cy="214" r="8" fill="#ffc93c"/>
+    <text x="84" y="260" class="map-label">Mac / NAS</text>
+    <text x="84" y="279" class="map-small">@sprout/server :4310</text>
+    <rect x="300" y="159" width="154" height="111" rx="17" fill="#66806a" stroke="#3b3226" stroke-width="5"/>
+    <rect x="317" y="176" width="112" height="68" rx="8" fill="#1f2a44"/>
+    <path d="M347 262h61M359 269h37" stroke="#3b3226" stroke-width="5" stroke-linecap="round"/>
+    <text x="323" y="292" class="map-label">客厅电视</text>
+    <text x="323" y="311" class="map-small">播放端</text>
+    <rect x="493" y="203" width="64" height="91" rx="9" fill="#d7eff5" stroke="#6f5b45" stroke-width="4"/>
+    <circle cx="525" cy="281" r="4" fill="#6f5b45"/>
+    <path d="M508 220h34M508 228h22" stroke="#5da9e9" stroke-width="4" stroke-linecap="round"/>
+    <text x="488" y="318" class="map-label">沙发上的 iPad</text>
+    <text x="488" y="337" class="map-small">Safari / Capacitor</text>
+    <rect x="620" y="218" width="52" height="90" rx="10" fill="#f08a5d" stroke="#6f5b45" stroke-width="4"/>
+    <rect x="628" y="230" width="36" height="58" rx="3" fill="#fffaf2"/>
+    <circle cx="646" cy="296" r="4" fill="#fffaf2"/>
+    <text x="604" y="331" class="map-label">家长手机</text>
+    <text x="604" y="350" class="map-small">后台</text>
+    <path class="network-line" d="M211 215C254 196 268 198 302 209"/>
+    <path class="network-line network-line-delay" d="M454 218C475 220 481 235 493 243"/>
+    <path class="network-line network-line-delay-2" d="M557 248C581 241 596 249 621 259"/>
+    <circle class="network-node" cx="256" cy="204" r="5" fill="#ffc93c"/>
+    <circle class="network-node network-node-delay" cx="479" cy="229" r="5" fill="#ffc93c"/>
+    <circle class="network-node network-node-delay-2" cx="588" cy="248" r="5" fill="#ffc93c"/>
+  </svg></div>
+        <div class="home-points">
+          
+                <article class="home-point"><span class="home-point-number">01</span><div><h3>局域网运行</h3><p>服务端默认监听 4310，电视、iPad 和后台在同一个家庭网络里使用。</p></div></article>
+                <article class="home-point"><span class="home-point-number">02</span><div><h3>数据留在家里</h3><p>服务器用本地 SQLite 保存家庭数据；离线体验的记录留在当前设备。</p></div></article>
+                <article class="home-point"><span class="home-point-number">03</span><div><h3>6 位配对码</h3><p>播放端申请 6 位数字配对码，10 分钟有效；设备 token 不放在网页里。</p></div></article>
+                <article class="home-point"><span class="home-point-number">04</span><div><h3>没有服务器也能开始</h3><p>播放端内置 sprout.core 内容包，可以先离线体验，再决定是否连接家庭服务器。</p></div></article>
+          <div class="home-doc-links">
+            <a class="" href="https://github.com/gxlself/ai-study/blob/main/docs/deploy/README.md" target="_blank" rel="noreferrer">Docker 部署 <span aria-hidden="true">↗</span></a>
+            <a class="" href="https://github.com/gxlself/ai-study/blob/main/deploy/macos/install.sh" target="_blank" rel="noreferrer">macOS 自启动 <span aria-hidden="true">↗</span></a>
+            <a class="" href="https://github.com/gxlself/ai-study/blob/main/docs/deploy/README.md#android-tv" target="_blank" rel="noreferrer">Android TV <span aria-hidden="true">↗</span></a>
+            <a class="" href="https://github.com/gxlself/ai-study/blob/main/docs/deploy/README.md#ipad" target="_blank" rel="noreferrer">iPad / Safari <span aria-hidden="true">↗</span></a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  <section class="section-band try-band" id="try">
+    <div class="content-wrap">
+      
+  <div class="section-heading">
+    <p class="eyebrow">试一试 · 电视是关着的</p>
+    <h2 class="section-title balanced-title"><span class="nobr">先按一下电源，</span><span class="nobr">再决定看多久</span></h2>
+    <p class="section-lede">打开电视后，可以在浏览器里试用一段安静的演示。数据只保存在本浏览器；没有预录音频，朗读使用浏览器自带语音。</p>
+  </div>
+      <div class="try-layout">
+        <div class="try-tv-wrap">
+          <div class="try-tv" data-demo-shell>
+            <div class="try-tv-screen" data-demo-screen>
+              <span class="off-screen-label">已关屏</span>
+              <div class="demo-loading" data-demo-loading hidden><svg class="icon " viewBox="0 0 24 24" aria-hidden="true" focusable="false" ><path d="m12 3 1.8 5.2L19 10l-5.2 1.8L12 17l-1.8-5.2L5 10l5.2-1.8L12 3Z"/></svg><span>...</span></div>
+            </div>
+            <div class="tv-speaker" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i></div>
+            <button class="power-button" type="button" data-demo-power aria-label="打开电视"><span>⏻</span></button>
+          </div>
+          <div class="try-tv-stand" aria-hidden="true"></div>
+          <div class="time-note" data-demo-note hidden>
+            <span class="tape-corner" aria-hidden="true"></span>
+            <p>该关掉屏幕，去玩真的东西啦 🌱</p>
+            <button type="button" data-demo-close>好的，关电视</button>
+          </div>
+        </div>
+        <div class="try-aside">
+          <div class="try-actions">
+            <button class="button button-primary" type="button" data-demo-open><svg class="icon " viewBox="0 0 24 24" aria-hidden="true" focusable="false" ><path d="M5 12h13M13 6l6 6-6 6"/></svg> 打开电视</button>
+            <a class="button button-quiet" href="./demo/?lang=zh" target="_blank" rel="noreferrer"><svg class="icon " viewBox="0 0 24 24" aria-hidden="true" focusable="false" ><path d="M14 4h6v6M20 4l-9 9"/><path d="M18 14v5H5V6h5"/></svg> 全屏打开演示</a>
+          </div>
+          <ul class="try-tips">
+            <li><span>01</span>方向键 + Enter = 遥控器</li>
+            <li><span>02</span>演示版数据只保存在你的浏览器</li>
+            <li><span>03</span>没有预录音频，朗读使用浏览器自带语音</li>
+          </ul>
+          <p class="demo-availability">这是浏览器内的轻量演示，不连接家庭服务器。</p>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  <section class="section-band" id="evidence">
+    <div class="content-wrap">
+        
+  <div class="section-heading">
+    <p class="eyebrow">每个取舍都有出处</p>
+    <h2 class="section-title balanced-title"><span class="nobr">像一面借书卡墙，</span><span class="nobr">记下我们为什么这样做</span></h2>
+    <p class="section-lede">下面只列循证综述参考文献里的真实来源。卡片上的一句话是产品取舍的简写，不是研究结论的替代品。</p>
+  </div>
+      <div class="evidence-intro"><strong>105</strong> 条参考文献<span>·</span><span>参考文献数量</span></div>
+      <div class="library-grid">
+        
+              <article class="library-card">
+                <div class="library-card-top"><span class="card-number">01</span><span class="card-year">2019</span></div>
+                <h3>WHO. Guidelines on physical activity, sedentary behaviour and sleep for children under 5 years of age. 2019.</h3>
+                <p><span>它让我们做了什么取舍：</span>把屏幕放在优先级最后：2 岁前不建议久坐屏幕，先保留阅读、讲故事和互动游戏。</p>
+                <a class="text-link" href="https://www.who.int/publications/i/item/9789241550536" target="_blank" rel="noreferrer">读原文 <span aria-hidden="true">↗</span></a>
+              </article>
+              <article class="library-card">
+                <div class="library-card-top"><span class="card-number">02</span><span class="card-year">2016</span></div>
+                <h3>AAP Council on Communications and Media（Radesky J, Christakis D 等）. Media and Young Minds. Pediatrics. 2016;138(5):e20162591.</h3>
+                <p><span>它让我们做了什么取舍：</span>把 18 月龄以下做成家长工具；如引入数字媒体，要高质量、共看、不独看。</p>
+                <a class="text-link" href="https://publications.aap.org/pediatrics/article/138/5/e20162591/60503/Media-and-Young-Minds" target="_blank" rel="noreferrer">读原文 <span aria-hidden="true">↗</span></a>
+              </article>
+              <article class="library-card">
+                <div class="library-card-top"><span class="card-number">03</span><span class="card-year">2022</span></div>
+                <h3>国家卫生健康委办公厅. 3岁以下婴幼儿健康养育照护指南（试行）. 国卫办妇幼函〔2022〕409号.</h3>
+                <p><span>它让我们做了什么取舍：</span>把两岁以内的屏幕留空，并设餐桌、卧室和单次时长边界。</p>
+                <a class="text-link" href="https://www.gov.cn/zhengce/zhengceku/2022-11/29/content_5729421.htm" target="_blank" rel="noreferrer">读原文 <span aria-hidden="true">↗</span></a>
+              </article>
+              <article class="library-card">
+                <div class="library-card-top"><span class="card-number">04</span><span class="card-year">2024</span></div>
+                <h3>国家卫生健康委办公厅. 婴幼儿早期发展服务指南（试行）. 国卫办妇幼函〔2024〕467号（2024-12-05）.</h3>
+                <p><span>它让我们做了什么取舍：</span>以回应性照护和早期学习机会为主，避免把屏幕当作儿童的“玩伴”。</p>
+                <a class="text-link" href="https://wjw.fujian.gov.cn/xxgk/fgwj/gjwj/202502/t20250211_6713467.htm" target="_blank" rel="noreferrer">读原文 <span aria-hidden="true">↗</span></a>
+              </article>
+              <article class="library-card">
+                <div class="library-card-top"><span class="card-number">05</span><span class="card-year">2025</span></div>
+                <h3>教育部办公厅、国家卫生健康委办公厅、国家疾控局综合司. 关于科学保护儿童远视储备量的通知. 教体艺厅函〔2025〕40号（2025-10-28）.</h3>
+                <p><span>它让我们做了什么取舍：</span>默认更接近 0–3 岁禁用，鼓励户外，并减少家长在孩子面前使用电子产品。</p>
+                <a class="text-link" href="http://www.moe.gov.cn/srcsite/A17/moe_943/s3285/202511/t20251107_1419599.html" target="_blank" rel="noreferrer">读原文 <span aria-hidden="true">↗</span></a>
+              </article>
+              <article class="library-card">
+                <div class="library-card-top"><span class="card-number">06</span><span class="card-year">2021</span></div>
+                <h3>Strouse GA, Samson JE. Learning from video: A meta-analysis of the video deficit in children ages 0 to 6 years. Child Development. 2021.</h3>
+                <p><span>它让我们做了什么取舍：</span>把视频设计成提示而不是答案，给小月龄留出从二维画面回到现实的距离。</p>
+                <a class="text-link" href="https://onlinelibrary.wiley.com/doi/abs/10.1111/cdev.13429" target="_blank" rel="noreferrer">读原文 <span aria-hidden="true">↗</span></a>
+              </article>
+              <article class="library-card">
+                <div class="library-card-top"><span class="card-number">07</span><span class="card-year">2018</span></div>
+                <h3>Strouse GA, Troseth GL, O&#39;Doherty KD, Saylor MM. Co-viewing supports toddlers&#39; word learning from contingent and noncontingent video. Journal of Experimental Child Psychology. 2018;166:310–326.</h3>
+                <p><span>它让我们做了什么取舍：</span>把家长回应放在共看的中心：停下来、接住孩子，再继续。</p>
+                <a class="text-link" href="https://doi.org/10.1016/j.jecp.2017.09.005" target="_blank" rel="noreferrer">读原文 <span aria-hidden="true">↗</span></a>
+              </article>
+              <article class="library-card">
+                <div class="library-card-top"><span class="card-number">08</span><span class="card-year">2024</span></div>
+                <h3>Brushe ME, Haag DG, Melhuish EC, Reilly S, Gregory T. Screen time and parent-child talk when children are aged 12 to 36 months. JAMA Pediatrics. 2024;178(4):369–375.</h3>
+                <p><span>它让我们做了什么取舍：</span>把每节课接到真实对话，避免屏幕挤走成人词、儿童发声和回合对话。</p>
+                <a class="text-link" href="https://pmc.ncbi.nlm.nih.gov/articles/PMC10913002/" target="_blank" rel="noreferrer">读原文 <span aria-hidden="true">↗</span></a>
+              </article>
+              <article class="library-card">
+                <div class="library-card-top"><span class="card-number">09</span><span class="card-year">2020</span></div>
+                <h3>Ferjan Ramírez N, Lytle SR, Kuhl PK. Parent coaching increases conversational turns and advances infant language development. PNAS. 2020;117(7):3484–3491.</h3>
+                <p><span>它让我们做了什么取舍：</span>用儿向语言和更多回合对话做真实输入，不把录播当作语言环境。</p>
+                <a class="text-link" href="https://www.pnas.org/doi/10.1073/pnas.1921653117" target="_blank" rel="noreferrer">读原文 <span aria-hidden="true">↗</span></a>
+              </article>
+              <article class="library-card">
+                <div class="library-card-top"><span class="card-number">10</span><span class="card-year">2022</span></div>
+                <h3>Skene K, et al. Can guidance during play enhance children&#39;s learning and development in educational contexts? A systematic review and meta-analysis. Child Development. 2022;93(4).</h3>
+                <p><span>它让我们做了什么取舍：</span>每个屏幕引子都接一个有目标、有支架、由孩子参与的游戏。</p>
+                <a class="text-link" href="https://onlinelibrary.wiley.com/doi/10.1111/cdev.13730" target="_blank" rel="noreferrer">读原文 <span aria-hidden="true">↗</span></a>
+              </article>
+              <article class="library-card">
+                <div class="library-card-top"><span class="card-number">11</span><span class="card-year">2015</span></div>
+                <h3>Hirsh-Pasek K, Zosh JM, Golinkoff RM, et al. Putting education in &quot;educational&quot; apps: Lessons from the science of learning. Psychological Science in the Public Interest. 2015;16(1):3–34.</h3>
+                <p><span>它让我们做了什么取舍：</span>交互要主动、投入、有意义，并且把社会互动留在设计里。</p>
+                <a class="text-link" href="https://kathyhirshpasek.com/wp-content/uploads/sites/9/2015/09/Psychological-Science-in-the-Public-Interest-2015-Hirsh-Pasek-3-34.pdf" target="_blank" rel="noreferrer">读原文 <span aria-hidden="true">↗</span></a>
+              </article>
+              <article class="library-card">
+                <div class="library-card-top"><span class="card-number">12</span><span class="card-year">2016</span></div>
+                <h3>Hiniker A, Suh H, Cao S, Kientz JA. Screen time tantrums: How families manage screen media experiences for toddlers and preschoolers. CHI 2016:648–660.</h3>
+                <p><span>它让我们做了什么取舍：</span>用自然结束点让离开屏幕更平滑，而不是用自动连播把人留下。</p>
+                <a class="text-link" href="https://dl.acm.org/doi/abs/10.1145/2858036.2858278" target="_blank" rel="noreferrer">读原文 <span aria-hidden="true">↗</span></a>
+              </article>
+              <article class="library-card">
+                <div class="library-card-top"><span class="card-number">13</span><span class="card-year">2022</span></div>
+                <h3>Radesky J, Hiniker A, et al. Prevalence and characteristics of manipulative design in mobile applications used by children. JAMA Network Open. 2022.</h3>
+                <p><span>它让我们做了什么取舍：</span>拒绝挽留、奖励和退出障碍；离开应该和进入一样容易。</p>
+                <a class="text-link" href="https://jamanetwork.com/journals/jamanetworkopen/fullarticle/2793493" target="_blank" rel="noreferrer">读原文 <span aria-hidden="true">↗</span></a>
+              </article>
+      </div>
+    </div>
+  </section>
+  
+  <section class="section-band paper-band" id="developers">
+    <div class="content-wrap">
+      
+  <div class="section-heading">
+    <p class="eyebrow">给开发者</p>
+    <h2 class="section-title balanced-title"><span class="nobr">从一颗芽，</span><span class="nobr">到一个可运行的 monorepo</span></h2>
+    <p class="section-lede">如果你想一起维护内容或扩展活动，这里把目录边界、启动方式和最小示例放在一起。</p>
+  </div>
+      <div class="dev-layout">
+        <div>
+          <div class="subsection-label">目录地图</div>
+          <pre class="repo-map"><code>apps/
+  server/                 Fastify + SQLite
+  admin/                  Parent area · React + Ant Design
+  player/                 TV / iPad player
+packages/
+  schema/                 Zod data contracts
+  core/                   scheduler + screen policy
+  plugin-sdk/             activity contract + tokens
+  activities/             17 built-in activities
+content/packs/             sprout-core
+plugins/examples/          namespaced plugin examples</code></pre>
+          <div class="tech-badges"><span>Node 22</span><span>Fastify</span><span>node:sqlite</span><span>React</span><span>Vite</span><span>Ant Design</span><span>Capacitor</span><span>Zod</span></div>
+        </div>
+        <div class="dev-tabs-wrap">
+          <div class="dev-tabs" role="tablist" aria-label="从一颗芽，到一个可运行的 monorepo">
+            <button type="button" role="tab" aria-selected="true" aria-controls="dev-panel-quickstart" data-dev-tab="quickstart">快速开始</button><button type="button" role="tab" aria-selected="false" aria-controls="dev-panel-content" data-dev-tab="content">写一个内容包</button><button type="button" role="tab" aria-selected="false" aria-controls="dev-panel-plugin" data-dev-tab="plugin">写一个活动插件</button>
+          </div>
+          <div class="dev-panels">
+            
+                  <div class="dev-panel" id="dev-panel-quickstart" role="tabpanel" data-dev-panel="quickstart" >
+                    <button type="button" class="copy-button" data-copy-target="dev-code-quickstart"><svg class="icon " viewBox="0 0 24 24" aria-hidden="true" focusable="false" ><rect x="8" y="8" width="12" height="12" rx="2"/><path d="M16 8V6a2 2 0 0 0-2-2H6a2 2 0 0 0-2 2v8a2 2 0 0 0 2 2h2"/></svg><span data-copy-label>复制</span></button>
+                    <pre><code id="dev-code-quickstart">corepack enable
+export pnpm_config_verify_deps_before_run=false
+pnpm install
+
+# 构建工作区应用
+pnpm build
+
+# 启动服务端
+pnpm start</code></pre>
+                  </div>
+                  <div class="dev-panel" id="dev-panel-content" role="tabpanel" data-dev-panel="content" hidden>
+                    <button type="button" class="copy-button" data-copy-target="dev-code-content"><svg class="icon " viewBox="0 0 24 24" aria-hidden="true" focusable="false" ><rect x="8" y="8" width="12" height="12" rx="2"/><path d="M16 8V6a2 2 0 0 0-2-2H6a2 2 0 0 0-2 2v8a2 2 0 0 0 2 2h2"/></svg><span data-copy-label>复制</span></button>
+                    <pre><code id="dev-code-content">content/examples/hello-pack/
+  pack.json
+  lexicon.json
+  assets/
+  routes/hello-route.json
+  lessons/hello.s1.shapes.json
+
+pnpm content:typecheck
+pnpm content:validate --pack content/examples/hello-pack --strict</code></pre>
+                  </div>
+                  <div class="dev-panel" id="dev-panel-plugin" role="tabpanel" data-dev-panel="plugin" hidden>
+                    <button type="button" class="copy-button" data-copy-target="dev-code-plugin"><svg class="icon " viewBox="0 0 24 24" aria-hidden="true" focusable="false" ><rect x="8" y="8" width="12" height="12" rx="2"/><path d="M16 8V6a2 2 0 0 0-2-2H6a2 2 0 0 0-2 2v8a2 2 0 0 0 2 2h2"/></svg><span data-copy-label>复制</span></button>
+                    <pre><code id="dev-code-plugin">{
+  &quot;id&quot;: &quot;example.hello&quot;,
+  &quot;entry&quot;: &quot;index.js&quot;,
+  &quot;activities&quot;: [{
+    &quot;type&quot;: &quot;example.hello-stars&quot;
+  }]
+}
+
+// mount(el, ctx) -&gt; ActivityInstance
+// 清理 DOM、事件、计时器和声音</code></pre>
+                  </div>
+          </div>
+        </div>
+      </div>
+      <div class="release-license-grid">
+        <div class="release-card">
+          <span class="eyebrow">下载 v0.0.1</span>
+          <h3>v0.0.1</h3>
+          <p>Android TV 安装包与内容包都在 Release 页。</p>
+          <div class="release-links">
+            <a class="" href="https://github.com/gxlself/ai-study/releases/tag/v0.0.1" target="_blank" rel="noreferrer">Android TV APK <span aria-hidden="true">↗</span></a>
+            <a class="" href="https://github.com/gxlself/ai-study/releases/tag/v0.0.1" target="_blank" rel="noreferrer">内容包 ZIP <span aria-hidden="true">↗</span></a>
+          </div>
+        </div>
+        <div class="license-card">
+          <span class="eyebrow">许可证</span>
+          <p>站点代码按 MIT 使用；课程内容提供个人、家庭和非商业教育使用，商业使用需作者书面授权。Fluent Emoji 按 MIT，Lucide 按 ISC，本站字体按 OFL-1.1。</p>
+          <div class="license-links">
+            <a class="" href="https://github.com/gxlself/ai-study/blob/main/LICENSE" target="_blank" rel="noreferrer">LICENSE <span aria-hidden="true">↗</span></a>
+            <a class="" href="https://github.com/gxlself/ai-study/blob/main/CONTENT-LICENSE.md" target="_blank" rel="noreferrer">CONTENT-LICENSE.md <span aria-hidden="true">↗</span></a>
+          </div>
+          <p class="micro-note">字体：LXGW WenKai、Fraunces、Nunito，均为本地子集文件。</p>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  <section class="section-band" id="faq">
+    <div class="content-wrap narrow-content">
+      
+  <div class="section-heading">
+    <p class="eyebrow">常见问题</p>
+    <h2 class="section-title balanced-title"><span class="nobr">把犹豫留在门口，</span><span class="nobr">带轻一点进去</span></h2>
+    <p class="section-lede"></p>
+  </div>
+      <div class="faq-list">
+        
+              <details class="faq-item" open>
+                <summary><span>会不会让孩子看更多屏幕？</span><b aria-hidden="true">+</b></summary>
+                <p>产品不以延长观看时长为目标。6–17 月龄只给家长看；18–23 月龄共看默认关闭；24–36 月龄也可以完全不看。每节课都有自然结束点和屏幕外活动。</p>
+              </details>
+              <details class="faq-item" >
+                <summary><span>6 个月以下怎么办？</span><b aria-hidden="true">+</b></summary>
+                <p>核心包从 6 月龄开始，没有为 6 月龄以下宝宝设计孩子侧播放入口。可以使用面对面回应、地板互动、抱唱、纸书和儿保专业人员给出的建议。</p>
+              </details>
+              <details class="faq-item" >
+                <summary><span>家庭数据存在哪里？</span><b aria-hidden="true">+</b></summary>
+                <p>连接服务器时，家庭数据保存在运行 @sprout/server 的设备本地 SQLite；离线体验的记录只在当前设备。</p>
+              </details>
+              <details class="faq-item" >
+                <summary><span>为什么仓库里没有朗读录音？</span><b aria-hidden="true">+</b></summary>
+                <p>公开仓库不附带 macOS 系统合成声音，因为相关许可禁止公开再分发。没有预录音频时，页面使用浏览器自带的 Web Speech API；正式产品可以本地生成或接入获授权的 TTS。</p>
+              </details>
+              <details class="faq-item" >
+                <summary><span>免费吗、能商用吗？</span><b aria-hidden="true">+</b></summary>
+                <p>代码按 MIT；课程内容的个人、家庭、非商业使用按 CC BY-NC 4.0 条款，商业使用需作者书面授权。第三方素材按自己的许可执行。</p>
+              </details>
+              <details class="faq-item" >
+                <summary><span>这是医疗建议吗？</span><b aria-hidden="true">+</b></summary>
+                <p>不是。芽芽成长不是医疗设备、治疗工具或发育诊断工具；里程碑只用于日常观察和与专业人员沟通。持续担忧或出现能力倒退时，请咨询儿科或儿保医生。</p>
+              </details>
+      </div>
+    </div>
+  </section>
+    </main>
+    <footer class="site-footer">
+      <div class="footer-inner">
+        <div class="footer-brand">
+          <a class="brand" href="./">
+            <span class="brand-mark" aria-hidden="true">
+              <svg viewBox="0 0 42 42" width="42" height="42">
+                <path d="M21 35c-.8-8 .2-13.7 4-18.8" fill="none" stroke="currentColor" stroke-width="2.8" stroke-linecap="round"/>
+                <path d="M21.2 23.8C14.6 23.8 9.2 19.1 9.5 13c6.7-.9 12.8 3 11.7 10.8Z" fill="#98c968" stroke="currentColor" stroke-width="1.3" stroke-linejoin="round"/>
+                <path d="M23 20.9C22.5 13.4 27.5 8 34.2 8.4c.7 6.4-4.3 12.8-11.2 12.5Z" fill="#77b77d" stroke="currentColor" stroke-width="1.3" stroke-linejoin="round"/>
+              </svg>
+            </span>
+            <span class="brand-name"><strong>芽芽成长</strong><span>Sprout</span></span>
+          </a>
+          <p>非医疗设备、治疗工具或发育诊断工具；里程碑不用于给孩子打分、排名或下诊断。</p>
+          <p class="footer-focus">本站的黄色焦点框，和电视上遥控器选中的样子一样。</p>
+        </div>
+        <div class="footer-links">
+          <div>
+            <span class="footer-label">文档</span>
+            <a href="https://github.com/gxlself/ai-study/tree/main/docs" target="_blank" rel="noreferrer">Docs ↗</a>
+            <a href="https://github.com/gxlself/ai-study/blob/main/README.md" target="_blank" rel="noreferrer">项目说明 ↗</a>
+          </div>
+          <div>
+            <span class="footer-label">第三方署名</span>
+            <a href="https://github.com/gxlself/ai-study/blob/main/content/packs/sprout-core/LICENSES.md" target="_blank" rel="noreferrer">Fluent Emoji / CC0</a>
+            <a href="https://scripts.sil.org/OFL" target="_blank" rel="noreferrer">Fonts · OFL-1.1</a>
+          </div>
+          <div>
+            <span class="footer-label">Release</span>
+            <a href="https://github.com/gxlself/ai-study/releases/tag/v0.0.1" target="_blank" rel="noreferrer">v0.0.1 ↗</a>
+            <a href="https://github.com/gxlself/ai-study" target="_blank" rel="noreferrer">GitHub ↗</a>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>为慢慢的早晨而做。</span>
+        <span>© Sprout · v0.0.1</span>
+      </div>
+    </footer>
+  </body>
+</html>

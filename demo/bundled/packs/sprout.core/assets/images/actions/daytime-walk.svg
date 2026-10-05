@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" role="img" aria-label="A daytime walk with a grown-up">
+  <circle cx="193" cy="55" r="27" fill="#F3CE58" stroke="#C5A03E" stroke-width="4"/>
+  <path d="M193 17V6M193 104V93M155 55H144M242 55H231M167 29L158 20M219 29L228 20" stroke="#F08A5D" stroke-width="6" stroke-linecap="round"/>
+  <path d="M56 195Q70 115 111 97Q151 115 164 195" fill="#6C9A3B" stroke="#4D7430" stroke-width="5" stroke-linejoin="round"/>
+  <path d="M82 195V132M111 195V117M140 195V132" stroke="#4D7430" stroke-width="7" stroke-linecap="round"/>
+  <circle cx="181" cy="120" r="18" fill="#FFD15C" stroke="#D6A13C" stroke-width="4"/>
+  <path d="M181 139V177M181 151L157 164M181 151L204 164M181 177L165 207M181 177L199 207" fill="none" stroke="#5DA9E9" stroke-width="10" stroke-linecap="round"/>
+  <path d="M47 214H211" stroke="#A67C63" stroke-width="8" stroke-linecap="round"/>
+</svg>

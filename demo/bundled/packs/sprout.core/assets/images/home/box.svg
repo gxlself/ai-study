@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" role="img" aria-label="An empty open toy box">
+  <path d="M48 100L128 64L208 100L128 139Z" fill="#E6C79A" stroke="#9F7850" stroke-width="5" stroke-linejoin="round"/>
+  <path d="M67 100L128 76L189 100L128 127Z" fill="#BF966B" stroke="#9F7850" stroke-width="4" stroke-linejoin="round"/>
+  <path d="M48 100L128 139V208L48 166Z" fill="#E8BD8A" stroke="#9F7850" stroke-width="5" stroke-linejoin="round"/>
+  <path d="M128 139L208 100V166L128 208Z" fill="#D8A36F" stroke="#9F7850" stroke-width="5" stroke-linejoin="round"/>
+  <path d="M75 138L104 153" fill="none" stroke="#FFF4DB" stroke-width="7" stroke-linecap="round"/>
+  <path d="M153 157L181 143" fill="none" stroke="#A0774D" stroke-width="7" stroke-linecap="round"/>
+</svg>

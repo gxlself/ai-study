@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" role="img" aria-label="A folded towel">
+  <path d="M60 74H190Q210 74 210 94V177Q210 194 192 194H61Q44 194 44 177V92Q44 74 60 74Z" fill="#A0D9CC" stroke="#418F81" stroke-width="4" stroke-linejoin="round"/>
+  <path d="M44 155H194Q210 155 210 172V178Q210 194 192 194H61Q44 194 44 177Z" fill="#63B5A6" stroke="#418F81" stroke-width="4" stroke-linejoin="round"/>
+  <path d="M75 77V154M87 77V154" fill="none" stroke="#E6F4D7" stroke-width="6"/>
+  <path d="M63 177H190Q198 177 198 170" fill="none" stroke="#C0E9DE" stroke-width="5" stroke-linecap="round"/>
+  <path d="M61 87H190" fill="none" stroke="#C0E9DE" stroke-width="4" stroke-linecap="round"/>
+</svg>

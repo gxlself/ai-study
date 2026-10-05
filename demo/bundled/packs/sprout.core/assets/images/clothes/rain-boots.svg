@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" role="img" aria-label="A pair of rain boots">
+  <path d="M57 48H112V151L143 178Q152 191 140 204Q130 214 111 214H53Q37 209 39 194L58 155Z" fill="#F3CE58" stroke="#C5A03E" stroke-width="5" stroke-linejoin="round"/>
+  <path d="M145 48H200V151L231 178Q240 191 228 204Q218 214 199 214H141Q125 209 127 194L146 155Z" fill="#F08A5D" stroke="#BD674D" stroke-width="5" stroke-linejoin="round"/>
+  <path d="M57 76H112M145 76H200" stroke="#FFF4D8" stroke-width="8" stroke-linecap="round"/>
+  <path d="M76 104L70 124M96 104L90 124M164 104L158 124M184 104L178 124" stroke="#DFF1FB" stroke-width="7" stroke-linecap="round"/>
+</svg>

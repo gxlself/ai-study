@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" role="img" aria-label="A child bringing a spoonful of rice to their mouth">
+  <path d="M77 195V212M179 195V212" fill="none" stroke="#B77848" stroke-width="10" stroke-linecap="round"/>
+  <path d="M101 119H155Q170 124 174 151L180 185H76L82 151Q86 124 101 119Z" fill="#F08A5D" stroke="#BD674D" stroke-width="3" stroke-linejoin="round"/>
+  <path d="M81 146L70 168L95 178M171 145L190 156L172 126" fill="none" stroke="#D6A13C" stroke-width="18" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M81 146L70 168L95 178M171 145L190 156L172 126" fill="none" stroke="#FFD15C" stroke-width="13" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M119 114V125Q128 131 137 125V114" fill="#FFD15C" stroke="#D6A13C" stroke-width="3"/>
+  <circle cx="128" cy="81" r="39" fill="#FFD15C" stroke="#D6A13C" stroke-width="3"/>
+  <path d="M89 78C84 50 103 35 129 35C157 35 172 55 166 79Q148 74 138 54Q119 77 89 78Z" fill="#725447"/>
+  <path d="M113 84V87M140 84V87" fill="none" stroke="#5D463B" stroke-width="4" stroke-linecap="round"/>
+  <ellipse cx="134" cy="102" rx="10" ry="8" fill="#9C5946"/>
+  <path d="M145 108L175 130" fill="none" stroke="#7E9CAA" stroke-width="7" stroke-linecap="round"/>
+  <ellipse cx="140" cy="106" rx="12" ry="6" transform="rotate(15 140 106)" fill="#CED9DC" stroke="#7E9CAA" stroke-width="2"/>
+  <path d="M131 102Q132 98 136 100Q139 95 143 100Q148 98 150 104Z" fill="#FFFDF8"/>
+  <circle cx="174" cy="130" r="8" fill="#FFD15C" stroke="#D6A13C" stroke-width="2"/>
+  <rect x="42" y="184" width="172" height="13" rx="5" fill="#E7B783" stroke="#B77848" stroke-width="3"/>
+  <path d="M96 162Q98 184 124 184T152 162Z" fill="#5DA9E9" stroke="#3F83BE" stroke-width="3" stroke-linejoin="round"/>
+  <ellipse cx="124" cy="162" rx="28" ry="7" fill="#D8ECFA" stroke="#3F83BE" stroke-width="2"/>
+  <path d="M103 161Q101 155 108 154Q110 148 116 151Q121 145 127 150Q136 146 140 154Q147 153 146 161Z" fill="#FFFDF8" stroke="#AFA895" stroke-width="2.5"/>
+</svg>

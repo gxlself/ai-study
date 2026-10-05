@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" role="img" aria-label="A child ducking under a low arch">
+  <path d="M43 183Q53 101 128 101Q203 101 213 183" fill="none" stroke="#5DA9E9" stroke-width="16" stroke-linecap="round"/>
+  <circle cx="105" cy="133" r="24" fill="#FFD15C" stroke="#D6A13C" stroke-width="4"/>
+  <path d="M121 146Q144 154 164 177L180 201" fill="none" stroke="#F08A5D" stroke-width="19" stroke-linecap="round"/>
+  <path d="M134 161L107 190M165 177L147 207" fill="none" stroke="#FFD15C" stroke-width="13" stroke-linecap="round"/>
+  <path d="M104 128Q113 120 121 128" fill="none" stroke="#725447" stroke-width="4" stroke-linecap="round"/>
+  <path d="M79 215H186" stroke="#A67C63" stroke-width="8" stroke-linecap="round"/>
+</svg>

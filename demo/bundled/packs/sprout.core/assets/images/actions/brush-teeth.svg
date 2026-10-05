@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" role="img" aria-label="A child brushing their teeth with the brush at their mouth">
+  <path d="M98 139H148Q166 145 170 174L176 213H70L76 174Q80 145 98 139Z" fill="#F08A5D" stroke="#BD674D" stroke-width="3" stroke-linejoin="round"/>
+  <path d="M82 163L79 195M161 164L190 178L190 135" fill="none" stroke="#D6A13C" stroke-width="18" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M82 163L79 195M161 164L190 178L190 135" fill="none" stroke="#FFD15C" stroke-width="13" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M112 122V143Q122 150 132 143V122" fill="#FFD15C" stroke="#D6A13C" stroke-width="3"/>
+  <circle cx="122" cy="87" r="43" fill="#FFD15C" stroke="#D6A13C" stroke-width="3"/>
+  <path d="M79 86C74 58 91 38 120 38S170 60 164 87Q143 76 134 58Q114 82 79 86Z" fill="#725447"/>
+  <path d="M105 86V90M137 86V90" fill="none" stroke="#5D463B" stroke-width="4" stroke-linecap="round"/>
+  <rect x="108" y="105" width="32" height="15" rx="7" fill="#FFFDF8" stroke="#9C5946" stroke-width="2.5"/>
+  <path d="M116 107V115M124 107V115M132 107V115" fill="none" stroke="#DED8CB" stroke-width="2"/>
+  <path d="M138 118L194 135" fill="none" stroke="#21806E" stroke-width="10" stroke-linecap="round"/>
+  <path d="M138 118L194 135" fill="none" stroke="#2BA88C" stroke-width="6" stroke-linecap="round"/>
+  <path d="M120 114V121M126 114V121M132 114V121M138 115V122" fill="none" stroke="#A0D9CC" stroke-width="4" stroke-linecap="round"/>
+  <path d="M118 122H140" fill="none" stroke="#2BA88C" stroke-width="7" stroke-linecap="round"/>
+  <path d="M189 141L185 136Q182 131 187 129L194 131" fill="none" stroke="#D6A13C" stroke-width="12" stroke-linecap="round"/>
+  <path d="M189 141L185 136Q182 131 187 129L194 131" fill="none" stroke="#FFD15C" stroke-width="8" stroke-linecap="round"/>
+</svg>

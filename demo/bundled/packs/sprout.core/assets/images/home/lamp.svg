@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" role="img" aria-label="A table lamp">
+  <rect x="120" y="117" width="16" height="81" rx="7" fill="#5DA9E9" stroke="#3F83BE" stroke-width="4"/>
+  <path d="M96 187H160Q180 187 184 204Q185 210 179 210H77Q71 210 72 204Q76 187 96 187Z" fill="#5DA9E9" stroke="#3F83BE" stroke-width="4" stroke-linejoin="round"/>
+  <path d="M98 48H158Q164 48 167 56L194 116Q198 126 186 128H70Q58 126 62 116L89 56Q92 48 98 48Z" fill="#FFD15C" stroke="#CE9D39" stroke-width="4" stroke-linejoin="round"/>
+  <path d="M102 59L82 111" fill="none" stroke="#FFE7A0" stroke-width="9" stroke-linecap="round"/>
+  <path d="M75 118H181" fill="none" stroke="#F2B134" stroke-width="7" stroke-linecap="round"/>
+  <path d="M91 199H157" fill="none" stroke="#91C5F0" stroke-width="5" stroke-linecap="round"/>
+</svg>

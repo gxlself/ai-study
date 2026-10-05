@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" role="img" aria-label="Green bamboo stalks">
+  <path d="M65 215L75 43H105L99 215Z" fill="#6C9A3B" stroke="#4D7430" stroke-width="4"/>
+  <path d="M113 215L123 28H153L147 215Z" fill="#77B77D" stroke="#4D7430" stroke-width="4"/>
+  <path d="M160 215L170 66H198L192 215Z" fill="#5E8C38" stroke="#4D7430" stroke-width="4"/>
+  <path d="M69 83H102M66 127H100M115 75H150M112 120H148M162 111H195M160 157H193" stroke="#4D7430" stroke-width="6" stroke-linecap="round"/>
+  <path d="M127 73Q91 38 57 59Q82 89 126 86M166 105Q202 75 222 100Q199 126 168 122" fill="#8DCC8C" stroke="#4D8D57" stroke-width="4" stroke-linejoin="round"/>
+  <path d="M47 216H208" stroke="#A67C63" stroke-width="12" stroke-linecap="round"/>
+</svg>
