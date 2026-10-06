@@ -33,7 +33,7 @@
   },
   "dependencies": {
     "@capacitor/android": "^8.5.2",
-    "@capacitor/app": "^8.1.1",
+    "@capacitor/app": "^8.1.2",
     "@capacitor/core": "^8.5.2",
     "@capacitor/ios": "^8.5.2",
     "@sprout/activities": "workspace:*",
@@ -41,7 +41,7 @@
     "@sprout/plugin-sdk": "workspace:*",
     "@sprout/schema": "workspace:*",
     "core-js": "^3.50.0",
-    "lucide-react": "^1.49.0",
+    "lucide-react": "^1.50.0",
     "react": "^19.3.0",
     "react-dom": "^19.3.0",
     "react-router": "^8.4.0"
@@ -55,7 +55,7 @@
     "acorn": "^8.18.0",
     "jsdom": "*",
     "postcss": "^8.5.28",
-    "typescript": "^5.9.0",
+    "typescript": "^7.0.2",
     "vite": "^8.3.2",
     "vitest": "^5.0.3"
   }
