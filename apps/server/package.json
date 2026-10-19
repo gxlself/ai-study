@@ -5,9 +5,9 @@
     "typecheck": "tsc -p tsconfig.json", "test": "vitest run --maxWorkers=1 --no-file-parallelism --no-isolate --testTimeout=120000 --hookTimeout=120000"
   },
   "dependencies": {
-    "@sprout/schema": "workspace:*", "@sprout/core": "workspace:*", "zod": "^4.6.5",
-    "fastify": "^5.12.5", "@fastify/static": "^10.1.5", "@fastify/multipart": "^10.1.2", "@fastify/cors": "^11.3.0",
-    "@fastify/swagger": "^9.9.1", "@fastify/swagger-ui": "^6.1.1", "fflate": "^0.8.3"
+    "@sprout/schema": "workspace:*", "@sprout/core": "workspace:*", "zod": "^4.6.7",
+    "fastify": "^5.12.7", "@fastify/static": "^10.1.6", "@fastify/multipart": "^10.1.4", "@fastify/cors": "^11.3.1",
+    "@fastify/swagger": "^9.9.2", "@fastify/swagger-ui": "^6.1.2", "fflate": "^0.8.3"
   },
-  "devDependencies": { "typescript": "^5.9.0", "vitest": "^5.0.3", "tsx": "^4.23.15", "tsup": "^8.5.1", "@types/node": "^22.0.0" }
+  "devDependencies": { "typescript": "^7.0.2", "vitest": "^5.0.5", "tsx": "^4.23.15", "tsup": "^9.0.0", "@types/node": "^26.6.5" }
 }
